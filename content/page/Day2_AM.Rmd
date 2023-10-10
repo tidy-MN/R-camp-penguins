@@ -47,7 +47,7 @@ The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow 
 ```{r, eval = F}
 library(tidyverse)
 
-porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+porgs <- read_csv("https://rcamp.netlify.com/data/porg_data.csv")
 ```
 
 <br>

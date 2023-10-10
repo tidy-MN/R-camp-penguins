@@ -1,5 +1,5 @@
-# learn R  
+# R Camp - With penguins!  
 
 R training for Minnesota Data Analysis :rocket: :computer: :bar_chart: 
 
-https://mn-r.netlify.com/
+https://rcamp.netlify.com/

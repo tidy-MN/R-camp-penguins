@@ -1,4 +1,4 @@
-baseurl = "https://mn-r.netlify.app/"
+baseurl = "https://rcamp.netlify.app/"
 DefaultContentLanguage = "en"
 title = "Learn R"
 theme = "beautifulhugo"
@@ -14,8 +14,8 @@ uglyURLs = true
   #homeTitle = "Home page header" # Set a different text for the header on the home page
   #themeColor = ".theme-base-08"
   #subtitle = "Subtitle text here"
-  logo     = "images/BB8_rnd_icon.png"
-  #favicon = "images/BB8_rnd_icon.png"
+  logo     = "images/penguins_circle1.png"
+  #favicon = "images/penguins_circle1.png"
   #logo    = "https://ui-avatars.com/api/?background=363636&color=fff&size=128&font-size=.6&name=R&rounded=true"
   favicon = "https://ui-avatars.com/api/?background=2E2E2E&color=fff&font-size=.7&name=R&size=128&rounded=true"
   dateFormat = "January 2, 2006"
@@ -38,15 +38,14 @@ uglyURLs = true
   highlightjsCDN = "//cdn.bootcss.com"
   highlightjsLang = ["r"]
   highlightjsTheme = "github"
-  #gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+  #gcse = "" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [Author]
-  name = "R2D2"
+  name = "Pengu"
   #email = "kvaled@gmail.com"
   #github = "learnr"
   #twitter = "KvaleDor"
   #gitlab = "username"
-
 
 
 [[menu.main]]
@@ -62,21 +61,39 @@ uglyURLs = true
 
 [[menu.main]]
     parent = "Training"
-    name = "Day-1"
+    name = "Day 1"
     url = "post/day-1.html"
     weight = 1
 
 [[menu.main]]
     parent = "Training"
-    name = "Day-2"
+    name = "Day 2"
     url = "post/day-2.html"
     weight = 1
 
 [[menu.main]]
     parent = "Training"
-    name = "Day-3"
+    name = "Day 3"
     url = "post/day-3.html"
     weight = 1
+
+[[menu.main]]
+    parent = "Training"
+    name = "Day 4"
+    url = "post/day-4.html"
+    weight = 1    
+    
+[[menu.main]]
+    parent = "Training"
+    name = "Day 5"
+    url = "post/day-5.html"
+    weight = 1    
+    
+[[menu.main]]
+    parent = "Training"
+    name = "Day 6"
+    url = "post/day-6.html"
+    weight = 1    
 
 [[menu.main]]
     name = "Install R"

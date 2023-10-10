@@ -52,12 +52,12 @@ library(icons, knitr)
 
 
 
-# Day 1
+# Week 1
 
 <div class = "row">
 <div class = "col-md-6">
 
-**Morning** | _9AM-Noon_  
+**Day 1** 
 
 > Blast off!   
 > &nbsp;
@@ -83,7 +83,7 @@ Packages: `readr`, `readxl`, `ggplot2`
 </div>
 <div class = "col-md-6">
 
-**Afternoon** | _1PM-4:00pm_  
+**Day 2** |  
 
 > Explore the data, answer data questions
    
@@ -107,12 +107,12 @@ Packages: `dplyr`
 
 
 
-# Day 2
+# Week 2
 
 <div class = "row">
 <div class = "col-md-6">
 
-**Morning** | _9AM-Noon_   
+**Day 1** 
 
 > Questions and Review
 
@@ -129,7 +129,7 @@ Packages: `dplyr`
 </div>
 
 <div class = "col-md-6">
-**Afternoon** | _1PM-4:00pm_  
+**Day 2** | _1PM-4:00pm_  
 
 > _Star Wars - Guess Who_   
 
@@ -148,13 +148,12 @@ Packages: `dplyr`
 </div>
 
 
-
-# Day 3
+# Week 3
 
 <div class = "row">
 <div class = "col-md-6">
 
-**Morning** | _9AM-Noon_  
+**Day 1**   
 
 > Questions and Review
 
@@ -172,7 +171,8 @@ Packages: `sf`, `leaflet`, `lubridate`
 </div>
 
 <div class = "col-md-6">
-**Afternoon** | _1PM-4:00pm_   
+
+**Day 2**   
 
 > Language learning: Reading code 
 
