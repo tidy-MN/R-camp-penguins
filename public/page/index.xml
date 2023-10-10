@@ -1,310 +1,281 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Learn R</title>
-    <link>https://mn-r.netlify.app/page.html</link>
+    <link>https://mnr.netlify.app/page.html</link>
     <description>Recent content in Pages on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://mn-r.netlify.app/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://mnr.netlify.app/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10_chewie_dance.html</link>
+      <link>https://mnr.netlify.app/page/timer10_chewie_dance.html</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10_chewie_dance.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer10_chewie_dance.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Schedule</title>
-      <link>https://mn-r.netlify.app/page/teach.html</link>
+      <link>https://mnr.netlify.app/page/teach.html</link>
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/teach.html</guid>
+      <guid>https://mnr.netlify.app/page/teach.html</guid>
       <description>Day 1 AM
- Welcome
- 1-2 (Barbara)
- Candy Poll Breakout - Greetings!  3-4 (Dorian)
- 5-8 (Derek)</description>
+Welcome
+1-2 (Barbara)
+Candy Poll Breakout - Greetings! 3-4 (Dorian)
+5-8 (Derek)
+PM
+1-2 (Barbara) 3-5+Bingo (Dorian) 6-7 (Derek) 8-Shutdown (Barbara) Day 2 AM</description>
     </item>
     
     <item>
       <title>Agenda</title>
-      <link>https://mn-r.netlify.app/page/agenda.html</link>
+      <link>https://mnr.netlify.app/page/agenda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/agenda.html</guid>
+      <guid>https://mnr.netlify.app/page/agenda.html</guid>
       <description>R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10.html</link>
+      <link>https://mnr.netlify.app/page/timer10.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10.html</guid>
-      <description>div[role=main] { width: 100% !important; } .countdown { position: relative; width: 75%; } body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ }</description>
+      <guid>https://mnr.netlify.app/page/timer10.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10_ewok_dance.html</link>
+      <link>https://mnr.netlify.app/page/timer10_ewok_dance.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10_ewok_dance.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer10_ewok_dance.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10_waterfall.html</link>
+      <link>https://mnr.netlify.app/page/timer10_waterfall.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10_waterfall.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer10_waterfall.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer2.html</link>
+      <link>https://mnr.netlify.app/page/timer2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer2.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer2.html</guid>
+      <description> BB8 BB8 &amp;minus;&amp;plus; 02:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5.html</link>
+      <link>https://mnr.netlify.app/page/timer5.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5.html</guid>
-      <description>div[role=main] { width: 100% !important; } .countdown { position: relative; width: 75%; } body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ }</description>
+      <guid>https://mnr.netlify.app/page/timer5.html</guid>
+      <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5_baby_yoda.html</link>
+      <link>https://mnr.netlify.app/page/timer5_baby_yoda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5_baby_yoda.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer5_baby_yoda.html</guid>
+      <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5_r2d2.html</link>
+      <link>https://mnr.netlify.app/page/timer5_r2d2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5_r2d2.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer5_r2d2.html</guid>
+      <description> R2D2 R2D2 &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5_yoda.html</link>
+      <link>https://mnr.netlify.app/page/timer5_yoda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5_yoda.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer5_yoda.html</guid>
+      <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Timers</title>
-      <link>https://mn-r.netlify.app/page/timers.html</link>
+      <link>https://mnr.netlify.app/page/timers.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timers.html</guid>
-      <description>  2’  BB8   5’  Jelly fish R2D2 Baby Yoda Yoda   10’  Ewok dance Chewie dance Waterfall Jelly fish   </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://mn-r.netlify.app/page/where_am_i.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mn-r.netlify.app/page/where_am_i.html</guid>
-      <description>You are in your working directory (folder).
-When you open a new R project in RStudio your starting working directory is your project folder.</description>
+      <guid>https://mnr.netlify.app/page/timers.html</guid>
+      <description> 2’ BB8 5’ Jelly fish R2D2 Baby Yoda Yoda 10’ Ewok dance Chewie dance Waterfall Jelly fish </description>
     </item>
     
     <item>
       <title>Air, wind and roses</title>
-      <link>https://mn-r.netlify.app/page/explore_wind_rose.html</link>
+      <link>https://mnr.netlify.app/page/explore_wind_rose.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/explore_wind_rose.html</guid>
-      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+      <guid>https://mnr.netlify.app/page/explore_wind_rose.html</guid>
+      <description>Let’s take a look at some air pollution data stored in an Excel file.
+Download the data DOWNLOAD — La Jolla PM25 data</description>
     </item>
     
     <item>
       <title>Compare years</title>
-      <link>https://mn-r.netlify.app/page/compare_years.html</link>
+      <link>https://mnr.netlify.app/page/compare_years.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/compare_years.html</guid>
-      <description>div.sourceCode { overflow-x: auto; } table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode { margin: 0; padding: 0; vertical-align: baseline; border: none; } table.</description>
+      <guid>https://mnr.netlify.app/page/compare_years.html</guid>
+      <description>Looking for change 📉📈 Looking for change 📉📈 Let’s compare the observations at a monitoring site for different years. For this example, we will see if we can detect a shift in concentrations after a new highway project was completed.</description>
     </item>
     
     <item>
       <title>Day 1 - AM</title>
-      <link>https://mn-r.netlify.app/page/day1_am.html</link>
+      <link>https://mnr.netlify.app/page/day1_am.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/day1_am.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/day1_am.html</guid>
+      <description>Good morning! 1 What’s R? Greetings 2 RStudio Tour Why R? 3 New mission, New R project 4 Names and things 5 Read data 6 Add packages 📦 7 ggplot2 8 Learn more!</description>
     </item>
     
     <item>
       <title>Day 1 - PM</title>
-      <link>https://mn-r.netlify.app/page/day1_pm.html</link>
+      <link>https://mnr.netlify.app/page/day1_pm.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/day1_pm.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/day1_pm.html</guid>
+      <description>1 dplyr 2 glimpse() &amp;amp; summary() Your analysis toolbox 3 Porg tables 4 select() 5 Sort with arrange() R BINGO!</description>
     </item>
     
     <item>
       <title>Day 2 - AM</title>
-      <link>https://mn-r.netlify.app/page/day2_am.html</link>
+      <link>https://mnr.netlify.app/page/day2_am.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/day2_am.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/day2_am.html</guid>
+      <description>1 Review - New project Finn needs us! 2 Jakku re-visited 3 Join tables with left_join 4 summarize() 5 group_by() category 6 Save files 7 A sickness grows… Good morning, Jedis!</description>
     </item>
     
     <item>
       <title>Day 2 - PM</title>
-      <link>https://mn-r.netlify.app/page/day2_pm.html</link>
+      <link>https://mnr.netlify.app/page/day2_pm.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/day2_pm.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/day2_pm.html</guid>
+      <description>Guess Who? 1 ifelse() 2 Plots with ggplot2 3 More Plots It’s Finn time Plot glossary Homeworld training Guess Who?</description>
     </item>
     
     <item>
       <title>Day 3 - AM</title>
-      <link>https://mn-r.netlify.app/page/day3_am.html</link>
+      <link>https://mnr.netlify.app/page/day3_am.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/day3_am.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;})       pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/day3_am.html</guid>
+      <description>1 Day 1 review Your analysis toolbox 2 Day 2 review 3 Reading coordinates 4 Leaflet maps 5 Invasive Porg Survey - 2023 6 Dates with lubridate 7 Share with friends 1 Day 1 review Get to know your DATA Function Information names(scrap) column names nrow(.</description>
     </item>
     
     <item>
       <title>Day 3 - PM</title>
-      <link>https://mn-r.netlify.app/page/day3_pm.html</link>
+      <link>https://mnr.netlify.app/page/day3_pm.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/day3_pm.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/day3_pm.html</guid>
+      <description>1 Psst…we need to talk 2 Pipe things together: A %&amp;gt;% B 3 Connect to databases 4 Password: Is it secret, is it safe?</description>
     </item>
     
     <item>
       <title>From Messy to Tidy data</title>
-      <link>https://mn-r.netlify.app/page/explore_messy_emissions.html</link>
+      <link>https://mnr.netlify.app/page/explore_messy_emissions.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/explore_messy_emissions.html</guid>
-      <description>a.sourceLine { display: inline-block; line-height: 1.25; } a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; } a.sourceLine:empty { height: 1.</description>
-    </item>
-    
-    <item>
-      <title>GIS and Shapefiles</title>
-      <link>https://mn-r.netlify.app/page/explore_gis_maps.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mn-r.netlify.app/page/explore_gis_maps.html</guid>
-      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/explore_messy_emissions.html</guid>
+      <description>1 | Tidy data 1.1 Read the data Look at all of these columns. This is real life. 1.2 Clean the data.</description>
     </item>
     
     <item>
       <title>Get started</title>
-      <link>https://mn-r.netlify.app/page/get_started.html</link>
+      <link>https://mnr.netlify.app/page/get_started.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/get_started.html</guid>
-      <description>Trial - Dip your toes in your browser Online courses MDH examples scripts Recordings Learn R from inside R Book reading Training    code {color: #FF69B4 !</description>
+      <guid>https://mnr.netlify.app/page/get_started.html</guid>
+      <description>Trial - Dip your toes in your browser Online courses MDH examples scripts Recordings Learn R from inside R Book reading Training Trial - Dip your toes in your browser Intro to R (with very cute giraffes) Short RStudio lessons: R programming basics</description>
+    </item>
+    
+    <item>
+      <title>GIS and Shapefiles</title>
+      <link>https://mnr.netlify.app/page/explore_gis_maps.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mnr.netlify.app/page/explore_gis_maps.html</guid>
+      <description>The sf package Quick plots Transform coordinates Centroids Area calculations with st_area() Interactive map with leaflet Distance calculations with st_distance() Download Census data American Community Survey (ACS) The sf package The sf (simple features) package can read and save shapefiles, and it plays nicely with the dpylr functions you’ve been learning.</description>
     </item>
     
     <item>
       <title>Help!</title>
-      <link>https://mn-r.netlify.app/page/help.html</link>
+      <link>https://mnr.netlify.app/page/help.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/help.html</guid>
-      <description>Cheatsheets 
-Use cheatsheets to refresh your memory and find new functions or plots.
- In RStudio go to Help &amp;gt; Cheatsheets  Data Transformation :: Helpful functions for cleaning and arranging your data.</description>
+      <guid>https://mnr.netlify.app/page/help.html</guid>
+      <description>Cheatsheets Use cheatsheets to refresh your memory and find new functions or plots.
+In RStudio go to Help &amp;gt; Cheatsheets Data Transformation :: Helpful functions for cleaning and arranging your data.</description>
     </item>
     
     <item>
       <title>Install &amp; Update</title>
-      <link>https://mn-r.netlify.app/page/install.html</link>
+      <link>https://mnr.netlify.app/page/install.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/install.html</guid>
-      <description>Install R Install RStudio Install R packages  Add R packages  Update R packages    code {color: #FF69B4 !</description>
+      <guid>https://mnr.netlify.app/page/install.html</guid>
+      <description>Install R Install RStudio Install R packages Add R packages Update R packages Install R The R language and its tools are built by people from around the world.</description>
     </item>
     
     <item>
       <title>Jakku scrap economy</title>
-      <link>https://mn-r.netlify.app/page/level1_jakku_explore.html</link>
+      <link>https://mnr.netlify.app/page/level1_jakku_explore.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/level1_jakku_explore.html</guid>
-      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/level1_jakku_explore.html</guid>
+      <description>Remember what you should do first when you start your R session? First we load the packages we will need.</description>
     </item>
     
     <item>
       <title>Porg biomonitoring data</title>
-      <link>https://mn-r.netlify.app/page/level2_porg_exposure.html</link>
+      <link>https://mnr.netlify.app/page/level2_porg_exposure.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/level2_porg_exposure.html</guid>
-      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.</description>
-    </item>
-    
-    <item>
-      <title>R Mission</title>
-      <link>https://mn-r.netlify.app/page/video-r-first-mission.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mn-r.netlify.app/page/video-r-first-mission.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
-    </item>
-    
-    <item>
-      <title>R Training | Analysis Outline</title>
-      <link>https://mn-r.netlify.app/page/level3_example_outline.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mn-r.netlify.app/page/level3_example_outline.html</guid>
-      <description>You’re ready to blast off on your own. The example outline below includes some placeholder code based on ozone measurements and is presented as a helpful starting point for your analysis.</description>
+      <guid>https://mnr.netlify.app/page/level2_porg_exposure.html</guid>
+      <description># load packages library(readr) library(dplyr) library(ggplot2) Start by reading in the Porg data.
+porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samples.csv&amp;quot;) Take a couple of minutes to get an overview of the data.</description>
     </item>
     
     <item>
       <title>R community</title>
-      <link>https://mn-r.netlify.app/page/community.html</link>
+      <link>https://mnr.netlify.app/page/community.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/community.html</guid>
-      <description>The growth of R user groups worldwide  
-Online Communities
- #rstats on Twitter RStudio’s question forum R Weekly shares weekly highlights from across the R world R Ladies meetups  R Ladies Global Twitter  R for data science learning community</description>
+      <guid>https://mnr.netlify.app/page/community.html</guid>
+      <description>The growth of R user groups worldwide Online Communities
+#rstats on Twitter RStudio’s question forum R Weekly shares weekly highlights from across the R world R Ladies meetups R Ladies Global Twitter R for data science learning community</description>
     </item>
     
     <item>
-      <title>Welcome to R</title>
-      <link>https://mn-r.netlify.app/page/video-r-tour.html</link>
+      <title>R Training | Analysis Outline</title>
+      <link>https://mnr.netlify.app/page/level3_example_outline.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/video-r-tour.html</guid>
-      <description>window.xaringanExtraClipboard(null, {&#34;button&#34;:&#34;Copy Code&#34;,&#34;success&#34;:&#34;Copied!&#34;,&#34;error&#34;:&#34;Press Ctrl+C to Copy&#34;}) pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <guid>https://mnr.netlify.app/page/level3_example_outline.html</guid>
+      <description>You’re ready to blast off on your own. The example outline below includes some placeholder code based on ozone measurements and is presented as a helpful starting point for your analysis.</description>
     </item>
     
   </channel>

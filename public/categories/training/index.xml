@@ -1,152 +1,151 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>training on Learn R</title>
-    <link>https://mn-r.netlify.app/categories/training.html</link>
+    <link>https://mnr.netlify.app/categories/training.html</link>
     <description>Recent content in training on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://mn-r.netlify.app/categories/training/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://mnr.netlify.app/categories/training/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10_chewie_dance.html</link>
+      <link>https://mnr.netlify.app/page/timer10_chewie_dance.html</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10_chewie_dance.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer10_chewie_dance.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Schedule</title>
-      <link>https://mn-r.netlify.app/page/teach.html</link>
+      <link>https://mnr.netlify.app/page/teach.html</link>
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/teach.html</guid>
+      <guid>https://mnr.netlify.app/page/teach.html</guid>
       <description>Day 1 AM
- Welcome
- 1-2 (Barbara)
- Candy Poll Breakout - Greetings!  3-4 (Dorian)
- 5-8 (Derek)</description>
+Welcome
+1-2 (Barbara)
+Candy Poll Breakout - Greetings! 3-4 (Dorian)
+5-8 (Derek)
+PM
+1-2 (Barbara) 3-5+Bingo (Dorian) 6-7 (Derek) 8-Shutdown (Barbara) Day 2 AM</description>
     </item>
     
     <item>
       <title>Day 3</title>
-      <link>https://mn-r.netlify.app/post/day-3.html</link>
+      <link>https://mnr.netlify.app/post/day-3.html</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/post/day-3.html</guid>
+      <guid>https://mnr.netlify.app/post/day-3.html</guid>
       <description>Onward and upward. It&amp;rsquo;s time to head out on your own&amp;hellip;</description>
     </item>
     
     <item>
       <title>Day 2</title>
-      <link>https://mn-r.netlify.app/post/day-2.html</link>
+      <link>https://mnr.netlify.app/post/day-2.html</link>
       <pubDate>Mon, 10 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/post/day-2.html</guid>
+      <guid>https://mnr.netlify.app/post/day-2.html</guid>
       <description>We are blasting off to a new planet where our journey continues&amp;hellip;</description>
     </item>
     
     <item>
       <title>Day 1</title>
-      <link>https://mn-r.netlify.app/post/day-1.html</link>
+      <link>https://mnr.netlify.app/post/day-1.html</link>
       <pubDate>Sun, 09 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/post/day-1.html</guid>
+      <guid>https://mnr.netlify.app/post/day-1.html</guid>
       <description>Power on your droids people, it’s time to get started. Junk Boss Plutt is up to no-good and we’ve got scrap to find&amp;hellip;</description>
     </item>
     
     <item>
       <title>Agenda</title>
-      <link>https://mn-r.netlify.app/page/agenda.html</link>
+      <link>https://mnr.netlify.app/page/agenda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/agenda.html</guid>
+      <guid>https://mnr.netlify.app/page/agenda.html</guid>
       <description>R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10.html</link>
+      <link>https://mnr.netlify.app/page/timer10.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10.html</guid>
-      <description>div[role=main] { width: 100% !important; } .countdown { position: relative; width: 75%; } body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ }</description>
+      <guid>https://mnr.netlify.app/page/timer10.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10_ewok_dance.html</link>
+      <link>https://mnr.netlify.app/page/timer10_ewok_dance.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10_ewok_dance.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer10_ewok_dance.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer10_waterfall.html</link>
+      <link>https://mnr.netlify.app/page/timer10_waterfall.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer10_waterfall.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer10_waterfall.html</guid>
+      <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer2.html</link>
+      <link>https://mnr.netlify.app/page/timer2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer2.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer2.html</guid>
+      <description> BB8 BB8 &amp;minus;&amp;plus; 02:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5.html</link>
+      <link>https://mnr.netlify.app/page/timer5.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5.html</guid>
-      <description>div[role=main] { width: 100% !important; } .countdown { position: relative; width: 75%; } body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ }</description>
+      <guid>https://mnr.netlify.app/page/timer5.html</guid>
+      <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5_baby_yoda.html</link>
+      <link>https://mnr.netlify.app/page/timer5_baby_yoda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5_baby_yoda.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer5_baby_yoda.html</guid>
+      <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5_r2d2.html</link>
+      <link>https://mnr.netlify.app/page/timer5_r2d2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5_r2d2.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer5_r2d2.html</guid>
+      <description> R2D2 R2D2 &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>https://mn-r.netlify.app/page/timer5_yoda.html</link>
+      <link>https://mnr.netlify.app/page/timer5_yoda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timer5_yoda.html</guid>
-      <description>body { background-color: #0e0d0eeb; /*#f5f5f5 #222d32 */ } h3 { text-align: center; margin-top: 12px; font-weight: bold; } .</description>
+      <guid>https://mnr.netlify.app/page/timer5_yoda.html</guid>
+      <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Timers</title>
-      <link>https://mn-r.netlify.app/page/timers.html</link>
+      <link>https://mnr.netlify.app/page/timers.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mn-r.netlify.app/page/timers.html</guid>
-      <description>  2’  BB8   5’  Jelly fish R2D2 Baby Yoda Yoda   10’  Ewok dance Chewie dance Waterfall Jelly fish   </description>
+      <guid>https://mnr.netlify.app/page/timers.html</guid>
+      <description> 2’ BB8 5’ Jelly fish R2D2 Baby Yoda Yoda 10’ Ewok dance Chewie dance Waterfall Jelly fish </description>
     </item>
     
   </channel>
