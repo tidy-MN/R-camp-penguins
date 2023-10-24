@@ -1,7 +1,7 @@
 code {color: #535353}
 
-.fa {
-  margin-right: 10px;
+.fa, .fas, .far {
+  margin-right: 6px;
 }
 
 .blue {

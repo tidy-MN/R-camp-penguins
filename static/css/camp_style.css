@@ -6,7 +6,7 @@ hr {
   margin-bottom: 24px;
 }
 
-.fa {margin-right: 8px;}
+.fa, .fas, .far {margin-right: 6px;}
 
 .row3
 {
