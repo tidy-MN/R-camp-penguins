@@ -45,7 +45,54 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # Videos
 
-```{r, results='asis'}
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active"><a class="nav-link" id="day1-tab" data-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">Day 1</a></li> 
+<li class="nav-item"><a class="nav-link" id="day2-tab" data-toggle="tab" href="#day2" role="tab" aria-controls="day2" aria-selected="false">Day 2</a></li>
+<li class="nav-item"><a class="nav-link" id="day3-tab" data-toggle="tab" href="#day3" role="tab" aria-controls="day3" aria-selected="false">Day 3</a></li>
+<li class="nav-item"><a class="nav-link" id="day4-tab" data-toggle="tab" href="#day4" role="tab" aria-controls="day4" aria-selected="false">Day 4</a></li> 
+<li class="nav-item"><a class="nav-link" id="day5-tab" data-toggle="tab" href="#day5" role="tab" aria-controls="day5" aria-selected="false">Day 5</a></li> 
+<li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">Day 6</a></li></ul>
+
+<div class="well tab-content" id="myTabContent" style="background-color: white;">
+<div class="tab-pane fade active in" id="day1" role="tabpanel" aria-labelledby="day1-tab">
+
+### <i class="fa fa-video-camera" ></i> [1.1 Welcome to open source](videos/01-1-welcome.html)  
+  
+- [**Notes and code**](Day1_AM.html#welcome) 
+- [**Slides**](https://mn-r-slides.netlify.app/day1/01-1-Welcome.html) 
+
+
+### <i class="fa fa-video-camera" ></i> 1.2 R Tour
+
+- [**Notes and code**](Day1_AM.html#rstudio-tour) 
+- [**Slides**](https://mn-r-slides.netlify.app/day1/01-2-R-tour.html) 
+
+
+### <i class="fa fa-video-camera" ></i> 1.3 Join us!
+
+- <i class="far fa-comment-alt" ></i> [**Notes and code**](Day1_AM.html#names-and-things) 
+- [**Slides**](https://mn-r-slides.netlify.app/day1/01-3-Our-crew.html)
+
+</div>
+
+<div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
+
+</div>
+
+<div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">    
+</div> 
+<div class="tab-pane fade" id="day4" role="tabpanel" aria-labelledby="day4-tab">    
+</div> 
+<div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">    
+</div> 
+<div class="tab-pane fade" id="day6" role="tabpanel" aria-labelledby="day6-tab"> 
+
+</div>
+</div>
+
+```{r, eval=F}
+source('insert_tabs.R')
+
 add_tabs(paste("Day", 1:6), c('### <i class="fa fa-video-camera" ></i> [1.1 Welcome to open source](videos/01-1-welcome.html)
 
 - [**Notes and code**](Day1_AM.html#welcome) 
