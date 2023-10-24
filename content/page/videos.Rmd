@@ -14,7 +14,6 @@ output:
 
 <style> 
 code {color: #FF69B4 !important;} 
-.fa {margin-right: 8px !important;}
 </style>
 
 
