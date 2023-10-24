@@ -11,11 +11,13 @@
 /*.Rcheck/
 # RStudio files
 .Rproj.user/
+
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
 
 # content html files
+content/*.html
 content/page/*.html
 content/post/*.html
 

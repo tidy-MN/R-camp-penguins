@@ -5,12 +5,13 @@ hidden: false
 tags: [videos]
 output: 
   blogdown::html_page: 
+    css: ../css/camp_style.css
     self_contained: false
     toc: false
     toc_depth: 2
 ---
 
-<br>
+<br><br>
 
 <video controls="" style="width: 100%;"> 
 <source src="https://github.com/tidy-MN/R-camp-videos/raw/main/videos/01-1-welcome.webm" type="video/webm">
