@@ -43,9 +43,31 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# Videos {.tabset .tabset-pills}
+# Videos
 
-## Day 1
+```{r, results='asis'}
+add_tabs(paste("Day", 1:6), c('### <i class="fa fa-video-camera" ></i> [1.1 Welcome to open source](videos/01-1-welcome.html)
+
+- [**Notes and code**](Day1_AM.html#welcome) 
+- [**Slides**](https://mn-r-slides.netlify.app/day1/01-1-Welcome.html) 
+
+
+### <i class="fa fa-video-camera" ></i> 1.2 R Tour
+
+- [**Notes and code**](Day1_AM.html#rstudio-tour) 
+- [**Slides**](https://mn-r-slides.netlify.app/day1/01-2-R-tour.html) 
+
+
+### <i class="fa fa-video-camera" ></i> 1.3 Join us!
+
+- <i class="far fa-comment-alt" ></i> [**Notes and code**](Day1_AM.html#names-and-things) 
+- [**Slides**](https://mn-r-slides.netlify.app/day1/01-3-Our-crew.html)', rep("", 5)))
+
+```
+
+
+```{r, eval=F}
+'## Day 1
 
 <div style="margin-left: 4%;">
 
@@ -110,4 +132,5 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <div style="margin-left: 4%;">
 
 </div>
-<br>
+<br>'
+```
