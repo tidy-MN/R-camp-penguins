@@ -28,7 +28,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 
-## Class prep
+## Camp prep
 
 <div style="margin-left: 4%;">
 
@@ -46,7 +46,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-video-camera" style="font-size:24px"></i> [1.1 Welcome to open source](https://rcamp.netlify.app/page/videos/01-1-welcome.html)
 
-- <i class="address-card" style="font-size:24px"></i> [Slides](https://mn-r-videos.netlify.app/day1/01-1-Welcome.html) 
+- <i class="fa fa-address-card" style="font-size:24px"></i> [Slides](https://mn-r-videos.netlify.app/day1/01-1-Welcome.html) 
 
 ### <i class="fa fa-video-camera" style="font-size:24px"></i> [1.2 R Tour](https://mn-r-videos.netlify.app/day1/01-2-R-tour.html) 
 

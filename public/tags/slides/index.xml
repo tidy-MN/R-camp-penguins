@@ -7,21 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://rcamp.netlify.app/tags/slides/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01-1: Welcome to open source</title>
-      <link>https://rcamp.netlify.app/page/videos/01-1-welcome.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://rcamp.netlify.app/page/videos/01-1-welcome.html</guid>
-      <description> </description>
-    </item>
-    
-    <item>
       <title>Videos</title>
       <link>https://rcamp.netlify.app/page/videos.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://rcamp.netlify.app/page/videos.html</guid>
-      <description>Class prep 0.1 Install R 0.2 Setup &amp;amp; Warmup Day 1 1.1 Welcome to open source Slides 1.2 R Tour 1.</description>
+      <description>Camp prep 0.1 Install R 0.2 Setup &amp;amp; Warmup Day 1 1.1 Welcome to open source Slides 1.2 R Tour 1.</description>
     </item>
     
   </channel>
