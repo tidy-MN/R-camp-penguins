@@ -62,7 +62,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ### <i class="fa fa-video-camera" ></i> 1.3 Join us!
 
 - <i class="far fa-comment-alt" ></i> [**Notes and code**](Day1_AM.html) 
-- <i class="fa fa-tv" ></i> [**Slides**](https://mn-r-videos.netlify.app/day1/01-3-Our-crew.html) 
+- [**Slides**](https://mn-r-videos.netlify.app/day1/01-3-Our-crew.html) 
 
 
 </div>
