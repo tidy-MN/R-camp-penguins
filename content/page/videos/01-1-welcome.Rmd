@@ -13,8 +13,7 @@ output:
 <br><br>
 
 <video controls width="100%"> 
-<source src="https://github.com/tidy-MN/R-camp-videos/raw/main/videos/Day1/01-1-welcome.mp4" type="video/mp4">
+<source src="https://r-camp-01-1-welcome.netlify.app/01-1-welcome.mp4" type="video/mp4">
 
-<track src="https://raw.githubusercontent.com/tidy-MN/R-camp-videos/main/videos/Day1/01-1-welcome-en-us.vtt" label="English" kind="captions" srclang="en-us" default>
-
+<track src="https://r-camp-01-1-welcome.netlify.app/01-1-welcome-en-us.vtt" label="English" kind="captions" srclang="en-us" default>
 </video>
