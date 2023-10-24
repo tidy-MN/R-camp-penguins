@@ -14,6 +14,7 @@ output:
 
 <style> 
 code {color: #FF69B4 !important;} 
+.fa {font-size: 24px;}
 </style>
 
 
@@ -33,9 +34,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="margin-left: 4%;">
 
-### <i class="fa fa-clipboard" style="font-size:24px"></i> [0.1 Install R](install.html) 
+### <i class="fa fa-clipboard" ></i> [0.1 Install R](install.html) 
 
-### <i class="fa fa-clipboard" style="font-size:24px"></i> [0.2 Setup & Warmup]() 
+### <i class="fa fa-clipboard" ></i> [0.2 Setup & Warmup]() 
 
 </div>
 <br>
@@ -45,15 +46,16 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="margin-left: 4%;">
 
-### <i class="fa fa-video-camera" style="font-size:24px"></i> [1.1 Welcome to open source](https://rcamp.netlify.app/page/videos/01-1-welcome.html)
+### <i class="fa fa-video-camera" ></i> [1.1 Welcome to open source](https://rcamp.netlify.app/page/videos/01-1-welcome.html)
 
-- <i class="fa fa-address-card" style="font-size:24px"></i> [**Slides**](https://mn-r-videos.netlify.app/day1/01-1-Welcome.html) 
+- <i class="fa fa-clipboard" ></i> [**Notes and code**](https://mn-r-videos.netlify.app/page/Day1_AM.html) 
+- <i class="fa fa-address-card" ></i> [**Slides**](https://mn-r-videos.netlify.app/day1/01-1-Welcome.html) 
 
-### <i class="fa fa-video-camera" style="font-size:24px"></i> [1.2 R Tour](https://mn-r-videos.netlify.app/day1/01-2-R-tour.html) 
+### <i class="fa fa-video-camera" ></i> [1.2 R Tour](https://mn-r-videos.netlify.app/day1/01-2-R-tour.html) 
 
 - 
 
-### <i class="fa fa-video-camera" style="font-size:24px"></i> [1.3 Join us!](https://mn-r-videos.netlify.app/day1/01-3-Our-crew.html) 
+### <i class="fa fa-video-camera" ></i> [1.3 Join us!](https://mn-r-videos.netlify.app/day1/01-3-Our-crew.html) 
 
 </div>
 <br>
@@ -64,7 +66,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="margin-left: 4%;">
 
-### <i class="fa fa-video-camera" style="font-size:24px"></i> [2.1 Digging in]() 
+### <i class="fa fa-video-camera" ></i> [2.1 Digging in]() 
 
 
 </div>
@@ -99,9 +101,3 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 </div>
 <br>
-
-
-
-
-
-</br>

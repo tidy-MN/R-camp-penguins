@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>slides on Learn R</title>
-    <link>https://rcamp.netlify.app/tags/slides.html</link>
+    <link>https://r-camp.netlify.app/tags/slides.html</link>
     <description>Recent content in slides on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://rcamp.netlify.app/tags/slides/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://r-camp.netlify.app/tags/slides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Videos</title>
-      <link>https://rcamp.netlify.app/page/videos.html</link>
+      <link>https://r-camp.netlify.app/page/videos.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rcamp.netlify.app/page/videos.html</guid>
-      <description>Camp prep 0.1 Install R 0.2 Setup &amp;amp; Warmup Day 1 1.1 Welcome to open source Slides 1.2 R Tour 1.</description>
+      <guid>https://r-camp.netlify.app/page/videos.html</guid>
+      <description>Camp prep 0.1 Install R 0.2 Setup &amp;amp; Warmup Day 1 1.1 Welcome to open source Notes and code Slides 1.</description>
     </item>
     
   </channel>
