@@ -46,16 +46,23 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="margin-left: 4%;">
 
-### <i class="fa fa-video-camera" ></i> [1.1 Welcome to open source](https://rcamp.netlify.app/page/videos/01-1-welcome.html)
+### <i class="fa fa-video-camera" ></i> [1.1 Welcome to open source](videos/01-1-welcome.html)
 
-- <i class="fa fa-clipboard" ></i> [**Notes and code**](https://mn-r-videos.netlify.app/page/Day1_AM.html) 
-- <i class="fa fa-address-card" ></i> [**Slides**](https://mn-r-videos.netlify.app/day1/01-1-Welcome.html) 
+- <i class="fa fa-clipboard" ></i> [**Notes and code**](Day1_AM.html) 
+- <i class="fa fa-display" ></i> [**Slides**](https://mn-r-videos.netlify.app/day1/01-1-Welcome.html) 
 
-### <i class="fa fa-video-camera" ></i> [1.2 R Tour](https://mn-r-videos.netlify.app/day1/01-2-R-tour.html) 
 
-- 
+### <i class="fa fa-video-camera" ></i> 1.2 R Tour
 
-### <i class="fa fa-video-camera" ></i> [1.3 Join us!](https://mn-r-videos.netlify.app/day1/01-3-Our-crew.html) 
+- <i class="fa fa-clipboard" ></i> [**Notes and code**](Day1_AM.html) 
+- <i class="fa fa-display" ></i> [**Slides**](https://mn-r-videos.netlify.app/day1/01-2-R-tour.html) 
+
+
+### <i class="fa fa-video-camera" ></i> 1.3 Join us!
+
+- <i class="fa fa-clipboard" ></i> [**Notes and code**](Day1_AM.html) 
+- <i class="fa fa-display" ></i> [**Slides**](https://mn-r-videos.netlify.app/day1/01-3-Our-crew.html) 
+
 
 </div>
 <br>
