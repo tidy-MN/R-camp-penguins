@@ -320,7 +320,8 @@ porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://r-camp.netlify.app/page/videos.html</guid>
-      <description>Camp prep 0.1 Install R 0.2 Setup &amp;amp; Warmup Videos ## Error in add_tabs(paste(&amp;quot;Day&amp;quot;, 1:6), c(&amp;quot;### &amp;lt;i class=\&amp;quot;fa fa-video-camera\&amp;quot; &amp;gt;&amp;lt;/i&amp;gt; [1.</description>
+      <description>Camp prep 0.1 Install R 0.2 Setup &amp;amp; Warmup Videos [1] “&amp;lt;ul class=&#34;nav nav-pills&#34; id=&#34;myTab&#34; role=&#34;tablist&#34; style=&#34;margin-top: 18px;&#34;&amp;gt;”
+[2] “&amp;lt;li class=&#34;</description>
     </item>
     
   </channel>
