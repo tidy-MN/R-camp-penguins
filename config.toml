@@ -58,6 +58,12 @@ uglyURLs = true
     name = "Agenda"
     url = "page/agenda.html"
     weight = 1
+    
+[[menu.main]]
+    parent = "Training"
+    name = "Videos"
+    url = "page/videos.html"
+    weight = 1    
 
 [[menu.main]]
     parent = "Training"

@@ -1,6 +1,5 @@
 ---
----
-title: 01-1: Welcome to open source
+title: "01-1: Welcome to open source"
 comments: false
 hidden: false
 tags: [videos, slides]
