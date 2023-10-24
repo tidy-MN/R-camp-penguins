@@ -43,8 +43,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# Videos
-
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active"><a class="nav-link" id="day1-tab" data-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">Day 1</a></li> 
 <li class="nav-item"><a class="nav-link" id="day2-tab" data-toggle="tab" href="#day2" role="tab" aria-controls="day2" aria-selected="false">Day 2</a></li>
