@@ -35,9 +35,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="margin-left: 4%;">
 
-### <i class="far fa-comment-alt" ></i> [0.1 Install R](install.html) 
+### <i class="fas fa-clipboard" ></i> [0.1 Install R](install.html) 
 
-### <i class="far fa-comment-alt" ></i> [0.2 Setup & Warmup]() 
+### <i class="fas fa-clipboard" ></i> [0.2 Setup & Warmup]() 
 
 </div>
 <br>
