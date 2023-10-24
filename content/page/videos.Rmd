@@ -2,7 +2,7 @@
 title: Videos
 comments: false
 hidden: false
-tags: [videos, slides]
+tags: [videos, notes, slides]
 output: 
   blogdown::html_page: 
     css: css/camp_style.css
@@ -42,6 +42,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 </div>
 <br>
 
+
+# Videos {.tabset .tabset-pills}
 
 ## Day 1
 
