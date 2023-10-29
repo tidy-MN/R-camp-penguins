@@ -1,0 +1,56 @@
+
+Use these functions to describe your dataframe.
+
+### Data frame info {-}
+
+<div class="bluecode">
+
+| Function  |  | Information                                                      |   
+|:----------|--|:-----------------------------------------------------------------|
+| `glimpse(...)`  |  | rows, columns, column names and a glimpse of values _(from `tidyverse` package)_   |
+| `names(scrap)`  |  | column names            |  
+| `nrow(...)`     |  | number of rows          |  
+| `ncol(...)`     |  | number of columns       | 
+| `summary(...)`  |  | summary of all column values (ex. _max_, _mean_, _median_)  | 
+
+</div>
+
+
+# `glimpse()` & `summary()`
+<hr>
+
+### Let's read the scrap data into R and take a look. {-}
+
+`glimpse()` shows the type of data in each column and shows a few sample values.
+
+```{r glimpse-bake, warning=F, message=F}
+# Glimpse your dataframe's data types and a few values
+glimpse(bake_bots)
+```
+
+<br>
+
+`summary()` gives you a quick report of your numeric data.
+
+```{r summary-bake, warning=F, message=F}
+# Summary gives us the means, mins, and maxima 
+summary(bake_bots)
+```
+
+<br>
+
+<div class="tip">
+### <i class="fas fa-birthday-cake style="color: gray"></i> Bake it! {-}
+
+Try a few more of the data frame description functions on your bot data. You will need to insert the name of your data frame into each function.
+
+```{r summary-try, eval=F}
+nrow( )
+
+ncol( )
+
+names( )
+```
+
+</div>
+

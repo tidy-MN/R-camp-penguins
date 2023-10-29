@@ -1,0 +1,156 @@
+
+
+<img src="../images/tidy_ice_cream.png" width="80%" style="margin-left: 100px;" alt="Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words "make friends with tidy data.">
+
+.smaller[.gray[Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst]]
+
+
+<br>
+
+<img src="../images/tidy_data_slide.png" alt="Stylized text providing an overview of Tidy Data. The top reads “Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.” On the left reads “In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.” There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure.">
+
+
+## Let's make a tidy table with our baking bots. {-}
+
+<img src="../images/vector_to_dataframe.png" width="510" style="margin-left: 100px;">
+
+
+<br>
+
+A table in R is known as a __data frame__. We can think of it as a group of columns, where each column is a vector. Data frames in R have columns of data that are all the same length.
+
+Let's make a data frame that has two columns to hold the bot names and their ages.
+
+```{r}
+# Character vector of baking_bot names
+baking_bots <- c("Whiskers", "Baker-waker", "BB-8")
+
+# Numeric vector of bot ages
+bot_ages <- c(1, 2, NA)
+```
+
+<br>
+
+
+```{r table}
+# Create table with 2 columns: name and age
+bots <- data.frame(name = baking_bots,
+                   age  = bot_ages)
+
+# Print the data frame to the console
+bots
+```
+
+<br>
+
+<div class="quiz">
+
+### <i class="fa-solid fa-cookie-bite" style="color: gray;"></i> Taste test {-}
+
+```{r exer-tabs, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Add a column", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Add a __3rd__ column that lists if the bot `has_wheels`: </h4>
+
+- ` c(FALSE, TRUE, FALSE) `
+
+<br>',
+
+show_hint = 'code_start
+
+bots <- data.frame(name       = baking_bots,
+                   age        = bot_ages,
+                   has_wheels = __________________ )
+code_end',
+
+show_code = 'code_start
+
+bots <- data.frame(name       = baking_bots,
+                   age        = bot_ages,
+                   has_wheels = c(FALSE, TRUE, FALSE) )
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+
+<br>
+
+### Show all values in `$column_name` {-} 
+
+Use the `$` sign after the name of your table to see the values in one of your columns.
+
+```{r columns}
+# View the "name" column in bots
+bots$name
+
+# Find the max age value
+max(bots$age)
+
+# Find the max age value, ignore NA (missing) values
+max(bots$age, na.rm = TRUE)
+```
+
+<br>
+ 
+### Matrix syntax: [`row`, `column`]  {-}
+
+Use matrix syntax to access any value in the table.
+
+```{r columns-rows}
+# Row 3, Column 1 (the third value in the 'name' column)
+bots[3, 1]
+
+# You can also view a specific column's values with the column name
+bots[ , "age"]
+
+```
+
+
+## Notes and comments {-}
+
+The italic and orange lines in the scripts above are called comments. You can add notes to your scripts with the `#` to make it easier for others and yourself to understand what is happening and why.
+
+Every line that starts with a `#` is ignored and won't be run as R code.
+
+
+## Save a table
+
+We are ready to save our wonderful little table. We will save the data to a file with the handy function `write_csv()`. The code below saves the table to a __CSV__ _(comma-separated values)_ file named *"bot_data.csv"*.
+
+
+```{r write-bots, eval=F}
+# Save dataframe to a CSV file in our project folder
+write_csv(bots, file = "bot_data.csv")
+```
+
+> Did you get the error _could not find function "write_csv"_?
+>
+> Jump back to the top of your script and run the line `library(tidyverse)`.
+
+<br>
+
+> **Where did the file get saved?**
+> 
+> The file is saved into our project folder by default. You can view it in the `[Files]` pane to the right of the console. Click the file name and select **View File**. You will see a tab open with contents similar to below.
+
+<br>
+
+__bot_data.csv__
+```{r, eval=F}
+name,age
+Whiskers,1
+Baker-waker,2
+BB-8,NA
+```
+
+
+## CSVs {-}
+
+A __CSV__ is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that's okay! When opened in R, the text becomes a familiar looking table with columns and rows.
+

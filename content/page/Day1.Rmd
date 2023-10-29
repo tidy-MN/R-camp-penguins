@@ -58,9 +58,24 @@ We make lots of mistakes. They will be funny. Laugh with us!
 ```
 
 
+
+# R packages &#x1F4E6; 
+<hr>
+
+<img src="../images/package-hexes.jpg">
+
+```{r new-pkg, child='../../static/modules/_packages/tidyverse.Rmd'}
+```
+
+```{r, eval=F}
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+
 ### You're on the TEAM!  {-}
 
-**Let's go! Data awaits us...**
+**Let's go!**
 
 
 <br>
@@ -87,28 +102,36 @@ params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
 
 
 
-# Tidy tables
+# Tidy tables and dataframes
 <hr>
 
-<img src="../images/vector_to_dataframe.png" width="510" style="margin-left: 100px;">
+```{r read-csv, child='../../static/modules/base/base_dataframes/bakery_dfs.Rmd'}
+```
 
 
-# CSV format
+
+# Read data 
+<hr>
+
+Now we can read our own table back into R using the `read_csv() ` function.
 <hr>
 ```{r read-csv, child='../../static/modules/readr/readr_csv/bakery_csv.Rmd'}
 ```
 
 
-# Add packages &#x1F4E6; 
+# Size up the data 
 <hr>
-```{r new-pkg, child='../../static/modules/_packages/readr.Rmd'}
+
+Before diving into a data set, we use `glimpse() ` and several other summary functions to take a first look at the data.
+
+```{r read_snippet, child='../../static/modules/dplyr/dplyr_glimpse/bakery_glimpse.Rmd'}
 ```
 
 
-# Read data 
+# Filter data 
+<hr>
 
-Let's load the _readr_ package to use the `read_csv() ` function.
-```{r read_snippet, child='../../static/modules/readr/readr_csv/bakery_scrap.Rmd'}
+```{r read_snippet, child='../../static/modules/dplyr/dplyr_filter/bakery_filter.Rmd'}
 ```
 
 

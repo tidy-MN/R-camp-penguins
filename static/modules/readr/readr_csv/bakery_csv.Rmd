@@ -1,65 +1,77 @@
 
-To help find the junk we need for our ship we're going to conduct a scrap audit. The first step of a good audit is reading in data determine where all the scrap is coming from. 
+```{r bake_read, eval=T}
+library(tidyverse)
 
-Here's a small dataset showing the scrap economy on Jakku. It was salvaged from a crash site, but the transfer was incomplete.
-
-```{r ex-data1, echo=F, message=F, warning=F}
-library(readr)
-library(tibble)
-library(knitr)
-
-options(scipen = 999)
-
-scrap <- data.frame(origin      = c("Outskirts", "Niima Outpost", "Cratertown", "Tro----"), 
-                    destination = c("Raiders", "Trade caravan", "Plutt", "Ta----"), 
-                    item        = c("Bulkhead", "Hull panels", "Hyperdrives", "So---*"), 
-                    amount      = c(332, 1120, 45, 1), 
-                    price_d     = c("300", "286", "45", "10----"))
-
-kable(scrap)
-```
-
-
-This looks like it could be useful. Now, if only we had some more data to work with...
-
-## New Message {-}
-
-<details>
-<summary class = "btn_code_green">_Incoming..._ _BB8_</summary>
-<p>
-
-<div class="tip">
-__BB8:__ _Beep boop Beep._
-
-__BB8:__ _I intercepted a large scrapper data set from droid 4P-L of Junk Boss Plutt._   
-
-<br>
-
-Receiving data now...
-
-__scrap_records.csv__ 
-
-```{r, eval=F}
-item,origin,destination,amount,units,price_per_pound  
-Flight recorder,Outskirts,Niima Outpost,887,Tons,590.93  
-Proximity sensor,Outskirts,Raiders,7081,Tons,1229.03  
-Aural sensor,Tuanul,Raiders,707,Tons,145.27  
-Electromagnetic filter,Tuanul,Niima Outpost,107,Tons,188.2  
-...  
+# Read in the bot data
+read_csv(file = "bot_data.csv")
 ```
 
 <br>
 
-__You:__ _Yikes! This looks like a dense mess! What can I do with this?_
+> ...where did the data go? 
 
+<br>
+
+## Name the data {-}
+
+Remember the assignment operator (the left-arrow: `<-`)?  We use it to assign the data a name so we can reference it in our script. 
+
+```{r bake_csv_name, eval=T, message=F}
+# Read in the bot data and set name to "bake_bots"
+bake_bots <- read_csv(file = "bot_data.csv")
+
+# Type its name to view its contents
+bake_bots
+```
+
+<br>
+
+
+<div class="yoda">
+###  Yoda says {-}
+
+<img src="../images/yoda_baby_sq.png" class="yoda-img">
+
+Notice the row of `<chr>` letter abbreviations under the column names? These describe the data type of each column. It is a good first check when loading data to see if the data types align with the contents of each column. For example, we may want to investigate if we saw that our **age** column had the `character` data type.
+
+- `<chr>` stands for __character__ vector or a string of characters. Examples: _"apples"_, _"oranges"_, _"5 red apples"_  
+- `<dbl>` stands for a __double__, which is a numeric value that allows for decimal values. Examples: _5_, _3.41_, _1071_ 
+
+We'll see more data types later on, such as `dates` and `logical` (TRUE/FALSE).
 </div>
+
+
+## Everythings has class {-}
+
+In R, not just columns but everything has a data type or a "class". When we want to investigate the type of data stored in an object we can use the `class()` function.
+
+
+```{r class, eval=F}
+class(bake_bots)
+
+class(bake_bots$name)
+
+class(battery_level)
+```
+
+<br>
+
+<div class="quiz">
+
+<h2 style="margin-top: 28px; margin-bottom: 44px;"> Pop Quiz! </h2>
+
+__1. What data type is the `name` column?__
+
+<input type="radio" name="type"> _letters_        <br> 
+<input type="radio" name="type"> _character_      <br> 
+<input type="radio" name="type"> _TRUE/FALSE_     <br> 
+<input type="radio" name="type"> _numbers_        <br> 
+
+<details style="margin-left: 14px;">
+<summary class = "btn_code">_Show solution_</summary>
+<p>
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> `character` 
 </p></details>
 
+</div>
 
-## CSV to the rescue {-}
-
-The main data format used in R is the __CSV__ _(comma-separated values)_. A __CSV__ is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that's okay! When opened in R, the text becomes a familiar looking table with columns and rows. 
-
-Before we launch ahead, let's add a _package_ to R that will help us read __CSV__ files.
-
-<br>

@@ -1,0 +1,127 @@
+
+
+The `filter()` function creates a subset of the data based on the value of one or more columns.
+
+Let's use it to look at the rows in the data that have an `age` greater than 1.
+
+```{r filter-age, eval=T}
+# Bots with ages greater than 1
+filter(bake_bots, age > 1)
+```
+
+> The bot with the `NA` (missing) value for an age, was not included because it was unknown whether it passed the test of being greater than 1. By default, filter only keeps the rows that definitively pass all of the tests or conditions that you include. In this case, filter could not determine whether the missing value was above 1, so that row in the table was not kept or returned.
+
+<br>
+
+Let's find the bots named `"Whiskers"`.
+```{r filter-name, eval=T}
+# Bots with ages greater than 1
+filter(bake_bots, name == "Whiskers")
+```
+
+<div class="note">
+  ### **Double equals** {-}
+  
+  #### `==` vs. `=` {-}
+  
+  We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a `True` or `False` answer. So the code above returns only the rows where the condition `name == "Whiskers"` is TRUE.
+
+A single equals sign `=` is used within functions to set options, for example `read_csv(file = "bot_data.csv")`. 
+
+It's not a big deal if you mix them up the first time. R is often helpful and will even let you know which one is needed. Try running `filter(bake_bots, name = "Whiskers")`.
+</div>
+
+
+## Comparing values {-}
+<hr class="hrlvl2">
+
+![](../images/porg_heights.png){style="float: right; margin-top: -94px; width: 40%;"}
+
+We use a variety of comparisons when processing data. Sometimes we only want concentrations above a certain level, or days below a given temperature, or sites that have missing observations. 
+
+We use the __Menu__ of comparisons below to find the data we want.
+
+<div class="pinkcode">
+
+<h3 style="margin-top: 18px; margin-bottom: -4px;"> Menu of comparisons </h3>
+
+| Symbol | Comparison               |
+|:-------|:-------------------------|
+| `>`    | greater than             |
+| `>=`   | greater than or equal to |
+| `<`    | less than                |
+| `<=`   | less than or equal to    |
+| `==`   | equal to                 |
+| `!=`   | NOT equal to             |
+| `%in%` | Is a value in the list: `X %in% c(1,3,7)` |
+| `is.na(...)`  | Is the value NA or missing? |
+| `str_detect(col_name, "word")`  | Does "word" appears in the text? |
+
+
+</div>
+<br>
+
+<div class="tip">
+### <i class="fas fa-user-astronaut" style="color: green"></i> Explore! {-}
+
+Try comparing some things in the console to see if you get what you'd expect. R doesn't always think like we do.
+
+```{r, eval=F}
+4 != 5
+
+4 == 4
+
+4 < 3
+
+4 > c(1, 3, 5)
+
+5 == c(1, 3, 5)
+
+5 %in% c(1, 3, 5)
+
+2 %in% c(1, 3, 5)
+
+2 == NA
+
+str_detect(c("Whiskers", "Whisks", "BB-8"), "Whisk")
+
+str_detect(c("Whiskers", "Whisks", "BB-8"), "Whisk", negate = TRUE)
+```
+</div>
+
+
+## Filtering rows {-}
+<hr class="hrlvl2">
+
+Let's filter the data to exclude the baking bots named **BB-8**. Look in the comparison table above to find the `NOT equal to` operator. We're going to filter the data to keep only the names that are `NOT equal` to "BB-8".
+
+```{r filter-bb8}
+bake_bots <- filter(bake_bots, name != "BB-8")
+
+bake_bots
+```
+
+<br>
+
+### Great work! {-}
+
+
+## Multiple filters {-} 
+<hr class="hrlvl2">
+
+We can add multiple tests or conditions to `filter()` to further restrict the data we want to pull from a larger data set. Only the records that pass all of the conditions will be kept in the new data frame. 
+
+The code below filters the data to only the bots with an age equal to 1 and their name must also not be equal to "BB-8".
+
+```{r filter-multi, eval=F}
+bake_bots <- filter(bake_bots,
+                    age == 1,
+                    name != "BB-8")
+```
+
+<br>
+
+> If we want our original full `bake_bot` data bake at anytime, we can re-run the line in our script that reads in the CSV file: `bake_bots <- read_csv(file = "bot_data.csv")`
+
+
+

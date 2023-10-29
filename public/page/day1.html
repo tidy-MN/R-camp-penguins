@@ -10,9 +10,9 @@
   <title>Day 1 - Learn R</title>
   <meta property="og:title" content="Day 1" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="description" content="Welcome! Why R? 1 RStudio Tour 2 R bakery 3 Names and things 4 Tidy tables 5 CSV format 6 Add packages 📦 7 Read data Welcome!">
-  <meta property="og:description" content="Welcome! Why R? 1 RStudio Tour 2 R bakery 3 Names and things 4 Tidy tables 5 CSV format 6 Add packages 📦 7 Read data Welcome!">
-  <meta name="twitter:description" content="Welcome! Why R? 1 RStudio Tour 2 R bakery 3 Names and things 4 Tidy tables 5 CSV format 6 Add packages 📦 7 Read data Welcome!">
+  <meta name="description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() &amp; summary() 9 Filter data Welcome!">
+  <meta property="og:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() &amp; summary() 9 Filter data Welcome!">
+  <meta name="twitter:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() &amp; summary() 9 Filter data Welcome!">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Day 1",
-  "description" : "Welcome! Why R? 1 RStudio Tour 2 R bakery 3 Names and things 4 Tidy tables 5 CSV format 6 Add packages 📦 7 Read data Welcome!",
+  "description" : "Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() \u0026amp; summary() 9 Filter data Welcome!",
   "inLanguage" : "en",
-  "wordCount":  3385 ,
+  "wordCount":  4415 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/r-camp.netlify.app\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 1" />
-<meta property="og:description" content="Welcome! Why R? 1 RStudio Tour 2 R bakery 3 Names and things 4 Tidy tables 5 CSV format 6 Add packages 📦 7 Read data Welcome!">
+<meta property="og:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() &amp; summary() 9 Filter data Welcome!">
 <meta property="og:image" content="https://r-camp.netlify.app/images/penguins_circle1.png" />
 <meta property="og:url" content="https://r-camp.netlify.app/page/day1.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="twitter:description" content="Welcome! Why R? 1 RStudio Tour 2 R bakery 3 Names and things 4 Tidy tables 5 CSV format 6 Add packages 📦 7 Read data Welcome!">
+  <meta name="twitter:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() &amp; summary() 9 Filter data Welcome!">
   <meta name="twitter:image" content="https://r-camp.netlify.app/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -367,12 +367,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#welcome" id="toc-welcome">Welcome!</a></li>
 <li><a href="#why-r" id="toc-why-r">Why R?</a></li>
 <li><a href="#rstudio-tour" id="toc-rstudio-tour"><span class="toc-section-number">1</span> RStudio Tour</a></li>
-<li><a href="#r-bakery" id="toc-r-bakery"><span class="toc-section-number">2</span> R bakery</a></li>
-<li><a href="#names-and-things" id="toc-names-and-things"><span class="toc-section-number">3</span> Names and things</a></li>
-<li><a href="#tidy-tables" id="toc-tidy-tables"><span class="toc-section-number">4</span> Tidy tables</a></li>
-<li><a href="#csv-format" id="toc-csv-format"><span class="toc-section-number">5</span> CSV format</a></li>
-<li><a href="#add-packages" id="toc-add-packages"><span class="toc-section-number">6</span> Add packages 📦</a></li>
-<li><a href="#read-data" id="toc-read-data"><span class="toc-section-number">7</span> Read data</a></li>
+<li><a href="#r-packages" id="toc-r-packages"><span class="toc-section-number">2</span> R packages 📦</a></li>
+<li><a href="#r-bakery" id="toc-r-bakery"><span class="toc-section-number">3</span> R bakery</a></li>
+<li><a href="#names-and-things" id="toc-names-and-things"><span class="toc-section-number">4</span> Names and things</a></li>
+<li><a href="#tidy-tables-and-dataframes" id="toc-tidy-tables-and-dataframes"><span class="toc-section-number">5</span> Tidy tables and dataframes</a></li>
+<li><a href="#read-data" id="toc-read-data"><span class="toc-section-number">6</span> Read data</a></li>
+<li><a href="#size-up-the-data" id="toc-size-up-the-data"><span class="toc-section-number">7</span> Size up the data</a></li>
+<li><a href="#glimpse-summary" id="toc-glimpse-summary"><span class="toc-section-number">8</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
+<li><a href="#filter-data" id="toc-filter-data"><span class="toc-section-number">9</span> Filter data</a></li>
 </ul>
 </div>
 
@@ -531,15 +533,61 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ol>
 <p><img src="../images/font_change.png" style="width: 65%; margin-top: 14px; margin-left: 2%;"></p>
+</div>
+</div>
+<div id="r-packages" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> R packages 📦</h1>
+<hr>
+<p><img src="../images/package-hexes.jpg"></p>
+<p><br></p>
+<blockquote>
+<p><strong>What is an <em>R package</em>?</strong></p>
+</blockquote>
+<p><br></p>
+<p>A <em>package</em> is a small add-on for R, it’s like a phone App for your phone.
+They add capabilities like statistical functions, mapping powers, and special charts to R. In order to use a new package we first need to install it. Let’s try it!</p>
+<p><img src="../images/tidyverse_hex.png" style="margin-right:18px; margin-bottom: 12px;" align="left" width="145" /></p>
+<div style="margin-top: 32px;">
+<p>The <em>tidyverse</em> package is an umbrella of helpful packages. One of the packages it includes is the <em>readr</em> package, which helps import data into R in different formats. It also helps by cleaning the data of extra white space and formatting tricky date formats automatically.</p>
+</div>
+<div style="clear: both;">
+
+</div>
+<p><strong>Add a package to your library</strong></p>
+<ol style="list-style-type: decimal">
+<li>Open <em>RStudio</em></li>
+<li>Type <code>install.packages("tidyverse")</code> in the lower left console</li>
+<li>Press Enter</li>
+<li><em>Wait two seconds</em></li>
+<li>Open the <code>Packages</code> tab in the lower right window of RStudio to see the packages in your <em>library</em>
+<ul>
+<li>Use the search bar to find the <code>tidyverse</code> package</li>
+</ul></li>
+</ol>
+<p><br></p>
+<p>Your installed packages are stored in your R <em>library</em>. The <code>Packages</code> tab on the right shows all of the available packages installed in your library. When you want to use one of them, you load it in R.</p>
+<p>Loading a package is like opening an App on your phone. To load a package we use the <code>library()</code> function. You will need to load the package everytime you “turn on” RStudio.
+Once you load it, the package will stay loaded until you close (shut down) RStudio.</p>
+<div class="note">
+<h3>
+Note
+</h3>
+<p><strong>The 2 steps to using a package in R</strong></p>
+<ol style="list-style-type: decimal">
+<li><code>install.packages("package-name")</code></li>
+<li><code>library(package-name)</code></li>
+</ol>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="youre-on-the-team" class="section level3 unnumbered">
 <h3>You’re on the TEAM!</h3>
-<p><strong>Let’s go! Data awaits us…</strong></p>
+<p><strong>Let’s go!</strong></p>
 <p><br></p>
 </div>
 </div>
-</div>
-<div id="r-bakery" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> R bakery</h1>
+<div id="r-bakery" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> R bakery</h1>
 <hr>
 <div id="new-project" class="section level2 unnumbered">
 <h2><i class="fa fa-cake-candles" aria-hidden="true"></i> New project</h2>
@@ -564,8 +612,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="names-and-things" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Names and things</h1>
+<div id="names-and-things" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Names and things</h1>
 <hr>
 <p>You can assign values to objects (variables) using the .teal[left arrow].</p>
 <ul>
@@ -582,77 +630,77 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="assignment-operator" class="section level3 unnumbered">
 <h3>Assignment operator</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Object not found?</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>bot</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># Create the object by assigning it a value - the bot&#39;s name</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>bot <span class="ot">&lt;-</span> <span class="st">&quot;Whiskers&quot;</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>bot</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Object not found?</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>bot</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Create the object by assigning it a value - the bot&#39;s name</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>bot <span class="ot">&lt;-</span> <span class="st">&quot;Whiskers&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>bot</span></code></pre></div>
 <blockquote>
 <p>To run a line of code in your script, put the cursor anywhere on that line and press <kbd>CTRL</kbd>+<kbd>ENTER</kbd>.</p>
 </blockquote>
 <p><br></p>
 <p>Let’s describe our baking bot with a few more objects.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>birthday <span class="ot">&lt;-</span> <span class="st">&quot;Nov. 20th&quot;</span> </span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>birthdate <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-11-20&quot;</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>has_eyes <span class="ot">&lt;-</span> <span class="cn">TRUE</span> </span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>has_wheels <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>birthday <span class="ot">&lt;-</span> <span class="st">&quot;Nov. 20th&quot;</span> </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>birthdate <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-11-20&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>has_eyes <span class="ot">&lt;-</span> <span class="cn">TRUE</span> </span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>has_wheels <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code></pre></div>
 <p><br></p>
 <p>Let’s use some objects to do math and reference their values.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Using objects</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>battery <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Oh no, they&#39;re losing battery</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>battery <span class="sc">-</span> <span class="dv">10</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>battery <span class="co"># value in battery did not change?</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co"># Use assignment arrow to update the object</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>battery <span class="ot">&lt;-</span> battery <span class="sc">-</span> <span class="dv">10</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co"># Add backup</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>backup_battery <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>total_battery <span class="ot">&lt;-</span> battery <span class="sc">+</span> backup_battery</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>total_battery</span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co"># Finally</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>is_alive <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># ???</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Using objects</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>battery <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># Oh no, they&#39;re losing battery</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>battery <span class="sc">-</span> <span class="dv">10</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>battery <span class="co"># value in battery did not change?</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co"># Use assignment arrow to update the object</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>battery <span class="ot">&lt;-</span> battery <span class="sc">-</span> <span class="dv">10</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co"># Add backup</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>backup_battery <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>total_battery <span class="ot">&lt;-</span> battery <span class="sc">+</span> backup_battery</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>total_battery</span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co"># Finally</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>is_alive <span class="ot">&lt;-</span> <span class="cn">NA</span> <span class="co"># ???</span></span></code></pre></div>
 <p><br></p>
 <p>Let’s give our baking bot a friend. Create a <code>bot_friend</code>. Go ahead and name them anything you like.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>bot_friend <span class="ot">&lt;-</span> <span class="st">&quot;Baker-waker&quot;</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>bot_friend</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>bot_friend <span class="ot">&lt;-</span> <span class="st">&quot;Baker-waker&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>bot_friend</span></code></pre></div>
 <p><br></p>
 <p><strong>Copy objects</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># To copy an object, assign it to a new name</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>bot_copy <span class="ot">&lt;-</span> bot_friend</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co"># Or update an object&#39;s value</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>bot_friend <span class="ot">&lt;-</span> <span class="st">&quot;Slice-n-dice&quot;</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  </span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>bot_friend</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co"># new_bot stays the same</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>bot_copy</span></code></pre></div>
-<p><strong>Break some things</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Try these:</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>bot3 <span class="ot">&lt;-</span> bee_bop</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># To copy an object, assign it to a new name</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>bot_copy <span class="ot">&lt;-</span> bot_friend</span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>birthday <span class="sc">+</span> <span class="dv">7</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>birthdate <span class="sc">+</span> <span class="dv">7</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>is_alive <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co"># Or update an object&#39;s value</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>bot_friend <span class="ot">&lt;-</span> <span class="st">&quot;Slice-n-dice&quot;</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  </span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>bot_friend</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co"># new_bot stays the same</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>bot_copy</span></code></pre></div>
+<p><strong>Break some things</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Try these:</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>bot3 <span class="ot">&lt;-</span> bee_bop</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>birthday <span class="sc">+</span> <span class="dv">7</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>birthdate <span class="sc">+</span> <span class="dv">7</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>is_alive <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
 </div>
 <div id="error" class="section level3 unnumbered red-note" style="width: 93%;">
 <h3><span style="color: red;"> Error! </span></h3>
@@ -678,10 +726,10 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 <div id="drop-and-remove-data" class="section level2 unnumbered">
 <h2>Drop and remove data</h2>
 <p>You can drop objects with the remove function <code>rm()</code>. Try it out on some of your objects.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Delete objects to clean-up your Environment</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">rm</span>(bot_copy)</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="fu">rm</span>(bot_friend)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Delete objects to clean-up your Environment</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">rm</span>(bot_copy)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="fu">rm</span>(bot_friend)</span></code></pre></div>
 <blockquote>
 <p>Click the <strong>broom</strong> icon in the top-right Environment pane to remove all of your objects.</p>
 </blockquote>
@@ -720,52 +768,68 @@ How can we get our <code>bot_friend</code> back?
 <div id="bake-it" class="section level3 unnumbered tip">
 <h3><i class="fas fa-birthday-cake" style="color: green;"></i> Bake it!</h3>
 <p>Try running some of these examples. Find new ways to create errors. Discover what doesn’t work.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># What happens when you add these to your R script?</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>n<span class="sc">/</span>whisks <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>n<span class="sc">*</span>whisks <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>n<span class="sc">-</span>whisks <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>whisks<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="st">&quot;All of them&quot;</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>n.whisks <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># The dot/period is usually reserved for functions</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># What happens when you add these to your R script?</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>n<span class="sc">/</span>whisks <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>n<span class="sc">*</span>whisks <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>n<span class="sc">-</span>whisks <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>whisks<span class="sc">!</span> <span class="er">&lt;</span><span class="sc">-</span> <span class="st">&quot;All of them&quot;</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>n.whisks <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># The dot/period is usually reserved for functions</span></span></code></pre></div>
 <div id="names-with-numbers" class="section level4 unnumbered">
 <h4>Names with numbers</h4>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Names cannot begin with a number</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>1st_bot <span class="ot">&lt;-</span> <span class="st">&quot;Whiskers&quot;</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>88bots <span class="ot">&lt;-</span> <span class="st">&quot;So many bots&quot;</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co"># But they can contain numbers</span></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>bot1 <span class="ot">&lt;-</span> <span class="st">&quot;Generic bot&quot;</span></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>bb8 <span class="ot">&lt;-</span> <span class="st">&quot;The best droid&quot;</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co"># What if you have 1,000 bots?</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>n_bots <span class="ot">&lt;-</span> <span class="dv">1</span>,<span class="dv">000</span>  <span class="co"># Error!</span></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a></span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>n_bots <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>n_bots <span class="ot">&lt;-</span> <span class="st">&quot;1,000&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Names cannot begin with a number</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>1st_bot <span class="ot">&lt;-</span> <span class="st">&quot;Whiskers&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>88bots <span class="ot">&lt;-</span> <span class="st">&quot;So many bots&quot;</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># But they can contain numbers</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>bot1 <span class="ot">&lt;-</span> <span class="st">&quot;Generic bot&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>bb8 <span class="ot">&lt;-</span> <span class="st">&quot;The best droid&quot;</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co"># What if you have 1,000 bots?</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>n_bots <span class="ot">&lt;-</span> <span class="dv">1</span>,<span class="dv">000</span>  <span class="co"># Error!</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>n_bots <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a>n_bots <span class="ot">&lt;-</span> <span class="st">&quot;1,000&quot;</span></span></code></pre></div>
 </div>
 </div>
 </div>
-<div id="collect-multiple-items" class="section level2 unnumbered">
-<h2>Collect multiple items</h2>
+<div id="vectors-collect-multiple-items" class="section level2 unnumbered">
+<h2>Vectors: Collect multiple items</h2>
 <p>We can collect multiple values by putting them inside parenthesis with a letter “c” in front: <code>c()</code>. This creates a <strong>vector</strong> of items. It’s like a chain, where each additional item is connected by a comma. Think of <code>c</code> as standing for <em>concatenate</em> or as <em>collection</em>.</p>
 <p>Let’s use <code>c()</code> to create a few vectors.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Create a character vector called baking_bots</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>baking_bots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Baker-waker&quot;</span>, <span class="st">&quot;bb8&quot;</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># Print the vector</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>baking_bots</span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co"># Create a numeric vector of the bot ages</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>bot_ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="cn">NA</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co"># Print the ages </span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>bot_ages</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Create a character vector called baking_bots</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>baking_bots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Baker-waker&quot;</span>, <span class="st">&quot;BB-8&quot;</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co"># Print the vector</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>baking_bots</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co"># Create a numeric vector of the bot ages</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>bot_ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co"># Print the ages </span></span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>bot_ages</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="r-is-vectorized" class="section level2 unnumbered">
+<h2>R is vectorized</h2>
+<p>By default, when you pass a vector to a function in R it performs the action on each item in the vector individually. For example, if we add <code>5</code> to <code>bot_ages</code>, each age in the vector will be increased by <code>5</code>. Let’s run a few trials.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Add 5 to each of the ages</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>bot_ages <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Check if each age is greater than 1</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>bot_ages <span class="sc">&gt;</span> <span class="dv">1</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co"># Check if each age is NA (missing)</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="fu">is.na</span>(bot_ages)</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co"># Paste text to each name in baking_bots</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="fu">paste</span>(baking_bots, <span class="st">&quot;the baking bot&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <div class="note">
 <h3>
@@ -796,206 +860,187 @@ Which object name <b>is</b> allowed?
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>my_bot55</code>
 </details>
 </div>
-<div style="clear: both;">
-
 </div>
 </div>
-</div>
-<div id="tidy-tables" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Tidy tables</h1>
+<div id="tidy-tables-and-dataframes" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Tidy tables and dataframes</h1>
 <hr>
+<p>&lt;img src=“../images/tidy_ice_cream.png” width=“80%” style=“margin-left: 100px;” alt=“Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words”make friends with tidy data.”&gt;</p>
+<p>.smaller[.gray[Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst]]</p>
+<p><br></p>
+<p><img src="../images/tidy_data_slide.png" alt="Stylized text providing an overview of Tidy Data. The top reads “Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.” On the left reads “In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.” There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."></p>
+<div id="lets-make-a-tidy-table-with-our-baking-bots." class="section level2 unnumbered">
+<h2>Let’s make a tidy table with our baking bots.</h2>
 <p><img src="../images/vector_to_dataframe.png" width="510" style="margin-left: 100px;"></p>
-</div>
-<div id="csv-format" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> CSV format</h1>
-<hr>
-<p>To help find the junk we need for our ship we’re going to conduct a scrap audit. The first step of a good audit is reading in data determine where all the scrap is coming from.</p>
-<p>Here’s a small dataset showing the scrap economy on Jakku. It was salvaged from a crash site, but the transfer was incomplete.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">origin</th>
-<th align="left">destination</th>
-<th align="left">item</th>
-<th align="right">amount</th>
-<th align="left">price_d</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Outskirts</td>
-<td align="left">Raiders</td>
-<td align="left">Bulkhead</td>
-<td align="right">332</td>
-<td align="left">300</td>
-</tr>
-<tr class="even">
-<td align="left">Niima Outpost</td>
-<td align="left">Trade caravan</td>
-<td align="left">Hull panels</td>
-<td align="right">1120</td>
-<td align="left">286</td>
-</tr>
-<tr class="odd">
-<td align="left">Cratertown</td>
-<td align="left">Plutt</td>
-<td align="left">Hyperdrives</td>
-<td align="right">45</td>
-<td align="left">45</td>
-</tr>
-<tr class="even">
-<td align="left">Tro—-</td>
-<td align="left">Ta—-</td>
-<td align="left">So—*</td>
-<td align="right">1</td>
-<td align="left">10—-</td>
-</tr>
-</tbody>
-</table>
-<p>This looks like it could be useful. Now, if only we had some more data to work with…</p>
-<div id="new-message" class="section level2 unnumbered">
-<h2>New Message</h2>
-<details>
-<summary class="btn_code_green">
-<em>Incoming…</em> <em>BB8</em>
-</summary>
-<p>
-<div class="tip">
-<p><strong>BB8:</strong> <em>Beep boop Beep.</em></p>
-<p><strong>BB8:</strong> <em>I intercepted a large scrapper data set from droid 4P-L of Junk Boss Plutt.</em></p>
 <p><br></p>
-<p>Receiving data now…</p>
-<p><strong>scrap_records.csv</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>item,origin,destination,amount,units,price_per_pound  </span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>Flight recorder,Outskirts,Niima Outpost,<span class="dv">887</span>,Tons,<span class="fl">590.93</span>  </span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>Proximity sensor,Outskirts,Raiders,<span class="dv">7081</span>,Tons,<span class="fl">1229.03</span>  </span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>Aural sensor,Tuanul,Raiders,<span class="dv">707</span>,Tons,<span class="fl">145.27</span>  </span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>Electromagnetic filter,Tuanul,Niima Outpost,<span class="dv">107</span>,Tons,<span class="fl">188.2</span>  </span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>...  </span></code></pre></div>
+<p>A table in R is known as a <strong>data frame</strong>. We can think of it as a group of columns, where each column is a vector. Data frames in R have columns of data that are all the same length.</p>
+<p>Let’s make a data frame that has two columns to hold the bot names and their ages.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Character vector of baking_bot names</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>baking_bots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Baker-waker&quot;</span>, <span class="st">&quot;BB-8&quot;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># Numeric vector of bot ages</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>bot_ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>)</span></code></pre></div>
 <p><br></p>
-<p><strong>You:</strong> <em>Yikes! This looks like a dense mess! What can I do with this?</em></p>
-</div>
-</p>
-</details>
-</div>
-<div id="csv-to-the-rescue" class="section level2 unnumbered">
-<h2>CSV to the rescue</h2>
-<p>The main data format used in R is the <strong>CSV</strong> <em>(comma-separated values)</em>. A <strong>CSV</strong> is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that’s okay! When opened in R, the text becomes a familiar looking table with columns and rows.</p>
-<p>Before we launch ahead, let’s add a <em>package</em> to R that will help us read <strong>CSV</strong> files.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Create table with 2 columns: name and age</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>bots <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> baking_bots,</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>                   <span class="at">age  =</span> bot_ages)</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co"># Print the data frame to the console</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>bots</span></code></pre></div>
+<pre><code>##          name age
+## 1    Whiskers   1
+## 2 Baker-waker   2
+## 3        BB-8  NA</code></pre>
+<p><br></p>
+<div id="taste-test-2" class="section level3 unnumbered quiz">
+<h3><i class="fa-solid fa-cookie-bite" style="color: gray;"></i> Taste test</h3>
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="addacolumn-tab" data-toggle="tab" href="#addacolumn" role="tab" aria-controls="addacolumn" aria-selected="true">Add a column</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint-tab" data-toggle="tab" href="#showhint" role="tab" aria-controls="showhint" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode-tab" data-toggle="tab" href="#showcode" role="tab" aria-controls="showcode" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="addacolumn" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addacolumn-tab">
+<h4>
+Add a <strong>3rd</strong> column that lists if the bot <code>has_wheels</code>:
+</h4>
+<ul>
+<li><code>c(FALSE, TRUE, FALSE)</code></li>
+</ul>
 <p><br></p>
 </div>
+<div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
+<pre class="sourceCode r">
+
+bots <- data.frame(name       = baking_bots,
+                   age        = bot_ages,
+                   has_wheels = __________________ )
+</pre>
 </div>
-<div id="add-packages" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Add packages 📦</h1>
-<hr>
+<div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
+<pre class="sourceCode r">
+
+bots <- data.frame(name       = baking_bots,
+                   age        = bot_ages,
+                   has_wheels = c(FALSE, TRUE, FALSE) )
+</pre>
+</div>
+</div>
+</div>
 <p><br></p>
+<div id="show-all-values-in-column_name" class="section level3 unnumbered">
+<h3>Show all values in <code>$column_name</code></h3>
+<p>Use the <code>$</code> sign after the name of your table to see the values in one of your columns.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># View the &quot;name&quot; column in bots</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>bots<span class="sc">$</span>name</span></code></pre></div>
+<pre><code>## [1] &quot;Whiskers&quot;    &quot;Baker-waker&quot; &quot;BB-8&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Find the max age value</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="fu">max</span>(bots<span class="sc">$</span>age)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Find the max age value, ignore NA (missing) values</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">max</span>(bots<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p><br></p>
+</div>
+<div id="matrix-syntax-row-column" class="section level3 unnumbered">
+<h3>Matrix syntax: [<code>row</code>, <code>column</code>]</h3>
+<p>Use matrix syntax to access any value in the table.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Row 3, Column 1 (the third value in the &#39;name&#39; column)</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>bots[<span class="dv">3</span>, <span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;BB-8&quot;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># You can also view a specific column&#39;s values with the column name</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>bots[ , <span class="st">&quot;age&quot;</span>]</span></code></pre></div>
+<pre><code>## [1]  1  2 NA</code></pre>
+</div>
+</div>
+<div id="notes-and-comments" class="section level2 unnumbered">
+<h2>Notes and comments</h2>
+<p>The italic and orange lines in the scripts above are called comments. You can add notes to your scripts with the <code>#</code> to make it easier for others and yourself to understand what is happening and why.</p>
+<p>Every line that starts with a <code>#</code> is ignored and won’t be run as R code.</p>
+</div>
+<div id="save-a-table" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Save a table</h2>
+<p>We are ready to save our wonderful little table. We will save the data to a file with the handy function <code>write_csv()</code>. The code below saves the table to a <strong>CSV</strong> <em>(comma-separated values)</em> file named <em>“bot_data.csv”</em>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="co"># Save dataframe to a CSV file in our project folder</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="fu">write_csv</span>(bots, <span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
 <blockquote>
-<p><strong>What is an <em>R package</em>?</strong></p>
+<p>Did you get the error <em>could not find function “write_csv”</em>?</p>
+<p>Jump back to the top of your script and run the line <code>library(tidyverse)</code>.</p>
 </blockquote>
 <p><br></p>
-<p>A <em>package</em> is a small add-on for R, it’s like a phone App for your phone.
-They add capabilities like statistical functions, mapping powers, and special charts to R. In order to use a new package we first need to install it. Let’s try it!</p>
-<p><img src="../images/readr-hexbin-sticker-from-rstudio.png" style="margin-right:18px; margin-bottom: 12px;" align="left" width="145" /></p>
-<div style="margin-top: 32px;">
-<p>The <em>readr</em> package helps import data into R in different formats.
-It helps you out by cleaning the data of extra white space and formatting tricky date formats automatically.</p>
-</div>
-<div style="clear: both;">
-
-</div>
-<p><strong>Add a package to your library</strong></p>
-<ol style="list-style-type: decimal">
-<li>Open <em>RStudio</em></li>
-<li>Type <code>install.packages("readr")</code> in the lower left console</li>
-<li>Press Enter</li>
-<li><em>Wait two seconds</em></li>
-<li>Open the <code>Packages</code> tab in the lower right window of RStudio to see the packages in your <em>library</em>
-<ul>
-<li>Use the search bar to find the <code>readr</code> package</li>
-</ul></li>
-</ol>
+<blockquote>
+<p><strong>Where did the file get saved?</strong></p>
+<p>The file is saved into our project folder by default. You can view it in the <code>[Files]</code> pane to the right of the console. Click the file name and select <strong>View File</strong>. You will see a tab open with contents similar to below.</p>
+</blockquote>
 <p><br></p>
-<p>Your installed packages are stored in your R <em>library</em>. The <code>Packages</code> tab on the right shows all of the available packages installed in your library. When you want to use one of them, you load it in R.</p>
-<p>Loading a package is like opening an App on your phone. To load a package we use the <code>library()</code> function. You will need to load the package everytime you “turn on” RStudio.
-Once you load it, the package will stay loaded until you close (shut down) RStudio.</p>
-<div class="note">
-<h3>
-Note
-</h3>
-<p><strong>The 2 steps to using a package in R</strong></p>
-<ol style="list-style-type: decimal">
-<li><code>install.packages("package-name")</code></li>
-<li><code>library(package-name)</code></li>
-</ol>
+<p><strong>bot_data.csv</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>name,age</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>Whiskers,<span class="dv">1</span></span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>Baker<span class="sc">-</span>waker,<span class="dv">2</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>BB<span class="dv">-8</span>,<span class="cn">NA</span></span></code></pre></div>
+</div>
+<div id="csvs" class="section level2 unnumbered">
+<h2>CSVs</h2>
+<p>A <strong>CSV</strong> is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that’s okay! When opened in R, the text becomes a familiar looking table with columns and rows.</p>
 </div>
 </div>
-<div id="read-data" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Read data</h1>
-<p>Let’s load the <em>readr</em> package to use the <code>read_csv()</code> function.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#install.packages(&quot;readr&quot;)</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 1,132 × 7
-##    receipt_date item                         origin desti…¹ amount units price…²
-##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
-##  1 4/1/2013     Flight recorder              Outsk… Niima …    887 Tons     591.
-##  2 4/2/2013     Proximity sensor             Outsk… Raiders   7081 Tons    1229.
-##  3 4/3/2013     Vitus-Series Attitude Thrus… Reest… Raiders   4901 Tons     226.
-##  4 4/4/2013     Aural sensor                 Tuanul Raiders    707 Tons     145.
-##  5 4/5/2013     Electromagnetic discharge f… Tuanul Niima …    107 Tons     188.
-##  6 4/6/2013     Proximity sensor             Tuanul Trade …  32109 Tons    1229.
-##  7 4/7/2013     Hyperdrive motivator         Tuanul Trade …    862 Tons    1485.
-##  8 4/8/2013     Landing jet                  Reest… Niima …  13944 Tons    1497.
-##  9 4/9/2013     Electromagnetic discharge f… Crate… Raiders   7788 Tons     188.
-## 10 4/10/2013    Sublight engine              Outsk… Niima …  10642 Tons    7211.
-## # … with 1,122 more rows, and abbreviated variable names ¹​destination,
-## #   ²​price_per_pound
-## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+<div id="read-data" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Read data</h1>
+<hr>
+Now we can read our own table back into R using the <code>read_csv()</code> function.
+<hr>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="co"># Read in the bot data</span></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Error: &#39;bot_data.csv&#39; does not exist in current working directory (&#39;/cloud/project/static/modules/readr/readr_csv&#39;).</code></pre>
+<p><br></p>
+<blockquote>
+<p>…where did the data go?</p>
+</blockquote>
+<p><br></p>
 <div id="name-the-data" class="section level2 unnumbered">
 <h2>Name the data</h2>
-<p>Where did the data go after you read it into R? When we want to work with the data in R, we need to give it a name with the assignment operator: <code>&lt;-</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Read in scrap data and set name to &quot;scrap&quot;</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>scrap <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co"># Type the name of the table to view it in the console</span></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>scrap</span></code></pre></div>
-<pre><code>## # A tibble: 1,132 × 7
-##    receipt_date item                         origin desti…¹ amount units price…²
-##    &lt;chr&gt;        &lt;chr&gt;                        &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
-##  1 4/1/2013     Flight recorder              Outsk… Niima …    887 Tons     591.
-##  2 4/2/2013     Proximity sensor             Outsk… Raiders   7081 Tons    1229.
-##  3 4/3/2013     Vitus-Series Attitude Thrus… Reest… Raiders   4901 Tons     226.
-##  4 4/4/2013     Aural sensor                 Tuanul Raiders    707 Tons     145.
-##  5 4/5/2013     Electromagnetic discharge f… Tuanul Niima …    107 Tons     188.
-##  6 4/6/2013     Proximity sensor             Tuanul Trade …  32109 Tons    1229.
-##  7 4/7/2013     Hyperdrive motivator         Tuanul Trade …    862 Tons    1485.
-##  8 4/8/2013     Landing jet                  Reest… Niima …  13944 Tons    1497.
-##  9 4/9/2013     Electromagnetic discharge f… Crate… Raiders   7788 Tons     188.
-## 10 4/10/2013    Sublight engine              Outsk… Niima …  10642 Tons    7211.
-## # … with 1,122 more rows, and abbreviated variable names ¹​destination,
-## #   ²​price_per_pound
-## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+<p>Remember the assignment operator (the left-arrow: <code>&lt;-</code>)? We use it to assign the data a name so we can reference it in our script.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Read in the bot data and set name to &quot;bake_bots&quot;</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Error: &#39;bot_data.csv&#39; does not exist in current working directory (&#39;/cloud/project/static/modules/readr/readr_csv&#39;).</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Type its name to view its contents</span></span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>bake_bots</span></code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;bake_bots&#39; not found</code></pre>
 <p><br></p>
 <div id="yoda-says" class="section level3 unnumbered yoda">
 <h3>Yoda says</h3>
 <p><img src="../images/yoda_baby_sq.png" class="yoda-img"></p>
-<p>Notice the row of <code>&lt;chr&gt;</code> letter abbreviations under the column names? These describe the data type of each column.</p>
+<p>Notice the row of <code>&lt;chr&gt;</code> letter abbreviations under the column names? These describe the data type of each column. It is a good first check when loading data to see if the data types align with the contents of each column. For example, we may want to investigate if we saw that our <strong>age</strong> column had the <code>character</code> data type.</p>
 <ul>
-<li><code>&lt;chr&gt;</code> stands for <strong>character</strong> vector or a string of characters. Examples: <em>“apple”</em>, <em>“apple5”</em>, <em>“5 red apples”</em><br />
+<li><code>&lt;chr&gt;</code> stands for <strong>character</strong> vector or a string of characters. Examples: <em>“apples”</em>, <em>“oranges”</em>, <em>“5 red apples”</em><br />
 </li>
-<li><code>&lt;int&gt;</code> stands for <strong>integer</strong>. Examples: <em>5</em>, <em>34</em>, <em>1071</em><br />
-</li>
-<li><code>&lt;dbl&gt;</code> stands for <strong>double</strong>. Examples: <em>5.000</em>, <em>3.4E-6</em>, <em>10.710</em></li>
+<li><code>&lt;dbl&gt;</code> stands for a <strong>double</strong>, which is a numeric value that allows for decimal values. Examples: <em>5</em>, <em>3.41</em>, <em>1071</em></li>
 </ul>
 <p>We’ll see more data types later on, such as <code>dates</code> and <code>logical</code> (TRUE/FALSE).</p>
 </div>
+</div>
+<div id="everythings-has-class" class="section level2 unnumbered">
+<h2>Everythings has class</h2>
+<p>In R, not just columns but everything has a data type or a “class”. When we want to investigate the type of data stored in an object we can use the <code>class()</code> function.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">class</span>(bake_bots)</span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="fu">class</span>(bake_bots<span class="sc">$</span>name)</span>
+<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a><span class="fu">class</span>(battery_level)</span></code></pre></div>
+<p><br></p>
 <div class="quiz">
-
 <h2 style="margin-top: 28px; margin-bottom: 44px;">
 Pop Quiz!
 </h2>
-<p><strong>1. What data type is the <code>destination</code> column?</strong></p>
+<p><strong>1. What data type is the <code>name</code> column?</strong></p>
 <p><input type="radio" name="type"> <em>letters</em> <br>
 <input type="radio" name="type"> <em>character</em> <br>
 <input type="radio" name="type"> <em>TRUE/FALSE</em> <br>
@@ -1005,44 +1050,220 @@ Pop Quiz!
 <em>Show solution</em>
 </summary>
 <p>
-<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>character</code><br />
-<em>Woop! You got this.</em>
-</p>
-</details>
-<br>
-<hr style="margin-top: 8px;">
-<p><strong>2. What package does <code>read_csv()</code> come from?</strong></p>
-<p><input type="radio" name="pkg"> <em>dinosaur</em> <br>
-<input type="radio" name="pkg"> <em>get_data</em> <br>
-<input type="radio" name="pkg"> <em>readr</em> <br>
-<input type="radio" name="pkg"> <em>dplyr</em> <br></p>
-<details style="margin-left: 14px;">
-<summary class="btn_code">
-<em>Show solution</em>
-</summary>
-<p>
-<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>readr</code><br />
-<em>Great job! You are Jedi worthy!</em></p>
-</p>
-</details>
-<br>
-<hr style="margin-top: 8px;">
-<p><strong>3. How would you load the package <code>junkfinder</code>?</strong></p>
-<p><input type="radio" name="load"> <em>junkfinder()</em> <br>
-<input type="radio" name="load"> <em>library(junkfinder)</em> <br>
-<input type="radio" name="load"> <em>load(junkfinder)</em> <br>
-<input type="radio" name="load"> <em>gogo_gadget(junkfinder)</em> <br></p>
-<details style="margin-left: 14px;">
-<summary class="btn_code">
-<em>Show solution</em>
-</summary>
-<p>
-<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>library("junkfinder")</code><br />
-<em>Excellent! Keep the streak going.</em></p>
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>character</code>
 </p>
 </details>
 </div>
+</div>
+</div>
+<div id="size-up-the-data" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Size up the data</h1>
+<hr>
+<p>Before diving into a data set, we use <code>glimpse()</code> and several other summary functions to take a first look at the data.</p>
+<p>Use these functions to describe your dataframe.</p>
+<div id="data-frame-info" class="section level3 unnumbered">
+<h3>Data frame info</h3>
+<div class="bluecode">
+<table>
+<colgroup>
+<col width="13%" />
+<col width="2%" />
+<col width="83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th></th>
+<th align="left">Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>glimpse(...)</code></td>
+<td></td>
+<td align="left">rows, columns, column names and a glimpse of values <em>(from <code>tidyverse</code> package)</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>names(scrap)</code></td>
+<td></td>
+<td align="left">column names</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>nrow(...)</code></td>
+<td></td>
+<td align="left">number of rows</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ncol(...)</code></td>
+<td></td>
+<td align="left">number of columns</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>summary(...)</code></td>
+<td></td>
+<td align="left">summary of all column values (ex. <em>max</em>, <em>mean</em>, <em>median</em>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="glimpse-summary" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> <code>glimpse()</code> &amp; <code>summary()</code></h1>
+<hr>
+<div id="lets-read-the-scrap-data-into-r-and-take-a-look." class="section level3 unnumbered">
+<h3>Let’s read the scrap data into R and take a look.</h3>
+<p><code>glimpse()</code> shows the type of data in each column and shows a few sample values.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="co"># Glimpse your dataframe&#39;s data types and a few values</span></span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="fu">glimpse</span>(bake_bots)</span></code></pre></div>
+<pre><code>## Error in glimpse(bake_bots): object &#39;bake_bots&#39; not found</code></pre>
 <p><br></p>
+<p><code>summary()</code> gives you a quick report of your numeric data.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># Summary gives us the means, mins, and maxima </span></span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="fu">summary</span>(bake_bots)</span></code></pre></div>
+<pre><code>## Error in summary(bake_bots): object &#39;bake_bots&#39; not found</code></pre>
+<p><br></p>
+</div>
+<div id="i-classfas-fa-birthday-cake-stylecolor-gray-bake-it" class="section level3 unnumbered tip">
+<h3>&lt;i class=“fas fa-birthday-cake style=”color: gray”&gt;</i> Bake it!</h3>
+<p>Try a few more of the data frame description functions on your bot data. You will need to insert the name of your data frame into each function.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="fu">nrow</span>( )</span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="fu">ncol</span>( )</span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a><span class="fu">names</span>( )</span></code></pre></div>
+</div>
+</div>
+<div id="filter-data" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Filter data</h1>
+<hr>
+<p>The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.</p>
+<p>Let’s use it to look at the rows in the data that have an <code>age</code> greater than 1.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="fu">filter</span>(bake_bots, age <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## Error in filter(bake_bots, age &gt; 1): object &#39;bake_bots&#39; not found</code></pre>
+<blockquote>
+<p>The bot with the <code>NA</code> (missing) value for an age, was not included because it was unknown whether it passed the test of being greater than 1. By default, filter only keeps the rows that definitively pass all of the tests or conditions that you include. In this case, filter could not determine whether the missing value was above 1, so that row in the table was not kept or returned.</p>
+</blockquote>
+<p><br></p>
+<p>Let’s find the bots named <code>"Whiskers"</code>.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="fu">filter</span>(bake_bots, name <span class="sc">==</span> <span class="st">&quot;Whiskers&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in filter(bake_bots, name == &quot;Whiskers&quot;): object &#39;bake_bots&#39; not found</code></pre>
+<div class="note">
+<p>### <strong>Double equals</strong> {-}</p>
+<p>#### <code>==</code> vs. <code>=</code> {-}</p>
+<p>We use a <code>==</code> (double equals sign) for comparing values. A <code>==</code> makes the comparison “is it equal to?” and returns a <code>True</code> or <code>False</code> answer. So the code above returns only the rows where the condition <code>name == "Whiskers"</code> is TRUE.</p>
+<p>A single equals sign <code>=</code> is used within functions to set options, for example <code>read_csv(file = "bot_data.csv")</code>.</p>
+<p>It’s not a big deal if you mix them up the first time. R is often helpful and will even let you know which one is needed. Try running <code>filter(bake_bots, name = "Whiskers")</code>.</p>
+</div>
+<div id="comparing-values" class="section level2 unnumbered">
+<h2>Comparing values</h2>
+<hr class="hrlvl2">
+<p><img src="../images/porg_heights.png" style="float: right; margin-top: -94px; width: 40%;" /></p>
+<p>We use a variety of comparisons when processing data. Sometimes we only want concentrations above a certain level, or days below a given temperature, or sites that have missing observations.</p>
+<p>We use the <strong>Menu</strong> of comparisons below to find the data we want.</p>
+<div class="pinkcode">
+<h3 style="margin-top: 18px; margin-bottom: -4px;">
+Menu of comparisons
+</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>&gt;</code></td>
+<td align="left">greater than</td>
+</tr>
+<tr class="even">
+<td align="left"><code>&gt;=</code></td>
+<td align="left">greater than or equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>&lt;</code></td>
+<td align="left">less than</td>
+</tr>
+<tr class="even">
+<td align="left"><code>&lt;=</code></td>
+<td align="left">less than or equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>==</code></td>
+<td align="left">equal to</td>
+</tr>
+<tr class="even">
+<td align="left"><code>!=</code></td>
+<td align="left">NOT equal to</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%in%</code></td>
+<td align="left">Is a value in the list: <code>X %in% c(1,3,7)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>is.na(...)</code></td>
+<td align="left">Is the value NA or missing?</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>str_detect(col_name, "word")</code></td>
+<td align="left">Does “word” appears in the text?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<div id="explore" class="section level3 unnumbered tip">
+<h3><i class="fas fa-user-astronaut" style="color: green"></i> Explore!</h3>
+<p>Try comparing some things in the console to see if you get what you’d expect. R doesn’t always think like we do.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="dv">4</span> <span class="sc">!=</span> <span class="dv">5</span></span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a><span class="dv">4</span> <span class="sc">==</span> <span class="dv">4</span></span>
+<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
+<span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&gt;</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a><span class="dv">5</span> <span class="sc">==</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a><span class="dv">5</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a></span>
+<span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="#cb44-15" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="cn">NA</span></span>
+<span id="cb44-16"><a href="#cb44-16" tabindex="-1"></a></span>
+<span id="cb44-17"><a href="#cb44-17" tabindex="-1"></a><span class="fu">str_detect</span>(<span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Whisks&quot;</span>, <span class="st">&quot;BB-8&quot;</span>), <span class="st">&quot;Whisk&quot;</span>)</span>
+<span id="cb44-18"><a href="#cb44-18" tabindex="-1"></a></span>
+<span id="cb44-19"><a href="#cb44-19" tabindex="-1"></a><span class="fu">str_detect</span>(<span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Whisks&quot;</span>, <span class="st">&quot;BB-8&quot;</span>), <span class="st">&quot;Whisk&quot;</span>, <span class="at">negate =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="filtering-rows" class="section level2 unnumbered">
+<h2>Filtering rows</h2>
+<hr class="hrlvl2">
+<p>Let’s filter the data to exclude the baking bots named <strong>BB-8</strong>. Look in the comparison table above to find the <code>NOT equal to</code> operator. We’re going to filter the data to keep only the names that are <code>NOT equal</code> to “BB-8”.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">filter</span>(bake_bots, name <span class="sc">!=</span> <span class="st">&quot;BB-8&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in filter(bake_bots, name != &quot;BB-8&quot;): object &#39;bake_bots&#39; not found</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a>bake_bots</span></code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;bake_bots&#39; not found</code></pre>
+<p><br></p>
+<div id="great-work" class="section level3 unnumbered">
+<h3>Great work!</h3>
+</div>
+</div>
+<div id="multiple-filters" class="section level2 unnumbered">
+<h2>Multiple filters</h2>
+<hr class="hrlvl2">
+<p>We can add multiple tests or conditions to <code>filter()</code> to further restrict the data we want to pull from a larger data set. Only the records that pass all of the conditions will be kept in the new data frame.</p>
+<p>The code below filters the data to only the bots with an age equal to 1 and their name must also not be equal to “BB-8”.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">filter</span>(bake_bots,</span>
+<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a>                    age <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb49-3"><a href="#cb49-3" tabindex="-1"></a>                    name <span class="sc">!=</span> <span class="st">&quot;BB-8&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<blockquote>
+<p>If we want our original full <code>bake_bot</code> data bake at anytime, we can re-run the line in our script that reads in the CSV file: <code>bake_bots &lt;- read_csv(file = "bot_data.csv")</code></p>
+</blockquote>
 <div id="section" class="section level3 unnumbered">
 <h3 class="unnumbered"></h3>
 <details>
@@ -1060,23 +1281,23 @@ Skip a row
 </h3>
 <p>Sometimes you may want to ignore the first row in your data file, especially an EPA file that includes a disclaimer on the first row. Yes EPA, we’re looking at you. Please stop.</p>
 <p>Let’s open the help window with <code>?read_csv</code> and try to find an argument that can help us.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>?read_csv</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a>?read_csv</span></code></pre></div>
 <p>There’s a lot of them! But the <code>skip</code> argument looks like it could be helpful. Take a look at the description near the bottom. The default is <code>skip = 0</code>, which reads every line, but we can skip the first line by writing <code>skip = 1</code>. Let’s try.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>         <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
+<span id="cb51-2"><a href="#cb51-2" tabindex="-1"></a>         <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
 <h3>
 Limit the number of rows
 </h3>
 <p>Some types of data have last rows that show the <em>total</em> or report “END OF DATA”. In these cases we may want <code>read_csv</code> to ignore the last row of data, or for large data sets we may only want to pull in a 100 lines of data to see what you’re working with.</p>
 <p>Let’s look through the help window to find an argument that can help us. Type <code>?read_csv</code> and scroll down.</p>
 <p>The <code>n_max</code> argument looks like it could be helpful. The default is <code>n_max = Inf</code>, which means it will read every line, but we can limit the lines we read to only one hundred by using <code>n_max = 100</code>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Read in 100 rows</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>                       <span class="at">skip =</span> <span class="dv">1</span>, </span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>                       <span class="at">n_max =</span> <span class="dv">100</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="co"># Remove the data</span></span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="fu">rm</span>(small_data)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="co"># Read in 100 rows</span></span>
+<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
+<span id="cb52-3"><a href="#cb52-3" tabindex="-1"></a>                       <span class="at">skip =</span> <span class="dv">1</span>, </span>
+<span id="cb52-4"><a href="#cb52-4" tabindex="-1"></a>                       <span class="at">n_max =</span> <span class="dv">100</span>)</span>
+<span id="cb52-5"><a href="#cb52-5" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" tabindex="-1"></a><span class="co"># Remove the data</span></span>
+<span id="cb52-7"><a href="#cb52-7" tabindex="-1"></a><span class="fu">rm</span>(small_data)</span></code></pre></div>
 <h3>
 See function options
 </h3>

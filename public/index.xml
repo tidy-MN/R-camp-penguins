@@ -182,16 +182,7 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://r-camp.netlify.app/page/day1.html</guid>
-      <description>Welcome! Why R? 1 RStudio Tour 2 R bakery 3 Names and things 4 Tidy tables 5 CSV format 6 Add packages 📦 7 Read data Welcome!</description>
-    </item>
-    
-    <item>
-      <title>Day 1 - AM</title>
-      <link>https://r-camp.netlify.app/page/day1_am.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://r-camp.netlify.app/page/day1_am.html</guid>
-      <description>Good morning! 1 What’s R? Greetings 2 RStudio Tour Why R? 3 New mission, New R project 4 Names and things 5 Read data 6 Add packages 📦 7 ggplot2 8 Learn more!</description>
+      <description>Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() &amp;amp; summary() 9 Filter data Welcome!</description>
     </item>
     
     <item>

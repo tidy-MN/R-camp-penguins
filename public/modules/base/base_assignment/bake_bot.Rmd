@@ -30,7 +30,7 @@ bot
 
 Let's describe our baking bot with a few more objects.
 ```{r object_types, eval=F}
-age <- 0
+age <- 1
 
 birthday <- "Nov. 20th" 
 
@@ -235,7 +235,7 @@ n_bots <- "1,000"
 </div>
 
 
-## Collect multiple items {-}
+## Vectors: Collect multiple items {-}
 
 We can collect multiple values by putting them inside parenthesis with a letter "c" in front: `c()`.  This creates a **vector** of items. It's like a chain, where each additional item is connected by a comma. Think of `c` as standing for _concatenate_ or as _collection_.
 
@@ -244,16 +244,36 @@ Let's use `c()` to create a few vectors.
 
 ```{r vectors, eval=F}
 # Create a character vector called baking_bots
-baking_bots <- c("Whiskers", "Baker-waker", "bb8")
+baking_bots <- c("Whiskers", "Baker-waker", "BB-8")
 
 # Print the vector
 baking_bots
 
 # Create a numeric vector of the bot ages
-bot_ages <- c(0, 1, NA)
+bot_ages <- c(1, 2, NA)
 
 # Print the ages 
 bot_ages
+```
+
+<br>
+
+## R is vectorized {-}
+
+By default, when you pass a vector to a function in R it performs the action on each item in the vector individually. For example, if we add `5` to `bot_ages`, each age in the vector will be increased by `5`. Let's run a few trials.
+
+```{r vectorized, eval=F}
+# Add 5 to each of the ages
+bot_ages + 5
+
+# Check if each age is greater than 1
+bot_ages > 1
+
+# Check if each age is NA (missing)
+is.na(bot_ages)
+
+# Paste text to each name in baking_bots
+paste(baking_bots, "the baking bot")
 ```
 
 <br>
@@ -295,5 +315,4 @@ This is a great first look to see if our code ran successfully. To clean house, 
 </details>
 </div>
 
-<div style="clear: both;"> </div>
 
