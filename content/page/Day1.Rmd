@@ -1,0 +1,140 @@
+---
+title: "Day 1"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
+
+xaringanExtra::use_clipboard()
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+![](../images/rstudio-hex.png){style="float: right; margin-right: 0; width: 260px; margin-top: -287px;"}
+
+<div style="clear: both;"></div>
+
+<br>
+
+
+# Welcome! {-}
+<hr class="hr2">
+
+
+<div style="clear: both;"></div>
+
+We like __R__.
+
+We aren't computer scientists -- and that's okay! 
+
+We make lots of mistakes. They will be funny. Laugh with us!
+
+<br><br><hr class="hr2">
+
+<br>
+
+# Why R? {-}
+<hr class="hr2">
+```{r whyR, child='../../static/modules/intro/_whyr/mpca.Rmd'}
+```
+
+
+# RStudio Tour 
+<hr>
+```{r Rtour, child='../../static/modules/intro/rstudio_tour/general.Rmd'}
+```
+
+
+### You're on the .teal[TEAM]!  {-}
+
+**Let's go! Data awaits us...**
+
+
+<br>
+
+# R bakery 
+<hr>
+
+## <i class="fa fa-cake-candles" aria-hidden="true"></i> New project
+<hr>
+
+Let's start a new project in RStudio.
+```{r set-params, include=F}
+params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
+```
+
+```{r, child='../../static/modules/intro/rstudio_newproject/general.Rmd'}
+```
+
+
+# Names and things
+<hr>
+```{r child = '../../static/modules/base/base_assignment/bake_bot.Rmd'}
+```
+
+
+
+# Tidy tables
+<hr>
+
+<img src="../images/vector_to_dataframe.png" width="510" style="margin-left: 100px;">
+
+
+# CSV format
+<hr>
+```{r read-csv, child='../../static/modules/readr/readr_csv/bakery_csv.Rmd'}
+```
+
+
+# Add packages &#x1F4E6; 
+<hr>
+```{r new-pkg, child='../../static/modules/_packages/readr.Rmd'}
+```
+
+
+# Read data 
+
+Let's load the _readr_ package to use the `read_csv() ` function.
+```{r read_snippet, child='../../static/modules/readr/readr_csv/bakery_scrap.Rmd'}
+```
+
+
+### {-}
+```{r fun-options, child='../../static/modules/base/base_functions/fun_options.Rmd'}
+```
+
+
+```{r fun-options, child='../../static/modules/readr/readr_csv/excel_csv.Rmd'}
+```
+
+
+## Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i> {-}
+<hr class="hrlvl2">
+
+Lost in an ERROR message? Is something behaving strangely and want to know why? Want ideas for a new chart?   
+
+Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning resources. 
+
+
+## <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
+```{r key-terms, child='../../static/modules/key_terms/day1.Rmd'}
+```
+
+<br>
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+
+<br>

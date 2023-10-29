@@ -121,6 +121,10 @@ blockquote
      padding-left: 22px;
 }
 
+.quiz > p {
+  line-height: 160%
+}
+
 #oneline {
   text-align: justify;
   font-size: 0.1px; /* IE 9/10 don't like font-size: 0; */

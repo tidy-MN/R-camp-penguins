@@ -68,7 +68,7 @@ uglyURLs = true
 [[menu.main]]
     parent = "Training"
     name = "Day 1"
-    url = "post/day-1.html"
+    url = "page/day-1.html"
     weight = 2
 
 [[menu.main]]
@@ -80,7 +80,7 @@ uglyURLs = true
 [[menu.main]]
     parent = "Training"
     name = "Day 3"
-    url = "post/day-3.html"
+    url = "post/day-2.html"
     weight = 2
 
 [[menu.main]]
