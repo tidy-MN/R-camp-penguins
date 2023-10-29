@@ -1,0 +1,65 @@
+
+To help find the junk we need for our ship we're going to conduct a scrap audit. The first step of a good audit is reading in data determine where all the scrap is coming from. 
+
+Here's a small dataset showing the scrap economy on Jakku. It was salvaged from a crash site, but the transfer was incomplete.
+
+```{r ex-data1, echo=F, message=F, warning=F}
+library(readr)
+library(tibble)
+library(knitr)
+
+options(scipen = 999)
+
+scrap <- data.frame(origin      = c("Outskirts", "Niima Outpost", "Cratertown", "Tro----"), 
+                    destination = c("Raiders", "Trade caravan", "Plutt", "Ta----"), 
+                    item        = c("Bulkhead", "Hull panels", "Hyperdrives", "So---*"), 
+                    amount      = c(332, 1120, 45, 1), 
+                    price_d     = c("300", "286", "45", "10----"))
+
+kable(scrap)
+```
+
+
+This looks like it could be useful. Now, if only we had some more data to work with...
+
+## New Message {-}
+
+<details>
+<summary class = "btn_code_green">_Incoming..._ _BB8_</summary>
+<p>
+
+<div class="tip">
+__BB8:__ _Beep boop Beep._
+
+__BB8:__ _I intercepted a large scrapper data set from droid 4P-L of Junk Boss Plutt._   
+
+<br>
+
+Receiving data now...
+
+__scrap_records.csv__ 
+
+```{r, eval=F}
+item,origin,destination,amount,units,price_per_pound  
+Flight recorder,Outskirts,Niima Outpost,887,Tons,590.93  
+Proximity sensor,Outskirts,Raiders,7081,Tons,1229.03  
+Aural sensor,Tuanul,Raiders,707,Tons,145.27  
+Electromagnetic filter,Tuanul,Niima Outpost,107,Tons,188.2  
+...  
+```
+
+<br>
+
+__You:__ _Yikes! This looks like a dense mess! What can I do with this?_
+
+</div>
+</p></details>
+
+
+## CSV to the rescue {-}
+
+The main data format used in R is the __CSV__ _(comma-separated values)_. A __CSV__ is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that's okay! When opened in R, the text becomes a familiar looking table with columns and rows. 
+
+Before we launch ahead, let's add a _package_ to R that will help us read __CSV__ files.
+
+<br>
