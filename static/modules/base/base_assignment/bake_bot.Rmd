@@ -5,8 +5,6 @@ You can assign values to objects (variables) using the .teal[left arrow].
 - It's typed with a less-than sign `<` followed by a hyphen `-`  
 - It’s more officially known as the *assignment operator*  
 
-<br>
-
 
 `r #`![](../images/bake_bot1.png){style="float: right; margin-right: 0; width: 260px; margin-top: -287px;"}`
 
@@ -27,6 +25,8 @@ bot
 
 > To run a line of code in your script, put the cursor anywhere on that line and press <kbd>CTRL</kbd>+<kbd>ENTER</kbd>.
 
+<br>
+
 
 Let's describe our baking bot with a few more objects.
 ```{r object_types, eval=F}
@@ -39,7 +39,13 @@ birthdate <- as.Date("2023-11-20")
 has_eyes <- TRUE 
 
 has_wheels <- FALSE
+```
 
+<br>
+
+Let's use some objects to do math and reference their values.
+
+```{r object-math, eval=F}
 # Using objects
 battery <- 100
 
@@ -62,6 +68,8 @@ total_battery
 is_alive <- NA # ???
 ```
 
+
+<br>
 
 Let's give our baking bot a friend. Create a `bot_friend`. Go ahead and name them anything you like. 
 ```{r names2, eval=F}
@@ -104,7 +112,7 @@ is_alive + 1
 
 
 <div class="red-note" style="width: 93%;">
-### Error! {-}
+### <span style="color: red;"> Error! </span> {-}
 
 Generally, when you write a word without quotes, R will look for an object with that name in your Environment (see the area in the top-right). It will then look for a function with that name. If it doesn't find either, it will let you know that it couldn't find one. Try again, but add quotation marks around `"Bee-bop"`. 
 </div>
@@ -146,12 +154,17 @@ rm(bot_friend)
 
 <br>
 
-<div class="tip">
-### <i class="fa-solid fa-user-chef" style="color: gray;"></i> Bake it! {-}
 
-How can we get our `bot_friend` back?
+<div class="quiz">
 
-_Hint: You can re-run your code anytime. You can even click the **Run** button at the top of the script panel to re-run ALL of your code from top to bottom._
+### <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test {-}
+
+<h3>How can we get our `bot_friend` back?</h3>
+
+<details><summary class = "btn_code">_Show solution_</summary>
+
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> You can re-run your code anytime. You can even click the `Run` button at the top of the script panel to re-run ALL of your script from top to bottom.
+</details>
 
 </div>
 
@@ -180,9 +193,9 @@ But there are a _few_ restrictions. R doesn't like names to include spaces or sp
 <br>
 
 <div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+### <i class="fas fa-birthday-cake" style="color: green;"></i> Bake it! {-}
 
-Try running some of these examples. Find new ways to create errors. Half of learning R is finding what doesn't work.
+Try running some of these examples. Find new ways to create errors. Discover what doesn't work.
 
 ```{r, eval=F}
 # What happens when you add these to your R script?
@@ -218,9 +231,6 @@ n_bots <- 1000
 n_bots <- "1,000"
 ```
 
-<br> 
-
-- Try to create a **new** error or warning.
 
 </div>
 
@@ -232,7 +242,7 @@ We can collect multiple values by putting them inside parenthesis with a letter 
 
 Let's use `c()` to create a few vectors.
 
-```{r vectors}
+```{r vectors, eval=F}
 # Create a character vector called baking_bots
 baking_bots <- c("Whiskers", "Baker-waker", "bb8")
 
@@ -251,11 +261,11 @@ bot_ages
 <div class="note">
 <h3> Note </h3>
 
-Take a look at the new additions to your _Environment_ pane located on the top right. 
+Take a look at the new additions to your _Environment_ pane located on the top right. This window shows all of the objects we've created so far and the types of data they contain. 
 
 ![](../images/environment_explore.png){style="width: 75%; margin-bottom: 14px;"}
 
-This window shows all of the objects we've created so far and the types of data they contain. It's a great first look to see if our script ran successfully. You can click the __`broom`__ icon to sweep everything out and start with a clean slate.
+This is a great first look to see if our code ran successfully. To clean house, you can click the __`broom`__ icon to sweep everything out and start with a clean slate.
 <br>
 </div>
 
@@ -263,7 +273,7 @@ This window shows all of the objects we've created so far and the types of data 
 
 <div class="quiz">
 
-### <i class="fa-solid fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test
+### <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test {-}
 
 <h3>Which object name <b>is</b> allowed?</h3>
 

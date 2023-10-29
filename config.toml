@@ -38,7 +38,6 @@ uglyURLs = true
   highlightjsCDN = "//cdn.bootcss.com"
   highlightjsLang = ["r"]
   highlightjsTheme = "github"
-  #gcse = "" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [Author]
   name = "Pengu"
