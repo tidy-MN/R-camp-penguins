@@ -2,4 +2,4 @@
 
 R training for Minnesota Data Analysis :rocket: :computer: :bar_chart: 
 
-https://rcamp.netlify.com/
+https://r-camp.netlify.app
