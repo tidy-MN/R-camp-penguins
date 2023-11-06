@@ -112,7 +112,7 @@ is_alive + 1
 
 
 <div class="red-note" style="width: 93%;">
-### <span style="color: red;"> Error! </span> {-}
+### Error!  {-}
 
 Generally, when you write a word without quotes, R will look for an object with that name in your Environment (see the area in the top-right). It will then look for a function with that name. If it doesn't find either, it will let you know that it couldn't find one. Try again, but add quotation marks around `"Bee-bop"`. 
 </div>
@@ -254,6 +254,20 @@ bot_ages <- c(1, 2, NA)
 
 # Print the ages 
 bot_ages
+```
+
+<br>
+
+
+Use square brackets after the name of your vector (`baking_bots[1]`) to view a specific value in the vector. You can also use the function `pluck()` by giving the function the name of your vector and the index of the value you want to see, like so: `pluck(baking_bots, 1)`.
+
+```{r bracket-pluck, eval=F}
+# View the first value in baking bots using square bracket syntax
+baking_bots[1]
+
+
+# View the first value in baking bots using the pluck() function
+pluck(baking_bots, 1)
 ```
 
 <br>

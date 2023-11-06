@@ -1,5 +1,5 @@
 
-Use these functions to describe your dataframe.
+Use these functions to describe our dataframe.
 
 ### Data frame info {-}
 
@@ -19,9 +19,14 @@ Use these functions to describe your dataframe.
 # `glimpse()` & `summary()`
 <hr>
 
-### Let's read the scrap data into R and take a look. {-}
+### Let's take a look at our bot data. {-}
 
 `glimpse()` shows the type of data in each column and shows a few sample values.
+
+```{r, eval=T, message=F, error=F, echo=F}
+# Read in the bot data
+#bake_bots <- read_csv(file = "bot_data.csv")
+```
 
 ```{r glimpse-bake, warning=F, message=F}
 # Glimpse your dataframe's data types and a few values
@@ -40,7 +45,7 @@ summary(bake_bots)
 <br>
 
 <div class="tip">
-### <i class="fas fa-birthday-cake style="color: gray"></i> Bake it! {-}
+### <i class="fas fa-birthday-cake style="color: gray"> </i> Bake it! {-}
 
 Try a few more of the data frame description functions on your bot data. You will need to insert the name of your data frame into each function.
 

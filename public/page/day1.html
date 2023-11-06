@@ -63,7 +63,7 @@
   "headline": "Day 1",
   "description" : "Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() \u0026amp; summary() 9 Filter data Welcome!",
   "inLanguage" : "en",
-  "wordCount":  4415 ,
+  "wordCount":  4497 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/r-camp.netlify.app\/images\/penguins_circle1.png",
@@ -703,7 +703,7 @@ Note
 <span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>is_alive <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div>
 </div>
 <div id="error" class="section level3 unnumbered red-note" style="width: 93%;">
-<h3><span style="color: red;"> Error! </span></h3>
+<h3>Error!</h3>
 <p>Generally, when you write a word without quotes, R will look for an object with that name in your Environment (see the area in the top-right). It will then look for a function with that name. If it doesn’t find either, it will let you know that it couldn’t find one. Try again, but add quotation marks around <code>"Bee-bop"</code>.</p>
 </div>
 <p><br></p>
@@ -815,21 +815,29 @@ How can we get our <code>bot_friend</code> back?
 <span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co"># Print the ages </span></span>
 <span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>bot_ages</span></code></pre></div>
 <p><br></p>
+<p>Use square brackets after the name of your vector (<code>baking_bots[1]</code>) to view a specific value in the vector. You can also use the function <code>pluck()</code> by giving the function the name of your vector and the index of the value you want to see, like so: <code>pluck(baking_bots, 1)</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># View the first value in baking bots using square bracket syntax</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>baking_bots[<span class="dv">1</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co"># View the first value in baking bots using the pluck() function</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="fu">pluck</span>(baking_bots, <span class="dv">1</span>)</span></code></pre></div>
+<p><br></p>
 </div>
 <div id="r-is-vectorized" class="section level2 unnumbered">
 <h2>R is vectorized</h2>
 <p>By default, when you pass a vector to a function in R it performs the action on each item in the vector individually. For example, if we add <code>5</code> to <code>bot_ages</code>, each age in the vector will be increased by <code>5</code>. Let’s run a few trials.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Add 5 to each of the ages</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>bot_ages <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Check if each age is greater than 1</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>bot_ages <span class="sc">&gt;</span> <span class="dv">1</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co"># Check if each age is NA (missing)</span></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="fu">is.na</span>(bot_ages)</span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co"># Paste text to each name in baking_bots</span></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="fu">paste</span>(baking_bots, <span class="st">&quot;the baking bot&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Add 5 to each of the ages</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>bot_ages <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># Check if each age is greater than 1</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>bot_ages <span class="sc">&gt;</span> <span class="dv">1</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co"># Check if each age is NA (missing)</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="fu">is.na</span>(bot_ages)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co"># Paste text to each name in baking_bots</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="fu">paste</span>(baking_bots, <span class="st">&quot;the baking bot&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <div class="note">
 <h3>
@@ -865,35 +873,37 @@ Which object name <b>is</b> allowed?
 <div id="tidy-tables-and-dataframes" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Tidy tables and dataframes</h1>
 <hr>
-<p>&lt;img src=“../images/tidy_ice_cream.png” width=“80%” style=“margin-left: 100px;” alt=“Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words”make friends with tidy data.”&gt;</p>
-<p>.smaller[.gray[Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst]]</p>
+<p><img src="../images/tidy_ice_cream.png" />{style=“float: right; width: 95%; margin: 20px;” alt=“Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words”make friends with tidy data.”}</p>
+<p class="caption">
+Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst
+</p>
 <p><br></p>
-<p><img src="../images/tidy_data_slide.png" alt="Stylized text providing an overview of Tidy Data. The top reads “Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.” On the left reads “In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.” There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."></p>
+<p><img src="../images/tidy_data_slide.png" style="float: right; width: 95%; margin: 20px;" alt="Stylized text providing an overview of Tidy Data. The top reads “Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.” On the left reads “In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.” There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure." /></p>
 <div id="lets-make-a-tidy-table-with-our-baking-bots." class="section level2 unnumbered">
 <h2>Let’s make a tidy table with our baking bots.</h2>
-<p><img src="../images/vector_to_dataframe.png" width="510" style="margin-left: 100px;"></p>
+<p><img src="../images/tidy_data_slide.png" style="float: right; width: 510px; margin: 20px;" alt="On the left are 3 vertical vectors side by side. On the right the 3 vectors are combined into a table with 3 columns where each of the columns is represented by one of the vectors on the left." /></p>
 <p><br></p>
 <p>A table in R is known as a <strong>data frame</strong>. We can think of it as a group of columns, where each column is a vector. Data frames in R have columns of data that are all the same length.</p>
 <p>Let’s make a data frame that has two columns to hold the bot names and their ages.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Character vector of baking_bot names</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>baking_bots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Baker-waker&quot;</span>, <span class="st">&quot;BB-8&quot;</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># Numeric vector of bot ages</span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>bot_ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Character vector of baking_bot names</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>baking_bots <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Baker-waker&quot;</span>, <span class="st">&quot;BB-8&quot;</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co"># Numeric vector of bot ages</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>bot_ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>)</span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Create table with 2 columns: name and age</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>bots <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> baking_bots,</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>                   <span class="at">age  =</span> bot_ages)</span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co"># Print the data frame to the console</span></span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>bots</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Create table with 2 columns: name and age</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>bots <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> baking_bots,</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>                   <span class="at">age  =</span> bot_ages)</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co"># Print the data frame to the console</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>bots</span></code></pre></div>
 <pre><code>##          name age
 ## 1    Whiskers   1
 ## 2 Baker-waker   2
 ## 3        BB-8  NA</code></pre>
 <p><br></p>
 <div id="taste-test-2" class="section level3 unnumbered quiz">
-<h3><i class="fa-solid fa-cookie-bite" style="color: gray;"></i> Taste test</h3>
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Taste test</h3>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="addacolumn-tab" data-toggle="tab" href="#addacolumn" role="tab" aria-controls="addacolumn" aria-selected="true">Add a column</a>
@@ -937,25 +947,25 @@ bots <- data.frame(name       = baking_bots,
 <div id="show-all-values-in-column_name" class="section level3 unnumbered">
 <h3>Show all values in <code>$column_name</code></h3>
 <p>Use the <code>$</code> sign after the name of your table to see the values in one of your columns.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># View the &quot;name&quot; column in bots</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>bots<span class="sc">$</span>name</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># View the &quot;name&quot; column in bots</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>bots<span class="sc">$</span>name</span></code></pre></div>
 <pre><code>## [1] &quot;Whiskers&quot;    &quot;Baker-waker&quot; &quot;BB-8&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Find the max age value</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="fu">max</span>(bots<span class="sc">$</span>age)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># Find the max age value</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="fu">max</span>(bots<span class="sc">$</span>age)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Find the max age value, ignore NA (missing) values</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">max</span>(bots<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co"># Find the max age value, ignore NA (missing) values</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="fu">max</span>(bots<span class="sc">$</span>age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p><br></p>
 </div>
-<div id="matrix-syntax-row-column" class="section level3 unnumbered">
-<h3>Matrix syntax: [<code>row</code>, <code>column</code>]</h3>
+<div id="matrix-index-syntax-row-column" class="section level3 unnumbered">
+<h3>Matrix / index syntax: [<code>row</code>, <code>column</code>]</h3>
 <p>Use matrix syntax to access any value in the table.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Row 3, Column 1 (the third value in the &#39;name&#39; column)</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>bots[<span class="dv">3</span>, <span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="co"># Row 3, Column 1 (the third value in the &#39;name&#39; column)</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>bots[<span class="dv">3</span>, <span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;BB-8&quot;</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># You can also view a specific column&#39;s values with the column name</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>bots[ , <span class="st">&quot;age&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># You can also view a specific column&#39;s values with the column name</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>bots[ , <span class="st">&quot;age&quot;</span>]</span></code></pre></div>
 <pre><code>## [1]  1  2 NA</code></pre>
 </div>
 </div>
@@ -964,11 +974,12 @@ bots <- data.frame(name       = baking_bots,
 <p>The italic and orange lines in the scripts above are called comments. You can add notes to your scripts with the <code>#</code> to make it easier for others and yourself to understand what is happening and why.</p>
 <p>Every line that starts with a <code>#</code> is ignored and won’t be run as R code.</p>
 </div>
-<div id="save-a-table" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Save a table</h2>
+<div id="save-a-table" class="section level2 unnumbered">
+<h2>Save a table</h2>
 <p>We are ready to save our wonderful little table. We will save the data to a file with the handy function <code>write_csv()</code>. The code below saves the table to a <strong>CSV</strong> <em>(comma-separated values)</em> file named <em>“bot_data.csv”</em>.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="co"># Save dataframe to a CSV file in our project folder</span></span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="fu">write_csv</span>(bots, <span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="co"># Save dataframe to a CSV file in our project folder</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="fu">write_csv</span>(bots, <span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in write_csv(bots, file = &quot;bot_data.csv&quot;): could not find function &quot;write_csv&quot;</code></pre>
 <blockquote>
 <p>Did you get the error <em>could not find function “write_csv”</em>?</p>
 <p>Jump back to the top of your script and run the line <code>library(tidyverse)</code>.</p>
@@ -980,10 +991,10 @@ bots <- data.frame(name       = baking_bots,
 </blockquote>
 <p><br></p>
 <p><strong>bot_data.csv</strong></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>name,age</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>Whiskers,<span class="dv">1</span></span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>Baker<span class="sc">-</span>waker,<span class="dv">2</span></span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>BB<span class="dv">-8</span>,<span class="cn">NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>name,age</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>Whiskers,<span class="dv">1</span></span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>Baker<span class="sc">-</span>waker,<span class="dv">2</span></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>BB<span class="dv">-8</span>,<span class="cn">NA</span></span></code></pre></div>
 </div>
 <div id="csvs" class="section level2 unnumbered">
 <h2>CSVs</h2>
@@ -995,10 +1006,10 @@ bots <- data.frame(name       = baking_bots,
 <hr>
 Now we can read our own table back into R using the <code>read_csv()</code> function.
 <hr>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="co"># Read in the bot data</span></span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a><span class="co"># Read in the bot data</span></span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Error: &#39;bot_data.csv&#39; does not exist in current working directory (&#39;/cloud/project/static/modules/readr/readr_csv&#39;).</code></pre>
 <p><br></p>
 <blockquote>
@@ -1008,11 +1019,11 @@ Now we can read our own table back into R using the <code>read_csv()</code> func
 <div id="name-the-data" class="section level2 unnumbered">
 <h2>Name the data</h2>
 <p>Remember the assignment operator (the left-arrow: <code>&lt;-</code>)? We use it to assign the data a name so we can reference it in our script.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Read in the bot data and set name to &quot;bake_bots&quot;</span></span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Read in the bot data and set name to &quot;bake_bots&quot;</span></span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Error: &#39;bot_data.csv&#39; does not exist in current working directory (&#39;/cloud/project/static/modules/readr/readr_csv&#39;).</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Type its name to view its contents</span></span>
-<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>bake_bots</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># Type its name to view its contents</span></span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>bake_bots</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): object &#39;bake_bots&#39; not found</code></pre>
 <p><br></p>
 <div id="yoda-says" class="section level3 unnumbered yoda">
@@ -1030,11 +1041,11 @@ Now we can read our own table back into R using the <code>read_csv()</code> func
 <div id="everythings-has-class" class="section level2 unnumbered">
 <h2>Everythings has class</h2>
 <p>In R, not just columns but everything has a data type or a “class”. When we want to investigate the type of data stored in an object we can use the <code>class()</code> function.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">class</span>(bake_bots)</span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="fu">class</span>(bake_bots<span class="sc">$</span>name)</span>
-<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a><span class="fu">class</span>(battery_level)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="fu">class</span>(bake_bots)</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a><span class="fu">class</span>(bake_bots<span class="sc">$</span>name)</span>
+<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" tabindex="-1"></a><span class="fu">class</span>(battery_level)</span></code></pre></div>
 <p><br></p>
 <div class="quiz">
 <h2 style="margin-top: 28px; margin-bottom: 44px;">
@@ -1060,7 +1071,7 @@ Pop Quiz!
 <h1><span class="header-section-number">7</span> Size up the data</h1>
 <hr>
 <p>Before diving into a data set, we use <code>glimpse()</code> and several other summary functions to take a first look at the data.</p>
-<p>Use these functions to describe your dataframe.</p>
+<p>Use these functions to describe our dataframe.</p>
 <div id="data-frame-info" class="section level3 unnumbered">
 <h3>Data frame info</h3>
 <div class="bluecode">
@@ -1111,27 +1122,27 @@ Pop Quiz!
 <div id="glimpse-summary" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> <code>glimpse()</code> &amp; <code>summary()</code></h1>
 <hr>
-<div id="lets-read-the-scrap-data-into-r-and-take-a-look." class="section level3 unnumbered">
-<h3>Let’s read the scrap data into R and take a look.</h3>
+<div id="lets-take-a-look-at-our-bot-data." class="section level3 unnumbered">
+<h3>Let’s take a look at our bot data.</h3>
 <p><code>glimpse()</code> shows the type of data in each column and shows a few sample values.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="co"># Glimpse your dataframe&#39;s data types and a few values</span></span>
-<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="fu">glimpse</span>(bake_bots)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># Glimpse your dataframe&#39;s data types and a few values</span></span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="fu">glimpse</span>(bake_bots)</span></code></pre></div>
 <pre><code>## Error in glimpse(bake_bots): object &#39;bake_bots&#39; not found</code></pre>
 <p><br></p>
 <p><code>summary()</code> gives you a quick report of your numeric data.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># Summary gives us the means, mins, and maxima </span></span>
-<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="fu">summary</span>(bake_bots)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="co"># Summary gives us the means, mins, and maxima </span></span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="fu">summary</span>(bake_bots)</span></code></pre></div>
 <pre><code>## Error in summary(bake_bots): object &#39;bake_bots&#39; not found</code></pre>
 <p><br></p>
 </div>
 <div id="i-classfas-fa-birthday-cake-stylecolor-gray-bake-it" class="section level3 unnumbered tip">
-<h3>&lt;i class=“fas fa-birthday-cake style=”color: gray”&gt;</i> Bake it!</h3>
+<h3>&lt;i class=“fas fa-birthday-cake style=”color: gray”&gt; </i> Bake it!</h3>
 <p>Try a few more of the data frame description functions on your bot data. You will need to insert the name of your data frame into each function.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="fu">nrow</span>( )</span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="fu">ncol</span>( )</span>
-<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a></span>
-<span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a><span class="fu">names</span>( )</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="fu">nrow</span>( )</span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="fu">ncol</span>( )</span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a><span class="fu">names</span>( )</span></code></pre></div>
 </div>
 </div>
 <div id="filter-data" class="section level1" number="9">
@@ -1139,23 +1150,25 @@ Pop Quiz!
 <hr>
 <p>The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.</p>
 <p>Let’s use it to look at the rows in the data that have an <code>age</code> greater than 1.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
-<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="fu">filter</span>(bake_bots, age <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="fu">filter</span>(bake_bots, age <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## Error in filter(bake_bots, age &gt; 1): object &#39;bake_bots&#39; not found</code></pre>
 <blockquote>
 <p>The bot with the <code>NA</code> (missing) value for an age, was not included because it was unknown whether it passed the test of being greater than 1. By default, filter only keeps the rows that definitively pass all of the tests or conditions that you include. In this case, filter could not determine whether the missing value was above 1, so that row in the table was not kept or returned.</p>
 </blockquote>
 <p><br></p>
 <p>Let’s find the bots named <code>"Whiskers"</code>.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
-<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="fu">filter</span>(bake_bots, name <span class="sc">==</span> <span class="st">&quot;Whiskers&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="fu">filter</span>(bake_bots, name <span class="sc">==</span> <span class="st">&quot;Whiskers&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in filter(bake_bots, name == &quot;Whiskers&quot;): object &#39;bake_bots&#39; not found</code></pre>
-<div class="note">
-<p>### <strong>Double equals</strong> {-}</p>
-<p>#### <code>==</code> vs. <code>=</code> {-}</p>
+<div id="double-equals" class="section level3 unnumbered note">
+<h3><strong>Double equals</strong></h3>
+<div id="vs." class="section level4 unnumbered">
+<h4><code>==</code> vs. <code>=</code></h4>
 <p>We use a <code>==</code> (double equals sign) for comparing values. A <code>==</code> makes the comparison “is it equal to?” and returns a <code>True</code> or <code>False</code> answer. So the code above returns only the rows where the condition <code>name == "Whiskers"</code> is TRUE.</p>
 <p>A single equals sign <code>=</code> is used within functions to set options, for example <code>read_csv(file = "bot_data.csv")</code>.</p>
 <p>It’s not a big deal if you mix them up the first time. R is often helpful and will even let you know which one is needed. Try running <code>filter(bake_bots, name = "Whiskers")</code>.</p>
+</div>
 </div>
 <div id="comparing-values" class="section level2 unnumbered">
 <h2>Comparing values</h2>
@@ -1218,34 +1231,34 @@ Menu of comparisons
 <div id="explore" class="section level3 unnumbered tip">
 <h3><i class="fas fa-user-astronaut" style="color: green"></i> Explore!</h3>
 <p>Try comparing some things in the console to see if you get what you’d expect. R doesn’t always think like we do.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="dv">4</span> <span class="sc">!=</span> <span class="dv">5</span></span>
-<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a><span class="dv">4</span> <span class="sc">==</span> <span class="dv">4</span></span>
-<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a></span>
-<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
-<span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a></span>
-<span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&gt;</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a></span>
-<span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a><span class="dv">5</span> <span class="sc">==</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a></span>
-<span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a><span class="dv">5</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a></span>
-<span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb44-14"><a href="#cb44-14" tabindex="-1"></a></span>
-<span id="cb44-15"><a href="#cb44-15" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="cn">NA</span></span>
-<span id="cb44-16"><a href="#cb44-16" tabindex="-1"></a></span>
-<span id="cb44-17"><a href="#cb44-17" tabindex="-1"></a><span class="fu">str_detect</span>(<span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Whisks&quot;</span>, <span class="st">&quot;BB-8&quot;</span>), <span class="st">&quot;Whisk&quot;</span>)</span>
-<span id="cb44-18"><a href="#cb44-18" tabindex="-1"></a></span>
-<span id="cb44-19"><a href="#cb44-19" tabindex="-1"></a><span class="fu">str_detect</span>(<span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Whisks&quot;</span>, <span class="st">&quot;BB-8&quot;</span>), <span class="st">&quot;Whisk&quot;</span>, <span class="at">negate =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="dv">4</span> <span class="sc">!=</span> <span class="dv">5</span></span>
+<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a><span class="dv">4</span> <span class="sc">==</span> <span class="dv">4</span></span>
+<span id="cb46-4"><a href="#cb46-4" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
+<span id="cb46-6"><a href="#cb46-6" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" tabindex="-1"></a><span class="dv">4</span> <span class="sc">&gt;</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb46-8"><a href="#cb46-8" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="#cb46-9" tabindex="-1"></a><span class="dv">5</span> <span class="sc">==</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb46-10"><a href="#cb46-10" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" tabindex="-1"></a><span class="dv">5</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb46-12"><a href="#cb46-12" tabindex="-1"></a></span>
+<span id="cb46-13"><a href="#cb46-13" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb46-14"><a href="#cb46-14" tabindex="-1"></a></span>
+<span id="cb46-15"><a href="#cb46-15" tabindex="-1"></a><span class="dv">2</span> <span class="sc">==</span> <span class="cn">NA</span></span>
+<span id="cb46-16"><a href="#cb46-16" tabindex="-1"></a></span>
+<span id="cb46-17"><a href="#cb46-17" tabindex="-1"></a><span class="fu">str_detect</span>(<span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Whisks&quot;</span>, <span class="st">&quot;BB-8&quot;</span>), <span class="st">&quot;Whisk&quot;</span>)</span>
+<span id="cb46-18"><a href="#cb46-18" tabindex="-1"></a></span>
+<span id="cb46-19"><a href="#cb46-19" tabindex="-1"></a><span class="fu">str_detect</span>(<span class="fu">c</span>(<span class="st">&quot;Whiskers&quot;</span>, <span class="st">&quot;Whisks&quot;</span>, <span class="st">&quot;BB-8&quot;</span>), <span class="st">&quot;Whisk&quot;</span>, <span class="at">negate =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="filtering-rows" class="section level2 unnumbered">
 <h2>Filtering rows</h2>
 <hr class="hrlvl2">
 <p>Let’s filter the data to exclude the baking bots named <strong>BB-8</strong>. Look in the comparison table above to find the <code>NOT equal to</code> operator. We’re going to filter the data to keep only the names that are <code>NOT equal</code> to “BB-8”.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">filter</span>(bake_bots, name <span class="sc">!=</span> <span class="st">&quot;BB-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">filter</span>(bake_bots, name <span class="sc">!=</span> <span class="st">&quot;BB-8&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in filter(bake_bots, name != &quot;BB-8&quot;): object &#39;bake_bots&#39; not found</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a>bake_bots</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a>bake_bots</span></code></pre></div>
 <pre><code>## Error in eval(expr, envir, enclos): object &#39;bake_bots&#39; not found</code></pre>
 <p><br></p>
 <div id="great-work" class="section level3 unnumbered">
@@ -1257,9 +1270,9 @@ Menu of comparisons
 <hr class="hrlvl2">
 <p>We can add multiple tests or conditions to <code>filter()</code> to further restrict the data we want to pull from a larger data set. Only the records that pass all of the conditions will be kept in the new data frame.</p>
 <p>The code below filters the data to only the bots with an age equal to 1 and their name must also not be equal to “BB-8”.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">filter</span>(bake_bots,</span>
-<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a>                    age <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb49-3"><a href="#cb49-3" tabindex="-1"></a>                    name <span class="sc">!=</span> <span class="st">&quot;BB-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">filter</span>(bake_bots,</span>
+<span id="cb51-2"><a href="#cb51-2" tabindex="-1"></a>                    age <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb51-3"><a href="#cb51-3" tabindex="-1"></a>                    name <span class="sc">!=</span> <span class="st">&quot;BB-8&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>If we want our original full <code>bake_bot</code> data bake at anytime, we can re-run the line in our script that reads in the CSV file: <code>bake_bots &lt;- read_csv(file = "bot_data.csv")</code></p>
@@ -1281,23 +1294,23 @@ Skip a row
 </h3>
 <p>Sometimes you may want to ignore the first row in your data file, especially an EPA file that includes a disclaimer on the first row. Yes EPA, we’re looking at you. Please stop.</p>
 <p>Let’s open the help window with <code>?read_csv</code> and try to find an argument that can help us.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a>?read_csv</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a>?read_csv</span></code></pre></div>
 <p>There’s a lot of them! But the <code>skip</code> argument looks like it could be helpful. Take a look at the description near the bottom. The default is <code>skip = 0</code>, which reads every line, but we can skip the first line by writing <code>skip = 1</code>. Let’s try.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
-<span id="cb51-2"><a href="#cb51-2" tabindex="-1"></a>         <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;https://itep-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
+<span id="cb53-2"><a href="#cb53-2" tabindex="-1"></a>         <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
 <h3>
 Limit the number of rows
 </h3>
 <p>Some types of data have last rows that show the <em>total</em> or report “END OF DATA”. In these cases we may want <code>read_csv</code> to ignore the last row of data, or for large data sets we may only want to pull in a 100 lines of data to see what you’re working with.</p>
 <p>Let’s look through the help window to find an argument that can help us. Type <code>?read_csv</code> and scroll down.</p>
 <p>The <code>n_max</code> argument looks like it could be helpful. The default is <code>n_max = Inf</code>, which means it will read every line, but we can limit the lines we read to only one hundred by using <code>n_max = 100</code>.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="co"># Read in 100 rows</span></span>
-<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
-<span id="cb52-3"><a href="#cb52-3" tabindex="-1"></a>                       <span class="at">skip =</span> <span class="dv">1</span>, </span>
-<span id="cb52-4"><a href="#cb52-4" tabindex="-1"></a>                       <span class="at">n_max =</span> <span class="dv">100</span>)</span>
-<span id="cb52-5"><a href="#cb52-5" tabindex="-1"></a></span>
-<span id="cb52-6"><a href="#cb52-6" tabindex="-1"></a><span class="co"># Remove the data</span></span>
-<span id="cb52-7"><a href="#cb52-7" tabindex="-1"></a><span class="fu">rm</span>(small_data)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a><span class="co"># Read in 100 rows</span></span>
+<span id="cb54-2"><a href="#cb54-2" tabindex="-1"></a>small_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://mn-r.netlify.com/data/starwars_scrap_jakku.csv&quot;</span>, </span>
+<span id="cb54-3"><a href="#cb54-3" tabindex="-1"></a>                       <span class="at">skip =</span> <span class="dv">1</span>, </span>
+<span id="cb54-4"><a href="#cb54-4" tabindex="-1"></a>                       <span class="at">n_max =</span> <span class="dv">100</span>)</span>
+<span id="cb54-5"><a href="#cb54-5" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" tabindex="-1"></a><span class="co"># Remove the data</span></span>
+<span id="cb54-7"><a href="#cb54-7" tabindex="-1"></a><span class="fu">rm</span>(small_data)</span></code></pre></div>
 <h3>
 See function options
 </h3>
@@ -1412,7 +1425,7 @@ Create a CSV from Excel
 </div>
 <p><br></p>
 <div id="i-classfas-fa-carrot-aria-hiddentrue-jump-to-the-top" class="section level3 unnumbered">
-<h3>&lt;i class=“fas fa-carrot aria-hidden=”true”&gt;</i> <a href="../page/day-1.html">Jump to the top</a></h3>
+<h3>&lt;i class=“fas fa-carrot aria-hidden=”true”&gt; </i> <a href="../page/day-1.html">Jump to the top</a></h3>
 <p><br></p>
 </div>
 </div>

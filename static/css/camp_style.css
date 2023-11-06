@@ -4,6 +4,7 @@ code {color: #535353 !important;}
 hr {
   margin-top: -24px;
   margin-bottom: 24px;
+  max-width: 98%;
 }
 
 .fa, .fas, .far {margin-right: 6px;}

@@ -158,6 +158,6 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 
 <br>
 
-### <i class="fas fa-carrot aria-hidden="true"></i> [Jump to the top](../page/day-1.html) {-}
+### <i class="fas fa-carrot aria-hidden="true"> </i> [Jump to the top](../page/day-1.html) {-}
 
 <br>

@@ -4,6 +4,11 @@ The `filter()` function creates a subset of the data based on the value of one o
 
 Let's use it to look at the rows in the data that have an `age` greater than 1.
 
+```{r, eval=T, message=F, error=F, echo=F}
+# Read in the bot data
+#bake_bots <- read_csv(file = "bot_data.csv")
+```
+
 ```{r filter-age, eval=T}
 # Bots with ages greater than 1
 filter(bake_bots, age > 1)
@@ -20,11 +25,11 @@ filter(bake_bots, name == "Whiskers")
 ```
 
 <div class="note">
-  ### **Double equals** {-}
+### **Double equals** {-}
   
-  #### `==` vs. `=` {-}
+#### `==` vs. `=` {-}
   
-  We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a `True` or `False` answer. So the code above returns only the rows where the condition `name == "Whiskers"` is TRUE.
+We use a `==` (double equals sign) for comparing values. A `==` makes the comparison "is it equal to?" and returns a `True` or `False` answer. So the code above returns only the rows where the condition `name == "Whiskers"` is TRUE.
 
 A single equals sign `=` is used within functions to set options, for example `read_csv(file = "bot_data.csv")`. 
 

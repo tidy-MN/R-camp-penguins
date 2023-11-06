@@ -15,6 +15,7 @@ hr {
   margin-left: 12px;
   background: #e53256;
   height: 0.2em;
+  max-width: 98%;
 }
 
 .pinkcode code {
