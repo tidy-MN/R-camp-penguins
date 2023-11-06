@@ -1,6 +1,6 @@
 
 
-![](../images/tidy_ice_cream.png){style="float: right; width: 95%; margin: 20px;" alt="Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words "make friends with tidy data."}
+![](../images/tidy_ice_cream.jpg{style="float: right; width: 95%; margin: 20px;" alt="Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words "make friends with tidy data."}
 
 <p class="caption">Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst</p>
 
@@ -8,7 +8,7 @@
 <br>
 
 
-![](../images/tidy_data_slide.png){style="float: right; width: 95%; margin: 20px;" alt="Stylized text providing an overview of Tidy Data. The top reads “Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.” On the left reads “In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.” There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."}
+![](../images/tidy_data_slide.jpg)style="float: right; width: 95%; margin: 20px;" alt="Stylized text providing an overview of Tidy Data. The top reads “Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.” On the left reads “In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.” There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."}
 
 
 

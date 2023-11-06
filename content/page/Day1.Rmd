@@ -12,6 +12,9 @@ output:
     toc_depth: 1
 ---
 
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 ```{r setup, include=FALSE}
 library(rmarkdown)
 library(knitr)
@@ -161,6 +164,6 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 
 <br>
 
-### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day-1.html) {-}
+### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day1.html) {-}
 
 <br>
