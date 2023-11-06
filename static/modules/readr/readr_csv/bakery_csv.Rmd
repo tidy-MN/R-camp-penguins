@@ -1,4 +1,12 @@
 
+
+
+```{r, eval=T, echo=F, message=F, warning=F}
+library(tidyverse)
+write_csv(bots, file = "bot_data.csv")
+```
+
+
 ```{r bake_read, eval=T}
 library(tidyverse)
 

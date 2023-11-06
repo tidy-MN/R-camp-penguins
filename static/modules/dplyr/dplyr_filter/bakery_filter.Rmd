@@ -6,7 +6,7 @@ Let's use it to look at the rows in the data that have an `age` greater than 1.
 
 ```{r, eval=T, message=F, error=F, echo=F}
 # Read in the bot data
-#bake_bots <- read_csv(file = "bot_data.csv")
+bake_bots <- bots
 ```
 
 ```{r filter-age, eval=T}
@@ -67,7 +67,7 @@ We use the __Menu__ of comparisons below to find the data we want.
 <br>
 
 <div class="tip">
-### <i class="fas fa-user-astronaut" style="color: green"></i> Explore! {-}
+### <i class="fas fa-birthday-cake" style="color: gray"> </i> Bake it! {-}
 
 Try comparing some things in the console to see if you get what you'd expect. R doesn't always think like we do.
 

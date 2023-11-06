@@ -113,8 +113,11 @@ params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
 # Read data 
 <hr>
 
+<br>
+
 Now we can read our own table back into R using the `read_csv() ` function.
-<hr>
+
+
 ```{r read-csv, child='../../static/modules/readr/readr_csv/bakery_csv.Rmd'}
 ```
 
@@ -158,6 +161,6 @@ Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning re
 
 <br>
 
-### <i class="fas fa-carrot aria-hidden="true"> </i> [Jump to the top](../page/day-1.html) {-}
+### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day-1.html) {-}
 
 <br>

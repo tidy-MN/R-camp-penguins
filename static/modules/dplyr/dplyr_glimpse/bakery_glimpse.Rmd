@@ -25,7 +25,7 @@ Use these functions to describe our dataframe.
 
 ```{r, eval=T, message=F, error=F, echo=F}
 # Read in the bot data
-#bake_bots <- read_csv(file = "bot_data.csv")
+bake_bots <- bots
 ```
 
 ```{r glimpse-bake, warning=F, message=F}
@@ -45,7 +45,7 @@ summary(bake_bots)
 <br>
 
 <div class="tip">
-### <i class="fas fa-birthday-cake style="color: gray"> </i> Bake it! {-}
+### <i class="fas fa-birthday-cake" style="color: gray"> </i> Bake it! {-}
 
 Try a few more of the data frame description functions on your bot data. You will need to insert the name of your data frame into each function.
 
