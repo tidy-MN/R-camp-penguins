@@ -1,0 +1,49 @@
+---
+title: 'Exercise: Summarizing penguins'
+author: "Abigail Stamm"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Summarize data about penguin populations
+
+The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. Datasets get steadily more complex. Ask for help if you get stuck or need a hint.
+
+
+### Compare flipper lengths
+
+Create a dataset that summarizes the flipper lengths of the penguin populations by species. Calculate the minimum, maximum, and average flipper lengths of each penguin species. 
+
+1. Which penguin species has the shortest flippers?
+1. Is there a flipper length range that includes all three penguin species?
+
+
+
+
+### Compare weights
+
+Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and average weights of each group. 
+
+1. Which penguin species is the heaviest?
+1. On which island are Adelie penguins the heaviest?
+
+
+
+
+### Compare culmens
+
+Create a dataset that summarizes the culmen lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and average culmen lengths and depths of each group. 
+
+1. In general, do male and female culmens tend to be the same length and depth? If not, how do they differ?
+1. Do the groups with the longest culmens also have the deepest culmens? Do the groups with the shortest culmens have the shallowest?
+1. From the table, would you guess culmen size is most associated with species, sex, or island?
+
+
+
+
+
+
+
