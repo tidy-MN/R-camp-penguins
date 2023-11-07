@@ -1,4 +1,4 @@
-baseurl = "https://r-camp.netlify.app/"
+baseurl = "https://tidy-mn.github.io/R-camp-penguins/"
 DefaultContentLanguage = "en"
 title = "Learn R"
 theme = "beautifulhugo"
@@ -119,6 +119,3 @@ uglyURLs = true
     name = "Help"
     url = "page/help.html"
     weight = 5
-
-
-    

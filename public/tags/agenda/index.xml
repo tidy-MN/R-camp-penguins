@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>agenda on Learn R</title>
-    <link>https://r-camp.netlify.app/tags/agenda.html</link>
+    <link>https://tidy-mn.github.io/R-camp-penguins/tags/agenda.html</link>
     <description>Recent content in agenda on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://r-camp.netlify.app/tags/agenda/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/tags/agenda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agenda</title>
-      <link>https://r-camp.netlify.app/page/agenda.html</link>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/agenda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://r-camp.netlify.app/page/agenda.html</guid>
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/agenda.html</guid>
       <description>R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
     </item>
     
