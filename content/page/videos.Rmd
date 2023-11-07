@@ -35,13 +35,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="margin-left: 4%;">
 
-### <i class="fas fa-clipboard" ></i> <span style="font-size: 90%">0.1 - </span> [Install R](install.html) 
+### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">0.1 - </span> [Install R](install.html) 
 
-### <i class="fas fa-clipboard" ></i> <span style="font-size: 90%">0.2 - </span> [Primer](r_camp_primer.html) 
+### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">0.2 - </span> [Primer](r_camp_primer.html) 
 
 </div>
 <br>
-
 
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active"><a class="nav-link" id="day1-tab" data-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">`Day 1`</a></li> 
@@ -54,19 +53,19 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <div class="well tab-content" id="myTabContent" style="background-color: white;">
 <div class="tab-pane fade active in" id="day1" role="tabpanel" aria-labelledby="day1-tab">
 
-### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.1 - </span> [Welcome to open source](videos/01-1-welcome.html)  
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">1.1 - </span> [Welcome to open source](videos/01-1-welcome.html)  
   
 - [Notes, code examples, and exercises](Day1.html#welcome) 
 - [Slides](https://mn-r-slides.netlify.app/day1/01-1-Welcome.html) 
 
 
-### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.2 - </span> [R tour](videos/01-2-r-tour.html) 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">1.2 - </span> [R tour](videos/01-2-r-tour.html) 
 
 - [Notes, code examples, and exercises](Day1.html#rstudio-tour) 
 - [Slides](https://mn-r-slides.netlify.app/day1/01-2-R-tour.html) 
 
 
-### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.3 - </span> [Our bakery](videos/01-2-r-bakery.html) 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">1.3 - </span> [Our bakery](videos/01-3-r-bakery.html) 
 
 - [Notes, code examples, and exercises](Day1.html#names-and-things) 
 - [Slides](https://mn-r-slides.netlify.app/day1/01-3-R-bakery.html)
@@ -80,7 +79,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 </div>
 
 <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
-
 </div>
 
 <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">    
@@ -93,8 +91,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 </div>
 </div>
-
-
 
 
 ```{r, eval=F}
@@ -122,7 +118,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 </div>
 <br>
-
 
 
 ## Day 2
