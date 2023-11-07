@@ -104,13 +104,11 @@ params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
 ```
 
 
-
 # Tidy tables and dataframes
 <hr>
 
 ```{r read-csv, child='../../static/modules/base/base_dataframes/bakery_dfs.Rmd'}
 ```
-
 
 
 # Read data 
