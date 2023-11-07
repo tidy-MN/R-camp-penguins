@@ -37,7 +37,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fas fa-clipboard" ></i> <span style="font-size: 90%">0.1 - </span> [Install R](install.html) 
 
-### <i class="fas fa-clipboard" ></i> <span style="font-size: 90%">0.2 - </span> [Setup & Warmup]() 
+### <i class="fas fa-clipboard" ></i> <span style="font-size: 90%">0.2 - </span> [Primer](r_camp_primer.html) 
 
 </div>
 <br>
@@ -60,13 +60,13 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides](https://mn-r-slides.netlify.app/day1/01-1-Welcome.html) 
 
 
-### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.2 - </span> [R Tour](videos/01-2-r-tour.html) 
+### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.2 - </span> [R tour](videos/01-2-r-tour.html) 
 
 - [Notes, code examples, and exercises](Day1.html#rstudio-tour) 
 - [Slides](https://mn-r-slides.netlify.app/day1/01-2-R-tour.html) 
 
 
-### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.3 - </span> R bakery
+### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.3 - </span> [Our bakery](videos/01-2-r-bakery.html) 
 
 - [Notes, code examples, and exercises](Day1.html#names-and-things) 
 - [Slides](https://mn-r-slides.netlify.app/day1/01-3-R-bakery.html)

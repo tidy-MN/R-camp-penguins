@@ -1,6 +1,6 @@
 
 
-![](../images/tidy_ice_cream.jpg{style="float: right; width: 95%; margin: 20px;" alt="Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words "make friends with tidy data."}
+![](../images/tidy_ice_cream.jpg){style="float: right; width: 95%; margin: 20px;" alt="Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words "make friends with tidy data."}
 
 <p class="caption">Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst</p>
 
