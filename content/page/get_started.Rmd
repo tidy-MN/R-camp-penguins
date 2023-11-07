@@ -41,8 +41,6 @@ knitr::opts_chunk$set(echo = T)
 
 <br>
 
-
-
 ## Trial - Dip your toes in your browser
 
 <a href="https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html"><img src="https://tinystats.github.io/teacups-giraffes-and-statistics/images/Landing_page/singleGiraffe-clickme-hover.jpg" width="12%" align="left" style="margin-right: 28px; margin-top: 12px;" /></a>
@@ -72,13 +70,6 @@ knitr::opts_chunk$set(echo = T)
 
 <br>
 
-
-## Examples scripts
-
-- 
--
-
-<br>
 
 
 ## Recordings
@@ -115,12 +106,6 @@ knitr::opts_chunk$set(echo = T)
 - [Introduction to Modern Statistics](https://openintro-ims.netlify.app/data-hello.html)
 - Rob Hyndman and George Anthanasopoulos [Forecasting: Principles and Practice](https://otexts.com/fpp3/)
 
-
-<br>
-
-## Training
-
-Coming soon to a galaxy near you...
 
 <br>
 

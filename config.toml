@@ -48,27 +48,26 @@ uglyURLs = true
 
 
 [[menu.main]]
+    name = "Agenda"
+    url = "page/agenda.html"
+    weight = 1
+    
+[[menu.main]]
     identifier = "Training"
     name = "Training"
     weight = 1
 
 [[menu.main]]
     parent = "Training"
-    name = "Agenda"
-    url = "page/agenda.html"
-    weight = 1
-    
+    name = "Primer"
+    url = "page/r_camp_primer.html"
+    weight = 1  
+  
 [[menu.main]]
     parent = "Training"
     name = "Videos"
     url = "page/videos.html"
-    weight = 1   
-    
-[[menu.main]]
-    parent = "Training"
-    name = "Day 0 - Primer"
-    url = "page/r_camp_primer.html"
-    weight = 2    
+    weight = 1     
 
 [[menu.main]]
     parent = "Training"
