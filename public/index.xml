@@ -296,6 +296,15 @@ porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samp
     </item>
     
     <item>
+      <title>R Camp Primer</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/r_camp_primer.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/r_camp_primer.html</guid>
+      <description>Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.</description>
+    </item>
+    
+    <item>
       <title>R community</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/community.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

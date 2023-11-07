@@ -1,0 +1,56 @@
+---
+title: "GIS and CRS"
+author: "Kristie Ellickson"
+date: "2023-11-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What is GIS?
+### Super fast
+#### So you kind of know enough to look it up later
+
+GIS stands for 'geographic information system'
+
+It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth's surface.
+
+This is a terrific resource, https://education.nationalgeographic.org/resource/geographic-information-system-gis/.
+
+This is also a terrific resource,
+https://www.esri.com/en-us/what-is-gis/overview
+
+### Coordinate Reference Systems
+
+A coordinate reference system, or CRS, is how spatial data that represent the earth’s *ROUND AND 3-Dimensional* surface are flattened onto a 2 dimensional surface (think of squishing half of a tennis ball flat so that it could be represented on a piece of paper).
+
+Go through this tutorial to get a better understanding of coordinate reference systems,
+<https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/>
+
+**The components of a CRS are:**
+
+### Coordinate system
+
+![https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system ](https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg)
+source: 
+
+
+### Units of the datum
+
+If your spatial analysis requires distance in meters, you will need to make sure that your conference reference system is in meters. UTM stands for Universal Transverse Mercator, and is one of the main CRS's you will encounter and use. They are a series of very small projections that minimize the distortion you might see if you use latitude and longitude
+![Universal Transverse Mercator](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system#/media/File:Universal_Transverse_Mercator_zones.svg)
+
+![https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/](https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png)
+### The Datum
+
+Geographic information system datum define the position of the spheroid relative to the center of the earth.
+![https://www.esri.com/news/arcuser/0401/datum.html](https://www.esri.com/news/arcuser/0401/graphics/geoids.gif)
+
+### Projection information
+
+This is a good source for coordinate reference systems.
+<https://spatialreference.org/ref/epsg/>
+
+Or here, <https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html>

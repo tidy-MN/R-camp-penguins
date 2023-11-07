@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>R Camp Primer - Learn R</title>
+  <meta property="og:title" content="R Camp Primer" />
+  <meta name="twitter:title" content="R Camp Primer" />
+  <meta name="description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+  <meta property="og:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+  <meta name="twitter:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/r_camp_primer.html",
+          "name": "R camp primer"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "R Camp Primer",
+  "description" : "Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.",
+  "inLanguage" : "en",
+  "wordCount":  4926 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/r_camp_primer.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="R Camp Primer" />
+<meta property="og:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/r_camp_primer.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="R Camp Primer" />
+  <meta name="twitter:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/r_camp_primer.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/videos.html">Videos</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Day 0 - Primer</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/post/day-1.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/post/day-2.html">Day 3</a>
+                
+                  <a href="/R-camp-penguins/post/day-4.html">Day 4</a>
+                
+                  <a href="/R-camp-penguins/post/day-5.html">Day 5</a>
+                
+                  <a href="/R-camp-penguins/post/day-6.html">Day 6</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Get started" href="/R-camp-penguins/page/get_started.html">Get started</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>R Camp Primer</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<!-- Dorian's thoughts: -->
+<!-- Some other big hang-ups for newbie folks are their lack of computer navigation skills. Such as: How do I find the path to my files? Where's my download/documents folder? What is a directory anyways? Why doesn't R automatically know how to find the "data.csv" file I put in a random spot on a shared drive?  -->
+<!--
+Anton's thoughts:
+ask barbara about a breakout room for people having installation issues
+after they run code, ask question related to what they found
+-->
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R. You will learn the following content:</p>
+<ul>
+<li>How to name R objects.</li>
+<li>How to create an object in R and use a function on it.</li>
+<li>How to access a built-in R dataset and read a CSV file into R, both from your computer and from the internet.</li>
+<li>How to explore a dataset in R.</li>
+<li>How to access specific variables in a dataset and specific values in a named table.</li>
+</ul>
+<p>This workshop will not cover how to manipulate datasets or create new variables. You will cover those in the next workshop.</p>
+<p>The goal today is for you to become comfortable with RStudio, writing simple code, and making mistakes. You will make a lot of mistakes, but R’s warning and error systems should help with many of them. After all, you need to break some eggs to make meringue, and much like when making meringue, sometimes you mess up and need to start over.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="../images/pierre_R_intro.jpg" alt="Photograph of Pierre the plush penguin pointing to RStudio on his laptop while his plush poultry friends watch" width="90%" />
+<p class="caption">
+Figure 1: Pierre describes R to the poultry
+</p>
+</div>
+</div>
+<div id="installing-r-and-rstudio" class="section level1">
+<h1>Installing R and RStudio</h1>
+<!-- video of this or just webpage? -->
+<p>State employees install R and RStudio in the order below from the MNIT Software Center. Install R first, then RStudio. RTools is optional for advanced R users.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="../images/Software_to_install.png" alt="Screenshot of MDH software Center list of R software" width="50%" />
+<p class="caption">
+Figure 2: List of software
+</p>
+</div>
+<p>Everyone else will need to install from multiple websites.</p>
+<!-- 
+modified from my install guide for GAT 
+https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.Rmd
+-->
+<div id="installing-r" class="section level2">
+<h2>Installing R</h2>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://cloud.r-project.org/">https://cloud.r-project.org/</a>.</li>
+<li>Click on the download link for your operating system, then click on <em>base</em>.</li>
+<li>Click on the download link at the top of the page to download R.</li>
+<li>Click on the downloaded file to install R.</li>
+</ol>
+</div>
+<div id="installing-rstudio" class="section level2">
+<h2>Installing RStudio</h2>
+<p>After you have installed R, you can install RStudio. RStudio is a wrapper that makes R more user-friendly and adds functionality, such as support for Markdown and dedicated tabs for environments, tables, and images.</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://rstudio.com/products/rstudio/download/">https://rstudio.com/products/rstudio/download/</a>.</li>
+<li>Scroll down to the table, locate your operating system, and click the download link.</li>
+<li>Click on the downloaded file to install RStudio.</li>
+</ol>
+</div>
+</div>
+<div id="rstudio-tour" class="section level1">
+<h1>RStudio tour</h1>
+<p>RStudio is a wrapper or graphic user interface (GUI) that organizes R content to make it easier to use. RStudio also has some options that are not available directly in R. When you first install RStudio, you will see the console window on the left with some text at the top that looks something like this:</p>
+<pre><code>R version 4.3.1 (2023-06-16 ucrt) -- &quot;Beagle Scouts&quot;
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type &#39;license()&#39; or &#39;licence()&#39; for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type &#39;contributors()&#39; for more information and
+&#39;citation()&#39; on how to cite R or R packages in publications.
+
+Type &#39;demo()&#39; for some demos, &#39;help()&#39; for on-line help, or
+&#39;help.start()&#39; for an HTML browser interface to help.
+Type &#39;q()&#39; to quit R.</code></pre>
+<p>Random trivia: All R version names (“Beagle Scouts” above) are taken from the Peanuts comics by Charles Schulz. See a full list of <a href="https://stackoverflow.com/questions/13478375/is%20-ther-any-authoritative-documentation-on-r-release-nicknames">R version names and origins</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="../images/pierre_describe_rstudio.jpg" alt="Photograph of Pierre the plush penguin pointing to a quadrant of RStudio on his laptop while his plush poultry friends watch" width="90%" />
+<p class="caption">
+Figure 3: Pierre explains the parts of RStudio
+</p>
+</div>
+<p>In the console window, the first tab is called “Console”. You can type and run code line-by-line here. This is a good way to test correct syntax and trouble-shoot errors. We will not use any other tabs in this window today.</p>
+<p>In the upper right window, the first tab is called “Environment”. Additional tabs vary depending on your set-up. We will only use the “Environment” window today. This is where your datasets and other objects you create will be listed. At the moment, it should be empty.</p>
+<p>In the lower right window, the first tab is “Files”. It lists all files in your active directory, which is probably your “Documents” folder right now. We will use this tab in a moment. We may also use the “Plots” tab if time allows after covering the primary material in today’s session.</p>
+<p>To see the script window, which shows up in the upper left corner, you will need to create a script, which we will do in a moment. You can also view datasets and other files in this window.</p>
+<p>There are two settings in RStudio that I find essential when setting up.</p>
+<ol style="list-style-type: decimal">
+<li>To change the font size, click on “View”, then either “Zoom In” or “Zoom Out”. Alternately, you can click <em>Ctrl+</em> (control-plus) or <em>Ctrl-</em> (control-minus).</li>
+<li>To change the color scheme, click on “Tools” &gt; “Global Options” &gt; “Appearance”, then select your desired theme. Examples of themes are shown to the right as you select them. My preferred themes are dark with bright colors, like “Cobalt” or “Vibrant Ink”. When you find a theme <em>you</em> like, select it and click “OK”.</li>
+</ol>
+<!-- 
+add pic of pierre showing off rstudio windows
+
+can I point to Dorian's video/description instead of reinventing it? 
+I like some of his material better than Andy's 
+-->
+</div>
+<div id="creating-a-project" class="section level1">
+<h1>Creating a project</h1>
+<p>RStudio gives us the ability to create self-contained projects. For this workshop, we will create and work in a basic project. Here are a few reasons to use projects.</p>
+<ol style="list-style-type: decimal">
+<li>In projects R understands relative paths, so you do not need to type the full file path to load or save a file. For example, a full file path might be “C:/Users/HennyPenny/Rcode/Prequel/Rfiles/myfile.R”, but in the “Prequel” project, the relative file path would be “Rfiles/myfile.R”, which is a lot shorter and easier to write.</li>
+<li>The “Files” tab in the lower right window will automatically show the files in the project, even if you move the project somewhere else on your computer.</li>
+<li>If you save your files to a project, they are easy to find and reference when you need them.</li>
+<li>If you share your project with a friend, that friend can run the script in the project and it will know to look inside the project folder for everything it needs, even though it is now on your friend’s computer.</li>
+</ol>
+<p>To create a new project, click on the “File” menu in the upper left, then click on “New Project …”. In the pop-up dialog, click “New Directory”, then “New Project”. As you become more experienced with R, you will learn about the other kinds of projects.</p>
+<p>For “Directory name:”, put your project name. This can be anything, but I suggest something informative like “MDH_R_Prequel_2023”. I will talk about naming conventions in a moment, but in brief, R sometimes has issues reading file paths that contain periods, spaces, and hyphens, so I prefer to avoid using them. In general, I place underscores instead of spaces between words and try to keep project names relatively short.</p>
+<p>For “Create project as a subdirectory of:”, I suggest placing the project in your “Documents” folder so you can find it easily. Remember R projects can be moved if you want to put it elsewhere later. I suggest not clicking the checkboxes right now. These are advanced options for version control that you won’t need to use today. When you are done, click “Create Project”.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="../images/pierre_create_project.jpg" alt="Photograph of Pierre the plush penguin pointing to the new project dialog in RStudio on his laptop while his plush poultry friends watch" width="90%" />
+<p class="caption">
+Figure 4: Pierre describes how to create a new project
+</p>
+</div>
+<div id="r-project-structure" class="section level2">
+<h2>R project structure</h2>
+<p>In the lower right corner of your project, click the “New Folder” icon to create a folder called “Raw_data”. You will read data from this folder that you want to import into R, so save any datasets you want to read in here. Create a second folder called “Processed_data”. You will save new datasets created in R to this folder. Create a third folder called “R”. You can save your R scripts here.</p>
+<p>This is one basic folder structure for your project, but it is not the only one possible. As you use R more yourself, you can experiment to figure out which structure works best for you.</p>
+<p>To find your project’s folder in your file manager, enter this code in the console window. You can navigate to this folder in your file manager to place your data files there.</p>
+<pre class="r"><code># get working directory
+getwd()</code></pre>
+<p>If you want to work out of another folder, for example a shared folder containing your data, you can use the command <code>setwd()</code> with the directory path between the parentheses.</p>
+<p>A warning when working with Windows file paths in R: Windows uses backslashes between folders. In R, backslashes are special characters, so file paths use forward slashes instead. If you copy a file path from File Explorer, you will need to manually change the backslashes to forward slashes. Don’t worry; if you forget or miss a backslash, R will give you an error to remind you.</p>
+</div>
+<div id="errors-warnings-and-messages" class="section level2">
+<h2>Errors, warnings, and messages</h2>
+<p>It’s okay if you make mistakes in your code. R will give you a message to help you fix your mistake. Messages can be in the form of “Message:”, “Warning:”, and “Error:”.</p>
+<ul>
+<li>Messages provide information about what R did and the assumptions it made. Your code will run anyway.</li>
+<li>Warnings provide information about possible issues with your code or data. Your code will run anyway, but may give unexpected or undesired results.</li>
+<li>Errors provide information about where your code broke. Your code will not run or will stop in the middle.</li>
+</ul>
+<p>You might manage to crash R entirely. In my experience, R can crash if you use too much memory or if you try to load an incompatible package. We won’t be using that much memory or discussing packages today, so you shouldn’t need to worry about those yet. Even if you do crash R, it’s fine; just restart RStudio and pick up where you last saved.</p>
+<p>On that note, save often!</p>
+</div>
+</div>
+<div id="creating-an-r-script" class="section level1">
+<h1>Creating an R script</h1>
+<p>Before you begin coding, you will need to create a new R script. In the upper left corner of RStudio, you can either click the “New File” button (the white rectangle with a green cross button over it) or click “File” &gt; “New File” &gt; “R Script”.</p>
+<p>The first thing I like to do in a new script is write a header so I can remember in three or six or twelve months what my script is supposed to do. I include my name (and any other coders who worked with me), the date or date range the code was written, and a few lines about what the script is meant to do. I may also include issues I encounter while writing and will want to remember to revisit later.</p>
+<p>Here is a simple example of a script header, but feel free to be as fancy as you want. Note that the pound or hash sign, <code>#</code>, is placed in front of any code I want to comment out. R will ignore all code after a pound sign and jump to the next line.</p>
+<pre><code># author: Abby Stamm
+# date: 27 November 2023
+# purpose: to practice R code in the MDH R prequel workshop</code></pre>
+<p>Throughout this session, I will provide comments with the code to provide you with guidance and context. I encourage you to include additional comments that will help you to learn and understand R better.</p>
+<p>For the remainder of this session, include all of your code in the script you just created. Save often!</p>
+<p>At the end of the session, save your script so you can refer back to it later and remember what you accomplished. Also, saving allows you to build off of and improve your code as you learn more, and share your code with others.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="../images/pierre_assign_object.jpg" alt="Photograph of Pierre the plush penguin pointing to an R script header in RStudio on his laptop while his plush poultry friemds watch" width="90%" />
+<p class="caption">
+Figure 5: Pierre demonstrates a basic R script header
+</p>
+</div>
+</div>
+<div id="finding-files" class="section level1">
+<h1>Finding files</h1>
+<!-- 
+video with a lot of this exposition
+suggest people pause at specific points to try it themselves
+exclude from workshop itself or just cover briefly with Q&A?
+-->
+<p>When you first open RStudio, by default it opens to the state in which it closed. This means if you were not in a project when you closed it, you will not be in one when you open it and if you were in a project when you closed it, you will be in the same project when you open it.</p>
+<p>If you are working in multiple projects, a quick way to switch between them is to go to “File”, then “Recent Projects ⏵”, and select the project you want to open.</p>
+</div>
+<div id="r-syntax" class="section level1">
+<h1>R syntax</h1>
+<!-- 
+video based on sections of "hello world" slideshow
+include link to Andy's full slideshow for more info? or just cite it?
+create slide deck just for content in video
+-->
+<!-- 
+basic code structure
+explanation of object oriented language
+data types, vectors, assignments
+-->
+<p>R is an object-oriented language. This means you begin with an object and perform actions on that object. There are several types of objects in R, but today we will cover just two, numeric and character.</p>
+<p>The theme for these workshops is supposed to be penguins, but I grew up on a chicken farm, not a penguin farm. Today, we will be using chickens for our examples.</p>
+<div id="object-naming" class="section level2">
+<h2>Object naming</h2>
+<p>We will begin with some rules to keep in mind when naming objects. Refer back to this list as needed.</p>
+<ul>
+<li>Names should start with a letter, except in rare exceptions.</li>
+<li>Names can contain letters, numbers, underscores (_), and periods (.). I prefer to avoid using periods in names because they are special characters in R for text manipulation and analysis.</li>
+<li>In R, common ways to separate words in names are with underscores (fave_chicken) and camel case (FaveChicken). Use whichever you prefer, but be consistent. Older functions will also use periods, but most newer code avoids them.</li>
+<li>To make code easier to write and read, keep names short (under 16 characters if possible), but informative.</li>
+<li>Object and function names are case sensitive, so pay attention to your capital letters. FaveChicken, FAVECHICKEN, and favechicken would all be different objects in R.</li>
+</ul>
+</div>
+<div id="numeric-objects" class="section level2">
+<h2>Numeric objects</h2>
+<p>A numeric object is any number. Type the number of chicken dishes you know how to cook into your script. Highlight your number and press “Run” in the upper right corner of the script window.</p>
+<pre><code># number of chicken dishes I can cook
+0 
+# output:
+[1] 0</code></pre>
+<p>The output is an object with the value 0, because I don’t know how to cook chicken. I liked my chickens too much to eat them!</p>
+<p>If we want to use that value in the future, we should save it in our environment. To save an object, assign it to a name using the assignment operator, <code>&lt;-</code>. Then it will be listed in our environment window in the upper right corner of RStudio.</p>
+<p>Remember to check the <a href="#object-naming">object naming</a> guidelines above when choosing object names!</p>
+<p>Create the objects <code>dishes_can_cook</code> and <code>dishes_to_learn</code>. Check whether they show up in your environment window.</p>
+<pre class="r"><code>dishes_can_cook &lt;- 0 # change to the number you can cook
+dishes_to_learn &lt;- 2.5 # change to the number you want to learn</code></pre>
+<p>After learning your new dishes, how many will you know how to cook?</p>
+<p>A quick note on running scripts in RStudio: After adding the lines above to your script, you can run it a few different ways. You can run each line by placing the cursor anywhere on the line and either clicking “Run” in the upper right corner of the script window or pressing <em>CtrlEnter</em> (control-enter). You can run multiple lines by highlighting them and clicking “run” or pressing <em>CtrlEnter</em>. Be careful when highlighting code to run it, though. Only the characters highlighted will be run, even if the highlighting starts in the middle of the line!</p>
+<p>R recognizes basic arithmetic calculations, including +, -, *, /, parentheses, and ^ (exponent). In fact, when I started learning R, someone told me, “Any time you need to do any calculations, do it in R to help you get used to the interface and syntax.”</p>
+<p>Try the following code:</p>
+<pre class="r"><code># total number of chicken recipes I&#39;d like to know
+dishes_can_cook + dishes_to_learn</code></pre>
+<p>If you want to save your result as a new object, remember to assign a name to it.</p>
+<pre class="r"><code>total_recipes &lt;- dishes_can_cook + dishes_to_learn</code></pre>
+<p>How many total recipes will you know how to cook? Is that achievable?</p>
+</div>
+<div id="character-objects" class="section level2">
+<h2>Character objects</h2>
+<p>Now that we have seen numeric objects, what about character objects?</p>
+<p>Think of your favorite fictional chicken. Type its name into the console. Here’s what happened when I tried to enter two fictional chickens.</p>
+<pre class="r"><code>Henny Penny # The European equivalent of Chicken Little
+# output:
+Error: unexpected symbol in &quot;Henny Penny&quot;
+
+Fjalar # the rooster that heralds Ragnarok
+# output:
+Error: object &#39;Fjalar&#39; not found</code></pre>
+<p>What happened? For Henny Penny, I put two words with a space between them. R printed the “unexpected symbol” warning because it was looking for a way to process the two words, like when we added <code>dishes_can_cook</code> and <code>dishes_to_learn</code>. For Fjalar, I only put one word, but R expected it to be a defined object like <code>dishes_can_cook</code>. When R could not find an object called <code>Fjalar</code> in the working environment, it printed the error.</p>
+<p>How can I fix my errors?</p>
+<p>To enter a text value into R, you need to create a string by wrapping the text value in quotes (single or double). Note that “Fjalar” and ‘Fjalar’ are equivalent, but if my favorite chicken is Fjalar’s son, I would use double quotes (“Fjalar’s son”) so R knows the apostrophe is part of the string. Try saving your chicken’s name to the object <code>fave_chicken</code>. Remember to use quotes.</p>
+<pre class="r"><code>fave_chicken &lt;- &quot;Henny Penny&quot;</code></pre>
+<p>Now try saving your favorite chicken’s mom to <code>fave_chicken</code>. Did it work?</p>
+<p>You can also combine strings. Remember R is an object oriented language. This means you create objects, then you perform actions on the objects. You have already seen how to add numeric objects together, but symbols like <code>+</code> will not work on strings. Instead, we will use the function <code>paste()</code>, which concatenates two strings.</p>
+<p>To learn more about any function built into R, we can use the help function. The help function can be accessed two ways, with a question mark at the beginning of the function (<code>?paste</code>) or by wrapping the help function around the function we are asking about (<code>help(paste)</code> or <code>help("paste")</code>). If you are feeling meta, try asking for help on the function <code>help()</code>.</p>
+<p>Try using <code>paste()</code> in the example below. Then try it with your favorite chicken’s name. If your favorite chicken doesn’t have a last name, make one up.</p>
+<pre class="r"><code># chicken&#39;s first and last names
+first_name &lt;- &quot;Henny&quot;
+last_name &lt;- &quot;Penny&quot;
+# chicken&#39;s full name
+full_name &lt;- paste(first_name, last_name)
+# print chicken&#39;s full name
+full_name
+
+# output: 
+[1] &quot;Henny Penny&quot;</code></pre>
+<p>Did you get the result you expected?</p>
+</div>
+</div>
+<div id="using-existing-data-in-r" class="section level1">
+<h1>Using existing data in R</h1>
+<p>There are several datasets built into R, which you can list or access by running the code <code>data()</code>. Today we will explore the ChickWeight dataset. To use this dataset, first we have to load it into our environment using the function <code>data()</code>.</p>
+<pre class="r"><code>data(&quot;ChickWeight&quot;)</code></pre>
+<p>We are going to walk through several functions we can use to explore our dataset. Often we will want to check the types of data in our datasets and see a sample of the results.</p>
+<p>The function <code>str()</code> will list the variables in our dataset along with variable type and a few values for each. This function displays the structure of your dataset. It provides a snapshot of the type of data in each variable. In the print-out, “int” means integer, “num” means numeric, “chr” means character, “Factor” means categories, and “Ord.factor” means ranked or ordered categories. Try it now.</p>
+<pre class="r"><code># list the dataset variables
+str(ChickWeight)</code></pre>
+<p>What kinds of variables are in this dataset?</p>
+<p>The function <code>head()</code> will display the first six rows of our dataset and the function <code>tail()</code> will display the last six rows. This is a good way to check if your data were read in correctly. Try them now.</p>
+<pre class="r"><code># display the first six rows of data
+head(ChickWeight)
+# display the last six rows of data
+tail(ChickWeight)</code></pre>
+<p>Here is a list of a few other data exploration functions you can try now on your dataset.</p>
+<ul>
+<li><code>dim()</code> gives a vector of two numbers. The first number is the number of rows or observations. The second number is the number of columns or variables. These number will match the numbers in your environment window.</li>
+<li><code>names()</code> and <code>colnames()</code> give a vector of the variable names in your dataset.</li>
+<li><code>summary()</code> gives some information about each variable in your dataset. For numeric variables, it provides statistics like mean and range. For non-numeric variables, it provides counts of values.</li>
+<li>In RStudio, <code>View()</code> displays your full dataset as a table in the script window.</li>
+</ul>
+<p>Which functions do you find most useful? Which are the most confusing?</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<img src="../images/pierre_print_table.jpg" alt="Photograph of Pierre the plush penguin pointing to the class list for his course in RStudio on his laptop while his plush poultry friends watch" width="90%" />
+<p class="caption">
+Figure 6: Pierre displays a basic table in R
+</p>
+</div>
+</div>
+<div id="importing-and-exporting-data" class="section level1">
+<h1>Importing and exporting data</h1>
+<p>R is designed to read in data from elsewhere so we can do things with it, then export the results. In this section, you will learn how to read in (import) and save (export) comma-separated value text file (CSV).</p>
+<p>As you learn more R, you will learn ways to read from and save to Excel, shape files, PDF, and many other file formats.</p>
+<div id="reading-in-data" class="section level2">
+<h2>Reading in data</h2>
+<p>There are normally two ways you can read a dataset into R.</p>
+<ol style="list-style-type: decimal">
+<li>Read a file you saved in the “Raw_data” folder.</li>
+<li>Read a file directly from the internet or another folder. Note that firewall issues and website or folder permissions may prevent this option.</li>
+</ol>
+<p>To practice, I wanted to use a chicken dataset, but the USDA poultry data are all for meat instead of live animals. Instead, we will be reading in a dataset of animal welfare complaints in New York City. This dataset is publicly available at <a href="https://data.cityofnewyork.us/Environment/Urban-Park-Ranger-Animal-Condition-Response/fuhs-xmg2" class="uri">https://data.cityofnewyork.us/Environment/Urban-Park-Ranger-Animal-Condition-Response/fuhs-xmg2</a>.</p>
+<p>Click the link <a href="https://data.cityofnewyork.us/api/views/fuhs-xmg2/rows.csv" class="uri">https://data.cityofnewyork.us/api/views/fuhs-xmg2/rows.csv</a> to save the dataset to your computer. You will probably find it in your “Downloads” (or equivalent) folder. Move it to your “Raw_data” folder.</p>
+<p>If you do not recall where you created your project, enter this code in RStudio:</p>
+<pre class="r"><code># get working directory
+getwd()</code></pre>
+<p>After moving your file, return to RStudio. In the lower right window, click on “Files”, then on the folder “Raw_data”. You should see your file there. Now try reading the file into R.</p>
+<p>The code below shows two options to read in your data. Try both. Are both files the same dimensions? Do they have the same variable names and first few rows?</p>
+<pre class="r"><code># read from your project folder 
+raw_file &lt;- read.csv(&quot;Raw_data/Urban_Park_Ranger_Animal_Condition_Response.csv&quot;)
+
+# read from a website
+raw_web &lt;- read.csv(&quot;https://data.cityofnewyork.us/api/views/fuhs-xmg2/rows.csv&quot;)</code></pre>
+<p>To check and compare your two objects, recall that you can run the following functions on them.</p>
+<ul>
+<li><code>str()</code> gives the structure of your dataset.</li>
+<li><code>dim()</code> gives the dimensions of your dataset.</li>
+<li><code>head()</code> and <code>tail()</code> show the first and last six rows of your dataset, respectively.</li>
+<li><code>names()</code> and <code>colnames()</code> list the variable names in your dataset.</li>
+<li><code>summary()</code> gives some information about each variable in your dataset.</li>
+<li><code>View()</code> to see your full dataset.</li>
+</ul>
+<p>So far, we have been performing functions on the full dataset. This time, we need to perform the function on a specific variable in the dataset. Let’s find out how many animal welfare complaints were made about chickens. In this case, you are interested in the “Species.Description” variable.</p>
+<p>To use a specific variable in a dataset, you use the syntax <code>dataset$variable</code>, with the <code>$</code> symbol telling R to check in the dataset for the variable. If you forget, that’s okay. The error R prints out will remind you.</p>
+<p>First, print out the “Species.Description” variable.</p>
+<pre class="r"><code>raw_file$Species.Description</code></pre>
+<p>That is a lot of species in no particular order. If there are too many values, R will print a warning that the printed data were truncated, so you will not be able to view all of them anyway.</p>
+<p>The easiest way to explore the full data for this variable is to use the function <code>table()</code>, which gives you the frequency of a value in a variable. Try running the code below.</p>
+<pre class="r"><code>table(raw_file$Species.Description)</code></pre>
+<p>That is a long table. If you do not want to hunt through the table, you can assign the table to an object, then check the count for “Chicken”. To check only the “Chicken” value, you will need to index it. To index in R, use square brackets (<code>[]</code>) as shown below.</p>
+<pre class="r"><code># save the table of all species counts
+species &lt;- table(raw_file$Species.Description)
+
+# print only the count for Chicken from the table
+species[&quot;Chicken&quot;]</code></pre>
+<p>Modify the code above to check counts for “Cattle”, “Bottlenose Dolphin”, and “Raccoon”.</p>
+<p>Which species of these three species had the most complaints? Did any have more complaints than chickens? Did any of them surprise you?</p>
+</div>
+<div id="saving-or-exporting-data-from-r" class="section level2">
+<h2>Saving or exporting data from R</h2>
+<p>The easiest place to save data is inside your project. The code below saves your dataset to your “Processed_data” folder as a CSV.</p>
+<pre class="r"><code># write the dataset you created
+write.csv(raw_file, file = &quot;Processed_data/nyc_animal_welfare_complaints.csv&quot;)</code></pre>
+<p>Save your script (if you have not already) in your “R” folder.</p>
+</div>
+</div>
+<div id="bonus-content-plots" class="section level1">
+<h1>Bonus content: plots</h1>
+<p>This is a basic introduction to simple R plots. There are several kinds of plots built into base R.</p>
+<ul>
+<li><code>boxplot()</code> draws a box plot of a numeric variable.</li>
+<li><code>plot()</code> draws a scatter plot of two numeric variables.</li>
+<li><code>hist()</code> draws a histogram of a numeric variable.</li>
+<li><code>barplot()</code> draws a bar plot based on a frequency table.</li>
+<li><code>pie()</code> is not popular among R users, but I am including it here for completeness. It draws a pie chart based on a frequency table.</li>
+</ul>
+<p>For the examples below, we will use the following variables from our “raw_file” dataset.</p>
+<ul>
+<li>“Duration.of.Response” (numeric): how long responders were present, in minutes</li>
+<li>“X..of.Animals” (numeric): number of animals involved in the incident</li>
+<li>“Hours.spent.monitoring” (numeric): post-response time animals were monitored, in hours</li>
+<li>“Animal.Condition” (categorical): condition in which the animals were found</li>
+</ul>
+<div id="box-plot" class="section level2">
+<h2>Box plot</h2>
+<p>The box plot (or box-and-whiskers plot) is the simplest of the listed plots. Any of the numeric variables would work here, so pick your favorite.</p>
+<pre class="r"><code># draw a box plot of duration of response in minutes
+boxplot(raw_file$Duration.of.Response)</code></pre>
+<p>If we want to get more creative, we can include two variables. In this case, I would like to see if animal condition affects duration of response. I think worse off animals will require longer response times. To add the new variable, we use a tilde (<code>~</code>) to denote response time is dependent on animal condition.</p>
+<pre class="r"><code># draw a box plot of duration of response dependent on animal condition
+boxplot(raw_file$Duration.of.Response ~ raw_file$Animal.Condition)</code></pre>
+<p>This code creates a row of side-by-side box plots, but they are smooshed at the bottom and hard to read. Fortunately, most R functions include options that affect how the functions work. The functions <code>boxplot()</code> and <code>barplot()</code> include the option “horizontal”, which defaults to FALSE. Try changing it to TRUE as shown below.</p>
+<pre class="r"><code># draw a horizontal box plot of duration of response dependent on animal condition
+boxplot(raw_file$Duration.of.Response ~ raw_file$Animal.Condition, horizontal=TRUE)</code></pre>
+<p>That outlier around 75 minutes is still throwing things off and you may need to increase your plot size to see all the labels, but at least the box plots themselves are easier to see now. Do you see any patterns? Was my hypothesis correct?</p>
+</div>
+<div id="scatter-plot" class="section level2">
+<h2>Scatter plot</h2>
+<p>The function <code>plot()</code> is a generic plot function that works well for a variety of plot types. In its simplest form, it can be used for scatter plots. Try drawing a scatter plot of duration of response by the number of animals.</p>
+<pre class="r"><code># draw a scatter plot of duration of response by number of animals
+plot(raw_file$Duration.of.Response, raw_file$X..of.Animals)</code></pre>
+<p>Remember the options I mentioned above? We can also add options to our scatter plot. Let’s add a title and axis labels. To add a title, use the option “main” and to add axis labels, use “xlab” and “ylab” for your x and y axes, respectively. The options “xlab” and “ylab” default to the variable names, so these will be overwritten. These labeling options work for most of the plots in this section, so on your own, try adding them to your box plot above.</p>
+<pre class="r"><code># draw a scatter plot of duration of response by number of animals
+plot(raw_file$Duration.of.Response, raw_file$X..of.Animals,
+     main = &quot;Scatter plot of duration of response by number of animals&quot;,
+     xlab = &quot;duration in minutes&quot;, ylab = &quot;number of animals&quot;)</code></pre>
+<p><em>Suggestion: highlight all three lines above in your script and run them together.</em></p>
+<p>Does there appear to be an association between duration of response and number of animals?</p>
+</div>
+<div id="histogram" class="section level2">
+<h2>Histogram</h2>
+<p>Next, let’s plot a histogram of “Hours.spent.monitoring” using the <code>hist()</code> function. This function draws the shape of a numeric variable, for example to visualize whether it is normal (bell curved) or skewed (with a tail).</p>
+<pre class="r"><code># draw a histogram of number of hours the animals were monitored 
+hist(raw_file$Hours.spent.monitoring)</code></pre>
+<p>Does the histogram look normally shaped?</p>
+<p>On your own, draw another histogram for the duration of response. Well, that looks uninformative. Let’s add a few more bars to see what we are dealing with. You can do this using the “breaks” option as shown below.</p>
+<pre class="r"><code># draw a histogram of number of hours the animals were monitored 
+hist(raw_file$Duration.of.Response, breaks = 60)</code></pre>
+<p>What can you conclude from the histogram about how long the response takes?</p>
+<p>By the way, the label options introduced above will work for <code>hist()</code>, too. Try labeling your histogram on your own.</p>
+</div>
+<div id="bar-chart" class="section level2">
+<h2>Bar chart</h2>
+<p>Bar charts are drawn using the <code>barplot()</code> function. To use this function, we need to create a table first. Try creating a table of animal conditions, the way you did above with animal species. Then use that table in the function, as shown below.</p>
+<pre class="r"><code># create a table of animal conditions
+animal_cond &lt;- table(raw_file$Animal.Condition)
+# draw a bar plot of animal conditions
+barplot(animal_cond)</code></pre>
+<p>What is the most common animal condition, excluding unknowns?</p>
+<p>The option “horizontal” covered under box plots also works for bar charts. The labeling options work, too. Try adding different options on your own.</p>
+</div>
+<div id="pie-chart" class="section level2">
+<h2>Pie chart</h2>
+<p>Pie charts are basic in R, with a lot less customizability than other chart types. Like bar charts, pie charts require a table of counts. To create a pie chart, use the function <code>pie()</code>. Try creating a pie chart using the table of animal conditions you created above.</p>
+<pre class="r"><code># draw a pie chart of animal conditions
+pie(animal_cond)</code></pre>
+<p>Is the bar chart or the pie chart easier for you to understand?</p>
+<p>If you are feeling adventurous, try adding the options you learned to your code. Do they work? Do they cause warnings or errors? Do they make your chart more readable?</p>
+</div>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2022
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
