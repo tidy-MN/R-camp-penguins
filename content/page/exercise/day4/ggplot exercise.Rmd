@@ -1,7 +1,15 @@
 ---
 title: "ggplot exercises"
 output: 
-  html_document
+  blogdown::html_page: 
+    highlight: tango
+    css: ../../css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
 ---
 
 # Palmer Penguin Exploration - Part 1
@@ -164,4 +172,4 @@ Try to think of your own question that you use this data to answer or go back to
 
 The researchers have one more thing they'd like to say...
 
-# THANK YOU!
+# THANK YOU! {-}

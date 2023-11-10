@@ -1,7 +1,16 @@
 ---
 title: "sf is so awesome"
 date: "2023-11-07"
-output: html_document
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
 ---
 
 ```{r setup, include=FALSE}
