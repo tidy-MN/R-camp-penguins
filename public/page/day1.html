@@ -63,7 +63,7 @@
   "headline": "Day 1",
   "description" : "Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() \u0026amp; summary() 10 Filter data Welcome!",
   "inLanguage" : "en",
-  "wordCount":  4806 ,
+  "wordCount":  4769 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -574,31 +574,33 @@ Note
 </ul></li>
 </ol>
 <p><br></p>
+<blockquote>
 <p>Your installed packages are stored in your R <em>library</em>. The <code>Packages</code> tab on the right shows all of the available packages installed in your library. When you want to use one of them, you load it in R.</p>
-<p>Loading a package is like opening an App on your phone. To load a package we use the <code>library()</code> function. You will need to load the package everytime you “turn on” RStudio.
-Once you load it, the package will stay loaded until you close RStudio.</p>
-<p><br></p>
+<p>Loading a package is like opening an App on your phone. To load a package we use the <code>library()</code> function. You will need to load the package everytime you open RStudio. Once you load it, the package will stay loaded until you close RStudio.</p>
+</blockquote>
 <p>Add the line below to the top of your R script and run it to load the <code>tidyverse</code>. A series of messages will appear in the console informing us of the loaded packages.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p><br></p>
 <blockquote>
-<p>Welcome to the <strong>tidyverse</strong>. We can now access ALL of the wonderful functions included in the umbrella of tidyverse packages.</p>
+<p>Welcome to the <strong>tidyverse</strong>. We can now access ALL of the wonderful functions included in its umbrella of packages.</p>
 </blockquote>
 <p><br></p>
-<p>The 4 core tidyverse packages we’ll be using in R camp:</p>
+<p>The 4 core tidyverse packages we’ll be using:</p>
 <p>|Package | | Uses |
 | | | |
 |<strong>readr</strong> | | Read and write data into and out of R |
 |<strong>dplyr</strong> | | Clean, transform, and summarize data |
 |<strong>ggplot2</strong> | | Plot, chart, and graph data |
 |<strong>lubridate</strong> | | Get your dates and times in order |</p>
-<div id="the-full-list-of-tidyverse-packages-is-provided-here-httpswww.tidyverse.orgpackages" class="section level4 unnumbered">
-<h4>The full list of tidyverse packages is provided here: <a href="https://www.tidyverse.org/packages/" class="uri">https://www.tidyverse.org/packages/</a></h4>
+<ul>
+<li>See the full list of tidyverse packages at <a href="https://www.tidyverse.org/packages/" class="uri">https://www.tidyverse.org/packages/</a> {-}</li>
+</ul>
 <p><br></p>
-</div>
 </div>
 <div id="help" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Help!</h1>
-<p>To view documentation about an installed R package or a function, we put a <code>?</code> mark in front of it or put its name inside the <code>help()</code> function in quotes. We can also use the <strong>Help</strong> tab’s search bar to find a package or function we are looking to learn more about. Keep in mind when looking at documentation on a function, the specific examples showing how to use it are often found at the bottom of the page.</p>
+<hr>
+<p>To view documentation about an installed R package or a function, we put a <code>?</code> mark in front of it or put its name inside the <code>help()</code> function in quotes. We can also use the <strong>Help</strong> tab’s search bar to find a package or function we are looking to learn more about. Keep in mind when looking at documentation on a function, the examples are often found at the bottom of the page.</p>
 <p>Here’s an example that pulls up the documentation for the package <code>readr</code> and the function <code>sum()</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Help pages for a package</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">help</span>(<span class="st">&quot;readr&quot;</span>)</span>
@@ -769,31 +771,30 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 <p>Click the <strong>broom</strong> icon in the top-right Environment pane to remove all of your objects.</p>
 </blockquote>
 <p><br></p>
-<div id="taste-test" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test</h3>
+<div class="quiz">
 <h3>
-How can we get our <code>bot_friend</code> back?
+<i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test
 </h3>
+<p>{-}</p>
+<div id="how-can-we-get-our-bot_friend-back" class="section level3 unnumbered">
+<h3>How can we get our <code>bot_friend</code> back?</h3>
 <details>
-<summary class="btn_code">
+<summary class="btn_blue">
 <em>Show solution</em>
 </summary>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> You can re-run your code anytime. You can even click the <code>Run</code> button at the top of the script panel to re-run ALL of your script from top to bottom.
 </details>
 </div>
+</div>
 <p><br></p>
-<details>
-<summary class="btn_code_blue">
-<strong>Deleting things is okay</strong> <strong>&gt;</strong>
-</summary>
-<div class="note" style="margin-top: 0;">
+<div id="deleting-things-in-r-is-okay" class="section level3 unnumbered note" style="margin-top: 0;">
+<h3>Deleting things in R is okay</h3>
 <p>
 <p>Don’t worry about deleting data or objects in R. You can always recreate them! When R loads data it reads the contents and then drops the connection to the original data. So your original data remain safe and won’t suffer any accidental changes.</p>
 <p>By saving your analysis in an R script you can always re-run the code to reproduce any of your results. It’s common and good practice to <strong>re-run</strong> your entire R script during your analysis to catch potential errors early.</p>
 <br>
 </p>
 </div>
-</details>
 </div>
 <div id="whats-a-good-name" class="section level2 unnumbered">
 <h2>What’s a good name?</h2>
@@ -883,11 +884,13 @@ Note
 <p>This is a great first look to see if our code ran successfully. To clean house, you can click the <strong><code>broom</code></strong> icon to sweep everything out and start with a clean slate.
 <br></p>
 </div>
-<div id="taste-test-1" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test</h3>
+<div class="quiz">
 <h3>
-Which object name <b>is</b> allowed?
+<i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test
 </h3>
+<p>{-}</p>
+<div id="which-object-name-is-allowed" class="section level3 unnumbered">
+<h3>Which object name <b>is</b> allowed?</h3>
 <p><i>Hint: You can try the names in R</i></p>
 <p>
 <p><input type="radio" name="object"> <code>my favorite bot</code> <br>
@@ -897,11 +900,12 @@ Which object name <b>is</b> allowed?
 <input type="radio" name="object"> <code>BOTS!!!</code> <br></p>
 </p>
 <details>
-<summary class="btn_code">
+<summary class="btn_blue">
 <em>Show solution</em>
 </summary>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>my_bot55</code>
 </details>
+</div>
 </div>
 </div>
 </div>
@@ -937,7 +941,7 @@ Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency,
 ## 2 Baker-waker   2
 ## 3        BB-8  NA</code></pre>
 <p><br></p>
-<div id="taste-test-2" class="section level3 unnumbered quiz">
+<div id="taste-test" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Taste test</h3>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
@@ -956,7 +960,7 @@ Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency,
 Add a <strong>3rd</strong> column that lists if the bot <code>has_wheels</code>:
 </h4>
 <ul>
-<li><code>c(FALSE, TRUE, FALSE)</code></li>
+<li>Its values are: <code>c(FALSE, TRUE, FALSE)</code></li>
 </ul>
 <p><br></p>
 </div>
@@ -1055,7 +1059,6 @@ bots <- data.frame(name       = baking_bots,
 <blockquote>
 <p>…where did the data go?</p>
 </blockquote>
-<p><br></p>
 <div id="name-the-data" class="section level2 unnumbered">
 <h2>Name the data</h2>
 <p>Remember the assignment operator (the left-arrow: <code>&lt;-</code>)? We use it to assign the data a name so we can reference it in our script.</p>
@@ -1092,17 +1095,17 @@ bots <- data.frame(name       = baking_bots,
 <span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a></span>
 <span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="fu">class</span>(battery_level)</span></code></pre></div>
 <p><br></p>
-<div class="quiz">
-<h2 style="margin-top: 28px; margin-bottom: 44px;">
-Pop Quiz!
-</h2>
-<p><strong>1. What data type is the <code>name</code> column?</strong></p>
+<div id="taste-test-1" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test</h3>
+<h3>
+What data type is the <code>name</code> column?
+</h3>
 <p><input type="radio" name="type"> <em>letters</em> <br>
 <input type="radio" name="type"> <em>character</em> <br>
 <input type="radio" name="type"> <em>TRUE/FALSE</em> <br>
 <input type="radio" name="type"> <em>numbers</em> <br></p>
 <details style="margin-left: 14px;">
-<summary class="btn_code">
+<summary class="btn_blue">
 <em>Show solution</em>
 </summary>
 <p>
@@ -1340,7 +1343,7 @@ Menu of comparisons
 <h3 class="unnumbered"></h3>
 <details>
 <summary class="btn_code_blue">
-<span style="color: #f6cd00;"><i class="fas fa-star"></i></span> <strong>Function options</strong>
+<strong>Function options</strong>
 </summary>
 <div class="note" style="margin-top: -10px;">
 <p>
@@ -1386,25 +1389,6 @@ See function options
 </div>
 </div>
 </details>
-<div class="quiz">
-<h3>
-Pop Quiz!
-</h3>
-<p><strong>Which of these is a valid function call?</strong></p>
-<p><input type="radio" name="func"> <em>fly(2 “ships”)</em> <br>
-<input type="radio" name="func"> <em>find, “lightsaber”, “Yoda”</em> <br>
-<input type="radio" name="func"> <em>build(1000, “droids”)</em> <br>
-<input type="radio" name="func"> <em>wait(until Empire leaves)</em> <br></p>
-<details>
-<summary class="btn_code">
-<em>Show solution</em>
-</summary>
-<p>
-<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>build(1000, "droids")</code></p>
-<p><em>Correct! You are ready to audit a Junk dealer.</em></p>
-</p>
-</details>
-</div>
 <details>
 <summary class="btn_code_blue">
 Create a CSV from Excel
@@ -1440,8 +1424,8 @@ Create a CSV from Excel
 <p>Go to <a href="help.html">Help!</a> for troubleshooting, cheatsheets, and other learning resources.</p>
 </div>
 <div id="key-terms" class="section level2 unnumbered">
-<h2><i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms</h2>
-<div class="pinkcode">
+<h2><i class="fas fa-key fa-xs" style="color: #3498db;" aria-hidden="true"> </i> Key terms</h2>
+<div class="bluecode">
 <table>
 <colgroup>
 <col width="13%" />
@@ -1457,7 +1441,7 @@ Create a CSV from Excel
 <tr class="even">
 <td><code>&lt;-</code></td>
 <td></td>
-<td align="left">The assignment operator can assign a value to a new object or update an existing object.</td>
+<td align="left">The <strong>left-arrow</strong> or assignment operator can assign a value to a new object or update an existing object.</td>
 </tr>
 <tr class="odd">
 <td><code>package</code></td>

@@ -54,7 +54,7 @@ tabs <- c("Add a column", "Show hint", "Show code")
 
 content <- c(Exercise = '<h4> Add a __3rd__ column that lists if the bot `has_wheels`: </h4>
 
-- ` c(FALSE, TRUE, FALSE) `
+- Its values are: ` c(FALSE, TRUE, FALSE) `
 
 <br>',
 

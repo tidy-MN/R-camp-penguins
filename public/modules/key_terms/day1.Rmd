@@ -1,10 +1,10 @@
 
-<div class="pinkcode">
+<div class="bluecode">
 
 |           |  |                                                                  |   
 |-----------|--|:-----------------------------------------------------------------|  
 |`object  `|  | A variable in R that we can assign different values to using the assignment operator.  | 
-|`<-  `|  | The assignment operator can assign a value to a new object or update an existing object.  | 
+|`<-  `|  | The **left-arrow** or assignment operator can assign a value to a new object or update an existing object.  | 
 |`package  `|  | An add-on for R that contains new functions that someone created to help you. It's like an App for R.  |  
 |`library  `|  |The name of the folder that stores all your packages, and the function used to load a package.  |  
 |`function  `|  | Functions perform an operation on your data and returns a result. The function `sum()` takes a series of values and returns the sum for you.  |  

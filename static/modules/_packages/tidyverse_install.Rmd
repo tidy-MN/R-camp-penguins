@@ -41,12 +41,10 @@ __Add a package to your library__
 
 <br>
 
-Your installed packages are stored in your R _library_. The `Packages` tab on the right shows all of the available packages installed in your library. When you want to use one of them, you load it in R. 
+> Your installed packages are stored in your R _library_. The `Packages` tab on the right shows all of the available packages installed in your library. When you want to use one of them, you load it in R. 
+>
+> Loading a package is like opening an App on your phone. To load a package we use the `library()` function. You will need to load the package everytime you open RStudio. Once you load it, the package will stay loaded until you close RStudio.
 
-Loading a package is like opening an App on your phone. To load a package we use the `library()` function. You will need to load the package everytime you "turn on" RStudio. 
-Once you load it, the package will stay loaded until you close RStudio.
-
-<br>
 
 Add the line below to the top of your R script and run it to load the `tidyverse`. A series of messages will appear in the console informing us of the loaded packages.
 
@@ -54,12 +52,14 @@ Add the line below to the top of your R script and run it to load the `tidyverse
 library(tidyverse)
 ```
 
-> Welcome to the **tidyverse**. We can now access ALL of the wonderful functions included in the umbrella of tidyverse packages.
+<br>
+
+> Welcome to the **tidyverse**. We can now access ALL of the wonderful functions included in its umbrella of packages.
 
 
 <br>
 
-The 4 core tidyverse packages we'll be using in R camp:
+The 4 core tidyverse packages we'll be using:
 
 |Package | | Uses |
 | | | |
@@ -70,5 +70,5 @@ The 4 core tidyverse packages we'll be using in R camp:
 
  
 
-#### See the full list of tidyverse packages here: https://www.tidyverse.org/packages/ {-}
+- See the full list of tidyverse packages at https://www.tidyverse.org/packages/ {-}
 

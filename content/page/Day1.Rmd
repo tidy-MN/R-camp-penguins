@@ -73,8 +73,9 @@ We make lots of mistakes. They will be funny. Laugh with us!
 <br>
 
 # Help!
+<hr>
 
-To view documentation about an installed R package or a function, we put a `?` mark in front of it or put its name inside the `help()` function in quotes. We can also use the **Help** tab's search bar to find a package or function we are looking to learn more about. Keep in mind when looking at documentation on a function, the specific examples showing how to use it are often found at the bottom of the page.
+To view documentation about an installed R package or a function, we put a `?` mark in front of it or put its name inside the `help()` function in quotes. We can also use the **Help** tab's search bar to find a package or function we are looking to learn more about. Keep in mind when looking at documentation on a function, the examples are often found at the bottom of the page.
 
 Here's an example that pulls up the documentation for the package `readr` and the function `sum()`.
 
@@ -179,7 +180,7 @@ Lost in an ERROR message? Is something behaving strangely and want to know why? 
 Go to [Help!](help.html) for troubleshooting, cheatsheets, and other learning resources. 
 
 
-## <i class="fas fa-key fa-xs" style="color: #c81888;" aria-hidden="true"> </i> Key terms {-} 
+## <i class="fas fa-key fa-xs" style="color: #3498db;" aria-hidden="true"> </i> Key terms {-} 
 ```{r key-terms, child='../../static/modules/key_terms/day1.Rmd'}
 ```
 
