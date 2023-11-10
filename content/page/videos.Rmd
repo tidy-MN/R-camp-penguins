@@ -114,7 +114,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/exercise/day4/ggplot exercise.html)
+- [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/page/ggplot2_exercises.html)
 
 </div> 
 

@@ -222,6 +222,15 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
     </item>
     
     <item>
+      <title>ggplot2 exercises</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/ggplot2_exercises.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/ggplot2_exercises.html</guid>
+      <description>1 Palmer Penguin Exploration - Part 1 THANK YOU! 1 Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
+    </item>
+    
+    <item>
       <title>GIS and Shapefiles</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/explore_gis_maps.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

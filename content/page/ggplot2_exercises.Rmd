@@ -1,5 +1,5 @@
 ---
-title: "ggplot exercises"
+title: "ggplot2 exercises"
 output: 
   blogdown::html_page: 
     highlight: tango
