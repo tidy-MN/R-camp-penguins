@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = T)
 
 <br>
 
-## Trial - Dip your toes in your browser
+## Dip your toes in your browser
 
 <a href="https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html"><img src="https://tinystats.github.io/teacups-giraffes-and-statistics/images/Landing_page/singleGiraffe-clickme-hover.jpg" width="12%" align="left" style="margin-right: 28px; margin-top: 12px;" /></a>
 
@@ -66,10 +66,9 @@ knitr::opts_chunk$set(echo = T)
 
 ## Online courses
 
-- Coursera classes: [John Hopkins courses w/ Roger Peng](https://www.coursera.org/specializations/jhu-data-science#courses)
+- Coursera classes: [John Hopkins courses with Roger Peng](https://www.coursera.org/specializations/jhu-data-science#courses)
 
 <br>
-
 
 
 ## Recordings
@@ -78,10 +77,9 @@ knitr::opts_chunk$set(echo = T)
 
 <br>
 
-- [Statistics 220 labs](https://www.youtube.com/playlist?list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX) w/ Amelia McNamara `@St. Thomas`
+- [Statistics 220 labs](https://www.youtube.com/playlist?list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX) with Amelia McNamara St. Thomas U.
 
 <br>
-
 
 | Year | Event  | Topic | Event link | Group webpage |  
 | ---  | --- | --- | --- | --- |  
@@ -95,17 +93,15 @@ knitr::opts_chunk$set(echo = T)
 ## Learn R from inside R
 
 - [swirlR](https://swirlstats.com/students.html)  
-   - *Reach out to get help using the first time*
+   - *Reach out to us to get started for the first time*
  
 <br>
 
-## Book reading
+## We love books
 
 - Hadley's [R 4 Data Science](https://r4ds.had.co.nz/): A comprehensive & free book online.    
 - [Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/Chap-Generative.html)
 - [Introduction to Modern Statistics](https://openintro-ims.netlify.app/data-hello.html)
 - Rob Hyndman and George Anthanasopoulos [Forecasting: Principles and Practice](https://otexts.com/fpp3/)
 
-
 <br>
-

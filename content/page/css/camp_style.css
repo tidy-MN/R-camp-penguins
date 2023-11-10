@@ -1,4 +1,27 @@
+body {
+  font-size: 18px;
+}
+
+h1 {
+  margin-top: 72px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-top: 64px;
+  margin-bottom: 26px;
+}
+
+
+h3 {
+  margin-top: 26px;
+  margin-bottom: 16px;
+}
+
+
 code {color: #535353}
+
+.bluecode code {color: #3498db;}
 
 .fa, .fas, .far {
   margin-right: 6px;
@@ -259,23 +282,44 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
 
 }
 
-.quiz
-{
-     background: #f5f5f5;
-     border-left: solid 8px #ff3860; /* #00d1b2; */
-     border-radius: 25px;
-     font-size: 18px;
-     line-height: 22px;
-     overflow: hidden;
-     padding: 22px;
-     padding-top: 4px;
-     padding-bottom: 16px;
-     margin-top: 45px;
-     margin-bottom: 30px;
+.quiz {
+  background: #f5f5f5;
+  border-left: solid 48px cornflowerblue;
+  border-radius: 25px;
+  font-size: 18px;
+  line-height: 22px;
+  overflow: hidden;
+  padding: 22px;
+  padding-left: 42px;
+  padding-top: 4px;
+  margin-top: 45px;
+  margin-bottom: 30px;
 }
 
 .quiz > p {
   line-height: 160%
+}
+
+.quiz h2 {
+  color: cornflowerblue;
+  margin-top: 31px;
+  margin-bottom: 26px;
+}
+
+.quiz h4 {
+  font-size: 2.4rem;
+}
+
+.hint {font-style: italic; font-size: 1.9rem;}
+
+.btn_blue {
+  background-color: cornflowerblue;
+  border-color: #164290;
+}
+
+.btn_blue:hover {
+  border-color: cornflowerblue;
+  background-color: #164290;
 }
 
 #oneline {
@@ -363,27 +407,6 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
 .toggle.open {
     height: auto;
 }
-
-h1 {
-  margin-top: 72px;
-  margin-bottom: 30px;
-}
-
-h2 {
-  margin-top: 64px;
-  margin-bottom: 26px;
-}
-
-
-h3 {
-  margin-top: 32px;
-  margin-bottom: 16px;
-}
-
-body {
-  font-size: 19px;
-}
-
 
 /*************************************************
  *  Alerts

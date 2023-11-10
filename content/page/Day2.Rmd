@@ -1,0 +1,172 @@
+---
+title: "Day 1 - PM"
+output: 
+  blogdown::html_page: 
+    toc: true   
+    toc_depth: 1
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE)
+
+xaringanExtra::use_clipboard()
+
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
+source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
+```
+
+
+## Data exploration {-} 
+```{r glimpse, child='../../static/modules/dplyr/dplyr_install/general.Rmd'}
+```
+
+
+## Get to know your data frame {-}
+```{r glimpse, child='../../static/modules/dplyr/dplyr_glimpse/starwars.Rmd'}
+```
+
+
+```{r tools, child='../../static/modules/dplyr/dplyr_toolbox/general.Rmd'}
+```
+
+<br>
+
+# Porg tables 
+<hr>
+
+A poggle of porgs volunteered to help us demo the `dplyr` functions.
+
+You can follow along by reading the __porgs__ data from the URL below. *(Sorry, the data doesn't include the images.)*
+
+```{r, eval=F}
+porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+```
+
+
+```{r porg-tabs, results='asis', echo=F}
+cat(readLines("porg_tabs.txt"))
+```
+
+
+# `select()`
+<hr>
+
+```{r select, child='../../static/modules/dplyr/dplyr_select/starwars.Rmd'}
+```
+
+
+# Sort with `arrange()` 
+<hr>
+
+```{r arrange, child='../../static/modules/dplyr/dplyr_arrange/starwars.Rmd'}
+```
+
+<br>
+
+# R BINGO! {-}
+<hr class="hr2">
+
+```{r arrange, child='../../static/modules/games/bingo/general.Rmd'}
+```
+
+
+# `filter()`
+<hr>
+```{r arrange, child='../../static/modules/dplyr/dplyr_filter/starwars.Rmd'}
+```
+
+<div class="well">
+Now, let's calculate some new columns to help focus Rey's scrap finding.
+</div>
+
+
+# `mutate()`
+<hr>
+```{r arrange, child='../../static/modules/dplyr/dplyr_mutate/starwars.Rmd'}
+```
+
+
+## Final stretch! {-}
+<hr class="hrlvl2">
+```{r arrange, child='../../static/modules/dplyr/dplyr_filter/ionengine.Rmd'}
+```
+
+
+# Saving data
+<hr>
+```{r save, child='../../static/modules/readr/readr_write/scrap_pounds.Rmd'}
+```
+
+
+## Where am I? {-}
+<hr class="hrlvl2">
+```{r paths, child='where_am_i.Rmd'}
+```
+
+
+# Plots with _ggplot2_
+<hr>
+
+<br>
+
+#### _Plot the data, Plot the data, Plot the data_ {-}
+
+<br>
+
+![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
+
+
+This is going to be a long flight. Let's warm up our plotting machines so they are ready for Endor. To get started, let's answer Rey's question about where the most scrap was sent to on Jakku.
+
+```{r child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
+```
+
+<br>
+
+<div class="tip">
+### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+
+Fill in the code below to make a column plot showing the total amount of scrap for each `item`.
+
+<br>
+
+```{r, eval=F, echo=T}
+ggplot(scrap, aes(x = ___________, y = amount)) + 
+  geom_col()
+```
+
+
+Now, try setting the **fill** argument equal to the `destination` column.
+
+</div>
+
+<br>
+
+# Shutdown complete
+<hr>
+
+```{r shutdown, child='../../static/modules/shutdown.Rmd'}
+```
+
+
+![](../images/scaryR.jpg){style="margin-left: 11%; width: 78%;"}
+
+# Learn more!
+<hr>
+
+- RStudio Primers: [Data Visualization Basics](https://posit.cloud/learn/primers/1.1)
+- [R Basics](https://rstudio-education.github.io/hopr/basics.html)
+
+<br>
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+
+<br>

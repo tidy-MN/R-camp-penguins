@@ -1,0 +1,357 @@
+---
+title: "Day 3 - PM"
+output: 
+  blogdown::html_page: 
+    toc: true
+    toc_depth: 1
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+---
+
+<style>
+h1 .header-section-number {background: #c75a16;}
+hr {background: #c75a16;}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = F, message = F)
+knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+xaringanExtra::use_clipboard()
+```
+
+
+# Psst...we need to talk
+<hr>
+
+```{r bert-ernie, child='../../static/modules/games/lets_talk.Rmd'}
+```
+
+<br>
+
+
+# Pipe things together: ` A %>% B `
+<hr>
+```{r pipe-intro, child='../../static/modules/dplyr/dplyr_pipe/intro.Rmd'}
+```
+
+<br>
+
+# <i class="fas fa-database"></i> Connect to databases 
+<hr>
+
+## Databases and SQL {-}
+
+
+### Prep {-}
+
+Let's get our favorite starwars data.
+```{r}
+#install.packages("RSQLite")
+#install.packages("DBI")
+library(RSQLite)
+library(DBI)
+library(dplyr)
+
+people <- starwars
+```
+
+
+**Create a local db**
+```{r}
+# Create a connection to a new database
+# A .db file will appear in your project folder
+conn <- dbConnect(RSQLite::SQLite(), "people.db")
+```
+
+
+#### Add our data {-}
+```{r, eval=F}
+# Add the dataset to a table called "people_tbl"
+## ERROR! This will throw an error about our data
+try(dbWriteTable(conn, "people_tbl", people))
+
+# Drop the list columns
+people <- select(people, -films, -vehicles, -starships)
+
+# Try again
+try(dbWriteTable(conn, "people_tbl", people))
+
+# List all the tables available in the database
+dbListTables(conn)
+```
+
+
+### Reading data {-}
+
+**SQL**
+```{r, eval=F}
+dbGetQuery(conn, "SELECT * FROM people_tbl")
+
+# Filter the data
+df <- dbGetQuery(conn, "SELECT * FROM people_tbl 
+                        WHERE eye_color = 'brown'")
+```
+
+**dplyr**
+```{r}
+tbl(conn, "people_tbl")
+
+# Filter the data
+df <- tbl(conn, "people_tbl") %>% 
+        filter(eye_color == "brown") 
+
+# Show the SQL that *will* run, if you tell it to
+show_query(df)
+
+# Run the SQL and return the data
+df <- collect(df)
+```
+
+
+### Database parameters for the real world {-}
+
+- `driver` : Specific to the type of database: Oracle, PostgreSQL, Athena
+- `url` or `host` : The web or server location to connect to  
+- `port` : A 4 digit number of the port to use for communicating with the db  
+- `db` : The db name  
+- `user` : Your username for the db  
+- `password` : Your password for the db  
+
+> Woah! That is a lot to keep track of. Luckily, there are helper packages to simplify connecting to various databases. Contact your Agency's R user group for more info.
+
+
+# Password: Is it secret, is it safe? 
+<hr>
+
+<br>
+
+### Using passwords in R {-}
+
+<br>
+
+**Not secret, not safe**
+```{r, eval=F}
+user <- "Me"
+password <- "IloveR2D2!"
+
+# Connect to db "Area51"
+```
+
+
+**Yes secret, Yes safe**
+```{r, eval=F}
+#install.packages("keyring")
+library(keyring)
+
+# This opens a popup to enter and store your password for the db
+## Only need to do once
+key_set("Area51", "Me")
+
+# Then use this to safely add your password to your script
+key_get("Area51", "Me")
+```
+
+
+### Connecting to Agency databases {-} 
+
+> *A live demo will begin shortly...*
+
+<br>
+
+
+# Your turn
+<hr>
+
+Time to start putting what we've learned to use. Choose one of the paths below and use your new hard-earned R skills to explore data. When you feel ready, jump to the Grand Moff path and begin making a report for your __own__ data. 
+
+
+<div class="row3" style = "margin-top: 20px;">
+
+<div class="column3"><span style="margin-left: 2px;">
+<a href="level1_jakku_explore.html"><i class="fa fa-star" aria-hidden="true" style="color: #fa970c;"></i> __ENSIGN__ </a>
+</span></div> 
+
+<div class="column3"> <span style="margin-left: 2px; display: inline;">
+<a href="level2_porg_exposure.html"> <i class="fa fa-star" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star" aria-hidden="true" style="color: #fa970c;"></i> __COMMODORE__ </a> 
+</span></div> 
+
+<div class="column3"> <span style="margin-left: 2px;">
+<a href="level3_example_outline.html"><i class="fa fa-star" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star" aria-hidden="true" style="color: #fa970c;"></i><i class="fa fa-star" aria-hidden="true" style="color: #fa970c;"></i> __GRAND MOFF__ </a>
+</span></div>
+</div>
+
+
+<div class="row3">
+
+<div class="column3" style="height: 232px; max-height: 232px;">
+<div class="" style="border: 1px solid grey;">
+<a href="level1_jakku_explore.html"><img src="../images/jakku_sq.PNG" style="width: 290px;"></a>
+</div></div>
+
+<div class="column3" style="height: 232px; max-height: 232px;">
+<div class="" style="border: 1px solid grey;">
+<a href="level2_porg_exposure.html"><img src="../images/fly_porgs_sq.jpg" style="width: 290px;"></a>
+</div></div>
+
+<div class="column3" style="height: 232px; max-height: 232px;">
+<div class="" style="border: 1px solid grey;">
+<a href="level3_example_outline.html"><img src="../images/death_star_sq.PNG" style="width: 290px;"></a>
+</div></div>
+
+</div>
+
+
+<div class="row3" style = "margin-top: 22px;">
+<div class="column3">
+
+Explore the scrap and salvage economy on Jakku.
+
+Media: `solid waste`  
+Planet: `Jakku`
+</div>
+
+<div class="column3">
+Study the effects of jet-fuel on Porg reflexes.
+
+Media: `biological`  
+Planet: `Ahch-To`
+</div> 
+
+<div class="column3">
+Travel back to Earth and explore your own data set.
+
+Media: `all`  
+Planet: `Earth`
+</div>
+
+</div>
+ 
+<br>
+
+
+# What's next? {-}
+<hr class="hrlvl2">
+
+#### Join us! {-}
+
+- R user groups: TidyTuesdays 
+- R Teams in Teams
+
+
+#### R heroes {-}
+
+- MN's Amelia McNamara
+    - [Tweets](https://twitter.com/ameliamn?lang=en) and [YouTube](https://www.youtube.com/ameliamcnamara)  
+- David Robinson
+    - [Tweets](https://twitter.com/drob?lang=en) and [YouTube](https://www.youtube.com/@safe4democracy/videos) (Tidy Tuesday screencasts)  
+- Jenny Bryan
+    -  [Tweets](https://twitter.com/jennybryan?lang=en) and [Talks](https://jennybryan.org/talk/)  (See [Code smells](https://www.youtube.com/watch?v=7oyiPBjLAWY))
+- Allison Horst
+    -  [Github](https://github.com/allisonhorst) and [Art!](https://allisonhorst.com/r-packages-functions)  (See mutate & janitor)
+
+
+#### Online courses {-}
+
+- John Hopkins' [Exploratory Data Analysis](https://www.coursera.org/learn/exploratory-data-analysis?specialization=data-science-foundations-r)
+
+#### Web trainings {-}
+
+- RStudio Primers 
+    - [Data Visualization Basics](https://posit.cloud/learn/primers/1.1)
+    - [R Programming Basics](https://posit.cloud/learn/primers/1.2)
+- [Intro to R](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html) - Cute giraffes!
+- [R boot camp](https://r-bootcamp.netlify.app/chapter1) - The Magic of ggplot2
+
+#### Online books {-}
+
+- [Hands on R](https://rstudio-education.github.io/hopr/basics.html)
+- [R for Data Science](https://r4ds.had.co.nz/)
+
+
+# 🐱 Concatulations! {-}
+<hr class="hrlvl2">
+
+**You were an excellent Data Droid!** **Rey and BB8 absolutely couldn't have done it without you.**  
+
+> You deserve an award.
+
+```
+    Meowwwwww R Users! 
+      \
+       \
+        \
+            |\___/|
+          ==) ^Y^ (==
+            \  ^  /
+             )=*=(
+            /     \
+            |     |
+           /| | | |\
+           \| | |_|/\
+      jgs  //_// ___/
+               \_)
+```
+
+<br>
+
+# Return to Earth {-}
+<hr class="hrlvl2">
+
+You're free! You can return to Earth now. Go ahead and robot frolic in the grass, enjoy the solar power, and jump in a lake. To help you fully acclimate, let's look at some Earth data. 
+ 
+<br>
+
+<div class="row3" style="margin-top: 20px;">
+
+<div class="column3"> <div align="center">
+<a href="explore_GIS_maps.html" style="margin-left: auto;"> __Maps for humans__ </a>
+</div></div> 
+
+
+</div>
+
+
+<div class="row3">
+
+<div class="column3" style="height: 160px; max-height: 160px;">
+<div class="" style="border: 1px solid grey; max-height: 160px; overflow: hidden;">
+<a href="explore_GIS_maps.html"><img src="../images/map_Hennepin.png" style="width: 290px;"></a>
+</div></div>
+
+
+</div>
+
+
+<div class="row3">
+
+<div class="column3">
+
+Study the housing habits of Earthlings. Create interactive maps showing the spatial clustering of different social characteristics of the human species.  
+
+</div> 
+
+</div>
+
+<div class="row3" style = "margin-top: 2px;">
+
+<div class="column3">
+
+Media: `social-human`   
+Planet: `Earth`
+
+</div>
+
+
+</div>
+
+<br>
+
+### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-3.html) {-}
+
+<br>

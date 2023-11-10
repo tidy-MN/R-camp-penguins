@@ -39,6 +39,7 @@ Use cheatsheets to refresh your memory and find new functions or plots.
 __Searching online__
 
 - Google: include `r` or `rstats` + `"the question"`
+  - Include `github` to get to a package's development page that often includes examples.
 - Search or post on [stackoverflow.com](https://stackoverflow.com/questions/12675147/how-can-we-make-xkcd-style-graphs) + the `[r]` tag
 
 __Inside R__

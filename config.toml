@@ -47,10 +47,6 @@ uglyURLs = true
   #gitlab = "username"
 
 
-[[menu.main]]
-    name = "Agenda"
-    url = "page/agenda.html"
-    weight = 1
     
 [[menu.main]]
     identifier = "Training"
@@ -59,7 +55,13 @@ uglyURLs = true
 
 [[menu.main]]
     parent = "Training"
-    name = "Primer"
+    name = "Agenda"
+    url = "page/agenda.html"
+    weight = 1
+
+[[menu.main]]
+    parent = "Training"
+    name = "Camp Primer"
     url = "page/r_camp_primer.html"
     weight = 1  
   
@@ -78,31 +80,31 @@ uglyURLs = true
 [[menu.main]]
     parent = "Training"
     name = "Day 2"
-    url = "post/day-1.html"
+    url = "page/day2.html"
     weight = 2
 
 [[menu.main]]
     parent = "Training"
     name = "Day 3"
-    url = "post/day-2.html"
+    url = "page/day3.html"
     weight = 2
 
 [[menu.main]]
     parent = "Training"
     name = "Day 4"
-    url = "post/day-4.html"
+    url = "page/day4.html"
     weight = 2  
     
 [[menu.main]]
     parent = "Training"
     name = "Day 5"
-    url = "post/day-5.html"
+    url = "page/day5.html"
     weight = 2 
     
 [[menu.main]]
     parent = "Training"
     name = "Day 6"
-    url = "post/day-6.html"
+    url = "page/day6.html"
     weight = 2   
 
 [[menu.main]]
@@ -110,17 +112,13 @@ uglyURLs = true
     url = "page/install.html"
     weight = 2
 
-[[menu.main]]
-    name = "Get started"
-    url = "page/get_started.html"
-    weight = 3
 
 [[menu.main]]
     name = "Community"
     url = "page/community.html"
-    weight = 4
+    weight = 3
 
 [[menu.main]]
     name = "Help"
     url = "page/help.html"
-    weight = 5
+    weight = 4

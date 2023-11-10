@@ -2,7 +2,7 @@
 title: Agenda
 subtitle: ''
 date: '2018-12-08'
-summary: 'R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and...'
+summary: 'R Camp || Day 1...'
 showDate: false
 showAuthor: false
 slug: 'agenda'
@@ -112,7 +112,7 @@ Packages: `dplyr`
 <div class = "row">
 <div class = "col-md-6">
 
-**Day 1** 
+**Day 3** 
 
 > Questions and Review
 
@@ -129,19 +129,20 @@ Packages: `dplyr`
 </div>
 
 <div class = "col-md-6">
-**Day 2** | _1PM-4:00pm_  
+**Day 4** | _1PM-4:00pm_  
 
-> _Star Wars - Guess Who_   
+> _Penguins - Guess Who_   
 
 1. Calculate new columns based on `if` condition
-    - If `age > 17` then "Eligible to vote"
+    - If `age > 10` then "Eligible for vaccine"
 1. Plot like a Jedi!
     - Scatter plots and boxplots 
     - Add titles, colors, and labels 
     - Reference lines 
     - Themes
 1. Save charts to different formats 
-1. Your turn - Practice what you've learned
+1. Your turn 
+    - Practice what you've learned
 
 
 </div>
@@ -153,7 +154,7 @@ Packages: `dplyr`
 <div class = "row">
 <div class = "col-md-6">
 
-**Day 1**   
+**Day 5**   
 
 > Questions and Review
 
@@ -172,7 +173,7 @@ Packages: `sf`, `leaflet`, `lubridate`
 
 <div class = "col-md-6">
 
-**Day 2**   
+**Day 6**   
 
 > Language learning: Reading code 
 
@@ -197,6 +198,4 @@ Packages: `DBI`, `RODBC`, `keyring`
 
 Celebrations, accolades and certificates
 
-
-
-</br>
+<br>

@@ -200,52 +200,7 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/day1.html</guid>
-      <description>Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 R bakery 4 Names and things 5 Tidy tables and dataframes 6 Read data 7 Size up the data 8 glimpse() &amp;amp; summary() 9 Filter data Welcome!</description>
-    </item>
-    
-    <item>
-      <title>Day 1 - PM</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/day1_pm.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day1_pm.html</guid>
-      <description>1 dplyr 2 glimpse() &amp;amp; summary() Your analysis toolbox 3 Porg tables 4 select() 5 Sort with arrange() R BINGO!</description>
-    </item>
-    
-    <item>
-      <title>Day 2 - AM</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/day2_am.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day2_am.html</guid>
-      <description>1 Review - New project Finn needs us! 2 Jakku re-visited 3 Join tables with left_join 4 summarize() 5 group_by() category 6 Save files 7 A sickness grows… Good morning, Jedis!</description>
-    </item>
-    
-    <item>
-      <title>Day 2 - PM</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/day2_pm.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day2_pm.html</guid>
-      <description>Guess Who? 1 ifelse() 2 Plots with ggplot2 3 More Plots It’s Finn time Plot glossary Homeworld training Guess Who?</description>
-    </item>
-    
-    <item>
-      <title>Day 3 - AM</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/day3_am.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day3_am.html</guid>
-      <description>1 Day 1 review Your analysis toolbox 2 Day 2 review 3 Reading coordinates 4 Leaflet maps 5 Invasive Porg Survey - 2023 6 Dates with lubridate 7 Share with friends 1 Day 1 review Get to know your DATA Function Information names(scrap) column names nrow(.</description>
-    </item>
-    
-    <item>
-      <title>Day 3 - PM</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/day3_pm.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day3_pm.html</guid>
-      <description>1 Psst…we need to talk 2 Pipe things together: A %&amp;gt;% B 3 Connect to databases 4 Password: Is it secret, is it safe?</description>
+      <description>Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() &amp;amp; summary() 10 Filter data Welcome!</description>
     </item>
     
     <item>
@@ -347,7 +302,7 @@ porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos.html</guid>
-      <description>Camp prep 0.1 - Install R 0.2 - Primer Day 1 Day 2 Day 3 Day 4 Day 5 Day 6 1.</description>
+      <description>Camp prep 0.1 - Install R Required - Please-please do before our first session together. Send Barbara Monaco/Derek Nagel a Teams chat or email for help.</description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@
 
 ## Let's make a tidy table with our baking bots. {-}
 
-<img src="../images/tidy_data_slide.png" style="width: 510px; margin: 20px;" alt="On the left are 3 vertical vectors side by side. On the right the 3 vectors are combined into a table with 3 columns where each of the columns is represented by one of the vectors on the left.">
+<img src="../images/vector_to_dataframe.png" style="width: 510px; margin: 20px;" alt="On the left are 3 vertical vectors side by side. On the right the 3 vectors are combined into a table with 3 columns where each of the columns is represented by one of the vectors on the left.">
 
 <br>
 

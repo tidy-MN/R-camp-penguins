@@ -11,7 +11,7 @@ output:
 
 ## The growth of R user groups worldwide
 
-![](../images/rladies_map.gif){style="width: 70%;"}
+![](../images/rladies_map.gif){style="width: 74%;"}
 
 </div>
 
@@ -20,7 +20,7 @@ output:
 
 __Online Communities__
 
-![](../images/rladies_sf_tweet.png){style="width: 50%; float: right; margin-left: 20px; margin-top: -26px;"}
+![](../images/rladies_sf_tweet.png){style="width: 52%; float: right; margin-left: 12px; margin-top: -26px;"}
 
 - `#rstats` on [Twitter](https://twitter.com/search?q=%23rstats&src=typd&lang=en)
 - [RStudio's question forum](https://community.rstudio.com/)
@@ -30,9 +30,9 @@ __Online Communities__
 - [R for data science learning community](https://www.rfordatasci.com/)    
 - [ROpenSci](https://ropensci.org/)
     - [Packages & Data](https://ropensci.org/packages/)
-- MN Govt. Teams  
-    - [MDH](https://teams.microsoft.com/l/channel/19%3aj8WkD4Kx77zVY1Hm7_IH0pDWyVXgVSh3_FS0UQ63Xl41%40thread.tacv2/General?groupId=6cd8293a-b134-455b-abce-b55adade3e64&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
-    - [MPCA](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)    
+- MN Gov Team's Team 
+    - [Join here!](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
+    - Non-state employees: You're welcome too! Just ask us to invite you.
 
 
 <div style="margin-top: 4px; clear:both;"> </div>
@@ -65,7 +65,94 @@ __Conferences__
 
 <div style="margin-top: 5px; clear:both;"> </div>
 
+<br>
+
+<style>
+blockquote { padding: 5px 10px; }
+.note {
+     background-color: #f0f7fb;
+     border-left: solid 4px #3498db;
+     border-radius: 25px;
+     font-size: 17px;
+     font-style: normal;
+     line-height: 19px;
+     overflow: hidden;
+     padding: 10px;
+     padding-top: 12px;
+     padding-bottom: 14px;
+     margin-top: 18px;
+     margin-bottom: 15px;
+     padding-left: 22px;
+}
+</style>
+
 
 <br>
 
-##
+# Learning resources
+<hr>
+
+## Dip your toes in your browser
+
+<a href="https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html"><img src="https://tinystats.github.io/teacups-giraffes-and-statistics/images/Landing_page/singleGiraffe-clickme-hover.jpg" width="12%" align="left" style="margin-right: 28px; margin-top: 12px;" /></a>
+
+<br><br><br>
+
+- [Intro to R](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html) (with very cute giraffes)
+
+<br><br><br>
+
+- Short RStudio lessons:  
+    - [R programming basics](https://tutorials.shinyapps.io/04-Programming-Basics/)    
+    - [Working with data](https://rstudio.cloud/learn/primers/2)    
+        - [Filtering data](https://learnr-examples.shinyapps.io/ex-data-filter/#section-welcome)    
+        - [Summarizing data](https://learnr-examples.shinyapps.io/ex-data-summarise/#section-welcome)
+    - Visualizing data  
+        - [Bar charts](https://rstudio.cloud/learn/primers/3.2)  
+- Longer data wrangling lesson:  
+    - [Datacamp](https://campus.datacamp.com/courses/introduction-to-the-tidyverse/data-wrangling-1) (First section is `FREE`)  
+
+
+<br>
+
+## Online courses
+
+- Coursera classes: [John Hopkins courses with Roger Peng](https://www.coursera.org/specializations/jhu-data-science#courses)
+
+<br>
+
+
+## Recordings
+
+![](https://yt3.ggpht.com/ytc/AKedOLRPi7rGLtqp4d_As41s8adcI4mvdQfF0riaERZXQw=s176-c-k-c0x00ffffff-no-rj){style="float: right; margin-top: 4px; width: 99px; margin-left: 8px; margin-right: 34px;"}
+
+<br>
+
+- [Statistics 220 labs](https://www.youtube.com/playlist?list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX) with Amelia McNamara St. Thomas U.
+
+<br>
+
+| Year | Event  | Topic | Event link | Group webpage |  
+| ---  | --- | --- | --- | --- |  
+| 2021 | Workshop | R reports with Rmarkdown: Tips & Tricks w/ Allison Horst | [Google Drive recording](https://drive.google.com/file/d/1s2eRC8ENiaDFo_6h_W7NwE_kx2xxZLE-/view) | [R-Ladies global](https://rladies.org/) |
+| 2021 | Presentation | ggplot: Take a Sad Plot & Make it Better w/ Alison Hill | [Take a Sad Plot & Make it Better](https://www.youtube.com/watch?v=JeRRSGWODBQ)| [R-Ladies global](https://www.youtube.com/channel/UCDgj5-mFohWZ5irWSFMFcng) |
+| 2020 | Workshop | Plot anything w/ ggplot| [ggplot workshop](https://www.youtube.com/watch?v=h29g21z0a68&feature=youtu.be) |  | 
+
+
+<br>
+
+## Learn R from inside R
+
+- [swirlR](https://swirlstats.com/students.html)  
+   - *Reach out to us to get started for the first time*
+ 
+<br>
+
+## We love books
+
+- Hadley's [R 4 Data Science](https://r4ds.had.co.nz/): A comprehensive & free book online.    
+- [Modern Statistics for Modern Biology](https://web.stanford.edu/class/bios221/book/Chap-Generative.html)
+- [Introduction to Modern Statistics](https://openintro-ims.netlify.app/data-hello.html)
+- Rob Hyndman and George Anthanasopoulos [Forecasting: Principles and Practice](https://otexts.com/fpp3/)
+
+<br>

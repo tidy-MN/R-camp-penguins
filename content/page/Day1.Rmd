@@ -67,14 +67,37 @@ We make lots of mistakes. They will be funny. Laugh with us!
 
 <img src="../images/package-hexes.jpg">
 
-```{r new-pkg, child='../../static/modules/_packages/tidyverse.Rmd'}
+```{r new-pkg, child='../../static/modules/_packages/tidyverse_install.Rmd'}
 ```
+
+<br>
+
+# Help!
+
+To view documentation about an installed R package or a function, we put a `?` mark in front of it or put its name inside the `help()` function in quotes. We can also use the **Help** tab's search bar to find a package or function we are looking to learn more about. Keep in mind when looking at documentation on a function, the specific examples showing how to use it are often found at the bottom of the page.
+
+Here's an example that pulls up the documentation for the package `readr` and the function `sum()`.
 
 ```{r, eval=F}
-install.packages("tidyverse")
-library(tidyverse)
+# Help pages for a package
+help("readr")
+?readr
+
+# Help page for the sum function
+## Scroll to bottom of the help page to see examples
+help("sum")
+?sum
 ```
 
+
+<br>
+
+> To look for information on packages we don't have yet or to find more examples of how a function is used, we can search the internets with the addition of `R` and `github` in front of what we're looking for. This will often direct us to the development page for that package. For example, this search phrase will lead us to `readr`'s development page with some examples of reading in various data formats to R: `R github readr`. 
+>
+> - https://github.com/tidyverse/readr#usage
+
+
+<br>
 
 ### You're on the TEAM!  {-}
 
@@ -87,7 +110,6 @@ library(tidyverse)
 <hr>
 
 ## <i class="fa fa-cake-candles" aria-hidden="true"></i> New project {-}
-<hr>
 
 Let's start a new project in RStudio.
 ```{r set-params, include=F}
@@ -140,6 +162,7 @@ Before diving into a data set, we use `glimpse() ` and several other summary fun
 
 
 ### {-}
+
 ```{r fun-options, child='../../static/modules/base/base_functions/fun_options.Rmd'}
 ```
 
