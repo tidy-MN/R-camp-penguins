@@ -97,8 +97,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [Describe penguin populations](https://tidy-mn.github.io/R-camp-penguins/exercise/describe_penguin_populations.html)
-- [Guess Who! *Hint: I'm a penguin*](https://tidy-mn.github.io/R-camp-penguins/exercise/find_the_penguin.html)
+- [Describe penguin populations](https://tidy-mn.github.io/R-camp-penguins/page/exercise/describe_penguin_populations.html)
+- [Guess Who! *Hint: I'm a penguin*](https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html)
 
 </div>
 
@@ -114,7 +114,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/ggplot2_exercises.html)
+- [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises.html)
 
 </div> 
 
@@ -124,12 +124,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 - 5.1: [Spatial awareness and GIS](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html)
 - 5.2: [sf: Simple features package](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/sf.html)
-- [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_lines_polygons.html)
+- [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/5_3_points_lines_polygons.html)
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Map exercises
 
-- [Homeward bound](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/Homeward_bound.html)
+- [Homeward bound](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/5_homeward_bound.html)
 
 
 </div> 
