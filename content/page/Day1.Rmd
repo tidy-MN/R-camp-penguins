@@ -33,7 +33,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-## Welcome! {-}
+# Welcome! {-}
 <hr class="hr2">
 
 
@@ -47,7 +47,7 @@ We make lots of mistakes. They will be funny. Laugh with us!
 
 
 
-# Why R? {-}
+# Why R? 
 <hr>
 
 ```{r whyR, child='../../static/modules/intro/_whyr/mpca.Rmd'}
@@ -68,8 +68,6 @@ We make lots of mistakes. They will be funny. Laugh with us!
 
 ```{r new-pkg, child='../../static/modules/_packages/tidyverse_install.Rmd'}
 ```
-
-
 
 
 # Help!

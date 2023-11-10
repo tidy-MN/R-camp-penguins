@@ -46,6 +46,10 @@ __Add a package to your library__
 > Loading a package is like opening an App on your phone. To load a package we use the `library()` function. You will need to load the package everytime you open RStudio. Once you load it, the package will stay loaded until you close RStudio.
 
 
+<br>
+
+__Load a package from your library__  
+
 Add the line below to the top of your R script and run it to load the `tidyverse`. A series of messages will appear in the console informing us of the loaded packages.
 
 ```{r, eval=F}
@@ -54,12 +58,15 @@ library(tidyverse)
 
 <br>
 
-> Welcome to the **tidyverse**. We can now access ALL of the wonderful functions included in its umbrella of packages.
+<blockquote style="background-color: #f0f0f0">
 
+🎉 Welcome to the **tidyverse**. We can now access ALL of the wonderful functions included in its umbrella of packages.
+
+</blockquote>
 
 <br>
 
-The 4 core tidyverse packages we'll be using:
+Here are the 4 core `tidyverse` packages we'll be using in R Camp:
 
 |Package | | Uses |
 |:-- |:-- |:-- |  
@@ -68,6 +75,6 @@ The 4 core tidyverse packages we'll be using:
 |`ggplot2` | | Plot, chart, and graph data |
 |`lubridate`  | | Get your dates and times in order |
 
- 
+<p class="hint">
 See the full list of tidyverse packages at https://www.tidyverse.org/packages/
-
+</p>
