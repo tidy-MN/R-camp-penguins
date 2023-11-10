@@ -54,7 +54,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
 <h2>Species by Island</h2>
 <pre class="r"><code>ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar() </code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Great! We have a stacked bar chart that shows the species by island! But the researchers have asked us to make it look “nicer” - things like better labels, colors, etc.</p>
 <p>Back to the drawing board…let’s start with labels! We want to add a title and make the axis labels be capitalized vs lower-case. Also someone complained about the background color and asked us to make it look “cleaner”.</p>
 <pre class="r"><code>ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -63,7 +63,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
   ylab(&quot;Number of Penguins observed&quot;) +
   labs(title = &quot;Distribution of penguin species by island&quot;) +
   theme_bw()</code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Okay - whew! We added a title, a nice x-axis and y-axis label, changed the theme to <code>theme_bw</code> which we think looks pretty clean so hopefully they do too.</p>
 <p>Now we just need to tackle color…hmmm, we know it’s a bar-chart which means that we need to specify ‘fill’ vs ‘color’ so we can use the function <code>scale_fill_brewer</code> to pick out our favorite (RColorBrewer palette)[<a href="https://colorbrewer2.org/" class="uri">https://colorbrewer2.org/</a>] for this graph. We want a qualitative one and we also want one that is colorblind safe so let’s pick palette 3!</p>
 <pre class="r"><code>ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -73,7 +73,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
   ylab(&quot;Number of Penguins observed&quot;) +
   labs(title = &quot;Distribution of penguin species by island&quot;) +
   theme_bw()</code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Annnnd of course one the researchers had a last minute request. They didn’t like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!</p>
 <pre class="r"><code>ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar(position = position_dodge2(preserve = &#39;single&#39;)) +
@@ -82,7 +82,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
   ylab(&quot;Number of Penguins observed&quot;) +
   labs(title = &quot;Distribution of penguin species by island&quot;) +
   theme_bw()</code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="which-species-has-the-longest-bill" class="section level2">
 <h2>Which species has the longest bill?</h2>
@@ -97,7 +97,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
   theme_bw()</code></pre>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Looks like Gentoo and Chinstrap are pretty much tied for longest bill! Wonder if bill length is related to other measurements…Always more questions!</p>
 </div>
 <div id="what-measurements-are-related-to-each-other" class="section level2">
@@ -125,7 +125,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
   labs(title = &quot;Relationship of body mass and flipper length by species&quot;) +
   theme_bw()</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Fascinating…Gentro is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same amoung the different penguin species. You can add a trend-line to the graph to see that easier or see if the human eye is being tricked by very fun looking dots.</p>
 <pre class="r"><code>ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
@@ -139,7 +139,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Let’s try doing the same exercise but let’s use the <code>facet_wrap</code> function.</p>
 <pre class="r"><code>ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
@@ -154,7 +154,7 @@ data(&quot;penguins&quot;) #this will read in the data from the package and load
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="/R-camp-penguins/exercise/day4/ggplot%20exercise_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/exercise/ggplot%20exercise_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>What’s the danger in using the <code>scales = 'free'</code> argument? What happens when you add it? How would you explain the result to someone else?</p>
 <p>As we’ve said before…always more questions!</p>
 <p>Try to think of your own question that you use this data to answer or go back to the correlation matrix and see if there’s other relationships you’d like to explore!</p>
