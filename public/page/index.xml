@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Intro to GIS</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html</link>
+      <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html</guid>
+      <description>0.1 What is GIS? 0.1.1 Super fast 0.1.1.1 So you kind of know enough to look it up later GIS stands for ‘geographic information system’</description>
+    </item>
+    
+    <item>
       <title>Back in a few...</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/timer10_chewie_dance.html</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
@@ -219,6 +228,15 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/get_started.html</guid>
       <description>Trial - Dip your toes in your browser Online courses Recordings Learn R from inside R Book reading Trial - Dip your toes in your browser Intro to R (with very cute giraffes) Short RStudio lessons: R programming basics</description>
+    </item>
+    
+    <item>
+      <title>ggplot2 exercises</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/ggplot2_exercises.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/ggplot2_exercises.html</guid>
+      <description>1 Palmer Penguin Exploration - Part 1 THANK YOU! 1 Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
     </item>
     
     <item>

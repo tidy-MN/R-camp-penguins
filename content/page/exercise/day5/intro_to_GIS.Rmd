@@ -1,5 +1,5 @@
 ---
-title: "GIS and CRS"
+title: "Intro to GIS"
 author: "Kristie Ellickson"
 date: "2023-11-02"
 output: 
