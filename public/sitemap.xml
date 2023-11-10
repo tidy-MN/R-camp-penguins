@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/exercise.html</loc>
+    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points_polygons_lines.html</loc>
+    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/</loc>
+    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/timer10_chewie_dance.html</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -12,9 +21,6 @@
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/categories/training.html</loc>
-    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/teach.html</loc>
@@ -84,6 +90,10 @@
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/day1.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/tags/day1.html</loc>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/exercise/find_the_penguin.html</loc>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/exercise/describe_penguin_populations.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/explore_messy_emissions.html</loc>
   </url><url>

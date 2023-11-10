@@ -1,0 +1,101 @@
+
+
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p>The three rings to rule the world in R and spatial analysis are <em>sf</em>, <em>tigris</em>, and <em>ggplot</em> or <em>leaflet</em>. OK, it is also easier to take over places in the US if you also have the tidycensus package. But first, let’s look at some bird data to go through each of these super powers.</p>
+<div class="float">
+<img src="https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png" alt="https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20" />
+<div class="figcaption"><a href="https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20" class="uri">https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20</a></div>
+</div>
+<p>Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the the center of Smoky Mountain National Park in Tennesse. Let’s set up 2 points, and then measure how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join with the states to develop a final list of states that the birds will fly through and make some maps. We will <em>of course</em> follow up this exercise by setting up strict conservation laws to protect these flight paths.</p>
+<p>A tree in the center of St. Paul.</p>
+<pre class="r"><code>library(sf)
+
+lat_y &lt;- 44.9283966 #Always remember that latitude is a ladder.
+long_x &lt;- -93.1734448
+
+coords &lt;- c(long_x, lat_y)
+
+nest_mn &lt;- st_sfc(st_point(coords))
+
+nest_mn &lt;- st_as_sf(nest_mn, crs = 4326)</code></pre>
+<p>A tree in the center of Smoky Mountain National Park</p>
+<pre class="r"><code>lat_y &lt;- 35.5812 # Remember that latitude is a ladder going up and down
+long_x &lt;- -83.8609
+
+coords &lt;- c(long_x, lat_y)
+
+nest_smnp &lt;- st_sfc(st_point(coords)) # setting up the datum
+
+nest_smnp &lt;- st_as_sf(nest_smnp, crs = 4326) # providing the coordinate reference system</code></pre>
+<p>How far part are these two nests? We need to convert the coordinate reference systems to make sure that the two locations are comparable and our final answer is in meters.</p>
+<pre class="r"><code>nest_mn_meters &lt;- st_transform(nest_mn, crs = 9822)
+
+nest_smnp_meters &lt;- st_transform(nest_smnp, crs = 9822)
+
+tree_distances &lt;- st_distance(nest_mn_meters, nest_smnp_meters)
+
+tree_distances &lt;- tree_distances/1000</code></pre>
+<p>Each nest’s coordinates are currently in latitude and longitude, so we will first convert to UTMs that have units that are meters.</p>
+<div class="float">
+<embed src="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf" />
+<div class="figcaption">My fave CRS info sheet</div>
+</div>
+<p>We will also make a data frame with our two polygons. This isn’t necessary, but you may have to do this some day. Then, let’s say that the birds fly in roughly a straight line. So, let’s cast these two points into a line between them.</p>
+<pre class="r"><code>tree_points &lt;- rbind(nest_mn, nest_smnp)
+
+tree_route &lt;-  tree_points %&gt;%
+    summarize(geometry = st_union(.)) %&gt;%
+    st_cast(&quot;LINESTRING&quot;) %&gt;%
+  mutate(route = &quot;Minnesota to Smoky Mountain National Park&quot;)
+    
+plot(tree_route$geometry)</code></pre>
+<p>But we are fairly sure the birds won’t fly in an exactly straight line from Minnesota to Tennessee. So, let’s put a buffer around this line and make it a polygon. Let’s assume the birds will fly within 1000 meters on either side of our line. So, REMEMBER about units? Let’s check what our units currently are (hint latitude and longitude have what units?), and then change the units and draw our new polygon. It will be glorious.</p>
+<pre class="r"><code>st_crs(tree_route)
+
+tree_route &lt;- st_transform(tree_route, crs = 9822)
+
+st_crs(tree_route)
+
+tree_route &lt;- st_buffer(tree_route, dist = 1000)
+
+plot(tree_route)
+
+tree_route &lt;- st_transform(tree_route, crs = 4326)
+
+plot(tree_route)</code></pre>
+<p>Looking at that shape in our Plots window is satisfying, but doesn’t tell us anything about what states the polygon goes through, and we’d like a pretty map in the end. So, let’s get started. First, we are going to pull in our tigris package and grab the U.S. states’ polygons.</p>
+<div class="float">
+<img src="https://github.com/walkerke/tigris/raw/master/tools/readme/tigris_sticker.png" alt="https://github.com/walkerke/tigris" />
+<div class="figcaption"><a href="https://github.com/walkerke/tigris" class="uri">https://github.com/walkerke/tigris</a></div>
+</div>
+<pre class="r"><code>library(tigris)
+
+all_states &lt;- states()</code></pre>
+<p>Now let’s see which states intersect with our polygon bird path. We bring back some sf magic for this. But remember, CRS must be the same!! SO, we will need to do some transformation.</p>
+<pre class="r"><code>st_crs(all_states)
+st_crs(tree_route)
+
+tree_route &lt;- st_transform(tree_route, crs = st_crs(all_states))
+
+bird_route_states &lt;- st_filter(all_states, tree_route)</code></pre>
+<p>Now we have two types of polygons, a set of states that intersect with our bird path and the bird flight path itself. We will make a map of these two shapes in two ways. First with leaflet then with ggplot2.</p>
+<p>First, leaflet</p>
+<pre class="r"><code>library(leaflet)
+
+leaflet() %&gt;% 
+  addTiles() %&gt;% 
+  addPolygons(data = tree_route, weight = 8, fillColor = &#39;darkorange&#39;, color = &#39;darkorange&#39;) %&gt;%
+  addPolygons(data = bird_route_states)</code></pre>
+<p>Now, ggplot2</p>
+<pre class="r"><code>library(ggthemes)
+
+ggplot() +
+  geom_sf(data = bird_route_states, aes(fill = NAME, label = NAME)) +
+  geom_sf_text(data = bird_route_states, aes(label = NAME)) +
+  geom_sf(data = tree_route, aes(fill = route), size = 10) +
+  theme(legend.position = &quot;none&quot;)
+
+# I get an error if I skip the step of including data =</code></pre>
+<p>Now let’s protect some birds!</p>
+</div>

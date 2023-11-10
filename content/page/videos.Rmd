@@ -93,7 +93,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides]() 
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> [Exercises](https://tidy-mn.github.io/R-camp-penguins/exercise/day2/exercises.html)
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - [Describe penguin populations](https://tidy-mn.github.io/R-camp-penguins/exercise/describe_penguin_populations.html)
 - [Guess Who! *Hint: I'm a penguin*](https://tidy-mn.github.io/R-camp-penguins/exercise/find_the_penguin.html)
@@ -102,7 +102,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">  
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> [Exercises](https://tidy-mn.github.io/R-camp-penguins/exercise/day3/exercises.html)
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - Derek's radioactive joining and dating
 
@@ -123,7 +123,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points-polygons-lines.html)
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> [Map exercises](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/exercises.html)
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Map exercises
 
 - [Homeward bound](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/how-to-rule-the-world.html)
 

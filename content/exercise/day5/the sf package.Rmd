@@ -5,7 +5,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = F)
 ```
 
 ## Spatial analysis with R
@@ -65,12 +65,12 @@ Buffers
 Geom_sf
 
 ```{r interescts}
+library(tigris)
 
 city_shape <- st_read("https://data.sfgov.org/api/geospatial/pdvd-w2q4?method=export&format=Shapefile")
 
-library(tigris)
-
 cities <- metro_divisions()
+
 san_fran <- filter(cities, grepl("San Francisco", NAME))
 
 st_crs(san_fran)

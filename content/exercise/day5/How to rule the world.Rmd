@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = F)
 ```
 
 ## R Markdown
@@ -36,8 +36,8 @@ A tree in the center of Smoky Mountain National Park
 
 ```{r, tree 2}
 
-lat_y <- 35.5811962 #Always remember that latitude is a ladder.
-long_x <- -83.8609472
+lat_y <- 35.5812 # Remember that latitude is a ladder going up and down
+long_x <- -83.8609
 
 coords <- c(long_x, lat_y)
 
