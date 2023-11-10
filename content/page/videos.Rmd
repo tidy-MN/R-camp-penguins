@@ -112,7 +112,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day4" role="tabpanel" aria-labelledby="day4-tab">   
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/exercise/day4/ggplot exercise.html)
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
+
+- [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/exercise/day4/ggplot exercise.html)
 
 </div> 
 
@@ -121,7 +123,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ### Kristie slides?
 
 - 5.1: [Spatial awareness and GIS](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/GIS and CRS.html)
-- 5.2: [sf is our BFF](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/the sf package.Rmd.html)
+- 5.2: [sf: Simple features package](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/the sf package.html)
 - [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points_polygons_lines.html)
 
 

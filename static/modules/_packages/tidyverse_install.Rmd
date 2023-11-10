@@ -63,12 +63,11 @@ The 4 core tidyverse packages we'll be using:
 
 |Package | | Uses |
 |:-- |:-- |:-- |  
-|**readr** | | Read and write data into and out of R |
-|**dplyr** | | Clean, transform, and summarize data |
-|**ggplot2** | | Plot, chart, and graph data |
-|**lubridate**  | | Get your dates and times in order |
+|`readr` | | Read and write data into and out of R |
+|`dplyr` | | Clean, transform, and summarize data |
+|`ggplot2` | | Plot, chart, and graph data |
+|`lubridate`  | | Get your dates and times in order |
 
  
-
-- See the full list of tidyverse packages at https://www.tidyverse.org/packages/ {-}
+See the full list of tidyverse packages at https://www.tidyverse.org/packages/ {-}
 

@@ -1,9 +1,7 @@
 ---
 title: "ggplot exercises"
 output: 
-  html_document:
-    code_folding: hide
-date: "2023-11-06"
+  html_document
 ---
 
 # Palmer Penguin Exploration - Part 1
