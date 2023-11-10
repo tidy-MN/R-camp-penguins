@@ -3,7 +3,6 @@ Use these functions to describe our dataframe.
 
 ### Data frame info {-}
 
-<div class="bluecode">
 
 | Function  |  | Information                                                      |   
 |:----------|--|:-----------------------------------------------------------------|
@@ -13,7 +12,7 @@ Use these functions to describe our dataframe.
 | `ncol(...)`     |  | number of columns       | 
 | `summary(...)`  |  | summary of all column values (ex. _max_, _mean_, _median_)  | 
 
-</div>
+
 
 
 # `glimpse()` & `summary()`

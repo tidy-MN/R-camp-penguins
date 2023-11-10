@@ -35,15 +35,6 @@
     </item>
     
     <item>
-      <title>Points, Polygons, Lines</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points_polygons_lines.html</link>
-      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points_polygons_lines.html</guid>
-      <description>0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.</description>
-    </item>
-    
-    <item>
       <title>Intro to GIS</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html</link>
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
@@ -246,16 +237,7 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/day1.html</guid>
-      <description>Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() &amp;amp; summary() 10 Filter data Welcome!</description>
-    </item>
-    
-    <item>
-      <title>Exercise: Filtering and case_when</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/exercise/find_the_penguin.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/exercise/find_the_penguin.html</guid>
-      <description>Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.</description>
+      <description>Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read / load data 8 Size up the data 9 glimpse() &amp;amp; summary() 10 Filter data Welcome!</description>
     </item>
     
     <item>
@@ -265,15 +247,6 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html</guid>
       <description>Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.</description>
-    </item>
-    
-    <item>
-      <title>Exercise: Summarizing penguins</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/exercise/describe_penguin_populations.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/exercise/describe_penguin_populations.html</guid>
-      <description>Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.</description>
     </item>
     
     <item>

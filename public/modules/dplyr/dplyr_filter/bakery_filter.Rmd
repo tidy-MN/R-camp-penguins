@@ -98,7 +98,7 @@ str_detect(c("Whiskers", "Whisks", "BB-8"), "Whisk", negate = TRUE)
 ## Filtering rows {-}
 <hr class="hrlvl2">
 
-Let's filter the data to exclude the baking bots named **BB-8**. Look in the comparison table above to find the `NOT equal to` operator. We're going to filter the data to keep only the names that are `NOT equal` to "BB-8".
+Let's filter the data to exclude the row with the baking bot named **BB-8**. Look in the comparison table above to find the `NOT equal to` operator. Now let's use it to filter the data to keep only the rows with names **not** equal to "BB-8".
 
 ```{r filter-bb8}
 bake_bots <- filter(bake_bots, name != "BB-8")
@@ -107,8 +107,6 @@ bake_bots
 ```
 
 <br>
-
-### Great work! {-}
 
 
 ## Multiple filters {-} 

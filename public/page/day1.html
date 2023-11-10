@@ -10,9 +10,9 @@
   <title>Day 1 - Learn R</title>
   <meta property="og:title" content="Day 1" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
-  <meta property="og:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
-  <meta name="twitter:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
+  <meta name="description" content="Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read / load data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
+  <meta property="og:description" content="Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read / load data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
+  <meta name="twitter:description" content="Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read / load data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Day 1",
-  "description" : "Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() \u0026amp; summary() 10 Filter data Welcome!",
+  "description" : "Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read \/ load data 8 Size up the data 9 glimpse() \u0026amp; summary() 10 Filter data Welcome!",
   "inLanguage" : "en",
-  "wordCount":  4740 ,
+  "wordCount":  4714 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 1" />
-<meta property="og:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
+<meta property="og:description" content="Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read / load data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day1.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="twitter:description" content="Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
+  <meta name="twitter:description" content="Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read / load data 8 Size up the data 9 glimpse() &amp; summary() 10 Filter data Welcome!">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -360,7 +360,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#welcome" id="toc-welcome">Welcome!</a></li>
 <li><a href="#why-r" id="toc-why-r">Why R?</a></li>
 <li><a href="#rstudio-tour" id="toc-rstudio-tour"><span class="toc-section-number">1</span> RStudio Tour</a></li>
 <li><a href="#r-packages" id="toc-r-packages"><span class="toc-section-number">2</span> R packages 📦</a></li>
@@ -368,7 +367,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#r-bakery" id="toc-r-bakery"><span class="toc-section-number">4</span> R bakery</a></li>
 <li><a href="#names-and-things" id="toc-names-and-things"><span class="toc-section-number">5</span> Names and things</a></li>
 <li><a href="#tidy-tables-and-dataframes" id="toc-tidy-tables-and-dataframes"><span class="toc-section-number">6</span> Tidy tables and dataframes</a></li>
-<li><a href="#read-data" id="toc-read-data"><span class="toc-section-number">7</span> Read data</a></li>
+<li><a href="#read-load-data" id="toc-read-load-data"><span class="toc-section-number">7</span> Read / load data</a></li>
 <li><a href="#size-up-the-data" id="toc-size-up-the-data"><span class="toc-section-number">8</span> Size up the data</a></li>
 <li><a href="#glimpse-summary" id="toc-glimpse-summary"><span class="toc-section-number">9</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
 <li><a href="#filter-data" id="toc-filter-data"><span class="toc-section-number">10</span> Filter data</a></li>
@@ -382,8 +381,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 
 </div>
 <p><br></p>
-<div id="welcome" class="section level1 unnumbered">
-<h1>Welcome!</h1>
+<div id="welcome" class="section level2 unnumbered">
+<h2>Welcome!</h2>
 <hr class="hr2">
 <div style="clear: both;">
 
@@ -391,13 +390,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>We like <strong>R</strong>.</p>
 <p>We aren’t computer scientists – and that’s okay!</p>
 <p>We make lots of mistakes. They will be funny. Laugh with us!</p>
-<br><br>
-<hr class="hr2">
-<p><br></p>
 </div>
 <div id="why-r" class="section level1 unnumbered">
 <h1>Why R?</h1>
-<hr class="hr2">
+<hr>
 <p><img src="../images/rladies_map.gif" style="width: 97%;" /></p>
 <div id="r-community" class="section level2 unnumbered">
 <h2>R Community</h2>
@@ -618,7 +614,6 @@ Note
 </tbody>
 </table>
 <p>See the full list of tidyverse packages at <a href="https://www.tidyverse.org/packages/" class="uri">https://www.tidyverse.org/packages/</a></p>
-<p><br></p>
 </div>
 <div id="help" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Help!</h1>
@@ -870,14 +865,12 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 <span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co"># Print the ages </span></span>
 <span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>bot_ages</span></code></pre></div>
 <p><br></p>
-<p>Use square brackets after the name of your vector (<code>baking_bots[1]</code>) to view a specific value in the vector. You can also use the function <code>pluck()</code> by giving the function the name of your vector and the index of the value you want to see, like so: <code>pluck(baking_bots, 1)</code>.</p>
+<div id="open-a-vector" class="section level3 unnumbered">
+<h3>Open a vector</h3>
+<p>Use square brackets after the name of your vector (<code>baking_bots[1]</code>) to open and view a specific value in the vector.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># View the first value in baking bots using square bracket syntax</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>baking_bots[<span class="dv">1</span>]</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co"># View the first value in baking bots using the pluck() function</span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="fu">pluck</span>(baking_bots, <span class="dv">1</span>)</span></code></pre></div>
-<p><br></p>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>baking_bots[<span class="dv">1</span>]</span></code></pre></div>
+</div>
 </div>
 <div id="r-is-vectorized" class="section level2 unnumbered">
 <h2>R is vectorized</h2>
@@ -907,7 +900,6 @@ Note
 <h2>
 <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test
 </h2>
-<p>{-}</p>
 <div id="which-object-name-is-allowed" class="section level4 unnumbered">
 <h4>Which object name <b>is</b> allowed?</h4>
 <p><i>Hint: You can try the names in R</i></p>
@@ -919,7 +911,7 @@ Note
 <input type="radio" name="object"> <code>BOTS!!!</code> <br></p>
 </p>
 <details>
-<summary class="btn_blue">
+<summary class="btn_code_blue">
 <em>Show solution</em>
 </summary>
 <p>
@@ -1063,8 +1055,8 @@ bots <- data.frame(name       = baking_bots,
 <p>A <strong>CSV</strong> is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that’s okay! When opened in R, the text becomes a familiar looking table with columns and rows.</p>
 </div>
 </div>
-<div id="read-data" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Read data</h1>
+<div id="read-load-data" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Read / load data</h1>
 <hr>
 <p>Now we can read the CSV file back into R using the <code>read_csv()</code> function.</p>
 <p><br></p>
@@ -1129,8 +1121,9 @@ What data type is the <code>name</code> column?
 <input type="radio" name="type"> <em>character</em> <br>
 <input type="radio" name="type"> <em>TRUE/FALSE</em> <br>
 <input type="radio" name="type"> <em>numbers</em> <br></p>
+<p><br></p>
 <details style="margin-left: 14px;">
-<summary class="btn_blue">
+<summary class="btn_code_blue">
 <em>Show solution</em>
 </summary>
 <p>
@@ -1147,7 +1140,6 @@ What data type is the <code>name</code> column?
 <p>Use these functions to describe our dataframe.</p>
 <div id="data-frame-info" class="section level3 unnumbered">
 <h3>Data frame info</h3>
-<div class="bluecode">
 <table>
 <colgroup>
 <col width="13%" />
@@ -1189,7 +1181,6 @@ What data type is the <code>name</code> column?
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <div id="glimpse-summary" class="section level1" number="9">
@@ -1340,7 +1331,7 @@ Menu of comparisons
 <div id="filtering-rows" class="section level2 unnumbered">
 <h2>Filtering rows</h2>
 <hr class="hrlvl2">
-<p>Let’s filter the data to exclude the baking bots named <strong>BB-8</strong>. Look in the comparison table above to find the <code>NOT equal to</code> operator. We’re going to filter the data to keep only the names that are <code>NOT equal</code> to “BB-8”.</p>
+<p>Let’s filter the data to exclude the row with the baking bot named <strong>BB-8</strong>. Look in the comparison table above to find the <code>NOT equal to</code> operator. Now let’s use it to filter the data to keep only the rows with names <strong>not</strong> equal to “BB-8”.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a>bake_bots <span class="ot">&lt;-</span> <span class="fu">filter</span>(bake_bots, name <span class="sc">!=</span> <span class="st">&quot;BB-8&quot;</span>)</span>
 <span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a></span>
 <span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a>bake_bots</span></code></pre></div>
@@ -1348,9 +1339,6 @@ Menu of comparisons
 ## 1    Whiskers   1
 ## 2 Baker-waker   2</code></pre>
 <p><br></p>
-<div id="great-work" class="section level3 unnumbered">
-<h3>Great work!</h3>
-</div>
 </div>
 <div id="multiple-filters" class="section level2 unnumbered">
 <h2>Multiple filters</h2>
@@ -1364,8 +1352,34 @@ Menu of comparisons
 <blockquote>
 <p>If we want our original full <code>bake_bot</code> data bake at anytime, we can re-run the line in our script that reads in the CSV file: <code>bake_bots &lt;- read_csv(file = "bot_data.csv")</code></p>
 </blockquote>
-<div id="section" class="section level3 unnumbered">
-<h3 class="unnumbered"></h3>
+</div>
+<div id="bonus-sections" class="section level2 unnumbered">
+<h2>Bonus sections</h2>
+<div id="create-a-csv-from-excel" class="section level3 unnumbered note" style="margin-top: 10px;">
+<h3>Create a CSV from Excel</h3>
+<p><strong>Step 1:</strong> Open the Excel file.</p>
+<p><strong>Step 2:</strong> Save as CSV</p>
+<ul>
+<li>Go to <em>File</em><br />
+</li>
+<li><em>Save As</em><br />
+</li>
+<li><em>Browse</em> to your project folder<br />
+</li>
+<li>Save as type: <em>CSV</em> <em>(Comma Delimited)</em> _(*.csv)_<br />
+</li>
+<li>Any of the <em>CSV</em> options will work<br />
+</li>
+<li>Click <strong>Yes</strong><br />
+</li>
+<li>Close Excel (Click “Don’t Save” as much as you need to. Excel loves long goodbyes.)</li>
+</ul>
+<p><strong>Step 3:</strong> Return to RStudio and open your project. Look at your <em>Files</em> tab in the lower right window. Click on the <em>CSV</em> file you saved and choose <strong>View File</strong>.</p>
+<p><strong>Success!</strong></p>
+</div>
+<p><br></p>
+<div id="more-on-function-options-arguments" class="section level3 unnumbered">
+<h3>More on function options / arguments</h3>
 <details>
 <summary class="btn_code_blue">
 <strong>Function options</strong>
@@ -1415,28 +1429,6 @@ See function options
 </div>
 </details>
 <p><br></p>
-</div>
-<div id="create-a-csv-from-excel" class="section level3 unnumbered note" style="margin-top: 10px;">
-<h3>Create a CSV from Excel</h3>
-<p><strong>Step 1:</strong> Open the Excel file.</p>
-<p><strong>Step 2:</strong> Save as CSV</p>
-<ul>
-<li>Go to <em>File</em><br />
-</li>
-<li><em>Save As</em><br />
-</li>
-<li><em>Browse</em> to your project folder<br />
-</li>
-<li>Save as type: <em>CSV</em> <em>(Comma Delimited)</em> _(*.csv)_<br />
-</li>
-<li>Any of the <em>CSV</em> options will work<br />
-</li>
-<li>Click <strong>Yes</strong><br />
-</li>
-<li>Close Excel (Click “Don’t Save” as much as you need to. Excel loves long goodbyes.)</li>
-</ul>
-<p><strong>Step 3:</strong> Return to RStudio and open your project. Look at your <em>Files</em> tab in the lower right window. Click on the <em>CSV</em> file you saved and choose <strong>View File</strong>.</p>
-<p><strong>Success!</strong></p>
 </div>
 </div>
 <div id="got-questions" class="section level2 unnumbered">
