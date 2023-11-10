@@ -10,12 +10,12 @@
   <title>Intro to GIS - Learn R</title>
   <meta property="og:title" content="Intro to GIS" />
   <meta name="twitter:title" content="Intro to GIS" />
-  <meta name="description" content="1 What is GIS? 1 What is GIS? The basics GIS stands for ‘geographic information system’
+  <meta name="description" content="1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’
 It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.">
-  <meta property="og:description" content="1 What is GIS? 1 What is GIS? The basics GIS stands for ‘geographic information system’
+  <meta property="og:description" content="1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’
 It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.">
-  <meta name="twitter:description" content="1 What is GIS? 1 What is GIS? The basics GIS stands for ‘geographic information system’
-It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s …">
+  <meta name="twitter:description" content="1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’
+It is a computer system for capturing, storing, checking, and displaying data related to …">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -64,7 +64,7 @@ It is a computer system for capturing, storing, checking, and displaying data re
     "name" : "Kristie Ellickson"
   },
   "headline": "Intro to GIS",
-  "description" : "1 What is GIS? 1 What is GIS? The basics GIS stands for ‘geographic information system’\nIt is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.",
+  "description" : "1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’\nIt is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.",
   "inLanguage" : "en",
   "wordCount":  220 ,
   "datePublished" : "2023-11-02T00:00:00",
@@ -86,15 +86,15 @@ It is a computer system for capturing, storing, checking, and displaying data re
 </script>
 
 <meta property="og:title" content="Intro to GIS" />
-<meta property="og:description" content="1 What is GIS? 1 What is GIS? The basics GIS stands for ‘geographic information system’
+<meta property="og:description" content="1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’
 It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Intro to GIS" />
-  <meta name="twitter:description" content="1 What is GIS? 1 What is GIS? The basics GIS stands for ‘geographic information system’
-It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s …">
+  <meta name="twitter:description" content="1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’
+It is a computer system for capturing, storing, checking, and displaying data related to …">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -295,22 +295,21 @@ It is a computer system for capturing, storing, checking, and displaying data re
 
 <div id="TOC">
 <ul>
-<li><a href="#what-is-gis" id="toc-what-is-gis"><span class="toc-section-number">1</span> What is GIS?</a></li>
+<li><a href="#the-basics" id="toc-the-basics"><span class="toc-section-number">1</span> The basics</a></li>
+<li><a href="#coordinate-reference-systems" id="toc-coordinate-reference-systems"><span class="toc-section-number">2</span> Coordinate Reference Systems</a></li>
 </ul>
 </div>
 
-<div id="what-is-gis" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> What is GIS?</h1>
-<div id="the-basics" class="section level3 unnumbered">
-<h3>The basics</h3>
+<div id="the-basics" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> The basics</h1>
 <p>GIS stands for ‘geographic information system’</p>
 <p>It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.</p>
 <p>This is a terrific resource, <a href="https://education.nationalgeographic.org/resource/geographic-information-system-gis/" class="uri">https://education.nationalgeographic.org/resource/geographic-information-system-gis/</a>.</p>
 <p>This is also a terrific resource,
 <a href="https://www.esri.com/en-us/what-is-gis/overview" class="uri">https://www.esri.com/en-us/what-is-gis/overview</a></p>
 </div>
-<div id="coordinate-reference-systems" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Coordinate Reference Systems</h2>
+<div id="coordinate-reference-systems" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Coordinate Reference Systems</h1>
 <p>A coordinate reference system, or CRS, is how spatial data that represent the earth’s <em>ROUND AND 3-Dimensional</em> surface are flattened onto a 2 dimensional surface (think of squishing half of a tennis ball flat so that it could be represented on a piece of paper).</p>
 <p>Go through this tutorial to get a better understanding of coordinate reference systems,
 <a href="https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/" class="uri">https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/</a></p>
@@ -324,17 +323,24 @@ source:</p>
 <h3>Units of the datum</h3>
 <p>If your spatial analysis requires distance in meters, you will need to make sure that your conference reference system is in meters. UTM stands for Universal Transverse Mercator, and is one of the main CRS’s you will encounter and use. They are a series of very small projections that minimize the distortion you might see if you use latitude and longitude
 <img src="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system#/media/File:Universal_Transverse_Mercator_zones.svg" alt="Universal Transverse Mercator" /></p>
-<p><img src="https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png" alt="https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/" />
-### The Datum</p>
-<p>Geographic information system datum define the position of the spheroid relative to the center of the earth.
-<img src="https://www.esri.com/news/arcuser/0401/graphics/geoids.gif" alt="https://www.esri.com/news/arcuser/0401/datum.html" /></p>
+<div class="float">
+<img src="https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png" alt="https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/" />
+<div class="figcaption"><a href="https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/" class="uri">https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/</a></div>
 </div>
 </div>
-<div id="projection-information" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Projection information</h2>
+<div id="the-datum" class="section level3 unnumbered">
+<h3>The Datum</h3>
+<p>Geographic information system datum define the position of the spheroid relative to the center of the earth.</p>
+<div class="float">
+<img src="https://www.esri.com/news/arcuser/0401/graphics/geoids.gif" alt="https://www.esri.com/news/arcuser/0401/datum.html" />
+<div class="figcaption"><a href="https://www.esri.com/news/arcuser/0401/datum.html" class="uri">https://www.esri.com/news/arcuser/0401/datum.html</a></div>
+</div>
+</div>
+<div id="projection-information" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Projection information</h2>
 <p>This is a good source for coordinate reference systems.
 <a href="https://spatialreference.org/ref/epsg/" class="uri">https://spatialreference.org/ref/epsg/</a></p>
-<p>Or here, <a href="https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html" class="uri">https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html</a></p>
+<p>Or <a href="https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html" class="uri">https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html</a></p>
 </div>
 </div>
 
