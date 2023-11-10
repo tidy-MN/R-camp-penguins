@@ -62,7 +62,7 @@ library(tidyverse)
 The 4 core tidyverse packages we'll be using:
 
 |Package | | Uses |
-| | | |
+|:-- |:-- |:-- |  
 |**readr** | | Read and write data into and out of R |
 |**dplyr** | | Clean, transform, and summarize data |
 |**ggplot2** | | Plot, chart, and graph data |

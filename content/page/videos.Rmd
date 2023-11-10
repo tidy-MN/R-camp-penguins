@@ -120,14 +120,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### Kristie slides?
 
-- 5.1: [Spatial awareness and GIS](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/gis-and-crs.html)
-- 5.2: [sf is our BFF](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/the-sf-package.Rmd.html)
-- [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points-polygons-lines.html)
+- 5.1: [Spatial awareness and GIS](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/GIS and CRS.html)
+- 5.2: [sf is our BFF](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/the sf package.Rmd.html)
+- [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points_polygons_lines.html)
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Map exercises
 
-- [Homeward bound](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/how-to-rule-the-world.html)
+- [Homeward bound](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/How to rule the world.html)
 
 
 </div> 
