@@ -7,9 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Pages - Learn R</title>
-  <meta property="og:title" content="Pages" />
-  <meta name="twitter:title" content="Pages" />
+  <title>Points, Lines, Polygons - Learn R</title>
+  <meta property="og:title" content="Points, Lines, Polygons" />
+  <meta name="twitter:title" content="Points, Lines, Polygons" />
+  <meta name="description" content="0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.">
+  <meta property="og:description" content="0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.">
+  <meta name="twitter:description" content="0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -30,20 +33,70 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day5\/points_lines_polygons.html",
+          "name": "Points, lines, polygons"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Kristie Ellickson"
+  },
+  "headline": "Points, Lines, Polygons",
+  "description" : "0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.",
+  "inLanguage" : "en",
+  "wordCount":  311 ,
+  "datePublished" : "2023-11-03T00:00:00",
+  "dateModified" : "2023-11-03T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day5\/points_lines_polygons.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Pages" />
+<meta property="og:title" content="Points, Lines, Polygons" />
+<meta property="og:description" content="0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
-<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page.html" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_lines_polygons.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Points, Lines, Polygons" />
+  <meta name="twitter:description" content="0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page.html" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_lines_polygons.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Learn R" />
 
@@ -212,7 +265,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
               
-                <h1>Pages</h1>
+                <h1>Points, Lines, Polygons</h1>
               
               
                 <hr class="small">
@@ -228,355 +281,51 @@
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer2.html">
-                <h2 class="post-title">Back in a few...</h2>
+  <link rel="stylesheet" href="../../css/camp_style.css" type="text/css" />
+
+
+<div id="points-polygons-and-lines-and-rasters---oh-my" class="section level2" number="0.1">
+<h2><span class="header-section-number">0.1</span> Points, polygons, and lines … and rasters - OH MY!</h2>
+<p>A point or a vector of points are simply geographic coordinates, like a series or one x-y pair. They have no dimensions, so sometimes if you want to find something near a point you will need to draw a buffer around it so that it has some area. Examples of point data in GIS are locations of trees in a city, locations where you stopped on a hike, or locations of defibrillators in a building.</p>
+<p>Polygons are a series of points with area in the middle, think of lakes or soccer fields. Sometimes polygons can have holes or spaces in them. An example is a lake with islands in the middle of it.</p>
+<p>Lines are a series of points with no area between them. Examples are roads and railways.</p>
+<p>Each of these types of GIS shapes can be stored as multiples, such as poly-lines (example a multi-lane highway), or multipolygons (example, Tribal Land that is not contiguous).</p>
+<div class="float">
+<img src="https://developers.arcgis.com/python/guide/base64-images/part1_introduction_what_is_geometry-g59d9d3d9-87a0-3e0e-64ac-26e88bed53bd.gif" alt="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/" />
+<div class="figcaption"><a href="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/" class="uri">https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/</a></div>
+</div>
+<div id="rasters" class="section level3" number="0.1.1">
+<h3><span class="header-section-number">0.1.1</span> Rasters!</h3>
+<p>Rasters are continuous data, think of color spectra or the range of moods you may have from very angry to quite happy…you are rarely just one of these and there are infinite gradations depending on how annoying other drivers are or if you got the perfect birthday cake.
+Rasters can also be aerial photography or remote sensing imagery. The colors or variations in the cells of information represent certain themes like air pollution concentrations or green canopy cover. Rasters are stored in a matrix of cells, like a table and the size of the cell represents the resolution of the information. If the cell is 50 m x 50 m, then there will be no additional information variation within that size of a cell (i.e. the temperature depicted in that whole cell will be the same throughout the cell).</p>
+<div class="float">
+<img src="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/GUID-6754AF39-CDE9-4F9D-8C3A-D59D93059BDD-web.png" alt="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm" />
+<div class="figcaption"><a href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm" class="uri">https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm</a></div>
+</div>
+</div>
+</div>
 
-                
-              </a>
 
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   BB8 BB8 &minus;&plus; 02:00 
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer2.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5.html">
-                <h2 class="post-title">Back in a few...</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   &minus;&plus; 05:00 
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5_baby_yoda.html">
-                <h2 class="post-title">Back in a few...</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   &minus;&plus; 05:00 
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5_baby_yoda.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5_r2d2.html">
-                <h2 class="post-title">Back in a few...</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   R2D2 R2D2 &minus;&plus; 05:00 
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5_r2d2.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5_yoda.html">
-                <h2 class="post-title">Back in a few...</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   &minus;&plus; 05:00 
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/timer5_yoda.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/timers.html">
-                <h2 class="post-title">Timers</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   2’ BB8 5’ Jelly fish R2D2 Baby Yoda Yoda 10’ Ewok dance Chewie dance Waterfall Jelly fish 
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/timers.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/videos/01-1-welcome.html">
-                <h2 class="post-title">1.1 Welcome</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/videos/01-1-welcome.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://tidy-mn.github.io/R-camp-penguins//tags/videos/">videos</a>&nbsp;
-                  
-                    <a href="https://tidy-mn.github.io/R-camp-penguins//tags/day1/">day1</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/videos/01-2-r-tour.html">
-                <h2 class="post-title">1.2 R tour</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/videos/01-2-r-tour.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://tidy-mn.github.io/R-camp-penguins//tags/videos/">videos</a>&nbsp;
-                  
-                    <a href="https://tidy-mn.github.io/R-camp-penguins//tags/day1/">day1</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/videos/01-3-r-bakery.html">
-                <h2 class="post-title">1.3 Our bakery</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                   
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/videos/01-3-r-bakery.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="https://tidy-mn.github.io/R-camp-penguins//tags/videos/">videos</a>&nbsp;
-                  
-                    <a href="https://tidy-mn.github.io/R-camp-penguins//tags/day1/">day1</a>&nbsp;
-                  
-                </div>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="https://tidy-mn.github.io/R-camp-penguins/page/explore_wind_rose.html">
-                <h2 class="post-title">Air, wind and roses</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-
-  
-  
-  
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                  Let’s take a look at some air pollution data stored in an Excel file.
-Download the data DOWNLOAD — La Jolla PM25 data
-                  <a href="https://tidy-mn.github.io/R-camp-penguins/page/explore_wind_rose.html" class="post-read-more">[Launch]</a>
-              </div>
-
-              
-
-            </article>
-          
-        </div>
         
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="https://tidy-mn.github.io/R-camp-penguins/page.htmlpage/1/">&larr; Newer Posts</a>
-              </li>
-            
-            
-              <li class="next">
-                <a href="https://tidy-mn.github.io/R-camp-penguins/page.htmlpage/3/">Older Posts &rarr;</a>
-              </li>
-            
-          </ul>
+
         
-      </div>
+
+        
+      </article>
+
+      
+
+
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">

@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page.html</loc>
+    <lastmod>2023-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/sf.html</loc>
+    <lastmod>2023-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/</loc>
+    <lastmod>2023-11-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/exercise.html</loc>
     <lastmod>2023-11-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page.html</loc>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/homeward_bound.html</loc>
+    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_lines_polygons.html</loc>
     <lastmod>2023-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points_polygons_lines.html</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_polygons_lines.html</loc>
-    <lastmod>2023-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/</loc>
     <lastmod>2023-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html</loc>
@@ -108,8 +114,6 @@
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/explore_messy_emissions.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/get_started.html</loc>
-  </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/ggplot2_exercises.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/ggplot2_exercises.html</loc>
   </url><url>

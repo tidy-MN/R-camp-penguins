@@ -6,13 +6,31 @@
     <description>Recent content in Pages on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Points, Polygons, Lines</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_polygons_lines.html</link>
+      <title>sf is awesome</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/sf.html</link>
+      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/sf.html</guid>
+      <description>0.1 Spatial analysis with R A major powertool in R for spatial analysis and geograpy data processing is the sf package.</description>
+    </item>
+    
+    <item>
+      <title>Getting home</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/homeward_bound.html</link>
       <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_polygons_lines.html</guid>
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/homeward_bound.html</guid>
+      <description>0.1 R Markdown The three rings to rule the world in R and spatial analysis are sf, tigris, and ggplot or leaflet.</description>
+    </item>
+    
+    <item>
+      <title>Points, Lines, Polygons</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_lines_polygons.html</link>
+      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_lines_polygons.html</guid>
       <description>0.1 Points, polygons, and lines … and rasters - OH MY! A point or a vector of points are simply geographic coordinates, like a series or one x-y pair.</description>
     </item>
     
@@ -22,7 +40,8 @@
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html</guid>
-      <description>0.1 What is GIS? 0.1.1 Super fast 0.1.1.1 So you kind of know enough to look it up later GIS stands for ‘geographic information system’</description>
+      <description>1 What is GIS? 1 What is GIS? The basics GIS stands for ‘geographic information system’
+It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.</description>
     </item>
     
     <item>
@@ -228,15 +247,6 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/get_started.html</guid>
       <description>Trial - Dip your toes in your browser Online courses Recordings Learn R from inside R Book reading Trial - Dip your toes in your browser Intro to R (with very cute giraffes) Short RStudio lessons: R programming basics</description>
-    </item>
-    
-    <item>
-      <title>ggplot2 exercises</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/ggplot2_exercises.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/ggplot2_exercises.html</guid>
-      <description>1 Palmer Penguin Exploration - Part 1 THANK YOU! 1 Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
     </item>
     
     <item>

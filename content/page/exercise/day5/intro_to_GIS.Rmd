@@ -5,7 +5,7 @@ date: "2023-11-02"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: css/camp_style.css
+    css: ../../css/camp_style.css
     number_sections: true
     self_contained: false
     fontsize: 18pt
@@ -18,9 +18,9 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is GIS?
-### Super fast
-#### So you kind of know enough to look it up later
+# What is GIS?
+
+### The basics {-}
 
 GIS stands for 'geographic information system'
 
@@ -31,7 +31,8 @@ This is a terrific resource, https://education.nationalgeographic.org/resource/g
 This is also a terrific resource,
 https://www.esri.com/en-us/what-is-gis/overview
 
-### Coordinate Reference Systems
+
+## Coordinate Reference Systems
 
 A coordinate reference system, or CRS, is how spatial data that represent the earth’s *ROUND AND 3-Dimensional* surface are flattened onto a 2 dimensional surface (think of squishing half of a tennis ball flat so that it could be represented on a piece of paper).
 
@@ -40,13 +41,13 @@ Go through this tutorial to get a better understanding of coordinate reference s
 
 **The components of a CRS are:**
 
-### Coordinate system
+### Coordinate system {-}
 
 ![https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system ](https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg)
 source: 
 
 
-### Units of the datum
+### Units of the datum {-}
 
 If your spatial analysis requires distance in meters, you will need to make sure that your conference reference system is in meters. UTM stands for Universal Transverse Mercator, and is one of the main CRS's you will encounter and use. They are a series of very small projections that minimize the distortion you might see if you use latitude and longitude
 ![Universal Transverse Mercator](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system#/media/File:Universal_Transverse_Mercator_zones.svg)
@@ -57,7 +58,8 @@ If your spatial analysis requires distance in meters, you will need to make sure
 Geographic information system datum define the position of the spheroid relative to the center of the earth.
 ![https://www.esri.com/news/arcuser/0401/datum.html](https://www.esri.com/news/arcuser/0401/graphics/geoids.gif)
 
-### Projection information
+
+## Projection information
 
 This is a good source for coordinate reference systems.
 <https://spatialreference.org/ref/epsg/>

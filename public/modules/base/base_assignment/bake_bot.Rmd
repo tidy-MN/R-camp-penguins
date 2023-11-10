@@ -159,6 +159,8 @@ rm(bot_friend)
 
 #### How can we get our `bot_friend` back? {-}
 
+<br>
+
 <details><summary class = "btn_code_blue">_Show solution_</summary>
 
 <p>

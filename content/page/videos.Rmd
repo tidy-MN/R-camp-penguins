@@ -114,7 +114,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/page/ggplot2_exercises.html)
+- [ggplot exercises](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/ggplot2_exercises.html)
 
 </div> 
 
@@ -122,14 +122,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### Kristie slides?
 
-- 5.1: [Spatial awareness and GIS](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/GIS and CRS.html)
-- 5.2: [sf: Simple features package](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/the sf package.html)
-- [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/points_polygons_lines.html)
+- 5.1: [Spatial awareness and GIS](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/intro_to_gis.html)
+- 5.2: [sf: Simple features package](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/sf.html)
+- [Points, Lines, and Polygons](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/points_lines_polygons.html)
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Map exercises
 
-- [Homeward bound](https://tidy-mn.github.io/R-camp-penguins/exercise/day5/How to rule the world.html)
+- [Homeward bound](https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/Homeward_bound.html)
 
 
 </div> 

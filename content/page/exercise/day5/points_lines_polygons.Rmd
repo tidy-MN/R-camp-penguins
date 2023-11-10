@@ -1,11 +1,11 @@
 ---
-title: "Points, Polygons, Lines"
+title: "Points, Lines, Polygons"
 author: "Kristie Ellickson"
 date: "2023-11-03"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: css/camp_style.css
+    css: ../../css/camp_style.css
     number_sections: true
     self_contained: false
     fontsize: 18pt
