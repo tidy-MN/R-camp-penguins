@@ -63,7 +63,7 @@
   "headline": "Day 1",
   "description" : "Welcome! Why R? 1 RStudio Tour 2 R packages 📦 3 Help! 4 R bakery 5 Names and things 6 Tidy tables and dataframes 7 Read data 8 Size up the data 9 glimpse() \u0026amp; summary() 10 Filter data Welcome!",
   "inLanguage" : "en",
-  "wordCount":  4741 ,
+  "wordCount":  4740 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -789,17 +789,18 @@ Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean s
 </blockquote>
 <p><br></p>
 <div class="quiz">
-<h3>
+<h2>
 <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test
-</h3>
-<p>{-}</p>
-<div id="how-can-we-get-our-bot_friend-back" class="section level3 unnumbered">
-<h3>How can we get our <code>bot_friend</code> back?</h3>
+</h2>
+<div id="how-can-we-get-our-bot_friend-back" class="section level4 unnumbered">
+<h4>How can we get our <code>bot_friend</code> back?</h4>
 <details>
-<summary class="btn_blue">
+<summary class="btn_code_blue">
 <em>Show solution</em>
 </summary>
+<p>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> You can re-run your code anytime. You can even click the <code>Run</code> button at the top of the script panel to re-run ALL of your script from top to bottom.
+</p>
 </details>
 </div>
 </div>
@@ -902,12 +903,12 @@ Note
 <br></p>
 </div>
 <div class="quiz">
-<h3>
+<h2>
 <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test
-</h3>
+</h2>
 <p>{-}</p>
-<div id="which-object-name-is-allowed" class="section level3 unnumbered">
-<h3>Which object name <b>is</b> allowed?</h3>
+<div id="which-object-name-is-allowed" class="section level4 unnumbered">
+<h4>Which object name <b>is</b> allowed?</h4>
 <p><i>Hint: You can try the names in R</i></p>
 <p>
 <p><input type="radio" name="object"> <code>my favorite bot</code> <br>
@@ -920,7 +921,9 @@ Note
 <summary class="btn_blue">
 <em>Show solution</em>
 </summary>
+<p>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>my_bot55</code>
+</p>
 </details>
 </div>
 </div>
@@ -958,8 +961,10 @@ Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency,
 ## 2 Baker-waker   2
 ## 3        BB-8  NA</code></pre>
 <p><br></p>
-<div id="taste-test" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Taste test</h3>
+<div class="quiz">
+<h2>
+<i class="fas fa-cookie-bite" style="color: gray;"></i> Taste test
+</h2>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="addacolumn-tab" data-toggle="tab" href="#addacolumn" role="tab" aria-controls="addacolumn" aria-selected="true">Add a column</a>
@@ -1060,8 +1065,8 @@ bots <- data.frame(name       = baking_bots,
 <div id="read-data" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Read data</h1>
 <hr>
+<p>Now we can read the CSV file back into R using the <code>read_csv()</code> function.</p>
 <p><br></p>
-<p>Now we can read our own table back into R using the <code>read_csv()</code> function.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="co"># Read in the bot data</span></span>
@@ -1112,11 +1117,13 @@ bots <- data.frame(name       = baking_bots,
 <span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a></span>
 <span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="fu">class</span>(battery_level)</span></code></pre></div>
 <p><br></p>
-<div id="taste-test-1" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test</h3>
-<h3>
+<div class="quiz">
+<h2>
+<i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test
+</h2>
+<h4>
 What data type is the <code>name</code> column?
-</h3>
+</h4>
 <p><input type="radio" name="type"> <em>letters</em> <br>
 <input type="radio" name="type"> <em>character</em> <br>
 <input type="radio" name="type"> <em>TRUE/FALSE</em> <br>
@@ -1406,12 +1413,11 @@ See function options
 </div>
 </div>
 </details>
-<details>
-<summary class="btn_code_blue">
-Create a CSV from Excel
-</summary>
-<div class="note" style="margin-top: 0px;">
-<p><strong>Step 1:</strong> Open your Excel file.</p>
+<p><br></p>
+</div>
+<div id="create-a-csv-from-excel" class="section level3 unnumbered note" style="margin-top: 10px;">
+<h3>Create a CSV from Excel</h3>
+<p><strong>Step 1:</strong> Open the Excel file.</p>
 <p><strong>Step 2:</strong> Save as CSV</p>
 <ul>
 <li>Go to <em>File</em><br />
@@ -1430,8 +1436,6 @@ Create a CSV from Excel
 </ul>
 <p><strong>Step 3:</strong> Return to RStudio and open your project. Look at your <em>Files</em> tab in the lower right window. Click on the <em>CSV</em> file you saved and choose <strong>View File</strong>.</p>
 <p><strong>Success!</strong></p>
-</div>
-</details>
 </div>
 </div>
 <div id="got-questions" class="section level2 unnumbered">
