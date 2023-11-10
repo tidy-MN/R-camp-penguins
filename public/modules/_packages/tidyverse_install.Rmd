@@ -69,5 +69,5 @@ The 4 core tidyverse packages we'll be using:
 |`lubridate`  | | Get your dates and times in order |
 
  
-See the full list of tidyverse packages at https://www.tidyverse.org/packages/ {-}
+See the full list of tidyverse packages at https://www.tidyverse.org/packages/
 

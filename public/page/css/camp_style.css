@@ -301,9 +301,17 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
 }
 
 .quiz h2 {
-  color: cornflowerblue;
+  color: #4976c5;
   margin-top: 31px;
   margin-bottom: 26px;
+  font-size: 3.3rem;
+}
+
+.quiz h3 {
+  color: #4976c5;
+  margin-top: 31px;
+  margin-bottom: 26px;
+  font-size: 3.3rem;
 }
 
 .quiz h4 {
@@ -312,15 +320,6 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
 
 .hint {font-style: italic; font-size: 1.9rem;}
 
-.btn_blue {
-  background-color: cornflowerblue;
-  border-color: #164290;
-}
-
-.btn_blue:hover {
-  border-color: cornflowerblue;
-  background-color: #164290;
-}
 
 #oneline {
   text-align: justify;
@@ -398,6 +397,17 @@ pre.sourceCode {margin-top: 1px; margin-bottom: 20px; font-size: 14px; line-heig
 .btn_code_blue:hover, .btn_code_blue.hover {
     background-color: #22527b;
 }
+
+.btn_code_blue:hover, .btn_code_blue.hover {
+  border-color: cornflowerblue;
+  background-color: #164290;
+}
+
+.btn_blue {
+  background-color: cornflowerblue;
+  border-color: #164290;
+}
+
 
 .toggle {
     height: 2.3em;

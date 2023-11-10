@@ -1,10 +1,10 @@
 
-<details>
-<summary class = "btn_code_blue"> Create a CSV from Excel </summary>
-    
-<div class="note" style="margin-top: 0px;">
-      
-__Step 1:__ Open your Excel file.
+
+<div class="note" style="margin-top: 10px;">
+
+### Create a CSV from Excel {-}
+
+__Step 1:__ Open the Excel file.
     
 __Step 2:__  Save as CSV
     
@@ -21,4 +21,3 @@ __Step 3:__ Return to RStudio and open your project. Look at your _Files_ tab in
 __Success!__
 
 </div>
-</details>

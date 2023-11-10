@@ -93,19 +93,12 @@ help("sum")
 
 <br>
 
-> To look for information on packages we don't have yet or to find more examples of how a function is used, we can search the internets with the addition of `R` and `github` in front of what we're looking for. This will often direct us to the development page for that package. For example, this search phrase will lead us to `readr`'s development page with some examples of reading in various data formats to R: `R github readr`. 
+> To look for information on packages we don't have yet or to find more examples of how a function is used, we can search the internets with the addition of `R` and `github` in front of what we're looking for. This will often direct us to the development page for that package. For example, this search phrase `R github readr` will lead us to readr's development page with some examples of reading in data files of various formats. 
 >
 > - https://github.com/tidyverse/readr#usage
 
-
 <br>
 
-### You're on the TEAM!  {-}
-
-**Let's go!**
-
-
-<br>
 
 # R bakery 
 <hr>
@@ -137,10 +130,10 @@ params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
 # Read data 
 <hr>
 
+
+Now we can read the CSV file back into R using the `read_csv() ` function.
+
 <br>
-
-Now we can read our own table back into R using the `read_csv() ` function.
-
 
 ```{r read-csv, child='../../static/modules/readr/readr_csv/bakery_csv.Rmd'}
 ```
@@ -167,6 +160,7 @@ Before diving into a data set, we use `glimpse() ` and several other summary fun
 ```{r fun-options, child='../../static/modules/base/base_functions/fun_options.Rmd'}
 ```
 
+<br>
 
 ```{r fun-options, child='../../static/modules/readr/readr_csv/excel_csv.Rmd'}
 ```

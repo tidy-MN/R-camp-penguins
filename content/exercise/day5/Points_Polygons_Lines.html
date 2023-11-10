@@ -2,13 +2,23 @@
 title: "Points, Polygons, Lines"
 author: "Kristie Ellickson"
 date: "2023-11-03"
-output: html_document
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
 ---
 
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
 
-<div id="points-polygons-and-lines-and-rasters---oh-my" class="section level2">
-<h2>Points, polygons, and lines … and rasters - OH MY!</h2>
+<div id="points-polygons-and-lines-and-rasters---oh-my" class="section level2" number="0.1">
+<h2><span class="header-section-number">0.1</span> Points, polygons, and lines … and rasters - OH MY!</h2>
 <p>A point or a vector of points are simply geographic coordinates, like a series or one x-y pair. They have no dimensions, so sometimes if you want to find something near a point you will need to draw a buffer around it so that it has some area. Examples of point data in GIS are locations of trees in a city, locations where you stopped on a hike, or locations of defibrillators in a building.</p>
 <p>Polygons are a series of points with area in the middle, think of lakes or soccer fields. Sometimes polygons can have holes or spaces in them. An example is a lake with islands in the middle of it.</p>
 <p>Lines are a series of points with no area between them. Examples are roads and railways.</p>
@@ -17,8 +27,8 @@ output: html_document
 <img src="https://developers.arcgis.com/python/guide/base64-images/part1_introduction_what_is_geometry-g59d9d3d9-87a0-3e0e-64ac-26e88bed53bd.gif" alt="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/" />
 <div class="figcaption"><a href="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/" class="uri">https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/</a></div>
 </div>
-<div id="rasters" class="section level3">
-<h3>Rasters!</h3>
+<div id="rasters" class="section level3" number="0.1.1">
+<h3><span class="header-section-number">0.1.1</span> Rasters!</h3>
 <p>Rasters are continuous data, think of color spectra or the range of moods you may have from very angry to quite happy…you are rarely just one of these and there are infinite gradations depending on how annoying other drivers are or if you got the perfect birthday cake.
 Rasters can also be aerial photography or remote sensing imagery. The colors or variations in the cells of information represent certain themes like air pollution concentrations or green canopy cover. Rasters are stored in a matrix of cells, like a table and the size of the cell represents the resolution of the information. If the cell is 50 m x 50 m, then there will be no additional information variation within that size of a cell (i.e. the temperature depicted in that whole cell will be the same throughout the cell).</p>
 <div class="float">

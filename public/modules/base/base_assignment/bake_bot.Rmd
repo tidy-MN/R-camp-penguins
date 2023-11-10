@@ -6,8 +6,6 @@ You can assign values to objects (variables) using the .teal[left arrow].
 - It’s more officially known as the *assignment operator*  
 
 
-`r #`![](../images/bake_bot1.png){style="float: right; margin-right: 0; width: 260px; margin-top: -287px;"}`
-
 ### Let's create a baking bot {-}
 
 Copy the code below to your R script to create a bot called `Whiskers`.
@@ -17,7 +15,7 @@ Copy the code below to your R script to create a bot called `Whiskers`.
 # Object not found?
 bot
 
-# Create the object by assigning it a value - the bot's name
+# Create the object by assigning it a value, the bot's name
 bot <- "Whiskers"
 
 bot
@@ -157,13 +155,15 @@ rm(bot_friend)
 
 <div class="quiz">
 
-<h3> <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test </h3> {-}
+<h2> <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test </h2> 
 
-### How can we get our `bot_friend` back? {-}
+#### How can we get our `bot_friend` back? {-}
 
-<details><summary class = "btn_blue">_Show solution_</summary>
+<details><summary class = "btn_code_blue">_Show solution_</summary>
 
+<p>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> You can re-run your code anytime. You can even click the `Run` button at the top of the script panel to re-run ALL of your script from top to bottom.
+</p>
 </details>
 
 </div>
@@ -306,9 +306,9 @@ This is a great first look to see if our code ran successfully. To clean house, 
 
 <div class="quiz">
 
-<h3> <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test </h3> {-}
+<h2> <i class="fas fa-cookie-bite" aria-hidden="true" style="color: gray;"></i> Taste test </h2> {-}
 
-### Which object name <b>is</b> allowed? {-}
+#### Which object name <b>is</b> allowed? {-}
 
 <i>Hint: You can try the names in R</i>
 
@@ -323,8 +323,9 @@ This is a great first look to see if our code ran successfully. To clean house, 
 </p>
 
 <details><summary class = "btn_blue">_Show solution_</summary>
-
+<p>
 <i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <code>my_bot55</code>
+</p>
 </details>
 </div>
 
