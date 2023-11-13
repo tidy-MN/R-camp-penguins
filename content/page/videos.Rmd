@@ -102,7 +102,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - Slides
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Boil it down: Summarize the data  
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.3 - </span> Boil it down: Summarize the data  
   
 - [Notes and code examples](Day2.html#excel-in-r) 
 - Slides
