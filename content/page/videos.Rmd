@@ -89,10 +89,23 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">1.1 - </span> [Excel in R]()  
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.1 - </span> Data wrangling  
+  
+- [Notes and code examples](Day2.html) 
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-1-Data_wrangling.html#1)
+
+
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Fork in the road: if_else and case_when 
   
 - [Notes and code examples](Day2.html#excel-in-r) 
-- [Slides]() 
+- Slides
+
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Boil it down: Summarize the data  
+  
+- [Notes and code examples](Day2.html#excel-in-r) 
+- Slides
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises

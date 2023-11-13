@@ -3,7 +3,7 @@
 
 |           |  |                                                                  |   
 |-----------|--|:-----------------------------------------------------------------|  
-|`object  `|  | A variable in R that we can assign different values to using the assignment operator.  | 
+|`object  `|  | A variable in R that we assign different values to using the assignment operator.  | 
 |`<-  `|  | The **left-arrow** or assignment operator can assign a value to a new object or update an existing object.  | 
 |`package  `|  | An add-on for R that contains new functions that someone created to help you. It's like an App for R.  |  
 |`library  `|  |The name of the folder that stores all your packages, and the function used to load a package.  |  
