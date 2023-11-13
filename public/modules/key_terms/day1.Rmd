@@ -1,13 +1,27 @@
 
 <div class="bluecode">
 
-|           |  |                                                                  |   
-|-----------|--|:-----------------------------------------------------------------|  
-|`object  `|  | A variable in R that we assign different values to using the assignment operator.  | 
-|`<-  `|  | The **left-arrow** or assignment operator can assign a value to a new object or update an existing object.  | 
-|`package  `|  | An add-on for R that contains new functions that someone created to help you. It's like an App for R.  |  
-|`library  `|  |The name of the folder that stores all your packages, and the function used to load a package.  |  
-|`function  `|  | Functions perform an operation on your data and returns a result. The function `sum()` takes a series of values and returns the sum for you.  |  
-|`argument  `|  | Arguments are options or inputs that you pass to a function to change how it behaves. The argument `skip = 1` tells the `read_csv()` function to ignore the first row when reading in a data file. To see the default values for a function you can type `?read_csv` in the console.  |  
+```{r, results='asis', echo=F, warning=F}
+library(dplyr)
+library(kableExtra)
+
+terms <- data.frame(Term = c("object", 
+                             "<-",
+                             "package",
+                             "library",
+                             "function",
+                             "argument"
+                             ),
+                    Definition = c("A variable in R that we assign different values to using the assignment operator.", 
+                      "The <b>left-arrow</b> or assignment operator can assign a value to a new object or update an existing object.",
+                      "An add-on for R that contains new functions someone created to help you. It's like an App for R. ",
+                      "The name of the folder that stores all your packages, and the function used to load a package.",
+                      "Functions perform an operation on your data and returns a result. The function <code>sum()</code> takes a series of values and returns the sum for you.",
+                      "Arguments are options or inputs we pass to a function to change how it behaves. The argument <code>skip = 1</code> tells the <code>read_csv()</code> function to ignore the first row when reading in a data file. To see the default values for a function you can type <code>?read_csv</code> in the console."))
+
+terms %>% 
+  mutate(Term = paste("<code>", Term, "  </code>")) %>%
+  kable(format = "html", escape = F, align = c("c","l","l")) #%>%
+```
 
 </div>
