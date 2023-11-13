@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Day 2 - Learn R</title>
+  <meta property="og:title" content="Day 2" />
+  <meta name="twitter:title" content="Day 2" />
+  <meta name="description" content="1 Video 2.1: Data wrangling 2 Video 2.2: Fork in the road: if_else() and case_when() 3 Video 2.3: Boil it down // Summarize the data 1 Video 2.">
+  <meta property="og:description" content="1 Video 2.1: Data wrangling 2 Video 2.2: Fork in the road: if_else() and case_when() 3 Video 2.3: Boil it down // Summarize the data 1 Video 2.">
+  <meta name="twitter:description" content="1 Video 2.1: Data wrangling 2 Video 2.2: Fork in the road: if_else() and case_when() 3 Video 2.3: Boil it down // Summarize the data 1 Video 2.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/day2.html",
+          "name": "Day 2"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "Day 2",
+  "description" : "1 Video 2.1: Data wrangling 2 Video 2.2: Fork in the road: if_else() and case_when() 3 Video 2.3: Boil it down \/\/ Summarize the data 1 Video 2.",
+  "inLanguage" : "en",
+  "wordCount":  642 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/day2.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Day 2" />
+<meta property="og:description" content="1 Video 2.1: Data wrangling 2 Video 2.2: Fork in the road: if_else() and case_when() 3 Video 2.3: Boil it down // Summarize the data 1 Video 2.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day2.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Day 2" />
+  <meta name="twitter:description" content="1 Video 2.1: Data wrangling 2 Video 2.2: Fork in the road: if_else() and case_when() 3 Video 2.3: Boil it down // Summarize the data 1 Video 2.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day2.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/videos.html">Videos</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+                  <a href="/R-camp-penguins/page/day4.html">Day 4</a>
+                
+                  <a href="/R-camp-penguins/page/day5.html">Day 5</a>
+                
+                  <a href="/R-camp-penguins/page/day6.html">Day 6</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Day 2</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="/R-camp-penguins/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
+
+<div id="TOC">
+<ul>
+<li><a href="#video-2.1-data-wrangling" id="toc-video-2.1-data-wrangling"><span class="toc-section-number">1</span> Video 2.1: <span class="bluecode"><code>Data wrangling</code></span></a></li>
+<li><a href="#video-2.2-fork-in-the-road-if_else-and-case_when" id="toc-video-2.2-fork-in-the-road-if_else-and-case_when"><span class="toc-section-number">2</span> Video 2.2: <span class="bluecode"><code>Fork in the road: if_else() and case_when()</code></span></a></li>
+<li><a href="#video-2.3-boil-it-down-summarize-the-data" id="toc-video-2.3-boil-it-down-summarize-the-data"><span class="toc-section-number">3</span> Video 2.3: <span class="bluecode"><code>Boil it down // Summarize the data</code></span></a></li>
+</ul>
+</div>
+
+<p><link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
+<p><br></p>
+<div id="video-2.1-data-wrangling" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Video 2.1: <span class="bluecode"><code>Data wrangling</code></span></h1>
+<div id="wrangle-that-data" class="section level2 unnumbered">
+<h2><span class="teal">WRANGLE</span> <span class="gray">that DATA</span></h2>
+<p><img src="images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data."></p>
+<p><span class="hint float-right">Artwork by <span class="citation">@allison_horst</span></spam></p>
+<p><br></p>
+</div>
+<div id="monsters-are-back" class="section level2 unnumbered">
+<h2>Monsters are back</h2>
+</div>
+<div id="our-first-order" class="section level2 unnumbered">
+<h2><i class="fas fa-bell blue" aria-hidden="true" style="margin-bottom: 54px;"></i> Our first order</h2>
+<style>
+.inverse {text-shadow: unset !important;}
+hr {margin-top: -16px;}
+</style>
+<blockquote>
+<strong><code>To:</code></strong> <code>Bot Bakery</code><br />
+<strong><code>Subject:</code></strong> <code>Big ship treat order</code><br />
+<strong><code>Attached:</code></strong> <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode"><code>crew_food_allergies.XLSX</code></span>
+<hr>
+<p>Hi friend,</p>
+<p>Here’s that table of my crew’s goody preferences. 😋</p>
+<p>Guess which one is me!</p>
+</blockquote>
+</div>
+<div id="get-the-data" class="section level2 unnumbered">
+<h2>Get the data</h2>
+<p>We can download the attached Excel file from: <a href="">here</a></p>
+<p>After you’ve downloaded the file, move the file from your <em>Downloads/</em> folder to a <em>data/</em> folder in your project’s main directory:</p>
+<ol style="list-style-type: decimal">
+<li>Download the Excel file</li>
+<li>Create a “data” folder in your project directory</li>
+</ol>
+<ul>
+<li>You can do this the usual way with Windows Explorer, or use the built-in New Folder button in the RStudio <code>Files</code> pane.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Move the Excel file from your <em>Downloads/</em> folder to the new <em>data/</em> folder.</li>
+</ol>
+</div>
+<div id="excel-in-r" class="section level2 unnumbered">
+<h2><i class="fas fa-file-excel" aria-hidden="true"></i> Excel in R</h2>
+<p>Have an EXCEL file? The <strong>readxl</strong> package has the function <code>read_excel()</code> for reading Excel data into R.</p>
+<div id="lets-install-and-load-readxl" class="section level3 unnumbered">
+<h3>Let’s install and load <code>readxl</code>:</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
+</div>
+<div id="now-we-can-read-in-our-excel-file" class="section level3 unnumbered">
+<h3>Now we can read in our Excel file:</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/crew_food_prefs.XLSX&quot;</span>)</span></code></pre></div>
+<blockquote>
+<p>Ope! What happened to our column names / headers?</p>
+</blockquote>
+<p><br></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/crew_food_prefs.XLSX&quot;</span>, <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="an-excellent-alternative" class="section level3 unnumbered">
+<h3>An Excellent alternative</h3>
+</div>
+</div>
+<div id="glimpse-the-data" class="section level2 unnumbered">
+<h2>Glimpse the data</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">glimpse</span>(crew_df)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">summary</span>(crew_df)</span></code></pre></div>
+</div>
+<div id="filter-out-the-test-data" class="section level2 unnumbered">
+<h2><strong><code>filter()</code></strong> out the test data</h2>
+<p>There appears to be test data included in the table. Yuk! Let’s filter it out so it doesn’t influence our results.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(crew_df, id <span class="sc">!=</span> <span class="st">&quot;test&quot;</span>)</span></code></pre></div>
+</div>
+<div id="select-what-we-need" class="section level2 unnumbered">
+<h2><strong><code>select()</code></strong> what we need</h2>
+<p>There’s also some columns in here we don’t need. Let’s drop the country people are from since that won’t help us.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, <span class="sc">-</span>country)</span></code></pre></div>
+<p><br></p>
+<p>Let’s create a separate smaller <code>favorites</code> table with only the <code>id</code> and <code>favorite_goody</code> columns.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>favorites_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, favorite_goody)</span></code></pre></div>
+<p><br></p>
+<p>Let’s create a separate <code>allergy</code> table with only the <code>id</code> and all of the columns that contain the word <strong>“allergy”</strong>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>allergy_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, <span class="fu">contains</span>(<span class="st">&quot;allergy&quot;</span>))</span></code></pre></div>
+<p><br></p>
+<p>Finally, for easier reference, use <code>select()</code> to make the <code>id</code> and <code>days_on_ship</code> columns the first two columns in the table. Everything else can be in the same order.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>favorites_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, days_on_ship, <span class="fu">everything</span>())</span></code></pre></div>
+</div>
+<div id="arrange-the-crew" class="section level2 unnumbered">
+<h2><strong><code>arrange()</code></strong> the crew</h2>
+<p>Let’s use <code>arrange()</code> to sort the crew members so the ones that will be on the ship the longest are on top. They’ll be the ones munching on are goodies the longest.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, days_on_ship)</span></code></pre></div>
+<blockquote>
+<p>Ope! What happened?</p>
+</blockquote>
+<div id="descending-order-biggest-on-top" class="section level3 unnumbered">
+<h3>Descending order (biggest on top)</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="fu">desc</span>(days_on_ship))</span></code></pre></div>
+</div>
+<div id="alternative-use--column_name-instead-of-desccolumn_name" class="section level3 unnumbered">
+<h3>Alternative: use <code>-column_name</code> instead of <code>desc(column_name)</code></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="sc">-</span>days_on_ship)</span></code></pre></div>
+</div>
+</div>
+<div id="mutate-new-columns" class="section level2 unnumbered">
+<h2><strong><code>mutate()</code></strong> new columns</h2>
+<p>Let’s get an idea of the total meals each crew mate will be eating baked goods. For that, we’ll need to take their <code>days_on_the_ship</code> times their <code>meals_per_day</code>.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Use the * to multiply and the / to divide</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">total_trip_meals =</span> days_on_the_ship <span class="sc">*</span> meals_per_day)</span></code></pre></div>
+<div id="sidebar-counting-trues-and-falses" class="section level3 unnumbered">
+<h3>Sidebar: Counting TRUE’s and FALSE’s</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># This new column wouldn&#39;t be too helpful</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">no_egg_allergy =</span> egg_allergy <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="do">## Drop it</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, <span class="sc">-</span>no_egg_allergy)</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co"># Let&#39;s show whether someone has any allergies</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="do">## Note: TRUE&#39;s count as 1, and FALSE&#39;s count as 0</span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>                  <span class="at">n_allergies =</span> egg_allergy <span class="sc">+</span> nut_allergy)</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="co"># This is the same</span></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a>                  <span class="at">n_allergies =</span> egg_allergy <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">+</span> nut_allergy <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a><span class="co"># This is also the same</span></span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a>                  <span class="at">n_allergies =</span> <span class="fu">sum</span>(egg_allergy, nut_allergy))</span></code></pre></div>
+<p><br></p>
+<blockquote>
+<p>You know, it’d be great if we could label the crew that were going to be on board less than a week. Sounds like it’s time to expand our data toolbox…</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="video-2.2-fork-in-the-road-if_else-and-case_when" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Video 2.2: <span class="bluecode"><code>Fork in the road: if_else() and case_when()</code></span></h1>
+<p>if_else(days_on_ship &gt; 7, true = “yes”, false = “no”)</p>
+<p>if_else(days_on_ship &gt; 7, true = “yes”, false = “no”, missing = “unknown”)</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">if_else</span>(egg_allergy, <span class="dv">1</span>,  <span class="dv">0</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="fu">ifelse</span>(egg_allergy, <span class="dv">1</span>, <span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div id="video-2.3-boil-it-down-summarize-the-data" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Video 2.3: <span class="bluecode"><code>Boil it down // Summarize the data</code></span></h1>
+<p>Time to simmer things down. Let’s use <code>summarize()</code> to find a few summary statistics for our data.</p>
+<p><br></p>
+<div id="jump-to-the-top" class="section level3 unnumbered">
+<h3><i class="fas fa-carrot"> </i> <a href="../page/day2.html">Jump to the top</a></h3>
+<p><br></p>
+</div>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

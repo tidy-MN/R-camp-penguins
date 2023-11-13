@@ -75,7 +75,6 @@ class(battery_level)
 <input type="radio" name="type"> _TRUE/FALSE_     <br> 
 <input type="radio" name="type"> _numbers_        <br> 
 
-<br>
 
 <details style="margin-left: 14px;">
 <summary class = "btn_code_blue">_Show solution_</summary>

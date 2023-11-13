@@ -214,6 +214,15 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
     </item>
     
     <item>
+      <title>Day 2</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/day2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day2.html</guid>
+      <description>1 Video 2.1: Data wrangling 2 Video 2.2: Fork in the road: if_else() and case_when() 3 Video 2.3: Boil it down // Summarize the data 1 Video 2.</description>
+    </item>
+    
+    <item>
       <title>Exercise: Filtering and case_when</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,5 +1,5 @@
 ---
-title: "Day 1 - PM"
+title: "Day 2"
 output: 
   blogdown::html_page: 
     toc: true   
@@ -12,161 +12,250 @@ output:
     monofont: Source Code Pro
 ---
 
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE)
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE, eval=F)
 
 xaringanExtra::use_clipboard()
-
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
-
-source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_color.R")
-source("https://raw.githubusercontent.com/MPCA-air/r-modules/master/R/hook_add_mod.R")
-```
-
-
-## Data exploration {-} 
-```{r glimpse, child='../../static/modules/dplyr/dplyr_install/general.Rmd'}
-```
-
-
-## Get to know your data frame {-}
-```{r glimpse, child='../../static/modules/dplyr/dplyr_glimpse/starwars.Rmd'}
-```
-
-
-```{r tools, child='../../static/modules/dplyr/dplyr_toolbox/general.Rmd'}
 ```
 
 <br>
 
-# Porg tables 
-<hr>
 
-A poggle of porgs volunteered to help us demo the `dplyr` functions.
+# Video 2.1: <span class="bluecode">`Data wrangling`</span>
 
-You can follow along by reading the __porgs__ data from the URL below. *(Sorry, the data doesn't include the images.)*
+## <span class="teal">WRANGLE</span> <span class="gray">that DATA</span> {-}
+
+<img src="images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data.">
+
+<span class="hint float-right">Artwork by @allison_horst</spam>
+
+
+<br>
+
+```{r child = '../../static/modules/dplyr/dplyr_toolbox/starter.Rmd'}
+```
+
+
+
+## Monsters are back {-}
+
+```{r monster-tabs, results='asis', echo=F, eval=F}
+cat(readLines("../insert_monster_tabs_start.R"))
+```
+
+
+## <i class="fas fa-bell blue" aria-hidden="true" style="margin-bottom: 54px;"></i> Our first order {-}
+
+<style>
+.inverse {text-shadow: unset !important;}
+hr {margin-top: -16px;}
+</style>
+
+> **`To:`** `Bot Bakery`  
+> **`Subject:`** `Big ship treat order`  
+> **`Attached:`** <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode">`crew_food_allergies.XLSX`</span>
+> <hr>
+> 
+> Hi friend,
+>
+> Here's that table of my crew's goody preferences. 😋 
+> 
+> Guess which one is me! 
+
+
+## Get the data {-}
+
+We can download the attached Excel file from: [here]()
+
+After you've downloaded the file, move the file from your *Downloads/* folder to a *data/* folder in your project's main directory:
+
+1. Download the Excel file
+2. Create a "data" folder in your project directory
+  - You can do this the usual way with Windows Explorer, or use the built-in New Folder button in the RStudio `Files` pane.
+3. Move the Excel file from your *Downloads/* folder to the new *data/* folder. 
+
+
+## <i class="fas fa-file-excel" aria-hidden="true"></i> Excel in R {-}
+
+Have an EXCEL file? The **readxl** package has the function `read_excel()` for reading Excel data into R.
+
+
+### Let's install and load `readxl`: {-}
 
 ```{r, eval=F}
-porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+install.packages(readxl)
+
+library(readxl)
 ```
 
 
-```{r porg-tabs, results='asis', echo=F}
-cat(readLines("porg_tabs.txt"))
+### Now we can read in our Excel file: {-}
+```{r, eval=F}
+crew_df <- read_excel("data/crew_food_prefs.XLSX")
 ```
 
+> Ope! What happened to our column names / headers?
 
-# `select()`
-<hr>
+<br>
 
-```{r select, child='../../static/modules/dplyr/dplyr_select/starwars.Rmd'}
-```
-
-
-# Sort with `arrange()` 
-<hr>
-
-```{r arrange, child='../../static/modules/dplyr/dplyr_arrange/starwars.Rmd'}
+```{r, eval=F}
+crew_df <- read_excel("data/crew_food_prefs.XLSX", skip = 1)
 ```
 
 <br>
 
-# R BINGO! {-}
-<hr class="hr2">
+### An Excellent alternative {-}
 
-```{r arrange, child='../../static/modules/games/bingo/general.Rmd'}
+```{r fun-options, child='../../static/modules/readr/readr_csv/excel_csv.Rmd'}
 ```
 
 
-# `filter()`
-<hr>
-```{r arrange, child='../../static/modules/dplyr/dplyr_filter/starwars.Rmd'}
-```
-
-<div class="well">
-Now, let's calculate some new columns to help focus Rey's scrap finding.
-</div>
-
-
-# `mutate()`
-<hr>
-```{r arrange, child='../../static/modules/dplyr/dplyr_mutate/starwars.Rmd'}
+```{r, include=F}
+crew_df <- read_csv("data/crew_food_prefs.csv")
 ```
 
 
-## Final stretch! {-}
-<hr class="hrlvl2">
-```{r arrange, child='../../static/modules/dplyr/dplyr_filter/ionengine.Rmd'}
+## Glimpse the data {-}
+
+```{r,eval=F}
+glimpse(crew_df)
+
+summary(crew_df)
 ```
 
 
-# Saving data
-<hr>
-```{r save, child='../../static/modules/readr/readr_write/scrap_pounds.Rmd'}
+## **`filter()`** out the test data {-}
+
+There appears to be test data included in the table. Yuk! Let's filter it out so it doesn't influence our results.
+
+```{r}
+crew_df <- filter(crew_df, id != "test")
 ```
 
 
-## Where am I? {-}
-<hr class="hrlvl2">
-```{r paths, child='where_am_i.Rmd'}
-```
+## **`select()`** what we need {-}
 
+There's also some columns in here we don't need. Let's drop the country people are from since that won't help us.
 
-# Plots with _ggplot2_
-<hr>
-
-<br>
-
-#### _Plot the data, Plot the data, Plot the data_ {-}
-
-<br>
-
-![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
-
-
-This is going to be a long flight. Let's warm up our plotting machines so they are ready for Endor. To get started, let's answer Rey's question about where the most scrap was sent to on Jakku.
-
-```{r child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
+```{r}
+crew_df <- select(crew_df, -country)
 ```
 
 <br>
 
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
+Let's create a separate smaller `favorites` table with only the `id` and `favorite_goody` columns.
 
-Fill in the code below to make a column plot showing the total amount of scrap for each `item`.
+```{r}
+favorites_df <- select(crew_df, id, favorite_goody)
+```
 
 <br>
 
-```{r, eval=F, echo=T}
-ggplot(scrap, aes(x = ___________, y = amount)) + 
-  geom_col()
+Let's create a separate `allergy` table with only the `id` and all of the columns that contain the word **"allergy"**.
+
+```{r}
+allergy_df <- select(crew_df, id, contains("allergy"))
 ```
 
 
-Now, try setting the **fill** argument equal to the `destination` column.
-
-</div>
-
 <br>
 
-# Shutdown complete
-<hr>
+Finally, for easier reference, use `select()` to make the `id` and `days_on_ship` columns the first two columns in the table. Everything else can be in the same order.
 
-```{r shutdown, child='../../static/modules/shutdown.Rmd'}
+```{r}
+favorites_df <- select(crew_df, id, days_on_ship, everything())
 ```
 
 
-![](../images/scaryR.jpg){style="margin-left: 11%; width: 78%;"}
+## **`arrange()`** the crew {-}
 
-# Learn more!
-<hr>
+Let's use `arrange()` to sort the crew members so the ones that will be on the ship the longest are on top. They'll be the ones munching on are goodies the longest.
 
-- RStudio Primers: [Data Visualization Basics](https://posit.cloud/learn/primers/1.1)
-- [R Basics](https://rstudio-education.github.io/hopr/basics.html)
+```{r}
+crew_df <- arrange(crew_df, days_on_ship)
+```
+
+> Ope! What happened?
+
+
+### Descending order (biggest on top) {-}
+```{r}
+crew_df <- arrange(crew_df, desc(days_on_ship))
+```
+
+### Alternative: use `-column_name` instead of `desc(column_name)` {-}
+```{r}
+crew_df <- arrange(crew_df, -days_on_ship)
+```
+
+
+## **`mutate()`** new columns {-}
+
+Let's get an idea of the total meals each crew mate will be eating baked goods. For that, we'll need to take their `days_on_the_ship` times their `meals_per_day`.
+
+```{r}
+# Use the * to multiply and the / to divide
+crew_df <- mutate(crew_df, total_trip_meals = days_on_the_ship * meals_per_day)
+```
+
+
+### Sidebar: Counting TRUE's and FALSE's {-}
+```{r}
+# This new column wouldn't be too helpful
+crew_df <- mutate(crew_df, no_egg_allergy = egg_allergy == FALSE)
+
+## Drop it
+crew_df <- select(crew_df, -no_egg_allergy)
+
+
+# Let's show whether someone has any allergies
+## Note: TRUE's count as 1, and FALSE's count as 0
+crew_df <- mutate(crew_df, 
+                  n_allergies = egg_allergy + nut_allergy)
+
+# This is the same
+crew_df <- mutate(crew_df, 
+                  n_allergies = egg_allergy == TRUE + nut_allergy == TRUE)
+
+# This is also the same
+crew_df <- mutate(crew_df, 
+                  n_allergies = sum(egg_allergy, nut_allergy))
+
+```
 
 <br>
 
-### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-1.html) {-}
+> You know, it'd be great if we could label the crew that were going to be on board less than a week. Sounds like it's time to expand our data toolbox...
+
+
+
+# Video 2.2: <span class="bluecode">`Fork in the road: if_else() and case_when()`</span> 
+
+
+if_else(days_on_ship > 7, true = "yes", false = "no")
+
+if_else(days_on_ship > 7, true = "yes", false = "no", missing = "unknown")
+
+```{R}
+if_else(egg_allergy, 1,  0)
+
+ifelse(egg_allergy, 1, 0)
+```
+
+
+
+# Video 2.3: <span class="bluecode">`Boil it down // Summarize the data`</span>
+
+Time to simmer things down. Let's use `summarize()` to find a few summary statistics for our data.
+
+
+<br>
+
+### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day2.html) {-}
 
 <br>
