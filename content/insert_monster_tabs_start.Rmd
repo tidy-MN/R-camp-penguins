@@ -36,13 +36,13 @@
 ### Filter with a single condition / test {-}
 
 
-![](images/monsters/filter_monsters.png){style="width: 95%; margin-top: 12px;"}
+![](../images/monsters/filter_monsters.png){style="width: 95%; margin-top: 12px;"}
 
 
 
 <h3 style="margin-top: 20px;">Filter with multiple conditions / tests </h3>
 
-![](images/monsters/filter_monsters_multiple.png){style="width: 95%;"}
+![](../images/monsters/filter_monsters_multiple.png){style="width: 95%;"}
 <br><br>
 </div>
 
@@ -51,11 +51,11 @@
 
 ### Keep columns {-}
 
-![](images/monsters/select_monsters2.png){style="width: 98%; margin-top: 6px;"}
+![](../images/monsters/select_monsters2.png){style="width: 98%; margin-top: 6px;"}
 
 <h3 style="margin-top: 20px;">Drop columns </h3>
 
-![](images/monsters/select_monsters_drop2.png){style="width: 70%;"}
+![](../images/monsters/select_monsters_drop2.png){style="width: 70%;"}
 <br><br>
 
 </div>
@@ -65,12 +65,12 @@
 
 <h3 style="margin-top: 20px;"> Arrange from lowest to highest </h3>
 
-![](images/monsters/arrange_monsters.png){style="width: 98%; margin-top: 12px;"}
+![](../images/monsters/arrange_monsters.png){style="width: 98%; margin-top: 12px;"}
 
 
 <h3 style="margin-top: 20px;"> Arrange from highest to lowest </h3>
 
-![](images/monsters/arrange_monsters_desc.png){style="width: 98%;"}
+![](../images/monsters/arrange_monsters_desc.png){style="width: 98%;"}
 <br><br>
 
 </div>
@@ -81,12 +81,12 @@
 
 ### Update existing column {-}
 
-![](images/monsters/mutate_monsters_update.png){style="width: 98%; margin-top: 12px;"}
+![](../images/monsters/mutate_monsters_update.png){style="width: 98%; margin-top: 12px;"}
 
 <h3 style="margin-top: 20px;">Add a new column </h3>
 
 
-![](images/monsters/mutate_monsters_new.png){style="width: 98%;"}
+![](../images/monsters/mutate_monsters_new.png){style="width: 98%;"}
 <br><br>
 
 </div>
