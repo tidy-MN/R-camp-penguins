@@ -10,6 +10,7 @@ h1 {
 h2 {
   margin-top: 64px;
   margin-bottom: 26px;
+  font-size: 34px;
 }
 
 
@@ -27,10 +28,7 @@ code {color: #535353}
   margin-right: 6px;
 }
 
-.blue {
-  color: #3498db;
-  background: #3498db;
-}
+.blue {color: #3498db;}
 
 hr {
   margin-top: -46px;

@@ -26,7 +26,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# Video 2.1: <span class="bluecode">`Data wrangling`</span>
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Data wrangling
 
 ## <span class="teal">WRANGLE</span> <span class="gray">that DATA</span> {-}
 
@@ -37,12 +37,17 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
-```{r child = '../../static/modules/dplyr/dplyr_toolbox/starter.Rmd'}
+```{r child = '../../static/modules/dplyr/dplyr_toolbox/starter.Rmd', eval=T}
 ```
 
 
 
 ## Monsters are back {-}
+
+
+```{r child='../insert_monster_tabs_start.Rmd', eval=T}
+```
+
 
 ```{r monster-tabs, results='asis', echo=F, eval=F}
 cat(readLines("../insert_monster_tabs_start.R"))
@@ -52,20 +57,21 @@ cat(readLines("../insert_monster_tabs_start.R"))
 ## <i class="fas fa-bell blue" aria-hidden="true" style="margin-bottom: 54px;"></i> Our first order {-}
 
 <style>
-.inverse {text-shadow: unset !important;}
-hr {margin-top: -16px;}
+blockquote hr {margin-top: 6px; margin-left: 4px; background: #f8fdff; }
+blockquote code {background: #f8fdff;}
 </style>
 
 > **`To:`** `Bot Bakery`  
 > **`Subject:`** `Big ship treat order`  
-> **`Attached:`** <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode">`crew_food_allergies.XLSX`</span>
+> **`Attached:`** <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode">`crew_preferences.xlsx`</span>
 > <hr>
 > 
 > Hi friend,
 >
-> Here's that table of my crew's goody preferences. 😋 
+> Here's the table of my crew's goody preferences. 😋 
 > 
-> Guess which one is me! 
+> Guess which crewmate is me! 
+>
 
 
 ## Get the data {-}
@@ -234,7 +240,7 @@ crew_df <- mutate(crew_df,
 
 
 
-# Video 2.2: <span class="bluecode">`Fork in the road: if_else() and case_when()`</span> 
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Fork in the road: if_else() and case_when()
 
 
 if_else(days_on_ship > 7, true = "yes", false = "no")
@@ -249,7 +255,7 @@ ifelse(egg_allergy, 1, 0)
 
 
 
-# Video 2.3: <span class="bluecode">`Boil it down // Summarize the data`</span>
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down // Summarize the data
 
 Time to simmer things down. Let's use `summarize()` to find a few summary statistics for our data.
 
