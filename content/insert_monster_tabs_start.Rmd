@@ -35,14 +35,12 @@
 
 ### Filter with a single condition / test {-}
 
-
 ![](../images/monsters/filter_monsters.png){style="width: 95%; margin-top: 12px;"}
-
-
 
 <h3 style="margin-top: 20px;">Filter with multiple conditions / tests </h3>
 
 ![](../images/monsters/filter_monsters_multiple.png){style="width: 95%;"}
+
 <br><br>
 </div>
 
