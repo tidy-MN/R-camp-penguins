@@ -44,7 +44,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ## Monsters are back {-}
 
-
 ```{r child='../insert_monster_tabs_start.Rmd', eval=T}
 ```
 
@@ -63,7 +62,7 @@ blockquote code {background: #f8fdff;}
 </style>
 
 > **`To:`** `Bot Bakery`  
-> **`Subject:`** `Big ship treat order`  
+> **`Subject:`** `Big treat order`  
 > **`Attached:`** <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode">`crew_preferences.xlsx`</span>
 > <hr>
 > 

@@ -24,7 +24,7 @@
 <div class="well tab-content monsters" id="myTabContent" style="background-color: white;">
 <div class="tab-pane fade active in" id="monsters" role="tabpanel" aria-labelledby="monsters-tab">
 
-![](images/monsters/monster_data.png){style="width: 85%;"}
+![](../images/monsters/monster_data.png){style="width: 85%;"}
 
 <br><br>
 
