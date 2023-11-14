@@ -54,10 +54,11 @@ cat(readLines("../insert_monster_tabs_start.R"))
 ```
 
 
-## <i class="fas fa-bell blue" aria-hidden="true" style="margin-bottom: 54px;"></i> Our first order {-}
+## <i class="fas fa-bell blue" aria-hidden="true" style="margin-bottom: 12px;"></i> Our first order {-}
 
 <style>
-blockquote hr {margin-top: 6px; margin-left: 4px; background: #f8fdff; }
+blockquote {background: #f8fdff; margin-top: 0;}
+blockquote hr {margin-top: 6px; margin-left: 4px; background: lightgray; height: 1px;}
 blockquote code {background: #f8fdff;}
 </style>
 
@@ -76,7 +77,7 @@ blockquote code {background: #f8fdff;}
 
 ## Get the data {-}
 
-We can download the attached Excel file from: [here]()
+We can download the attached Excel file [HERE]()
 
 After you've downloaded the file, move the file from your *Downloads/* folder to a *data/* folder in your project's main directory:
 
