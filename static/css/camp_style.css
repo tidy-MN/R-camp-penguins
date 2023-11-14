@@ -20,15 +20,33 @@ h3 {
 }
 
 
+.blue-h3 {background-color: #f7fcff;
+    margin-top: 7px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 21px;
+    margin-bottom: 4px;
+}
+
 code {color: #535353}
 
+.blue {color: #3498db;}
 .bluecode code {color: #3498db;}
+
+.purple {color: #432160;}
+.mustard {color: #e3c250;}
+.teal {color: #50E3C2;}
+.off-white{color:#f5fccf;}
+.yellow {color: #ffe825;}
+.link-blue {color: #42affa;}
+.gray {color: #aeb9bc; background: #ddd1cd;}
+.pink {color: #c81888;}
+.pinkcode code {color: #c81888;}
+
 
 .fa, .fas, .far {
   margin-right: 6px;
 }
-
-.blue {color: #3498db;}
 
 hr {
   margin-top: -46px;
@@ -39,11 +57,6 @@ hr {
   max-width: 98%;
 }
 
-.pinkcode code {
-  color: #c81888;
-}
-
-.gray {background: #ddd1cd;}
 
 .hr2 {margin-top: -38px; margin-left: 0; background: #ddd1cd; height: 0.12em; margin-bottom: 30px;}
 

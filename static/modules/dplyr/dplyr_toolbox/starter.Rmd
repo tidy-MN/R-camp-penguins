@@ -1,5 +1,4 @@
 
-# <i class="fa fa-toolbox blue"></i> Your data toolbox
 
 <style>
 .remark-slide table {border-top: 0;}

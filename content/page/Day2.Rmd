@@ -30,12 +30,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ## <span class="teal">WRANGLE</span> <span class="gray">that DATA</span> {-}
 
-<img src="images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data.">
+<img src="../images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data.">
 
 <span class="hint float-right">Artwork by @allison_horst</spam>
 
 
 <br>
+
+## <i class="fa fa-toolbox blue"></i> Your data toolbox {-}
 
 ```{r child = '../../static/modules/dplyr/dplyr_toolbox/starter.Rmd', eval=T}
 ```
@@ -44,7 +46,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ## Monsters are back {-}
 
-```{r child='../insert_monster_tabs_start.Rmd', eval=T}
+```{r child = '../insert_monster_tabs_start.Rmd', eval=T}
 ```
 
 

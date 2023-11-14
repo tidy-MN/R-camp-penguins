@@ -26,50 +26,50 @@
 
 ![](../images/monsters/monster_data.png){style="width: 85%;"}
 
-<br><br>
+<br>
 
 </div>
 
 <div class="tab-pane fade" id="filter3" role="tabpanel" aria-labelledby="filter3-tab">
 
 
-### Filter with a single condition / test {-}
+<h3 class="blue-h3"> Filter with a single condition / test </h3>
 
 ![](../images/monsters/filter_monsters.png){style="width: 95%; margin-top: 12px;"}
 
-<h3 style="margin-top: 20px;">Filter with multiple conditions / tests </h3>
+<h3 class="blue-h3" style="margin-top: 50px;">Filter with multiple conditions / tests </h3>
 
 ![](../images/monsters/filter_monsters_multiple.png){style="width: 95%;"}
 
-<br><br>
+<br>
 </div>
 
 
 <div class="tab-pane fade" id="select" role="tabpanel" aria-labelledby="select-tab">
 
-### Keep columns {-}
+<h3 class="blue-h3"> Keep columns </h3>
 
 ![](../images/monsters/select_monsters2.png){style="width: 98%; margin-top: 6px;"}
 
-<h3 style="margin-top: 20px;">Drop columns </h3>
+<h3 class="blue-h3" style="margin-top: 50px;">Drop columns </h3>
 
 ![](../images/monsters/select_monsters_drop2.png){style="width: 70%;"}
-<br><br>
+<br>
 
 </div>
 
 <div class="tab-pane fade" id="arrange" role="tabpanel" aria-labelledby="arrange-tab">
 
 
-<h3 style="margin-top: 20px;"> Arrange from lowest to highest </h3>
+<h3 class="blue-h3" style="margin-top: 50px;"> Arrange from lowest to highest </h3>
 
 ![](../images/monsters/arrange_monsters.png){style="width: 98%; margin-top: 12px;"}
 
 
-<h3 style="margin-top: 20px;"> Arrange from highest to lowest </h3>
+<h3 class="blue-h3" style="margin-top: 50px;"> Arrange from highest to lowest </h3>
 
 ![](../images/monsters/arrange_monsters_desc.png){style="width: 98%;"}
-<br><br>
+<br>
 
 </div>
 
@@ -77,15 +77,14 @@
 <div class="tab-pane fade" id="mutate3" role="tabpanel" aria-labelledby="mutate3-tab">
 
 
-### Update existing column {-}
+<h3 class="blue-h3"> Update an existing column </h3>
 
 ![](../images/monsters/mutate_monsters_update.png){style="width: 98%; margin-top: 12px;"}
 
-<h3 style="margin-top: 20px;">Add a new column </h3>
-
+<h3 class="blue-h3" style="margin-top: 50px;">Add a new column </h3>
 
 ![](../images/monsters/mutate_monsters_new.png){style="width: 98%;"}
-<br><br>
+<br>
 
 </div>
 

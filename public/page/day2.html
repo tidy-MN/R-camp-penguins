@@ -10,9 +10,9 @@
   <title>Day 2 - Learn R</title>
   <meta property="og:title" content="Day 2" />
   <meta name="twitter:title" content="Day 2" />
-  <meta name="description" content="1 Data wrangling 2 Your data toolbox 3 Fork in the road: if_else() and case_when() 4 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
-  <meta property="og:description" content="1 Data wrangling 2 Your data toolbox 3 Fork in the road: if_else() and case_when() 4 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
-  <meta name="twitter:description" content="1 Data wrangling 2 Your data toolbox 3 Fork in the road: if_else() and case_when() 4 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta name="description" content="1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta property="og:description" content="1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta name="twitter:description" content="1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Day 2",
-  "description" : "1 Data wrangling 2 Your data toolbox 3 Fork in the road: if_else() and case_when() 4 Boil it down \/\/ Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
+  "description" : "1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down \/\/ Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
   "inLanguage" : "en",
-  "wordCount":  827 ,
+  "wordCount":  823 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 2" />
-<meta property="og:description" content="1 Data wrangling 2 Your data toolbox 3 Fork in the road: if_else() and case_when() 4 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+<meta property="og:description" content="1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day2.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 2" />
-  <meta name="twitter:description" content="1 Data wrangling 2 Your data toolbox 3 Fork in the road: if_else() and case_when() 4 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta name="twitter:description" content="1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -361,9 +361,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="TOC">
 <ul>
 <li><a href="#data-wrangling" id="toc-data-wrangling"><span class="toc-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Data wrangling</a></li>
-<li><a href="#your-data-toolbox" id="toc-your-data-toolbox"><span class="toc-section-number">2</span> <i class="fa fa-toolbox blue"></i> Your data toolbox</a></li>
-<li><a href="#fork-in-the-road-if_else-and-case_when" id="toc-fork-in-the-road-if_else-and-case_when"><span class="toc-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Fork in the road: if_else() and case_when()</a></li>
-<li><a href="#boil-it-down-summarize-the-data" id="toc-boil-it-down-summarize-the-data"><span class="toc-section-number">4</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down // Summarize the data</a></li>
+<li><a href="#fork-in-the-road-if_else-and-case_when" id="toc-fork-in-the-road-if_else-and-case_when"><span class="toc-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Fork in the road: if_else() and case_when()</a></li>
+<li><a href="#boil-it-down-summarize-the-data" id="toc-boil-it-down-summarize-the-data"><span class="toc-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down // Summarize the data</a></li>
 </ul>
 </div>
 
@@ -374,13 +373,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Data wrangling</h1>
 <div id="wrangle-that-data" class="section level2 unnumbered">
 <h2><span class="teal">WRANGLE</span> <span class="gray">that DATA</span></h2>
-<p><img src="images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data."></p>
+<p><img src="../images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data."></p>
 <p><span class="hint float-right">Artwork by <span class="citation">@allison_horst</span></spam></p>
 <p><br></p>
 </div>
-</div>
-<div id="your-data-toolbox" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> <i class="fa fa-toolbox blue"></i> Your data toolbox</h1>
+<div id="your-data-toolbox" class="section level2 unnumbered">
+<h2><i class="fa fa-toolbox blue"></i> Your data toolbox</h2>
 <style>
 .remark-slide table {border-top: 0;}
 th, td {padding: 10px; padding-left: 16px; padding-right: 16px; padding-top: 14px;}
@@ -434,6 +432,7 @@ Add new columns or update existing columns
 </tbody>
 </table>
 </div>
+</div>
 <div id="monsters-are-back" class="section level2 unnumbered">
 <h2>Monsters are back</h2>
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
@@ -459,51 +458,51 @@ Add new columns or update existing columns
 <div id="myTabContent" class="well tab-content monsters" style="background-color: white;">
 <div id="monsters" class="tab-pane fade active in" role="tabpanel" aria-labelledby="monsters-tab">
 <p><img src="../images/monsters/monster_data.png" style="width: 85%;" /></p>
-<p><br><br></p>
+<p><br></p>
 </div>
 <div id="filter3" class="tab-pane fade" role="tabpanel" aria-labelledby="filter3-tab">
-<div id="filter-with-a-single-condition-test" class="section level3 unnumbered">
-<h3>Filter with a single condition / test</h3>
+<h3 class="blue-h3">
+Filter with a single condition / test
+</h3>
 <p><img src="../images/monsters/filter_monsters.png" style="width: 95%; margin-top: 12px;" /></p>
-<h3 style="margin-top: 20px;">
+<h3 class="blue-h3" style="margin-top: 50px;">
 Filter with multiple conditions / tests
 </h3>
 <p><img src="../images/monsters/filter_monsters_multiple.png" style="width: 95%;" /></p>
-<p><br><br></p>
-</div>
+<p><br></p>
 </div>
 <div id="select" class="tab-pane fade" role="tabpanel" aria-labelledby="select-tab">
-<div id="keep-columns" class="section level3 unnumbered">
-<h3>Keep columns</h3>
+<h3 class="blue-h3">
+Keep columns
+</h3>
 <p><img src="../images/monsters/select_monsters2.png" style="width: 98%; margin-top: 6px;" /></p>
-<h3 style="margin-top: 20px;">
+<h3 class="blue-h3" style="margin-top: 50px;">
 Drop columns
 </h3>
 <p><img src="../images/monsters/select_monsters_drop2.png" style="width: 70%;" />
-<br><br></p>
-</div>
+<br></p>
 </div>
 <div id="arrange" class="tab-pane fade" role="tabpanel" aria-labelledby="arrange-tab">
-<h3 style="margin-top: 20px;">
+<h3 class="blue-h3" style="margin-top: 50px;">
 Arrange from lowest to highest
 </h3>
 <p><img src="../images/monsters/arrange_monsters.png" style="width: 98%; margin-top: 12px;" /></p>
-<h3 style="margin-top: 20px;">
+<h3 class="blue-h3" style="margin-top: 50px;">
 Arrange from highest to lowest
 </h3>
 <p><img src="../images/monsters/arrange_monsters_desc.png" style="width: 98%;" />
-<br><br></p>
+<br></p>
 </div>
 <div id="mutate3" class="tab-pane fade" role="tabpanel" aria-labelledby="mutate3-tab">
-<div id="update-existing-column" class="section level3 unnumbered">
-<h3>Update existing column</h3>
+<h3 class="blue-h3">
+Update an existing column
+</h3>
 <p><img src="../images/monsters/mutate_monsters_update.png" style="width: 98%; margin-top: 12px;" /></p>
-<h3 style="margin-top: 20px;">
+<h3 class="blue-h3" style="margin-top: 50px;">
 Add a new column
 </h3>
 <p><img src="../images/monsters/mutate_monsters_new.png" style="width: 98%;" />
-<br><br></p>
-</div>
+<br></p>
 </div>
 <div id="code-monsters" class="tab-pane fade" role="tabpanel" aria-labelledby="code-monsters-tab">
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Create monsters</span></span>
@@ -678,16 +677,16 @@ blockquote code {background: #f8fdff;}
 </div>
 </div>
 </div>
-<div id="fork-in-the-road-if_else-and-case_when" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Fork in the road: if_else() and case_when()</h1>
+<div id="fork-in-the-road-if_else-and-case_when" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Fork in the road: if_else() and case_when()</h1>
 <p>if_else(days_on_ship &gt; 7, true = “yes”, false = “no”)</p>
 <p>if_else(days_on_ship &gt; 7, true = “yes”, false = “no”, missing = “unknown”)</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">if_else</span>(egg_allergy, <span class="dv">1</span>,  <span class="dv">0</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="fu">ifelse</span>(egg_allergy, <span class="dv">1</span>, <span class="dv">0</span>)</span></code></pre></div>
 </div>
-<div id="boil-it-down-summarize-the-data" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down // Summarize the data</h1>
+<div id="boil-it-down-summarize-the-data" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down // Summarize the data</h1>
 <p>Time to simmer things down. Let’s use <code>summarize()</code> to find a few summary statistics for our data.</p>
 <p><br></p>
 <div id="jump-to-the-top" class="section level3 unnumbered">
