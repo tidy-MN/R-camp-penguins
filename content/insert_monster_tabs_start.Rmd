@@ -54,6 +54,7 @@
 <h3 class="blue-h3" style="margin-top: 50px;">Drop columns </h3>
 
 ![](../images/monsters/select_monsters_drop2.png){style="width: 70%;"}
+
 <br>
 
 </div>
@@ -61,7 +62,7 @@
 <div class="tab-pane fade" id="arrange" role="tabpanel" aria-labelledby="arrange-tab">
 
 
-<h3 class="blue-h3" style="margin-top: 50px;"> Arrange from lowest to highest </h3>
+<h3 class="blue-h3"> Arrange from lowest to highest </h3>
 
 ![](../images/monsters/arrange_monsters.png){style="width: 98%; margin-top: 12px;"}
 

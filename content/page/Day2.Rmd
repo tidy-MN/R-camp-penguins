@@ -28,14 +28,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Data wrangling
 
-## <span class="teal">WRANGLE</span> <span class="gray">that DATA</span> {-}
+## <span class="teal">WRANGLE</span> <span style="color: gray">that DATA</span> {-}
 
 <img src="../images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data.">
 
 <span class="hint float-right">Artwork by @allison_horst</spam>
 
-
-<br>
 
 ## <i class="fa fa-toolbox blue"></i> Your data toolbox {-}
 
