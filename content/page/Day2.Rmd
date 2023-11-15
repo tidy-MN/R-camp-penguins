@@ -13,6 +13,10 @@ output:
 ---
 
 
+<style>
+hr {background: blue;}
+</style>
+
 <link rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -30,7 +34,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ## <span class="teal">WRANGLE</span> <span style="color: gray">that DATA</span> {-}
 
-<img src="../images/data_cowboy.png" width="112%" style="margin-left: -22px; margin-top: -58px; max-width: 112%;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data.">
+<img src="../images/data_cowboy_sm.png" width="110%" style="margin-left: -22px; max-width: 110%; margin-top: -8px;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data.">
 
 <span class="hint float-right">Artwork by @allison_horst</spam>
 
@@ -255,7 +259,7 @@ ifelse(egg_allergy, 1, 0)
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down // Summarize the data
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down: Summarize the data
 
 Time to simmer things down. Let's use `summarize()` to find a few summary statistics for our data.
 
