@@ -45,7 +45,7 @@ knitr::opts_chunk$set(echo = T)
 
 <hr>
 
-![](../../images/R_recipe.png){style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;"}
+![](../images/R_recipe.png){style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;"}
 
 The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or even share it with your collaborators.
 
@@ -57,7 +57,7 @@ The R language and its tools are built by people from around the world. They hel
 # Install `RStudio` 
 <hr>
 
-![](../../images/rstudio-hex.png){style="float: right; margin-top: -22px;"}
+![](../images/rstudio-hex.png){style="float: right; margin-top: -22px;"}
 
 <br>
 
@@ -147,13 +147,13 @@ install.packages(new_packages)
 ```
 
 
-![](../../images/install_screen.png){style="margin-top: 4px; width: 75%;"}
+![](../images/install_screen.png){style="margin-top: 4px; width: 75%;"}
 
 <br>
 
 Then press `ENTER` to begin the installation. If all goes well, you should start to see some messages appear similar to this, which provide information on the installation progress.
 
-![](../../images/install_msg.png){width="75%"}
+![](../images/install_msg.png){width="75%"}
 
 <br>
 
