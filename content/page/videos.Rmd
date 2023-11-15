@@ -80,7 +80,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day1/01-4-Tables-and-dataframes#1)
 
 
-### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.4 - </span> [Sizing up the data](videos/day1/01-5-size-up-the-data.html)
+### <i class="fa fa-video-camera" ></i> <span style="font-size: 90%">1.5 - </span> [Sizing up the data](videos/day1/01-5-size-up-the-data.html)
 
 - [Notes and code examples](day1.html#size-up-the-data) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day1/01-4-Tables-and-dataframes#1)
