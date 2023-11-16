@@ -38,8 +38,6 @@ knitr::include_graphics("../images/pierre_R_intro.jpg")
 ```
 
 
-
-
 # Installing R and RStudio
 
 <!-- video of this or just webpage? -->
@@ -49,31 +47,6 @@ State employees install R and RStudio in the order below from the MNIT Software 
 ```{r, out.width = "50%", fig.cap = "List of software", echo = FALSE, fig.alt = "Screenshot of MDH software Center list of R software"}
 knitr::include_graphics("../images/Software_to_install.png")
 ```
-
-
-
-Everyone else will need to install from multiple websites.
-
-<!-- 
-modified from my install guide for GAT 
-https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.Rmd
--->
-
-## Installing R
-
-1. Go to [https://cloud.r-project.org/](https://cloud.r-project.org/). 
-1. Click on the download link for your operating system, then click on *base*. 
-1. Click on the download link at the top of the page to download R. 
-1. Click on the downloaded file to install R.
-
-## Installing RStudio
-
-After you have installed R, you can install RStudio. RStudio is a wrapper that makes R more user-friendly and adds functionality, such as support for Markdown and dedicated tabs for environments, tables, and images. 
-
-1. Go to [https://rstudio.com/products/rstudio/download/](https://rstudio.com/products/rstudio/download/).
-1. Scroll down to the table, locate your operating system, and click the download link.
-1. Click on the downloaded file to install RStudio.
-
 
 
 # RStudio tour

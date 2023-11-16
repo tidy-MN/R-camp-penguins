@@ -11,7 +11,7 @@ output:
 
 
 <style> 
-code {color: #FF69B4 !important;} 
+code {color: cornflowerblue !important;} 
 
 blockquote { padding: 5px 10px; }
 
@@ -41,8 +41,8 @@ knitr::opts_chunk$set(echo = T)
 
 <br>
 
-# Install `R` 
 
+# Install `R` and `RStudio` 
 <hr>
 
 ![](../images/R_recipe.png){style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;"}
@@ -50,40 +50,74 @@ knitr::opts_chunk$set(echo = T)
 The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or even share it with your collaborators.
 
 
-
-</br>
-
-
-# Install `RStudio` 
-<hr>
-
 ![](../images/rstudio-hex.png){style="float: right; margin-top: -22px;"}
 
 <br>
 
-__RStudio__ is the handy user interface we use to write R scripts and keep our projects organized. It isn't required to use R, but it makes things a whole lot easier.
+__RStudio__ is the handy user interface we use to write R scripts and keep our projects organized. It isn't required to use R, but it makes thin a whole lot easier.
 
 <br><br>
 
 
-__Install RStudio__  
+## State employees {-}
+
+State employees at MDH and other Agencies can follow these steps:
+
+__Install RStudio and R__  
 
 <div class="well" style="margin-top: 4px;">
 1. Open the Software Center
 2. Search for RStudio
 3. Choose the blue R bubble
+  - If it doesn't appear, submit a service ticket to your local MNIT friends
 4. Click `[ Install ]`
+
 
 > **RStudio** 
 >
 > <img src="https://d33wubrfki0l68.cloudfront.net/dd8ddc34fe29a71c81183dbe3436cfabbb540e44/b7152/assets/img/rstudio-ball.svg" width="120" style="float: left; margin-left: 10px;"> 
 <div style="clear: both;"></div>
 
-
-
 </div>
 
+
+## Outside folks and friends {-}
+
+For those with enough permissions to install software on their computers, R and RStudio may be downloaded and installed for free from the following sites:
+
+<!-- 
+modified from my install guide for GAT 
+https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.Rmd
+-->
+
+### Installing R {-}
+
+1. Go to [https://cloud.r-project.org/](https://cloud.r-project.org/). 
+1. Click on the download link for your operating system, then click on *base*. 
+1. Click on the download link at the top of the page to download R. 
+1. Click on the downloaded file to install R.
+
+### Installing RStudio {-}
+
+After you have installed R, you can install RStudio. RStudio is a wrapper that makes R more user-friendly and adds functionality, such as support for Markdown and dedicated tabs for environments, tables, and images. 
+
+1. Go to [https://rstudio.com/products/rstudio/download/](https://rstudio.com/products/rstudio/download/).
+1. Scroll down to the table, locate your operating system, and click the download link.
+1. Click on the downloaded file to install RStudio.
+
+
+## In the clouds {-}
+
+As a stop gap until you're able to install R locally, you can create an account at the link below and use R in browser for the training.
+
+- https://posit.cloud/
+
 <br>
+
+
+>
+> The sections below are only for reference, and they do not need to be completed before R camp begins.
+>
 
 # Install `R packages`
 <hr>
@@ -223,7 +257,7 @@ Click the green __Update__ button next to Install.
 
 Choose the 2nd option -> _"Check for Package Updates..."_
 
-<img src="../images/updatepackages_2.PNG" style="width: 50%;">
+<img src="../images/updatepackages_2.png" style="width: 50%;">
 
 <br>
 

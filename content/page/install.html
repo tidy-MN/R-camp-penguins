@@ -12,8 +12,16 @@ output:
 
 <div id="TOC">
 <ul>
-<li><a href="#install-r" id="toc-install-r">Install <code>R</code></a></li>
-<li><a href="#install-rstudio" id="toc-install-rstudio">Install <code>RStudio</code></a></li>
+<li><a href="#install-r-and-rstudio" id="toc-install-r-and-rstudio">Install <code>R</code> and <code>RStudio</code></a>
+<ul>
+<li><a href="#state-employees" id="toc-state-employees">State employees</a></li>
+<li><a href="#outside-folks-and-friends" id="toc-outside-folks-and-friends">Outside folks and friends</a>
+<ul>
+<li><a href="#installing-r" id="toc-installing-r">Installing R</a></li>
+<li><a href="#installing-rstudio" id="toc-installing-rstudio">Installing RStudio</a></li>
+</ul></li>
+<li><a href="#in-the-clouds" id="toc-in-the-clouds">In the clouds</a></li>
+</ul></li>
 <li><a href="#install-r-packages" id="toc-install-r-packages">Install <code>R packages</code></a>
 <ul>
 <li><a href="#add-r-packages" id="toc-add-r-packages">Add R packages</a></li>
@@ -23,7 +31,7 @@ output:
 </div>
 
 <style> 
-code {color: #FF69B4 !important;} 
+code {color: cornflowerblue !important;} 
 
 blockquote { padding: 5px 10px; }
 
@@ -46,26 +54,29 @@ blockquote { padding: 5px 10px; }
 
 </style>
 <p><br></p>
-<div id="install-r" class="section level1">
-<h1>Install <code>R</code></h1>
+<div id="install-r-and-rstudio" class="section level1">
+<h1>Install <code>R</code> and <code>RStudio</code></h1>
 <hr>
 <p><img src="../images/R_recipe.png" style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;" /></p>
 <p>The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or even share it with your collaborators.</p>
-<p></br></p>
-</div>
-<div id="install-rstudio" class="section level1">
-<h1>Install <code>RStudio</code></h1>
-<hr>
 <p><img src="../images/rstudio-hex.png" style="float: right; margin-top: -22px;" /></p>
 <p><br></p>
-<p><strong>RStudio</strong> is the handy user interface we use to write R scripts and keep our projects organized. It isn’t required to use R, but it makes things a whole lot easier.</p>
+<p><strong>RStudio</strong> is the handy user interface we use to write R scripts and keep our projects organized. It isn’t required to use R, but it makes thin a whole lot easier.</p>
 <p><br><br></p>
-<p><strong>Install RStudio</strong></p>
+<div id="state-employees" class="section level2 unnumbered">
+<h2>State employees</h2>
+<p>State employees at MDH and other Agencies can follow these steps:</p>
+<p><strong>Install RStudio and R</strong></p>
 <div class="well" style="margin-top: 4px;">
 <ol style="list-style-type: decimal">
 <li>Open the Software Center</li>
 <li>Search for RStudio</li>
 <li>Choose the blue R bubble</li>
+</ol>
+<ul>
+<li>If it doesn’t appear, submit a service ticket to your local MNIT friends</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
 <li>Click <code>[ Install ]</code></li>
 </ol>
 <blockquote>
@@ -76,7 +87,44 @@ blockquote { padding: 5px 10px; }
 </div>
 </blockquote>
 </div>
+</div>
+<div id="outside-folks-and-friends" class="section level2 unnumbered">
+<h2>Outside folks and friends</h2>
+<p>For those with enough permissions to install software on their computers, R and RStudio may be downloaded and installed for free from the following sites:</p>
+<!-- 
+modified from my install guide for GAT 
+https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.Rmd
+-->
+<div id="installing-r" class="section level3 unnumbered">
+<h3>Installing R</h3>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://cloud.r-project.org/">https://cloud.r-project.org/</a>.</li>
+<li>Click on the download link for your operating system, then click on <em>base</em>.</li>
+<li>Click on the download link at the top of the page to download R.</li>
+<li>Click on the downloaded file to install R.</li>
+</ol>
+</div>
+<div id="installing-rstudio" class="section level3 unnumbered">
+<h3>Installing RStudio</h3>
+<p>After you have installed R, you can install RStudio. RStudio is a wrapper that makes R more user-friendly and adds functionality, such as support for Markdown and dedicated tabs for environments, tables, and images.</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://rstudio.com/products/rstudio/download/">https://rstudio.com/products/rstudio/download/</a>.</li>
+<li>Scroll down to the table, locate your operating system, and click the download link.</li>
+<li>Click on the downloaded file to install RStudio.</li>
+</ol>
+</div>
+</div>
+<div id="in-the-clouds" class="section level2 unnumbered">
+<h2>In the clouds</h2>
+<p>As a stop gap until you’re able to install R locally, you can create an account at the link below and use R in browser for the training.</p>
+<ul>
+<li><a href="https://posit.cloud/" class="uri">https://posit.cloud/</a></li>
+</ul>
 <p><br></p>
+<blockquote>
+<p>The sections below are only for reference, and they do not need to be completed before R camp begins.</p>
+</blockquote>
+</div>
 </div>
 <div id="install-r-packages" class="section level1">
 <h1>Install <code>R packages</code></h1>
@@ -178,7 +226,7 @@ install.packages(new_packages)</code></pre>
 <div id="in-the-tools-tab-above-at-the-top-above-the-code-editor" class="section level4">
 <h4>2. In the <code>Tools</code> tab above at the top above the Code Editor:</h4>
 <p>Choose the 2nd option -&gt; <em>“Check for Package Updates…”</em></p>
-<p><img src="../images/updatepackages_2.PNG" style="width: 50%;"></p>
+<p><img src="../images/updatepackages_2.png" style="width: 50%;"></p>
 <p><br></p>
 </div>
 </div>
