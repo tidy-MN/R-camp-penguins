@@ -5,35 +5,95 @@ hidden: true
 tags: [install, update]
 output: 
   blogdown::html_page: 
+    highlight: tango
+    monofont: Source Code Pro
     self_contained: false
     toc: true
+    toc_depth: 2
 ---
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <div id="TOC">
 <ul>
 <li><a href="#install-r-and-rstudio" id="toc-install-r-and-rstudio">Install <code>R</code> and <code>RStudio</code></a>
 <ul>
-<li><a href="#state-employees" id="toc-state-employees">State employees</a></li>
-<li><a href="#outside-folks-and-friends" id="toc-outside-folks-and-friends">Outside folks and friends</a>
-<ul>
-<li><a href="#installing-r" id="toc-installing-r">Installing R</a></li>
-<li><a href="#installing-rstudio" id="toc-installing-rstudio">Installing RStudio</a></li>
+<li><a href="#state-employees" id="toc-state-employees">1. State employees</a></li>
+<li><a href="#outside-folks-and-friends" id="toc-outside-folks-and-friends">2. Outside folks and friends</a></li>
+<li><a href="#in-the-cloud" id="toc-in-the-cloud">3. In the cloud</a></li>
 </ul></li>
-<li><a href="#in-the-clouds" id="toc-in-the-clouds">In the clouds</a></li>
-</ul></li>
-<li><a href="#install-r-packages" id="toc-install-r-packages">Install <code>R packages</code></a>
-<ul>
-<li><a href="#add-r-packages" id="toc-add-r-packages">Add R packages</a></li>
-</ul></li>
+<li><a href="#install-r-packages" id="toc-install-r-packages">Install <code>R packages</code></a></li>
 <li><a href="#update-r-packages" id="toc-update-r-packages">Update <code>R packages</code></a></li>
 </ul>
 </div>
 
 <style> 
-code {color: cornflowerblue !important;} 
+code {color: cornflowerblue; font-weight: 700;} 
 
-blockquote { padding: 5px 10px; }
+blockquote { padding: 5px 10px; background-color: #f7fcff;}
 
 .note
 {
@@ -64,7 +124,7 @@ blockquote { padding: 5px 10px; }
 <p><strong>RStudio</strong> is the handy user interface we use to write R scripts and keep our projects organized. It isn’t required to use R, but it makes thin a whole lot easier.</p>
 <p><br><br></p>
 <div id="state-employees" class="section level2 unnumbered">
-<h2>State employees</h2>
+<h2>1. State employees</h2>
 <p>State employees at MDH and other Agencies can follow these steps:</p>
 <p><strong>Install RStudio and R</strong></p>
 <div class="well" style="margin-top: 4px;">
@@ -80,16 +140,17 @@ blockquote { padding: 5px 10px; }
 <li>Click <code>[ Install ]</code></li>
 </ol>
 <blockquote>
-<p><strong>RStudio</strong></p>
+<p>RStudio</p>
 <img src="https://d33wubrfki0l68.cloudfront.net/dd8ddc34fe29a71c81183dbe3436cfabbb540e44/b7152/assets/img/rstudio-ball.svg" width="120" style="float: left; margin-left: 10px;">
 <div style="clear: both;">
 
 </div>
 </blockquote>
 </div>
+<p><br></p>
 </div>
 <div id="outside-folks-and-friends" class="section level2 unnumbered">
-<h2>Outside folks and friends</h2>
+<h2>2. Outside folks and friends</h2>
 <p>For those with enough permissions to install software on their computers, R and RStudio may be downloaded and installed for free from the following sites:</p>
 <!-- 
 modified from my install guide for GAT 
@@ -112,18 +173,21 @@ https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.
 <li>Scroll down to the table, locate your operating system, and click the download link.</li>
 <li>Click on the downloaded file to install RStudio.</li>
 </ol>
+<p><br></p>
 </div>
 </div>
-<div id="in-the-clouds" class="section level2 unnumbered">
-<h2>In the clouds</h2>
+<div id="in-the-cloud" class="section level2 unnumbered">
+<h2>3. In the cloud</h2>
 <p>As a stop gap until you’re able to install R locally, you can create an account at the link below and use R in browser for the training.</p>
 <ul>
 <li><a href="https://posit.cloud/" class="uri">https://posit.cloud/</a></li>
 </ul>
 <p><br></p>
+<hr>
 <blockquote>
-<p>The sections below are only for reference, and they do not need to be completed before R camp begins.</p>
+<p>The sections below are for reference and do not need to be completed before R camp begins.</p>
 </blockquote>
+<hr>
 </div>
 </div>
 <div id="install-r-packages" class="section level1">
@@ -168,17 +232,17 @@ https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.
 <div id="add-r-packages" class="section level3 note">
 <h3>Add R packages</h3>
 <p>To use a <em>package</em> you first need to install it – much like a free App for your phone. To get a jump start on the workshop, you can copy the text below and paste it into the RStudio console. The console is found on the left-side of the screen when you open RStudio.</p>
-<pre class="r"><code>new_packages &lt;- c(&quot;readr&quot;, &quot;readxl&quot;, &quot;dplyr&quot;, &quot;stringr&quot;, &quot;tidyr&quot;,
-                  &quot;ggplot2&quot;, &quot;lubridate&quot;, &quot;janitor&quot;, &quot;curl&quot;)
-
-install.packages(new_packages)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>new_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;readr&quot;</span>, <span class="st">&quot;readxl&quot;</span>, <span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;stringr&quot;</span>, <span class="st">&quot;tidyr&quot;</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>                  <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;lubridate&quot;</span>, <span class="st">&quot;janitor&quot;</span>, <span class="st">&quot;curl&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">install.packages</span>(new_packages)</span></code></pre></div>
 <p><img src="../images/install_screen.png" style="margin-top: 4px; width: 75%;" /></p>
 <p><br></p>
 <p>Then press <code>ENTER</code> to begin the installation. If all goes well, you should start to see some messages appear similar to this, which provide information on the installation progress.</p>
 <p><img src="../images/install_msg.png" style="width:75.0%" /></p>
 <p><br></p>
 <p>Did it work? Try running the code below to load the <code>readr</code> package from your library and see if it is installed.</p>
-<pre class="r"><code>library(readr)</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div>
 </div>
 <p><br></p>
 <p><strong>Additional recommended packages</strong></p>
@@ -209,7 +273,6 @@ install.packages(new_packages)</code></pre>
 <p><strong>Maps</strong></p>
 </blockquote>
 <p><code>tidycensus</code> Download Census and American Community Survey data.</p>
-<p><br></p>
 <p><br></p>
 </div>
 <div id="update-r-packages" class="section level1">

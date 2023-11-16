@@ -5,15 +5,18 @@ hidden: true
 tags: [install, update]
 output: 
   blogdown::html_page: 
+    highlight: tango
+    monofont: Source Code Pro
     self_contained: false
     toc: true
+    toc_depth: 2
 ---
 
 
 <style> 
-code {color: cornflowerblue !important;} 
+code {color: cornflowerblue; font-weight: 700;} 
 
-blockquote { padding: 5px 10px; }
+blockquote { padding: 5px 10px; background-color: #f7fcff;}
 
 .note
 {
@@ -59,7 +62,7 @@ __RStudio__ is the handy user interface we use to write R scripts and keep our p
 <br><br>
 
 
-## State employees {-}
+## 1. State employees {-}
 
 State employees at MDH and other Agencies can follow these steps:
 
@@ -73,15 +76,16 @@ __Install RStudio and R__
 4. Click `[ Install ]`
 
 
-> **RStudio** 
+> RStudio 
 >
 > <img src="https://d33wubrfki0l68.cloudfront.net/dd8ddc34fe29a71c81183dbe3436cfabbb540e44/b7152/assets/img/rstudio-ball.svg" width="120" style="float: left; margin-left: 10px;"> 
 <div style="clear: both;"></div>
 
 </div>
 
+<br>
 
-## Outside folks and friends {-}
+## 2. Outside folks and friends {-}
 
 For those with enough permissions to install software on their computers, R and RStudio may be downloaded and installed for free from the following sites:
 
@@ -105,8 +109,9 @@ After you have installed R, you can install RStudio. RStudio is a wrapper that m
 1. Scroll down to the table, locate your operating system, and click the download link.
 1. Click on the downloaded file to install RStudio.
 
+<br>
 
-## In the clouds {-}
+## 3. In the cloud {-}
 
 As a stop gap until you're able to install R locally, you can create an account at the link below and use R in browser for the training.
 
@@ -115,9 +120,13 @@ As a stop gap until you're able to install R locally, you can create an account 
 <br>
 
 
+<hr>
+
 >
-> The sections below are only for reference, and they do not need to be completed before R camp begins.
+> The sections below are for reference and do not need to be completed before R camp begins.
 >
+
+<hr>
 
 # Install `R packages`
 <hr>
@@ -235,8 +244,6 @@ __Additional recommended packages__
 
 <br>
 
-
-<br>
 
 # Update `R packages`
 <hr>
