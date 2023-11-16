@@ -1,4 +1,4 @@
-baseurl = "r-camps.com"
+baseurl = "https://r-camps.com/"
 DefaultContentLanguage = "en"
 title = "Learn R"
 theme = "beautifulhugo"
