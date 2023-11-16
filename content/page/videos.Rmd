@@ -87,7 +87,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [Coming soon...](https://tidy-mn.github.io/R-camp-penguins/exercise/day1/exercises.html)
+- [Coming soon...](page/exercise/day1/exercises.html)
 
 </div>
 
