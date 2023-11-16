@@ -1,13 +1,22 @@
 ---
 title: "R Camp Primer"
-output: html_document
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Introduction
+# Introduction 
 
 This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:
 

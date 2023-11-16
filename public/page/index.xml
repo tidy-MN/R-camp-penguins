@@ -338,7 +338,7 @@ porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://r-camps.com/page/r_camp_primer.html</guid>
-      <description>Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:</description>
+      <description>Introduction Installing R and RStudio RStudio tour Creating a project Creating an R script Finding files R syntax Using existing data in R Importing and exporting data Bonus content: plots Introduction This workshop will take you through the basics of navigating RStudio and using R.</description>
     </item>
     
     <item>

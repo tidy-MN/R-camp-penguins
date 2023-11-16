@@ -36,11 +36,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">0.1 - </span> [Install R](install.html)
 
-  - **Required** - *Please-please do before our first session together. Send Barbara Monaco/Derek Nagel a Teams chat or email for help.*
+  - **Required** - *Please-please do before our first session together. Send [Barbara Monaco](mailto:barbara.monaco@state.mn.us)/[Derek Nagel](mailto:derek.nagel@state.mn.us) a Teams chat or email for help.*
 
 ### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">0.2 - </span> [Camp Primer](r_camp_primer.html) 
 
-  - *Optional pre-camp intro to R and all things code*
+  - Nov. 27th @1pm: *Optional pre-camp intro to R and all things code*
+  - Contact Barbara/Derek if you need an invite
 
 </div>
 <br>

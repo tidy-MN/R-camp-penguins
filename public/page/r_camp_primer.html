@@ -10,9 +10,9 @@
   <title>R Camp Primer - Learn R</title>
   <meta property="og:title" content="R Camp Primer" />
   <meta name="twitter:title" content="R Camp Primer" />
-  <meta name="description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
-  <meta property="og:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
-  <meta name="twitter:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
+  <meta name="description" content="Introduction Installing R and RStudio RStudio tour Creating a project Creating an R script Finding files R syntax Using existing data in R Importing and exporting data Bonus content: plots Introduction This workshop will take you through the basics of navigating RStudio and using R.">
+  <meta property="og:description" content="Introduction Installing R and RStudio RStudio tour Creating a project Creating an R script Finding files R syntax Using existing data in R Importing and exporting data Bonus content: plots Introduction This workshop will take you through the basics of navigating RStudio and using R.">
+  <meta name="twitter:description" content="Introduction Installing R and RStudio RStudio tour Creating a project Creating an R script Finding files R syntax Using existing data in R Importing and exporting data Bonus content: plots …">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "R Camp Primer",
-  "description" : "Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:",
+  "description" : "Introduction Installing R and RStudio RStudio tour Creating a project Creating an R script Finding files R syntax Using existing data in R Importing and exporting data Bonus content: plots Introduction This workshop will take you through the basics of navigating RStudio and using R.",
   "inLanguage" : "en",
-  "wordCount":  4784 ,
+  "wordCount":  4814 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/r-camps.com\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="R Camp Primer" />
-<meta property="og:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
+<meta property="og:description" content="Introduction Installing R and RStudio RStudio tour Creating a project Creating an R script Finding files R syntax Using existing data in R Importing and exporting data Bonus content: plots Introduction This workshop will take you through the basics of navigating RStudio and using R.">
 <meta property="og:image" content="https://r-camps.com/images/penguins_circle1.png" />
 <meta property="og:url" content="https://r-camps.com/page/r_camp_primer.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="R Camp Primer" />
-  <meta name="twitter:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
+  <meta name="twitter:description" content="Introduction Installing R and RStudio RStudio tour Creating a project Creating an R script Finding files R syntax Using existing data in R Importing and exporting data Bonus content: plots …">
   <meta name="twitter:image" content="https://r-camps.com/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -286,7 +286,86 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
 
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio">Installing R and RStudio</a></li>
+<li><a href="#rstudio-tour" id="toc-rstudio-tour">RStudio tour</a></li>
+<li><a href="#creating-a-project" id="toc-creating-a-project">Creating a project</a></li>
+<li><a href="#creating-an-r-script" id="toc-creating-an-r-script">Creating an R script</a></li>
+<li><a href="#finding-files" id="toc-finding-files">Finding files</a></li>
+<li><a href="#r-syntax" id="toc-r-syntax">R syntax</a></li>
+<li><a href="#using-existing-data-in-r" id="toc-using-existing-data-in-r">Using existing data in R</a></li>
+<li><a href="#importing-and-exporting-data" id="toc-importing-and-exporting-data">Importing and exporting data</a></li>
+<li><a href="#bonus-content-plots" id="toc-bonus-content-plots">Bonus content: plots</a></li>
+</ul>
+</div>
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
@@ -377,8 +456,8 @@ Figure 3: Pierre describes how to create a new project
 <p>In the lower right corner of your project, click the “New Folder” icon to create a folder called “Raw_data”. You will read data from this folder that you want to import into R, so save any datasets you want to read in here. Create a second folder called “Processed_data”. You will save new datasets created in R to this folder. Create a third folder called “R”. You can save your R scripts here.</p>
 <p>This is one basic folder structure for your project, but it is not the only one possible. As you use R more yourself, you can experiment to figure out which structure works best for you.</p>
 <p>To find your project’s folder in your file manager, enter this code in the console window. You can navigate to this folder in your file manager to place your data files there.</p>
-<pre class="r"><code># get working directory
-getwd()</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># get working directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
 <p>If you want to work out of another folder, for example a shared folder containing your data, you can use the command <code>setwd()</code> with the directory path between the parentheses.</p>
 <p>A warning when working with Windows file paths in R: Windows uses backslashes between folders. In R, backslashes are special characters, so file paths use forward slashes instead. If you copy a file path from File Explorer, you will need to manually change the backslashes to forward slashes. Don’t worry; if you forget or miss a backslash, R will give you an error to remind you.</p>
 </div>
@@ -458,64 +537,64 @@ data types, vectors, assignments
 <p>If we want to use that value in the future, we should save it in our environment. To save an object, assign it to a name using the assignment operator, <code>&lt;-</code>. Then it will be listed in our environment window in the upper right corner of RStudio.</p>
 <p>Remember to check the <a href="#object-naming">object naming</a> guidelines above when choosing object names!</p>
 <p>Create the objects <code>dishes_can_cook</code> and <code>dishes_to_learn</code>. Check whether they show up in your environment window.</p>
-<pre class="r"><code>dishes_can_cook &lt;- 0 # change to the number you can cook
-dishes_to_learn &lt;- 2.5 # change to the number you want to learn</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>dishes_can_cook <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># change to the number you can cook</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>dishes_to_learn <span class="ot">&lt;-</span> <span class="fl">2.5</span> <span class="co"># change to the number you want to learn</span></span></code></pre></div>
 <p>After learning your new dishes, how many will you know how to cook?</p>
 <p>A quick note on running scripts in RStudio: After adding the lines above to your script, you can run it a few different ways. You can run each line by placing the cursor anywhere on the line and either clicking “Run” in the upper right corner of the script window or pressing <em>CtrlEnter</em> (control-enter). You can run multiple lines by highlighting them and clicking “run” or pressing <em>CtrlEnter</em>. Be careful when highlighting code to run it, though. Only the characters highlighted will be run, even if the highlighting starts in the middle of the line!</p>
 <p>R recognizes basic arithmetic calculations, including +, -, *, /, parentheses, and ^ (exponent). In fact, when I started learning R, someone told me, “Any time you need to do any calculations, do it in R to help you get used to the interface and syntax.”</p>
 <p>Try the following code:</p>
-<pre class="r"><code># total number of chicken recipes I&#39;d like to know
-dishes_can_cook + dishes_to_learn</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># total number of chicken recipes I&#39;d like to know</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>dishes_can_cook <span class="sc">+</span> dishes_to_learn</span></code></pre></div>
 <p>If you want to save your result as a new object, remember to assign a name to it.</p>
-<pre class="r"><code>total_recipes &lt;- dishes_can_cook + dishes_to_learn</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>total_recipes <span class="ot">&lt;-</span> dishes_can_cook <span class="sc">+</span> dishes_to_learn</span></code></pre></div>
 <p>How many total recipes will you know how to cook? Is that achievable?</p>
 </div>
 <div id="character-objects" class="section level2">
 <h2>Character objects</h2>
 <p>Now that we have seen numeric objects, what about character objects?</p>
 <p>Think of your favorite fictional chicken. Type its name into the console. Here’s what happened when I tried to enter two fictional chickens.</p>
-<pre class="r"><code>Henny Penny # The European equivalent of Chicken Little
-# output:
-Error: unexpected symbol in &quot;Henny Penny&quot;
-
-Fjalar # the rooster that heralds Ragnarok
-# output:
-Error: object &#39;Fjalar&#39; not found</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>Henny Penny <span class="co"># The European equivalent of Chicken Little</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># output:</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>Error<span class="sc">:</span> unexpected symbol <span class="cf">in</span> <span class="st">&quot;Henny Penny&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>Fjalar <span class="co"># the rooster that heralds Ragnarok</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co"># output:</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>Error<span class="sc">:</span> object <span class="st">&#39;Fjalar&#39;</span> not found</span></code></pre></div>
 <p>What happened? For Henny Penny, I put two words with a space between them. R printed the “unexpected symbol” warning because it was looking for a way to process the two words, like when we added <code>dishes_can_cook</code> and <code>dishes_to_learn</code>. For Fjalar, I only put one word, but R expected it to be a defined object like <code>dishes_can_cook</code>. When R could not find an object called <code>Fjalar</code> in the working environment, it printed the error.</p>
 <p>How can I fix my errors?</p>
 <p>To enter a text value into R, you need to create a string by wrapping the text value in quotes (single or double). Note that “Fjalar” and ‘Fjalar’ are equivalent, but if my favorite chicken is Fjalar’s son, I would use double quotes (“Fjalar’s son”) so R knows the apostrophe is part of the string. Try saving your chicken’s name to the object <code>fave_chicken</code>. Remember to use quotes.</p>
-<pre class="r"><code>fave_chicken &lt;- &quot;Henny Penny&quot;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>fave_chicken <span class="ot">&lt;-</span> <span class="st">&quot;Henny Penny&quot;</span></span></code></pre></div>
 <p>Now try saving your favorite chicken’s mom to <code>fave_chicken</code>. Did it work?</p>
 <p>You can also combine strings. Remember R is an object oriented language. This means you create objects, then you perform actions on the objects. You have already seen how to add numeric objects together, but symbols like <code>+</code> will not work on strings. Instead, we will use the function <code>paste()</code>, which concatenates two strings.</p>
 <p>To learn more about any function built into R, we can use the help function. The help function can be accessed two ways, with a question mark at the beginning of the function (<code>?paste</code>) or by wrapping the help function around the function we are asking about (<code>help(paste)</code> or <code>help("paste")</code>). If you are feeling meta, try asking for help on the function <code>help()</code>.</p>
 <p>Try using <code>paste()</code> in the example below. Then try it with your favorite chicken’s name. If your favorite chicken doesn’t have a last name, make one up.</p>
-<pre class="r"><code># chicken&#39;s first and last names
-first_name &lt;- &quot;Henny&quot;
-last_name &lt;- &quot;Penny&quot;
-# chicken&#39;s full name
-full_name &lt;- paste(first_name, last_name)
-# print chicken&#39;s full name
-full_name
-
-# output: 
-[1] &quot;Henny Penny&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># chicken&#39;s first and last names</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>first_name <span class="ot">&lt;-</span> <span class="st">&quot;Henny&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>last_name <span class="ot">&lt;-</span> <span class="st">&quot;Penny&quot;</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># chicken&#39;s full name</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>full_name <span class="ot">&lt;-</span> <span class="fu">paste</span>(first_name, last_name)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># print chicken&#39;s full name</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>full_name</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co"># output: </span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;Henny Penny&quot;</span></span></code></pre></div>
 <p>Did you get the result you expected?</p>
 </div>
 </div>
 <div id="using-existing-data-in-r" class="section level1">
 <h1>Using existing data in R</h1>
 <p>There are several datasets built into R, which you can list or access by running the code <code>data()</code>. Today we will explore the ChickWeight dataset. To use this dataset, first we have to load it into our environment using the function <code>data()</code>.</p>
-<pre class="r"><code>data(&quot;ChickWeight&quot;)</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;ChickWeight&quot;</span>)</span></code></pre></div>
 <p>We are going to walk through several functions we can use to explore our dataset. Often we will want to check the types of data in our datasets and see a sample of the results.</p>
 <p>The function <code>str()</code> will list the variables in our dataset along with variable type and a few values for each. This function displays the structure of your dataset. It provides a snapshot of the type of data in each variable. In the print-out, “int” means integer, “num” means numeric, “chr” means character, “Factor” means categories, and “Ord.factor” means ranked or ordered categories. Try it now.</p>
-<pre class="r"><code># list the dataset variables
-str(ChickWeight)</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># list the dataset variables</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">str</span>(ChickWeight)</span></code></pre></div>
 <p>What kinds of variables are in this dataset?</p>
 <p>The function <code>head()</code> will display the first six rows of our dataset and the function <code>tail()</code> will display the last six rows. This is a good way to check if your data were read in correctly. Try them now.</p>
-<pre class="r"><code># display the first six rows of data
-head(ChickWeight)
-# display the last six rows of data
-tail(ChickWeight)</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># display the first six rows of data</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">head</span>(ChickWeight)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co"># display the last six rows of data</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="fu">tail</span>(ChickWeight)</span></code></pre></div>
 <p>Here is a list of a few other data exploration functions you can try now on your dataset.</p>
 <ul>
 <li><code>dim()</code> gives a vector of two numbers. The first number is the number of rows or observations. The second number is the number of columns or variables. These number will match the numbers in your environment window.</li>
@@ -545,15 +624,15 @@ Figure 5: Pierre displays a basic table in R
 <p>To practice, I wanted to use a chicken dataset, but the USDA poultry data are all for meat instead of live animals. Instead, we will be reading in a dataset of animal welfare complaints in New York City. This dataset is publicly available at <a href="https://data.cityofnewyork.us/Environment/Urban-Park-Ranger-Animal-Condition-Response/fuhs-xmg2" class="uri">https://data.cityofnewyork.us/Environment/Urban-Park-Ranger-Animal-Condition-Response/fuhs-xmg2</a>.</p>
 <p>Click the link <a href="https://data.cityofnewyork.us/api/views/fuhs-xmg2/rows.csv" class="uri">https://data.cityofnewyork.us/api/views/fuhs-xmg2/rows.csv</a> to save the dataset to your computer. You will probably find it in your “Downloads” (or equivalent) folder. Move it to your “Raw_data” folder.</p>
 <p>If you do not recall where you created your project, enter this code in RStudio:</p>
-<pre class="r"><code># get working directory
-getwd()</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># get working directory</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
 <p>After moving your file, return to RStudio. In the lower right window, click on “Files”, then on the folder “Raw_data”. You should see your file there. Now try reading the file into R.</p>
 <p>The code below shows two options to read in your data. Try both. Are both files the same dimensions? Do they have the same variable names and first few rows?</p>
-<pre class="r"><code># read from your project folder 
-raw_file &lt;- read.csv(&quot;Raw_data/Urban_Park_Ranger_Animal_Condition_Response.csv&quot;)
-
-# read from a website
-raw_web &lt;- read.csv(&quot;https://data.cityofnewyork.us/api/views/fuhs-xmg2/rows.csv&quot;)</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># read from your project folder </span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>raw_file <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Raw_data/Urban_Park_Ranger_Animal_Condition_Response.csv&quot;</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co"># read from a website</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>raw_web <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://data.cityofnewyork.us/api/views/fuhs-xmg2/rows.csv&quot;</span>)</span></code></pre></div>
 <p>To check and compare your two objects, recall that you can run the following functions on them.</p>
 <ul>
 <li><code>str()</code> gives the structure of your dataset.</li>
@@ -566,24 +645,24 @@ raw_web &lt;- read.csv(&quot;https://data.cityofnewyork.us/api/views/fuhs-xmg2/r
 <p>So far, we have been performing functions on the full dataset. This time, we need to perform the function on a specific variable in the dataset. Let’s find out how many animal welfare complaints were made about chickens. In this case, you are interested in the “Species.Description” variable.</p>
 <p>To use a specific variable in a dataset, you use the syntax <code>dataset$variable</code>, with the <code>$</code> symbol telling R to check in the dataset for the variable. If you forget, that’s okay. The error R prints out will remind you.</p>
 <p>First, print out the “Species.Description” variable.</p>
-<pre class="r"><code>raw_file$Species.Description</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>raw_file<span class="sc">$</span>Species.Description</span></code></pre></div>
 <p>That is a lot of species in no particular order. If there are too many values, R will print a warning that the printed data were truncated, so you will not be able to view all of them anyway.</p>
 <p>The easiest way to explore the full data for this variable is to use the function <code>table()</code>, which gives you the frequency of a value in a variable. Try running the code below.</p>
-<pre class="r"><code>table(raw_file$Species.Description)</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">table</span>(raw_file<span class="sc">$</span>Species.Description)</span></code></pre></div>
 <p>That is a long table. If you do not want to hunt through the table, you can assign the table to an object, then check the count for “Chicken”. To check only the “Chicken” value, you will need to index it. To index in R, use square brackets (<code>[]</code>) as shown below.</p>
-<pre class="r"><code># save the table of all species counts
-species &lt;- table(raw_file$Species.Description)
-
-# print only the count for Chicken from the table
-species[&quot;Chicken&quot;]</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># save the table of all species counts</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">table</span>(raw_file<span class="sc">$</span>Species.Description)</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co"># print only the count for Chicken from the table</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>species[<span class="st">&quot;Chicken&quot;</span>]</span></code></pre></div>
 <p>Modify the code above to check counts for “Cattle”, “Bottlenose Dolphin”, and “Raccoon”.</p>
 <p>Which species of these three species had the most complaints? Did any have more complaints than chickens? Did any of them surprise you?</p>
 </div>
 <div id="saving-or-exporting-data-from-r" class="section level2">
 <h2>Saving or exporting data from R</h2>
 <p>The easiest place to save data is inside your project. The code below saves your dataset to your “Processed_data” folder as a CSV.</p>
-<pre class="r"><code># write the dataset you created
-write.csv(raw_file, file = &quot;Processed_data/nyc_animal_welfare_complaints.csv&quot;)</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># write the dataset you created</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="fu">write.csv</span>(raw_file, <span class="at">file =</span> <span class="st">&quot;Processed_data/nyc_animal_welfare_complaints.csv&quot;</span>)</span></code></pre></div>
 <p>Save your script (if you have not already) in your “R” folder.</p>
 </div>
 </div>
@@ -607,56 +686,56 @@ write.csv(raw_file, file = &quot;Processed_data/nyc_animal_welfare_complaints.cs
 <div id="box-plot" class="section level2">
 <h2>Box plot</h2>
 <p>The box plot (or box-and-whiskers plot) is the simplest of the listed plots. Any of the numeric variables would work here, so pick your favorite.</p>
-<pre class="r"><code># draw a box plot of duration of response in minutes
-boxplot(raw_file$Duration.of.Response)</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># draw a box plot of duration of response in minutes</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">boxplot</span>(raw_file<span class="sc">$</span>Duration.of.Response)</span></code></pre></div>
 <p>If we want to get more creative, we can include two variables. In this case, I would like to see if animal condition affects duration of response. I think worse off animals will require longer response times. To add the new variable, we use a tilde (<code>~</code>) to denote response time is dependent on animal condition.</p>
-<pre class="r"><code># draw a box plot of duration of response dependent on animal condition
-boxplot(raw_file$Duration.of.Response ~ raw_file$Animal.Condition)</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co"># draw a box plot of duration of response dependent on animal condition</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="fu">boxplot</span>(raw_file<span class="sc">$</span>Duration.of.Response <span class="sc">~</span> raw_file<span class="sc">$</span>Animal.Condition)</span></code></pre></div>
 <p>This code creates a row of side-by-side box plots, but they are smooshed at the bottom and hard to read. Fortunately, most R functions include options that affect how the functions work. The functions <code>boxplot()</code> and <code>barplot()</code> include the option “horizontal”, which defaults to FALSE. Try changing it to TRUE as shown below.</p>
-<pre class="r"><code># draw a horizontal box plot of duration of response dependent on animal condition
-boxplot(raw_file$Duration.of.Response ~ raw_file$Animal.Condition, horizontal=TRUE)</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># draw a horizontal box plot of duration of response dependent on animal condition</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">boxplot</span>(raw_file<span class="sc">$</span>Duration.of.Response <span class="sc">~</span> raw_file<span class="sc">$</span>Animal.Condition, <span class="at">horizontal=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p>That outlier around 75 minutes is still throwing things off and you may need to increase your plot size to see all the labels, but at least the box plots themselves are easier to see now. Do you see any patterns? Was my hypothesis correct?</p>
 </div>
 <div id="scatter-plot" class="section level2">
 <h2>Scatter plot</h2>
 <p>The function <code>plot()</code> is a generic plot function that works well for a variety of plot types. In its simplest form, it can be used for scatter plots. Try drawing a scatter plot of duration of response by the number of animals.</p>
-<pre class="r"><code># draw a scatter plot of duration of response by number of animals
-plot(raw_file$Duration.of.Response, raw_file$X..of.Animals)</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="co"># draw a scatter plot of duration of response by number of animals</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="fu">plot</span>(raw_file<span class="sc">$</span>Duration.of.Response, raw_file<span class="sc">$</span>X..of.Animals)</span></code></pre></div>
 <p>Remember the options I mentioned above? We can also add options to our scatter plot. Let’s add a title and axis labels. To add a title, use the option “main” and to add axis labels, use “xlab” and “ylab” for your x and y axes, respectively. The options “xlab” and “ylab” default to the variable names, so these will be overwritten. These labeling options work for most of the plots in this section, so on your own, try adding them to your box plot above.</p>
-<pre class="r"><code># draw a scatter plot of duration of response by number of animals
-plot(raw_file$Duration.of.Response, raw_file$X..of.Animals,
-     main = &quot;Scatter plot of duration of response by number of animals&quot;,
-     xlab = &quot;duration in minutes&quot;, ylab = &quot;number of animals&quot;)</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># draw a scatter plot of duration of response by number of animals</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="fu">plot</span>(raw_file<span class="sc">$</span>Duration.of.Response, raw_file<span class="sc">$</span>X..of.Animals,</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Scatter plot of duration of response by number of animals&quot;</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;duration in minutes&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;number of animals&quot;</span>)</span></code></pre></div>
 <p><em>Suggestion: highlight all three lines above in your script and run them together.</em></p>
 <p>Does there appear to be an association between duration of response and number of animals?</p>
 </div>
 <div id="histogram" class="section level2">
 <h2>Histogram</h2>
 <p>Next, let’s plot a histogram of “Hours.spent.monitoring” using the <code>hist()</code> function. This function draws the shape of a numeric variable, for example to visualize whether it is normal (bell curved) or skewed (with a tail).</p>
-<pre class="r"><code># draw a histogram of number of hours the animals were monitored 
-hist(raw_file$Hours.spent.monitoring)</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># draw a histogram of number of hours the animals were monitored </span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="fu">hist</span>(raw_file<span class="sc">$</span>Hours.spent.monitoring)</span></code></pre></div>
 <p>Does the histogram look normally shaped?</p>
 <p>On your own, draw another histogram for the duration of response. Well, that looks uninformative. Let’s add a few more bars to see what we are dealing with. You can do this using the “breaks” option as shown below.</p>
-<pre class="r"><code># draw a histogram of number of hours the animals were monitored 
-hist(raw_file$Duration.of.Response, breaks = 60)</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="co"># draw a histogram of number of hours the animals were monitored </span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="fu">hist</span>(raw_file<span class="sc">$</span>Duration.of.Response, <span class="at">breaks =</span> <span class="dv">60</span>)</span></code></pre></div>
 <p>What can you conclude from the histogram about how long the response takes?</p>
 <p>By the way, the label options introduced above will work for <code>hist()</code>, too. Try labeling your histogram on your own.</p>
 </div>
 <div id="bar-chart" class="section level2">
 <h2>Bar chart</h2>
 <p>Bar charts are drawn using the <code>barplot()</code> function. To use this function, we need to create a table first. Try creating a table of animal conditions, the way you did above with animal species. Then use that table in the function, as shown below.</p>
-<pre class="r"><code># create a table of animal conditions
-animal_cond &lt;- table(raw_file$Animal.Condition)
-# draw a bar plot of animal conditions
-barplot(animal_cond)</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="co"># create a table of animal conditions</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>animal_cond <span class="ot">&lt;-</span> <span class="fu">table</span>(raw_file<span class="sc">$</span>Animal.Condition)</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="co"># draw a bar plot of animal conditions</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a><span class="fu">barplot</span>(animal_cond)</span></code></pre></div>
 <p>What is the most common animal condition, excluding unknowns?</p>
 <p>The option “horizontal” covered under box plots also works for bar charts. The labeling options work, too. Try adding different options on your own.</p>
 </div>
 <div id="pie-chart" class="section level2">
 <h2>Pie chart</h2>
 <p>Pie charts are basic in R, with a lot less customizability than other chart types. Like bar charts, pie charts require a table of counts. To create a pie chart, use the function <code>pie()</code>. Try creating a pie chart using the table of animal conditions you created above.</p>
-<pre class="r"><code># draw a pie chart of animal conditions
-pie(animal_cond)</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># draw a pie chart of animal conditions</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="fu">pie</span>(animal_cond)</span></code></pre></div>
 <p>Is the bar chart or the pie chart easier for you to understand?</p>
 <p>If you are feeling adventurous, try adding the options you learned to your code. Do they work? Do they cause warnings or errors? Do they make your chart more readable?</p>
 </div>
