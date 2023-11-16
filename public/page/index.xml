@@ -232,6 +232,15 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
     </item>
     
     <item>
+      <title>Date mischief and data joins</title>
+      <link>https://r-camps.com/page/exercise/day3/03-1-date-mischief-and-data-joins.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-camps.com/page/exercise/day3/03-1-date-mischief-and-data-joins.html</guid>
+      <description>Getting started The research crew wants to determine if there is a relationship between isotope levels and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.</description>
+    </item>
+    
+    <item>
       <title>Day 1</title>
       <link>https://r-camps.com/page/day1.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -274,15 +283,6 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       
       <guid>https://r-camps.com/page/explore_messy_emissions.html</guid>
       <description>1 | Tidy data 1.1 Read the data Look at all of these columns. This is real life. 1.2 Clean the data.</description>
-    </item>
-    
-    <item>
-      <title>ggplot exercises</title>
-      <link>https://r-camps.com/page/exercise/day3/3-1-date-mischief-and-data-joining.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://r-camps.com/page/exercise/day3/3-1-date-mischief-and-data-joining.html</guid>
-      <description>Getting started The research crew wants to determine if there is a relationship between isotope levels and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.</description>
     </item>
     
     <item>
