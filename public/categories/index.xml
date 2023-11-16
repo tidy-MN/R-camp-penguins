@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Learn R</title>
-    <link>r-camp.com/categories.html</link>
+    <link>r-camps.com/categories.html</link>
     <description>Recent content in Categories on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="r-camp.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="r-camps.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>training</title>
-      <link>r-camp.com/categories/training.html</link>
+      <link>r-camps.com/categories/training.html</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/categories/training.html</guid>
+      <guid>r-camps.com/categories/training.html</guid>
       <description></description>
     </item>
     

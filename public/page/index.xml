@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Learn R</title>
-    <link>r-camp.com/page.html</link>
+    <link>r-camps.com/page.html</link>
     <description>Recent content in Pages on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="r-camp.com/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="r-camps.com/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sf is for birds</title>
-      <link>r-camp.com/page/exercise/day5/sf.html</link>
+      <link>r-camps.com/page/exercise/day5/sf.html</link>
       <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/exercise/day5/sf.html</guid>
+      <guid>r-camps.com/page/exercise/day5/sf.html</guid>
       <description>1 Spatial analysis with R 1 Spatial analysis with R A major powertool in R for spatial analysis and geograpy data processing is the sf package.</description>
     </item>
     
     <item>
       <title>Getting home</title>
-      <link>r-camp.com/page/exercise/day5/5_homeward_bound.html</link>
+      <link>r-camps.com/page/exercise/day5/5_homeward_bound.html</link>
       <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/exercise/day5/5_homeward_bound.html</guid>
+      <guid>r-camps.com/page/exercise/day5/5_homeward_bound.html</guid>
       <description>0.1 R Markdown The three rings to rule the world in R and spatial analysis are sf, tigris, and ggplot or leaflet.</description>
     </item>
     
     <item>
       <title>Points, Lines, Polygons</title>
-      <link>r-camp.com/page/exercise/day5/5_3_points_lines_polygons.html</link>
+      <link>r-camps.com/page/exercise/day5/5_3_points_lines_polygons.html</link>
       <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/exercise/day5/5_3_points_lines_polygons.html</guid>
+      <guid>r-camps.com/page/exercise/day5/5_3_points_lines_polygons.html</guid>
       <description>Points, polygons, and lines … and rasters - OH MY! Rasters Points, polygons, and lines … and rasters - OH MY!</description>
     </item>
     
     <item>
       <title>Intro to GIS</title>
-      <link>r-camp.com/page/exercise/day5/intro_to_gis.html</link>
+      <link>r-camps.com/page/exercise/day5/intro_to_gis.html</link>
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/exercise/day5/intro_to_gis.html</guid>
+      <guid>r-camps.com/page/exercise/day5/intro_to_gis.html</guid>
       <description>1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’
 It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.</description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer10_chewie_dance.html</link>
+      <link>r-camps.com/page/timer10_chewie_dance.html</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer10_chewie_dance.html</guid>
+      <guid>r-camps.com/page/timer10_chewie_dance.html</guid>
       <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Schedule</title>
-      <link>r-camp.com/page/teach.html</link>
+      <link>r-camps.com/page/teach.html</link>
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/teach.html</guid>
+      <guid>r-camps.com/page/teach.html</guid>
       <description>Day 1 AM
 Welcome
 1-2 (Barbara)
@@ -70,302 +70,302 @@ PM
     
     <item>
       <title>Agenda</title>
-      <link>r-camp.com/page/agenda.html</link>
+      <link>r-camps.com/page/agenda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/agenda.html</guid>
+      <guid>r-camps.com/page/agenda.html</guid>
       <description>R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and&amp;hellip;</description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer10.html</link>
+      <link>r-camps.com/page/timer10.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer10.html</guid>
+      <guid>r-camps.com/page/timer10.html</guid>
       <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer10_ewok_dance.html</link>
+      <link>r-camps.com/page/timer10_ewok_dance.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer10_ewok_dance.html</guid>
+      <guid>r-camps.com/page/timer10_ewok_dance.html</guid>
       <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer10_waterfall.html</link>
+      <link>r-camps.com/page/timer10_waterfall.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer10_waterfall.html</guid>
+      <guid>r-camps.com/page/timer10_waterfall.html</guid>
       <description> &amp;minus;&amp;plus; 10:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer2.html</link>
+      <link>r-camps.com/page/timer2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer2.html</guid>
+      <guid>r-camps.com/page/timer2.html</guid>
       <description> BB8 BB8 &amp;minus;&amp;plus; 02:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer5.html</link>
+      <link>r-camps.com/page/timer5.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer5.html</guid>
+      <guid>r-camps.com/page/timer5.html</guid>
       <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer5_baby_yoda.html</link>
+      <link>r-camps.com/page/timer5_baby_yoda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer5_baby_yoda.html</guid>
+      <guid>r-camps.com/page/timer5_baby_yoda.html</guid>
       <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer5_r2d2.html</link>
+      <link>r-camps.com/page/timer5_r2d2.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer5_r2d2.html</guid>
+      <guid>r-camps.com/page/timer5_r2d2.html</guid>
       <description> R2D2 R2D2 &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Back in a few...</title>
-      <link>r-camp.com/page/timer5_yoda.html</link>
+      <link>r-camps.com/page/timer5_yoda.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timer5_yoda.html</guid>
+      <guid>r-camps.com/page/timer5_yoda.html</guid>
       <description> &amp;minus;&amp;plus; 05:00 </description>
     </item>
     
     <item>
       <title>Timers</title>
-      <link>r-camp.com/page/timers.html</link>
+      <link>r-camps.com/page/timers.html</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/timers.html</guid>
+      <guid>r-camps.com/page/timers.html</guid>
       <description> 2’ BB8 5’ Jelly fish R2D2 Baby Yoda Yoda 10’ Ewok dance Chewie dance Waterfall Jelly fish </description>
     </item>
     
     <item>
       <title>1.1 Welcome</title>
-      <link>r-camp.com/page/videos/day1/01-1-welcome.html</link>
+      <link>r-camps.com/page/videos/day1/01-1-welcome.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/videos/day1/01-1-welcome.html</guid>
+      <guid>r-camps.com/page/videos/day1/01-1-welcome.html</guid>
       <description> </description>
     </item>
     
     <item>
       <title>1.2 R tour</title>
-      <link>r-camp.com/page/videos/day1/01-2-r-tour.html</link>
+      <link>r-camps.com/page/videos/day1/01-2-r-tour.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/videos/day1/01-2-r-tour.html</guid>
+      <guid>r-camps.com/page/videos/day1/01-2-r-tour.html</guid>
       <description> </description>
     </item>
     
     <item>
       <title>1.3 Our bakery</title>
-      <link>r-camp.com/page/videos/day1/01-3-r-bakery.html</link>
+      <link>r-camps.com/page/videos/day1/01-3-r-bakery.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/videos/day1/01-3-r-bakery.html</guid>
+      <guid>r-camps.com/page/videos/day1/01-3-r-bakery.html</guid>
       <description> </description>
     </item>
     
     <item>
       <title>1.4 Tidy tables</title>
-      <link>r-camp.com/page/videos/day1/01-4-tidy-tables.html</link>
+      <link>r-camps.com/page/videos/day1/01-4-tidy-tables.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/videos/day1/01-4-tidy-tables.html</guid>
+      <guid>r-camps.com/page/videos/day1/01-4-tidy-tables.html</guid>
       <description> </description>
     </item>
     
     <item>
       <title>1.5 Sizing up the data</title>
-      <link>r-camp.com/page/videos/day1/01-5-size-up-the-data.html</link>
+      <link>r-camps.com/page/videos/day1/01-5-size-up-the-data.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/videos/day1/01-5-size-up-the-data.html</guid>
+      <guid>r-camps.com/page/videos/day1/01-5-size-up-the-data.html</guid>
       <description> </description>
     </item>
     
     <item>
       <title>2.1 Data wrangling</title>
-      <link>r-camp.com/page/videos/day2/02-1-data-wrangling.html</link>
+      <link>r-camps.com/page/videos/day2/02-1-data-wrangling.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/videos/day2/02-1-data-wrangling.html</guid>
+      <guid>r-camps.com/page/videos/day2/02-1-data-wrangling.html</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Air, wind and roses</title>
-      <link>r-camp.com/page/explore_wind_rose.html</link>
+      <link>r-camps.com/page/explore_wind_rose.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/explore_wind_rose.html</guid>
+      <guid>r-camps.com/page/explore_wind_rose.html</guid>
       <description>Let’s take a look at some air pollution data stored in an Excel file.
 Download the data DOWNLOAD — La Jolla PM25 data</description>
     </item>
     
     <item>
       <title>Compare years</title>
-      <link>r-camp.com/page/compare_years.html</link>
+      <link>r-camps.com/page/compare_years.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/compare_years.html</guid>
+      <guid>r-camps.com/page/compare_years.html</guid>
       <description>Looking for change 📉📈 Looking for change 📉📈 Let’s compare the observations at a monitoring site for different years. For this example, we will see if we can detect a shift in concentrations after a new highway project was completed.</description>
     </item>
     
     <item>
       <title>Day 1</title>
-      <link>r-camp.com/page/day1.html</link>
+      <link>r-camps.com/page/day1.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/day1.html</guid>
+      <guid>r-camps.com/page/day1.html</guid>
       <description>Welcome! 1 Why R? 2 RStudio Tour 3 R packages 📦 4 Help! 5 R bakery 6 Names and things 7 Tidy tables and dataframes 8 Read / load data 9 Size up the data 10 glimpse() &amp;amp; summary() 11 Filter data Welcome!</description>
     </item>
     
     <item>
       <title>Day 2</title>
-      <link>r-camp.com/page/day2.html</link>
+      <link>r-camps.com/page/day2.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/day2.html</guid>
+      <guid>r-camps.com/page/day2.html</guid>
       <description>1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down // Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst</description>
     </item>
     
     <item>
       <title>Exercise: Filtering and case_when</title>
-      <link>r-camp.com/page/exercise/find_the_penguin.html</link>
+      <link>r-camps.com/page/exercise/find_the_penguin.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/exercise/find_the_penguin.html</guid>
+      <guid>r-camps.com/page/exercise/find_the_penguin.html</guid>
       <description>Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.</description>
     </item>
     
     <item>
       <title>Exercise: Summarizing penguins</title>
-      <link>r-camp.com/page/exercise/describe_penguin_populations.html</link>
+      <link>r-camps.com/page/exercise/describe_penguin_populations.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/exercise/describe_penguin_populations.html</guid>
+      <guid>r-camps.com/page/exercise/describe_penguin_populations.html</guid>
       <description>Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.</description>
     </item>
     
     <item>
       <title>From Messy to Tidy data</title>
-      <link>r-camp.com/page/explore_messy_emissions.html</link>
+      <link>r-camps.com/page/explore_messy_emissions.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/explore_messy_emissions.html</guid>
+      <guid>r-camps.com/page/explore_messy_emissions.html</guid>
       <description>1 | Tidy data 1.1 Read the data Look at all of these columns. This is real life. 1.2 Clean the data.</description>
     </item>
     
     <item>
       <title>ggplot exercises</title>
-      <link>r-camp.com/page/exercise/day4/4_1_ggplot_exercises.html</link>
+      <link>r-camps.com/page/exercise/day4/4_1_ggplot_exercises.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/exercise/day4/4_1_ggplot_exercises.html</guid>
+      <guid>r-camps.com/page/exercise/day4/4_1_ggplot_exercises.html</guid>
       <description>1 Palmer Penguin Exploration - Part 1 THANK YOU! 1 Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
     </item>
     
     <item>
       <title>GIS and Shapefiles</title>
-      <link>r-camp.com/page/explore_gis_maps.html</link>
+      <link>r-camps.com/page/explore_gis_maps.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/explore_gis_maps.html</guid>
+      <guid>r-camps.com/page/explore_gis_maps.html</guid>
       <description>The sf package Quick plots Transform coordinates Centroids Area calculations with st_area() Interactive map with leaflet Distance calculations with st_distance() Download Census data American Community Survey (ACS) The sf package The sf (simple features) package can read and save shapefiles, and it plays nicely with the dpylr functions you’ve been learning.</description>
     </item>
     
     <item>
       <title>Help!</title>
-      <link>r-camp.com/page/help.html</link>
+      <link>r-camps.com/page/help.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/help.html</guid>
+      <guid>r-camps.com/page/help.html</guid>
       <description>Cheatsheets Use cheatsheets to refresh your memory and find new functions or plots.
 In RStudio go to Help &amp;gt; Cheatsheets Data Transformation :: Helpful functions for cleaning and arranging your data.</description>
     </item>
     
     <item>
       <title>Install &amp; Update</title>
-      <link>r-camp.com/page/install.html</link>
+      <link>r-camps.com/page/install.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/install.html</guid>
+      <guid>r-camps.com/page/install.html</guid>
       <description>Install R and RStudio State employees Outside folks and friends Installing R Installing RStudio In the clouds Install R packages Add R packages Update R packages Install R and RStudio The R language and its tools are built by people from around the world.</description>
     </item>
     
     <item>
       <title>Jakku scrap economy</title>
-      <link>r-camp.com/page/level1_jakku_explore.html</link>
+      <link>r-camps.com/page/level1_jakku_explore.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/level1_jakku_explore.html</guid>
+      <guid>r-camps.com/page/level1_jakku_explore.html</guid>
       <description>Remember what you should do first when you start your R session? First we load the packages we will need.</description>
     </item>
     
     <item>
       <title>Porg biomonitoring data</title>
-      <link>r-camp.com/page/level2_porg_exposure.html</link>
+      <link>r-camps.com/page/level2_porg_exposure.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/level2_porg_exposure.html</guid>
+      <guid>r-camps.com/page/level2_porg_exposure.html</guid>
       <description># load packages library(readr) library(dplyr) library(ggplot2) Start by reading in the Porg data.
 porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samples.csv&amp;quot;) Take a couple of minutes to get an overview of the data.</description>
     </item>
     
     <item>
       <title>R Camp Primer</title>
-      <link>r-camp.com/page/r_camp_primer.html</link>
+      <link>r-camps.com/page/r_camp_primer.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/r_camp_primer.html</guid>
+      <guid>r-camps.com/page/r_camp_primer.html</guid>
       <description>Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:</description>
     </item>
     
     <item>
       <title>R community</title>
-      <link>r-camp.com/page/community.html</link>
+      <link>r-camps.com/page/community.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/community.html</guid>
+      <guid>r-camps.com/page/community.html</guid>
       <description>The growth of R user groups worldwide Online Communities
 #rstats on Twitter RStudio’s question forum R Weekly shares weekly highlights from across the R world R Ladies meetups R Ladies Global Twitter R for data science learning community</description>
     </item>
     
     <item>
       <title>R Training | Analysis Outline</title>
-      <link>r-camp.com/page/level3_example_outline.html</link>
+      <link>r-camps.com/page/level3_example_outline.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/level3_example_outline.html</guid>
+      <guid>r-camps.com/page/level3_example_outline.html</guid>
       <description>You’re ready to blast off on your own. The example outline below includes some placeholder code based on ozone measurements and is presented as a helpful starting point for your analysis.</description>
     </item>
     
     <item>
       <title>Videos</title>
-      <link>r-camp.com/page/videos.html</link>
+      <link>r-camps.com/page/videos.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>r-camp.com/page/videos.html</guid>
+      <guid>r-camps.com/page/videos.html</guid>
       <description>Camp prep 0.1 - Install R Required - Please-please do before our first session together. Send Barbara Monaco/Derek Nagel a Teams chat or email for help.</description>
     </item>
     
