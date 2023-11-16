@@ -4,7 +4,7 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: "../../css/camp_style.css"
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
@@ -80,13 +80,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#palmer-penguin-exploration---part-1" id="toc-palmer-penguin-exploration---part-1"><span class="toc-section-number">1</span> Palmer Penguin Exploration - Part 1</a></li>
+<li><a href="#palmer-penguin-exploration---part-1" id="toc-palmer-penguin-exploration---part-1">Palmer Penguin Exploration - Part 1</a></li>
 <li><a href="#thank-you" id="toc-thank-you">THANK YOU!</a></li>
 </ul>
 </div>
 
-<div id="palmer-penguin-exploration---part-1" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Palmer Penguin Exploration - Part 1</h1>
+<div id="palmer-penguin-exploration---part-1" class="section level1">
+<h1>Palmer Penguin Exploration - Part 1</h1>
 <p>We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins. They also were hoping that maybe we would look at their data and help them answer some questions about it. What do you say? Are you willing to help?</p>
 <p>THANK YOU! Here’s the questions the researchers were hoping to have answered -</p>
 <ul>
@@ -100,8 +100,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins&quot;</span>) <span class="co">#this will read in the data from the package and load it to to our environment</span></span></code></pre></div>
-<div id="what-does-the-data-look-like" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> What does the data look like?</h2>
+<div id="what-does-the-data-look-like" class="section level2">
+<h2>What does the data look like?</h2>
 <p>As good scientists we should always start with looking at the data provided to us and understanding what information was collected. What are some options for just taking a quick <em>peek</em> at the data?</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span></code></pre></div>
 <pre><code>## Rows: 344
@@ -135,11 +135,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>We also know that Chinstrap are the least prevalent and Biscoe Island has the most penguins. On a more unhappy note, we also see that there are missing data, some for the measurement data but most are for sex (11 NA’s).</p>
 <p>Let’s go back to the researchers’ questions.</p>
 </div>
-<div id="species-by-island" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Species by Island</h2>
+<div id="species-by-island" class="section level2">
+<h2>Species by Island</h2>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>() </span></code></pre></div>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Great! We have a stacked bar chart that shows the species by island! But the researchers have asked us to make it look “nicer” - things like better labels, colors, etc.</p>
 <p>Back to the drawing board…let’s start with labels! We want to add a title and make the axis labels be capitalized vs lower-case. Also someone complained about the background color and asked us to make it look “cleaner”.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
@@ -148,7 +148,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>) <span class="sc">+</span></span>
 <span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Okay - whew! We added a title, a nice x-axis and y-axis label, changed the theme to <code>theme_bw</code> which we think looks pretty clean so hopefully they do too.</p>
 <p>Now we just need to tackle color…hmmm, we know it’s a bar-chart which means that we need to specify ‘fill’ vs ‘color’ so we can use the function <code>scale_fill_brewer</code> to pick out our favorite (RColorBrewer palette)[<a href="https://colorbrewer2.org/" class="uri">https://colorbrewer2.org/</a>] for this graph. We want a qualitative one and we also want one that is colorblind safe so let’s pick palette 3!</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
@@ -158,7 +158,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>) <span class="sc">+</span></span>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Annnnd of course one the researchers had a last minute request. They didn’t like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">preserve =</span> <span class="st">&#39;single&#39;</span>)) <span class="sc">+</span></span>
@@ -167,10 +167,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>) <span class="sc">+</span></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
-<div id="which-species-has-the-longest-bill" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Which species has the longest bill?</h2>
+<div id="which-species-has-the-longest-bill" class="section level2">
+<h2>Which species has the longest bill?</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm))<span class="sc">+</span></span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species),</span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>                     <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
@@ -182,11 +182,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Looks like Gentoo and Chinstrap are pretty much tied for longest bill! Wonder if bill length is related to other measurements…Always more questions!</p>
 </div>
-<div id="what-measurements-are-related-to-each-other" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> What measurements are related to each other?</h2>
+<div id="what-measurements-are-related-to-each-other" class="section level2">
+<h2>What measurements are related to each other?</h2>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">cor</span>(penguins[<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>])</span></code></pre></div>
 <pre><code>##                   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ## bill_length_mm                 1            NA                NA          NA
@@ -210,7 +210,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship of body mass and flipper length by species&quot;</span>) <span class="sc">+</span></span>
 <span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Fascinating…Gentro is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same amoung the different penguin species. You can add a trend-line to the graph to see that easier or see if the human eye is being tricked by very fun looking dots.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
 <span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
@@ -224,7 +224,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Let’s try doing the same exercise but let’s use the <code>facet_wrap</code> function.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
 <span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
@@ -239,7 +239,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite values (stat_smooth).</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
-<p><img src="/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/page/exercise/day4/4_1_ggplot_exercises_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>What’s the danger in using the <code>scales = 'free'</code> argument? What happens when you add it? How would you explain the result to someone else?</p>
 <p>As we’ve said before…always more questions!</p>
 <p>Try to think of your own question that you use this data to answer or go back to the correlation matrix and see if there’s other relationships you’d like to explore!</p>

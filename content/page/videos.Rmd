@@ -98,11 +98,11 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.1 - </span> [Data wrangling](videos/day2/02-1-data-wrangling.html)
   
 - [Notes and code examples](day2.html) 
-- [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-1-Data_wrangling.html#1)
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-1-Data-wrangling.html#1)
 
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Fork in the road: if_else and case_when 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Forks in the road: A case_when 
   
 - [Notes and code examples](day2.html#forks) 
 - Slides
@@ -116,8 +116,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [Describe penguin populations](https://tidy-mn.github.io/R-camp-penguins/page/exercise/describe_penguin_populations.html)
-- [Guess Who! *Hint: I'm a penguin*](https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html)
+- [Describe penguin populations](exercise/describe_penguin_populations.html)
+- [Guess Who! *Hint: I'm a penguin*](exercise/find_the_penguin.html)
 
 </div>
 
@@ -125,7 +125,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- Derek's radioactive joining and dating
+- [Date mischief and data joining](exercise/day3/date-mischief-and-data-joining.html)
 
 </div> 
 

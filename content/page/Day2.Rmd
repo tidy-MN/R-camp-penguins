@@ -244,7 +244,7 @@ crew_df <- mutate(crew_df,
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Fork in the road: if_else() and case_when()
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Forks in the road: A case_when()
 
 
 if_else(days_on_ship > 7, true = "yes", false = "no")

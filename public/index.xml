@@ -273,7 +273,7 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://r-camps.com/page/day2.html</guid>
-      <description>1 Data wrangling 2 Fork in the road: if_else() and case_when() 3 Boil it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst</description>
+      <description>1 Data wrangling 2 Forks in the road: A case_when() 3 Boil it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst</description>
     </item>
     
     <item>
@@ -305,11 +305,20 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
     
     <item>
       <title>ggplot exercises</title>
+      <link>https://r-camps.com/page/exercise/day3/3-1-date-mischief-and-data-joining.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-camps.com/page/exercise/day3/3-1-date-mischief-and-data-joining.html</guid>
+      <description>Getting started The research crew wants to determine if there is a relationship between isotope levels and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.</description>
+    </item>
+    
+    <item>
+      <title>ggplot exercises</title>
       <link>https://r-camps.com/page/exercise/day4/4_1_ggplot_exercises.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://r-camps.com/page/exercise/day4/4_1_ggplot_exercises.html</guid>
-      <description>1 Palmer Penguin Exploration - Part 1 THANK YOU! 1 Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
+      <description>Palmer Penguin Exploration - Part 1 THANK YOU! Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
     </item>
     
     <item>

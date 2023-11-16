@@ -1,0 +1,86 @@
+---
+title: "ggplot exercises"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: "../../css/camp_style.css"
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+
+```{r setup, include=FALSE}
+library(readr)
+library(dplyr)
+library(lubridate)
+library(palmerpenguins)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## Getting started
+
+The research crew wants to determine if there is a relationship between isotope levels and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.
+
+* https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv
+* https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv
+* https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv
+
+Let's get all of this data into R so we can combine it with our penguin data. Hint: use `read_csv`.
+
+```{r read_data}
+biscoe <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv")
+
+dream <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv")
+
+torg <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv")
+```
+
+## Clean-up time
+
+The island names are in the file name, but are not in the data itself. Let's add the island names to use for joining later. Remember that R is picky about names matching, so it's important to make sure the names are exactly correct including caps. The island names are `Biscoe`, `Dream`, and `Torgersen`. Copy/paste is your friend here.
+
+```{r add_islands}
+biscoe <- biscoe %>%
+  mutate(island = "Biscoe")
+
+dream <- dream %>%
+  mutate(island = "Dream")
+
+torg <- torg %>%
+  mutate(island = "Torgersen")
+```
+
+Do you notice anything about the dates? They are all in different formats! Luckily we have `lubridate` to come to the rescue. Let's convert those dates.
+
+```{r convert_dates}
+biscoe <- biscoe %>%
+  mutate(date = mdy(date))
+
+dream <- dream %>%
+  mutate(date = dmy(date))
+
+torg <- torg %>%
+  mutate(island = ymd(date))
+```
+
+## Putting it all together
+
+To join the temperature data to our penguin data easily, we want to combine all 3 data frames into one data frame. Keeping in mind tidy data, what is the best way to do this?
+
+```{r combine}
+temps <- rbind(biscoe, dream, torg)
+```
+
+Now that we have a tidy penguin data frame and a tidy temperature data frame, it's time to combine them into one mega data frame. Both data frames have an island name and a date. What operation do we want to use? Which type is most appropriate here? The resulting data frame should have the same number of rows as the penguin data frame.
+
+```{r join}
+#inner join works the same in this instance
+penguins_temps <- left_join(penguins_raw, temps,
+                            by = c("Island" = "island",
+                                   "Date Egg" = "date")
+                            )
+```

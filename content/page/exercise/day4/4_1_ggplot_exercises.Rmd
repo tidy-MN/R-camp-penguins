@@ -4,7 +4,7 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: "../../css/camp_style.css"
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
