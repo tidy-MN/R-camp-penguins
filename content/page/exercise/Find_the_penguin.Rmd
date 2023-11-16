@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Filtering and case_when'
+title: 'Exercise: Identify penguins using `filter()` and `case_when()`'
 author: "Abigail Stamm"
 output: html_document
 ---
@@ -12,11 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.
 
-Using the `palmerpenguins` dataset, isolate a penguin who meets one of the following sets of criteria. What is its study number?
+Using the `penguins` dataset in the `palmerpenguins` package, isolate a penguin who meets one of the following sets of criteria. What is its study number?
 
 1. I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.
-1. I am a male Chinstrap penguin weighing over 4kg. My culmen is over 50mm long, but my flippers are less than 200mm long. 
-1. I am a female Gentoo penguin weighing over 5kg, but my culmen is shorter at under 45mm. 
+1. I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm long, but my flippers are less than 20cm long. 
+1. I am a female Gentoo penguin weighing over 5kg, but my bill is shorter at under 4.5cm long. 
 
 For a greater challenge, try to isolate these penguins.
 
@@ -25,6 +25,49 @@ For a greater challenge, try to isolate these penguins.
 1. I have the longest flippers of the Adelie penguins on Dream Island.
 
 
+<details>
+<summary>Code hint</summary>
+  Example: 
+  `filter(data, x < 0)`  
+  Remember to account for `NA` values.
+
+<details>
+<summary>Advanced code hint</summary>
+  Example:
+  `filter(body_mass_g > 4000)`
+  
+<details>
+<summary>Precise code hint</summary>
+  Example:
+  `filter(penguins, body_mass_g == min(body_mass_g, na.rm = TRUE))`
+  
+</details>
+</details>
+</details>
+
+
 ## Exercise 2: using case_when
 
 Select the same penguin that you selected above. Create a new variable using case_when that uses the criteria provided to identify your selected penguin and and only your selected penguin in your dataset.
+
+<details>
+<summary>Code hint</summary>
+  Example: 
+  `case_when(x == y ~ TRUE, .default = FALSE)`  
+
+<details>
+<summary>Advanced code hint</summary>
+  Example:
+  `case_when(body_mass_g > 4000 ~ TRUE, .default = FALSE)`
+  
+<details>
+<summary>Precise code hint</summary>
+  Example:
+  `mutate(penguins, subject = case_when(body_mass_g > 4000 & bill_length_mm > 50 ~ TRUE, .default = FALSE))`
+  
+</details>
+</details>
+</details>
+
+
+
