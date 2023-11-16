@@ -7,20 +7,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-
-<!-- Dorian's thoughts: -->
-<!-- Some other big hang-ups for newbie folks are their lack of computer navigation skills. Such as: How do I find the path to my files? Where's my download/documents folder? What is a directory anyways? Why doesn't R automatically know how to find the "data.csv" file I put in a random spot on a shared drive?  -->
-
-<!--
-Anton's thoughts:
-ask barbara about a breakout room for people having installation issues
-after they run code, ask question related to what they found
--->
-
 # Introduction
 
-This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R. You will learn the following content:
+This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:
 
 * How to name R objects.
 * How to create an object in R and use a function on it.
@@ -38,15 +27,11 @@ knitr::include_graphics("../images/pierre_R_intro.jpg")
 ```
 
 
+
 # Installing R and RStudio
 
-<!-- video of this or just webpage? -->
+Don't have R yet? Installation instructions are outlined [HERE](install.html).
 
-State employees install R and RStudio in the order below from the MNIT Software Center. Install R first, then RStudio. RTools is optional for advanced R users.
-
-```{r, out.width = "50%", fig.cap = "List of software", echo = FALSE, fig.alt = "Screenshot of MDH software Center list of R software"}
-knitr::include_graphics("../images/Software_to_install.png")
-```
 
 
 # RStudio tour
@@ -107,14 +92,14 @@ I like some of his material better than Andy's
 
 RStudio gives us the ability to create self-contained projects. For this workshop, we will create and work in a basic project. Here are a few reasons to use projects.
 
-1. In projects R understands relative paths, so you do not need to type the full file path to load or save a file. For example, a full file path might be "C:/Users/HennyPenny/Rcode/Prequel/Rfiles/myfile.R", but in the "Prequel" project, the relative file path would be "Rfiles/myfile.R", which is a lot shorter and easier to write. 
+1. In projects R understands relative paths, so you do not need to type the full file path to load or save a file. For example, a full file path might be "C:/Users/HennyPenny/Rprojects/Primer/R/myfile.R", but in the "Primer" project, the relative file path would be "R/myfile.R", which is a lot shorter and easier to write. 
 1. The "Files" tab in the lower right window will automatically show the files in the project, even if you move the project somewhere else on your computer.
 1. If you save your files to a project, they are easy to find and reference when you need them.
 1. If you share your project with a friend, that friend can run the script in the project and it will know to look inside the project folder for everything it needs, even though it is now on your friend's computer.
 
 To create a new project, click on the "File" menu in the upper left, then click on "New Project ...". In the pop-up dialog, click "New Directory", then "New Project". As you become more experienced with R, you will learn about the other kinds of projects. 
 
-For "Directory name:", put your project name. This can be anything, but I suggest something informative like "MDH_R_Prequel_2023". I will talk about naming conventions in a moment, but in brief, R sometimes has issues reading file paths that contain periods, spaces, and hyphens, so I prefer to avoid using them. In general, I place underscores instead of spaces between words and try to keep project names relatively short.
+For "Directory name:", put your project name. This can be anything, but I suggest something informative like "MDH_R_Primer_2023". I will talk about naming conventions in a moment, but in brief, R sometimes has issues reading file paths that contain periods, spaces, and hyphens, so I prefer to avoid using them. In general, I place underscores instead of spaces between words and try to keep project names relatively short.
 
 For "Create project as a subdirectory of:", I suggest placing the project in your "Documents" folder so you can find it easily. Remember R projects can be moved if you want to put it elsewhere later. I suggest not clicking the checkboxes right now. These are advanced options for version control that you won't need to use today. When you are done, click "Create Project".
 
@@ -145,9 +130,9 @@ A warning when working with Windows file paths in R: Windows uses backslashes be
 
 It's okay if you make mistakes in your code. R will give you a message to help you fix your mistake. Messages can be in the form of "Message:", "Warning:", and "Error:". 
 
-* Messages provide information about what R did and the assumptions it made. Your code will run anyway.
-* Warnings provide information about possible issues with your code or data. Your code will run anyway, but may give unexpected or undesired results.
-* Errors provide information about where your code broke. Your code will not run or will stop in the middle.
+* **Messages** provide information about what R did and the assumptions it made. Your code will run anyway.
+* **Warnings** provide information about possible issues with your code or data. Your code will run anyway, but may give unexpected or undesired results.
+* **Errors** provide information about where your code broke. Your code will not run or will stop in the middle.
 
 You might manage to crash R entirely. In my experience, R can crash if you use too much memory or if you try to load an incompatible package. We won't be using that much memory or discussing packages today, so you shouldn't need to worry about those yet. Even if you do crash R, it's fine; just restart RStudio and pick up where you last saved.
 
@@ -168,7 +153,7 @@ Here is a simple example of a script header, but feel free to be as fancy as you
 ```{}
 # author: Abby Stamm
 # date: 27 November 2023
-# purpose: to practice R code in the MDH R prequel workshop
+# purpose: to practice R code in the MDH R primer workshop
 ```
 
 Throughout this session, I will provide comments with the code to provide you with guidance and context. I encourage you to include additional comments that will help you to learn and understand R better. 
@@ -375,9 +360,6 @@ Which functions do you find most useful? Which are the most confusing?
 ```{r, out.width = "90%", fig.cap = "Pierre displays a basic table in R", echo = FALSE, fig.alt = "Photograph of Pierre the plush penguin pointing to the class list for his course in RStudio on his laptop while his plush poultry friends watch"}
 knitr::include_graphics("../images/pierre_print_table.jpg")
 ```
-
-
-
 
 
 # Importing and exporting data
@@ -597,6 +579,4 @@ pie(animal_cond)
 Is the bar chart or the pie chart easier for you to understand?
 
 If you are feeling adventurous, try adding the options you learned to your code. Do they work? Do they cause warnings or errors? Do they make your chart more readable?
-
-
 

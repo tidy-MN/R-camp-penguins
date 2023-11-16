@@ -10,9 +10,9 @@
   <title>R Camp Primer - Learn R</title>
   <meta property="og:title" content="R Camp Primer" />
   <meta name="twitter:title" content="R Camp Primer" />
-  <meta name="description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
-  <meta property="og:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
-  <meta name="twitter:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+  <meta name="description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
+  <meta property="og:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
+  <meta name="twitter:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "R Camp Primer",
-  "description" : "Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.",
+  "description" : "Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:",
   "inLanguage" : "en",
-  "wordCount":  4816 ,
+  "wordCount":  4784 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "r-camp.com\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="R Camp Primer" />
-<meta property="og:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+<meta property="og:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
 <meta property="og:image" content="r-camp.com/images/penguins_circle1.png" />
 <meta property="og:url" content="r-camp.com/r-camp.com/page/r_camp_primer.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="R Camp Primer" />
-  <meta name="twitter:description" content="Introduction This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R.">
+  <meta name="twitter:description" content="Introduction This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:">
   <meta name="twitter:image" content="r-camp.com/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -288,16 +288,9 @@
         
 
 
-<!-- Dorian's thoughts: -->
-<!-- Some other big hang-ups for newbie folks are their lack of computer navigation skills. Such as: How do I find the path to my files? Where's my download/documents folder? What is a directory anyways? Why doesn't R automatically know how to find the "data.csv" file I put in a random spot on a shared drive?  -->
-<!--
-Anton's thoughts:
-ask barbara about a breakout room for people having installation issues
-after they run code, ask question related to what they found
--->
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>This workshop is designed for people entirely new to R. It will take you through the basics of navigating RStudio and using R. You will learn the following content:</p>
+<p>This workshop will take you through the basics of navigating RStudio and using R. You will learn the following content:</p>
 <ul>
 <li>How to name R objects.</li>
 <li>How to create an object in R and use a function on it.</li>
@@ -316,14 +309,7 @@ Figure 1: Pierre describes R to the poultry
 </div>
 <div id="installing-r-and-rstudio" class="section level1">
 <h1>Installing R and RStudio</h1>
-<!-- video of this or just webpage? -->
-<p>State employees install R and RStudio in the order below from the MNIT Software Center. Install R first, then RStudio. RTools is optional for advanced R users.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="../images/Software_to_install.png" alt="Screenshot of MDH software Center list of R software" width="50%" />
-<p class="caption">
-Figure 2: List of software
-</p>
-</div>
+<p>Don’t have R yet? Installation instructions are outlined <a href="install.html">HERE</a>.</p>
 </div>
 <div id="rstudio-tour" class="section level1">
 <h1>RStudio tour</h1>
@@ -346,10 +332,10 @@ Type &#39;demo()&#39; for some demos, &#39;help()&#39; for on-line help, or
 &#39;help.start()&#39; for an HTML browser interface to help.
 Type &#39;q()&#39; to quit R.</code></pre>
 <p>Random trivia: All R version names (“Beagle Scouts” above) are taken from the Peanuts comics by Charles Schulz. See a full list of <a href="https://stackoverflow.com/questions/13478375/is%20-ther-any-authoritative-documentation-on-r-release-nicknames">R version names and origins</a>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="../images/pierre_describe_rstudio.jpg" alt="Photograph of Pierre the plush penguin pointing to a quadrant of RStudio on his laptop while his plush poultry friends watch" width="90%" />
 <p class="caption">
-Figure 3: Pierre explains the parts of RStudio
+Figure 2: Pierre explains the parts of RStudio
 </p>
 </div>
 <p>In the console window, the first tab is called “Console”. You can type and run code line-by-line here. This is a good way to test correct syntax and trouble-shoot errors. We will not use any other tabs in this window today.</p>
@@ -372,18 +358,18 @@ I like some of his material better than Andy's
 <h1>Creating a project</h1>
 <p>RStudio gives us the ability to create self-contained projects. For this workshop, we will create and work in a basic project. Here are a few reasons to use projects.</p>
 <ol style="list-style-type: decimal">
-<li>In projects R understands relative paths, so you do not need to type the full file path to load or save a file. For example, a full file path might be “C:/Users/HennyPenny/Rcode/Prequel/Rfiles/myfile.R”, but in the “Prequel” project, the relative file path would be “Rfiles/myfile.R”, which is a lot shorter and easier to write.</li>
+<li>In projects R understands relative paths, so you do not need to type the full file path to load or save a file. For example, a full file path might be “C:/Users/HennyPenny/Rprojects/Primer/R/myfile.R”, but in the “Primer” project, the relative file path would be “R/myfile.R”, which is a lot shorter and easier to write.</li>
 <li>The “Files” tab in the lower right window will automatically show the files in the project, even if you move the project somewhere else on your computer.</li>
 <li>If you save your files to a project, they are easy to find and reference when you need them.</li>
 <li>If you share your project with a friend, that friend can run the script in the project and it will know to look inside the project folder for everything it needs, even though it is now on your friend’s computer.</li>
 </ol>
 <p>To create a new project, click on the “File” menu in the upper left, then click on “New Project …”. In the pop-up dialog, click “New Directory”, then “New Project”. As you become more experienced with R, you will learn about the other kinds of projects.</p>
-<p>For “Directory name:”, put your project name. This can be anything, but I suggest something informative like “MDH_R_Prequel_2023”. I will talk about naming conventions in a moment, but in brief, R sometimes has issues reading file paths that contain periods, spaces, and hyphens, so I prefer to avoid using them. In general, I place underscores instead of spaces between words and try to keep project names relatively short.</p>
+<p>For “Directory name:”, put your project name. This can be anything, but I suggest something informative like “MDH_R_Primer_2023”. I will talk about naming conventions in a moment, but in brief, R sometimes has issues reading file paths that contain periods, spaces, and hyphens, so I prefer to avoid using them. In general, I place underscores instead of spaces between words and try to keep project names relatively short.</p>
 <p>For “Create project as a subdirectory of:”, I suggest placing the project in your “Documents” folder so you can find it easily. Remember R projects can be moved if you want to put it elsewhere later. I suggest not clicking the checkboxes right now. These are advanced options for version control that you won’t need to use today. When you are done, click “Create Project”.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="../images/pierre_create_project.jpg" alt="Photograph of Pierre the plush penguin pointing to the new project dialog in RStudio on his laptop while his plush poultry friends watch" width="90%" />
 <p class="caption">
-Figure 4: Pierre describes how to create a new project
+Figure 3: Pierre describes how to create a new project
 </p>
 </div>
 <div id="r-project-structure" class="section level2">
@@ -400,9 +386,9 @@ getwd()</code></pre>
 <h2>Errors, warnings, and messages</h2>
 <p>It’s okay if you make mistakes in your code. R will give you a message to help you fix your mistake. Messages can be in the form of “Message:”, “Warning:”, and “Error:”.</p>
 <ul>
-<li>Messages provide information about what R did and the assumptions it made. Your code will run anyway.</li>
-<li>Warnings provide information about possible issues with your code or data. Your code will run anyway, but may give unexpected or undesired results.</li>
-<li>Errors provide information about where your code broke. Your code will not run or will stop in the middle.</li>
+<li><strong>Messages</strong> provide information about what R did and the assumptions it made. Your code will run anyway.</li>
+<li><strong>Warnings</strong> provide information about possible issues with your code or data. Your code will run anyway, but may give unexpected or undesired results.</li>
+<li><strong>Errors</strong> provide information about where your code broke. Your code will not run or will stop in the middle.</li>
 </ul>
 <p>You might manage to crash R entirely. In my experience, R can crash if you use too much memory or if you try to load an incompatible package. We won’t be using that much memory or discussing packages today, so you shouldn’t need to worry about those yet. Even if you do crash R, it’s fine; just restart RStudio and pick up where you last saved.</p>
 <p>On that note, save often!</p>
@@ -415,14 +401,14 @@ getwd()</code></pre>
 <p>Here is a simple example of a script header, but feel free to be as fancy as you want. Note that the pound or hash sign, <code>#</code>, is placed in front of any code I want to comment out. R will ignore all code after a pound sign and jump to the next line.</p>
 <pre><code># author: Abby Stamm
 # date: 27 November 2023
-# purpose: to practice R code in the MDH R prequel workshop</code></pre>
+# purpose: to practice R code in the MDH R primer workshop</code></pre>
 <p>Throughout this session, I will provide comments with the code to provide you with guidance and context. I encourage you to include additional comments that will help you to learn and understand R better.</p>
 <p>For the remainder of this session, include all of your code in the script you just created. Save often!</p>
 <p>At the end of the session, save your script so you can refer back to it later and remember what you accomplished. Also, saving allows you to build off of and improve your code as you learn more, and share your code with others.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="../images/pierre_assign_object.jpg" alt="Photograph of Pierre the plush penguin pointing to an R script header in RStudio on his laptop while his plush poultry friemds watch" width="90%" />
 <p class="caption">
-Figure 5: Pierre demonstrates a basic R script header
+Figure 4: Pierre demonstrates a basic R script header
 </p>
 </div>
 </div>
@@ -538,10 +524,10 @@ tail(ChickWeight)</code></pre>
 <li>In RStudio, <code>View()</code> displays your full dataset as a table in the script window.</li>
 </ul>
 <p>Which functions do you find most useful? Which are the most confusing?</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
 <img src="../images/pierre_print_table.jpg" alt="Photograph of Pierre the plush penguin pointing to the class list for his course in RStudio on his laptop while his plush poultry friends watch" width="90%" />
 <p class="caption">
-Figure 6: Pierre displays a basic table in R
+Figure 5: Pierre displays a basic table in R
 </p>
 </div>
 </div>
