@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Summarizing penguins'
+title: 'Exercise: Describing penguin populations with `summarize()`'
 author: "Abigail Stamm"
 output: html_document
 ---
@@ -8,30 +8,145 @@ output: html_document
 
 <div id="summarize-data-about-penguin-populations" class="section level2">
 <h2>Summarize data about penguin populations</h2>
-<p>The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. Datasets get steadily more complex. Ask for help if you get stuck or need a hint.</p>
+<p>The goal of this exercise is to create summary datasets that answer
+specific questions about the penguin populations. Use the
+<code>penguins</code> dataset in the <code>palmerpenguins</code>
+package. Datasets get steadily more complex. Ask for help if you get
+stuck or need a hint.</p>
 <div id="compare-flipper-lengths" class="section level3">
 <h3>Compare flipper lengths</h3>
-<p>Create a dataset that summarizes the flipper lengths of the penguin populations by species. Calculate the minimum, maximum, and average flipper lengths of each penguin species.</p>
+<p>Create a dataset that summarizes the flipper lengths of the penguin
+populations by species. Calculate the minimum, maximum, and average
+flipper lengths of each penguin species.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species has the shortest flippers?</li>
-<li>Is there a flipper length range that includes all three penguin species?</li>
+<li>Is there a flipper length range that includes all three penguin
+species?</li>
 </ol>
+<details>
+<summary>
+Code hint
+</summary>
+<p>Example:<br />
+<code>group_by(data, x)</code><br />
+<code>summarize(data, x = min(y))</code><br />
+<code>ungroup(data, x)</code><br />
+Remember to account for <code>NA</code> values.</p>
+<details>
+<summary>
+Advanced code hint
+</summary>
+<p>Example:<br />
+<code>data %&gt;% group_by(species)</code><br />
+<code>data %&gt;% summarize(min_length = min(flipper_length_mm))</code><br />
+<code>data %&gt;% ungroup(species)</code></p>
+<details>
+<summary>
+Precise code hint
+</summary>
+Example:<br />
+
+<pre>
+  <code>
+  data %&gt;% group_by(species) %&gt;%
+      summarize(min_length = min(flipper_length_mm, na.rm = TRUE)) %&gt;%
+      ungroup(species)
+  </code>
+  </pre>
+</details>
+</details>
+</details>
 </div>
 <div id="compare-weights" class="section level3">
 <h3>Compare weights</h3>
-<p>Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and average weights of each group.</p>
+<p>Create a dataset that summarizes the weights of the penguin
+populations by species and island. Calculate the minimum, maximum, and
+average weights of each group.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species is the heaviest?</li>
 <li>On which island are Adelie penguins the heaviest?</li>
 </ol>
+<details>
+<summary>
+Code hint
+</summary>
+<p>Example:<br />
+<code>group_by(data, x)</code><br />
+<code>summarize(data, x = min(y))</code><br />
+<code>ungroup(data, x)</code><br />
+Remember to account for <code>NA</code> values.</p>
+<details>
+<summary>
+Advanced code hint
+</summary>
+<p>Example:<br />
+<code>data %&gt;% group_by(species, island)</code><br />
+<code>data %&gt;% summarize(min_length = min(body_mass_g))</code><br />
+<code>data %&gt;% ungroup(species, island)</code></p>
+<details>
+<summary>
+Precise code hint
+</summary>
+Example:<br />
+
+<pre>
+  <code>
+  data %&gt;% group_by(species, island) %&gt;%
+      summarize(min_weight = min(body_mass_g, na.rm = TRUE),
+                max_weight = max(body_mass_g, na.rm = TRUE)) %&gt;%
+      ungroup(species, island)
+  </code>
+  </pre>
+</details>
+</details>
+</details>
 </div>
-<div id="compare-culmens" class="section level3">
-<h3>Compare culmens</h3>
-<p>Create a dataset that summarizes the culmen lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and average culmen lengths and depths of each group.</p>
+<div id="compare-penguin-bills" class="section level3">
+<h3>Compare penguin bills</h3>
+<p>Create a dataset that summarizes the bill lengths and depths of the
+penguin populations by species, sex, and island. Calculate the minimum,
+maximum, and average bill lengths and depths of each group.</p>
 <ol style="list-style-type: decimal">
-<li>In general, do male and female culmens tend to be the same length and depth? If not, how do they differ?</li>
-<li>Do the groups with the longest culmens also have the deepest culmens? Do the groups with the shortest culmens have the shallowest?</li>
-<li>From the table, would you guess culmen size is most associated with species, sex, or island?</li>
+<li>In general, do male and female bills tend to be the same length and
+depth? If not, how do they differ?</li>
+<li>Do the groups with the longest bills also have the deepest bills? Do
+the groups with the shortest bills have the shallowest?</li>
+<li>From the table, would you guess bill size is most associated with
+species, sex, or island?</li>
 </ol>
+<details>
+<summary>
+Code hint
+</summary>
+<p>Example:<br />
+<code>group_by(data, x)</code><br />
+<code>summarize(data, x = min(y))</code><br />
+<code>ungroup(data, x)</code><br />
+Remember to account for <code>NA</code> values.</p>
+<details>
+<summary>
+Advanced code hint
+</summary>
+<p>Example:<br />
+<code>data %&gt;% group_by(species, island, sex)</code><br />
+<code>data %&gt;% summarize(min_depth = min(bill_depth_mm))</code><br />
+<code>data %&gt;% ungroup(species, island, sex)</code></p>
+<details>
+<summary>
+Precise code hint
+</summary>
+Example:<br />
+
+<pre>
+  <code>
+  data %&gt;% group_by(species, island, sex) %&gt;%
+      summarize(min_depth = min(bill_depth_mm, na.rm = TRUE),
+                max_length = max(bill_length_mm, na.rm = TRUE)) %&gt;%
+      ungroup(species, island, sex)
+  </code>
+  </pre>
+</details>
+</details>
+</details>
 </div>
 </div>
