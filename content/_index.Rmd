@@ -107,10 +107,10 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - Slides
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.3 - </span> Boil it down: Summarize the data  
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.3 - </span> Simmer it down: Summarize the data  
   
 - [Notes and code examples](page/day2.html#summarize) 
-- Slides
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-3-Boil-it-down.html#1)
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
