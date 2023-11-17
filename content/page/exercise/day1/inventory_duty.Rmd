@@ -3,7 +3,7 @@ title: "Inventory Duty - Exercise 1"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: css/camp_style.css
+    css: ../css/camp_style.css
     number_sections: true
     self_contained: false
     fontsize: 18pt
@@ -50,7 +50,7 @@ We've been tasked with downloading the inventory file from our suppliers and det
 So the first thing we need to do is read in the file that contains the inventory!
 
 ```{r}
-inventory <- read_csv(file = "https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data.csv")
+inventory <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv")
 ```
 
 # Getting to know the data

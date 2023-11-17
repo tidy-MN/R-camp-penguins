@@ -63,7 +63,7 @@
   "headline": "Inventory Duty - Exercise 1",
   "description" : "1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?",
   "inLanguage" : "en",
-  "wordCount":  850 ,
+  "wordCount":  846 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -354,7 +354,7 @@ code span.va { color: #000000; } /* Variable */
 code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/camp_style.css" type="text/css" />
 
 <div id="TOC">
 <ul>
@@ -384,8 +384,8 @@ hr {background:  cornflowerblue;}
 <p>We love our job as a baking-bot, but the thing we love more than baking is actually taking the inventory. We like to play with the inventory data and present beautiful summaries to the lead-baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true…but we’re getting ahead of our story.</p>
 <p>We’ve been tasked with downloading the inventory file from our suppliers and determining what needs to be ordered because we’re running low.</p>
 <p>So the first thing we need to do is read in the file that contains the inventory!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Error in read_csv(file = &quot;https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data.csv&quot;): could not find function &quot;read_csv&quot;</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in read_csv(&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv&quot;): could not find function &quot;read_csv&quot;</code></pre>
 </div>
 <div id="getting-to-know-the-data" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Getting to know the data</h1>
