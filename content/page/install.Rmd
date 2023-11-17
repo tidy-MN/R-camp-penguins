@@ -50,7 +50,7 @@ knitr::opts_chunk$set(echo = T)
 
 ![](../images/R_recipe.png){style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;" alt="RStudio logo - 'RStudio' is written inside a blue glowing hexagon sticker."}
 
-The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or even share it with your collaborators.
+The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or share it with your collaborators.
 
 
 ![](../images/rstudio-hex.png){style="float: right; margin-top: -22px;"}
@@ -64,15 +64,16 @@ __RStudio__ is the handy user interface we use to write R scripts and keep our p
 
 ## 1. For state employees {-}
 
-State employees at MDH and other agencies may follow the steps below to install both **R** and ** RStudio** all in one go:
+State employees at MDH and other agencies may follow the steps below to install both **R** and **RStudio** all in one go:
 
 <div class="well" style="margin-top: 4px;">
 1. Open the Software Center
 2. Search for RStudio
-3. Choose the option with the blue R bubble shown below
-  - If it doesn't appear for you submit a service ticket to your local MNIT friends
+3. Choose the option with the blue R bubble shown below.
+  - If it doesn't appear for you submit a service ticket to your local MNIT friends.
 4. Click `[ Install ]`
   - Heads up, you may need to click [ Install ] a second time for it to fully get the message
+5. Once it completes, you can search for *RStudio* in your Windows search bar and click the RStudio App to open.  
 
 
 > <b>RStudio</b> 
@@ -86,7 +87,7 @@ State employees at MDH and other agencies may follow the steps below to install 
 
 ## 2. For outside folks and friends {-}
 
-If you have the permissions to install software on your computer, or you would like to use R on your personal computer, you may download R and RStudio for **free**:
+If you have the permissions to install software on your work computer, or you would just like to use R on your personal computer, you may download R and RStudio for **free** from the following trustworthy sources:
 
 <!-- 
 modified from my install guide for GAT 
@@ -133,7 +134,7 @@ As a stop gap until you are able to install R locally, you can create an account
 R comes installed with many built-in functions and tools to help do your work. On top of this foundation, what is often referred to as _base R_, contributors from around the world have created tools that make R easier and accomplish more with your data. These add-ons are called `packages`, and are made available to everyone to download for free. Below are a few examples, grouped into general categories. 
 
 
-__Packages used in this training__ 
+## Packages used in this training {-}
 
 >  Load data
 
@@ -208,7 +209,7 @@ library(readr)
 
 <br>
 
-__Additional recommended packages__
+## Additional recommended packages
 
 > __Charts and visuals__
 

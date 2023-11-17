@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome on Learn R</title>
+    <title>Videos on Learn R</title>
     <link>https://tidy-mn.github.io/R-camp-penguins/</link>
-    <description>Recent content in Welcome on Learn R</description>
+    <description>Recent content in Videos on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/index.xml" rel="self" type="application/rss+xml" />
@@ -314,10 +314,10 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
     
     <item>
       <title>ggplot exercises</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises.html</link>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4-1-ggplot_exercises.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises.html</guid>
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4-1-ggplot_exercises.html</guid>
       <description>Palmer Penguin Exploration - Part 1 THANK YOU! Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
     </item>
     
@@ -346,7 +346,7 @@ In RStudio go to Help &amp;gt; Cheatsheets Data Transformation :: Helpful functi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/install.html</guid>
-      <description>Install R and RStudio 1. For state employees 2. For outside folks and friends 3. In the cloud Install R packages Update R packages Install R and RStudio The R language and its tools are built by people from around the world.</description>
+      <description>Install R and RStudio 1. For state employees 2. For outside folks and friends 3. In the cloud Install R packages Packages used in this training Additional recommended packages Update R packages Install R and RStudio The R language and its tools are built by people from around the world.</description>
     </item>
     
     <item>
@@ -403,6 +403,15 @@ porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samp
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos.html</guid>
       <description>Camp prep 0.1 - Install R Required - Please-please do before our first session together. Send Barbara Monaco/Derek Nagel a Teams chat or email for help.</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/_index2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/_index2.html</guid>
+      <description>The force is strong with you — learn R and use your powers for good.</description>
     </item>
     
   </channel>

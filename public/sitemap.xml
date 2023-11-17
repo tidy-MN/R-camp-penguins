@@ -113,7 +113,7 @@
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/explore_messy_emissions.html</loc>
   </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4_1_ggplot_exercises.html</loc>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4-1-ggplot_exercises.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/explore_gis_maps.html</loc>
   </url><url>
@@ -142,5 +142,7 @@
     <loc>https://tidy-mn.github.io/R-camp-penguins/tags/videos.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/videos.html</loc>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/_index2.html</loc>
   </url>
 </urlset>

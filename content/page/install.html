@@ -85,7 +85,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#for-outside-folks-and-friends" id="toc-for-outside-folks-and-friends">2. For outside folks and friends</a></li>
 <li><a href="#in-the-cloud" id="toc-in-the-cloud">3. In the cloud</a></li>
 </ul></li>
-<li><a href="#install-r-packages" id="toc-install-r-packages">Install <code>R packages</code></a></li>
+<li><a href="#install-r-packages" id="toc-install-r-packages">Install <code>R packages</code></a>
+<ul>
+<li><a href="#packages-used-in-this-training" id="toc-packages-used-in-this-training">Packages used in this training</a></li>
+<li><a href="#additional-recommended-packages" id="toc-additional-recommended-packages">Additional recommended packages</a></li>
+</ul></li>
 <li><a href="#update-r-packages" id="toc-update-r-packages">Update <code>R packages</code></a></li>
 </ul>
 </div>
@@ -118,22 +122,22 @@ blockquote { padding: 5px 10px; background-color: #f7fcff;}
 <h1>Install <code>R</code> and <code>RStudio</code></h1>
 <hr>
 <p><img src="../images/R_recipe.png" style="float: left; width: 41%; margin-top: 26px; margin-right: 28px; margin-bottom: 26px; margin-left: -12px;" alt="RStudio logo - &#39;RStudio&#39; is written inside a blue glowing hexagon sticker." /></p>
-<p>The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or even share it with your collaborators.</p>
+<p>The R language and its tools are built by people from around the world. They help you perform data analysis in an easy to follow step-by-step fashion, much like a recipe for cookies. And once you find your favorite recipe, you can use it over again on new data or share it with your collaborators.</p>
 <p><img src="../images/rstudio-hex.png" style="float: right; margin-top: -22px;" /></p>
 <p><br></p>
 <p><strong>RStudio</strong> is the handy user interface we use to write R scripts and keep our projects organized. It isn’t required to use R, but it makes things a whole lot easier.</p>
 <p><br><br></p>
 <div id="for-state-employees" class="section level2 unnumbered">
 <h2>1. For state employees</h2>
-<p>State employees at MDH and other agencies may follow the steps below to install both <strong>R</strong> and ** RStudio** all in one go:</p>
+<p>State employees at MDH and other agencies may follow the steps below to install both <strong>R</strong> and <strong>RStudio</strong> all in one go:</p>
 <div class="well" style="margin-top: 4px;">
 <ol style="list-style-type: decimal">
 <li>Open the Software Center</li>
 <li>Search for RStudio</li>
-<li>Choose the option with the blue R bubble shown below</li>
+<li>Choose the option with the blue R bubble shown below.</li>
 </ol>
 <ul>
-<li>If it doesn’t appear for you submit a service ticket to your local MNIT friends</li>
+<li>If it doesn’t appear for you submit a service ticket to your local MNIT friends.</li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
 <li>Click <code>[ Install ]</code></li>
@@ -141,6 +145,9 @@ blockquote { padding: 5px 10px; background-color: #f7fcff;}
 <ul>
 <li>Heads up, you may need to click [ Install ] a second time for it to fully get the message</li>
 </ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Once it completes, you can search for <em>RStudio</em> in your Windows search bar and click the RStudio App to open.</li>
+</ol>
 <blockquote>
 <p><b>RStudio</b></p>
 <img src="https://d33wubrfki0l68.cloudfront.net/dd8ddc34fe29a71c81183dbe3436cfabbb540e44/b7152/assets/img/rstudio-ball.svg" width="120" style="float: left; margin-left: 10px;">
@@ -153,7 +160,7 @@ blockquote { padding: 5px 10px; background-color: #f7fcff;}
 </div>
 <div id="for-outside-folks-and-friends" class="section level2 unnumbered">
 <h2>2. For outside folks and friends</h2>
-<p>If you have the permissions to install software on your computer, or you would like to use R on your personal computer, you may download R and RStudio for <strong>free</strong>:</p>
+<p>If you have the permissions to install software on your work computer, or you would just like to use R on your personal computer, you may download R and RStudio for <strong>free</strong> from the following trustworthy sources:</p>
 <!-- 
 modified from my install guide for GAT 
 https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.Rmd
@@ -197,7 +204,8 @@ https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.
 <h1>Install <code>R packages</code></h1>
 <hr>
 <p>R comes installed with many built-in functions and tools to help do your work. On top of this foundation, what is often referred to as <em>base R</em>, contributors from around the world have created tools that make R easier and accomplish more with your data. These add-ons are called <code>packages</code>, and are made available to everyone to download for free. Below are a few examples, grouped into general categories.</p>
-<p><strong>Packages used in this training</strong></p>
+<div id="packages-used-in-this-training" class="section level2 unnumbered">
+<h2>Packages used in this training</h2>
 <blockquote>
 <p>Load data</p>
 </blockquote>
@@ -248,7 +256,9 @@ https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div>
 </div>
 <p><br></p>
-<p><strong>Additional recommended packages</strong></p>
+</div>
+<div id="additional-recommended-packages" class="section level2">
+<h2>Additional recommended packages</h2>
 <blockquote>
 <p><strong>Charts and visuals</strong></p>
 </blockquote>
@@ -277,6 +287,7 @@ https://github.com/ajstamm/gatpkg/blob/master/compiles/gat_install_instructions.
 </blockquote>
 <p><code>tidycensus</code> Download Census and American Community Survey data.</p>
 <p><br></p>
+</div>
 </div>
 <div id="update-r-packages" class="section level1">
 <h1>Update <code>R packages</code></h1>
