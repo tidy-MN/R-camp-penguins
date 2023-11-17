@@ -62,11 +62,9 @@ __RStudio__ is the handy user interface we use to write R scripts and keep our p
 <br><br>
 
 
-## 1. State employees {-}
+## 1. For state employees {-}
 
-State employees at MDH and other agencies can follow these steps:
-
-__Install RStudio and R__  
+State employees at MDH and other agencies may follow the steps below to install both **R** and ** RStudio** all in one go:
 
 <div class="well" style="margin-top: 4px;">
 1. Open the Software Center
