@@ -27,6 +27,14 @@ opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
+# Before you start...
+
+Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course. To make a new project in RStudio, go to File -> New Project -> New Directory -> New Project
+
+Now you need to pick a new directory. Pick a location that makes sense to you where you'll be able to find it again. If you made a project while following along with the videos, you can pick the same location for this one and then both your projects will be in the same location.
+
+Once you have a new project made, make a new R script and name it something pithy like `exercise_1_day_1.R` or `frank.R` and you'll be ready to go!
+
 # Inventory Duty
 
 We love our job as a baking-bot, but the thing we love more than baking is actually taking the inventory. We like to play with the inventory data and present beautiful summaries to the lead-baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true...but we're getting ahead of our story. 
@@ -38,7 +46,6 @@ So the first thing we need to do is read in the file that contains the inventory
 ```{r}
 inventory <- read_csv(file = "https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data.csv")
 ```
-
 # Getting to know the data
 
 Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
