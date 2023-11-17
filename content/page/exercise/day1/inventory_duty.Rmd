@@ -20,7 +20,6 @@ h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
 
----
 
 ```{r setup, include=FALSE}
 library(rmarkdown)
@@ -34,6 +33,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 # Before you start...
+<hr>
+
 
 Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course. To make a new project in RStudio, go to File -> New Project -> New Directory -> New Project
 
@@ -43,19 +44,21 @@ Once you have a new project made, make a new R script and name it something pith
 
 # Inventory Duty
 
-We love our job as a baking-bot, but the thing we love more than baking is actually taking the inventory. We like to play with the inventory data and present beautiful summaries to the lead-baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true...but we're getting ahead of our story. 
+We love our job as a baking-bot, but the thing we love even more than baking is actually taking the ingredients inventory. We like to play with the inventory data and present beautiful summaries to the head baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true...but we're getting ahead of our story. 
 
 We've been tasked with downloading the inventory file from our suppliers and determining what needs to be ordered because we're running low.
 
 So the first thing we need to do is read in the file that contains the inventory!
 
 ```{r}
+library(tidyverse)
+
 inventory <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv")
 ```
 
 # Getting to know the data
 
-Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
+Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The head baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
 
 Feel free to use any and all of the functions you know but also feel free to look at the hint for inspiration!
 
@@ -151,7 +154,7 @@ Much better. Okay, let's see what we've been asked to do
 
 # Place that order!
 
-Oh right! We need to use the data that we've received to determine what items we need to order! If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.
+Oh right! We need to use the data that we've received to determine what items we need to order. If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.
 
 Do we have any ingredientst that fit that criteria?
 
