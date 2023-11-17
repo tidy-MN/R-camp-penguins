@@ -56,7 +56,7 @@ Feel free to use any and all of the functions you know but also feel free to loo
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Getting to know the data {-}
 
-```{r exer-tabs, results='asis', echo=F}
+```{r exer-tabs1, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Functions for fun", "Show hint", "Show code")
@@ -101,7 +101,7 @@ How do we go about trying to figure out what's going on with that wacky number? 
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Investigation underway {-}
 
-```{r exer-tabs, results='asis', echo=F}
+```{r exer-tabs2, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Find the odd-ball", "Show hint", "Show code")
@@ -152,7 +152,7 @@ Do we have any ingredientst that fit that criteria?
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> What to order? {-}
 
-```{r exer-tabs, results='asis', echo=F}
+```{r exer-tabs3, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Less than Order Threshold", "Show hint", "Show code")
