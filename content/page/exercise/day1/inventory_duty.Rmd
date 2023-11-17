@@ -41,7 +41,7 @@ inventory <- read_csv(file = "https://raw.githubusercontent.com/tidy-MN/R-camp-p
 
 # Getting to know the data
 
-Now that we havet the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
+Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
 
 Feel free to use any and all of the functions you know but also feel free to look at the hint for inspiration!
 
