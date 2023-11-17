@@ -64,12 +64,6 @@ uglyURLs = true
     name = "Camp Primer"
     url = "page/r_camp_primer.html"
     weight = 1  
-  
-[[menu.main]]
-    parent = "Training"
-    name = "Videos"
-    url = "page/videos.html"
-    weight = 1     
 
 [[menu.main]]
     parent = "Training"
