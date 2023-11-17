@@ -1,4 +1,4 @@
-baseurl = "https://r-camps.com/"
+baseurl = "https://tidy-mn.github.io/R-camp-penguins/"
 DefaultContentLanguage = "en"
 title = "Learn R"
 theme = "beautifulhugo"
