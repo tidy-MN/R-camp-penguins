@@ -1,0 +1,266 @@
+---
+title: "Auditor-in-Training - Exercise 2"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+h1 .header-section-number {background: cornflowerblue;}
+hr {background:  cornflowerblue;}
+</style>
+
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
+
+xaringanExtra::use_clipboard()
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+# Before you start...
+
+Make sure you are still in your project that you created for the previous exercise and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_2_day_1.R` or `gloria.R` and you'll be ready to go!
+
+# Auditor-in-training
+
+Apparently the lead-baking bot was so impressed with our inventory report that they've asked us perform an audit! No one in the history of time has even been so excited to do an audit as we are RIGHT NOW! 
+
+In the audit we need to make sure that 
+
+- each ingredient has a category
+- no ingredient is 10 or more units over the order threshold
+- summary statistics are calculated for both dry and liquid measures (don't mix and match! Fluid ounces are different from dry ounces and gosh wouldn't it be swell if everything was metric...)
+
+Now that we have our marching orders, it's time to read in the data! Just need to break out our handy-dandy `read_csv` and...wait a second...this data isn't comma-delimited! What on earth are we going to do now?
+
+1. Open up the file and see if you can determine what the delimiter is and then pick the correct function to read it in (like `read_tsv` for tab-delimited or `read_csv` for comma-delimited)
+2. Use RStudio's "Import Dataset" feature, same idea but gives you instant visual feedback on whether it read in like you thought it would.
+3. Use `read_delim` which has a "guess" feature and will take the data and try to figure out what the delimiter is for you
+4. Ask - *somebody* made this mess, you can always try to figure out who and ask them what the heck this file type is (*hint: ask your instructors*)
+
+**Side-bar discussion: What is a delimiter?**
+
+> A delimiter is a sequence of one or more characters for specifying the boundary between separate, independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the time gap used to separate letters and words in the transmission of Morse code. 
+
+> [Wikipedia](https://en.wikipedia.org/wiki/Delimiter)
+
+```{r}
+audit_data <- read_delim("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data_expanded.txt")
+```
+
+# Getting to know the data
+
+Depending on how you read in the data, you may feel that you already know it quite well, but it's still a good idea to at least take a look at the data to get a feel for it.
+
+```{r}
+glimpse(audit_data)
+```
+
+Excellent, let's start working on our audit!
+
+# Categories for all
+
+Our first task it to make sure that each ingredient has a category. Let's start with figuring out if anyone *doesn't* have a category.
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Category: Missing {-}
+
+```{r exer-tabs1, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Category is NA", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> It can often be easier to look for the absence of something than the presence of something, in this case we want to identify all the rows where Category is missing </h4>
+
+<br>',
+
+show_hint = 'code_start
+filter(audit_data, is.na()) #What goes inside is.na and what does is.na do?
+code_end',
+
+show_code = 'code_start
+
+filter(audit_data, is.na(CATEGORY))
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+AH-HA! There is indeed an ingredient that does not have a Category. We should fix that...but how would we go about it? We need to figure out which row and column of the dataset match our criteria so we can change the value...this is stressful, maybe being an auditor isn't all it's cracked up to be.
+
+# Two new functions to save the day
+
+Of course there's a way to do this, we wouldn't try if there wasn't. So the first question we have is what are the possible categories for an ingredient to have? We can use the function `unique` to figure out what the *unique* values are!
+
+```{r}
+unique(audit_data$CATEGORY) #unique only likes vectors, so use the dollar sign to pull out the individual column from the dataframe!
+```
+
+Pick the category that you think is the best fit. Now, we just need to figure out *where* in the dataframe the missing value is in. We know that CATEGORY is the second column so that's good...now we just need to know what row SALT is in since we can specify location using matrix-style indices (i.e. Row, Column position - just like Excel!)
+
+Enter the function `which`! This function will tell us which indices are TRUE, so if we pass it a logical vector (which is what happens when you ask a question on a vector like whether it is equal to a certain value like say...SALT) it will tell us the *location* where that vector is TRUE!
+
+```{r}
+which(audit_data$INGREDIENT == 'SALT')
+```
+
+ALRIGHT!
+
+Now for the finishing touch!
+
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Writing wrongs {-}
+
+```{r exer-tabs2, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Updating values", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Now we have the row and column location of the missing value and the types of acceptable values that it should be, overwrite the NA with the new value you picked. </h4>
+
+<br>',
+
+show_hint = 'code_start
+audit_data[ROW, COLUMN] <- INSERT VALUE HERE
+code_end',
+
+show_code = 'code_start
+
+audit_data[18, 2] <- "ADDITITIVES"
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+# Threshold day
+
+Hopefully this question will be easier: "No ingredient is 10 or more units over the order threshold". Let's put our mechanical brains together...
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Not on my watch! {-}
+
+```{r exer-tabs3, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("10 or more", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Filter the audit dataset to show whether there are any rows where the number of units in stock is 10 or more the order threshold. </h4>
+
+<br>',
+
+show_hint = 'code_start
+filter(audit_data, SOMETHING_IS >= 10) # Try doing some math in the filter function!
+code_end',
+
+show_code = 'code_start
+filter(audit_data, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD >= 10)
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+Looks like we might need to make some emergency Oatmeal Raisin cookies to get our stock down a bit but we don't think people will mind that much. Nice work!
+
+# Summary statistics by group
+
+Last item on our audit check list and then we can take a break (and maybe eat some of those Oatmeal Raisin cookies...yum.)
+
+The last thing we need to do is calculate summary statistics for both dry and liquid measures.
+
+Probably the easiest thing is to make two different dataframes, one of all the dry and one of all the liquid.
+
+```{r}
+liquid <- filter(audit_data, DRY_OR_LIQUID_MEASUREMENT == 'LIQUID')
+
+dry <- filter(audit_data, DRY_OR_LIQUID_MEASUREMENT == 'DRY')
+```
+
+Hmmm...something feels funny. Our original dataset had 36 observation, now we have 28 and 7 which is 35...we dropped an observation somewhere. Maybe there's a typo in the column? We can use `unique` to see if there are more than just two values for DRY_OR_LIQUID_MEASUREMENT
+
+```{r}
+unique(audit_data$DRY_OR_LIQUID_MEASUREMENT)
+```
+
+Uh-oh, we have an NA value. Filter will only return a row if it knows for sure that it meets the condition, and because with NA we literally don't know the value, we can never know if it meets the condition.
+
+Let's looks at the row that has the NA, maybe we can fix it like we did for CATEGORY.
+
+```{r}
+filter(audit_data, is.na(DRY_OR_LIQUID_MEASUREMENT))
+```
+
+*Oh.* It's *eggs*. Huh...should they be dry or liquid? What's the number of ounces in a dozen eggs? Honestly maybe this is best left as NA and we can ask the lead-baking bot about it later...Also, we've never thought so much about measuring eggs before.
+
+But enough about eggs! Let's make our summary stats and call this audit "good enough for government work" and move on!
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Summary Stats {-}
+
+```{r exer-tabs4, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Calcuate summary statistics", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Use the datasets that you made using filter to calculate summary statistics for each one and store them in another object (give it a good, descriptive name). </h4>
+
+<br>',
+
+show_hint = 'code_start
+liquid_summary <- summary(_______)
+dry_summary <- summary(_____)
+code_end',
+
+show_code = 'code_start
+liquid_summary <- summary(liquid)
+dry_summary <- summary(dry)
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+We've got to stop doing so much good work...now the lead-baking bot wants us to start organizing orders! 
+
+No rest for the weary it seems but there are warm Oatmeal Raisin cookies which is a pretty good consolation prize!
