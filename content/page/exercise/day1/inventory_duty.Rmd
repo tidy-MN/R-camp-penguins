@@ -14,6 +14,12 @@ output:
 
 <link rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+h1 .header-section-number {background: cornflowerblue;}
+hr {background:  cornflowerblue;}
+</style>
+
 ---
 
 ```{r setup, include=FALSE}
@@ -46,6 +52,7 @@ So the first thing we need to do is read in the file that contains the inventory
 ```{r}
 inventory <- read_csv(file = "https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data.csv")
 ```
+
 # Getting to know the data
 
 Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 

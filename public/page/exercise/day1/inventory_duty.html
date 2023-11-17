@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Inventory Duty - Exercise 1 - Learn R</title>
+  <meta property="og:title" content="Inventory Duty - Exercise 1" />
+  <meta name="twitter:title" content="Inventory Duty - Exercise 1" />
+  <meta name="description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
+  <meta property="og:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
+  <meta name="twitter:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day1\/inventory_duty.html",
+          "name": "Inventory duty exercise 1"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "Inventory Duty - Exercise 1",
+  "description" : "1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?",
+  "inLanguage" : "en",
+  "wordCount":  850 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day1\/inventory_duty.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Inventory Duty - Exercise 1" />
+<meta property="og:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day1/inventory_duty.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Inventory Duty - Exercise 1" />
+  <meta name="twitter:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day1/inventory_duty.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/videos.html">Videos</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+                  <a href="/R-camp-penguins/page/day4.html">Day 4</a>
+                
+                  <a href="/R-camp-penguins/page/day5.html">Day 5</a>
+                
+                  <a href="/R-camp-penguins/page/day6.html">Day 6</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Inventory Duty - Exercise 1</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="/R-camp-penguins/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
+
+<div id="TOC">
+<ul>
+<li><a href="#before-you-start" id="toc-before-you-start"><span class="toc-section-number">1</span> Before you start…</a></li>
+<li><a href="#inventory-duty" id="toc-inventory-duty"><span class="toc-section-number">2</span> Inventory Duty</a></li>
+<li><a href="#getting-to-know-the-data" id="toc-getting-to-know-the-data"><span class="toc-section-number">3</span> Getting to know the data</a></li>
+<li><a href="#why-do-we-do-this-to-ourselves" id="toc-why-do-we-do-this-to-ourselves"><span class="toc-section-number">4</span> Why do we do this to ourselves?</a></li>
+<li><a href="#place-that-order" id="toc-place-that-order"><span class="toc-section-number">5</span> Place that order!</a></li>
+</ul>
+</div>
+
+<p><link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
+<style>
+h1 .header-section-number {background: cornflowerblue;}
+hr {background:  cornflowerblue;}
+</style>
+<hr />
+<div id="before-you-start" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Before you start…</h1>
+<p>Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course. To make a new project in RStudio, go to File -&gt; New Project -&gt; New Directory -&gt; New Project</p>
+<p>Now you need to pick a new directory. Pick a location that makes sense to you where you’ll be able to find it again. If you made a project while following along with the videos, you can pick the same location for this one and then both your projects will be in the same location.</p>
+<p>Once you have a new project made, make a new R script and name it something pithy like <code>exercise_1_day_1.R</code> or <code>frank.R</code> and you’ll be ready to go!</p>
+</div>
+<div id="inventory-duty" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Inventory Duty</h1>
+<p>We love our job as a baking-bot, but the thing we love more than baking is actually taking the inventory. We like to play with the inventory data and present beautiful summaries to the lead-baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true…but we’re getting ahead of our story.</p>
+<p>We’ve been tasked with downloading the inventory file from our suppliers and determining what needs to be ordered because we’re running low.</p>
+<p>So the first thing we need to do is read in the file that contains the inventory!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">&quot;https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in read_csv(file = &quot;https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/content/page/exercise/day1/inventory_data.csv&quot;): could not find function &quot;read_csv&quot;</code></pre>
+</div>
+<div id="getting-to-know-the-data" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Getting to know the data</h1>
+<p>Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of <code>NUMBER_OF_UNITS_IN_STOCK</code> for planning purposes.</p>
+<p>Feel free to use any and all of the functions you know but also feel free to look at the hint for inspiration!</p>
+<div id="getting-to-know-the-data-1" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Getting to know the data</h3>
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="functionsforfun-tab" data-toggle="tab" href="#functionsforfun" role="tab" aria-controls="functionsforfun" aria-selected="true">Functions for fun</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint-tab" data-toggle="tab" href="#showhint" role="tab" aria-controls="showhint" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode-tab" data-toggle="tab" href="#showcode" role="tab" aria-controls="showcode" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="functionsforfun" class="tab-pane fade active in" role="tabpanel" aria-labelledby="functionsforfun-tab">
+<h4>
+When you first get a dataset it is always a good idea to start with some exploratory analysis, below are some possible functions for you to choose from that will get you started:
+</h4>
+<ul>
+<li><code>glimpse</code></li>
+<li><code>summmary</code></li>
+<li><code>head</code></li>
+<li><code>tail</code></li>
+<li><code>class</code></li>
+</ul>
+<p><br></p>
+</div>
+<div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
+<pre class="sourceCode r">
+glimpse() #we like glimpse becaue it gives us classes for each column and an idea of what to expect
+summary() #summary is great because it shows us NAs and lots of summary stats really quick
+</pre>
+</div>
+<div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
+<pre class="sourceCode r">
+
+glimpse(inventory)
+summary(inventory)
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>WHOA. We have 378 units of something in stock?! What are we making, cupcakes for a whole school?! A cake big enough to cover a bus?! Time to go invesigate…</p>
+</div>
+<div id="why-do-we-do-this-to-ourselves" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Why do we do this to ourselves?</h1>
+<p>How do we go about trying to figure out what’s going on with that wacky number? We need to be able to narrow down just to the row that meets the condition of <code>NUMBER_OF_UNITS_IN_STOCK</code> is 378. What tool do we have that will let us do that?</p>
+<div id="investigation-underway" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Investigation underway</h3>
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="findtheodd-ball-tab" data-toggle="tab" href="#findtheodd-ball" role="tab" aria-controls="findtheodd-ball" aria-selected="true">Find the odd-ball</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint-tab" data-toggle="tab" href="#showhint" role="tab" aria-controls="showhint" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode-tab" data-toggle="tab" href="#showcode" role="tab" aria-controls="showcode" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="findtheodd-ball" class="tab-pane fade active in" role="tabpanel" aria-labelledby="findtheodd-ball-tab">
+<h4>
+Filter the inventory dataset to just the row that meets the condition of <code>NUMBER_OF_UNITS_IN_STOCK</code> is equal to 378
+</h4>
+<p><br></p>
+</div>
+<div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
+<pre class="sourceCode r">
+filter(inventory, PLACE A CONDITION HERE) #remember to use the double equal sign!
+</pre>
+</div>
+<div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
+<pre class="sourceCode r">
+filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Oh. We have a total row - that’s annoying. It’s also adding NAs to other columns which might make some of our analysis hard in the future. So let’s get rid of it and look at our data <em>for real</em>.</p>
+<p>Though as a reminder, lots of functions have the additional argument <code>na.rm = TRUE</code> which allows you to not use NA values when calculating things like means, maxes, etc. Super handy!</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">filter</span>(inventory, INGREDIENT <span class="sc">!=</span> <span class="st">&#39;TOTAL&#39;</span>)</span></code></pre></div>
+<pre><code>## Error in as.ts(x): object &#39;inventory&#39; not found</code></pre>
+<p>Let’s try <code>summary</code> again and see if we can get some better results, no more NAs or outrageous numbers</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">summary</span>(inventory)</span></code></pre></div>
+<pre><code>## Error in summary(inventory): object &#39;inventory&#39; not found</code></pre>
+<p>Much better. Okay, let’s see what we’ve been asked to do</p>
+</div>
+<div id="place-that-order" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Place that order!</h1>
+<p>Oh right! We need to use the data that we’ve received to determine what items we need to order! If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.</p>
+<p>Do we have any ingredientst that fit that criteria?</p>
+<div id="what-to-order" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> What to order?</h3>
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="lessthanorderthreshold-tab" data-toggle="tab" href="#lessthanorderthreshold" role="tab" aria-controls="lessthanorderthreshold" aria-selected="true">Less than Order Threshold</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint-tab" data-toggle="tab" href="#showhint" role="tab" aria-controls="showhint" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode-tab" data-toggle="tab" href="#showcode" role="tab" aria-controls="showcode" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="lessthanorderthreshold" class="tab-pane fade active in" role="tabpanel" aria-labelledby="lessthanorderthreshold-tab">
+<h4>
+Filter the inventory dataset to the rows that meet the condition where the number of units in stock is less than the order threshold.
+</h4>
+<p><br></p>
+</div>
+<div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
+<pre class="sourceCode r">
+filter(inventory, PLACE A CONDITION HERE) 
+</pre>
+</div>
+<div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
+<pre class="sourceCode r">
+filter(inventory, NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">filter</span>(inventory, NUMBER_OF_UNITS_IN_STOCK <span class="sc">&lt;</span> ORDER_THRESHOLD)</span></code></pre></div>
+<pre><code>## Error in as.ts(x): object &#39;inventory&#39; not found</code></pre>
+<p>That makes sense, we’ve been getting lots of orders for our Gluten-free Applesauce and Walnut muffins and also for our Tripple-Chocolate Brownies. We’ll make a note that we need to make an urgent order for these supplies so we don’t run out!</p>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
