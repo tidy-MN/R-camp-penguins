@@ -435,9 +435,10 @@ filtered out some of the tree records because they didn’t intersect with
 the boundary of the City of San Francisco. The number of rows was
 reduced from 190155 to 190025. Since we are interested in these trees
 only, let’s save this new spatial data set. The second argument in the
-st_write funtion is the path location. You can change this to any folder
-path in your computer. For now, I am just saving it to the default
-location, which is the document folder.</p>
+st_write function is the path location. You can change this to any
+folder path in your computer. For now, I am just saving it to the
+default location, which for me is the location of this RMarkdown
+file.</p>
 <p><br></p>
 <pre class="r"><code>st_write(trees_in_san_fran, &quot;trees_in_san_fran.shp&quot;, delete_layer = TRUE) # we include delete_layer = TRUE to allow the function to save over older versions. You may want that.</code></pre>
 <pre><code>## Deleting layer `trees_in_san_fran&#39; using driver `ESRI Shapefile&#39;
