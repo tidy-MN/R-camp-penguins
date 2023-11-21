@@ -481,7 +481,11 @@ coords &lt;- c(leech_lake_center_long, leech_lake_center_lat)
 
 leech_lake_mn &lt;- st_sfc(st_point(coords))
 
-leech_lake_mn &lt;- st_as_sf(leech_lake_mn, crs = 9822)
+leech_lake_mn &lt;- st_as_sf(leech_lake_mn, crs = 4326)
+
+leech_lake_mn &lt;- st_transform(leech_lake_mn, crs = 9822)
+
+trees_in_san_fran &lt;- trees_in_san_fran[1:10,]
 
 trees_in_san_fran &lt;- st_transform(trees_in_san_fran, crs = 9822)
 
@@ -493,7 +497,7 @@ loon in Leech Lake Minnesota by using the <em>min()</em> function which
 will find the minimum value in a column. We will run <em>min()</em> on
 the distance_to_leech_km dataframe.</p>
 <pre class="r"><code>trees_in_san_fran$distance_to_leech_km %&gt;% min() %&gt;% as.numeric()</code></pre>
-<pre><code>## [1] 9481.051</code></pre>
+<pre><code>## [1] 2509.704</code></pre>
 </div>
 </div>
 
