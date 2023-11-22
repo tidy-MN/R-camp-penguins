@@ -104,7 +104,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Forks in the road: if_else and case_when
   
-- [Notes and code examples](day2.html#forks-in-the-road) 
+- [Notes and code examples](day2.html#forks-in-the-road-if_else-and-case_when) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-2-Forks-in-the-road.html)
 
 

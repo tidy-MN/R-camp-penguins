@@ -283,7 +283,7 @@ if_else(country %in% c("United States America", "Canada", "Mexico"),
 ```
 
 
-### Cocoa powder shortage
+### Cocoa powder shortage {-}
 
 ```{r, eval=F}
 if_else(favorite_goody %in% c("brownies", "chocolate croissant"),
