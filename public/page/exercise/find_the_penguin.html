@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Exercise: Filtering and case_when - Learn R</title>
-  <meta property="og:title" content="Exercise: Filtering and case_when" />
-  <meta name="twitter:title" content="Exercise: Filtering and case_when" />
+  <title>Exercise: Identify penguins using `filter()` and `case_when()` - Learn R</title>
+  <meta property="og:title" content="Exercise: Identify penguins using `filter()` and `case_when()`" />
+  <meta name="twitter:title" content="Exercise: Identify penguins using `filter()` and `case_when()`" />
   <meta name="description" content="Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.">
   <meta property="og:description" content="Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.">
   <meta name="twitter:description" content="Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.">
@@ -49,7 +49,7 @@
         "position": 3,
         "item": {
           "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/find_the_penguin.html",
-          "name": "Exercise filtering and case when"
+          "name": "Exercise identify penguins using \u0060filter()\u0060 and \u0060case when()\u0060"
         }
     }]
 }
@@ -60,10 +60,10 @@
   "author": {
     "name" : "Abigail Stamm"
   },
-  "headline": "Exercise: Filtering and case_when",
+  "headline": "Exercise: Identify penguins using \u0060filter()\u0060 and \u0060case_when()\u0060",
   "description" : "Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.",
   "inLanguage" : "en",
-  "wordCount":  182 ,
+  "wordCount":  260 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -82,13 +82,13 @@
 }
 </script>
 
-<meta property="og:title" content="Exercise: Filtering and case_when" />
+<meta property="og:title" content="Exercise: Identify penguins using `filter()` and `case_when()`" />
 <meta property="og:description" content="Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
-  <meta name="twitter:title" content="Exercise: Filtering and case_when" />
+  <meta name="twitter:title" content="Exercise: Identify penguins using `filter()` and `case_when()`" />
   <meta name="twitter:description" content="Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
@@ -263,7 +263,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
               
-                <h1>Exercise: Filtering and case_when</h1>
+                <h1>Exercise: Identify penguins using `filter()` and `case_when()`</h1>
               
               
                 <hr class="small">
@@ -288,24 +288,75 @@
 
 <div id="exercise-1-filtering-data" class="section level2">
 <h2>Exercise 1: filtering data</h2>
-<p>The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.</p>
-<p>Using the <code>palmerpenguins</code> dataset, isolate a penguin who meets one of the following sets of criteria. What is its study number?</p>
+<p>The goal of this exercise is to filter a dataset using repeated
+filter commands until you only have one row of data left.</p>
+<p>Using the <code>penguins</code> dataset in the
+<code>palmerpenguins</code> package, isolate a penguin who meets one of
+the following sets of criteria. What is its study number?</p>
 <ol style="list-style-type: decimal">
-<li>I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.</li>
-<li>I am a male Chinstrap penguin weighing over 4kg. My culmen is over 50mm long, but my flippers are less than 200mm long.</li>
-<li>I am a female Gentoo penguin weighing over 5kg, but my culmen is shorter at under 45mm.</li>
+<li>I am a female Adelie penguin hatched on November 12th on Biscoe
+Island. I was part of the latest study.</li>
+<li>I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm
+long, but my flippers are less than 20cm long.</li>
+<li>I am a female Gentoo penguin weighing over 5kg, but my bill is
+shorter at under 4.5cm long.</li>
 </ol>
 <p>For a greater challenge, try to isolate these penguins.</p>
 <ol style="list-style-type: decimal">
 <li>I have the lowest weight of the male penguins.</li>
 <li>I am the heaviest female Adelie penguin.</li>
-<li>I have the longest flippers of the Adelie penguins on Dream Island.</li>
+<li>I have the longest flippers of the Adelie penguins on Dream
+Island.</li>
 </ol>
+<details>
+<summary>
+Code hint
+</summary>
+<p>Example: <code>filter(data, x &lt; 0)</code><br />
+Remember to account for <code>NA</code> values.</p>
+<details>
+<summary>
+Advanced code hint
+</summary>
+<p>Example: <code>filter(body_mass_g &gt; 4000)</code></p>
+<details>
+<summary>
+Precise code hint
+</summary>
+<p>Example:
+<code>filter(penguins, body_mass_g == min(body_mass_g, na.rm = TRUE))</code></p>
+</details>
+</details>
+</details>
 </div>
 <div id="exercise-2-using-case_when" class="section level2">
 <h2>Exercise 2: using case_when</h2>
-<p>Select the same penguin that you selected above. Create a new variable using case_when that uses the criteria provided to identify your selected penguin and and only your selected penguin in your dataset.</p>
+<p>Select the same penguin that you selected above. Create a new
+variable using case_when that uses the criteria provided to identify
+your selected penguin and and only your selected penguin in your
+dataset.</p>
+<details>
+<summary>
+Code hint
+</summary>
+<p>Example: <code>case_when(x == y ~ TRUE, .default = FALSE)</code></p>
+<details>
+<summary>
+Advanced code hint
+</summary>
+<p>Example:
+<code>case_when(body_mass_g &gt; 4000 ~ TRUE, .default = FALSE)</code></p>
+<details>
+<summary>
+Precise code hint
+</summary>
+<p>Example:
+<code>mutate(penguins, subject = case_when(body_mass_g &gt; 4000 &amp; bill_length_mm &gt; 50 ~ TRUE, .default = FALSE))</code></p>
+</details>
+</details>
+</details>
 </div>
+
 
 
         

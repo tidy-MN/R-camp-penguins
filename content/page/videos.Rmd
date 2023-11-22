@@ -88,7 +88,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [Coming soon...](page/exercise/day1/exercises.html)
+- [Taking inventory](page/exercise/day1/inventory_duty.html)
 
 </div>
 
@@ -102,15 +102,15 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Forks in the road: A case_when 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Forks in the road: if_else and case_when
   
-- [Notes and code examples](day2.html#forks) 
-- Slides
+- [Notes and code examples](day2.html#forks-in-the-road) 
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-2-Forks-in-the-road.html)
 
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.3 - </span> Simmer it down: Summarize the data  
   
-- [Notes and code examples](day2.html#summarize) 
+- [Notes and code examples](day2.html#boil-it-down-summarize-the-data) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-3-Boil-it-down.html#1)
 
 
