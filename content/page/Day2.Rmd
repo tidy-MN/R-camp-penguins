@@ -215,6 +215,7 @@ crew_df <- mutate(crew_df, total_trip_meals = days_on_the_ship * meals_per_day)
 
 
 ### Sidebar: Counting TRUE's and FALSE's {-}
+
 ```{r}
 # This new column wouldn't be too helpful
 crew_df <- mutate(crew_df, no_egg_allergy = egg_allergy == FALSE)
@@ -292,7 +293,7 @@ if_else(favorite_goody %in% c("brownies", "chocolate croissant"),
 ```
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Boil it down: Summarize the data
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Simmer it down: Summarize the data
 
 Time to simmer things down. Let's use `summarize()` to find a few summary statistics for our data.
 
@@ -313,7 +314,7 @@ df %>% count(country)
 > `summarize()`
 
 ```{r, eval=F}
-# How many canadiens?
+# How many Canadiens?
 summarize(df, canadiens = sum(country == "Canada"))
 
 # Mean days on board ship?
@@ -333,7 +334,7 @@ summarize(df, total_meals = sum(total_meals))
 > `group_by()`
 
 ```{r, eval=F}
-# Crew count for each countries
+# Crew count for each country
 df %>% group_by(country) summarize(n_crew = n())
 
 # Total meals per goody type
