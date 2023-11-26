@@ -122,11 +122,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 </div>
 
+
+
 <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">  
+
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [Date mischief and data joins](page/exercise/day3/03-1-date-mischief-and-data-joins.html)
+- [ggplot exercises](page/exercise/day3/3-1-ggplot_exercises.html)
 
 </div> 
 
@@ -134,13 +137,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [ggplot exercises](page/exercise/day4/4-1-ggplot_exercises.html)
+- [Date mischief and data joins](page/exercise/day4/04-1-date-mischief-and-data-joins.html)
+
 
 </div> 
 
 <div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">  
 
-### Kristie slides?
+### Kristie slides
 
 - 5.1: [Spatial awareness and GIS](page/exercise/day5/intro_to_gis.html)
 - 5.2: [sf: Simple features package](page/exercise/day5/sf.html)
