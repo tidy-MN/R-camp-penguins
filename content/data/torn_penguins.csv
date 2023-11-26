@@ -1,0 +1,4 @@
+species,island,bill_length_mm,bill_depth_mm,flipper_length_mm,body_mass_g,sex,year
+missing,missing,42.6,13.7,213,4950,female,2008
+missing,missing,50.4,15.7,222,5750,male,2009
+missing,missing,46.7,15.3,219,5200,male,2007
