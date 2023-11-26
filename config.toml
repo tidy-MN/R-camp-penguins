@@ -55,56 +55,62 @@ uglyURLs = true
 
 [[menu.main]]
     parent = "Training"
+    name = "Home"
+    url = "index.html"
+    weight = 1
+
+[[menu.main]]
+    parent = "Training"
     name = "Agenda"
     url = "page/agenda.html"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     parent = "Training"
     name = "Camp Primer"
     url = "page/r_camp_primer.html"
-    weight = 1  
+    weight = 2  
 
 [[menu.main]]
     parent = "Training"
     name = "Day 1"
     url = "page/day1.html"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     parent = "Training"
     name = "Day 2"
     url = "page/day2.html"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     parent = "Training"
     name = "Day 3"
     url = "page/day3.html"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     parent = "Training"
     name = "Day 4"
     url = "page/day4.html"
-    weight = 2  
+    weight = 3
     
 [[menu.main]]
     parent = "Training"
     name = "Day 5"
     url = "page/day5.html"
-    weight = 2 
+    weight = 3 
     
 [[menu.main]]
     parent = "Training"
     name = "Day 6"
     url = "page/day6.html"
-    weight = 2   
+    weight = 3  
 
 [[menu.main]]
     name = "Install R"
     url = "page/install.html"
-    weight = 2
+    weight = 3
 
 
 [[menu.main]]

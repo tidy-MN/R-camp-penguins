@@ -144,9 +144,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Back to the drawing board…let’s start with labels! We want to add a title and make the axis labels be capitalized vs lower-case. Also someone complained about the background color and asked us to make it look “cleaner”.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Island&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Island&quot;</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/exercise/day4/4-1-ggplot_exercises_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Okay - whew! We added a title, a nice x-axis and y-axis label, changed the theme to <code>theme_bw</code> which we think looks pretty clean so hopefully they do too.</p>
@@ -154,18 +154,18 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&#39;qual&#39;</span>, <span class="at">palette =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Island&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Island&quot;</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/exercise/day4/4-1-ggplot_exercises_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Annnnd of course one the researchers had a last minute request. They didn’t like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">preserve =</span> <span class="st">&#39;single&#39;</span>)) <span class="sc">+</span></span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&#39;qual&#39;</span>, <span class="at">palette =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Island&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of penguin species by island&quot;</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Island&quot;</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/exercise/day4/4-1-ggplot_exercises_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
@@ -176,9 +176,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>                     <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>                     <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span> <span class="co"># need to have position = &#39;identity&#39; to have the alpha work!</span></span>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&#39;qual&#39;</span>, <span class="at">palette =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Bill Length (mm)&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of bill length (mm) by species&quot;</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of bill length (mm) by species&quot;</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Bill Length (mm)&quot;</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite values (stat_bin).</code></pre>
@@ -205,13 +205,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
 <span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>             <span class="at">shape =</span> species))<span class="sc">+</span></span>
 <span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">type =</span> <span class="st">&#39;qual&#39;</span>, <span class="at">palette =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Body Mass (g)&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Flipper Length (mm)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship of body mass and flipper length by species&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship of body mass and flipper length by species&quot;</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Body Mass (g)&quot;</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Flipper Length (mm)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
 <p><img src="/R-camp-penguins/page/exercise/day4/4-1-ggplot_exercises_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<p>Fascinating…Gentro is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same amoung the different penguin species. You can add a trend-line to the graph to see that easier or see if the human eye is being tricked by very fun looking dots.</p>
+<p>Fascinating… Gentoo is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same amoung the different penguin species. You can add a trend-line to the graph to see that easier or see if the human eye is being tricked by very fun looking dots.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
 <span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species,</span>
 <span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>             <span class="at">shape =</span> species))<span class="sc">+</span></span>

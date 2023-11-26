@@ -62,9 +62,9 @@ Back to the drawing board...let's start with labels! We want to add a title and 
 ```{r}
 ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar() +
-  xlab("Island") + 
-  ylab("Number of Penguins observed") +
-  labs(title = "Distribution of penguin species by island") +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of Penguins observed") +
   theme_bw()
 ```
 
@@ -76,9 +76,9 @@ Now we just need to tackle color...hmmm, we know it's a bar-chart which means th
 ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar() +
   scale_fill_brewer(type = 'qual', palette = 3) +
-  xlab("Island") + 
-  ylab("Number of Penguins observed") +
-  labs(title = "Distribution of penguin species by island") +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of Penguins observed") +
   theme_bw()
 ```
 
@@ -88,9 +88,9 @@ Annnnd of course one the researchers had a last minute request. They didn't like
 ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar(position = position_dodge2(preserve = 'single')) +
   scale_fill_brewer(type = 'qual', palette = 3) +
-  xlab("Island") + 
-  ylab("Number of Penguins observed") +
-  labs(title = "Distribution of penguin species by island") +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of Penguins observed") +
   theme_bw()
 ```
 
@@ -102,9 +102,9 @@ ggplot(data = penguins, aes(x = bill_length_mm))+
                      alpha = 0.5, 
                      position = 'identity') + # need to have position = 'identity' to have the alpha work!
   scale_fill_brewer(type = 'qual', palette = 3) +
-  xlab("Bill Length (mm)") + 
-  ylab("Number of Penguins observed") +
-  labs(title = "Distribution of bill length (mm) by species") +
+  labs(title = "Distribution of bill length (mm) by species",
+       x = "Bill Length (mm)",
+       y = "Number of Penguins observed") +
   theme_bw()
 ```
 
@@ -129,13 +129,13 @@ ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
              shape = species))+
   scale_color_brewer(type = 'qual', palette = 3) +
-  xlab("Body Mass (g)") + 
-  ylab("Flipper Length (mm)") +
-  labs(title = "Relationship of body mass and flipper length by species") +
+  labs(title = "Relationship of body mass and flipper length by species",
+       x = "Body Mass (g)",
+       y = "Flipper Length (mm)") +
   theme_bw()
 ```
 
-Fascinating...Gentro is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same amoung the different penguin species. You can add a trend-line to the graph to see that easier or see if the human eye is being tricked by very fun looking dots.
+Fascinating... Gentoo is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same amoung the different penguin species. You can add a trend-line to the graph to see that easier or see if the human eye is being tricked by very fun looking dots.
 
 ```{r}
 ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
