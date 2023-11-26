@@ -89,23 +89,7 @@ uglyURLs = true
     url = "page/day3.html"
     weight = 3
 
-[[menu.main]]
-    parent = "Training"
-    name = "Day 4"
-    url = "page/day4.html"
-    weight = 3
-    
-[[menu.main]]
-    parent = "Training"
-    name = "Day 5"
-    url = "page/day5.html"
-    weight = 3 
-    
-[[menu.main]]
-    parent = "Training"
-    name = "Day 6"
-    url = "page/day6.html"
-    weight = 3  
+
 
 [[menu.main]]
     name = "Install R"
