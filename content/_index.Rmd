@@ -126,6 +126,10 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">  
 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">3.1 - </span> ggplots: A grammar of graphics
+  
+- Notes and code examples
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day3/03-1-Plots-graphics-grammar.html#1)
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
