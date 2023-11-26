@@ -88,6 +88,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - [Taking inventory](page/exercise/day1/inventory_duty.html)
+- [Auditor in training](page/exercise/day1/inventory_duty_expanded.html)
 
 
 </div>
