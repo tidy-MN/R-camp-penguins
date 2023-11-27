@@ -262,10 +262,12 @@ if_else(path_is_scary,
 
 ### Monster bakers {-}
 
-![](../images/monsters/monster_data.png){style="width: 85%;"}
+![](../images/monsters/monster_data.png){style="width: 60%; margin-left: 0;"}
 
 
 ### Hat check {-}
+
+If the monster is wearing a hat (the `hat` column is `TRUE`), then they are definitely a baker. Otherwise they are not a baker.
 
 **The if_else() statement**
 ```{r, eval=F}

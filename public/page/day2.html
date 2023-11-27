@@ -63,7 +63,7 @@
   "headline": "Day 2",
   "description" : "1 Data wrangling 2 Forks in the road: if_else \u002b case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
   "inLanguage" : "en",
-  "wordCount":  1452 ,
+  "wordCount":  1476 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -686,10 +686,11 @@ blockquote code {background: #f8fdff;}
 </div>
 <div id="monster-bakers" class="section level3 unnumbered">
 <h3>Monster bakers</h3>
-<p><img src="../images/monsters/monster_data.png" style="width: 85%;" /></p>
+<p><img src="../images/monsters/monster_data.png" style="width: 60%; margin-left: 0;" /></p>
 </div>
 <div id="hat-check" class="section level3 unnumbered">
 <h3>Hat check</h3>
+<p>If the monster is wearing a hat (the <code>hat</code> column is <code>TRUE</code>), then they are definitely a baker. Otherwise they are not a baker.</p>
 <p><strong>The if_else() statement</strong></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">if_else</span>(hat, <span class="st">&quot;Baker&quot;</span>, <span class="st">&quot;Not a baker&quot;</span>)</span></code></pre></div>
 <p><strong>Assign the result to a new column named “job”</strong></p>
