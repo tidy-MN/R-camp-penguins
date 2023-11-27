@@ -155,6 +155,10 @@ code_end',
 
 show_code = 'code_start
 
+audit_df[18, "CATEGORY"] <- "ADDITITIVES"
+
+# OR
+
 audit_df[18, 2] <- "ADDITITIVES"
   
 code_end')
@@ -185,7 +189,8 @@ content <- c(Exercise = '<h4> Filter the audit dataset to show whether there are
 <br>',
 
 show_hint = 'code_start
-filter(audit_df, SOMETHING_IS >= 10) # Try doing some math in the filter function!
+# Try doing some math in the filter function
+filter(audit_df, SOMETHING_IS >= 10) 
 code_end',
 
 show_code = 'code_start
