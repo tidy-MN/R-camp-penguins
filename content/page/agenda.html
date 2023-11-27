@@ -2,7 +2,7 @@
 title: Agenda
 subtitle: ''
 date: '2018-12-08'
-summary: 'R Camp || Day 1 Morning: 9:00am-12:00 || Begin Jedi training. || 1. Install and update R || 2. Project launch. || Create an R script and...'
+summary: 'R Camp || Day 1...'
 showDate: false
 showAuthor: false
 slug: 'agenda'
@@ -17,7 +17,7 @@ enableEmoji: true
 
 
 
-<style type="text/css">
+<style>
 
 .data {
      background-color: #d2f0c6;
@@ -51,63 +51,67 @@ enableEmoji: true
 <div class="col-md-6">
 <p><strong>Day 1</strong></p>
 <blockquote>
-<p>Blast off!<br />
- </p>
+<p>Welcome, create objects,<br />
+vectors, tidy data, filter</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li>Introductions</li>
-<li>Power on your droid
-<ul>
-<li>Install and update R</li>
-</ul></li>
+<li>Welcome to open source</li>
+<li>Tour <strong>RStudio</strong></li>
 <li>Start a new R project
 <ul>
 <li>Create an R script</li>
 </ul></li>
-<li>Tour <strong>RStudio</strong></li>
 <li>Create, copy, change, and remove data</li>
-<li>Make a data tables / <strong>data frames</strong><br />
+<li>Make a tidy data table (<strong>data frames</strong>)<br />
 </li>
-<li>Add new R packages<br />
-</li>
+<li>Add new R packages
+<ul>
+<li>The <code>tidyverse</code></li>
+</ul></li>
 <li>Read data
 <ul>
-<li><code>readr</code> for text files</li>
-<li><code>readxl</code> for Excel files</li>
+<li><code>read_csv</code> for text files</li>
 </ul></li>
-<li>Get visual with <code>ggplot2</code>
-<ul>
-<li>Plot the data!</li>
-<li>Check for outliers</li>
-</ul></li>
-</ol>
-<p>Packages: <code>readr</code>, <code>readxl</code>, <code>ggplot2</code></p>
-</div>
-<div class="col-md-6">
-<p><strong>Day 2</strong> |</p>
-<blockquote>
-<p>Explore the data, answer data questions</p>
-</blockquote>
-<ol style="list-style-type: decimal">
+<li>Save files</li>
 <li>Explore data
 <ul>
 <li>Column names, rows, observations, value types</li>
 <li>Missing values</li>
 <li>Mean, max, min, quantile</li>
 </ul></li>
-<li>Your data toolbox: <code>dplyr</code>
+</ol>
+<p>Packages: <code>tidyverse</code></p>
+</div>
+<div class="col-md-6">
+<p><strong>Day 2</strong> |</p>
+<blockquote>
+<p><em>Penguins - Guess Who</em></p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Read Excel files: <code>readxl</code> and <code>read_excel( )</code></li>
+<li>Your data toolbox:
 <ul>
 <li>Arrange, sort, and <strong>filter</strong> data</li>
 <li>Comparing data: <code>&gt;</code>, <code>==</code>, <code>%in%</code></li>
 </ul></li>
-<li>Adding and calculating new columns
+<li>Adding and calculating new columns</li>
+<li>Calculate new columns based on <code>if</code> condition
 <ul>
-<li>Unit conversions</li>
+<li>If <code>age &gt; 10</code> then “Eligible for vaccine”</li>
 </ul></li>
-<li>Save files</li>
-<li>Make ggplot sandwiches</li>
+<li>Use the pipe <code>%&gt;%</code> to chain functions together for less typing<br />
+</li>
+<li>Summarize data
+<ul>
+<li>Summary functions: mean, median, max, min, quantile</li>
+</ul></li>
+<li><code>group_by</code>
+<ul>
+<li>Summarize by <strong>group</strong> or category</li>
+<li>By location: city, county, ZIP</li>
+</ul></li>
 </ol>
-<p>Packages: <code>dplyr</code></p>
+<p>Packages: <code>readxl</code></p>
 </div>
 </div>
 </div>
@@ -120,33 +124,12 @@ enableEmoji: true
 <p>Questions and Review</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li>Join tables
+<li>Get visual with <code>ggplot2</code>
 <ul>
-<li><code>left_join</code></li>
+<li>Plot the data!</li>
+<li>Check for outliers</li>
 </ul></li>
-<li>Summarize data
-<ul>
-<li>Summary functions: mean, median, max, min, quantile</li>
-</ul></li>
-<li>Summarize by <strong>group</strong> or category
-<ul>
-<li>By location: city, county, ZIP</li>
-</ul></li>
-<li>Exercise: Read data from Excel</li>
-</ol>
-<p>Packages: <code>dplyr</code></p>
-</div>
-<div class="col-md-6">
-<p><strong>Day 4</strong> | <em>1PM-4:00pm</em></p>
-<blockquote>
-<p><em>Star Wars - Guess Who</em></p>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Calculate new columns based on <code>if</code> condition
-<ul>
-<li>If <code>age &gt; 17</code> then “Eligible to vote”</li>
-</ul></li>
-<li>Plot like a Jedi!
+<li>Make ggplot sandwiches
 <ul>
 <li>Scatter plots and boxplots</li>
 <li>Add titles, colors, and labels</li>
@@ -154,8 +137,25 @@ enableEmoji: true
 <li>Themes</li>
 </ul></li>
 <li>Save charts to different formats</li>
-<li>Your turn - Practice what you’ve learned</li>
 </ol>
+<p>Packages: <code>ggplot2</code></p>
+</div>
+<div class="col-md-6">
+<p><strong>Day 4</strong></p>
+<ol style="list-style-type: decimal">
+<li>Join tables
+<ul>
+<li><code>left_join</code></li>
+</ul></li>
+<li>Working with Dates
+<ul>
+<li>Format conversion</li>
+<li>Date/time pieces: <code>year</code>, <code>day</code>, <code>hour</code></li>
+<li>Time zones</li>
+<li>Time series plots</li>
+</ul></li>
+</ol>
+<p>Packages: <code>lubridate</code></p>
 </div>
 </div>
 </div>
@@ -170,20 +170,12 @@ enableEmoji: true
 <ol style="list-style-type: decimal">
 <li>Intro to Maps
 <ul>
-<li>Coordinates</li>
+<li>Coordinates and coordinate reference systems</li>
+<li>Spatial functions</li>
 <li>Interactive maps</li>
 </ul></li>
-<li>Working with Dates
-<ul>
-<li>Time zones</li>
-<li>Time series plots</li>
-</ul></li>
-<li>Join GitHub
-<ul>
-<li>Share your data, code, and plots</li>
-</ul></li>
 </ol>
-<p>Packages: <code>sf</code>, <code>leaflet</code>, <code>lubridate</code></p>
+<p>Packages: <code>sf</code>, <code>leaflet</code></p>
 </div>
 <div class="col-md-6">
 <p><strong>Day 6</strong></p>
@@ -191,12 +183,13 @@ enableEmoji: true
 <p>Language learning: Reading code</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li>Use the pipe <code>%&gt;%</code> to chain functions together for less typing</li>
 <li>Connect to databases
 <ul>
 <li>ODBC</li>
 <li><code>keyring</code>: Keeping your passwords secret</li>
 </ul></li>
+<li>R markdown reports<br />
+</li>
 <li>Choose your own adventure!
 <ul>
 <li>Clean the data</li>
@@ -212,6 +205,6 @@ enableEmoji: true
 <div id="concatulations" class="section level3">
 <h3>🐈🐈 Concatulations!! 🐱🐱</h3>
 <p>Celebrations, accolades and certificates</p>
-<p></br></p>
+<p><br></p>
 </div>
 </div>
