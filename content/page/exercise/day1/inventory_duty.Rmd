@@ -20,7 +20,6 @@ h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
 
----
 
 ```{r setup, include=FALSE}
 library(tidyverse)
