@@ -36,11 +36,9 @@ enableEmoji: true
 </style>
 
 
-<div style="margin-top: -30px;">
+<div style="margin-top: -25px;">
 
-## R Camp
-
-![](../images/Rstudio_ex.png){style="max-width: 46%; margin-top: 10px; margin-left: 0; margin-right: 32px; margin-bottom: 20px; float: left;"}
+![](../images/Rstudio_ex.png){style="max-width: 38%; margin-top: 10px; margin-left: 0; margin-right: 32px; margin-bottom: 20px; float: left;"}
 <div style="clear: both;"> </div>
 
 
@@ -59,15 +57,14 @@ library(icons, knitr)
 
 **Day 1** 
 
-> Welcome, create objects,   
-> vectors, tidy data, filter
+> Welcome, create objects, vectors, tidy data, filter
 
 1. Welcome to open source
 1. Tour __RStudio__
 1. Start a new R project
     - Create an R script
-1. Create, copy, change, and remove data
-1. Make a tidy data table (__data frames__)  
+1. Create, update and remove data
+1. Make a tidy data tables
 1. Add new R packages 
     - The `tidyverse`
 1. Read data
@@ -77,6 +74,7 @@ library(icons, knitr)
     - Column names, rows, observations, value types
     - Missing values
     - Mean, max, min, quantile 
+1. Filter data     
 
 Packages: `tidyverse`
 
@@ -85,7 +83,7 @@ Packages: `tidyverse`
 
 **Day 2** |  
 
-> _Penguins - Guess Who_   
+> Excel files, arrange, select, group, summarize and add columns    
 
 1. Read Excel files: `readxl` and `read_excel( )` 
 1. Your data toolbox: 
@@ -109,12 +107,13 @@ Packages: `readxl`
 
 # Week 2
 
+
 <div class = "row">
 <div class = "col-md-6">
 
 **Day 3** 
 
-> Questions and Review
+> Plots, grammar of graphics, geoms, labels, colors, facets
 
 1. Get visual with `ggplot2`
     - Plot the data!
@@ -122,6 +121,7 @@ Packages: `readxl`
 1. Make ggplot sandwiches
     - Scatter plots and boxplots 
     - Add titles, colors, and labels 
+    - Facets
     - Reference lines 
     - Themes
 1. Save charts to different formats 
@@ -134,11 +134,13 @@ Packages: `ggplot2`
 
 **Day 4**   
 
+> Table joins, date formats, date parts, time series
+
 1. Join tables 
     - `left_join`
 1. Working with Dates
     - Format conversion
-    - Date/time pieces: `year`, `day`, `hour`
+    - Date/time parts: `year`, `day`, `hour`
     - Time zones
     - Time series plots    
 
@@ -155,7 +157,7 @@ Packages: `lubridate`
 
 **Day 5**   
 
-> Questions and Review
+> All things maps, spatial functions, interactive
 
 1. Intro to Maps
     - Coordinates and coordinate reference systems
@@ -170,7 +172,7 @@ Packages: `sf`, `leaflet`
 
 **Day 6**   
 
-> Language learning: Reading code 
+> Review, reading code, databases, markdown
 
 
 1. Connect to databases
@@ -178,10 +180,6 @@ Packages: `sf`, `leaflet`
     - `keyring`: Keeping your passwords secret
 1. R markdown reports    
 1. Choose your own adventure!
-    - Clean the data 
-    - Create summary tables
-    - Compare years and sites
-    - Charts & maps 
 
 Packages: `DBI`, `RODBC`, `keyring`
 

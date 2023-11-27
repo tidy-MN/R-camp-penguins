@@ -106,95 +106,30 @@ hr {background:  cornflowerblue;}
 </div>
 <div id="getting-to-know-the-data" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Getting to know the data</h1>
-<p>Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of <code>NUMBER_OF_UNITS_IN_STOCK</code> for planning purposes.</p>
-<p>Feel free to use any and all of the functions you know but also feel free to look at the hint for inspiration!</p>
-<div id="getting-to-know-the-data-1" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Getting to know the data</h3>
-<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
-<li class="nav-item active">
-<a class="nav-link" id="functionsforfun-tab" data-toggle="tab" href="#functionsforfun" role="tab" aria-controls="functionsforfun" aria-selected="true">Functions for fun</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="showhint-tab" data-toggle="tab" href="#showhint" role="tab" aria-controls="showhint" aria-selected="false">Show hint</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="showcode-tab" data-toggle="tab" href="#showcode" role="tab" aria-controls="showcode" aria-selected="false">Show code</a>
-</li>
-</ul>
-<div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="functionsforfun" class="tab-pane fade active in" role="tabpanel" aria-labelledby="functionsforfun-tab">
-<h4>
-When you first get a dataset it is always a good idea to start with some exploratory analysis, below are some possible functions for you to choose from that will get you started:
-</h4>
-<ul>
-<li><code>glimpse</code></li>
-<li><code>summmary</code></li>
-<li><code>head</code></li>
-<li><code>tail</code></li>
-<li><code>class</code></li>
-</ul>
-<p><br></p>
-</div>
-<div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
-<pre class="sourceCode r">
-glimpse() #we like glimpse becaue it gives us classes for each column and an idea of what to expect
-summary() #summary is great because it shows us NAs and lots of summary stats really quick
-</pre>
-</div>
-<div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
-<pre class="sourceCode r">
-
-glimpse(inventory)
-summary(inventory)
-  
-</pre>
-</div>
-</div>
+<p>Now that we have the data, what should be our first step to better understand the information in the file, what data types the columns are, and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of <code>NUMBER_OF_UNITS_IN_STOCK</code> for planning purposes.</p>
+<p>Feel free to use any and all of the functions you know, but also feel free to look at the hint for inspiration!</p>
+<div id="get-to-know-the-data" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Get to know the data</h3>
+<pre><code>## Error in add_tabs(tabs, content, 1): unused argument (1)</code></pre>
+<pre><code>## Error in paste0(tab_html, collapse = &quot;\n&quot;): object &#39;tab_html&#39; not found</code></pre>
 </div>
 <p><br></p>
 <p>WHOA. We have 378 units of something in stock?! What are we making, cupcakes for a whole school?! A cake big enough to cover a bus?! Time to go investigate…</p>
 </div>
 <div id="why-do-we-do-this-to-ourselves" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Why do we do this to ourselves?</h1>
-<p>How do we go about trying to figure out what’s going on with that wacky number? We need to be able to narrow down just to the row that meets the condition of <code>NUMBER_OF_UNITS_IN_STOCK</code> is 378. What tool do we have that will let us do that?</p>
+<p>How do we go about trying to figure out what’s going on with that wacky number? We need to be able to narrow down just to the row that meets the condition where <code>NUMBER_OF_UNITS_IN_STOCK</code> is equal to 378. What tool do we have that will let us do that?</p>
 <div id="investigation-underway" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Investigation underway</h3>
-<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
-<li class="nav-item active">
-<a class="nav-link" id="findtheodd-ball-tab" data-toggle="tab" href="#findtheodd-ball" role="tab" aria-controls="findtheodd-ball" aria-selected="true">Find the odd-ball</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="showhint-tab" data-toggle="tab" href="#showhint" role="tab" aria-controls="showhint" aria-selected="false">Show hint</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="showcode-tab" data-toggle="tab" href="#showcode" role="tab" aria-controls="showcode" aria-selected="false">Show code</a>
-</li>
-</ul>
-<div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="findtheodd-ball" class="tab-pane fade active in" role="tabpanel" aria-labelledby="findtheodd-ball-tab">
-<h4>
-Filter the inventory dataset to just the row that meets the condition of <code>NUMBER_OF_UNITS_IN_STOCK</code> is equal to 378
-</h4>
-<p><br></p>
-</div>
-<div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
-<pre class="sourceCode r">
-filter(inventory, PLACE A CONDITION HERE) #remember to use the double equal sign!
-</pre>
-</div>
-<div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
-<pre class="sourceCode r">
-filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
-</pre>
-</div>
-</div>
+<pre><code>## Error in add_tabs(tabs, content, 2): unused argument (2)</code></pre>
+<pre><code>## Error in paste0(tab_html, collapse = &quot;\n&quot;): object &#39;tab_html&#39; not found</code></pre>
 </div>
 <p><br></p>
 <p>Oh. We have a total row - that’s annoying. It’s also adding NAs to other columns which might make some of our analysis hard in the future. So let’s get rid of it and look at our data <em>for real</em>.</p>
 <p>Though as a reminder, lots of functions have the additional argument <code>na.rm = TRUE</code> which allows you to not use NA values when calculating things like means, maxes, etc. Super handy!</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">filter</span>(inventory, INGREDIENT <span class="sc">!=</span> <span class="st">&#39;TOTAL&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">filter</span>(inventory, INGREDIENT <span class="sc">!=</span> <span class="st">&#39;TOTAL&#39;</span>)</span></code></pre></div>
 <p>Let’s try <code>summary</code> again and see if we can get some better results, no more NAs or outrageous numbers</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">summary</span>(inventory)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">summary</span>(inventory)</span></code></pre></div>
 <pre><code>##   INGREDIENT        PRICE_PER_UNIT    SIZE_UNITS       
 ##  Length:28          Min.   : 0.490   Length:28         
 ##  Class :character   1st Qu.: 1.890   Class :character  
@@ -217,44 +152,13 @@ filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
 <p>Do we have any ingredientst that fit that criteria?</p>
 <div id="what-to-order" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> What to order?</h3>
-<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
-<li class="nav-item active">
-<a class="nav-link" id="lessthanorderthreshold-tab" data-toggle="tab" href="#lessthanorderthreshold" role="tab" aria-controls="lessthanorderthreshold" aria-selected="true">Less than Order Threshold</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="showhint-tab" data-toggle="tab" href="#showhint" role="tab" aria-controls="showhint" aria-selected="false">Show hint</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="showcode-tab" data-toggle="tab" href="#showcode" role="tab" aria-controls="showcode" aria-selected="false">Show code</a>
-</li>
-</ul>
-<div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="lessthanorderthreshold" class="tab-pane fade active in" role="tabpanel" aria-labelledby="lessthanorderthreshold-tab">
-<h4>
-Filter the inventory dataset to the rows that meet the condition where the number of units in stock is less than the order threshold.
-</h4>
-<p><br></p>
-</div>
-<div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
-<pre class="sourceCode r">
-order_now <- filter(inventory, PLACE A CONDITION HERE) 
-order_now
-</pre>
-</div>
-<div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
-<pre class="sourceCode r">
-order_now <- filter(inventory, 
-                    NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
-order_now
-</pre>
-</div>
-</div>
+<pre><code>## Error in add_tabs(tabs, content, 32): unused argument (32)</code></pre>
+<pre><code>## Error in paste0(tab_html, collapse = &quot;\n&quot;): object &#39;tab_html&#39; not found</code></pre>
 </div>
 <p><br></p>
 <p>That makes sense, we’ve been getting lots of orders for our Gluten-free Applesauce and Walnut muffins and also for our Triple-Chocolate Brownies. We’ll make a note that we need to make an urgent order for these supplies so we don’t run out!</p>
 <p>The last thing that we need to do is export out the filtered data so we can send it to the lead-baking bot.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> order_now, <span class="at">file =</span> <span class="st">&quot;order_now.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Error in is.data.frame(x): object &#39;order_now&#39; not found</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> order_now, <span class="at">file =</span> <span class="st">&quot;order_now.csv&quot;</span>)</span></code></pre></div>
 <p>Now we have a file that we can send in an email listing out the ingredients that we need to order right away. As well as a series of scripted steps that we can use again and again and again…well you get the idea.</p>
 <p><strong>NICE WORK!</strong></p>
 <p><i class="fa fa-cookie-bite"></i>

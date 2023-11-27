@@ -56,20 +56,20 @@ inventory <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/inventory_
 
 # Getting to know the data
 
-Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
+Now that we have the data, what should be our first step to better understand the information in the file, what data types the columns are, and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
 
-Feel free to use any and all of the functions you know but also feel free to look at the hint for inspiration!
+Feel free to use any and all of the functions you know, but also feel free to look at the hint for inspiration!
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Getting to know the data {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Get to know the data {-}
 
 ```{r exer-tabs1, results='asis', echo=F}
 source("../../insert_tabs.R")
 
-tabs <- c("Functions for fun", "Show hint", "Show code")
+tabs <- c("Explore functions", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> When you first get a dataset it is always a good idea to start with some exploratory analysis, below are some possible functions for you to choose from that will get you started: </h4>
+content <- c(Exercise = '<h4> When we first get a dataset it is fun to sit down and get to know it better. Below are a few functions to choose from: </h4>
 
 - `glimpse`
 - `summmary`
@@ -80,8 +80,14 @@ content <- c(Exercise = '<h4> When you first get a dataset it is always a good i
 <br>',
 
 show_hint = 'code_start
-glimpse() #we like glimpse becaue it gives us classes for each column and an idea of what to expect
-summary() #summary is great because it shows us NAs and lots of summary stats really quick
+# glimpse gives us that data type for each column and 
+# an idea of what to expect
+glimpse() 
+
+# summary shows us missing values and 
+# summary stats for numeric columns
+summary() 
+
 code_end',
 
 show_code = 'code_start
@@ -91,7 +97,7 @@ summary(inventory)
   
 code_end')
 
-tab_html <- add_tabs(tabs, content)
+tab_html <- add_tabs(tabs, content, 1)
 
 cat(paste0(tab_html, collapse = "\n"))
 ```
@@ -103,14 +109,13 @@ WHOA. We have 378 units of something in stock?! What are we making, cupcakes for
 
 # Why do we do this to ourselves?
 
-How do we go about trying to figure out what's going on with that wacky number? We need to be able to narrow down just to the row that meets the condition of `NUMBER_OF_UNITS_IN_STOCK` is 378. What tool do we have that will let us do that?
+How do we go about trying to figure out what's going on with that wacky number? We need to be able to narrow down just to the row that meets the condition where `NUMBER_OF_UNITS_IN_STOCK` is equal to 378. What tool do we have that will let us do that?
 
 <div class="quiz">
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Investigation underway {-}
 
 ```{r exer-tabs2, results='asis', echo=F}
-source("../../insert_tabs.R")
 
 tabs <- c("Find the odd-ball", "Show hint", "Show code")
 
@@ -119,14 +124,19 @@ content <- c(Exercise = '<h4> Filter the inventory dataset to just the row that 
 <br>',
 
 show_hint = 'code_start
-filter(inventory, PLACE A CONDITION HERE) #remember to use the double equal sign!
+
+# Remember to use the double equal sign (==) for "is equal to"
+filter(inventory, PLACE A CONDITION HERE) 
+
 code_end',
 
 show_code = 'code_start
+
 filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
+
 code_end')
 
-tab_html <- add_tabs(tabs, content)
+tab_html <- add_tabs(tabs, content, 2)
 
 cat(paste0(tab_html, collapse = "\n"))
 ```
@@ -180,7 +190,7 @@ order_now <- filter(inventory,
 order_now
 code_end')
 
-tab_html <- add_tabs(tabs, content)
+tab_html <- add_tabs(tabs, content, 32)
 
 cat(paste0(tab_html, collapse = "\n"))
 ```
@@ -192,7 +202,7 @@ That makes sense, we've been getting lots of orders for our Gluten-free Applesau
 
 The last thing that we need to do is export out the filtered data so we can send it to the lead-baking bot. 
 
-```{r}
+```{r, eval=F}
 write_csv(x = order_now, file = "order_now.csv")
 ```
 

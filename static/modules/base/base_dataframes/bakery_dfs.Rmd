@@ -136,7 +136,8 @@ write_csv(bots, file = "bot_data.csv")
 
 Did you get the error `could not find function "write_csv"`?
 
-Jump back to the top of your script and run the line: `library(tidyverse)`
+- Jump back to the top of your script and run the line: `library(tidyverse)`
+- Try the `write_scv(...` line again
 
 </div>
 
