@@ -3,12 +3,12 @@ title: "Inventory Duty - Exercise 1"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: ../css/camp_style.css
+    css: ../../css/camp_style.css
     number_sections: true
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: true
+    toc: false
     toc_depth: 1
 ---
 

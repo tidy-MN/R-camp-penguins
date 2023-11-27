@@ -245,7 +245,7 @@ PM
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day2/02-2-forks-in-the-road.html</guid>
-      <description> </description>
+      <description>⚠️ Warning: Flashing lights from 0:21 to 0:32. Skip to 0:33 to avoid.</description>
     </item>
     
     <item>
@@ -259,12 +259,12 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
     </item>
     
     <item>
-      <title>Auditor-in-Training - Exercise 2</title>
+      <title>Auditor in Training - Exercise 2</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day1/inventory_duty_expanded.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day1/inventory_duty_expanded.html</guid>
-      <description>1 Before you start… 2 Auditor-in-training 3 Getting to know the data 4 Categories for all 5 Two new functions to save the day 6 Threshold day 7 Summary statistics by group 1 Before you start… Make sure you are still in your project that you created for the previous exercise and then make a new R script.</description>
+      <description>1 Before you start… Make sure you are still in your project that you created for the previous exercise and then make a new R script.</description>
     </item>
     
     <item>
@@ -373,7 +373,7 @@ In RStudio go to Help &amp;gt; Cheatsheets Data Transformation :: Helpful functi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day1/inventory_duty.html</guid>
-      <description>1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?</description>
+      <description>1 Before you start… Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course.</description>
     </item>
     
     <item>
