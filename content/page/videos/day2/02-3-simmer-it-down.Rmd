@@ -2,7 +2,7 @@
 title: "2.3 Simmer it Down"
 comments: false
 hidden: false
-tags: [videos, day1]
+tags: [videos, day2]
 output: 
   blogdown::html_page: 
     self_contained: false
