@@ -1,0 +1,72 @@
+id,submit_date,country,nut_allergy,egg_allergy,days_on_the_ship,meals_per_day,favorite_goody
+1,2023-11-22,Myanmar,FALSE,TRUE,22,2,cinnamon rolls
+2,2023-11-26,Nicaragua,TRUE,TRUE,18,4,chocolate croissant
+3,2023-11-18,Sweden,TRUE,TRUE,23,2,jelly donuts
+4,2023-11-24,Swaziland,TRUE,TRUE,14,4,chocolate croissant
+5,2023-11-24,El Salvador,TRUE,TRUE,28,3,chocolate croissant
+6,2023-11-21,Uzbekistan,TRUE,FALSE,19,3,chocolate croissant
+7,2023-11-24,Estonia,TRUE,TRUE,11,3,chocolate croissant
+8,2023-11-22,Zambia,TRUE,TRUE,10,2,short-bread
+9,2023-11-25,Nigeria,TRUE,TRUE,20,2,banana bread
+10,2023-11-24,Croatia,TRUE,TRUE,24,3,jelly donuts
+11,2023-11-19,Kuwait,TRUE,TRUE,19,4,jelly donuts
+12,2023-11-23,Burkina Faso,TRUE,TRUE,10,3,oatmeal cookies
+13,2023-11-19,Czech Rep.,FALSE,TRUE,11,3,cinnamon rolls
+14,2023-11-23,Sri Lanka,TRUE,TRUE,21,4,apple pie
+15,2023-11-21,Dem. Rep. Congo,TRUE,FALSE,20,2,banana bread
+16,2023-11-26,Switzerland,TRUE,TRUE,25,4,banana bread
+17,2023-11-26,Slovenia,TRUE,TRUE,17,4,apple pie
+18,2023-11-23,Taiwan,TRUE,FALSE,17,2,short-bread
+19,2023-11-25,El Salvador,TRUE,TRUE,15,2,chocolate croissant
+20,2023-11-20,Ireland,TRUE,TRUE,16,3,chocolate croissant
+21,2023-11-17,Uzbekistan,TRUE,TRUE,22,2,brownies
+22,2023-11-24,Bosnia and Herzegovina          ,TRUE,TRUE,21,3,brownies
+23,2023-11-20,Azerbaijan,TRUE,TRUE,21,3,cinnamon rolls
+24,2023-11-24,Sierra Leone,TRUE,TRUE,18,3,brownies
+25,2023-11-26,Kazakhstan,TRUE,TRUE,28,4,cinnamon rolls
+26,2023-11-24,Australia,TRUE,TRUE,22,3,chocolate croissant
+27,2023-11-25,Malaysia,TRUE,TRUE,15,3,brownies
+28,2023-11-17,Cote d'Ivoire,TRUE,TRUE,13,4,banana bread
+29,2023-11-26,Ghana,FALSE,TRUE,28,2,jelly donuts
+30,2023-11-26,Macedonia,TRUE,TRUE,10,3,cinnamon rolls
+31,2023-11-23,South Korea,TRUE,TRUE,18,4,baklava
+32,2023-11-19,Spain,TRUE,TRUE,27,4,chocolate croissant
+33,2023-11-21,Netherlands,TRUE,TRUE,18,4,banana bread
+34,2023-11-21,Slovakia,TRUE,FALSE,18,4,oatmeal cookies
+35,2023-11-18,Solomon Islands,TRUE,TRUE,26,3,brownies
+36,2023-11-21,Guinea-Bissau,TRUE,TRUE,28,3,brownies
+37,2023-11-26,Bangladesh,TRUE,TRUE,25,2,oatmeal cookies
+38,2023-11-23,Armenia,TRUE,FALSE,11,3,apple pie
+39,2023-11-18,Mozambique,TRUE,TRUE,19,2,apple pie
+40,2023-11-25,Rwanda,TRUE,TRUE,23,2,cinnamon rolls
+41,2023-11-24,Bosnia and Herzegovina          ,TRUE,TRUE,26,2,cinnamon rolls
+42,2023-11-23,Zimbabwe,TRUE,TRUE,25,3,jelly donuts
+43,2023-11-24,Myanmar,TRUE,TRUE,13,4,short-bread
+44,2023-11-26,Peru,TRUE,TRUE,27,2,cinnamon rolls
+45,2023-11-23,Uzbekistan,TRUE,TRUE,27,3,short-bread
+46,2023-11-18,Turkey,TRUE,TRUE,24,4,apple pie
+47,2023-11-24,Botswana,TRUE,TRUE,13,2,baklava
+48,2023-11-22,Sri Lanka,TRUE,TRUE,15,3,banana bread
+49,2023-11-21,Sri Lanka,TRUE,TRUE,12,2,cinnamon rolls
+50,2023-11-26,Japan,TRUE,TRUE,17,3,jelly donuts
+51,2023-11-26,Jamaica,TRUE,TRUE,28,4,chocolate croissant
+52,2023-11-23,Syria,TRUE,TRUE,16,2,apple pie
+53,2023-11-22,Chad,TRUE,TRUE,21,4,jelly donuts
+54,2023-11-25,Honduras,TRUE,TRUE,14,2,cinnamon rolls
+55,2023-11-19,China,FALSE,TRUE,19,3,short-bread
+56,2023-11-20,Niger,TRUE,FALSE,24,3,banana bread
+57,2023-11-18,Costa Rica,TRUE,TRUE,21,4,apple pie
+58,2023-11-21,Botswana,TRUE,TRUE,26,4,jelly donuts
+59,2023-11-22,Philippines,TRUE,TRUE,24,2,cinnamon rolls
+60,2023-11-24,Georgia,TRUE,TRUE,17,2,banana bread
+61,2023-11-25,Colombia,TRUE,TRUE,27,3,cinnamon rolls
+62,2023-11-17,Russia,TRUE,TRUE,13,4,short-bread
+63,2023-11-26,Mali,TRUE,TRUE,22,4,oatmeal cookies
+64,2023-11-20,Cuba,TRUE,TRUE,20,3,brownies
+65,2023-11-18,Swaziland,TRUE,TRUE,13,2,baklava
+66,2023-11-23,Burkina Faso,TRUE,TRUE,27,2,short-bread
+67,2023-11-19,Angola,TRUE,TRUE,23,4,chocolate croissant
+68,2023-11-19,Nicaragua,TRUE,TRUE,12,3,baklava
+69,2023-11-23,Eritrea,TRUE,TRUE,22,3,jelly donuts
+70,2023-11-18,Guinea-Bissau,TRUE,TRUE,19,4,brownies
+test,1900-01-01,test-country,NA,NA,1000,100,sugar

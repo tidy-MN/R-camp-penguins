@@ -82,7 +82,7 @@ blockquote code {background: #f8fdff;}
 
 ## Get the data {-}
 
-We can download the attached Excel file [HERE]()
+We can download the attached Excel file [HERE](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/data/crew_food_prefs.xlsx)
 
 After you've downloaded the file, move the file from your *Downloads/* folder to a *data/* folder in your project's main directory:
 
@@ -449,7 +449,7 @@ case_when(days_on_trip <= 7 ~ "Short trip",
 ### Region {-}
 
 ```{r, eval=F}
-crew_df <- read_excel("data/crew_food_prefs.xlsx", skip = 1)
+crew_df <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv")
   
 # The if_else statement  
 if_else(country %in% c("United States America", "Canada", "Mexico"),
@@ -478,6 +478,7 @@ crew_df <- crew_df %>%
                                         "Needs cocoa",
                                         "No cocoa")
 ```
+
 
 
 # <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Simmer it down: Summarize the data
