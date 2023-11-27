@@ -94,7 +94,7 @@ content <- c(Exercise = '<h4> It can often be easier to look for the absence of 
 
 show_hint = 'code_start
 # What goes inside is.na and what does is.na do?
-filter(audit_df, is.na()) 
+filter(audit_df, is.na( _____ )) 
 code_end',
 
 show_code = 'code_start
