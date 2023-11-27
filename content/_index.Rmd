@@ -111,7 +111,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.3 - </span> Simmer it down: Summarize the data  
   
-- [Notes and code examples](page/day2.html#boil-it-down-summarize-the-data) 
+- [Notes and code examples](page/day2.html#simmer-it-down-summarize-the-data) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-3-Boil-it-down.html#1)
 
 
