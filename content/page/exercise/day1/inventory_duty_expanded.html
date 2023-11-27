@@ -85,13 +85,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   <link rel="stylesheet" href="../../css/camp_style.css" type="text/css" />
 
 
-<p><link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
 <style>
 h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
-<hr />
 <div id="before-you-start" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Before you start…</h1>
 <p>Make sure you are still in your project that you created for the previous exercise and then make a new R script. Save it as soon as you make it and give it a good name like <code>exercise_2_day_1.R</code> or <code>gloria.R</code> and you’ll be ready to go!</p>
@@ -118,14 +116,24 @@ hr {background:  cornflowerblue;}
 h
 <a href="https://en.wikipedia.org/wiki/Delimiter">Wikipedia</a></p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>audit_data <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt&quot;</span>)</span></code></pre></div>
-<pre><code>## Error in read_delim(&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt&quot;): could not find function &quot;read_delim&quot;</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>audit_data <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt&quot;</span>)</span></code></pre></div>
 </div>
 <div id="getting-to-know-the-data" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Getting to know the data</h1>
 <p>Depending on how you read in the data, you may feel that you already know it quite well, but it’s still a good idea to at least take a look at the data to get a feel for it.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">glimpse</span>(audit_data)</span></code></pre></div>
-<pre><code>## Error in glimpse(audit_data): could not find function &quot;glimpse&quot;</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">glimpse</span>(audit_data)</span></code></pre></div>
+<pre><code>## Rows: 36
+## Columns: 8
+## $ INGREDIENT                &lt;chr&gt; &quot;PLAIN FLOUR&quot;, &quot;SELF-RAISING FLOUR&quot;, &quot;WHOLE …
+## $ CATEGORY                  &lt;chr&gt; &quot;FLOUR&quot;, &quot;FLOUR&quot;, &quot;FLOUR&quot;, &quot;FLOUR&quot;, &quot;SUGAR&quot;,…
+## $ DRY_OR_LIQUID_MEASUREMENT &lt;chr&gt; &quot;DRY&quot;, &quot;DRY&quot;, &quot;DRY&quot;, &quot;DRY&quot;, &quot;DRY&quot;, &quot;DRY&quot;, &quot;D…
+## $ PRICE_PER_UNIT            &lt;dbl&gt; 1.49, 3.00, 3.00, 5.00, 2.00, 2.00, 1.89, 1.…
+## $ SIZE_UNITS                &lt;chr&gt; &quot;5LBS BAG&quot;, &quot;5LBS BAG&quot;, &quot;5LBS BAG&quot;, &quot;3LBS BA…
+## $ OZ                        &lt;dbl&gt; 80, 80, 80, 48, 32, 80, 32, 32, 32, 32, 16, …
+## $ NUMBER_OF_UNITS_IN_STOCK  &lt;dbl&gt; 19, 23, 12, 3, 15, 14, 24, 21, 37, 2, 11, 8,…
+## $ ORDER_THRESHOLD           &lt;dbl&gt; 20, 15, 10, 5, 10, 20, 15, 15, 30, 5, 5, 2, …</code></pre>
 <p>Excellent, let’s start working on our audit!</p>
 </div>
 <div id="categories-for-all" class="section level1" number="4">
@@ -171,12 +179,14 @@ filter(audit_data, is.na(CATEGORY))
 <div id="two-new-functions-to-save-the-day" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Two new functions to save the day</h1>
 <p>Of course there’s a way to do this, we wouldn’t try if there wasn’t. So the first question we have is what are the possible categories for an ingredient to have? We can use the function <code>unique</code> to figure out what the <em>unique</em> values are!</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">unique</span>(audit_data<span class="sc">$</span>CATEGORY) <span class="co">#unique only likes vectors, so use the dollar sign to pull out the individual column from the dataframe!</span></span></code></pre></div>
-<pre><code>## Error in unique(audit_data$CATEGORY): object &#39;audit_data&#39; not found</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">unique</span>(audit_data<span class="sc">$</span>CATEGORY) <span class="co">#unique only likes vectors, so use the dollar sign to pull out the individual column from the dataframe!</span></span></code></pre></div>
+<pre><code>## [1] &quot;FLOUR&quot;             &quot;SUGAR&quot;             &quot;FLAVORING&quot;        
+## [4] &quot;RAISING AGENT&quot;     NA                  &quot;DAIRY&quot;            
+## [7] &quot;DAIRY-ALTERNATIVE&quot; &quot;ADDITITIVES&quot;</code></pre>
 <p>Pick the category that you think is the best fit. Now, we just need to figure out <em>where</em> in the dataframe the missing value is in. We know that CATEGORY is the second column so that’s good…now we just need to know what row SALT is in since we can specify location using matrix-style indices (i.e. Row, Column position - just like Excel!)</p>
 <p>Enter the function <code>which</code>! This function will tell us which indices are TRUE, so if we pass it a logical vector (which is what happens when you ask a question on a vector like whether it is equal to a certain value like say…SALT) it will tell us the <em>location</em> where that vector is TRUE!</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">which</span>(audit_data<span class="sc">$</span>INGREDIENT <span class="sc">==</span> <span class="st">&#39;SALT&#39;</span>)</span></code></pre></div>
-<pre><code>## Error in which(audit_data$INGREDIENT == &quot;SALT&quot;): object &#39;audit_data&#39; not found</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">which</span>(audit_data<span class="sc">$</span>INGREDIENT <span class="sc">==</span> <span class="st">&#39;SALT&#39;</span>)</span></code></pre></div>
+<pre><code>## [1] 18</code></pre>
 <p>ALRIGHT!</p>
 <p>Now for the finishing touch!</p>
 <div id="writing-wrongs" class="section level3 unnumbered quiz">
@@ -258,17 +268,21 @@ filter(audit_data, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD >= 10)
 <p>Last item on our audit check list and then we can take a break (and maybe eat some of those Oatmeal Raisin cookies…yum.)</p>
 <p>The last thing we need to do is calculate summary statistics for both dry and liquid measures.</p>
 <p>Probably the easiest thing is to make two different dataframes, one of all the dry and one of all the liquid.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>liquid <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_data, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&#39;LIQUID&#39;</span>)</span></code></pre></div>
-<pre><code>## Error in as.ts(x): object &#39;audit_data&#39; not found</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>dry <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_data, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&#39;DRY&#39;</span>)</span></code></pre></div>
-<pre><code>## Error in as.ts(x): object &#39;audit_data&#39; not found</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>liquid <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_data, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&#39;LIQUID&#39;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>dry <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_data, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&#39;DRY&#39;</span>)</span></code></pre></div>
 <p>Hmmm…something feels funny. Our original dataset had 36 observation, now we have 28 and 7 which is 35…we dropped an observation somewhere. Maybe there’s a typo in the column? We can use <code>unique</code> to see if there are more than just two values for DRY_OR_LIQUID_MEASUREMENT</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">unique</span>(audit_data<span class="sc">$</span>DRY_OR_LIQUID_MEASUREMENT)</span></code></pre></div>
-<pre><code>## Error in unique(audit_data$DRY_OR_LIQUID_MEASUREMENT): object &#39;audit_data&#39; not found</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">unique</span>(audit_data<span class="sc">$</span>DRY_OR_LIQUID_MEASUREMENT)</span></code></pre></div>
+<pre><code>## [1] &quot;DRY&quot;    &quot;LIQUID&quot; NA</code></pre>
 <p>Uh-oh, we have an NA value. Filter will only return a row if it knows for sure that it meets the condition, and because with NA we literally don’t know the value, we can never know if it meets the condition.</p>
 <p>Let’s looks at the row that has the NA, maybe we can fix it like we did for CATEGORY.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">filter</span>(audit_data, <span class="fu">is.na</span>(DRY_OR_LIQUID_MEASUREMENT))</span></code></pre></div>
-<pre><code>## Error in as.ts(x): object &#39;audit_data&#39; not found</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">filter</span>(audit_data, <span class="fu">is.na</span>(DRY_OR_LIQUID_MEASUREMENT))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 8
+##   INGREDIENT CATEGORY DRY_OR_LIQUID_MEAS…¹ PRICE…² SIZE_…³    OZ NUMBE…⁴ ORDER…⁵
+##   &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;                  &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 EGGS       DAIRY    &lt;NA&gt;                    1.25 12         NA      20      25
+## # … with abbreviated variable names ¹​DRY_OR_LIQUID_MEASUREMENT,
+## #   ²​PRICE_PER_UNIT, ³​SIZE_UNITS, ⁴​NUMBER_OF_UNITS_IN_STOCK, ⁵​ORDER_THRESHOLD</code></pre>
 <p><em>Oh.</em> It’s <em>eggs</em>. Huh…should they be dry or liquid? What’s the number of ounces in a dozen eggs? Honestly maybe this is best left as NA and we can ask the lead-baking bot about it later…Also, we’ve never thought so much about measuring eggs before.</p>
 <p>But enough about eggs! Let’s make our summary stats and call this audit “good enough for government work” and move on!</p>
 <div id="summary-stats" class="section level3 unnumbered quiz">

@@ -12,15 +12,13 @@ output:
     toc_depth: 1
 ---
 
-<link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
 h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
 
----
 
 ```{r setup, include=FALSE}
 library(rmarkdown)
@@ -61,6 +59,8 @@ h
 > [Wikipedia](https://en.wikipedia.org/wiki/Delimiter)
 
 ```{r}
+library(tidyverse)
+
 audit_data <- read_delim("https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt")
 ```
 
