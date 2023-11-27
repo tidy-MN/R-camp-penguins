@@ -10,9 +10,9 @@
   <title>Day 1 - Learn R</title>
   <meta property="og:title" content="Day 1" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="description" content="Welcome! 1 Why R? 2 RStudio Tour 3 R packages 📦 4 Help! 5 R bakery 6 Names and things 7 Tidy tables and dataframes 8 Read / load data 9 Size up the data 10 glimpse() &amp; summary() 11 Filter data Welcome!">
-  <meta property="og:description" content="Welcome! 1 Why R? 2 RStudio Tour 3 R packages 📦 4 Help! 5 R bakery 6 Names and things 7 Tidy tables and dataframes 8 Read / load data 9 Size up the data 10 glimpse() &amp; summary() 11 Filter data Welcome!">
-  <meta name="twitter:description" content="Welcome! 1 Why R? 2 RStudio Tour 3 R packages 📦 4 Help! 5 R bakery 6 Names and things 7 Tidy tables and dataframes 8 Read / load data 9 Size up the data 10 glimpse() &amp; summary() 11 Filter data …">
+  <meta name="description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
+  <meta property="og:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
+  <meta name="twitter:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Day 1",
-  "description" : "Welcome! 1 Why R? 2 RStudio Tour 3 R packages 📦 4 Help! 5 R bakery 6 Names and things 7 Tidy tables and dataframes 8 Read \/ load data 9 Size up the data 10 glimpse() \u0026amp; summary() 11 Filter data Welcome!",
+  "description" : "1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() \u0026amp; summary() 1 Welcome to open source R Community Around the world Help!",
   "inLanguage" : "en",
-  "wordCount":  4728 ,
+  "wordCount":  4680 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 1" />
-<meta property="og:description" content="Welcome! 1 Why R? 2 RStudio Tour 3 R packages 📦 4 Help! 5 R bakery 6 Names and things 7 Tidy tables and dataframes 8 Read / load data 9 Size up the data 10 glimpse() &amp; summary() 11 Filter data Welcome!">
+<meta property="og:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day1.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="twitter:description" content="Welcome! 1 Why R? 2 RStudio Tour 3 R packages 📦 4 Help! 5 R bakery 6 Names and things 7 Tidy tables and dataframes 8 Read / load data 9 Size up the data 10 glimpse() &amp; summary() 11 Filter data …">
+  <meta name="twitter:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -354,18 +354,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#welcome" id="toc-welcome">Welcome!</a></li>
-<li><a href="#why-r" id="toc-why-r"><span class="toc-section-number">1</span> Why R?</a></li>
-<li><a href="#rstudio-tour" id="toc-rstudio-tour"><span class="toc-section-number">2</span> RStudio Tour</a></li>
-<li><a href="#r-packages" id="toc-r-packages"><span class="toc-section-number">3</span> R packages 📦</a></li>
-<li><a href="#help" id="toc-help"><span class="toc-section-number">4</span> Help!</a></li>
-<li><a href="#r-bakery" id="toc-r-bakery"><span class="toc-section-number">5</span> R bakery</a></li>
-<li><a href="#names-and-things" id="toc-names-and-things"><span class="toc-section-number">6</span> Names and things</a></li>
-<li><a href="#tidy-tables-and-dataframes" id="toc-tidy-tables-and-dataframes"><span class="toc-section-number">7</span> Tidy tables and dataframes</a></li>
-<li><a href="#read-load-data" id="toc-read-load-data"><span class="toc-section-number">8</span> Read / load data</a></li>
-<li><a href="#size-up-the-data" id="toc-size-up-the-data"><span class="toc-section-number">9</span> Size up the data</a></li>
-<li><a href="#glimpse-summary" id="toc-glimpse-summary"><span class="toc-section-number">10</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
-<li><a href="#filter-data" id="toc-filter-data"><span class="toc-section-number">11</span> Filter data</a></li>
+<li><a href="#welcome-to-open-source" id="toc-welcome-to-open-source"><span class="toc-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Welcome to open source</a></li>
+<li><a href="#r-tour" id="toc-r-tour"><span class="toc-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> R tour</a></li>
+<li><a href="#r-bakery" id="toc-r-bakery"><span class="toc-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> R bakery</a></li>
+<li><a href="#tidy-tables" id="toc-tidy-tables"><span class="toc-section-number">4</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Tidy tables</a></li>
+<li><a href="#sizing-up-the-data" id="toc-sizing-up-the-data"><span class="toc-section-number">5</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Sizing up the data</a></li>
+<li><a href="#glimpse-summary" id="toc-glimpse-summary"><span class="toc-section-number">6</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
 </ul>
 </div>
 
@@ -380,19 +374,8 @@ hr {background:  cornflowerblue;}
 
 </div>
 <p><br></p>
-<div id="welcome" class="section level1 unnumbered">
-<h1>Welcome!</h1>
-<hr class="hr2">
-<div style="clear: both;">
-
-</div>
-<p>We like <strong>R</strong>.</p>
-<p>We aren’t computer scientists – and that’s okay!</p>
-<p>We make lots of mistakes. They will be funny. Laugh with us!</p>
-</div>
-<div id="why-r" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Why R?</h1>
-<hr>
+<div id="welcome-to-open-source" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="page/videos/day1/01-1-welcome.html">Welcome to open source</a></h1>
 <p><img src="../images/rladies_map.gif" style="width: 97%;" /></p>
 <div id="r-community" class="section level2 unnumbered">
 <h2>R Community</h2>
@@ -480,9 +463,8 @@ hr {background:  cornflowerblue;}
 <p><br></p>
 </div>
 </div>
-<div id="rstudio-tour" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> RStudio Tour</h1>
-<hr>
+<div id="r-tour" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="page/videos/day1/01-2-r-tour.html">R tour</a></h1>
 <p><img src="../images/rstudio-panes-labeled.png" style="width: 85%;" /></p>
 <p><br></p>
 <div id="source-code-editor" class="section level3 unnumbered red-note" style="float: left; width: 54%; height: 384px;">
@@ -528,10 +510,8 @@ hr {background:  cornflowerblue;}
 </ol>
 <p><img src="../images/font_change.png" style="width: 65%; margin-top: 14px; margin-left: 2%;"></p>
 </div>
-</div>
-<div id="r-packages" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> R packages 📦</h1>
-<hr>
+<div id="r-packages" class="section level2 unnumbered">
+<h2>R packages 📦</h2>
 <p><img src="../images/package-hexes.jpg"></p>
 <p><br></p>
 <blockquote>
@@ -618,9 +598,8 @@ Note
 See the full list of tidyverse packages at <a href="https://www.tidyverse.org/packages/" class="uri">https://www.tidyverse.org/packages/</a>
 </p>
 </div>
-<div id="help" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Help!</h1>
-<hr>
+<div id="help" class="section level2 unnumbered">
+<h2>Help!</h2>
 <p>To view documentation about an installed R package or a function, we put a <code>?</code> mark in front of it or put its name inside the <code>help()</code> function in quotes. We can also use the <strong>Help</strong> tab’s search bar to find a package or function we are looking to learn more about. Keep in mind when looking at documentation on a function, the examples are often found at the bottom of the page.</p>
 <p>Here’s an example that pulls up the documentation for the package <code>readr</code> and the function <code>sum()</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Help pages for a package</span></span>
@@ -640,9 +619,9 @@ See the full list of tidyverse packages at <a href="https://www.tidyverse.org/pa
 </blockquote>
 <p><br></p>
 </div>
-<div id="r-bakery" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> R bakery</h1>
-<hr>
+</div>
+<div id="r-bakery" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="page/videos/day1/01-3-r-bakery.html">R bakery</a></h1>
 <div id="new-project" class="section level2 unnumbered">
 <h2><i class="fa fa-cake-candles" aria-hidden="true"></i> New project</h2>
 <p>Let’s start a new project in RStudio.</p>
@@ -664,9 +643,8 @@ See the full list of tidyverse packages at <a href="https://www.tidyverse.org/pa
 <li>Give it a name: <code>01_bakery.R</code> or <code>day1.R</code> will work well</li>
 </ul>
 </div>
-</div>
-<div id="names-and-things" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Names and things</h1>
+<div id="names-and-things" class="section level2 unnumbered">
+<h2>Names and things</h2>
 <hr>
 <p>You can assign values to objects (variables) using the .teal[left arrow].</p>
 <ul>
@@ -774,6 +752,7 @@ Black is the result or output of the code. In the top case, the <code>[1]</code>
 Red shows <strong>Errors</strong> &amp; <strong>Warnings</strong>. Errors mean something went so wrong it prevented your code from running. Warnings on the other hand are usually ok. They tend to inform you that the result may not be exactly what you expected. For example, some points may not be added to a map because they have missing coodinates (<em>NA</em> values).
 </p>
 <p><br></p>
+</div>
 </div>
 <div id="drop-and-remove-data" class="section level2 unnumbered">
 <h2>Drop and remove data</h2>
@@ -924,9 +903,8 @@ Note
 </div>
 </div>
 </div>
-<div id="tidy-tables-and-dataframes" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Tidy tables and dataframes</h1>
-<hr>
+<div id="tidy-tables" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="page/videos/day1/01-4-tidy-tables.html">Tidy tables</a></h1>
 <p><img src="../images/tidy_ice_cream.jpg" style="float: right; width: 95%; margin: 20px;" alt="Digital illustration of two cute fuzzy monsters sitting on a park bench with a smiling data table between them, all eating ice cream together. In text above the illustration are the hand drawn words - make friends with tidy data."></p>
 <p class="caption">
 Illustration from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst
@@ -1056,10 +1034,8 @@ bots <- data.frame(name       = baking_bots,
 <h2>CSVs</h2>
 <p>A <strong>CSV</strong> is a simple text file that can be opened in R and most other data tools, including Excel. It looks squished together as plain text, but that’s okay! When opened in R, the text becomes a familiar looking table with columns and rows.</p>
 </div>
-</div>
-<div id="read-load-data" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Read / load data</h1>
-<hr>
+<div id="read-load-data" class="section level2 unnumbered">
+<h2>Read / load data</h2>
 <p>Now we can read the CSV file back into R using the <code>read_csv()</code> function.</p>
 <p><br></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -1076,6 +1052,7 @@ bots <- data.frame(name       = baking_bots,
 <blockquote>
 <p>…where did the data go?</p>
 </blockquote>
+</div>
 <div id="name-the-data" class="section level2 unnumbered">
 <h2>Name the data</h2>
 <p>Remember the assignment operator (the left-arrow: <code>&lt;-</code>)? We use it to assign the data a name so we can reference it in our script.</p>
@@ -1134,9 +1111,8 @@ What data type is the <code>name</code> column?
 </div>
 </div>
 </div>
-<div id="size-up-the-data" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Size up the data</h1>
-<hr>
+<div id="sizing-up-the-data" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="page/videos/day1/01-5-size-up-the-data.html">Sizing up the data</a></h1>
 <p>Before diving into a data set, we use <code>glimpse()</code> and several other summary functions to take a first look at the data.</p>
 <p>Use these functions to describe our dataframe.</p>
 <div id="data-frame-info" class="section level3 unnumbered">
@@ -1184,8 +1160,8 @@ What data type is the <code>name</code> column?
 </table>
 </div>
 </div>
-<div id="glimpse-summary" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> <code>glimpse()</code> &amp; <code>summary()</code></h1>
+<div id="glimpse-summary" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> <code>glimpse()</code> &amp; <code>summary()</code></h1>
 <hr>
 <div id="lets-take-a-look-at-our-bot-data." class="section level3 unnumbered">
 <h3>Let’s take a look at our bot data.</h3>
@@ -1219,10 +1195,8 @@ What data type is the <code>name</code> column?
 <span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a></span>
 <span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a><span class="fu">names</span>( )</span></code></pre></div>
 </div>
-</div>
-<div id="filter-data" class="section level1" number="11">
-<h1><span class="header-section-number">11</span> Filter data</h1>
-<hr>
+<div id="filter-data" class="section level2 unnumbered">
+<h2>Filter data</h2>
 <p>The <code>filter()</code> function creates a subset of the data based on the value of one or more columns.</p>
 <p>Let’s use it to look at the rows in the data that have an <code>age</code> greater than 1.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
@@ -1245,6 +1219,7 @@ What data type is the <code>name</code> column?
 <p>We use a <code>==</code> (double equals sign) for comparing values. A <code>==</code> makes the comparison “is it equal to?” and returns a <code>True</code> or <code>False</code> answer. So the code above returns only the rows where the condition <code>name == "Whiskers"</code> is TRUE.</p>
 <p>A single equals sign <code>=</code> is used within functions to set options, for example <code>read_csv(file = "bot_data.csv")</code>.</p>
 <p>It’s not a big deal if you mix them up the first time. R is often helpful and will even let you know which one is needed. Try running <code>filter(bake_bots, name = "Whiskers")</code>.</p>
+</div>
 </div>
 </div>
 <div id="comparing-values" class="section level2 unnumbered">

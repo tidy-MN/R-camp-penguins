@@ -38,37 +38,20 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Welcome to open source](page/videos/day1/01-1-welcome.html) 
 
-# Welcome! {-}
-<hr class="hr2">
-
-
-<div style="clear: both;"></div>
-
-We like __R__.
-
-We aren't computer scientists -- and that's okay! 
-
-We make lots of mistakes. They will be funny. Laugh with us!
-
-
-
-# Why R? 
-<hr>
 
 ```{r whyR, child='../../static/modules/intro/_whyr/mpca.Rmd'}
 ```
 
 
-# RStudio Tour 
-<hr>
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [R tour](page/videos/day1/01-2-r-tour.html) 
+
 ```{r Rtour, child='../../static/modules/intro/rstudio_tour/general.Rmd'}
 ```
 
 
-
-# R packages &#x1F4E6; 
-<hr>
+## R packages &#x1F4E6; {-}
 
 <img src="../images/package-hexes.jpg">
 
@@ -76,8 +59,7 @@ We make lots of mistakes. They will be funny. Laugh with us!
 ```
 
 
-# Help!
-<hr>
+## Help! {-}
 
 To view documentation about an installed R package or a function, we put a `?` mark in front of it or put its name inside the `help()` function in quotes. We can also use the **Help** tab's search bar to find a package or function we are looking to learn more about. Keep in mind when looking at documentation on a function, the examples are often found at the bottom of the page.
 
@@ -94,7 +76,6 @@ help("sum")
 ?sum
 ```
 
-
 <br>
 
 > To look for information on packages we don't have yet or to find more examples of how a function is used, we can search the internets with the addition of `R` and `github` in front of what we're looking for. This will often direct us to the development page for that package. For example, this search phrase `R github readr` will lead us to readr's development page with some examples of reading in data files of various formats. 
@@ -104,8 +85,7 @@ help("sum")
 <br>
 
 
-# R bakery 
-<hr>
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [R bakery](page/videos/day1/01-3-r-bakery.html)
 
 ## <i class="fa fa-cake-candles" aria-hidden="true"></i> New project {-}
 
@@ -118,22 +98,20 @@ params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
 ```
 
 
-# Names and things
+## Names and things {-}
 <hr>
 ```{r child = '../../static/modules/base/base_assignment/bake_bot.Rmd'}
 ```
 
 
-# Tidy tables and dataframes
-<hr>
+#  <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Tidy tables](page/videos/day1/01-4-tidy-tables.html)
+
 
 ```{r read-csv, child='../../static/modules/base/base_dataframes/bakery_dfs.Rmd'}
 ```
 
 
-# Read / load data 
-<hr>
-
+## Read / load data {-}
 
 Now we can read the CSV file back into R using the `read_csv() ` function.
 
@@ -143,8 +121,7 @@ Now we can read the CSV file back into R using the `read_csv() ` function.
 ```
 
 
-# Size up the data 
-<hr>
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Sizing up the data](page/videos/day1/01-5-size-up-the-data.html)
 
 Before diving into a data set, we use `glimpse() ` and several other summary functions to take a first look at the data.
 
@@ -152,8 +129,7 @@ Before diving into a data set, we use `glimpse() ` and several other summary fun
 ```
 
 
-# Filter data 
-<hr>
+## Filter data {-} 
 
 ```{r read_snippet, child='../../static/modules/dplyr/dplyr_filter/bakery_filter.Rmd'}
 ```
@@ -172,7 +148,6 @@ Before diving into a data set, we use `glimpse() ` and several other summary fun
 ```
 
 <br>
-
 
 
 ## Got questions <i class="far fa-question-circle" aria-hidden="true" style="font-size: 122%;"></i> {-}

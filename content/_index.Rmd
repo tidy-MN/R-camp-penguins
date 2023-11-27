@@ -103,7 +103,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> Forks in the road: A case_when 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> [Fork in the road: `if_else` + `case_when`](page/videos/day2/02-2-fork-in-the-road)
   
 - [Notes and code examples](day2.html#boil-it-down-summarize-the-data)
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-2-Forks-in-the-road.html)
@@ -121,7 +121,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Guess Who! *Hint: I'm a penguin*](page/exercise/find_the_penguin.html)
 
 </div>
-
 
 
 <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">  

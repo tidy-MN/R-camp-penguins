@@ -10,9 +10,9 @@
   <title>Day 2 - Learn R</title>
   <meta property="og:title" content="Day 2" />
   <meta name="twitter:title" content="Day 2" />
-  <meta name="description" content="1 Data wrangling 2 Forks in the road: if_else and case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
-  <meta property="og:description" content="1 Data wrangling 2 Forks in the road: if_else and case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
-  <meta name="twitter:description" content="1 Data wrangling 2 Forks in the road: if_else and case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta name="description" content="1 Data wrangling 2 Fork in the road: if_else &#43; case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta property="og:description" content="1 Data wrangling 2 Fork in the road: if_else &#43; case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta name="twitter:description" content="1 Data wrangling 2 Fork in the road: if_else &#43; case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,7 +61,7 @@
     "name" : "Pengu"
   },
   "headline": "Day 2",
-  "description" : "1 Data wrangling 2 Forks in the road: if_else and case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
+  "description" : "1 Data wrangling 2 Fork in the road: if_else \u002b case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
   "inLanguage" : "en",
   "wordCount":  961 ,
   "datePublished" : "0001-01-01T00:00:00",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 2" />
-<meta property="og:description" content="1 Data wrangling 2 Forks in the road: if_else and case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+<meta property="og:description" content="1 Data wrangling 2 Fork in the road: if_else &#43; case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day2.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 2" />
-  <meta name="twitter:description" content="1 Data wrangling 2 Forks in the road: if_else and case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
+  <meta name="twitter:description" content="1 Data wrangling 2 Fork in the road: if_else &#43; case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -355,19 +355,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="TOC">
 <ul>
 <li><a href="#data-wrangling" id="toc-data-wrangling"><span class="toc-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Data wrangling</a></li>
-<li><a href="#forks-in-the-road-if_else-and-case_when" id="toc-forks-in-the-road-if_else-and-case_when"><span class="toc-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Forks in the road: if_else and case_when</a></li>
+<li><a href="#fork-in-the-road-if_else-case_when" id="toc-fork-in-the-road-if_else-case_when"><span class="toc-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Fork in the road: <code>if_else</code> + <code>case_when</code></a></li>
 <li><a href="#simmer-it-down-summarize-the-data" id="toc-simmer-it-down-summarize-the-data"><span class="toc-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Simmer it down: Summarize the data</a></li>
 </ul>
 </div>
 
 <style>
-hr {background: blue;}
+h1 .header-section-number {background: #031718;}
+hr {background:  white;}
 </style>
 <p><link rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
 <p><br></p>
 <div id="data-wrangling" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Data wrangling</h1>
+<h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="page/videos/day2/02-1-data-wrangling.html">Data wrangling</a></h1>
 <div id="wrangle-that-data" class="section level2 unnumbered">
 <h2><span class="teal">WRANGLE</span> <span style="color: gray">that DATA</span></h2>
 <p><img src="../images/data_cowboy_sm.png" width="110%" style="margin-left: -22px; max-width: 110%; margin-top: -8px;" alt="Cartoon of a small fuzzy monster with a cowboy hat and lasso, riding another larger fuzzy monster and lassoing a group of angry / unruly looking creatures labeled data."></p>
@@ -673,8 +674,8 @@ blockquote code {background: #f8fdff;}
 </div>
 </div>
 </div>
-<div id="forks-in-the-road-if_else-and-case_when" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Forks in the road: if_else and case_when</h1>
+<div id="fork-in-the-road-if_else-case_when" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="page/videos/day2/02-2-fork-in-the-road">Fork in the road: <code>if_else</code> + <code>case_when</code></a></h1>
 <div id="short-trippers" class="section level2 unnumbered">
 <h2>Short trippers</h2>
 <blockquote>
