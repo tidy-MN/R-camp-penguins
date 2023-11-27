@@ -107,7 +107,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-2-Forks-in-the-road.html)
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.3 - </span> Simmer it down: Summarize the data  
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.3 - </span> [Simmer it down: Summarize the data](page/videos/day2/02-3-simmer-it-down.html)  
   
 - [Notes and code examples](page/day2.html#simmer-it-down-summarize-the-data) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-3-Boil-it-down.html#1)
