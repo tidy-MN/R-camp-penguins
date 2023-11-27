@@ -10,9 +10,9 @@
   <title>Inventory Duty - Exercise 1 - Learn R</title>
   <meta property="og:title" content="Inventory Duty - Exercise 1" />
   <meta name="twitter:title" content="Inventory Duty - Exercise 1" />
-  <meta name="description" content="1 Before you start… Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course.">
-  <meta property="og:description" content="1 Before you start… Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course.">
-  <meta name="twitter:description" content="1 Before you start… Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course.">
+  <meta name="description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
+  <meta property="og:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
+  <meta name="twitter:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Inventory Duty - Exercise 1",
-  "description" : "1 Before you start… Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course.",
+  "description" : "1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?",
   "inLanguage" : "en",
-  "wordCount":  971 ,
+  "wordCount":  982 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Inventory Duty - Exercise 1" />
-<meta property="og:description" content="1 Before you start… Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course.">
+<meta property="og:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day1/inventory_duty.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Inventory Duty - Exercise 1" />
-  <meta name="twitter:description" content="1 Before you start… Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course.">
+  <meta name="twitter:description" content="1 Before you start… 2 Inventory Duty 3 Getting to know the data 4 Why do we do this to ourselves?">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -350,8 +350,17 @@ code span.va { color: #000000; } /* Variable */
 code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-  <link rel="stylesheet" href="../../css/camp_style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/camp_style.css" type="text/css" />
 
+<div id="TOC">
+<ul>
+<li><a href="#before-you-start" id="toc-before-you-start"><span class="toc-section-number">1</span> Before you start…</a></li>
+<li><a href="#inventory-duty" id="toc-inventory-duty"><span class="toc-section-number">2</span> Inventory Duty</a></li>
+<li><a href="#getting-to-know-the-data" id="toc-getting-to-know-the-data"><span class="toc-section-number">3</span> Getting to know the data</a></li>
+<li><a href="#why-do-we-do-this-to-ourselves" id="toc-why-do-we-do-this-to-ourselves"><span class="toc-section-number">4</span> Why do we do this to ourselves?</a></li>
+<li><a href="#place-that-order" id="toc-place-that-order"><span class="toc-section-number">5</span> Place that order!</a></li>
+</ul>
+</div>
 
 <p><link rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
@@ -359,25 +368,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
+<hr />
 <div id="before-you-start" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Before you start…</h1>
-<hr>
 <p>Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course. To make a new project in RStudio, go to File -&gt; New Project -&gt; New Directory -&gt; New Project</p>
 <p>Now you need to pick a new directory. Pick a location that makes sense to you where you’ll be able to find it again. If you made a project while following along with the videos, you can pick the same location for this one and then both your projects will be in the same location.</p>
-<p>Once you have a new project made, make a new R script and name it something pithy like <code>exercise_1_day_1.R</code> or <code>frank.R</code> and you’ll be ready to go!</p>
+<p>Once you have a new project made, make a new R script and save it (Ctrl + S or click the floppy disk). Name it something pithy like <code>exercise_1_day_1.R</code> or <code>frank.R</code> and you’ll be ready to go!</p>
 </div>
 <div id="inventory-duty" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Inventory Duty</h1>
-<p>We love our job as a baking-bot, but the thing we love even more than baking is actually taking the ingredients inventory. We like to play with the inventory data and present beautiful summaries to the head baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true…but we’re getting ahead of our story.</p>
+<p>We love our job as a baking-bot, but the thing we love more than baking is actually taking the inventory. We like to play with the inventory data and present beautiful summaries to the lead-baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true…but we’re getting ahead of our story.</p>
 <p>We’ve been tasked with downloading the inventory file from our suppliers and determining what needs to be ordered because we’re running low.</p>
 <p>So the first thing we need to do is read in the file that contains the inventory!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="getting-to-know-the-data" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Getting to know the data</h1>
-<p>Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The head baking bot especially wants to know what the maximum value of <code>NUMBER_OF_UNITS_IN_STOCK</code> for planning purposes.</p>
+<p>Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of <code>NUMBER_OF_UNITS_IN_STOCK</code> for planning purposes.</p>
 <p>Feel free to use any and all of the functions you know but also feel free to look at the hint for inspiration!</p>
 <div id="getting-to-know-the-data-1" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Getting to know the data</h3>
@@ -423,7 +430,7 @@ summary(inventory)
 </div>
 </div>
 <p><br></p>
-<p>WHOA. We have 378 units of something in stock?! What are we making, cupcakes for a whole school?! A cake big enough to cover a bus?! Time to go invesigate…</p>
+<p>WHOA. We have 378 units of something in stock?! What are we making, cupcakes for a whole school?! A cake big enough to cover a bus?! Time to go investigate…</p>
 </div>
 <div id="why-do-we-do-this-to-ourselves" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Why do we do this to ourselves?</h1>
@@ -484,7 +491,7 @@ filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
 </div>
 <div id="place-that-order" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Place that order!</h1>
-<p>Oh right! We need to use the data that we’ve received to determine what items we need to order. If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.</p>
+<p>Oh right! We need to use the data that we’ve received to determine what items we need to order! If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.</p>
 <p>Do we have any ingredientst that fit that criteria?</p>
 <div id="what-to-order" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> What to order?</h3>
@@ -508,32 +515,29 @@ Filter the inventory dataset to the rows that meet the condition where the numbe
 </div>
 <div id="showhint" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint-tab">
 <pre class="sourceCode r">
-filter(inventory, PLACE A CONDITION HERE) 
+order_now <- filter(inventory, PLACE A CONDITION HERE) 
+order_now
 </pre>
 </div>
 <div id="showcode" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode-tab">
 <pre class="sourceCode r">
-filter(inventory, NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
+order_now <- filter(inventory, 
+                    NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
+order_now
 </pre>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">filter</span>(inventory, NUMBER_OF_UNITS_IN_STOCK <span class="sc">&lt;</span> ORDER_THRESHOLD)</span></code></pre></div>
-<pre><code>## # A tibble: 9 × 5
-##   INGREDIENT        PRICE_PER_UNIT SIZE_UNITS NUMBER_OF_UNITS_IN_STOCK ORDER_T…¹
-##   &lt;chr&gt;                      &lt;dbl&gt; &lt;chr&gt;                         &lt;dbl&gt;     &lt;dbl&gt;
-## 1 PLAIN FLOUR                 1.49 5LBS BAG                         19        20
-## 2 GLUTEN FREE FLOUR           5    3LBS BAG                          3         5
-## 3 GRANULATED SUGAR            2    5LBS BAG                         14        20
-## 4 COCOA POWDER                5    32 OZ                             2         5
-## 5 BUTTER                      3.49 1 LB                             18        25
-## 6 EGGS                        1.25 12                               20        25
-## 7 WALNUTS                     5    16 OZ                             9        10
-## 8 CHOCOLATE CHIPS             2.59 16 OZ                            11        15
-## 9 APPLESAUCE                  3.25 32 OZ                             6        10
-## # … with abbreviated variable name ¹​ORDER_THRESHOLD</code></pre>
-<p>That makes sense, we’ve been getting lots of orders for our Gluten-free Applesauce and Walnut muffins and also for our Tripple-Chocolate Brownies. We’ll make a note that we need to make an urgent order for these supplies so we don’t run out!</p>
+<p>That makes sense, we’ve been getting lots of orders for our Gluten-free Applesauce and Walnut muffins and also for our Triple-Chocolate Brownies. We’ll make a note that we need to make an urgent order for these supplies so we don’t run out!</p>
+<p>The last thing that we need to do is export out the filtered data so we can send it to the lead-baking bot.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> order_now, <span class="at">file =</span> <span class="st">&quot;order_now.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in is.data.frame(x): object &#39;order_now&#39; not found</code></pre>
+<p>Now we have a file that we can send in an email listing out the ingredients that we need to order right away. As well as a series of scripted steps that we can use again and again and again…well you get the idea.</p>
+<p><strong>NICE WORK!</strong></p>
+<p><i class="fa fa-cookie-bite"></i>
+<i class="fa fa-robot"></i>
+<i class="fa fa-cookie-bite"></i></p>
 </div>
 
 
