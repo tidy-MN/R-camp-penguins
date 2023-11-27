@@ -38,14 +38,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Welcome to open source](page/videos/day1/01-1-welcome.html) 
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Welcome to open source](videos/day1/01-1-welcome.html) 
 
 
 ```{r whyR, child='../../static/modules/intro/_whyr/mpca.Rmd'}
 ```
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [R tour](page/videos/day1/01-2-r-tour.html) 
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [R tour](videos/day1/01-2-r-tour.html) 
 
 ```{r Rtour, child='../../static/modules/intro/rstudio_tour/general.Rmd'}
 ```
@@ -85,7 +85,7 @@ help("sum")
 <br>
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [R bakery](page/videos/day1/01-3-r-bakery.html)
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [R bakery](videos/day1/01-3-r-bakery.html)
 
 ## <i class="fa fa-cake-candles" aria-hidden="true"></i> New project {-}
 
@@ -104,7 +104,7 @@ params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
 ```
 
 
-#  <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Tidy tables](page/videos/day1/01-4-tidy-tables.html)
+#  <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Tidy tables](videos/day1/01-4-tidy-tables.html)
 
 
 ```{r read-csv, child='../../static/modules/base/base_dataframes/bakery_dfs.Rmd'}
@@ -121,7 +121,7 @@ Now we can read the CSV file back into R using the `read_csv() ` function.
 ```
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Sizing up the data](page/videos/day1/01-5-size-up-the-data.html)
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Sizing up the data](videos/day1/01-5-size-up-the-data.html)
 
 Before diving into a data set, we use `glimpse() ` and several other summary functions to take a first look at the data.
 

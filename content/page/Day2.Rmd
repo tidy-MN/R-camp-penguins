@@ -32,7 +32,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Data wrangling](page/videos/day2/02-1-data-wrangling.html)
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Data wrangling](videos/day2/02-1-data-wrangling.html)
 
 ## <span class="teal">WRANGLE</span> <span style="color: gray">that DATA</span> {-}
 
@@ -247,7 +247,7 @@ crew_df <- mutate(crew_df,
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Fork in the road: `if_else` + `case_when`](page/videos/day2/02-2-fork-in-the-road)
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Fork in the road: `if_else` + `case_when`](videos/day2/02-2-fork-in-the-road)
 
 
 ## Short trippers {-}

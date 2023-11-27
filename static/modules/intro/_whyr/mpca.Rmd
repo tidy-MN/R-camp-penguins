@@ -1,9 +1,11 @@
 
-![](../images/rladies_map.gif){style="width: 97%;"}
 
 ## R Community {-}
 
-- [Around the world](https://mn-r.netlify.app/page/community.html)
+![](../images/rladies_map.gif){style="width: 97%;"}
+
+
+- [Around the world](community.html)
 - Help!
     - Post questions and help requests on Teams
     - [R Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
