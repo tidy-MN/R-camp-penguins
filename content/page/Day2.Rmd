@@ -82,7 +82,7 @@ blockquote code {background: #f8fdff;}
 
 ## Get the data {-}
 
-We can download the attached Excel file [HERE](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/data/crew_food_prefs.xlsx)
+We can download the attached Excel file [HERE](https://tidy-mn.github.io/R-camp-penguins//data/crew_food_prefs.xlsx)
 
 After you've downloaded the file, move the file from your *Downloads/* folder to a *data/* folder in your project's main directory:
 
