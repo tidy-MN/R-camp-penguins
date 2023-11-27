@@ -99,13 +99,12 @@ params <- list(name1 = '01_bakery.R', name2 = 'day1.R')
 
 
 ## Names and things {-}
-<hr>
 ```{r child = '../../static/modules/base/base_assignment/bake_bot.Rmd'}
 ```
 
 
-#  <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Tidy tables](videos/day1/01-4-tidy-tables.html)
 
+#  <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Tidy tables](videos/day1/01-4-tidy-tables.html)
 
 ```{r read-csv, child='../../static/modules/base/base_dataframes/bakery_dfs.Rmd'}
 ```

@@ -10,9 +10,9 @@
   <title>Day 1 - Learn R</title>
   <meta property="og:title" content="Day 1" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
-  <meta property="og:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
-  <meta name="twitter:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
+  <meta name="description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 1 Welcome to open source R Community Around the world Help!">
+  <meta property="og:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 1 Welcome to open source R Community Around the world Help!">
+  <meta name="twitter:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 1 Welcome to open source R Community Around the world Help!">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Day 1",
-  "description" : "1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() \u0026amp; summary() 1 Welcome to open source R Community Around the world Help!",
+  "description" : "1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 1 Welcome to open source R Community Around the world Help!",
   "inLanguage" : "en",
-  "wordCount":  4680 ,
+  "wordCount":  4676 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 1" />
-<meta property="og:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
+<meta property="og:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 1 Welcome to open source R Community Around the world Help!">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day1.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 1" />
-  <meta name="twitter:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 6 glimpse() &amp; summary() 1 Welcome to open source R Community Around the world Help!">
+  <meta name="twitter:description" content="1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 1 Welcome to open source R Community Around the world Help!">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -359,7 +359,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#r-bakery" id="toc-r-bakery"><span class="toc-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> R bakery</a></li>
 <li><a href="#tidy-tables" id="toc-tidy-tables"><span class="toc-section-number">4</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Tidy tables</a></li>
 <li><a href="#sizing-up-the-data" id="toc-sizing-up-the-data"><span class="toc-section-number">5</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Sizing up the data</a></li>
-<li><a href="#glimpse-summary" id="toc-glimpse-summary"><span class="toc-section-number">6</span> <code>glimpse()</code> &amp; <code>summary()</code></a></li>
 </ul>
 </div>
 
@@ -645,7 +644,6 @@ See the full list of tidyverse packages at <a href="https://www.tidyverse.org/pa
 </div>
 <div id="names-and-things" class="section level2 unnumbered">
 <h2>Names and things</h2>
-<hr>
 <p>You can assign values to objects (variables) using the .teal[left arrow].</p>
 <ul>
 <li>It looks like this: <code>&lt;-</code><br />
@@ -1015,8 +1013,9 @@ bots <- data.frame(name       = baking_bots,
 <span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="fu">write_csv</span>(bots, <span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in write_csv(bots, file = &quot;bot_data.csv&quot;): could not find function &quot;write_csv&quot;</code></pre>
 <blockquote>
-<p>Did you get the error <em>could not find function “write_csv”</em>?</p>
-<p>Jump back to the top of your script and run the line <code>library(tidyverse)</code>.</p>
+<p><i class="fa fa-bug" aria-hidden="true"></i> <strong>ERROR</strong></p>
+<p>Did you get the error <code>could not find function "write_csv"</code>?</p>
+<p>Jump back to the top of your script and run the line: <code>library(tidyverse)</code></p>
 </blockquote>
 <p><br></p>
 <blockquote>
@@ -1159,10 +1158,8 @@ What data type is the <code>name</code> column?
 </tbody>
 </table>
 </div>
-</div>
-<div id="glimpse-summary" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> <code>glimpse()</code> &amp; <code>summary()</code></h1>
-<hr>
+<div id="glimpse-summary" class="section level2 unnumbered">
+<h2><code>glimpse()</code> &amp; <code>summary()</code></h2>
 <div id="lets-take-a-look-at-our-bot-data." class="section level3 unnumbered">
 <h3>Let’s take a look at our bot data.</h3>
 <p><code>glimpse()</code> shows the type of data in each column and shows a few sample values.</p>
@@ -1194,6 +1191,7 @@ What data type is the <code>name</code> column?
 <span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="fu">ncol</span>( )</span>
 <span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a></span>
 <span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a><span class="fu">names</span>( )</span></code></pre></div>
+</div>
 </div>
 <div id="filter-data" class="section level2 unnumbered">
 <h2>Filter data</h2>

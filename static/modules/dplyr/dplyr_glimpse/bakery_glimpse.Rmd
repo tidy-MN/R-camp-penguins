@@ -11,12 +11,10 @@ Use these functions to describe our dataframe.
 | `nrow(...)`     |  | number of rows          |  
 | `ncol(...)`     |  | number of columns       | 
 | `summary(...)`  |  | summary of all column values (ex. _max_, _mean_, _median_)  | 
+  
 
+## `glimpse()` & `summary()` {-}
 
-
-
-# `glimpse()` & `summary()`
-<hr>
 
 ### Let's take a look at our bot data. {-}
 
