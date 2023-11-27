@@ -1,14 +1,14 @@
 ---
-title: "Auditor in Training - Exercise 2"
+title: "Auditor-in-Training - Exercise 2"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: ../../css/camp_style.css
+    css: ../css/camp_style.css
     number_sections: true
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: false
+    toc: true
     toc_depth: 1
 ---
 
@@ -264,3 +264,7 @@ cat(paste0(tab_html, collapse = "\n"))
 We've got to stop doing so much good work...now the lead-baking bot wants us to start organizing orders! 
 
 No rest for the weary it seems but there are warm Oatmeal Raisin cookies which is a pretty good consolation prize!
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 

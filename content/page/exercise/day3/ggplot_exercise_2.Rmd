@@ -1,0 +1,263 @@
+---
+title: "ggplot2: the remix - Exercise 2"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+h1 .header-section-number {background: cornflowerblue;}
+hr {background:  cornflowerblue;}
+</style>
+
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
+library(here)
+
+xaringanExtra::use_clipboard()
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+# Before you start...
+
+Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_2_day_4.R` or `herriot.R` and you'll be ready to go!
+
+<!-- order the axis (factors or dosages etc), reversing axis -->
+<!-- Reminder of what does in aes and what DOESN'T - static colors, sizes, shapes go OUTSIDE -->
+<!-- magrittr pipe vs the plus operator, especially with summarizing information or filtering -->
+
+# Always more you can do
+
+Because of our excellent work so far both as an analytic bot and as the head baker, we been given a gift that's the best of both worlds! The [R Graphics Cookbook: Practical Recipes for Visualing Data](http://www.cookbook-r.com/Graphs/)
+
+Wow, there's a bunch of cool stuff in here, in fact, there's a bunch of cool stuff that could make the work that we've already done *even better*.
+
+Instead of using `penguins`, we're going to be using `penguins_raw` for this exercise and we're going to be making some graphs on summarized data...but first let's take a look at the data!
+
+```{r, message = FALSE, warning= FALSE}
+library(tidyverse)
+# install.packages('palmerpenguins')
+library(palmerpenguins)
+
+data("penguins") #this will read in the data from the package and load it to to our environment
+
+glimpse(penguins_raw)
+```
+
+If we want to do anything else with this data, it might be a good idea to clean the names because some of these look like they would be annoying to type...`Delta 15 N (o/oo)`? No thank you.
+
+```{r}
+library(janitor) #always good practice to load your libraries at the beginning of your script so go ahead and move this up to the rest of your library calls.
+
+penguins_raw_clean <- clean_names(penguins_raw)
+names(penguins_raw_clean)
+```
+
+Still long, but so much better!
+
+# Distribution of species by island revisted
+
+Well, let's see what we can do to make this more exciting. Let's create a summary table in additional to making a new and exciting visual.
+
+We'll be using the `magritr` pipe `%>%` that we showed last session - it makes our code easier to read and reduces the number of nested parenthesis we have to deal with.
+
+```{r}
+penguin_island_dist <- penguins_raw_clean %>% 
+  group_by(region, island, species) %>% 
+  summarise(count = n())
+
+penguin_island_dist
+```
+
+That's okay but let's try the `tabyl` function from the `janitor` package as well, see if we like how that looks better. The benefits of the `tabyl` function are that you can use the `adorn_` functions from janitor to do things like add row and column totals really easily which make summary tables like this a breeze!
+
+```{r}
+tabyl(penguins_raw_clean, species, island) %>% 
+  adorn_totals(where = 'row') %>% 
+  adorn_totals(where = 'col')
+```
+
+Nice! A quick way to generate a two-by-two table that we could include in a report. Now we just need a visual to accompany it...
+
+# Graphing summary data
+
+So below is a recreation of our previous chart using the raw data...What would we need to change in order to make this same chart only using summarized data we stored in `penguin_island_dist`?
+
+```{r, echo = F}
+ggplot(data = penguins_raw, aes(x = Island, fill = Species)) +
+  geom_bar(position = position_dodge2(preserve = "single")) + 
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+```
+
+Remember that helpful tip from the help of `geom_bar`?
+
+> "There are two types of bar charts: geom_bar() and geom_col(). geom_bar() makes the height of the bar proportional to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use geom_col() instead."
+>
+> ---`help(geom_bar)`
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions {-}
+```{r exer-tabs1, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Side-by-side", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.</h4>
+
+<br>',
+
+show_hint = 'code_start
+
+ggplot(data = __________, 
+       aes(x = ______, y = ______, fill = ________)) +
+  geom_xxx(position = position_dodge2(preserve = "single")) + 
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+code_end',
+
+show_code = 'code_start
+
+ggplot(data = penguin_island_dist, 
+       aes(x = island, y = count, fill = species)) +
+  geom_col(position = position_dodge2(preserve = "single")) + 
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+# Adding labels
+
+Something special about summarized data is that now we can add labels to our columns as well. We can do this using `geom_text` but there's a couple of things that we need to know before we get started.
+
+1. You can't nudge and dodge text, so instead adjust the y position
+1. `ggplot2` doesn't know you want to give the labels the same virtual width as the bars so you have to make your position width smaller.
+1. `geom_text()` adds only text to the plot. `geom_label()` draws a rectangle behind the text, making it easier to read.
+1. To add labels at specified points use `annotate()` with `annotate(geom = "text", ...)` or `annotate(geom = "label", ...)`
+1. `geom_text()` requires the following aesthetics (i.e. pass these to the `aes` function if you haven't yet!): __x__, __y__, and __label__ (this is probably the one you'll need to add)
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions {-}
+```{r exer-tabs2, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Side-by-side", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.</h4>
+
+<br>',
+
+show_hint = 'code_start
+
+ggplot(data = penguin_island_dist, 
+       aes(x = island, y = count, fill = species)) +
+  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_xxxx(aes(label = ______, y = _____ + 5), 
+            position = position_dodge2(width = ______)) +
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+code_end',
+
+show_code = 'code_start
+
+ggplot(data = penguin_island_dist, 
+       aes(x = island, y = count, fill = species)) +
+  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_text(aes(label = count, y = count + 5), 
+            position = position_dodge2(width = 0.9)) +
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+So make it work, we had to do three things when using the `geom_text` (or `geom_label` - try both and see which one you like the best!)
+
+1. make sure the positions matched, so if your `geom_` is using `dodge`, your `geom_text` should be using `dodge`
+1. increase the y value by some amount so that the label will sit higher than the top of the labeled point
+1. for bar/column charts, decrease the width so they sit nicer on top.
+
+```{r, include = FALSE, warning= FALSE}
+ggplot(penguins_raw_clean %>% 
+         group_by(species) %>% 
+         mutate(avg_bm_g = mean(body_mass_g, na.rm = T)) %>% 
+         ungroup(), 
+       aes(x = island, y = body_mass_g, color = species))+
+  geom_point()+
+  geom_errorbar(width = 0.5, linewidth = 1.25,
+                aes(ymax = avg_bm_g, ymin = avg_bm_g))+
+  scale_color_manual(values = c("#999999", "#E69F00", "#56B4E9"),
+                      name = 'Species',
+                      labels = c("Adelie", "Gentoo", "Chinstrap"))+
+
+  theme_bw()
+```
+
+# Pick your challenger!
+
+Now that you have some experience under your belt, it's important to shake things up and have some *fun*. Depending on how much time you have left, pick 1 or several of the challenges below and see what you can make! 
+
+The links below will take you to the specific section of the R Graphics Cookbook that will answer the question of how you do the thing.
+
+- [change the font](http://www.cookbook-r.com/Graphs/Fonts/)
+- [save a graphic as a .png (and don't cheat using the export feature in RStudio!)](http://www.cookbook-r.com/Graphs/Output_to_a_file/)
+- [put the islands in a different order on the x-axis!](http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/)
+- [make the legend labels easier to read (they're a little long...)](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
+- [use any theme from the package ThemePark](http://matthewbjane.com/ThemePark/) (you'll have install two packages before you can use, `remotes` and then of course, `ThemePark`)
+  + `install.packages("remotes")`
+  + `remotes::install_github("MatthewBJane/ThemePark")`
+- [try adding Minnesota State brand colors using the home-grown package `mncolors`](https://github.com/tidy-MN/mncolors)
+  + `install.packages("remotes")`
+  + `remotes::install_github("tidy-MN/mncolors")`
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 

@@ -1,30 +1,49 @@
 ---
-title: "ggplot exercises"
+title: "ggplot2 Exercise 1"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: "../../css/camp_style.css"
-    number_sections: false
+    css: css/camp_style.css
+    number_sections: true
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: false
+    toc: true
     toc_depth: 1
 ---
 
-# Palmer Penguin Exploration - Part 1
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+---
 
-We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins. They also were hoping that maybe we would look at their data and help them answer some questions about it. What do you say? Are you willing to help? 
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
 
-THANK YOU! Here's the questions the researchers were hoping to have answered - 
+xaringanExtra::use_clipboard()
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+# Before you start...
+
+Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_1_day_4.R` or `george.R` and you'll be ready to go!
+
+# Palmer Penguin Exploration - Solving problems, making friends
+
+This is our big chance to show the researchers that we can be the best analysis bot ever. Now that the researchers have collected the data they are starting to form questions about what the data *actually* tell us.
+
+Here's the questions the researchers were hoping to have answered - 
 
 - How can we determine the distribution of species by island?
 - Which species has the longest bill?
 - What measurements are related to each other? For example is a penguin with a long bill more likely to have a larger body mass? Also what relationship does species have to measurements?
 
-Let's make a graphical analysis of the data for them!
+Let's make a graphical analysis of the data for them and show how awesome we are!
 
-```{r, message = FALSE, warning= FALSE, class.source = 'fold-show'}
+```{r, message = FALSE, warning= FALSE}
 library(tidyverse)
 # install.packages('palmerpenguins') #you might not have this package yet so make sure you install it!
 library(palmerpenguins)
@@ -32,9 +51,9 @@ library(palmerpenguins)
 data("penguins") #this will read in the data from the package and load it to to our environment
 ```
 
-## What does the data look like?
+# What does the data look like?
 
-As good scientists we should always start with looking at the data provided to us and understanding what information was collected. What are some options for just taking a quick *peek* at the data?
+As good scientists we should always start with looking at the data provided to us and understanding what information was collected. What are some options for just taking a quick *peek* at the data? Let's use some of our tools from our ever-expanding data tool box.
 
 ```{r}
 glimpse(penguins)
@@ -47,8 +66,15 @@ We also know that Chinstrap are the least prevalent and Biscoe Island has the mo
 
 Let's go back to the researchers' questions.
 
-## Species by Island
+# Species by Island
 
+Okay, so the first question is what is the make-up of penguin species for each of the islands being studied. Let's make a bar-chart counting the number of different penguin species at each island. The x-axis will be island name and the fill-color will change depending on species!
+
+Also on a related note - how did we know to use `geom_bar`? Here's a handy quote from the documentation that just might illuminate why this is the right choice for this problem!
+
+> "There are two types of bar charts: geom_bar() and geom_col(). geom_bar() makes the height of the bar proportional to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use geom_col() instead."
+>
+> ---`help(geom_bar)`
 
 ```{r}
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -59,42 +85,147 @@ Great! We have a stacked bar chart that shows the species by island! But the res
 
 Back to the drawing board...let's start with labels! We want to add a title and make the axis labels be capitalized vs lower-case. Also someone complained about the background color and asked us to make it look "cleaner".
 
-```{r}
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Cleaning up {-}
+
+```{r exer-tabs, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Add labels and theme", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Add a title, x-axis and y-axis labels, and change the theme, below are some possible options for you to choose from: </h4>
+
+- `theme_grey`
+- `theme_bw`
+- `theme_dark`
+- `theme_minimal`
+- `theme_void`
+
+<br>',
+
+show_hint = 'code_start
+
+ggplot(data = penguins, aes(x = island, fill = species)) +
+  geom_bar() +
+  labs() + #use help if you want to learn more about what goes inside!
+  theme_xxx() #pick one of the themes above! 
+code_end',
+
+show_code = 'code_start
+
 ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar() +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
-       y = "Number of Penguins observed") +
-  theme_bw()
+       y = "Number of penguins observed") +
+  theme_futuram()
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
 ```
+</div>
+
+<br>
 
 Okay - whew! We added a title, a nice x-axis and y-axis label, changed the theme to `theme_bw` which we think looks pretty clean so hopefully they do too.
 
-Now we just need to tackle color...hmmm, we know it's a bar-chart which means that we need to specify 'fill' vs 'color' so we can use the function `scale_fill_brewer` to pick out our favorite (RColorBrewer palette)[https://colorbrewer2.org/] for this graph. We want a qualitative one and we also want one that is colorblind safe so let's pick palette 3!
+Now we just need to tackle color...hmmm, we know it's a bar-chart which means that we need to specify 'fill' vs 'color' so we can use the function `scale_fill_brewer` to pick out our favorite [RColorBrewer palette](https://colorbrewer2.org/) for this graph. We want a qualitative one and we also want one that is colorblind safe so let's pick palette 3 (but if you have a different favorite you should use that one)!
 
-```{r}
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Color time {-}
+```{r exer-tabs, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Adding fill colors", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Change the fill colors for the bar-chart using RColorBrewer palettes. </h4>
+
+<br>',
+
+show_hint = 'code_start
+
 ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar() +
-  scale_fill_brewer(type = 'qual', palette = 3) +
+  scale_fill_brewer() + #this is new! What arguments should be used?
   labs(title = "Distribution of penguin species by island",
        x = "Island",
-       y = "Number of Penguins observed") +
+       y = "Number of penguins observed") +
   theme_bw()
+  code_end',
+
+show_code = 'code_start
+
+ggplot(data = penguins, aes(x = island, fill = species)) +
+  geom_bar() +
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
 ```
+</div>
+
+<br>
 
 Annnnd of course one the researchers had a last minute request. They didn't like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!
 
-```{r}
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions {-}
+```{r exer-tabs, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Side-by-side", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Change the bar-chart from a stacked bar-chart to a side-by-side bar-chart by chaning the position argument </h4>
+
+<br>',
+
+show_hint = 'code_start
+
 ggplot(data = penguins, aes(x = island, fill = species)) +
-  geom_bar(position = position_dodge2(preserve = 'single')) +
-  scale_fill_brewer(type = 'qual', palette = 3) +
+  geom_bar(position = position_xxxx()) + #try help(position) for more deets
+  scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
-       y = "Number of Penguins observed") +
+       y = "Number of penguins observed") +
   theme_bw()
-```
+code_end',
 
-## Which species has the longest bill?
+show_code = 'code_start
+
+ggplot(data = penguins, aes(x = island, fill = species)) +
+  geom_bar(position = position_dodge2(preserve = "single")) + 
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+TA-DAAaaaaaaaaaaa!!! I think we all deserve some cookies after that don't you? Wait...there's *more*??? Okay, cookies will have to wait, let's get cracking!
+
+# Which species has the longest bill?
 
 ```{r}
 ggplot(data = penguins, aes(x = bill_length_mm))+
@@ -102,15 +233,15 @@ ggplot(data = penguins, aes(x = bill_length_mm))+
                      alpha = 0.5, 
                      position = 'identity') + # need to have position = 'identity' to have the alpha work!
   scale_fill_brewer(type = 'qual', palette = 3) +
-  labs(title = "Distribution of bill length (mm) by species",
-       x = "Bill Length (mm)",
-       y = "Number of Penguins observed") +
+  xlab("Bill Length (mm)") + 
+  ylab("Number of Penguins observed") +
+  labs(title = "Distribution of bill length (mm) by species") +
   theme_bw()
 ```
 
 Looks like Gentoo and Chinstrap are pretty much tied for longest bill! Wonder if bill length is related to other measurements...Always more questions!
 
-## What measurements are related to each other?
+# What measurements are related to each other?
 
 ```{r}
 cor(penguins[3:6])
@@ -129,16 +260,17 @@ ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
              shape = species))+
   scale_color_brewer(type = 'qual', palette = 3) +
-  labs(title = "Relationship of body mass and flipper length by species",
-       x = "Body Mass (g)",
-       y = "Flipper Length (mm)") +
+  xlab("Body Mass (g)") + 
+  ylab("Flipper Length (mm)") +
+  labs(title = "Relationship of body mass and flipper length by species") +
   theme_bw()
 ```
 
-Fascinating... Gentoo is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same amoung the different penguin species. You can add a trend-line to the graph to see that easier or see if the human eye is being tricked by very fun looking dots.
+Fascinating...Gentro is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same among the different penguin species. You can add a trend-line to the graph using `geom_smooth` to see that easier or see if the human eye is being tricked by very fun looking dots.
 
 ```{r}
-ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
+ggplot(data = penguins, 
+       aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
              shape = species))+
   geom_smooth(method = 'lm', se = FALSE, aes(color = species)) + 
@@ -152,7 +284,8 @@ ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
 Let's try doing the same exercise but let's use the `facet_wrap` function.
 
 ```{r}
-ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
+ggplot(data = penguins, 
+       aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
              shape = species))+
   geom_smooth(method = 'lm', se = FALSE, aes(color = species)) + 
@@ -172,4 +305,17 @@ Try to think of your own question that you use this data to answer or go back to
 
 The researchers have one more thing they'd like to say...
 
-# THANK YOU! {-}
+__THANK YOU!__
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 
+
+<!-- Include something about time series and putting dates on x-axis -->
+<!-- multiple charts in one  -->
+<!-- facet wrap and facet grid -->
+<!-- order the axis (factors or dosages etc), reversing axis -->
+<!-- alpha - opacity/transparency -->
+<!-- Reminder of what does in aes and what DOESN'T - static colors, sizes, shapes go OUTSIDE -->
+<!-- ggplot sandwich <3 -->
+<!-- magrittr pipe vs the plus operator, especially with summarizing information or filtering -->
