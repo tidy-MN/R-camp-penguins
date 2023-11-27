@@ -39,9 +39,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">0.2 - </span> [Camp Primer](page/r_camp_primer.html) 
 
-  - Nov. 27th @1pm: *Optional pre-camp intro to R and all things code*
-  - Contact Barbara/Derek if you need an invite
-
 </div>
 <br>
 

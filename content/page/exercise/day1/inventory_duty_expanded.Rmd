@@ -41,9 +41,10 @@ Apparently the lead-baking bot was so impressed with our inventory report that t
 
 In the audit we need to make sure that 
 
-- each ingredient has a category
-- no ingredient is 10 or more units over the order threshold
-- summary statistics are calculated for both dry and liquid measures (don't mix and match! Fluid ounces are different from dry ounces and gosh wouldn't it be swell if everything was metric...)
+- Each ingredient has a category
+- No ingredient is 10 or more units over the order threshold
+- Summary statistics are calculated for both dry and liquid measures 
+  - *(Don't mix and match! Fluid ounces are different from dry ounces and gosh wouldn't it be swell if everything was metric...)*
 
 Now that we have our marching orders, it's time to read in the data! Just need to break out our handy-dandy `read_csv` and...wait a second...this data isn't comma-delimited! What on earth are we going to do now?
 
@@ -92,7 +93,8 @@ content <- c(Exercise = '<h4> It can often be easier to look for the absence of 
 <br>',
 
 show_hint = 'code_start
-filter(audit_df, is.na()) #What goes inside is.na and what does is.na do?
+# What goes inside is.na and what does is.na do?
+filter(audit_df, is.na()) 
 code_end',
 
 show_code = 'code_start
@@ -116,7 +118,9 @@ AH-HA! There is indeed an ingredient that does not have a Category. We should fi
 Of course there's a way to do this, we wouldn't try if there wasn't. So the first question we have is what are the possible categories for an ingredient to have? We can use the function `unique` to figure out what the *unique* values are!
 
 ```{r}
-unique(audit_df$CATEGORY) #unique only likes vectors, so use the dollar sign to pull out the individual column from the dataframe!
+# unique only likes vectors, so use the $ (dollar sign) 
+# to pull out an individual column from the dataframe
+unique(audit_df$CATEGORY)  
 ```
 
 Pick the category that you think is the best fit. Now, we just need to figure out *where* in the dataframe the missing value is in. We know that CATEGORY is the second column so that's good...now we just need to know what row SALT is in since we can specify location using matrix-style indices (i.e. Row, Column position - just like Excel!)
@@ -263,7 +267,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 We've got to stop doing so much good work...now the lead-baking bot wants us to start organizing orders! 
 
-No rest for the weary it seems but there are warm Oatmeal Raisin cookies which is a pretty good consolation prize!
+No rest for the weary it seems, but there are warm Oatmeal Raisin cookies which is a pretty good consolation prize!
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 
