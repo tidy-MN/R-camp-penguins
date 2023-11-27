@@ -3,12 +3,12 @@ title: "Inventory Duty - Exercise 1"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: ../../css/camp_style.css
+    css: ../css/camp_style.css
     number_sections: true
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: false
+    toc: true
     toc_depth: 1
 ---
 
@@ -20,11 +20,14 @@ h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
 
+---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
 library(rmarkdown)
 library(knitr)
 library(magrittr)
+library(icons)
 
 xaringanExtra::use_clipboard()
 
@@ -33,32 +36,28 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 # Before you start...
-<hr>
-
 
 Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course. To make a new project in RStudio, go to File -> New Project -> New Directory -> New Project
 
 Now you need to pick a new directory. Pick a location that makes sense to you where you'll be able to find it again. If you made a project while following along with the videos, you can pick the same location for this one and then both your projects will be in the same location.
 
-Once you have a new project made, make a new R script and name it something pithy like `exercise_1_day_1.R` or `frank.R` and you'll be ready to go!
+Once you have a new project made, make a new R script and save it (Ctrl + S or click the floppy disk). Name it something pithy like `exercise_1_day_1.R` or `frank.R` and you'll be ready to go!
 
 # Inventory Duty
 
-We love our job as a baking-bot, but the thing we love even more than baking is actually taking the ingredients inventory. We like to play with the inventory data and present beautiful summaries to the head baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true...but we're getting ahead of our story. 
+We love our job as a baking-bot, but the thing we love more than baking is actually taking the inventory. We like to play with the inventory data and present beautiful summaries to the lead-baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true...but we're getting ahead of our story. 
 
 We've been tasked with downloading the inventory file from our suppliers and determining what needs to be ordered because we're running low.
 
 So the first thing we need to do is read in the file that contains the inventory!
 
 ```{r}
-library(tidyverse)
-
 inventory <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv")
 ```
 
 # Getting to know the data
 
-Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The head baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
+Now that we have the data, what should be our first step to better understand what information is in the file and what classes the columns are and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of `NUMBER_OF_UNITS_IN_STOCK` for planning purposes. 
 
 Feel free to use any and all of the functions you know but also feel free to look at the hint for inspiration!
 
@@ -101,7 +100,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-WHOA. We have 378 units of something in stock?! What are we making, cupcakes for a whole school?! A cake big enough to cover a bus?! Time to go invesigate...
+WHOA. We have 378 units of something in stock?! What are we making, cupcakes for a whole school?! A cake big enough to cover a bus?! Time to go investigate...
 
 # Why do we do this to ourselves?
 
@@ -154,7 +153,7 @@ Much better. Okay, let's see what we've been asked to do
 
 # Place that order!
 
-Oh right! We need to use the data that we've received to determine what items we need to order. If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.
+Oh right! We need to use the data that we've received to determine what items we need to order! If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.
 
 Do we have any ingredientst that fit that criteria?
 
@@ -172,11 +171,14 @@ content <- c(Exercise = '<h4> Filter the inventory dataset to the rows that meet
 <br>',
 
 show_hint = 'code_start
-filter(inventory, PLACE A CONDITION HERE) 
+order_now <- filter(inventory, PLACE A CONDITION HERE) 
+order_now
 code_end',
 
 show_code = 'code_start
-filter(inventory, NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
+order_now <- filter(inventory, 
+                    NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
+order_now
 code_end')
 
 tab_html <- add_tabs(tabs, content)
@@ -187,8 +189,18 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
+That makes sense, we've been getting lots of orders for our Gluten-free Applesauce and Walnut muffins and also for our Triple-Chocolate Brownies. We'll make a note that we need to make an urgent order for these supplies so we don't run out!
+
+The last thing that we need to do is export out the filtered data so we can send it to the lead-baking bot. 
+
 ```{r}
-filter(inventory, NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
+write_csv(x = order_now, file = "order_now.csv")
 ```
 
-That makes sense, we've been getting lots of orders for our Gluten-free Applesauce and Walnut muffins and also for our Tripple-Chocolate Brownies. We'll make a note that we need to make an urgent order for these supplies so we don't run out!
+Now we have a file that we can send in an email listing out the ingredients that we need to order right away. As well as a series of scripted steps that we can use again and again and again...well you get the idea.
+
+__NICE WORK!__
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 
