@@ -1,5 +1,5 @@
 ---
-title: "2.2 Fork in the road"
+title: "2.2 Forks in the road"
 comments: false
 hidden: false
 tags: [videos, day1]

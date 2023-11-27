@@ -247,7 +247,7 @@ crew_df <- mutate(crew_df,
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Fork in the road: `if_else` + `case_when`](videos/day2/02-2-fork-in-the-road)
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Forks in the road: `if_else` + `case_when`](videos/day2/02-2-fork-in-the-road)
 
 
 ## Short trippers {-}
