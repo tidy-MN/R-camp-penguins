@@ -1012,11 +1012,11 @@ bots <- data.frame(name       = baking_bots,
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># Save dataframe to a CSV file in our project folder</span></span>
 <span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="fu">write_csv</span>(bots, <span class="at">file =</span> <span class="st">&quot;bot_data.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in write_csv(bots, file = &quot;bot_data.csv&quot;): could not find function &quot;write_csv&quot;</code></pre>
-<blockquote>
-<p><i class="fa fa-bug" aria-hidden="true"></i> <strong>ERROR</strong></p>
+<div id="error-1" class="section level3 unnumbered red-note" style="width: 93%;">
+<h3><i class="fa fa-bug" aria-hidden="true"></i> Error!</h3>
 <p>Did you get the error <code>could not find function "write_csv"</code>?</p>
 <p>Jump back to the top of your script and run the line: <code>library(tidyverse)</code></p>
-</blockquote>
+</div>
 <p><br></p>
 <blockquote>
 <p><strong>Where did the file get saved?</strong></p>

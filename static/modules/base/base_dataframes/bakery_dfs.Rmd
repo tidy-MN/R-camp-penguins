@@ -129,11 +129,16 @@ We are ready to save our wonderful little table. We will save the data to a file
 write_csv(bots, file = "bot_data.csv")
 ```
 
-> <i class="fa fa-bug" aria-hidden="true"></i> **ERROR**
-> 
-> Did you get the error `could not find function "write_csv"`?
->
-> Jump back to the top of your script and run the line: `library(tidyverse)`
+
+<div class="red-note" style="width: 93%;">
+
+### <i class="fa fa-bug" aria-hidden="true"></i> Error!  {-}
+
+Did you get the error `could not find function "write_csv"`?
+
+Jump back to the top of your script and run the line: `library(tidyverse)`
+
+</div>
 
 <br>
 
