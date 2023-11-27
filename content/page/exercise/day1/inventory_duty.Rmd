@@ -206,7 +206,10 @@ The last thing that we need to do is export out the filtered data so we can send
 write_csv(x = order_now, file = "order_now.csv")
 ```
 
-Now we have a file that we can send in an email listing out the ingredients that we need to order right away. As well as a series of scripted steps that we can use again and again and again...well you get the idea.
+
+<br>
+
+Excellent! We'll send this out in an email so we get the ingredients that we need right away. And we also have a series of scripted steps that we can use again and again and again...well you get the idea.
 
 __NICE WORK!__
 

@@ -81,7 +81,7 @@ Packages: `tidyverse`
 </div>
 <div class = "col-md-6">
 
-**Day 2** |  
+**Day 2** 
 
 > Excel files, arrange, select, group, summarize and add columns    
 
