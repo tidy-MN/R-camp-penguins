@@ -186,10 +186,10 @@ Packages: `DBI`, `RODBC`, `keyring`
 </div>
 </div>
 
-<br>
+<br><br>
 
-### 🐈🐈 Concatulations!! 🐱🐱
+## 🐈🐈 Concatulations!! 🐱🐱
 
-Celebrations, accolades and certificates
+
 
 <br>
