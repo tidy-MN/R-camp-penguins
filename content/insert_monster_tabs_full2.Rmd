@@ -112,7 +112,7 @@
 
 <h3 class="blue-h3"> Average age by monster color type </h3>
 
-![](../images/monsters/groupby_summarize_pipe_monsters3.mpg){style="width: 95%; margin-top: 12px;"}
+![](../images/monsters/groupby_summarize_pipe_monsters3.png){style="width: 95%; margin-top: 12px;"}
 
 ![](../images/monsters/groupby_summarize_single_monsters2.png){style="width: 98%; margin-top: 12px;"}
 
