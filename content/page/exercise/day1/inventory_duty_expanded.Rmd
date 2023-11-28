@@ -42,10 +42,9 @@ The lead baking-bot is very impressed with our recent work. And now they've aske
 
 In the audit we need to:
 
-- Good labels: Check each ingredient has a category.
+- Ensure good labels: Check that each ingredient has a category.
 - Check for overstocking: No ingredient is more than 10 above its order threshold.
 - Calculate summary statistics for both dry and liquid measures. 
-  - *(Don't mix and match! Fluid ounces are different from dry ounces and gosh wouldn't it be swell if everything was metric...)*
 
 <br>
 
