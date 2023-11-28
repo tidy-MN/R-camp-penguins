@@ -249,7 +249,7 @@ crew_df <- select(crew_df, -no_egg_allergy)
 crew_df <- mutate(crew_df, 
                   n_allergies = egg_allergy + nut_allergy)
 
-# Now we can easily filter to crew with ANY allergies
+# Filter to crew with more than zero allergies
 allergy_crew_df <- filter(crew_df, n_allergies > 0)
 
 ```
@@ -350,8 +350,9 @@ case_when(age < 3 ~ "Baby",
           TRUE ~ "Not a baby")
 ```
 
-> Now we can add more life stages
+<br>
 
+> Now we can add more life stages
 
 **Add a "Kid" option**
 ```{r, eval=F}
@@ -378,7 +379,7 @@ mutate(monsters,
 ```
 
 
-## The pipe: "Take this and then..." {-}
+## The pipe: *"Take this and then..."* {-}
 
 <img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/pipe.png" style="width: 32%; margin-top: 0;">
 

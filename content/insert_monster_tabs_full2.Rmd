@@ -110,15 +110,15 @@
 
 <div class="tab-pane fade" id="groupby2" role="tabpanel" aria-labelledby="groupby-tab2">
 
-<h3 class="blue-h3"> Average age by color </h3>
+<h3 class="blue-h3"> Average age by monster color type </h3>
 
-![](../images/monsters/groupby_summarize_pipe_monsters3){style="width: 98%; margin-top: 12px;"}
+![](../images/monsters/groupby_summarize_pipe_monsters3.mpg){style="width: 95%; margin-top: 12px;"}
 
 ![](../images/monsters/groupby_summarize_single_monsters2.png){style="width: 98%; margin-top: 12px;"}
 
-<h3 class="blue-h3" style="margin-top: 50px;"> Add a new column </h3>
+<h3 class="blue-h3" style="margin-top: 50px;"> Average age and monster count by color </h3>
 
-![](../images/monsters/groupby_summarize_pipe_multi_monsters2.png){style="width: 98%;"}
+![](../images/monsters/groupby_summarize_pipe_multi_monsters2.png){style="width: 96%;"}
 
 ![](../images/monsters/groupby_summarize_multi_monsters2.png){style="width: 98%;"}
 <br>

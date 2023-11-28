@@ -63,7 +63,7 @@
   "headline": "Day 2",
   "description" : "1 Data wrangling 2 Forks in the road: if_else \u002b case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
   "inLanguage" : "en",
-  "wordCount":  1942 ,
+  "wordCount":  1946 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -674,7 +674,7 @@ blockquote code {background: #f8fdff;}
 <span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
 <span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>                  <span class="at">n_allergies =</span> egg_allergy <span class="sc">+</span> nut_allergy)</span>
 <span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="co"># Now we can easily filter to crew with ANY allergies</span></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="co"># Filter to crew with more than zero allergies</span></span>
 <span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>allergy_crew_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(crew_df, n_allergies <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
@@ -742,6 +742,7 @@ blockquote code {background: #f8fdff;}
 <p><strong>Turns into this <code>case_when()</code> statement</strong></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
 <span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
+<p><br></p>
 <blockquote>
 <p>Now we can add more life stages</p>
 </blockquote>
@@ -761,7 +762,7 @@ blockquote code {background: #f8fdff;}
 </div>
 </div>
 <div id="the-pipe-take-this-and-then" class="section level2 unnumbered">
-<h2>The pipe: “Take this and then…”</h2>
+<h2>The pipe: <em>“Take this and then…”</em></h2>
 <p><img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/pipe.png" style="width: 32%; margin-top: 0;"></p>
 <div id="patty-cake" class="section level3 unnumbered">
 <h3>Patty cake</h3>
@@ -1018,14 +1019,14 @@ Average age
 </div>
 <div id="groupby2" class="tab-pane fade" role="tabpanel" aria-labelledby="groupby-tab2">
 <h3 class="blue-h3">
-Average age by color
+Average age by monster color type
 </h3>
-<p><img src="../images/monsters/groupby_summarize_pipe_monsters3" style="width: 98%; margin-top: 12px;" /></p>
+<p><video src="../images/monsters/groupby_summarize_pipe_monsters3.mpg" style="width: 95%; margin-top: 12px;" controls=""><a href="../images/monsters/groupby_summarize_pipe_monsters3.mpg">Video</a></video></p>
 <p><img src="../images/monsters/groupby_summarize_single_monsters2.png" style="width: 98%; margin-top: 12px;" /></p>
 <h3 class="blue-h3" style="margin-top: 50px;">
-Add a new column
+Average age and monster count by color
 </h3>
-<p><img src="../images/monsters/groupby_summarize_pipe_multi_monsters2.png" style="width: 98%;" /></p>
+<p><img src="../images/monsters/groupby_summarize_pipe_multi_monsters2.png" style="width: 96%;" /></p>
 <p><img src="../images/monsters/groupby_summarize_multi_monsters2.png" style="width: 98%;" />
 <br></p>
 </div>
