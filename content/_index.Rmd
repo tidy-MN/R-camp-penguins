@@ -33,11 +33,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div style="margin-left: 3%;">
 
-### <i class="fas fa-clipboard"></i>  [Install R](page/install.html)
+### <i class="fas fa-clipboard"></i> [Install R](page/install.html) {-}
 
-  - **Required** - *Please-please do before our first session together. Send [Derek Nagel](mailto:derek.nagel@state.mn.us) a Teams chat or email for help.*
-
-### <i class="fas fa-clipboard"></i> [Camp Primer](page/r_camp_primer.html) 
+### <i class="fas fa-clipboard"></i> [Camp Primer](page/r_camp_primer.html) {-}
 
 </div>
 <br>

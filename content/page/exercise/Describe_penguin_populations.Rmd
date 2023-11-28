@@ -29,7 +29,7 @@ penguins <- penguins
 
 ### Compare flipper lengths
 
-Using the `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. `data_summary <-`, or you can avoid the name and have your summary information printed into the console. Now that you have your penguin data, please create a dataset that summarizes the flipper lengths of the penguin populations by species. Please make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
+The `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. `data_summary <-`, or you can avoid the name and have your summary information printed into the console. Now that you have your penguin data, please create a dataset that summarizes the flipper lengths of the penguin populations by species. Please make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
 
 1. Which penguin species has the shortest flippers?
 1. Is there a flipper length range that includes all three penguin species?

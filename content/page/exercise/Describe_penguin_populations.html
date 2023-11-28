@@ -8,18 +8,19 @@ output: html_document
 
 <div id="summarize-the-data-on-penguin-populations" class="section level2">
 <h2>Summarize the data on penguin populations</h2>
-<p>The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. Use the <code>penguins</code> dataset in the <code>palmerpenguins</code> package. Please ask for help if you get stuck or would like a hint.</p>
+<p>The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. We will use the <code>penguins</code> dataset in the <code>palmerpenguins</code> package. Please ask for help if you get stuck or would like a hint.</p>
 <div id="load-the-palmerpenguins-package" class="section level3">
 <h3>Load the <code>palmerpenguins</code> package</h3>
 <pre class="r"><code>library(palmerpenguins)</code></pre>
 </div>
 <div id="load-the-penguins-data" class="section level3">
 <h3>Load the <code>penguins</code> data</h3>
+<p>Since the dataset is included in the package itself, we don’t need to read in a csv from the web or from our computer folders. Many R packages include datasets so that you can test the functions included in them. <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">Here</a> is a website with packages that include 1000s of datasets! Once you have loaded your R package that contains a dataset, you can pull that dataset into your environment by giving the dataset an object name. If you are ever wondering if a package includes a practice data set, just run this code to get a list of the datasets <code>data(package='palmerpenguins')</code></p>
 <pre class="r"><code>penguins &lt;- penguins</code></pre>
 </div>
 <div id="compare-flipper-lengths" class="section level3">
 <h3>Compare flipper lengths</h3>
-<p>Create a dataset that summarizes the flipper lengths of the penguin populations by species. Calculate the minimum, maximum, and average flipper lengths of each penguin species.</p>
+<p>The <code>group_by</code> and <code>summarize</code> functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. <code>data_summary &lt;-</code>, or you can avoid the name and have your summary information printed into the console. Now that you have your penguin data, please create a dataset that summarizes the flipper lengths of the penguin populations by species. Please make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species has the shortest flippers?</li>
 <li>Is there a flipper length range that includes all three penguin species?</li>
@@ -60,7 +61,7 @@ Example:<br />
 </div>
 <div id="compare-weights" class="section level3">
 <h3>Compare weights</h3>
-<p>Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and average weights of each group.</p>
+<p>Now we are interested in how much penguins weigh by species AND island. You can do this using the <code>group_by</code> function on more than one variable. Here’s your task - Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights of each group.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species is the heaviest?</li>
 <li>On which island are Adelie penguins the heaviest?</li>
@@ -102,7 +103,7 @@ Example:<br />
 </div>
 <div id="compare-penguin-bills" class="section level3">
 <h3>Compare penguin bills</h3>
-<p>Create a dataset that summarizes the bill lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and average bill lengths and depths of each group.</p>
+<p>Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, <code>group_by</code> lets this happen as long as your data allow it. In this final exercise, we want you to create a dataset that summarizes the bill lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and mean bill lengths and depths of each group.</p>
 <ol style="list-style-type: decimal">
 <li>In general, do male and female bills tend to be the same length and depth? If not, how do they differ?</li>
 <li>Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills have the shallowest?</li>
