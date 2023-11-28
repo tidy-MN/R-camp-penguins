@@ -233,9 +233,9 @@ ggplot(data = penguins, aes(x = bill_length_mm))+
                      alpha = 0.5, 
                      position = 'identity') + # need to have position = 'identity' to have the alpha work!
   scale_fill_brewer(type = 'qual', palette = 3) +
-  xlab("Bill Length (mm)") + 
-  ylab("Number of Penguins observed") +
-  labs(title = "Distribution of bill length (mm) by species") +
+  labs(title = "Distribution of bill length (mm) by species",
+       x = "Bill Length (mm)",
+       y = "Number of Penguins observed") +
   theme_bw()
 ```
 
@@ -260,9 +260,9 @@ ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
              shape = species))+
   scale_color_brewer(type = 'qual', palette = 3) +
-  xlab("Body Mass (g)") + 
-  ylab("Flipper Length (mm)") +
-  labs(title = "Relationship of body mass and flipper length by species") +
+  labs(title = "Relationship of body mass and flipper length by species",
+       x = "Body Mass (g)",
+       y = "Flipper Length (mm)") +
   theme_bw()
 ```
 
@@ -275,9 +275,9 @@ ggplot(data = penguins,
              shape = species))+
   geom_smooth(method = 'lm', se = FALSE, aes(color = species)) + 
   scale_color_brewer(type = 'qual', palette = 3) +
-  xlab("Body Mass (g)") + 
-  ylab("Flipper Length (mm)") +
-  labs(title = "Relationship of body mass and flipper length by species") +
+  labs(title = "Relationship of body mass and flipper length by species",
+       x = "Body Mass (g)",
+       y = "Flipper Length (mm)") +
   theme_bw()
 ```
 
@@ -290,9 +290,9 @@ ggplot(data = penguins,
              shape = species))+
   geom_smooth(method = 'lm', se = FALSE, aes(color = species)) + 
   scale_color_brewer(type = 'qual', palette = 3) +
-  xlab("Body Mass (g)") + 
-  ylab("Flipper Length (mm)") +
-  labs(title = "Relationship of body mass and flipper length by species") +
+  labs(title = "Relationship of body mass and flipper length by species",
+       x = "Body Mass (g)",
+       y = "Flipper Length (mm)") +
   theme_bw() +
   facet_wrap(facets = ~species)
 ```
