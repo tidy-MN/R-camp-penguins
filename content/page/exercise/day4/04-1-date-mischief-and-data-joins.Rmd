@@ -10,26 +10,28 @@ output:
     monofont: Source Code Pro
     toc: false
     toc_depth: 1
+    code_folding: hide
 ---
-
 
 ```{r setup, include=FALSE}
 library(readr)
 library(dplyr)
 library(lubridate)
 library(palmerpenguins)
+library(janitor)
+library(ggplot2)
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
 ## Getting started
 
-The research crew wants to determine if there is a relationship between isotope levels and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.
+The research crew wants to determine if there is a relationship between isotope levels in the `penguins_raw` data and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.
 
 * https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv
 * https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv
 * https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv
 
-Let's get all of this data into R so we can combine it with our penguin data. Hint: use `read_csv`.
+Let's get all of this data into R so we can combine it with our `penguins_raw` data. Hint: use `read_csv`.
 
 ```{r read_data}
 biscoe <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv")
@@ -37,6 +39,16 @@ biscoe <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/ma
 dream <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv")
 
 torg <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv")
+```
+
+## Data exploration
+
+Let's do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames? What do we need to do to make the data tidy?
+
+```{r explore_data}
+glimpse(biscoe)
+glimpse(dream)
+glimpse(torg)
 ```
 
 ## Clean-up time
@@ -54,7 +66,7 @@ torg <- torg %>%
   mutate(island = "Torgersen")
 ```
 
-Do you notice anything about the dates? They are all in different formats! Luckily we have `lubridate` to come to the rescue. Let's convert those dates.
+When exploring the data, did you notice anything about the dates? They are all in different formats! Luckily we have `lubridate` to come to the rescue. Let's convert those dates so they are all in the same format.
 
 ```{r convert_dates}
 biscoe <- biscoe %>%
@@ -64,7 +76,7 @@ dream <- dream %>%
   mutate(date = dmy(date))
 
 torg <- torg %>%
-  mutate(island = ymd(date))
+  mutate(date = ymd(date))
 ```
 
 ## Putting it all together
@@ -72,10 +84,18 @@ torg <- torg %>%
 To join the temperature data to our penguin data easily, we want to combine all 3 data frames into one data frame. Keeping in mind tidy data, what is the best way to do this?
 
 ```{r combine}
-temps <- rbind(biscoe, dream, torg)
+temps <- bind_rows(biscoe, dream, torg)
 ```
 
-Now that we have a tidy penguin data frame and a tidy temperature data frame, it's time to combine them into one mega data frame. Both data frames have an island name and a date. What operation do we want to use? Which type is most appropriate here? The resulting data frame should have the same number of rows as the penguin data frame.
+## More data exploartion
+
+We have our temperature data in a happy place, but what about the penguin data? Let's look at that data to figure out which columns we can use to combine it with our temperature data.
+
+```{r explore_penguin_data}
+glimpse(penguins_raw)
+```
+
+Now that we have a tidy penguin data frame and a tidy temperature data frame, it's time to combine them into one mega data frame. Both data frames have an island name and a date. What operation do we want to use? Which type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. The resulting data frame should have the same number of rows as the penguin data frame.
 
 ```{r join}
 #inner join works the same in this instance
@@ -84,3 +104,29 @@ penguins_temps <- left_join(penguins_raw, temps,
                                    "Date Egg" = "date")
                             )
 ```
+
+## Looking at the relationship between temp and isotopes
+
+With all of the data in one data frame, we can now plot isotope levels versus temperatures. But first we need to clean up those icky column names. How do we do that?
+
+```{r clean_names}
+penguins_temps <- clean_names(penguins_temps)
+```
+
+Now we can finally make our plots. We're interested in temperatures in comparison to isotope levels which are in the columns `Delta 15 N (o/oo)` and `Delta 13 C (o/oo)` in the original penguins_raw data frame. Which type of plot do you think is most appropriate here? Add some color to show the differences between the 3 islands.
+
+```{r plots}
+ggplot(penguins_temps,
+       aes(x = temperature_c, y = delta_15_n_o_oo, color = island)) +
+  geom_point(size = 3) +
+  scale_color_discrete(type = c("green", "blue", "purple"))
+
+ggplot(penguins_temps,
+       aes(x = temperature_c, y = delta_13_c_o_oo, color = island)) +
+  geom_point(size = 3) +
+  scale_color_discrete(type = c("green", "blue", "purple"))
+```
+
+## Expedition complete
+
+Congratulations! You have now learned how temperatures affect penguin chemistry. Time to begin the next expedition.
