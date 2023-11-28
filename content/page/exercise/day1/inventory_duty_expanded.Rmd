@@ -62,7 +62,7 @@ Here are a few general steps to follow when you receive a file in an unknown for
 **Side-bar discussion: What is a delimiter?**
 
 > A delimiter is a sequence of one or more characters for specifying the boundary between independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the `:` used to separate parts of the time, such as in 03:30. 
-  
+>  
 > [Wikipedia](https://en.wikipedia.org/wiki/Delimiter)
 
 ```{r}
@@ -179,7 +179,8 @@ cat(paste0(tab_html, collapse = "\n"))
 ```
 </div>
 
-# Overstocked: Too many goods
+
+# Overstock: Too many goods
 
 - Check for overstocking: **"No ingredient is more than 10 above the order threshold."**
 
@@ -192,9 +193,9 @@ We don't want too much food laying around or it might spoil. Let's use filter to
 ```{r exer-tabs3, results='asis', echo=F}
 source("../../insert_tabs.R")
 
-tabs <- c("10 or more", "Show hint", "Show code")
+tabs <- c("Overstock", "Show hint", "Show code")
 
-content <- c(Exercise = '<b> Filter the audit dataset to find any rows where the number of units in stock is 10 or more above the order threshold. </b>
+content <- c(Exercise = '<b> Filter the audit dataset to find rows where the number of units in stock are more than 10 above the order threshold. </b>
 
 <br>',
 

@@ -63,7 +63,7 @@
   "headline": "Day 1",
   "description" : "1 Welcome to open source 2 R tour 3 R bakery 4 Tidy tables 5 Sizing up the data 1 Welcome to open source R Community Around the world Help!",
   "inLanguage" : "en",
-  "wordCount":  4681 ,
+  "wordCount":  4701 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -648,9 +648,10 @@ See the full list of tidyverse packages at <a href="https://www.tidyverse.org/pa
 <ul>
 <li>It looks like this: <code>&lt;-</code><br />
 </li>
-<li>It’s typed with a less-than sign <code>&lt;</code> followed by a hyphen <code>-</code><br />
+<li>It’s typed with a less-than sign <code>&lt;</code>, followed by a hyphen or minus sign <code>-</code><br />
 </li>
 <li>It’s more officially known as the <em>assignment operator</em></li>
+<li>It takes the value on the right and stores it in the object on the left</li>
 </ul>
 <div id="lets-create-a-baking-bot" class="section level3 unnumbered">
 <h3>Let’s create a baking bot</h3>
@@ -1209,7 +1210,7 @@ What data type is the <code>name</code> column?
 </blockquote>
 <p><br></p>
 <p>Let’s find the bots named <code>"Whiskers"</code>.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># Bots with ages greater than 1</span></span>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># Bots with a name EQUAL TO Whiskers</span></span>
 <span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a><span class="fu">filter</span>(bake_bots, name <span class="sc">==</span> <span class="st">&quot;Whiskers&quot;</span>)</span></code></pre></div>
 <pre><code>##       name age
 ## 1 Whiskers   1</code></pre>

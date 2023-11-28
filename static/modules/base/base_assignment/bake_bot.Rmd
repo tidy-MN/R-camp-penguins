@@ -2,8 +2,9 @@
 You can assign values to objects (variables) using the .teal[left arrow]. 
 
 - It looks like this: `<- `  
-- It's typed with a less-than sign `<` followed by a hyphen `-`  
-- It’s more officially known as the *assignment operator*  
+- It's typed with a less-than sign `<`, followed by a hyphen or minus sign `-`  
+- It’s more officially known as the *assignment operator*
+- It takes the value on the right and stores it in the object on the left
 
 
 ### Let's create a baking bot {-}

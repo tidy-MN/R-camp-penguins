@@ -20,7 +20,7 @@ filter(bake_bots, age > 1)
 
 Let's find the bots named `"Whiskers"`.
 ```{r filter-name, eval=T}
-# Bots with ages greater than 1
+# Bots with a name EQUAL TO Whiskers
 filter(bake_bots, name == "Whiskers")
 ```
 
