@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Identify penguins using `filter()` and `case_when()`'
+title: Guess who!
 author: "Abigail Stamm"
 output: html_document
 ---
@@ -8,40 +8,35 @@ output: html_document
 
 <div id="exercise-1-filtering-data" class="section level2">
 <h2>Exercise 1: filtering data</h2>
-<p>The goal of this exercise is to filter a dataset using repeated
-filter commands until you only have one row of data left.</p>
-<p>Using the <code>penguins</code> dataset in the
-<code>palmerpenguins</code> package, isolate a penguin who meets one of
-the following sets of criteria. What is its study number?</p>
+<p>The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.</p>
+<p>Using the <code>penguins</code> dataset in the <code>palmerpenguins</code> package, isolate a penguin who meets one of the following sets of criteria. What is its study number?</p>
 <ol style="list-style-type: decimal">
-<li>I am a female Adelie penguin hatched on November 12th on Biscoe
-Island. I was part of the latest study.</li>
-<li>I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm
-long, but my flippers are less than 20cm long.</li>
-<li>I am a female Gentoo penguin weighing over 5kg, but my bill is
-shorter at under 4.5cm long.</li>
+<li>I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.</li>
+<li>I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm long, but my flippers are less than 20cm long.</li>
+<li>I am a female Gentoo penguin weighing over 5kg, but my bill is shorter at under 4.5cm long.</li>
 </ol>
 <p>For a greater challenge, try to isolate these penguins.</p>
 <ol style="list-style-type: decimal">
 <li>I have the lowest weight of the male penguins.</li>
 <li>I am the heaviest female Adelie penguin.</li>
-<li>I have the longest flippers of the Adelie penguins on Dream
-Island.</li>
+<li>I have the longest flippers of the Adelie penguins on Dream Island.</li>
 </ol>
 <details>
 <summary>
-Code hint
+<strong>CODE HINT</strong>
 </summary>
-<p>Example: <code>filter(data, x &lt; 0)</code><br />
+<p>Example:
+<code>filter(data, x &lt; 0)</code><br />
 Remember to account for <code>NA</code> values.</p>
 <details>
 <summary>
-Advanced code hint
+**ADVANCED *CODE HINT**
 </summary>
-<p>Example: <code>filter(body_mass_g &gt; 4000)</code></p>
+<p>Example:
+<code>filter(body_mass_g &gt; 4000)</code></p>
 <details>
 <summary>
-Precise code hint
+<strong>PRECISE CODE HINT</strong>
 </summary>
 <p>Example:
 <code>filter(penguins, body_mass_g == min(body_mass_g, na.rm = TRUE))</code></p>
@@ -51,24 +46,22 @@ Precise code hint
 </div>
 <div id="exercise-2-using-case_when" class="section level2">
 <h2>Exercise 2: using case_when</h2>
-<p>Select the same penguin that you selected above. Create a new
-variable using case_when that uses the criteria provided to identify
-your selected penguin and and only your selected penguin in your
-dataset.</p>
+<p>Select the same penguin that you selected above. Create a new variable using case_when that uses the criteria provided to identify your selected penguin and only your selected penguin in your dataset.</p>
 <details>
 <summary>
-Code hint
+<strong>CODE HINT</strong>
 </summary>
-<p>Example: <code>case_when(x == y ~ TRUE, .default = FALSE)</code></p>
+<p>Example:
+<code>case_when(x == y ~ TRUE, .default = FALSE)</code></p>
 <details>
 <summary>
-Advanced code hint
+**ADVANCED *CODE HINT**
 </summary>
 <p>Example:
 <code>case_when(body_mass_g &gt; 4000 ~ TRUE, .default = FALSE)</code></p>
 <details>
 <summary>
-Precise code hint
+<strong>PRECISE CODE HINT</strong>
 </summary>
 <p>Example:
 <code>mutate(penguins, subject = case_when(body_mass_g &gt; 4000 &amp; bill_length_mm &gt; 50 ~ TRUE, .default = FALSE))</code></p>
@@ -76,4 +69,3 @@ Precise code hint
 </details>
 </details>
 </div>
-

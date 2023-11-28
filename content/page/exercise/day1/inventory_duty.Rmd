@@ -48,11 +48,11 @@ Click **Create project**.
 Now that you have a new project setup (you should see your project name in the top right of RStudio), create a new R script and save it. 
 
 - To make a new R script: 
-    - Go to `File` -> `New File` -> `R Script` or 
+    - Go to `File` -> `New File` -> `R Script` -or- 
     - Click the top left icon with the green plus sign
  
 
-You can now save the script by clicking `CTRL` + `S` or by clicking the floppy disk icon. Name your script something pithy like `ex_1_day_1.R` or `frankie.R`. 
+You can now save the script by clicking <kbd>CTRL</kbd> + <kbd>S</kbd> or by clicking the floppy disk icon. Name your script something pithy like `ex_1_day_1.R` or `frankie.R`. 
 
 You're ready to go!
 
@@ -167,7 +167,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-Look at that. We have a **total** row - that sure could have thrown a wrench in our summaries. That row is also adding `NA`s to other columns which might make some of our analysis harder in the future. Let's get rid of this summary row and keep only the *real data*.
+Look at that. We have a **total** row - that would a wrench in our summaries. That row is also adding `NA`s to other columns which might make some of our analysis harder in the future. Let's get rid of this summary row and keep only the *real data*.
 
 > **NOTE:**  Lots of functions you'll meet in R will have the additional argument `na.rm = TRUE`, which allows us to ignore NA values when calculating things like means, maxes, etc. Super handy!
 
@@ -261,7 +261,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 That's just what I expected. We've been getting lots of orders for our **Gluten-free Applesauce** and **Walnut muffins**, and also for our **Triple-Chocolate Brownies**. Time for an urgent supply order so we don't run out!
 
-The last thing to do is to write/save the filtered data so we can send it to the lead baking-bot. 
+The last thing to do is to write/save the filtered data. 
 
 ```{r, eval=F}
 write_csv(x = order_now, file = "order_now.csv")

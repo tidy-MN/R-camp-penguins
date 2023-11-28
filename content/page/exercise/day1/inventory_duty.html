@@ -103,11 +103,11 @@ hr {background:  cornflowerblue;}
 <ul>
 <li>To make a new R script:
 <ul>
-<li>Go to <code>File</code> -&gt; <code>New File</code> -&gt; <code>R Script</code> or</li>
+<li>Go to <code>File</code> -&gt; <code>New File</code> -&gt; <code>R Script</code> -or-</li>
 <li>Click the top left icon with the green plus sign</li>
 </ul></li>
 </ul>
-<p>You can now save the script by clicking <code>CTRL</code> + <code>S</code> or by clicking the floppy disk icon. Name your script something pithy like <code>ex_1_day_1.R</code> or <code>frankie.R</code>.</p>
+<p>You can now save the script by clicking <kbd>CTRL</kbd> + <kbd>S</kbd> or by clicking the floppy disk icon. Name your script something pithy like <code>ex_1_day_1.R</code> or <code>frankie.R</code>.</p>
 <p>You’re ready to go!</p>
 </div>
 <div id="inventory-duty" class="section level1" number="2">
@@ -217,7 +217,7 @@ filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
 </div>
 </div>
 <p><br></p>
-<p>Look at that. We have a <strong>total</strong> row - that sure could have thrown a wrench in our summaries. That row is also adding <code>NA</code>s to other columns which might make some of our analysis harder in the future. Let’s get rid of this summary row and keep only the <em>real data</em>.</p>
+<p>Look at that. We have a <strong>total</strong> row - that would a wrench in our summaries. That row is also adding <code>NA</code>s to other columns which might make some of our analysis harder in the future. Let’s get rid of this summary row and keep only the <em>real data</em>.</p>
 <blockquote>
 <p><strong>NOTE:</strong> Lots of functions you’ll meet in R will have the additional argument <code>na.rm = TRUE</code>, which allows us to ignore NA values when calculating things like means, maxes, etc. Super handy!</p>
 </blockquote>
@@ -323,7 +323,7 @@ order_now
 </div>
 <p><br></p>
 <p>That’s just what I expected. We’ve been getting lots of orders for our <strong>Gluten-free Applesauce</strong> and <strong>Walnut muffins</strong>, and also for our <strong>Triple-Chocolate Brownies</strong>. Time for an urgent supply order so we don’t run out!</p>
-<p>The last thing to do is to write/save the filtered data so we can send it to the lead baking-bot.</p>
+<p>The last thing to do is to write/save the filtered data.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> order_now, <span class="at">file =</span> <span class="st">&quot;order_now.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <p>Excellent! We’ll send this out so we get those ingredients right away. Even better, next inventory time we’ll have these scripted steps that we can use again and again and again…well you get the idea.</p>

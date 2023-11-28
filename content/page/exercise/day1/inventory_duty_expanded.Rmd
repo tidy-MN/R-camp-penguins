@@ -38,7 +38,7 @@ Jump back into the project you created for the previous exercise and then create
 
 # Auditor-in-training
 
-The lead baking-bot is very impressed with our recent work. And now they've asked us perform a complete audit. This is our dream come true. No one has been so excited to do an audit as we are RIGHT NOW! 
+The lead baking-bot is very impressed with our recent work. And now they've asked us perform a complete audit. This is our absolute dream come true. No one has been so excited to do an audit as we are RIGHT NOW! 
 
 In the audit we need to:
 
@@ -108,6 +108,7 @@ filter(audit_df, is.na( _____ ) )
 code_end',
 
 show_code = 'code_start
+
 filter(audit_df, is.na(CATEGORY))
   
 code_end')
@@ -155,7 +156,7 @@ source("../../insert_tabs.R")
 
 tabs <- c("Updating values", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> Now we have the row and column location of the missing value and the types of acceptable values that it should be, overwrite the NA with the new value you picked. </h4>
+content <- c(Exercise = '<b> Now we have the row and column location of the missing value and the types of acceptable values that it should be, overwrite the NA with the new value you picked. </b>
 
 <br>',
 
@@ -179,13 +180,11 @@ cat(paste0(tab_html, collapse = "\n"))
 ```
 </div>
 
-<br>
-
-# Overstocking
+# Overstocked: Too many goods
 
 - Check for overstocking: **"No ingredient is more than 10 above the order threshold."**
 
-I suppose we don't want too much stock laying around or it might spoil. Let's use filter to check each of the ingredient stock values and see if any are more than 10 above its order threshold. We've got this!
+We don't want too much food laying around or it might spoil. Let's use filter to check each of the ingredient stock values and see if any are more than 10 above its order threshold. We've got this!
 
 <div class="quiz">
 
@@ -225,7 +224,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-Looks like we might need to make some emergency Oatmeal Raisin cookies to get our stock down a bit, but we don't think people will mind that much. Nice work!
+Looks like we might need to make some emergency Oatmeal Raisin cookies to get our stock down a bit, but I don't think people will mind that much. Nice work!
 
 
 # Summary statistics by group
@@ -243,14 +242,19 @@ dry <- filter(audit_df, DRY_OR_LIQUID_MEASUREMENT == "DRY")
 ```
 
 
-Hmmm... something feels funny. Our original dataset had 36 observation, now we have one with 28 and another with 7. That only adds up to 35... seems we dropped an observation somewhere. 
+Hmmm... something feels funny. Our original dataset had 36 observation, now we have one with 28 and another with 7. That only adds up to 35... seems we lost an observation somewhere. 
 
-Maybe there's a typo in the column? Let's use `unique` to see if there are more than two values in the column DRY_OR_LIQUID_MEASUREMENT.
+Maybe there's a typo in the column? 
+
+
+Let's use `unique` to see if there are more than two values in the column DRY_OR_LIQUID_MEASUREMENT.
 
 
 ```{r}
 unique(audit_df$DRY_OR_LIQUID_MEASUREMENT)
 ```
+
+<br>
 
 
 Uh-oh, we have an NA value. Filter will only keep a row if it knows for sure that it meets the condition. So if there is a missing or NA value, we literally don't know the value, and R is unable to determine if it equals "DRY" or not.

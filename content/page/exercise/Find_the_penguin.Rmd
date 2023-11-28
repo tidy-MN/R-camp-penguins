@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Identify penguins using `filter()` and `case_when()`'
+title: Guess who!
 author: "Abigail Stamm"
 output: html_document
 ---
@@ -26,18 +26,18 @@ For a greater challenge, try to isolate these penguins.
 
 
 <details>
-<summary>Code hint</summary>
+<summary>**CODE HINT**</summary>
   Example: 
   `filter(data, x < 0)`  
   Remember to account for `NA` values.
 
 <details>
-<summary>Advanced code hint</summary>
+<summary>**ADVANCED *CODE HINT**</summary>
   Example:
   `filter(body_mass_g > 4000)`
   
 <details>
-<summary>Precise code hint</summary>
+<summary>**PRECISE CODE HINT**</summary>
   Example:
   `filter(penguins, body_mass_g == min(body_mass_g, na.rm = TRUE))`
   
@@ -48,20 +48,20 @@ For a greater challenge, try to isolate these penguins.
 
 ## Exercise 2: using case_when
 
-Select the same penguin that you selected above. Create a new variable using case_when that uses the criteria provided to identify your selected penguin and and only your selected penguin in your dataset.
+Select the same penguin that you selected above. Create a new variable using case_when that uses the criteria provided to identify your selected penguin and only your selected penguin in your dataset.
 
 <details>
-<summary>Code hint</summary>
+<summary>**CODE HINT**</summary>
   Example: 
   `case_when(x == y ~ TRUE, .default = FALSE)`  
 
 <details>
-<summary>Advanced code hint</summary>
+<summary>**ADVANCED *CODE HINT**</summary>
   Example:
   `case_when(body_mass_g > 4000 ~ TRUE, .default = FALSE)`
   
 <details>
-<summary>Precise code hint</summary>
+<summary>**PRECISE CODE HINT**</summary>
   Example:
   `mutate(penguins, subject = case_when(body_mass_g > 4000 & bill_length_mm > 50 ~ TRUE, .default = FALSE))`
   
