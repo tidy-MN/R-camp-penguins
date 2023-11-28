@@ -5,7 +5,7 @@ date: "2023-11-28"
 ---
 
 
-# Top {.tabsets}
+# Top {.tabset}
 
 ```{r, eval=F}
 summarize(monsters, age_avg = mean(age))
