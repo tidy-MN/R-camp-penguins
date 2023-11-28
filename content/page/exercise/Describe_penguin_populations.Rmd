@@ -34,116 +34,136 @@ The `group_by` and `summarize` functions allow us to compare values by categorie
 1. Which penguin species has the shortest flippers?
 1. Is there a flipper length range that includes all three penguin species?
 
-<details>
-<summary>**CODE HINT**</summary>
-  Example:  
-  `group_by(data, x)`  
-  `summarize(data, x = min(y))`  
-  `ungroup(data, x)`   
-  Remember to account for `NA` values.  
 
-<details>
-<summary>**ADVANCED CODE HINT**</summary>
-  Example:  
-  `data %>% group_by(species)`  
-  `data %>% summarize(min_length = min(flipper_length_mm))`  
-  `data %>% ungroup(species)`  
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize {-}
+
+```{r, results='asis', echo=F}
+source("../insert_tabs.R")
+
+tabs <- c("group_by() %>% summarize()", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> First use group_by() to group the data by species, AND THEN use summarize() to add new column called min_flipper_length. Ignore the NA values with the argument `na.rm = TRUE`.</b>
+
+<br>',
+
+show_hint = 'code_start
+# Remember to account for NA values in your summary function
+penguins %>% 
+  group_by( _______ ) %>%
+  summarize(min_flipper_length = ________ )
   
-<details>
-<summary>**PRECISE CODE HINT**</summary>
-  Example:  
-  <pre>
-  <code>
-  data %>% group_by(species) %>%
-      summarize(min_length = min(flipper_length_mm, na.rm = TRUE)) %>%
-      ungroup(species)
-  </code>
-  </pre>
-</details>
-</details>
-</details>
+code_end',
 
+show_code = 'code_start
+penguins %>% 
+  group_by(species) %>%
+  summarize(min_flipper_length = min(flipper_length_mm, na.rm = TRUE))
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
 
 
 ### Compare weights
 
-Now we are interested in how much penguins weigh by species AND island. You can do this using the `group_by` function on more than one variable. Here's your task - Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights of each group. 
+Now we are interested in how much penguins weigh by species AND island. You can do this using the `group_by` function on more than one variable. Here's your task: Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights for each group. 
 
 1. Which penguin species is the heaviest?
 1. On which island are Adelie penguins the heaviest?
 
-<details>
-<summary>**CODE HINT**</summary>
-  Example:  
-  `group_by(data, x)`  
-  `summarize(data, x = min(y))`  
-  `ungroup(data, x)`   
-  Remember to account for `NA` values.  
 
-<details>
-<summary>**ADVANCED CODE HINT**</summary>
-  Example:  
-  `data %>% group_by(species, island)`  
-  `data %>% summarize(min_length = min(body_mass_g))`  
-  `data %>% ungroup(species, island)`  
-  
-<details>
-<summary>**PRECISE CODE HINT**</summary>
-  Example:  
-  <pre>
-  <code>
-  data %>% group_by(species, island) %>%
-      summarize(min_weight = min(body_mass_g, na.rm = TRUE),
-                max_weight = max(body_mass_g, na.rm = TRUE)) %>%
-      ungroup(species, island)
-  </code>
-  </pre>
-</details>
-</details>
-</details>
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped multiple summarize {-}
+
+```{r, results='asis', echo=F}
+source("../insert_tabs.R")
+
+tabs <- c("Grouped multiple summarize()", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> First use group_by() to group the data by species and island, AND THEN use summarize() to add new columns for min, mean, and max flipper_length. Ignore the NA values with the argument `na.rm = TRUE`. </b>
+
+<br>',
+
+show_hint = 'code_start
+# Remember to account for NA values in your summary functions
+penguins %>% 
+  group_by(_______ , _______ ) %>%
+  summarize(min_weight  = min( _______ , na.rm = TRUE),
+            mean_weight = _______ ,
+            max_weight  = _______ )
+            
+code_end',
+
+show_code = 'code_start
+penguins %>% 
+  group_by(species, island) %>%
+  summarize(min_weight  = min(body_mass_g, na.rm = TRUE),
+            mean_weight = mean(body_mass_g, na.rm = TRUE),
+            max_weight  = max(body_mass_g, na.rm = TRUE)) 
+            
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
 
 
 
 ### Compare penguin bills
 
-Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, `group_by` lets this happen as long as your data allow it. In this final exercise, we want you to create a dataset that summarizes the bill lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and mean bill lengths and depths of each group. 
+Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, `group_by` lets this happen as long as your data allow it. 
+
+In this final exercise, we want you to create a dataset that summarizes the bill lengths and bill depths of the penguin populations by species, sex, and island. Calculate the mean bill lengths and bill depths of each group. 
 
 1. In general, do male and female bills tend to be the same length and depth? If not, how do they differ?
-1. Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills have the shallowest?
-1. From the table, would you guess bill size is most associated with species, sex, or island?
+1. Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills also have the shallowest bills?
+1. From the table, would you assume bill size is most associated with species, sex, or island?
 
 
-<details>
-<summary>**CODE HINT**</summary>
-  Example:  
-  `group_by(data, x)`  
-  `summarize(data, x = min(y))`  
-  `ungroup(data, x)`   
-  Remember to account for `NA` values.  
+<div class="quiz">
 
-<details>
-<summary>**ADVANCED CODE HINT**</summary>
-  Example:  
-  `data %>% group_by(species, island, sex)`  
-  `data %>% summarize(min_depth = min(bill_depth_mm))`  
-  `data %>% ungroup(species, island, sex)`  
-  
-<details>
-<summary>**PRECISE CODE HINT**</summary>
-  Example:  
-  <pre>
-  <code>
-  data %>% group_by(species, island, sex) %>%
-      summarize(min_depth = min(bill_depth_mm, na.rm = TRUE),
-                max_length = max(bill_length_mm, na.rm = TRUE)) %>%
-      ungroup(species, island, sex)
-  </code>
-  </pre>
-</details>
-</details>
-</details>
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize X3 {-}
 
+```{r, results='asis', echo=F}
+source("../insert_tabs.R")
 
+tabs <- c("Grouped summarize X3", "Show hint", "Show code")
 
+content <- c(Exercise = '<b> First use group_by() to group the data by species, island, and sex -AND THEN- use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument `na.rm = TRUE`. Store the result in the new table "bill_summary". </b>
 
+<br>',
 
+show_hint = 'code_start
+# Remember to account for NA values in your summary functions
+bill_summary <- penguins %>% 
+                  group_by(_______ , _______ , _______ ) %>%
+                  summarize(mean_bill_depth  = _______ ,
+                            mean_bill_length = _______ )
+            
+code_end',
+
+show_code = 'code_start
+bill_summary <- penguins %>%
+                  group_by(species, island, sex) %>%
+                  summarize(mean_bill_depth  = mean(bill_depth_mm, na.rm = TRUE),
+                            mean_bill_length = mean(bill_length_mm, na.rm = TRUE)) 
+            
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>

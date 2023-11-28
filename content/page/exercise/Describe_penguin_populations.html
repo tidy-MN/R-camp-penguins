@@ -25,123 +25,140 @@ output: html_document
 <li>Which penguin species has the shortest flippers?</li>
 <li>Is there a flipper length range that includes all three penguin species?</li>
 </ol>
-<details>
-<summary>
-<strong>CODE HINT</strong>
-</summary>
-<p>Example:<br />
-<code>group_by(data, x)</code><br />
-<code>summarize(data, x = min(y))</code><br />
-<code>ungroup(data, x)</code><br />
-Remember to account for <code>NA</code> values.</p>
-<details>
-<summary>
-<strong>ADVANCED CODE HINT</strong>
-</summary>
-<p>Example:<br />
-<code>data %&gt;% group_by(species)</code><br />
-<code>data %&gt;% summarize(min_length = min(flipper_length_mm))</code><br />
-<code>data %&gt;% ungroup(species)</code></p>
-<details>
-<summary>
-<strong>PRECISE CODE HINT</strong>
-</summary>
-Example:<br />
-
-<pre>
-  <code>
-  data %>% group_by(species) %>%
-      summarize(min_length = min(flipper_length_mm, na.rm = TRUE)) %>%
-      ungroup(species)
-  </code>
-  </pre>
-</details>
-</details>
-</details>
+</div>
+<div id="grouped-summarize" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize</h3>
+<ul class="nav nav-pills" id="myTab3751" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="group_by()%>%summarize()3751-tab" data-toggle="tab" href="#group_by()%>%summarize()3751" role="tab" aria-controls="group_by()%>%summarize()3751" aria-selected="true">group_by() %&gt;% summarize()</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint3751-tab" data-toggle="tab" href="#showhint3751" role="tab" aria-controls="showhint3751" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode3751-tab" data-toggle="tab" href="#showcode3751" role="tab" aria-controls="showcode3751" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="group_by()%&gt;%summarize()3751" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_by()%&gt;%summarize()3751-tab">
+<p><b> First use group_by() to group the data by species, AND THEN use summarize() to add new column called min_flipper_length. Ignore the NA values with the argument <code>na.rm = TRUE</code>.</b></p>
+<p><br></p>
+</div>
+<div id="showhint3751" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3751-tab">
+<pre class="sourceCode r">
+# Remember to account for NA values in your summary function
+penguins %>% 
+  group_by( _______ ) %>%
+  summarize(min_flipper_length = ________ )
+  
+</pre>
+</div>
+<div id="showcode3751" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3751-tab">
+<pre class="sourceCode r">
+penguins %>% 
+  group_by(species) %>%
+  summarize(min_flipper_length = min(flipper_length_mm, na.rm = TRUE))
+  
+</pre>
+</div>
+</div>
 </div>
 <div id="compare-weights" class="section level3">
 <h3>Compare weights</h3>
-<p>Now we are interested in how much penguins weigh by species AND island. You can do this using the <code>group_by</code> function on more than one variable. Here’s your task - Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights of each group.</p>
+<p>Now we are interested in how much penguins weigh by species AND island. You can do this using the <code>group_by</code> function on more than one variable. Here’s your task: Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights for each group.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species is the heaviest?</li>
 <li>On which island are Adelie penguins the heaviest?</li>
 </ol>
-<details>
-<summary>
-<strong>CODE HINT</strong>
-</summary>
-<p>Example:<br />
-<code>group_by(data, x)</code><br />
-<code>summarize(data, x = min(y))</code><br />
-<code>ungroup(data, x)</code><br />
-Remember to account for <code>NA</code> values.</p>
-<details>
-<summary>
-<strong>ADVANCED CODE HINT</strong>
-</summary>
-<p>Example:<br />
-<code>data %&gt;% group_by(species, island)</code><br />
-<code>data %&gt;% summarize(min_length = min(body_mass_g))</code><br />
-<code>data %&gt;% ungroup(species, island)</code></p>
-<details>
-<summary>
-<strong>PRECISE CODE HINT</strong>
-</summary>
-Example:<br />
-
-<pre>
-  <code>
-  data %>% group_by(species, island) %>%
-      summarize(min_weight = min(body_mass_g, na.rm = TRUE),
-                max_weight = max(body_mass_g, na.rm = TRUE)) %>%
-      ungroup(species, island)
-  </code>
-  </pre>
-</details>
-</details>
-</details>
+</div>
+<div id="grouped-multiple-summarize" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped multiple summarize</h3>
+<ul class="nav nav-pills" id="myTab6866" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="groupedmultiplesummarize()6866-tab" data-toggle="tab" href="#groupedmultiplesummarize()6866" role="tab" aria-controls="groupedmultiplesummarize()6866" aria-selected="true">Grouped multiple summarize()</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint6866-tab" data-toggle="tab" href="#showhint6866" role="tab" aria-controls="showhint6866" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode6866-tab" data-toggle="tab" href="#showcode6866" role="tab" aria-controls="showcode6866" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="groupedmultiplesummarize()6866" class="tab-pane fade active in" role="tabpanel" aria-labelledby="groupedmultiplesummarize()6866-tab">
+<p><b> First use group_by() to group the data by species and island, AND THEN use summarize() to add new columns for min, mean, and max flipper_length. Ignore the NA values with the argument <code>na.rm = TRUE</code>. </b></p>
+<p><br></p>
+</div>
+<div id="showhint6866" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint6866-tab">
+<pre class="sourceCode r">
+# Remember to account for NA values in your summary functions
+penguins %>% 
+  group_by(_______ , _______ ) %>%
+  summarize(min_weight  = min( _______ , na.rm = TRUE),
+            mean_weight = _______ ,
+            max_weight  = _______ )
+            
+</pre>
+</div>
+<div id="showcode6866" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode6866-tab">
+<pre class="sourceCode r">
+penguins %>% 
+  group_by(species, island) %>%
+  summarize(min_weight  = min(body_mass_g, na.rm = TRUE),
+            mean_weight = mean(body_mass_g, na.rm = TRUE),
+            max_weight  = max(body_mass_g, na.rm = TRUE)) 
+            
+</pre>
+</div>
+</div>
 </div>
 <div id="compare-penguin-bills" class="section level3">
 <h3>Compare penguin bills</h3>
-<p>Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, <code>group_by</code> lets this happen as long as your data allow it. In this final exercise, we want you to create a dataset that summarizes the bill lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and mean bill lengths and depths of each group.</p>
+<p>Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, <code>group_by</code> lets this happen as long as your data allow it.</p>
+<p>In this final exercise, we want you to create a dataset that summarizes the bill lengths and bill depths of the penguin populations by species, sex, and island. Calculate the mean bill lengths and bill depths of each group.</p>
 <ol style="list-style-type: decimal">
 <li>In general, do male and female bills tend to be the same length and depth? If not, how do they differ?</li>
-<li>Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills have the shallowest?</li>
-<li>From the table, would you guess bill size is most associated with species, sex, or island?</li>
+<li>Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills also have the shallowest bills?</li>
+<li>From the table, would you assume bill size is most associated with species, sex, or island?</li>
 </ol>
-<details>
-<summary>
-<strong>CODE HINT</strong>
-</summary>
-<p>Example:<br />
-<code>group_by(data, x)</code><br />
-<code>summarize(data, x = min(y))</code><br />
-<code>ungroup(data, x)</code><br />
-Remember to account for <code>NA</code> values.</p>
-<details>
-<summary>
-<strong>ADVANCED CODE HINT</strong>
-</summary>
-<p>Example:<br />
-<code>data %&gt;% group_by(species, island, sex)</code><br />
-<code>data %&gt;% summarize(min_depth = min(bill_depth_mm))</code><br />
-<code>data %&gt;% ungroup(species, island, sex)</code></p>
-<details>
-<summary>
-<strong>PRECISE CODE HINT</strong>
-</summary>
-Example:<br />
-
-<pre>
-  <code>
-  data %>% group_by(species, island, sex) %>%
-      summarize(min_depth = min(bill_depth_mm, na.rm = TRUE),
-                max_length = max(bill_length_mm, na.rm = TRUE)) %>%
-      ungroup(species, island, sex)
-  </code>
-  </pre>
-</details>
-</details>
-</details>
+</div>
+<div id="grouped-summarize-x3" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize X3</h3>
+<ul class="nav nav-pills" id="myTab7388" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="groupedsummarizex37388-tab" data-toggle="tab" href="#groupedsummarizex37388" role="tab" aria-controls="groupedsummarizex37388" aria-selected="true">Grouped summarize X3</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint7388-tab" data-toggle="tab" href="#showhint7388" role="tab" aria-controls="showhint7388" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode7388-tab" data-toggle="tab" href="#showcode7388" role="tab" aria-controls="showcode7388" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="groupedsummarizex37388" class="tab-pane fade active in" role="tabpanel" aria-labelledby="groupedsummarizex37388-tab">
+<p><b> First use group_by() to group the data by species, island, and sex -AND THEN- use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument <code>na.rm = TRUE</code>. Store the result in the new table “bill_summary”. </b></p>
+<p><br></p>
+</div>
+<div id="showhint7388" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7388-tab">
+<pre class="sourceCode r">
+# Remember to account for NA values in your summary functions
+bill_summary <- penguins %>% 
+                  group_by(_______ , _______ , _______ ) %>%
+                  summarize(mean_bill_depth  = _______ ,
+                            mean_bill_length = _______ )
+            
+</pre>
+</div>
+<div id="showcode7388" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7388-tab">
+<pre class="sourceCode r">
+bill_summary <- penguins %>%
+                  group_by(species, island, sex) %>%
+                  summarize(mean_bill_depth  = mean(bill_depth_mm, na.rm = TRUE),
+                            mean_bill_length = mean(bill_length_mm, na.rm = TRUE)) 
+            
+</pre>
+</div>
+</div>
 </div>
 </div>
