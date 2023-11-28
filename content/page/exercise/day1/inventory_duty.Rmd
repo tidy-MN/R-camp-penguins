@@ -36,15 +36,25 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # Before you start...
 
-Please make a brand-new project for this exercise. This will be our exercise project where we'll do all our exercises for the remainder of the course. 
+Please make a brand-new project for this exercise. This will be our exercise project where we'll do all our exercises for the remainder of the course.  
 
-To make a new project in RStudio: Go to `File` -> `New Project` -> `New Directory` -> `New Project`
 
-Now you need to pick a new directory. Pick a location that makes sense to you so you'll be able to find it again. If you don't change the location, the default setting will be used and your project will be created in your `Documents/` folder. Click **Create project**.
+- To make a new project: Go to `File` -> `New Project` -> `New Directory` -> `New Project`
 
-Now that you have a new project setup (you should see your project name in the top right of RStudio), it's time to create a new R script and save it. Go to `File` -> `New File` -> `R Script` or click on the top left icon with the green plus sign. 
+Pick a new directory for your project to live. Choose a location that makes sense to you so you'll be able to find it again. If you don't change the location, the default setting will be used and your project will be created in your `Documents/` folder. 
 
-You can now save the script by clicking `CTRL` + `S` or by clicking the floppy disk icon. Name your script something pithy like `ex_1_day_1.R` or `frankie.R`. And you're ready to go!
+Click **Create project**.
+
+Now that you have a new project setup (you should see your project name in the top right of RStudio), create a new R script and save it. 
+
+- To make a new R script: 
+    - Go to `File` -> `New File` -> `R Script` or 
+    - Click the top left icon with the green plus sign
+ 
+
+You can now save the script by clicking `CTRL` + `S` or by clicking the floppy disk icon. Name your script something pithy like `ex_1_day_1.R` or `frankie.R`. 
+
+You're ready to go!
 
 
 # Inventory duty

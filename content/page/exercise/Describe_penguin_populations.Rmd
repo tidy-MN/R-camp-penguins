@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Describing penguin populations with `summarize()`'
+title: 'Summarize penguin populations'
 author: "Abigail Stamm"
 output: html_document
 ---
@@ -8,10 +8,22 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Summarize data about penguin populations
+## Summarize the data on penguin populations
 
-The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. Use the `penguins` dataset in the `palmerpenguins` package. Datasets get steadily more complex. Ask for help if you get stuck or need a hint.
+The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. Use the `penguins` dataset in the `palmerpenguins` package. Please ask for help if you get stuck or would like a hint.
 
+### Load the `palmerpenguins` package 
+
+```{r, eval=F}
+library(palmerpenguins)
+```
+
+
+### Load the `penguins` data
+
+```{r, eval=F}
+penguins <- penguins
+```
 
 ### Compare flipper lengths
 
@@ -21,7 +33,7 @@ Create a dataset that summarizes the flipper lengths of the penguin populations 
 1. Is there a flipper length range that includes all three penguin species?
 
 <details>
-<summary>Code hint</summary>
+<summary>**CODE HINT**</summary>
   Example:  
   `group_by(data, x)`  
   `summarize(data, x = min(y))`  
@@ -29,14 +41,14 @@ Create a dataset that summarizes the flipper lengths of the penguin populations 
   Remember to account for `NA` values.  
 
 <details>
-<summary>Advanced code hint</summary>
+<summary>**ADVANCED CODE HINT**</summary>
   Example:  
   `data %>% group_by(species)`  
   `data %>% summarize(min_length = min(flipper_length_mm))`  
   `data %>% ungroup(species)`  
   
 <details>
-<summary>Precise code hint</summary>
+<summary>**PRECISE CODE HINT**</summary>
   Example:  
   <pre>
   <code>
@@ -59,7 +71,7 @@ Create a dataset that summarizes the weights of the penguin populations by speci
 1. On which island are Adelie penguins the heaviest?
 
 <details>
-<summary>Code hint</summary>
+<summary>**CODE HINT**</summary>
   Example:  
   `group_by(data, x)`  
   `summarize(data, x = min(y))`  
@@ -67,14 +79,14 @@ Create a dataset that summarizes the weights of the penguin populations by speci
   Remember to account for `NA` values.  
 
 <details>
-<summary>Advanced code hint</summary>
+<summary>**ADVANCED CODE HINT**</summary>
   Example:  
   `data %>% group_by(species, island)`  
   `data %>% summarize(min_length = min(body_mass_g))`  
   `data %>% ungroup(species, island)`  
   
 <details>
-<summary>Precise code hint</summary>
+<summary>**PRECISE CODE HINT**</summary>
   Example:  
   <pre>
   <code>
@@ -100,7 +112,7 @@ Create a dataset that summarizes the bill lengths and depths of the penguin popu
 
 
 <details>
-<summary>Code hint</summary>
+<summary>**CODE HINT**</summary>
   Example:  
   `group_by(data, x)`  
   `summarize(data, x = min(y))`  
@@ -108,14 +120,14 @@ Create a dataset that summarizes the bill lengths and depths of the penguin popu
   Remember to account for `NA` values.  
 
 <details>
-<summary>Advanced code hint</summary>
+<summary>**ADVANCED CODE HINT**</summary>
   Example:  
   `data %>% group_by(species, island, sex)`  
   `data %>% summarize(min_depth = min(bill_depth_mm))`  
   `data %>% ungroup(species, island, sex)`  
   
 <details>
-<summary>Precise code hint</summary>
+<summary>**PRECISE CODE HINT**</summary>
   Example:  
   <pre>
   <code>

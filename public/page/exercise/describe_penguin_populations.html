@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Exercise: Describing penguin populations with `summarize()` - Learn R</title>
-  <meta property="og:title" content="Exercise: Describing penguin populations with `summarize()`" />
-  <meta name="twitter:title" content="Exercise: Describing penguin populations with `summarize()`" />
-  <meta name="description" content="Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
-  <meta property="og:description" content="Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
-  <meta name="twitter:description" content="Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
+  <title>Summarize penguin populations - Learn R</title>
+  <meta property="og:title" content="Summarize penguin populations" />
+  <meta name="twitter:title" content="Summarize penguin populations" />
+  <meta name="description" content="Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
+  <meta property="og:description" content="Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
+  <meta name="twitter:description" content="Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -49,7 +49,7 @@
         "position": 3,
         "item": {
           "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/describe_penguin_populations.html",
-          "name": "Exercise describing penguin populations with \u0060summarize()\u0060"
+          "name": "Summarize penguin populations"
         }
     }]
 }
@@ -60,10 +60,10 @@
   "author": {
     "name" : "Abigail Stamm"
   },
-  "headline": "Exercise: Describing penguin populations with \u0060summarize()\u0060",
-  "description" : "Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.",
+  "headline": "Summarize penguin populations",
+  "description" : "Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.",
   "inLanguage" : "en",
-  "wordCount":  398 ,
+  "wordCount":  408 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -82,14 +82,14 @@
 }
 </script>
 
-<meta property="og:title" content="Exercise: Describing penguin populations with `summarize()`" />
-<meta property="og:description" content="Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
+<meta property="og:title" content="Summarize penguin populations" />
+<meta property="og:description" content="Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/describe_penguin_populations.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
-  <meta name="twitter:title" content="Exercise: Describing penguin populations with `summarize()`" />
-  <meta name="twitter:description" content="Summarize data about penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
+  <meta name="twitter:title" content="Summarize penguin populations" />
+  <meta name="twitter:description" content="Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -259,7 +259,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
               
-                <h1>Exercise: Describing penguin populations with `summarize()`</h1>
+                <h1>Summarize penguin populations</h1>
               
               
                 <hr class="small">
@@ -282,26 +282,27 @@
         
 
 
-<div id="summarize-data-about-penguin-populations" class="section level2">
-<h2>Summarize data about penguin populations</h2>
-<p>The goal of this exercise is to create summary datasets that answer
-specific questions about the penguin populations. Use the
-<code>penguins</code> dataset in the <code>palmerpenguins</code>
-package. Datasets get steadily more complex. Ask for help if you get
-stuck or need a hint.</p>
+<div id="summarize-the-data-on-penguin-populations" class="section level2">
+<h2>Summarize the data on penguin populations</h2>
+<p>The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. Use the <code>penguins</code> dataset in the <code>palmerpenguins</code> package. Please ask for help if you get stuck or would like a hint.</p>
+<div id="load-the-palmerpenguins-package" class="section level3">
+<h3>Load the <code>palmerpenguins</code> package</h3>
+<pre class="r"><code>library(palmerpenguins)</code></pre>
+</div>
+<div id="load-the-penguins-data" class="section level3">
+<h3>Load the <code>penguins</code> data</h3>
+<pre class="r"><code>penguins &lt;- penguins</code></pre>
+</div>
 <div id="compare-flipper-lengths" class="section level3">
 <h3>Compare flipper lengths</h3>
-<p>Create a dataset that summarizes the flipper lengths of the penguin
-populations by species. Calculate the minimum, maximum, and average
-flipper lengths of each penguin species.</p>
+<p>Create a dataset that summarizes the flipper lengths of the penguin populations by species. Calculate the minimum, maximum, and average flipper lengths of each penguin species.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species has the shortest flippers?</li>
-<li>Is there a flipper length range that includes all three penguin
-species?</li>
+<li>Is there a flipper length range that includes all three penguin species?</li>
 </ol>
 <details>
 <summary>
-Code hint
+<strong>CODE HINT</strong>
 </summary>
 <p>Example:<br />
 <code>group_by(data, x)</code><br />
@@ -310,7 +311,7 @@ Code hint
 Remember to account for <code>NA</code> values.</p>
 <details>
 <summary>
-Advanced code hint
+<strong>ADVANCED CODE HINT</strong>
 </summary>
 <p>Example:<br />
 <code>data %&gt;% group_by(species)</code><br />
@@ -318,14 +319,14 @@ Advanced code hint
 <code>data %&gt;% ungroup(species)</code></p>
 <details>
 <summary>
-Precise code hint
+<strong>PRECISE CODE HINT</strong>
 </summary>
 Example:<br />
 
 <pre>
   <code>
-  data %&gt;% group_by(species) %&gt;%
-      summarize(min_length = min(flipper_length_mm, na.rm = TRUE)) %&gt;%
+  data %>% group_by(species) %>%
+      summarize(min_length = min(flipper_length_mm, na.rm = TRUE)) %>%
       ungroup(species)
   </code>
   </pre>
@@ -335,16 +336,14 @@ Example:<br />
 </div>
 <div id="compare-weights" class="section level3">
 <h3>Compare weights</h3>
-<p>Create a dataset that summarizes the weights of the penguin
-populations by species and island. Calculate the minimum, maximum, and
-average weights of each group.</p>
+<p>Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and average weights of each group.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species is the heaviest?</li>
 <li>On which island are Adelie penguins the heaviest?</li>
 </ol>
 <details>
 <summary>
-Code hint
+<strong>CODE HINT</strong>
 </summary>
 <p>Example:<br />
 <code>group_by(data, x)</code><br />
@@ -353,7 +352,7 @@ Code hint
 Remember to account for <code>NA</code> values.</p>
 <details>
 <summary>
-Advanced code hint
+<strong>ADVANCED CODE HINT</strong>
 </summary>
 <p>Example:<br />
 <code>data %&gt;% group_by(species, island)</code><br />
@@ -361,15 +360,15 @@ Advanced code hint
 <code>data %&gt;% ungroup(species, island)</code></p>
 <details>
 <summary>
-Precise code hint
+<strong>PRECISE CODE HINT</strong>
 </summary>
 Example:<br />
 
 <pre>
   <code>
-  data %&gt;% group_by(species, island) %&gt;%
+  data %>% group_by(species, island) %>%
       summarize(min_weight = min(body_mass_g, na.rm = TRUE),
-                max_weight = max(body_mass_g, na.rm = TRUE)) %&gt;%
+                max_weight = max(body_mass_g, na.rm = TRUE)) %>%
       ungroup(species, island)
   </code>
   </pre>
@@ -379,20 +378,15 @@ Example:<br />
 </div>
 <div id="compare-penguin-bills" class="section level3">
 <h3>Compare penguin bills</h3>
-<p>Create a dataset that summarizes the bill lengths and depths of the
-penguin populations by species, sex, and island. Calculate the minimum,
-maximum, and average bill lengths and depths of each group.</p>
+<p>Create a dataset that summarizes the bill lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and average bill lengths and depths of each group.</p>
 <ol style="list-style-type: decimal">
-<li>In general, do male and female bills tend to be the same length and
-depth? If not, how do they differ?</li>
-<li>Do the groups with the longest bills also have the deepest bills? Do
-the groups with the shortest bills have the shallowest?</li>
-<li>From the table, would you guess bill size is most associated with
-species, sex, or island?</li>
+<li>In general, do male and female bills tend to be the same length and depth? If not, how do they differ?</li>
+<li>Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills have the shallowest?</li>
+<li>From the table, would you guess bill size is most associated with species, sex, or island?</li>
 </ol>
 <details>
 <summary>
-Code hint
+<strong>CODE HINT</strong>
 </summary>
 <p>Example:<br />
 <code>group_by(data, x)</code><br />
@@ -401,7 +395,7 @@ Code hint
 Remember to account for <code>NA</code> values.</p>
 <details>
 <summary>
-Advanced code hint
+<strong>ADVANCED CODE HINT</strong>
 </summary>
 <p>Example:<br />
 <code>data %&gt;% group_by(species, island, sex)</code><br />
@@ -409,15 +403,15 @@ Advanced code hint
 <code>data %&gt;% ungroup(species, island, sex)</code></p>
 <details>
 <summary>
-Precise code hint
+<strong>PRECISE CODE HINT</strong>
 </summary>
 Example:<br />
 
 <pre>
   <code>
-  data %&gt;% group_by(species, island, sex) %&gt;%
+  data %>% group_by(species, island, sex) %>%
       summarize(min_depth = min(bill_depth_mm, na.rm = TRUE),
-                max_length = max(bill_length_mm, na.rm = TRUE)) %&gt;%
+                max_length = max(bill_length_mm, na.rm = TRUE)) %>%
       ungroup(species, island, sex)
   </code>
   </pre>
