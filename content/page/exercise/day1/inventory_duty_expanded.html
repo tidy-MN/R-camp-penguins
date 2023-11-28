@@ -4,7 +4,7 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: ../../css/camp_style.css
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
@@ -90,32 +90,34 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
-<div id="before-you-start" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Before you start…</h1>
-<p>Make sure you are still in your project that you created for the previous exercise and then make a new R script. Save it as soon as you make it and give it a good name like <code>exercise_2_day_1.R</code> or <code>gloria.R</code> and you’ll be ready to go!</p>
+<div id="before-you-start" class="section level1">
+<h1>Before you start…</h1>
+<p>Jump back into the project you created for the previous exercise and then create a new R script. Save it as soon as you make it and give it a good name like <code>ex_2_day_1.R</code> or <code>gloria.R</code> and you’re be ready to go!</p>
 </div>
-<div id="auditor-in-training" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Auditor-in-training</h1>
-<p>Apparently the lead-baking bot was so impressed with our inventory report that they’ve asked us perform an audit! No one in the history of time has even been so excited to do an audit as we are RIGHT NOW!</p>
-<p>In the audit we need to make sure that</p>
+<div id="auditor-in-training" class="section level1">
+<h1>Auditor-in-training</h1>
+<p>The lead baking-bot is very impressed with our recent work. And now they’ve asked us perform a complete audit. This is our dream come true. No one has been so excited to do an audit as we are RIGHT NOW!</p>
+<p>In the audit we need to:</p>
 <ul>
-<li>Each ingredient has a category</li>
-<li>No ingredient is 10 or more units over the order threshold</li>
-<li>Summary statistics are calculated for both dry and liquid measures
+<li>Good labels: Check each ingredient has a category.</li>
+<li>Check for overstocking: No ingredient is more than 10 above its order threshold.</li>
+<li>Calculate summary statistics for both dry and liquid measures.
 <ul>
 <li><em>(Don’t mix and match! Fluid ounces are different from dry ounces and gosh wouldn’t it be swell if everything was metric…)</em></li>
 </ul></li>
 </ul>
-<p>Now that we have our marching orders, it’s time to read in the data! Just need to break out our handy-dandy <code>read_csv</code> and…wait a second…this data isn’t comma-delimited! What on earth are we going to do now?</p>
+<p><br></p>
+<p>Now that we have our marching orders, it’s time to read in the data. Time to break out our handy-dandy <code>read_csv</code> and… wait a second… this data isn’t comma-delimited! What on earth are we going to do now?</p>
+<p>Here are a few general steps to follow when you receive a file in an unknown format:</p>
 <ol style="list-style-type: decimal">
-<li>Open up the file and see if you can determine what the delimiter is and then pick the correct function to read it in (like <code>read_tsv</code> for tab-delimited or <code>read_csv</code> for comma-delimited)</li>
-<li>Use RStudio’s “Import Dataset” feature, same idea but gives you instant visual feedback on whether it read in like you thought it would.</li>
-<li>Use <code>read_delim</code> which has a “guess” feature and will take the data and try to figure out what the delimiter is for you</li>
-<li>Ask - <em>somebody</em> made this mess, you can always try to figure out who and ask them what the heck this file type is (<em>hint: ask your instructors</em>)</li>
+<li>Open up the file and see if you can determine what the delimiter is and then pick the correct function to read it in (like <code>read_tsv</code> for tab-delimited or <code>read_csv</code> for comma-delimited).</li>
+<li>Use RStudio’s “Import Dataset” feature, same idea but gives you instant visual feedback on whether it is loading correctly.</li>
+<li>Use <code>read_delim</code> which has a nice “guess” feature that looks at the data and makes its best guess for what the delimiter is.</li>
+<li>Ask someone - Try to find someone closer to the source of the data and ask them about the file type.</li>
 </ol>
 <p><strong>Side-bar discussion: What is a delimiter?</strong></p>
 <blockquote>
-<p>A delimiter is a sequence of one or more characters for specifying the boundary between separate, independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the time gap used to separate letters and words in the transmission of Morse code.</p>
+<p>A delimiter is a sequence of one or more characters for specifying the boundary between independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the <code>:</code> used to separate parts of the time, such as in 03:30.</p>
 </blockquote>
 <blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Delimiter">Wikipedia</a></p>
@@ -124,9 +126,9 @@ hr {background:  cornflowerblue;}
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>audit_df <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt&quot;</span>)</span></code></pre></div>
 </div>
-<div id="getting-to-know-the-data" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Getting to know the data</h1>
-<p>Depending on how you read in the data, you may feel that you already know it quite well, but it’s still a good idea to at least take a look at the data to get a feel for it.</p>
+<div id="getting-to-know-the-data" class="section level1">
+<h1>Getting to know the data</h1>
+<p>Depending on how you read in the data, you may feel that you already know it quite well, but it’s still a good idea to take a general look at the data to get a feel for it.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">glimpse</span>(audit_df)</span></code></pre></div>
 <pre><code>## Rows: 36
 ## Columns: 8
@@ -140,38 +142,37 @@ hr {background:  cornflowerblue;}
 ## $ ORDER_THRESHOLD           &lt;dbl&gt; 20, 15, 10, 5, 10, 20, 15, 15, 30, 5, 5, 2, …</code></pre>
 <p>Excellent, let’s start working on our audit!</p>
 </div>
-<div id="categories-for-all" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Categories for all</h1>
-<p>Our first task it to make sure that each ingredient has a category. Let’s start with figuring out if anyone <em>doesn’t</em> have a category.</p>
+<div id="categories-for-all" class="section level1">
+<h1>Categories for all</h1>
+<p>Our first task it to make sure that each ingredient has a category. Let’s start by determining if anything <em>doesn’t</em> have a category.</p>
 <div id="category-missing" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Category: Missing</h3>
-<ul class="nav nav-pills" id="myTab2208" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab9066" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="categoryisna2208-tab" data-toggle="tab" href="#categoryisna2208" role="tab" aria-controls="categoryisna2208" aria-selected="true">Category is NA</a>
+<a class="nav-link" id="categoryisna9066-tab" data-toggle="tab" href="#categoryisna9066" role="tab" aria-controls="categoryisna9066" aria-selected="true">Category is NA</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint2208-tab" data-toggle="tab" href="#showhint2208" role="tab" aria-controls="showhint2208" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint9066-tab" data-toggle="tab" href="#showhint9066" role="tab" aria-controls="showhint9066" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode2208-tab" data-toggle="tab" href="#showcode2208" role="tab" aria-controls="showcode2208" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode9066-tab" data-toggle="tab" href="#showcode9066" role="tab" aria-controls="showcode9066" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="categoryisna2208" class="tab-pane fade active in" role="tabpanel" aria-labelledby="categoryisna2208-tab">
-<h4>
-It can often be easier to look for the absence of something than the presence of something, in this case we want to identify all the rows where Category is missing
-</h4>
+<div id="categoryisna9066" class="tab-pane fade active in" role="tabpanel" aria-labelledby="categoryisna9066-tab">
+<p><b> It can often be easier to look for the absence of something than the presence of something, in this case we want to identify all rows where Category is missing. </b></p>
 <p><br></p>
 </div>
-<div id="showhint2208" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2208-tab">
+<div id="showhint9066" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9066-tab">
 <pre class="sourceCode r">
-# What goes inside is.na and what does is.na do?
-filter(audit_df, is.na( _____ )) 
+# What goes inside is.na() and what does is.na() do?
+
+filter(audit_df, is.na( _____ ) ) 
+
 </pre>
 </div>
-<div id="showcode2208" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2208-tab">
+<div id="showcode9066" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9066-tab">
 <pre class="sourceCode r">
-
 filter(audit_df, is.na(CATEGORY))
   
 </pre>
@@ -179,56 +180,56 @@ filter(audit_df, is.na(CATEGORY))
 </div>
 </div>
 <p><br></p>
-<p>AH-HA! There is indeed an ingredient that does not have a Category. We should fix that…but how would we go about it? We need to figure out which row and column of the dataset match our criteria so we can change the value…this is stressful, maybe being an auditor isn’t all it’s cracked up to be.</p>
+<p>AH-HA! There is indeed an ingredient that does not have a <code>CATEGORY</code>. We should fix that… but how would we go about it?</p>
 </div>
-<div id="two-new-functions-to-save-the-day" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Two new functions to save the day</h1>
-<p>Of course there’s a way to do this, we wouldn’t try if there wasn’t. So the first question we have is what are the possible categories for an ingredient to have? We can use the function <code>unique</code> to figure out what the <em>unique</em> values are!</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># unique only likes vectors, so use the $ (dollar sign) </span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># to pull out an individual column from the dataframe</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">unique</span>(audit_df<span class="sc">$</span>CATEGORY)  </span></code></pre></div>
+<div id="two-new-functions-to-save-the-day" class="section level1">
+<h1>Two new functions to save the day</h1>
+<p>So the first question we have is what are the possible categories for an ingredient to have? We can use the function <code>unique</code> to figure out what the <em>unique</em> values are!</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Use the $ (dollar sign) to pull out an individual column</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">unique</span>(audit_df<span class="sc">$</span>CATEGORY)  </span></code></pre></div>
 <pre><code>## [1] &quot;FLOUR&quot;             &quot;SUGAR&quot;             &quot;FLAVORING&quot;        
 ## [4] &quot;RAISING AGENT&quot;     NA                  &quot;DAIRY&quot;            
 ## [7] &quot;DAIRY-ALTERNATIVE&quot; &quot;ADDITITIVES&quot;</code></pre>
-<p>Pick the category that you think is the best fit. Now, we just need to figure out <em>where</em> in the dataframe the missing value is in. We know that CATEGORY is the second column so that’s good…now we just need to know what row SALT is in since we can specify location using matrix-style indices (i.e. Row, Column position - just like Excel!)</p>
-<p>Enter the function <code>which</code>! This function will tell us which indices are TRUE, so if we pass it a logical vector (which is what happens when you ask a question on a vector like whether it is equal to a certain value like say…SALT) it will tell us the <em>location</em> where that vector is TRUE!</p>
+<p>Pick the category that you think is the best fit.</p>
+<p>Now, we just need to determine <em>where</em> in the dataframe the missing value is. We know that CATEGORY is the second column so that’s good. So we just need to find which row SALT is in.</p>
+<p>Enter the function <code>which</code>! We can give this function a condition or test and it will tell us the row numbers where it evaluates to true or the test is passed. In other words, if we ask the function whether each of the values in the INGREDIENT row is equal to SALT, it will tell us the <em>location</em> where that is TRUE.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">which</span>(audit_df<span class="sc">$</span>INGREDIENT <span class="sc">==</span> <span class="st">&#39;SALT&#39;</span>)</span></code></pre></div>
 <pre><code>## [1] 18</code></pre>
 <p>ALRIGHT!</p>
-<p>Now for the finishing touch!</p>
+<p>Now for the finishing touch! Similar to Excel, we can now specify the location to update using matrix-style indices: [<code>Row number</code>, <code>Column position</code>]</p>
 <div id="writing-wrongs" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Writing wrongs</h3>
-<ul class="nav nav-pills" id="myTab4488" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab2223" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="updatingvalues4488-tab" data-toggle="tab" href="#updatingvalues4488" role="tab" aria-controls="updatingvalues4488" aria-selected="true">Updating values</a>
+<a class="nav-link" id="updatingvalues2223-tab" data-toggle="tab" href="#updatingvalues2223" role="tab" aria-controls="updatingvalues2223" aria-selected="true">Updating values</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint4488-tab" data-toggle="tab" href="#showhint4488" role="tab" aria-controls="showhint4488" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint2223-tab" data-toggle="tab" href="#showhint2223" role="tab" aria-controls="showhint2223" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode4488-tab" data-toggle="tab" href="#showcode4488" role="tab" aria-controls="showcode4488" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode2223-tab" data-toggle="tab" href="#showcode2223" role="tab" aria-controls="showcode2223" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="updatingvalues4488" class="tab-pane fade active in" role="tabpanel" aria-labelledby="updatingvalues4488-tab">
+<div id="updatingvalues2223" class="tab-pane fade active in" role="tabpanel" aria-labelledby="updatingvalues2223-tab">
 <h4>
 Now we have the row and column location of the missing value and the types of acceptable values that it should be, overwrite the NA with the new value you picked.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint4488" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4488-tab">
+<div id="showhint2223" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2223-tab">
 <pre class="sourceCode r">
 audit_df[ROW, COLUMN] <- INSERT VALUE HERE
 </pre>
 </div>
-<div id="showcode4488" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4488-tab">
+<div id="showcode2223" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2223-tab">
 <pre class="sourceCode r">
 
-audit_df[18, "CATEGORY"] <- "ADDITITIVES"
+audit_df[18, 2] <- "ADDITITIVES"
 
 # OR
 
-audit_df[18, 2] <- "ADDITITIVES"
+audit_df[18, "CATEGORY"] <- "ADDITITIVES"
   
 </pre>
 </div>
@@ -236,57 +237,69 @@ audit_df[18, 2] <- "ADDITITIVES"
 </div>
 <p><br></p>
 </div>
-<div id="threshold-day" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Threshold day</h1>
-<p>Hopefully this question will be easier: “No ingredient is 10 or more units over the order threshold”. Let’s put our mechanical brains together…</p>
+<div id="overstocking" class="section level1">
+<h1>Overstocking</h1>
+<ul>
+<li>Check for overstocking: <strong>“No ingredient is more than 10 above the order threshold.”</strong></li>
+</ul>
+<p>I suppose we don’t want too much stock laying around or it might spoil. Let’s use filter to check each of the ingredient stock values and see if any are more than 10 above its order threshold. We’ve got this!</p>
 <div id="not-on-my-watch" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Not on my watch!</h3>
-<ul class="nav nav-pills" id="myTab5781" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4849" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="10ormore5781-tab" data-toggle="tab" href="#10ormore5781" role="tab" aria-controls="10ormore5781" aria-selected="true">10 or more</a>
+<a class="nav-link" id="10ormore4849-tab" data-toggle="tab" href="#10ormore4849" role="tab" aria-controls="10ormore4849" aria-selected="true">10 or more</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint5781-tab" data-toggle="tab" href="#showhint5781" role="tab" aria-controls="showhint5781" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4849-tab" data-toggle="tab" href="#showhint4849" role="tab" aria-controls="showhint4849" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode5781-tab" data-toggle="tab" href="#showcode5781" role="tab" aria-controls="showcode5781" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4849-tab" data-toggle="tab" href="#showcode4849" role="tab" aria-controls="showcode4849" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="id_10ormore5781" class="tab-pane fade active in" role="tabpanel" aria-labelledby="10ormore5781-tab">
-<h4>
-Filter the audit dataset to show whether there are any rows where the number of units in stock is 10 or more the order threshold.
-</h4>
+<div id="id_10ormore4849" class="tab-pane fade active in" role="tabpanel" aria-labelledby="10ormore4849-tab">
+<p><b> Filter the audit dataset to find any rows where the number of units in stock is 10 or more above the order threshold. </b></p>
 <p><br></p>
 </div>
-<div id="showhint5781" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5781-tab">
+<div id="showhint4849" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4849-tab">
 <pre class="sourceCode r">
 # Try doing some math in the filter function
-filter(audit_df, SOMETHING_IS >= 10) 
+
+filter(audit_df, SOMETHING_IS > ORDER_THRESHOLD + 10) 
+
 </pre>
 </div>
-<div id="showcode5781" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5781-tab">
+<div id="showcode4849" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4849-tab">
 <pre class="sourceCode r">
-filter(audit_df, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD >= 10)
+
+filter(audit_df, NUMBER_OF_UNITS_IN_STOCK > ORDER_THRESHOLD + 10)
+
+# OR
+
+filter(audit_df, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD > 10)
+
 </pre>
 </div>
 </div>
 </div>
 <p><br></p>
-<p>Looks like we might need to make some emergency Oatmeal Raisin cookies to get our stock down a bit but we don’t think people will mind that much. Nice work!</p>
+<p>Looks like we might need to make some emergency Oatmeal Raisin cookies to get our stock down a bit, but we don’t think people will mind that much. Nice work!</p>
 </div>
-<div id="summary-statistics-by-group" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Summary statistics by group</h1>
-<p>Last item on our audit check list and then we can take a break (and maybe eat some of those Oatmeal Raisin cookies…yum.)</p>
-<p>The last thing we need to do is calculate summary statistics for both dry and liquid measures.</p>
-<p>Probably the easiest thing is to make two different dataframes, one of all the dry and one of all the liquid.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>liquid <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_df, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&#39;LIQUID&#39;</span>)</span>
+<div id="summary-statistics-by-group" class="section level1">
+<h1>Summary statistics by group</h1>
+<p>Last item on our audit check list and then we can take a break (and maybe eat some of those Oatmeal Raisin cookies… yum.)</p>
+<ul>
+<li><strong>Calculate summary statistics for both dry and liquid measures.</strong></li>
+</ul>
+<p>To make things easier we can split the data into two dataframes, one for all the dry ingredients and one of all the liquid.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>liquid <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_df, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&quot;LIQUID&quot;</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>dry <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_df, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&#39;DRY&#39;</span>)</span></code></pre></div>
-<p>Hmmm…something feels funny. Our original dataset had 36 observation, now we have 28 and 7 which is 35…we dropped an observation somewhere. Maybe there’s a typo in the column? We can use <code>unique</code> to see if there are more than just two values for DRY_OR_LIQUID_MEASUREMENT</p>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>dry <span class="ot">&lt;-</span> <span class="fu">filter</span>(audit_df, DRY_OR_LIQUID_MEASUREMENT <span class="sc">==</span> <span class="st">&quot;DRY&quot;</span>)</span></code></pre></div>
+<p>Hmmm… something feels funny. Our original dataset had 36 observation, now we have one with 28 and another with 7. That only adds up to 35… seems we dropped an observation somewhere.</p>
+<p>Maybe there’s a typo in the column? Let’s use <code>unique</code> to see if there are more than two values in the column DRY_OR_LIQUID_MEASUREMENT.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">unique</span>(audit_df<span class="sc">$</span>DRY_OR_LIQUID_MEASUREMENT)</span></code></pre></div>
 <pre><code>## [1] &quot;DRY&quot;    &quot;LIQUID&quot; NA</code></pre>
-<p>Uh-oh, we have an NA value. Filter will only return a row if it knows for sure that it meets the condition, and because with NA we literally don’t know the value, we can never know if it meets the condition.</p>
+<p>Uh-oh, we have an NA value. Filter will only keep a row if it knows for sure that it meets the condition. So if there is a missing or NA value, we literally don’t know the value, and R is unable to determine if it equals “DRY” or not.</p>
 <p>Let’s looks at the row that has the NA, maybe we can fix it like we did for CATEGORY.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">filter</span>(audit_df, <span class="fu">is.na</span>(DRY_OR_LIQUID_MEASUREMENT))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 8
@@ -295,35 +308,33 @@ filter(audit_df, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD >= 10)
 ## 1 EGGS       DAIRY    &lt;NA&gt;                    1.25 12         NA      20      25
 ## # … with abbreviated variable names ¹​DRY_OR_LIQUID_MEASUREMENT,
 ## #   ²​PRICE_PER_UNIT, ³​SIZE_UNITS, ⁴​NUMBER_OF_UNITS_IN_STOCK, ⁵​ORDER_THRESHOLD</code></pre>
-<p><em>Oh.</em> It’s <em>eggs</em>. Huh…should they be dry or liquid? What’s the number of ounces in a dozen eggs? Honestly maybe this is best left as NA and we can ask the lead-baking bot about it later…Also, we’ve never thought so much about measuring eggs before.</p>
-<p>But enough about eggs! Let’s make our summary stats and call this audit “good enough for government work” and move on!</p>
+<p><em>Oh.</em> It’s <em>eggs</em>. Huh…should they be dry or liquid? What’s the number of ounces in a dozen eggs? Honestly maybe this is best left as NA and we can ask the lead baking-bot about it later. Also, we’ve never thought so much about measuring eggs before.</p>
+<p>Enough about eggs! Let’s make our summary stats and wrap up this audit.</p>
 <div id="summary-stats" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Summary Stats</h3>
-<ul class="nav nav-pills" id="myTab3605" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4814" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="calcuatesummarystatistics3605-tab" data-toggle="tab" href="#calcuatesummarystatistics3605" role="tab" aria-controls="calcuatesummarystatistics3605" aria-selected="true">Calcuate summary statistics</a>
+<a class="nav-link" id="calcuatesummarystatistics4814-tab" data-toggle="tab" href="#calcuatesummarystatistics4814" role="tab" aria-controls="calcuatesummarystatistics4814" aria-selected="true">Calcuate summary statistics</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint3605-tab" data-toggle="tab" href="#showhint3605" role="tab" aria-controls="showhint3605" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4814-tab" data-toggle="tab" href="#showhint4814" role="tab" aria-controls="showhint4814" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode3605-tab" data-toggle="tab" href="#showcode3605" role="tab" aria-controls="showcode3605" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4814-tab" data-toggle="tab" href="#showcode4814" role="tab" aria-controls="showcode4814" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="calcuatesummarystatistics3605" class="tab-pane fade active in" role="tabpanel" aria-labelledby="calcuatesummarystatistics3605-tab">
-<h4>
-Use the datasets that you made using filter to calculate summary statistics for each one and store them in another object (give it a good, descriptive name).
-</h4>
+<div id="calcuatesummarystatistics4814" class="tab-pane fade active in" role="tabpanel" aria-labelledby="calcuatesummarystatistics4814-tab">
+<p><b> Use the datasets that you made using filter to calculate summary statistics for each one and store them in another object (give it a good, descriptive name). </b></p>
 <p><br></p>
 </div>
-<div id="showhint3605" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3605-tab">
+<div id="showhint4814" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4814-tab">
 <pre class="sourceCode r">
 liquid_summary <- summary(_______)
 dry_summary <- summary(_____)
 </pre>
 </div>
-<div id="showcode3605" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3605-tab">
+<div id="showcode4814" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4814-tab">
 <pre class="sourceCode r">
 liquid_summary <- summary(liquid)
 dry_summary <- summary(dry)
@@ -332,8 +343,8 @@ dry_summary <- summary(dry)
 </div>
 </div>
 <p><br></p>
-<p>We’ve got to stop doing so much good work…now the lead-baking bot wants us to start organizing orders!</p>
-<p>No rest for the weary it seems, but there are warm Oatmeal Raisin cookies which is a pretty good consolation prize!</p>
+<p>We’ve got to stop doing so much good work…now the lead baking-bot wants us to start organizing orders.</p>
+<p>No rest for the weary it seems, but there are warm Oatmeal Raisin cookies.</p>
 <p><i class="fa fa-cookie-bite"></i>
 <i class="fa fa-robot"></i>
 <i class="fa fa-cookie-bite"></i></p>

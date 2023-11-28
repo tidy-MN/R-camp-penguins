@@ -4,7 +4,7 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: ../../css/camp_style.css
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
@@ -33,29 +33,36 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # Before you start...
 
-Make sure you are still in your project that you created for the previous exercise and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_2_day_1.R` or `gloria.R` and you'll be ready to go!
+Jump back into the project you created for the previous exercise and then create a new R script. Save it as soon as you make it and give it a good name like `ex_2_day_1.R` or `gloria.R` and you're be ready to go!
+
 
 # Auditor-in-training
 
-Apparently the lead-baking bot was so impressed with our inventory report that they've asked us perform an audit! No one in the history of time has even been so excited to do an audit as we are RIGHT NOW! 
+The lead baking-bot is very impressed with our recent work. And now they've asked us perform a complete audit. This is our dream come true. No one has been so excited to do an audit as we are RIGHT NOW! 
 
-In the audit we need to make sure that 
+In the audit we need to:
 
-- Each ingredient has a category
-- No ingredient is 10 or more units over the order threshold
-- Summary statistics are calculated for both dry and liquid measures 
+- Good labels: Check each ingredient has a category.
+- Check for overstocking: No ingredient is more than 10 above its order threshold.
+- Calculate summary statistics for both dry and liquid measures. 
   - *(Don't mix and match! Fluid ounces are different from dry ounces and gosh wouldn't it be swell if everything was metric...)*
 
-Now that we have our marching orders, it's time to read in the data! Just need to break out our handy-dandy `read_csv` and...wait a second...this data isn't comma-delimited! What on earth are we going to do now?
+<br>
 
-1. Open up the file and see if you can determine what the delimiter is and then pick the correct function to read it in (like `read_tsv` for tab-delimited or `read_csv` for comma-delimited)
-2. Use RStudio's "Import Dataset" feature, same idea but gives you instant visual feedback on whether it read in like you thought it would.
-3. Use `read_delim` which has a "guess" feature and will take the data and try to figure out what the delimiter is for you
-4. Ask - *somebody* made this mess, you can always try to figure out who and ask them what the heck this file type is (*hint: ask your instructors*)
+Now that we have our marching orders, it's time to read in the data. Time to break out our handy-dandy `read_csv` and... wait a second... this data isn't comma-delimited! What on earth are we going to do now?
+
+
+Here are a few general steps to follow when you receive a file in an unknown format:
+
+1. Open up the file and see if you can determine what the delimiter is and then pick the correct function to read it in (like `read_tsv` for tab-delimited or `read_csv` for comma-delimited).
+2. Use RStudio's "Import Dataset" feature, same idea but gives you instant visual feedback on whether it is loading correctly.
+3. Use `read_delim` which has a nice "guess" feature that looks at the data and makes its best guess for what the delimiter is.
+4. Ask someone - Try to find someone closer to the source of the data and ask them about the file type. 
+
 
 **Side-bar discussion: What is a delimiter?**
 
-> A delimiter is a sequence of one or more characters for specifying the boundary between separate, independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the time gap used to separate letters and words in the transmission of Morse code. 
+> A delimiter is a sequence of one or more characters for specifying the boundary between independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the `:` used to separate parts of the time, such as in 03:30. 
   
 > [Wikipedia](https://en.wikipedia.org/wiki/Delimiter)
 
@@ -67,7 +74,7 @@ audit_df <- read_delim("https://tidy-mn.github.io/R-camp-penguins/data/inventory
 
 # Getting to know the data
 
-Depending on how you read in the data, you may feel that you already know it quite well, but it's still a good idea to at least take a look at the data to get a feel for it.
+Depending on how you read in the data, you may feel that you already know it quite well, but it's still a good idea to take a general look at the data to get a feel for it.
 
 ```{r}
 glimpse(audit_df)
@@ -75,9 +82,10 @@ glimpse(audit_df)
 
 Excellent, let's start working on our audit!
 
+
 # Categories for all
 
-Our first task it to make sure that each ingredient has a category. Let's start with figuring out if anyone *doesn't* have a category.
+Our first task it to make sure that each ingredient has a category. Let's start by determining if anything *doesn't* have a category.
 
 <div class="quiz">
 
@@ -88,17 +96,18 @@ source("../../insert_tabs.R")
 
 tabs <- c("Category is NA", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> It can often be easier to look for the absence of something than the presence of something, in this case we want to identify all the rows where Category is missing </h4>
+content <- c(Exercise = '<b> It can often be easier to look for the absence of something than the presence of something, in this case we want to identify all rows where Category is missing. </b>
 
 <br>',
 
 show_hint = 'code_start
-# What goes inside is.na and what does is.na do?
-filter(audit_df, is.na( _____ )) 
+# What goes inside is.na() and what does is.na() do?
+
+filter(audit_df, is.na( _____ ) ) 
+
 code_end',
 
 show_code = 'code_start
-
 filter(audit_df, is.na(CATEGORY))
   
 code_end')
@@ -111,21 +120,22 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-AH-HA! There is indeed an ingredient that does not have a Category. We should fix that...but how would we go about it? We need to figure out which row and column of the dataset match our criteria so we can change the value...this is stressful, maybe being an auditor isn't all it's cracked up to be.
+AH-HA! There is indeed an ingredient that does not have a `CATEGORY`. We should fix that... but how would we go about it? 
 
 # Two new functions to save the day
 
-Of course there's a way to do this, we wouldn't try if there wasn't. So the first question we have is what are the possible categories for an ingredient to have? We can use the function `unique` to figure out what the *unique* values are!
+So the first question we have is what are the possible categories for an ingredient to have? We can use the function `unique` to figure out what the *unique* values are!
 
 ```{r}
-# unique only likes vectors, so use the $ (dollar sign) 
-# to pull out an individual column from the dataframe
+# Use the $ (dollar sign) to pull out an individual column
 unique(audit_df$CATEGORY)  
 ```
 
-Pick the category that you think is the best fit. Now, we just need to figure out *where* in the dataframe the missing value is in. We know that CATEGORY is the second column so that's good...now we just need to know what row SALT is in since we can specify location using matrix-style indices (i.e. Row, Column position - just like Excel!)
+Pick the category that you think is the best fit. 
 
-Enter the function `which`! This function will tell us which indices are TRUE, so if we pass it a logical vector (which is what happens when you ask a question on a vector like whether it is equal to a certain value like say...SALT) it will tell us the *location* where that vector is TRUE!
+Now, we just need to determine *where* in the dataframe the missing value is. We know that CATEGORY is the second column so that's good. So we just need to find which row SALT is in. 
+
+Enter the function `which`! We can give this function a condition or test and it will tell us the row numbers where it evaluates to true or the test is passed. In other words, if we ask the function whether each of the values in the INGREDIENT row is equal to SALT, it will tell us the *location* where that is TRUE.
 
 ```{r}
 which(audit_df$INGREDIENT == 'SALT')
@@ -133,7 +143,7 @@ which(audit_df$INGREDIENT == 'SALT')
 
 ALRIGHT!
 
-Now for the finishing touch!
+Now for the finishing touch! Similar to Excel, we can now specify the location to update using matrix-style indices: [`Row number`, `Column position`]
 
 
 <div class="quiz">
@@ -155,11 +165,11 @@ code_end',
 
 show_code = 'code_start
 
-audit_df[18, "CATEGORY"] <- "ADDITITIVES"
+audit_df[18, 2] <- "ADDITITIVES"
 
 # OR
 
-audit_df[18, 2] <- "ADDITITIVES"
+audit_df[18, "CATEGORY"] <- "ADDITITIVES"
   
 code_end')
 
@@ -171,9 +181,11 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-# Threshold day
+# Overstocking
 
-Hopefully this question will be easier: "No ingredient is 10 or more units over the order threshold". Let's put our mechanical brains together...
+- Check for overstocking: **"No ingredient is more than 10 above the order threshold."**
+
+I suppose we don't want too much stock laying around or it might spoil. Let's use filter to check each of the ingredient stock values and see if any are more than 10 above its order threshold. We've got this!
 
 <div class="quiz">
 
@@ -184,17 +196,25 @@ source("../../insert_tabs.R")
 
 tabs <- c("10 or more", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> Filter the audit dataset to show whether there are any rows where the number of units in stock is 10 or more the order threshold. </h4>
+content <- c(Exercise = '<b> Filter the audit dataset to find any rows where the number of units in stock is 10 or more above the order threshold. </b>
 
 <br>',
 
 show_hint = 'code_start
 # Try doing some math in the filter function
-filter(audit_df, SOMETHING_IS >= 10) 
+
+filter(audit_df, SOMETHING_IS > ORDER_THRESHOLD + 10) 
+
 code_end',
 
 show_code = 'code_start
-filter(audit_df, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD >= 10)
+
+filter(audit_df, NUMBER_OF_UNITS_IN_STOCK > ORDER_THRESHOLD + 10)
+
+# OR
+
+filter(audit_df, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD > 10)
+
 code_end')
 
 tab_html <- add_tabs(tabs, content)
@@ -205,29 +225,35 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-Looks like we might need to make some emergency Oatmeal Raisin cookies to get our stock down a bit but we don't think people will mind that much. Nice work!
+Looks like we might need to make some emergency Oatmeal Raisin cookies to get our stock down a bit, but we don't think people will mind that much. Nice work!
+
 
 # Summary statistics by group
 
-Last item on our audit check list and then we can take a break (and maybe eat some of those Oatmeal Raisin cookies...yum.)
+Last item on our audit check list and then we can take a break (and maybe eat some of those Oatmeal Raisin cookies... yum.)
 
-The last thing we need to do is calculate summary statistics for both dry and liquid measures.
+- **Calculate summary statistics for both dry and liquid measures.**
 
-Probably the easiest thing is to make two different dataframes, one of all the dry and one of all the liquid.
+To make things easier we can split the data into two dataframes, one for all the dry ingredients and one of all the liquid.
 
 ```{r}
-liquid <- filter(audit_df, DRY_OR_LIQUID_MEASUREMENT == 'LIQUID')
+liquid <- filter(audit_df, DRY_OR_LIQUID_MEASUREMENT == "LIQUID")
 
-dry <- filter(audit_df, DRY_OR_LIQUID_MEASUREMENT == 'DRY')
+dry <- filter(audit_df, DRY_OR_LIQUID_MEASUREMENT == "DRY")
 ```
 
-Hmmm...something feels funny. Our original dataset had 36 observation, now we have 28 and 7 which is 35...we dropped an observation somewhere. Maybe there's a typo in the column? We can use `unique` to see if there are more than just two values for DRY_OR_LIQUID_MEASUREMENT
+
+Hmmm... something feels funny. Our original dataset had 36 observation, now we have one with 28 and another with 7. That only adds up to 35... seems we dropped an observation somewhere. 
+
+Maybe there's a typo in the column? Let's use `unique` to see if there are more than two values in the column DRY_OR_LIQUID_MEASUREMENT.
+
 
 ```{r}
 unique(audit_df$DRY_OR_LIQUID_MEASUREMENT)
 ```
 
-Uh-oh, we have an NA value. Filter will only return a row if it knows for sure that it meets the condition, and because with NA we literally don't know the value, we can never know if it meets the condition.
+
+Uh-oh, we have an NA value. Filter will only keep a row if it knows for sure that it meets the condition. So if there is a missing or NA value, we literally don't know the value, and R is unable to determine if it equals "DRY" or not.
 
 Let's looks at the row that has the NA, maybe we can fix it like we did for CATEGORY.
 
@@ -235,9 +261,9 @@ Let's looks at the row that has the NA, maybe we can fix it like we did for CATE
 filter(audit_df, is.na(DRY_OR_LIQUID_MEASUREMENT))
 ```
 
-*Oh.* It's *eggs*. Huh...should they be dry or liquid? What's the number of ounces in a dozen eggs? Honestly maybe this is best left as NA and we can ask the lead-baking bot about it later...Also, we've never thought so much about measuring eggs before.
+*Oh.* It's *eggs*. Huh...should they be dry or liquid? What's the number of ounces in a dozen eggs? Honestly maybe this is best left as NA and we can ask the lead baking-bot about it later. Also, we've never thought so much about measuring eggs before.
 
-But enough about eggs! Let's make our summary stats and call this audit "good enough for government work" and move on!
+Enough about eggs! Let's make our summary stats and wrap up this audit.
 
 <div class="quiz">
 
@@ -248,7 +274,7 @@ source("../../insert_tabs.R")
 
 tabs <- c("Calcuate summary statistics", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> Use the datasets that you made using filter to calculate summary statistics for each one and store them in another object (give it a good, descriptive name). </h4>
+content <- c(Exercise = '<b> Use the datasets that you made using filter to calculate summary statistics for each one and store them in another object (give it a good, descriptive name). </b>
 
 <br>',
 
@@ -270,9 +296,9 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-We've got to stop doing so much good work...now the lead-baking bot wants us to start organizing orders! 
+We've got to stop doing so much good work...now the lead baking-bot wants us to start organizing orders.
 
-No rest for the weary it seems, but there are warm Oatmeal Raisin cookies which is a pretty good consolation prize!
+No rest for the weary it seems, but there are warm Oatmeal Raisin cookies.
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 
