@@ -51,7 +51,7 @@ The `group_by` and `summarize` functions allow us to compare values by categorie
 ```{r, results='asis', echo=F}
 source("../insert_tabs.R")
 
-tabs <- c("group_by() %>% summarize()", "Show hint", "Show code")
+tabs <- c("Description", "Show hint", "Show code")
 
 content <- c(Exercise = '<b> First use group_by() to group the data by species, AND THEN use summarize() to add new column called min_flipper_length. Ignore the NA values with the argument `na.rm = TRUE`.</b>
 
@@ -72,7 +72,7 @@ penguins %>%
   
 code_end')
 
-tab_html <- add_tabs(tabs, content)
+tab_html <- add_tabs(tabs, content, 0)
 
 cat(paste0(tab_html, collapse = "\n"))
 ```
@@ -95,7 +95,7 @@ Now we are interested in how much penguins weigh by species AND island. You can 
 ```{r, results='asis', echo=F}
 source("../insert_tabs.R")
 
-tabs <- c("Grouped multiple summarize()", "Show hint", "Show code")
+tabs <- c("Description", "Show hint", "Show code")
 
 content <- c(Exercise = '<b> First use group_by() to group the data by species and island, AND THEN use summarize() to add new columns for min, mean, and max flipper_length. Ignore the NA values with the argument `na.rm = TRUE`. </b>
 
@@ -120,7 +120,7 @@ penguins %>%
             
 code_end')
 
-tab_html <- add_tabs(tabs, content)
+tab_html <- add_tabs(tabs, content, 42)
 
 cat(paste0(tab_html, collapse = "\n"))
 ```
@@ -147,7 +147,7 @@ In this final exercise, we want you to create a dataset that summarizes the bill
 ```{r, results='asis', echo=F}
 source("../insert_tabs.R")
 
-tabs <- c("Grouped summarize X3", "Show hint", "Show code")
+tabs <- c("Description", "Show hint", "Show code")
 
 content <- c(Exercise = '<b> First use group_by() to group the data by species, island, and sex -AND THEN- use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument `na.rm = TRUE`. Store the result in the new table "bill_summary". </b>
 
@@ -170,7 +170,7 @@ bill_summary <- penguins %>%
             
 code_end')
 
-tab_html <- add_tabs(tabs, content)
+tab_html <- add_tabs(tabs, content, 13)
 
 cat(paste0(tab_html, collapse = "\n"))
 ```
