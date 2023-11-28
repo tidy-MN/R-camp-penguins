@@ -1,9 +1,83 @@
 ---
 title: 'Summarize penguin populations'
 author: "Abigail Stamm"
-output: html_document
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: false
+    toc_depth: 1
 ---
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="../css/camp_style.css" type="text/css" />
 
 
 <div id="summarize-the-data-on-penguin-populations" class="section level2">
@@ -11,12 +85,12 @@ output: html_document
 <p>The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. We will use the <code>penguins</code> dataset in the <code>palmerpenguins</code> package. Please ask for help if you get stuck or would like a hint.</p>
 <div id="load-the-palmerpenguins-package" class="section level3">
 <h3>Load the <code>palmerpenguins</code> package</h3>
-<pre class="r"><code>library(palmerpenguins)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
 </div>
 <div id="load-the-penguins-data" class="section level3">
 <h3>Load the <code>penguins</code> data</h3>
 <p>Since the dataset is included in the package itself, we don’t need to read in a csv from the web or from our computer folders. Many R packages include datasets so that you can test the functions included in them. <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">Here</a> is a website with packages that include 1000s of datasets! Once you have loaded your R package that contains a dataset, you can pull that dataset into your environment by giving the dataset an object name. If you are ever wondering if a package includes a practice data set, just run this code to get a list of the datasets <code>data(package='palmerpenguins')</code></p>
-<pre class="r"><code>penguins &lt;- penguins</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span></code></pre></div>
 </div>
 <div id="compare-flipper-lengths" class="section level3">
 <h3>Compare flipper lengths</h3>
@@ -28,23 +102,23 @@ output: html_document
 </div>
 <div id="grouped-summarize" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize</h3>
-<ul class="nav nav-pills" id="myTab3751" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab5188" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="group_by()%>%summarize()3751-tab" data-toggle="tab" href="#group_by()%>%summarize()3751" role="tab" aria-controls="group_by()%>%summarize()3751" aria-selected="true">group_by() %&gt;% summarize()</a>
+<a class="nav-link" id="group_by()%>%summarize()5188-tab" data-toggle="tab" href="#group_by()%>%summarize()5188" role="tab" aria-controls="group_by()%>%summarize()5188" aria-selected="true">group_by() %&gt;% summarize()</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint3751-tab" data-toggle="tab" href="#showhint3751" role="tab" aria-controls="showhint3751" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint5188-tab" data-toggle="tab" href="#showhint5188" role="tab" aria-controls="showhint5188" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode3751-tab" data-toggle="tab" href="#showcode3751" role="tab" aria-controls="showcode3751" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode5188-tab" data-toggle="tab" href="#showcode5188" role="tab" aria-controls="showcode5188" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="group_by()%&gt;%summarize()3751" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_by()%&gt;%summarize()3751-tab">
+<div id="group_by()%&gt;%summarize()5188" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_by()%&gt;%summarize()5188-tab">
 <p><b> First use group_by() to group the data by species, AND THEN use summarize() to add new column called min_flipper_length. Ignore the NA values with the argument <code>na.rm = TRUE</code>.</b></p>
 <p><br></p>
 </div>
-<div id="showhint3751" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3751-tab">
+<div id="showhint5188" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5188-tab">
 <pre class="sourceCode r">
 # Remember to account for NA values in your summary function
 penguins %>% 
@@ -53,7 +127,7 @@ penguins %>%
   
 </pre>
 </div>
-<div id="showcode3751" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3751-tab">
+<div id="showcode5188" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5188-tab">
 <pre class="sourceCode r">
 penguins %>% 
   group_by(species) %>%
@@ -73,23 +147,23 @@ penguins %>%
 </div>
 <div id="grouped-multiple-summarize" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped multiple summarize</h3>
-<ul class="nav nav-pills" id="myTab6866" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab7801" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="groupedmultiplesummarize()6866-tab" data-toggle="tab" href="#groupedmultiplesummarize()6866" role="tab" aria-controls="groupedmultiplesummarize()6866" aria-selected="true">Grouped multiple summarize()</a>
+<a class="nav-link" id="groupedmultiplesummarize()7801-tab" data-toggle="tab" href="#groupedmultiplesummarize()7801" role="tab" aria-controls="groupedmultiplesummarize()7801" aria-selected="true">Grouped multiple summarize()</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint6866-tab" data-toggle="tab" href="#showhint6866" role="tab" aria-controls="showhint6866" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint7801-tab" data-toggle="tab" href="#showhint7801" role="tab" aria-controls="showhint7801" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode6866-tab" data-toggle="tab" href="#showcode6866" role="tab" aria-controls="showcode6866" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode7801-tab" data-toggle="tab" href="#showcode7801" role="tab" aria-controls="showcode7801" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="groupedmultiplesummarize()6866" class="tab-pane fade active in" role="tabpanel" aria-labelledby="groupedmultiplesummarize()6866-tab">
+<div id="groupedmultiplesummarize()7801" class="tab-pane fade active in" role="tabpanel" aria-labelledby="groupedmultiplesummarize()7801-tab">
 <p><b> First use group_by() to group the data by species and island, AND THEN use summarize() to add new columns for min, mean, and max flipper_length. Ignore the NA values with the argument <code>na.rm = TRUE</code>. </b></p>
 <p><br></p>
 </div>
-<div id="showhint6866" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint6866-tab">
+<div id="showhint7801" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7801-tab">
 <pre class="sourceCode r">
 # Remember to account for NA values in your summary functions
 penguins %>% 
@@ -100,7 +174,7 @@ penguins %>%
             
 </pre>
 </div>
-<div id="showcode6866" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode6866-tab">
+<div id="showcode7801" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7801-tab">
 <pre class="sourceCode r">
 penguins %>% 
   group_by(species, island) %>%
@@ -124,23 +198,23 @@ penguins %>%
 </div>
 <div id="grouped-summarize-x3" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize X3</h3>
-<ul class="nav nav-pills" id="myTab7388" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab3251" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="groupedsummarizex37388-tab" data-toggle="tab" href="#groupedsummarizex37388" role="tab" aria-controls="groupedsummarizex37388" aria-selected="true">Grouped summarize X3</a>
+<a class="nav-link" id="groupedsummarizex33251-tab" data-toggle="tab" href="#groupedsummarizex33251" role="tab" aria-controls="groupedsummarizex33251" aria-selected="true">Grouped summarize X3</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint7388-tab" data-toggle="tab" href="#showhint7388" role="tab" aria-controls="showhint7388" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint3251-tab" data-toggle="tab" href="#showhint3251" role="tab" aria-controls="showhint3251" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode7388-tab" data-toggle="tab" href="#showcode7388" role="tab" aria-controls="showcode7388" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode3251-tab" data-toggle="tab" href="#showcode3251" role="tab" aria-controls="showcode3251" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="groupedsummarizex37388" class="tab-pane fade active in" role="tabpanel" aria-labelledby="groupedsummarizex37388-tab">
+<div id="groupedsummarizex33251" class="tab-pane fade active in" role="tabpanel" aria-labelledby="groupedsummarizex33251-tab">
 <p><b> First use group_by() to group the data by species, island, and sex -AND THEN- use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument <code>na.rm = TRUE</code>. Store the result in the new table “bill_summary”. </b></p>
 <p><br></p>
 </div>
-<div id="showhint7388" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7388-tab">
+<div id="showhint3251" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3251-tab">
 <pre class="sourceCode r">
 # Remember to account for NA values in your summary functions
 bill_summary <- penguins %>% 
@@ -150,7 +224,7 @@ bill_summary <- penguins %>%
             
 </pre>
 </div>
-<div id="showcode7388" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7388-tab">
+<div id="showcode3251" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3251-tab">
 <pre class="sourceCode r">
 bill_summary <- penguins %>%
                   group_by(species, island, sex) %>%

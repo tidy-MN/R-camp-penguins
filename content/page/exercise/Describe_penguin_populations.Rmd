@@ -1,7 +1,16 @@
 ---
 title: 'Summarize penguin populations'
 author: "Abigail Stamm"
-output: html_document
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: false
+    toc_depth: 1
 ---
 
 ```{r setup, include=FALSE}
