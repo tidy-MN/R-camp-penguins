@@ -93,21 +93,29 @@ hr {background:  cornflowerblue;}
 </style>
 <div id="before-you-start" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Before you start…</h1>
-<p>Please make a brand-new project for this exercise - this will be project that you will do all your exercises in for the reminder of the course. To make a new project in RStudio, go to File -&gt; New Project -&gt; New Directory -&gt; New Project</p>
-<p>Now you need to pick a new directory. Pick a location that makes sense to you where you’ll be able to find it again. If you made a project while following along with the videos, you can pick the same location for this one and then both your projects will be in the same location.</p>
-<p>Once you have a new project made, make a new R script and save it (Ctrl + S or click the floppy disk). Name it something pithy like <code>exercise_1_day_1.R</code> or <code>frank.R</code> and you’ll be ready to go!</p>
+<p>Please make a brand-new project for this exercise. This will be our exercise project where we’ll do all our exercises for the remainder of the course.</p>
+<p>To make a new project in RStudio: Go to <code>File</code> -&gt; <code>New Project</code> -&gt; <code>New Directory</code> -&gt; <code>New Project</code></p>
+<p>Now you need to pick a new directory. Pick a location that makes sense to you so you’ll be able to find it again. If you don’t change the location, the default setting will be used and your project will be created in your <code>Documents/</code> folder. Click <strong>Create project</strong>.</p>
+<p>Now that you have a new project setup (you should see your project name in the top right of RStudio), it’s time to create a new R script and save it. Go to <code>File</code> -&gt; <code>New File</code> -&gt; <code>R Script</code> or click on the top left icon with the green plus sign.</p>
+<p>You can now save the script by clicking <code>CTRL</code> + <code>S</code> or by clicking the floppy disk icon. Name your script something pithy like <code>ex_1_day_1.R</code> or <code>frankie.R</code>. And you’re ready to go!</p>
 </div>
 <div id="inventory-duty" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Inventory Duty</h1>
-<p>We love our job as a baking-bot, but the thing we love more than baking is actually taking the inventory. We like to play with the inventory data and present beautiful summaries to the lead-baking bot. Honestly, if we could bake and get to work with data all day long that would be a dream come true…but we’re getting ahead of our story.</p>
-<p>We’ve been tasked with downloading the inventory file from our suppliers and determining what needs to be ordered because we’re running low.</p>
-<p>So the first thing we need to do is read in the file that contains the inventory!</p>
+<h1><span class="header-section-number">2</span> Inventory duty</h1>
+<p>We love our job as baking-bot, but the thing we love more than anything is taking inventory of ingredients. We like to play with the inventory data and present beautiful summaries to the lead baking-bot.</p>
+<p>The bakery is expecting some big orders for the upcoming holidays and wants to be prepared. We’ve been asked to download the current inventory and determine if we are running low on any ingredients.</p>
+<p>Let’s read in the inventory data!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="getting-to-know-the-data" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Getting to know the data</h1>
-<p>Now that we have the data, what should be our first step to better understand the information in the file, what data types the columns are, and other summary information about the data? The lead-baking bot especially wants to know what the maximum value of <code>NUMBER_OF_UNITS_IN_STOCK</code> for planning purposes.</p>
-<p>Feel free to use any and all of the functions you know, but also feel free to look at the hint for inspiration!</p>
+<p>Now that we have the data let’s take some steps to better understand the information in the file.</p>
+<ul>
+<li>How many rows are there, how many columns?</li>
+<li>What data types are the columns?</li>
+<li>What’s the general range of the values?</li>
+<li>⭐ The lead baking-bot especially wants to know what the maximum value is for <code>NUMBER_OF_UNITS_IN_STOCK</code> for very important planning purposes.</li>
+</ul>
+<p>Feel free to use any and all of the functions you know, but also feel free to use the hints below for inspiration!</p>
 <div id="get-to-know-the-data" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Get to know the data</h3>
 <ul class="nav nav-pills" id="myTab1" role="tablist" style="margin-top: 18px;">
@@ -123,9 +131,7 @@ hr {background:  cornflowerblue;}
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
 <div id="explorefunctions1" class="tab-pane fade active in" role="tabpanel" aria-labelledby="explorefunctions1-tab">
-<h4>
-When we first get a dataset it is fun to sit down and get to know it better. Below are a few functions to choose from:
-</h4>
+<p><b> When we first get a dataset it is fun to sit down and get to know it better. Below are a few functions to choose from: </b></p>
 <ul>
 <li><code>glimpse</code></li>
 <li><code>summmary</code></li>
@@ -137,22 +143,23 @@ When we first get a dataset it is fun to sit down and get to know it better. Bel
 </div>
 <div id="showhint1" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1-tab">
 <pre class="sourceCode r">
-# glimpse gives us that data type for each column and 
-# an idea of what to expect
+# glimpse() gives us that data type for each column and 
+# a few sample values for each column
+
 glimpse() 
 
-# summary shows us missing values and 
-# summary stats for numeric columns
+# summary() shows us missing values and stats for numeric columns
+
 summary() 
 
 </pre>
 </div>
 <div id="showcode1" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1-tab">
 <pre class="sourceCode r">
-
 glimpse(inventory)
+
 summary(inventory)
-  
+
 </pre>
 </div>
 </div>
@@ -160,8 +167,8 @@ summary(inventory)
 <p><br></p>
 <p>WHOA. We have 378 units of something in stock?! What are we making, cupcakes for a whole school?! A cake big enough to cover a bus?! Time to go investigate…</p>
 </div>
-<div id="why-do-we-do-this-to-ourselves" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Why do we do this to ourselves?</h1>
+<div id="filtering-to-the-good-stuff" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Filtering to the good stuff</h1>
 <p>How do we go about trying to figure out what’s going on with that wacky number? We need to be able to narrow down just to the row that meets the condition where <code>NUMBER_OF_UNITS_IN_STOCK</code> is equal to 378. What tool do we have that will let us do that?</p>
 <div id="investigation-underway" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Investigation underway</h3>
@@ -178,15 +185,13 @@ summary(inventory)
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
 <div id="findtheodd-ball2" class="tab-pane fade active in" role="tabpanel" aria-labelledby="findtheodd-ball2-tab">
-<h4>
-Filter the inventory dataset to just the row that meets the condition of <code>NUMBER_OF_UNITS_IN_STOCK</code> is equal to 378
-</h4>
+<p><b> Filter the inventory data to just the row that meets the condition of <code>NUMBER_OF_UNITS_IN_STOCK</code> is equal to 378 </b></p>
 <p><br></p>
 </div>
 <div id="showhint2" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2-tab">
 <pre class="sourceCode r">
-
 # Remember to use the double equal sign (==) for "is equal to"
+
 filter(inventory, PLACE A CONDITION HERE) 
 
 </pre>
@@ -201,11 +206,49 @@ filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
 </div>
 </div>
 <p><br></p>
-<p>Oh. We have a total row - that’s annoying. It’s also adding NAs to other columns which might make some of our analysis hard in the future. So let’s get rid of it and look at our data <em>for real</em>.</p>
-<p>Though as a reminder, lots of functions have the additional argument <code>na.rm = TRUE</code> which allows you to not use NA values when calculating things like means, maxes, etc. Super handy!</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">filter</span>(inventory, INGREDIENT <span class="sc">!=</span> <span class="st">&#39;TOTAL&#39;</span>)</span></code></pre></div>
-<p>Let’s try <code>summary</code> again and see if we can get some better results, no more NAs or outrageous numbers</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">summary</span>(inventory)</span></code></pre></div>
+<p>Look at that. We have a <strong>total</strong> row - that sure could have thrown a wrench in our summaries. That row is also adding <code>NA</code>s to other columns which might make some of our analysis harder in the future. Let’s get rid of this summary row and keep only the <em>real data</em>.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Lots of functions you’ll meet in R will have the additional argument <code>na.rm = TRUE</code>, which allows us to ignore NA values when calculating things like means, maxes, etc. Super handy!</p>
+</blockquote>
+<div id="filter-time" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Filter time</h3>
+<ul class="nav nav-pills" id="myTab55" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="filterout55-tab" data-toggle="tab" href="#filterout55" role="tab" aria-controls="filterout55" aria-selected="true">Filter out</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint55-tab" data-toggle="tab" href="#showhint55" role="tab" aria-controls="showhint55" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode55-tab" data-toggle="tab" href="#showcode55" role="tab" aria-controls="showcode55" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="filterout55" class="tab-pane fade active in" role="tabpanel" aria-labelledby="filterout55-tab">
+<p><b> Filter the inventory data to drop the TOTAL row. </b></p>
+<p><br></p>
+</div>
+<div id="showhint55" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint55-tab">
+<pre class="sourceCode r">
+# Remember the not equal sign is "!="
+
+inventory <- filter(inventory, PLACE A CONDITION HERE)
+
+</pre>
+</div>
+<div id="showcode55" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode55-tab">
+<pre class="sourceCode r">
+
+inventory <- filter(inventory, INGREDIENT != "TOTAL")
+
+</pre>
+</div>
+</div>
+</div>
+<p>Let’s try <code>summary</code> again and see if we can get some better results, hopefully no more NAs or outrageous numbers.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">filter</span>(inventory, INGREDIENT <span class="sc">!=</span> <span class="st">&quot;TOTAL&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">summary</span>(inventory)</span></code></pre></div>
 <pre><code>##   INGREDIENT        PRICE_PER_UNIT    SIZE_UNITS       
 ##  Length:28          Min.   : 0.490   Length:28         
 ##  Class :character   1st Qu.: 1.890   Class :character  
@@ -220,14 +263,16 @@ filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
 ##  Mean   :13.50            Mean   :11     
 ##  3rd Qu.:18.25            3rd Qu.:15     
 ##  Max.   :37.00            Max.   :30</code></pre>
-<p>Much better. Okay, let’s see what we’ve been asked to do</p>
+<p>Much better. Okay, let’s see what we’ve been asked to do.</p>
 </div>
 <div id="place-that-order" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Place that order!</h1>
-<p>Oh right! We need to use the data that we’ve received to determine what items we need to order! If the number of units that we currently have in-stock is less than the order threshold we need to place an order right away.</p>
-<p>Do we have any ingredientst that fit that criteria?</p>
-<div id="what-to-order" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> What to order?</h3>
+<p>We need to use the data we received to determine what items to order. If the number of units we currently have in-stock is less than the order threshold, we need to place an order right away.</p>
+<ul>
+<li>Do we have any ingredients (rows in the data) that meet this criteria?</li>
+</ul>
+<div id="time-to-order" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Time to order?</h3>
 <ul class="nav nav-pills" id="myTab32" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="lessthanorderthreshold32-tab" data-toggle="tab" href="#lessthanorderthreshold32" role="tab" aria-controls="lessthanorderthreshold32" aria-selected="true">Less than Order Threshold</a>
@@ -241,32 +286,36 @@ filter(inventory, NUMBER_OF_UNITS_IN_STOCK == 378)
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
 <div id="lessthanorderthreshold32" class="tab-pane fade active in" role="tabpanel" aria-labelledby="lessthanorderthreshold32-tab">
-<h4>
-Filter the inventory dataset to the rows that meet the condition where the number of units in stock is less than the order threshold.
-</h4>
+<p><b> Filter the inventory data to the rows that meet the condition where the number of units in stock is less than the order threshold. </b></p>
 <p><br></p>
 </div>
 <div id="showhint32" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint32-tab">
 <pre class="sourceCode r">
-order_now <- filter(inventory, PLACE A CONDITION HERE) 
+# You will need to compare 2 columns in the data
+
+order_now <- filter(inventory, PLACE A CONDITION HERE)
+
 order_now
+
 </pre>
 </div>
 <div id="showcode32" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode32-tab">
 <pre class="sourceCode r">
 order_now <- filter(inventory, 
                     NUMBER_OF_UNITS_IN_STOCK < ORDER_THRESHOLD)
+                    
 order_now
+
 </pre>
 </div>
 </div>
 </div>
 <p><br></p>
-<p>That makes sense, we’ve been getting lots of orders for our Gluten-free Applesauce and Walnut muffins and also for our Triple-Chocolate Brownies. We’ll make a note that we need to make an urgent order for these supplies so we don’t run out!</p>
-<p>The last thing that we need to do is export out the filtered data so we can send it to the lead-baking bot.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> order_now, <span class="at">file =</span> <span class="st">&quot;order_now.csv&quot;</span>)</span></code></pre></div>
+<p>That’s just what I expected. We’ve been getting lots of orders for our <strong>Gluten-free Applesauce</strong> and <strong>Walnut muffins</strong>, and also for our <strong>Triple-Chocolate Brownies</strong>. Time for an urgent supply order so we don’t run out!</p>
+<p>The last thing to do is to write/save the filtered data so we can send it to the lead baking-bot.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> order_now, <span class="at">file =</span> <span class="st">&quot;order_now.csv&quot;</span>)</span></code></pre></div>
 <p><br></p>
-<p>Excellent! We’ll send this out in an email so we get the ingredients that we need right away. And we also have a series of scripted steps that we can use again and again and again…well you get the idea.</p>
+<p>Excellent! We’ll send this out so we get those ingredients right away. Even better, next inventory time we’ll have these scripted steps that we can use again and again and again…well you get the idea.</p>
 <p><strong>NICE WORK!</strong></p>
 <p><i class="fa fa-cookie-bite"></i>
 <i class="fa fa-robot"></i>
