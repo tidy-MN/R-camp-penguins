@@ -134,10 +134,12 @@ Packages: `ggplot2`
 
 **Day 4**   
 
-> Table joins, date formats, date parts, time series
+> Table joins, clean_names, date formats, date parts, time series
 
 1. Join tables 
     - `left_join`
+1. library(janitor)
+    - `clean_names()`
 1. Working with Dates
     - Format conversion
     - Date/time parts: `year`, `day`, `hour`
@@ -161,8 +163,12 @@ Packages: `lubridate`
 
 1. Intro to Maps
     - Coordinates and coordinate reference systems
-    - Spatial functions
-    - Interactive maps
+1. Spatial functions
+    - Distances, buffers, intersections
+1. Interactive maps
+    - Leaflet
+    - Layers, labels, legends
+    - Points, polygons, markers
 
 Packages: `sf`, `leaflet`
 
@@ -172,12 +178,13 @@ Packages: `sf`, `leaflet`
 
 **Day 6**   
 
-> Review, reading code, databases, markdown
+> Review, reading code, wide data, databases, markdown
 
 
 1. Connect to databases
     - ODBC
     - `keyring`: Keep your passwords secret
+1. Wide format data <--> Long data
 1. R markdown reports    
 1. Choose your own adventure!
 
