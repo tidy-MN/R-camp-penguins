@@ -90,11 +90,11 @@ Packages: `tidyverse`
     - Arrange, sort, and __filter__ data
     - Comparing data: `>`, `==`, `%in%`
 1. Adding and calculating new columns 
-1. Calculate new columns based on `if` condition
+1. New columns based on an `if` condition
     - If `age > 10` then "Eligible for vaccine"
-1. Use the pipe `%>%` to chain functions together for less typing    
+1. Use the pipe `%>%` to chain functions together  
 1. Summarize data
-    - Summary functions: mean, median, max, min, quantile
+    - Functions: mean, median, max, min, quantile
 1. `group_by`
     - Summarize by __group__ or category
     - By location: city, county, ZIP 
@@ -116,15 +116,15 @@ Packages: `readxl`
 > Plots, grammar of graphics, geoms, labels, colors, facets
 
 1. Get visual with `ggplot2`
-    - Plot the data!
-    - Check for outliers
+    - Grammar of graphics
+    - aesthetics and geoms
 1. Make ggplot sandwiches
-    - Scatter plots and boxplots 
+    - Scatterplots, text, and boxplots 
     - Add titles, colors, and labels 
     - Facets
     - Reference lines 
     - Themes
-1. Save charts to different formats 
+1. Save charts to a variety of formats 
 
 Packages: `ggplot2`
 
@@ -177,7 +177,7 @@ Packages: `sf`, `leaflet`
 
 1. Connect to databases
     - ODBC
-    - `keyring`: Keeping your passwords secret
+    - `keyring`: Keep your passwords secret
 1. R markdown reports    
 1. Choose your own adventure!
 
