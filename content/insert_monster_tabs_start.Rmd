@@ -103,37 +103,37 @@ monsters <- data.frame(id = 1:5,
 # FILTER ----
 
 ## Use a single condition/test
-monsters %>% filter(color == "pink")
+filter(monsters, color == "pink")
 
 ## Use multiple conditions/tests
-monsters %>% filter(color == "pink", age > 7)
+filter(monsters, color == "pink", age > 7)
 
 
 # SELECT ----
 
 ## Keep only 2 columns
-monsters %>% select(id, age)
+select(monsters, id, age)
 
 ## Drop columns with a '-' in front
-monsters %>% select(-hat)
+select(monsters, -hat)
 
 
 # ARRANGE ----
 
 ## From low to high
-monsters %>% arrange(age)
+arrange(monsters, age)
 
 ## Descend from high to low
-monsters %>% arrange(desc(age))
+arrange(monsters, desc(age))
 
 
 # MUTATE ----
 
 ## Update an existing column
-monsters %>% mutate(age = age + 2)
+mutate(monsters, age = age + 2)
 
 ## Create a new column
-monsters %>% mutate(is_baby = age < 3)
+mutate(monsters, is_baby = age < 3)
 
 ```
 

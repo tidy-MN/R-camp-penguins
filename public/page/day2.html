@@ -63,7 +63,7 @@
   "headline": "Day 2",
   "description" : "1 Data wrangling 2 Forks in the road: if_else \u002b case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
   "inLanguage" : "en",
-  "wordCount":  2059 ,
+  "wordCount":  1942 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -511,37 +511,37 @@ Add a new column
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># FILTER ----</span></span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="do">## Use a single condition/test</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">filter</span>(monsters, color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="do">## Use multiple conditions/tests</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>, age <span class="sc">&gt;</span> <span class="dv">7</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="fu">filter</span>(monsters, color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>, age <span class="sc">&gt;</span> <span class="dv">7</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co"># SELECT ----</span></span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="do">## Keep only 2 columns</span></span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, age)</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="fu">select</span>(monsters, id, age)</span>
 <span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="do">## Drop columns with a &#39;-&#39; in front</span></span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>hat)</span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="fu">select</span>(monsters, <span class="sc">-</span>hat)</span>
 <span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="co"># ARRANGE ----</span></span>
 <span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a></span>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a><span class="do">## From low to high</span></span>
-<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(age)</span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a><span class="fu">arrange</span>(monsters, age)</span>
 <span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a><span class="do">## Descend from high to low</span></span>
-<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(age))</span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a><span class="fu">arrange</span>(monsters, <span class="fu">desc</span>(age))</span>
 <span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a></span>
 <span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="co"># MUTATE ----</span></span>
 <span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a></span>
 <span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="do">## Update an existing column</span></span>
-<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">age =</span> age <span class="sc">+</span> <span class="dv">2</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a><span class="fu">mutate</span>(monsters, <span class="at">age =</span> age <span class="sc">+</span> <span class="dv">2</span>)</span>
 <span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a></span>
 <span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a><span class="do">## Create a new column</span></span>
-<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a><span class="fu">mutate</span>(monsters, <span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -737,9 +737,9 @@ blockquote code {background: #f8fdff;}
 </div>
 <div id="back-to-monster-babies" class="section level3 unnumbered">
 <h3>Back to monster babies</h3>
-<p><strong>This if_else() statement</strong></p>
+<p><strong>This <code>if_else()</code> statement</strong></p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
-<p><strong>Turns into this <code>case_when</code> statement</strong></p>
+<p><strong>Turns into this <code>case_when()</code> statement</strong></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
 <span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
 <blockquote>
@@ -760,8 +760,8 @@ blockquote code {background: #f8fdff;}
 <span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>                              <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Adult&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="the-pipe-take-this-and-then" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> The pipe: “Take this and then…”</h2>
+<div id="the-pipe-take-this-and-then" class="section level2 unnumbered">
+<h2>The pipe: “Take this and then…”</h2>
 <p><img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/pipe.png" style="width: 32%; margin-top: 0;"></p>
 <div id="patty-cake" class="section level3 unnumbered">
 <h3>Patty cake</h3>
@@ -776,6 +776,7 @@ roll it (and then)<br />
 prick it (and then)<br />
 mark it - with the letter “B”.</p>
 </blockquote>
+<p><br></p>
 </div>
 <div id="with-our-toolbox" class="section level3 unnumbered">
 <h3>%&gt;% with our toolbox</h3>
@@ -792,8 +793,9 @@ mark it - with the letter “B”.</p>
 <span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>                      <span class="fu">mutate</span>(<span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="short-trippers" class="section level2 unnumbered">
-<h2>Short trippers</h2>
+<div id="short-trip-long-trip" class="section level2 unnumbered">
+<h2>Short trip, Long trip</h2>
+<p><br></p>
 <blockquote>
 <p><code>if_else()</code></p>
 </blockquote>
@@ -807,6 +809,7 @@ mark it - with the letter “B”.</p>
 <span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a><span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>, <span class="st">&quot;Long trip&quot;</span>)</span>
 <span id="cb34-9"><a href="#cb34-9" tabindex="-1"></a></span>
 <span id="cb34-10"><a href="#cb34-10" tabindex="-1"></a>time_onboard <span class="ot">=</span> <span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>, <span class="st">&quot;Long trip&quot;</span>)</span></code></pre></div>
+<p><br></p>
 <blockquote>
 <p><code>case_when()</code></p>
 </blockquote>
@@ -820,6 +823,7 @@ mark it - with the letter “B”.</p>
 <span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a><span class="fu">case_when</span>(days_on_trip <span class="sc">&lt;=</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;Short trip&quot;</span>,</span>
 <span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a>          days_on_trip <span class="sc">&lt;=</span> <span class="dv">14</span> <span class="sc">~</span> <span class="st">&quot;Long trip&quot;</span>,</span>
 <span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;A very long trip&quot;</span>)</span></code></pre></div>
+<p><br></p>
 <blockquote>
 <p>Add columns to the <code>crew_df</code> data</p>
 </blockquote>
@@ -1016,10 +1020,12 @@ Average age
 <h3 class="blue-h3">
 Average age by color
 </h3>
+<p><img src="../images/monsters/groupby_summarize_pipe_monsters3" style="width: 98%; margin-top: 12px;" /></p>
 <p><img src="../images/monsters/groupby_summarize_single_monsters2.png" style="width: 98%; margin-top: 12px;" /></p>
 <h3 class="blue-h3" style="margin-top: 50px;">
 Add a new column
 </h3>
+<p><img src="../images/monsters/groupby_summarize_pipe_multi_monsters2.png" style="width: 98%;" /></p>
 <p><img src="../images/monsters/groupby_summarize_multi_monsters2.png" style="width: 98%;" />
 <br></p>
 </div>
@@ -1094,6 +1100,7 @@ Add a new column
 <span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a></span>
 <span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a><span class="co"># Drop the test row</span></span>
 <span id="cb39-6"><a href="#cb39-6" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(id <span class="sc">!=</span> <span class="st">&quot;test&quot;</span>)</span></code></pre></div>
+<p><br></p>
 <blockquote>
 <p><code>summarize()</code></p>
 </blockquote>
@@ -1103,6 +1110,7 @@ Add a new column
 ##   days_avg
 ##      &lt;dbl&gt;
 ## 1     19.7</code></pre>
+<p><br></p>
 <blockquote>
 <p><code>group_by()</code> %&gt;% <code>summarize()</code></p>
 </blockquote>
@@ -1115,6 +1123,7 @@ Add a new column
 ##   &lt;lgl&gt;          &lt;dbl&gt;
 ## 1 FALSE           20  
 ## 2 TRUE            19.7</code></pre>
+<p><br></p>
 <blockquote>
 <p><code>mutate()</code> %&gt;% <code>group_by()</code> %&gt;% <code>summarize()</code></p>
 </blockquote>
@@ -1124,60 +1133,38 @@ Add a new column
 <span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
 <span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_the_ship) <span class="sc">%&gt;%</span></span>
 <span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span></span>
-<span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals))</span></code></pre></div>
-<pre><code>## # A tibble: 9 × 2
-##   favorite_goody      goody_total_meals
-##   &lt;chr&gt;                           &lt;dbl&gt;
-## 1 apple pie                         435
-## 2 baklava                           160
-## 3 banana bread                      455
-## 4 brownies                          504
-## 5 chocolate croissant               758
-## 6 cinnamon rolls                    615
-## 7 jelly donuts                      630
-## 8 oatmeal cookies                   240
-## 9 short-bread                       350</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="co"># Arrange total goody meals in descending order</span></span>
-<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
-<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_the_ship) <span class="sc">%&gt;%</span></span>
-<span id="cb46-4"><a href="#cb46-4" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span></span>
-<span id="cb46-5"><a href="#cb46-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals)) <span class="sc">%&gt;%</span></span>
-<span id="cb46-6"><a href="#cb46-6" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(goody_total_meals))</span></code></pre></div>
-<pre><code>## # A tibble: 9 × 2
-##   favorite_goody      goody_total_meals
-##   &lt;chr&gt;                           &lt;dbl&gt;
-## 1 chocolate croissant               758
-## 2 jelly donuts                      630
-## 3 cinnamon rolls                    615
-## 4 brownies                          504
-## 5 banana bread                      455
-## 6 apple pie                         435
-## 7 short-bread                       350
-## 8 oatmeal cookies                   240
-## 9 baklava                           160</code></pre>
+<span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals))</span>
+<span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a><span class="co"># Arrange total goody meals in descending order</span></span>
+<span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
+<span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_the_ship) <span class="sc">%&gt;%</span></span>
+<span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span></span>
+<span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals)) <span class="sc">%&gt;%</span></span>
+<span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(goody_total_meals))</span></code></pre></div>
 </div>
 <div id="bonus" class="section level2 unnumbered">
 <h2>Bonus</h2>
 <p>How many crew are from each country? How many crew voted for each goody for their favorite?</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="co"># Crew count for each country</span></span>
-<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> </span>
-<span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
-<span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_crew =</span> <span class="fu">n</span>())</span>
-<span id="cb48-5"><a href="#cb48-5" tabindex="-1"></a></span>
-<span id="cb48-6"><a href="#cb48-6" tabindex="-1"></a><span class="co"># Most popular goody</span></span>
-<span id="cb48-7"><a href="#cb48-7" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> </span>
-<span id="cb48-8"><a href="#cb48-8" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span> </span>
-<span id="cb48-9"><a href="#cb48-9" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_favorites =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a><span class="co"># Crew count for each country</span></span>
+<span id="cb45-2"><a href="#cb45-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> </span>
+<span id="cb45-3"><a href="#cb45-3" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-4"><a href="#cb45-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_crew =</span> <span class="fu">n</span>())</span>
+<span id="cb45-5"><a href="#cb45-5" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" tabindex="-1"></a><span class="co"># Most popular goody</span></span>
+<span id="cb45-7"><a href="#cb45-7" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> </span>
+<span id="cb45-8"><a href="#cb45-8" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-9"><a href="#cb45-9" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_favorites =</span> <span class="fu">n</span>())</span></code></pre></div>
+<p><br></p>
 <blockquote>
 <p>Alternative: <code>count()</code></p>
 </blockquote>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="co"># Crew count for each country</span></span>
-<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a><span class="fu">count</span>(crew_df, country)</span>
-<span id="cb49-3"><a href="#cb49-3" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="#cb49-4" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(country)</span>
-<span id="cb49-5"><a href="#cb49-5" tabindex="-1"></a></span>
-<span id="cb49-6"><a href="#cb49-6" tabindex="-1"></a><span class="co"># Most popular goody</span></span>
-<span id="cb49-7"><a href="#cb49-7" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(favorite_goody)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="co"># Crew count for each country</span></span>
+<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a><span class="fu">count</span>(crew_df, country)</span>
+<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(country)</span>
+<span id="cb46-5"><a href="#cb46-5" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" tabindex="-1"></a><span class="co"># Most popular goody</span></span>
+<span id="cb46-7"><a href="#cb46-7" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(favorite_goody)</span></code></pre></div>
 <p><br></p>
 <div id="jump-to-the-top" class="section level3 unnumbered">
 <h3><i class="fas fa-carrot"> </i> <a href="../page/day2.html">Jump to the top</a></h3>

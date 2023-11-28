@@ -339,12 +339,12 @@ footwear = case_when(
 
 ### Back to monster babies {-}
 
-**This if_else() statement**
+**This `if_else()` statement**
 ```{r, eval=F}
 if_else(age < 3, "Baby", "Not a baby")
 ```
 
-**Turns into this `case_when` statement**
+**Turns into this `case_when()` statement**
 ```{r, eval=F}
 case_when(age < 3 ~ "Baby", 
           TRUE ~ "Not a baby")
@@ -378,7 +378,7 @@ mutate(monsters,
 ```
 
 
-## The pipe: "Take this and then..."
+## The pipe: "Take this and then..." {-}
 
 <img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/pipe.png" style="width: 32%; margin-top: 0;">
 
@@ -400,6 +400,8 @@ patty_cake %>%
 >     prick it (and then)   
 >     mark it - with the letter "B".  
 
+
+<br>
 
 ### %>% with our toolbox {-}
 
@@ -423,7 +425,9 @@ monsters <- monsters %>%
 
 
 
-## Short trippers {-}
+## Short trip, Long trip {-}
+
+<br>
 
 > `if_else()`
 
@@ -442,6 +446,8 @@ time_onboard = if_else(days_on_ship <= 7, "Short trip", "Long trip")
 
 ```
 
+<br>
+
 > `case_when()`
 
 ```{r, eval=F}
@@ -457,6 +463,7 @@ case_when(days_on_trip <= 7 ~ "Short trip",
           TRUE ~ "A very long trip")
 ```
 
+<br>
 
 > Add columns to the `crew_df` data
 
@@ -528,6 +535,8 @@ crew_df <- crew_df %>% filter(id != "test")
 ```
 
 
+<br>
+
 > `summarize()`
 
 ```{r, eval=T}
@@ -535,6 +544,8 @@ crew_df <- crew_df %>% filter(id != "test")
 crew_df %>% summarize(days_avg = mean(days_on_the_ship))
 ```
 
+
+<br>
 
 > `group_by()` %>% `summarize()`
 
@@ -546,12 +557,14 @@ crew_df %>%
 ```
 
 
+<br>
+
 > `mutate()` %>% `group_by()` %>% `summarize()`
 
 
 Which goody will be most in demand on the ship?
 
-```{r, eval=T}
+```{r, eval=F}
 # Add a total meals column
 ## And then group by goody type and sum the total meals
 crew_df %>%
@@ -585,6 +598,7 @@ crew_df %>%
   summarize(n_favorites = n())
 ```
 
+<br>
 
 > Alternative: `count()`
 
