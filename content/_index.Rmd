@@ -130,7 +130,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [ggplot exercises](page/exercise/day3/3-1-ggplot_exercises.html)
+- [ggplot - Exercise 1](page/exercise/day3/3-1-ggplot_exercises.html)
+- [ggplot - Exercise 2](page/exercise/day3/3-2-ggplot_exercises.html)
 
 </div> 
 
@@ -145,11 +146,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">  
 
-### Kristie slides
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.1 - </span> Intro to Maps
 
-- 5.1: [Spatial awareness and GIS](page/exercise/day5/intro_to_gis.html)
-- 5.2: [sf: Simple features package](page/exercise/day5/sf.html)
-- [Points, Lines, and Polygons](page/exercise/day5/5_3_points_lines_polygons.html)
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.2 - </span> Welcome to `sf`
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Map exercises
@@ -162,7 +161,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day6" role="tabpanel" aria-labelledby="day6-tab"> 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> [R markdown: Reports, dashboards, presentations, and webpages]()  
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> Databases and passwords
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> R markdown: Reports, dashboards, presentations, and webpages  
 
 </div>
 

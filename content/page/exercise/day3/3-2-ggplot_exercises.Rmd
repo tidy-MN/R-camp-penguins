@@ -4,11 +4,11 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: ../css/camp_style.css
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: true
+    toc: false
     toc_depth: 1
 ---
 
@@ -26,7 +26,7 @@ hr {background:  cornflowerblue;}
 library(rmarkdown)
 library(knitr)
 library(magrittr)
-library(here)
+#library(here)
 
 xaringanExtra::use_clipboard()
 
@@ -219,11 +219,13 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-So make it work, we had to do three things when using the `geom_text` (or `geom_label` - try both and see which one you like the best!)
+We had to do three things when using `geom_text` (or `geom_label`) - try both and see which one you like the best!
 
-1. make sure the positions matched, so if your `geom_` is using `dodge`, your `geom_text` should be using `dodge`
-1. increase the y value by some amount so that the label will sit higher than the top of the labeled point
-1. for bar/column charts, decrease the width so they sit nicer on top.
+1. Make sure the positions matched, so if your `geom_` is using `dodge`, your `geom_text` should be using `dodge`
+1. Increase the `y` value by some amount so that the label will sit higher than the top of the labeled point
+1. For bar/column charts, decrease the width so they sit nicer on top.
+
+<br>
 
 ```{r, include = FALSE, warning= FALSE}
 ggplot(penguins_raw_clean %>% 
@@ -232,7 +234,7 @@ ggplot(penguins_raw_clean %>%
          ungroup(), 
        aes(x = island, y = body_mass_g, color = species))+
   geom_point()+
-  geom_errorbar(width = 0.5, linewidth = 1.25,
+  geom_errorbar(width = 0.5, 
                 aes(ymax = avg_bm_g, ymin = avg_bm_g))+
   scale_color_manual(values = c("#999999", "#E69F00", "#56B4E9"),
                       name = 'Species',
@@ -240,6 +242,7 @@ ggplot(penguins_raw_clean %>%
 
   theme_bw()
 ```
+
 
 # Pick your challenger!
 

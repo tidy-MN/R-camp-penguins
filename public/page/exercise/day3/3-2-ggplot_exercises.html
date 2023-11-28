@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>ggplot2: the remix - Exercise 2 - Learn R</title>
+  <meta property="og:title" content="ggplot2: the remix - Exercise 2" />
+  <meta name="twitter:title" content="ggplot2: the remix - Exercise 2" />
+  <meta name="description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
+  <meta property="og:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
+  <meta name="twitter:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day3\/3-2-ggplot_exercises.html",
+          "name": "Ggplot2 the remix exercise 2"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "ggplot2: the remix - Exercise 2",
+  "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
+  "inLanguage" : "en",
+  "wordCount":  1514 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day3\/3-2-ggplot_exercises.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="ggplot2: the remix - Exercise 2" />
+<meta property="og:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="ggplot2: the remix - Exercise 2" />
+  <meta name="twitter:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/index.html">Home</a>
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>ggplot2: the remix - Exercise 2</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="/R-camp-penguins/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="../css/camp_style.css" type="text/css" />
+
+
+<p><link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
+<style>
+h1 .header-section-number {background: cornflowerblue;}
+hr {background:  cornflowerblue;}
+</style>
+<hr />
+<div id="before-you-start" class="section level1">
+<h1>Before you start…</h1>
+<p>Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like <code>exercise_2_day_4.R</code> or <code>herriot.R</code> and you’ll be ready to go!</p>
+<!-- order the axis (factors or dosages etc), reversing axis -->
+<!-- Reminder of what does in aes and what DOESN'T - static colors, sizes, shapes go OUTSIDE -->
+<!-- magrittr pipe vs the plus operator, especially with summarizing information or filtering -->
+</div>
+<div id="always-more-you-can-do" class="section level1">
+<h1>Always more you can do</h1>
+<p>Because of our excellent work so far both as an analytic bot and as the head baker, we been given a gift that’s the best of both worlds! The <a href="http://www.cookbook-r.com/Graphs/">R Graphics Cookbook: Practical Recipes for Visualing Data</a></p>
+<p>Wow, there’s a bunch of cool stuff in here, in fact, there’s a bunch of cool stuff that could make the work that we’ve already done <em>even better</em>.</p>
+<p>Instead of using <code>penguins</code>, we’re going to be using <code>penguins_raw</code> for this exercise and we’re going to be making some graphs on summarized data…but first let’s take a look at the data!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># install.packages(&#39;palmerpenguins&#39;)</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins&quot;</span>) <span class="co">#this will read in the data from the package and load it to to our environment</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
+<pre><code>## Rows: 344
+## Columns: 17
+## $ studyName             &lt;chr&gt; &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL…
+## $ `Sample Number`       &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1…
+## $ Species               &lt;chr&gt; &quot;Adelie Penguin (Pygoscelis adeliae)&quot;, &quot;Adelie P…
+## $ Region                &lt;chr&gt; &quot;Anvers&quot;, &quot;Anvers&quot;, &quot;Anvers&quot;, &quot;Anvers&quot;, &quot;Anvers&quot;…
+## $ Island                &lt;chr&gt; &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgerse…
+## $ Stage                 &lt;chr&gt; &quot;Adult, 1 Egg Stage&quot;, &quot;Adult, 1 Egg Stage&quot;, &quot;Adu…
+## $ `Individual ID`       &lt;chr&gt; &quot;N1A1&quot;, &quot;N1A2&quot;, &quot;N2A1&quot;, &quot;N2A2&quot;, &quot;N3A1&quot;, &quot;N3A2&quot;, …
+## $ `Clutch Completion`   &lt;chr&gt; &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;No&quot;, …
+## $ `Date Egg`            &lt;date&gt; 2007-11-11, 2007-11-11, 2007-11-16, 2007-11-16,…
+## $ `Culmen Length (mm)`  &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34…
+## $ `Culmen Depth (mm)`   &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18…
+## $ `Flipper Length (mm)` &lt;dbl&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190,…
+## $ `Body Mass (g)`       &lt;dbl&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 34…
+## $ Sex                   &lt;chr&gt; &quot;MALE&quot;, &quot;FEMALE&quot;, &quot;FEMALE&quot;, NA, &quot;FEMALE&quot;, &quot;MALE&quot;…
+## $ `Delta 15 N (o/oo)`   &lt;dbl&gt; NA, 8.94956, 8.36821, NA, 8.76651, 8.66496, 9.18…
+## $ `Delta 13 C (o/oo)`   &lt;dbl&gt; NA, -24.69454, -25.33302, NA, -25.32426, -25.298…
+## $ Comments              &lt;chr&gt; &quot;Not enough blood for isotopes.&quot;, NA, NA, &quot;Adult…</code></pre>
+<p>If we want to do anything else with this data, it might be a good idea to clean the names because some of these look like they would be annoying to type…<code>Delta 15 N (o/oo)</code>? No thank you.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co">#always good practice to load your libraries at the beginning of your script so go ahead and move this up to the rest of your library calls.</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>penguins_raw_clean <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguins_raw)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="fu">names</span>(penguins_raw_clean)</span></code></pre></div>
+<pre><code>##  [1] &quot;study_name&quot;        &quot;sample_number&quot;     &quot;species&quot;          
+##  [4] &quot;region&quot;            &quot;island&quot;            &quot;stage&quot;            
+##  [7] &quot;individual_id&quot;     &quot;clutch_completion&quot; &quot;date_egg&quot;         
+## [10] &quot;culmen_length_mm&quot;  &quot;culmen_depth_mm&quot;   &quot;flipper_length_mm&quot;
+## [13] &quot;body_mass_g&quot;       &quot;sex&quot;               &quot;delta_15_n_o_oo&quot;  
+## [16] &quot;delta_13_c_o_oo&quot;   &quot;comments&quot;</code></pre>
+<p>Still long, but so much better!</p>
+</div>
+<div id="distribution-of-species-by-island-revisted" class="section level1">
+<h1>Distribution of species by island revisted</h1>
+<p>Well, let’s see what we can do to make this more exciting. Let’s create a summary table in additional to making a new and exciting visual.</p>
+<p>We’ll be using the <code>magritr</code> pipe <code>%&gt;%</code> that we showed last session - it makes our code easier to read and reduces the number of nested parenthesis we have to deal with.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>penguin_island_dist <span class="ot">&lt;-</span> penguins_raw_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="fu">group_by</span>(region, island, species) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>penguin_island_dist</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 4
+## # Groups:   region, island [3]
+##   region island    species                                   count
+##   &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;                                     &lt;int&gt;
+## 1 Anvers Biscoe    Adelie Penguin (Pygoscelis adeliae)          44
+## 2 Anvers Biscoe    Gentoo penguin (Pygoscelis papua)           124
+## 3 Anvers Dream     Adelie Penguin (Pygoscelis adeliae)          56
+## 4 Anvers Dream     Chinstrap penguin (Pygoscelis antarctica)    68
+## 5 Anvers Torgersen Adelie Penguin (Pygoscelis adeliae)          52</code></pre>
+<p>That’s okay but let’s try the <code>tabyl</code> function from the <code>janitor</code> package as well, see if we like how that looks better. The benefits of the <code>tabyl</code> function are that you can use the <code>adorn_</code> functions from janitor to do things like add row and column totals really easily which make summary tables like this a breeze!</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">tabyl</span>(penguins_raw_clean, species, island) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="at">where =</span> <span class="st">&#39;row&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="at">where =</span> <span class="st">&#39;col&#39;</span>)</span></code></pre></div>
+<pre><code>##                                    species Biscoe Dream Torgersen Total
+##        Adelie Penguin (Pygoscelis adeliae)     44    56        52   152
+##  Chinstrap penguin (Pygoscelis antarctica)      0    68         0    68
+##          Gentoo penguin (Pygoscelis papua)    124     0         0   124
+##                                      Total    168   124        52   344</code></pre>
+<p>Nice! A quick way to generate a two-by-two table that we could include in a report. Now we just need a visual to accompany it…</p>
+</div>
+<div id="graphing-summary-data" class="section level1">
+<h1>Graphing summary data</h1>
+<p>So below is a recreation of our previous chart using the raw data…What would we need to change in order to make this same chart only using summarized data we stored in <code>penguin_island_dist</code>?</p>
+<p><img src="/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Remember that helpful tip from the help of <code>geom_bar</code>?</p>
+<blockquote>
+<p>“There are two types of bar charts: geom_bar() and geom_col(). geom_bar() makes the height of the bar proportional to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use geom_col() instead.”</p>
+<p>—<code>help(geom_bar)</code></p>
+</blockquote>
+<div id="changing-positions" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
+<ul class="nav nav-pills" id="myTab4076" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="side-by-side4076-tab" data-toggle="tab" href="#side-by-side4076" role="tab" aria-controls="side-by-side4076" aria-selected="true">Side-by-side</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint4076-tab" data-toggle="tab" href="#showhint4076" role="tab" aria-controls="showhint4076" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode4076-tab" data-toggle="tab" href="#showcode4076" role="tab" aria-controls="showcode4076" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="side-by-side4076" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side4076-tab">
+<h4>
+Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.
+</h4>
+<p><br></p>
+</div>
+<div id="showhint4076" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4076-tab">
+<pre class="sourceCode r">
+
+ggplot(data = __________, 
+       aes(x = ______, y = ______, fill = ________)) +
+  geom_xxx(position = position_dodge2(preserve = "single")) + 
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+</pre>
+</div>
+<div id="showcode4076" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4076-tab">
+<pre class="sourceCode r">
+
+ggplot(data = penguin_island_dist, 
+       aes(x = island, y = count, fill = species)) +
+  geom_col(position = position_dodge2(preserve = "single")) + 
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="adding-labels" class="section level1">
+<h1>Adding labels</h1>
+<p>Something special about summarized data is that now we can add labels to our columns as well. We can do this using <code>geom_text</code> but there’s a couple of things that we need to know before we get started.</p>
+<ol style="list-style-type: decimal">
+<li>You can’t nudge and dodge text, so instead adjust the y position</li>
+<li><code>ggplot2</code> doesn’t know you want to give the labels the same virtual width as the bars so you have to make your position width smaller.</li>
+<li><code>geom_text()</code> adds only text to the plot. <code>geom_label()</code> draws a rectangle behind the text, making it easier to read.</li>
+<li>To add labels at specified points use <code>annotate()</code> with <code>annotate(geom = "text", ...)</code> or <code>annotate(geom = "label", ...)</code></li>
+<li><code>geom_text()</code> requires the following aesthetics (i.e. pass these to the <code>aes</code> function if you haven’t yet!): <strong>x</strong>, <strong>y</strong>, and <strong>label</strong> (this is probably the one you’ll need to add)</li>
+</ol>
+<div id="changing-positions-1" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
+<ul class="nav nav-pills" id="myTab8086" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="side-by-side8086-tab" data-toggle="tab" href="#side-by-side8086" role="tab" aria-controls="side-by-side8086" aria-selected="true">Side-by-side</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint8086-tab" data-toggle="tab" href="#showhint8086" role="tab" aria-controls="showhint8086" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode8086-tab" data-toggle="tab" href="#showcode8086" role="tab" aria-controls="showcode8086" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="side-by-side8086" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side8086-tab">
+<h4>
+Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.
+</h4>
+<p><br></p>
+</div>
+<div id="showhint8086" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8086-tab">
+<pre class="sourceCode r">
+
+ggplot(data = penguin_island_dist, 
+       aes(x = island, y = count, fill = species)) +
+  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_xxxx(aes(label = ______, y = _____ + 5), 
+            position = position_dodge2(width = ______)) +
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+</pre>
+</div>
+<div id="showcode8086" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8086-tab">
+<pre class="sourceCode r">
+
+ggplot(data = penguin_island_dist, 
+       aes(x = island, y = count, fill = species)) +
+  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_text(aes(label = count, y = count + 5), 
+            position = position_dodge2(width = 0.9)) +
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>We had to do three things when using <code>geom_text</code> (or <code>geom_label</code>) - try both and see which one you like the best!</p>
+<ol style="list-style-type: decimal">
+<li>Make sure the positions matched, so if your <code>geom_</code> is using <code>dodge</code>, your <code>geom_text</code> should be using <code>dodge</code></li>
+<li>Increase the <code>y</code> value by some amount so that the label will sit higher than the top of the labeled point</li>
+<li>For bar/column charts, decrease the width so they sit nicer on top.</li>
+</ol>
+<p><br></p>
+</div>
+<div id="pick-your-challenger" class="section level1">
+<h1>Pick your challenger!</h1>
+<p>Now that you have some experience under your belt, it’s important to shake things up and have some <em>fun</em>. Depending on how much time you have left, pick 1 or several of the challenges below and see what you can make!</p>
+<p>The links below will take you to the specific section of the R Graphics Cookbook that will answer the question of how you do the thing.</p>
+<ul>
+<li><a href="http://www.cookbook-r.com/Graphs/Fonts/">change the font</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/Output_to_a_file/">save a graphic as a .png (and don’t cheat using the export feature in RStudio!)</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/">put the islands in a different order on the x-axis!</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">make the legend labels easier to read (they’re a little long…)</a></li>
+<li><a href="http://matthewbjane.com/ThemePark/">use any theme from the package ThemePark</a> (you’ll have install two packages before you can use, <code>remotes</code> and then of course, <code>ThemePark</code>)
+<ul>
+<li><code>install.packages("remotes")</code></li>
+<li><code>remotes::install_github("MatthewBJane/ThemePark")</code></li>
+</ul></li>
+<li><a href="https://github.com/tidy-MN/mncolors">try adding Minnesota State brand colors using the home-grown package <code>mncolors</code></a>
+<ul>
+<li><code>install.packages("remotes")</code></li>
+<li><code>remotes::install_github("tidy-MN/mncolors")</code></li>
+</ul></li>
+</ul>
+<p><i class="fa fa-cookie-bite"></i>
+<i class="fa fa-robot"></i>
+<i class="fa fa-cookie-bite"></i></p>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

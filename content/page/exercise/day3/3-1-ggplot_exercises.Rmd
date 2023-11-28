@@ -4,11 +4,11 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: css/camp_style.css
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: true
+    toc: false
     toc_depth: 1
 ---
 
@@ -89,7 +89,7 @@ Back to the drawing board...let's start with labels! We want to add a title and 
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Cleaning up {-}
 
-```{r exer-tabs, results='asis', echo=F}
+```{r exer-tabs2, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Add labels and theme", "Show hint", "Show code")
@@ -138,7 +138,7 @@ Now we just need to tackle color...hmmm, we know it's a bar-chart which means th
 <div class="quiz">
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Color time {-}
-```{r exer-tabs, results='asis', echo=F}
+```{r exer-tabs3, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Adding fill colors", "Show hint", "Show code")
@@ -183,7 +183,7 @@ Annnnd of course one the researchers had a last minute request. They didn't like
 <div class="quiz">
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions {-}
-```{r exer-tabs, results='asis', echo=F}
+```{r exer-tabs4, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Side-by-side", "Show hint", "Show code")
@@ -266,7 +266,7 @@ ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   theme_bw()
 ```
 
-Fascinating...Gentro is really just all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same among the different penguin species. You can add a trend-line to the graph using `geom_smooth` to see that easier or see if the human eye is being tricked by very fun looking dots.
+Fascinating... the Gentoo are really all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same among the different penguin species. You can add a trend-line to the graph using `geom_smooth` to see that easier or see if the human eye is being tricked by very fun looking dots.
 
 ```{r}
 ggplot(data = penguins, 

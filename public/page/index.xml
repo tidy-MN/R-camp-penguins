@@ -325,12 +325,22 @@ Start a new R project Create an R script</description>
     </item>
     
     <item>
-      <title>ggplot exercises</title>
+      <title>ggplot2 Exercise 1</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-1-ggplot_exercises.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-1-ggplot_exercises.html</guid>
-      <description>Palmer Penguin Exploration - Part 1 We met some very excited researchers who wanted to share their data with us when they heard we really liked penguins.</description>
+      <description>—
+Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.</description>
+    </item>
+    
+    <item>
+      <title>ggplot2: the remix - Exercise 2</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises.html</guid>
+      <description>Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.</description>
     </item>
     
     <item>
