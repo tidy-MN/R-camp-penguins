@@ -12,11 +12,10 @@ output:
 
 <br>
 
-
 > **WELCOME!**
 
 1. Instructor introductions  
-1. Day 1 review quiz  
+1. [Day 1 review quiz](https://forms.office.com/g/NQP4RH1Wsp)  
     - Questions and other review topics  
 1. Start a new R project  
     - Create an R script  
@@ -25,7 +24,7 @@ output:
     - Using `glimpse` and `summary` functions  
     - Using `filter` to match rows to conditions  
     - Writing data back to .CSV  
-1. Tidy Data Quiz  
+1. [Tidy Data Quiz](https://forms.office.com/g/5aiQv5uUTN) 
 
 > **10-minute Break**
 

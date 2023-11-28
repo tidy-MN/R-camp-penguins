@@ -84,7 +84,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- [Agenda](page/exercise/day1/agenda.html)
+- [AGENDA](page/exercise/day1/agenda.html)
 
 1. [Taking inventory](page/exercise/day1/inventory_duty.html)
 1. [Auditor in training](page/exercise/day1/inventory_duty_expanded.html)
@@ -99,7 +99,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
   
 - [Notes and code examples](page/day2.html) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-1-Data-wrangling.html#1)
-
 
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">2.2 - </span> [Forks in the road: `if_else` + `case_when`](page/videos/day2/02-2-forks-in-the-road)
