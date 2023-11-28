@@ -13,22 +13,26 @@ output:
 <br>
 
 
+> **WELCOME!**
+
 1. Instructor introductions  
 1. Day 1 review quiz  
-  - Questions and other review topics  
+    - Questions and other review topics  
 1. Start a new R project  
-  - Create an R script  
+    - Create an R script  
 1. Exercise 1  
-  - Reading in data from .CSV  
-  - Using `glimpse` and `summary` functions  
-  - Using `filter` to match rows to conditions  
-  - Writing data back to .CSV  
+    - Reading in data from .CSV  
+    - Using `glimpse` and `summary` functions  
+    - Using `filter` to match rows to conditions  
+    - Writing data back to .CSV  
 1. Tidy Data Quiz  
-1. 10-minute Break   
-1. Exercise 2    
-  - Reading in data from *not* a .CSV  
-  - Introduction to `which` and `unique`  
-  - How does an NA value affect `filter`  
-  - Calculating summary statistics for groups  
-1. Q/A Time!  
+
+> **10-minute Break**
+
+6. Exercise 2    
+    - Reading in data from *not* a .CSV  
+    - Introduction to `which` and `unique`  
+    - How does an NA value affect `filter`  
+    - Calculating summary statistics for groups  
+7. Q/A Time! 
 
