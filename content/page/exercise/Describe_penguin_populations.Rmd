@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Summarize the data on penguin populations
 
-The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. Use the `penguins` dataset in the `palmerpenguins` package. Please ask for help if you get stuck or would like a hint.
+The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. We will use the `penguins` dataset in the `palmerpenguins` package. Please ask for help if you get stuck or would like a hint.
 
 ### Load the `palmerpenguins` package 
 
@@ -21,13 +21,15 @@ library(palmerpenguins)
 
 ### Load the `penguins` data
 
+Since the dataset is included in the package itself, we don't need to read in a csv from the web or from our computer folders. Many R packages include datasets so that you can test the functions included in them. [Here](https://vincentarelbundock.github.io/Rdatasets/datasets.html) is a website with packages that include 1000s of datasets! Once you have loaded your R package that contains a dataset, you can pull that dataset into your environment by giving the dataset an object name. If you are ever wondering if a package includes a practice data set, just run this code to get a list of the datasets `data(package='palmerpenguins')`
+
 ```{r, eval=F}
 penguins <- penguins
 ```
 
 ### Compare flipper lengths
 
-Create a dataset that summarizes the flipper lengths of the penguin populations by species. Calculate the minimum, maximum, and average flipper lengths of each penguin species. 
+Using the `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. `data_summary <-`, or you can avoid the name and have your summary information printed into the console. Now that you have your penguin data, please create a dataset that summarizes the flipper lengths of the penguin populations by species. Please make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
 
 1. Which penguin species has the shortest flippers?
 1. Is there a flipper length range that includes all three penguin species?
@@ -65,7 +67,7 @@ Create a dataset that summarizes the flipper lengths of the penguin populations 
 
 ### Compare weights
 
-Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and average weights of each group. 
+Now we are interested in how much penguins weigh by species AND island. You can do this using the `group_by` function on more than one variable. Here's your task - Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights of each group. 
 
 1. Which penguin species is the heaviest?
 1. On which island are Adelie penguins the heaviest?
@@ -104,7 +106,7 @@ Create a dataset that summarizes the weights of the penguin populations by speci
 
 ### Compare penguin bills
 
-Create a dataset that summarizes the bill lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and average bill lengths and depths of each group. 
+Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, `group_by` lets this happen as long as your data allow it. In this final exercise, we want you to create a dataset that summarizes the bill lengths and depths of the penguin populations by species, sex, and island. Calculate the minimum, maximum, and mean bill lengths and depths of each group. 
 
 1. In general, do male and female bills tend to be the same length and depth? If not, how do they differ?
 1. Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills have the shallowest?
