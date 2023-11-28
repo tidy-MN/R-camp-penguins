@@ -66,6 +66,8 @@ The bakery is expecting some big orders for the upcoming holidays and wants to b
 Let's read in the inventory data!
 
 ```{r}
+library(tidyverse)
+
 inventory <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/inventory_data.csv")
 ```
 
