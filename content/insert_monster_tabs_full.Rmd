@@ -16,6 +16,12 @@
 <a class="nav-link" id="mutate-tab" data-toggle="tab" href="#mutate" role="tab" aria-controls="mutate" aria-selected="false"> `mutate`</a>
 </li>
 <li class="nav-item">
+<a class="nav-link" id="summarize-tab" data-toggle="tab" href="#summarize" role="tab" aria-controls="summarize" aria-selected="false"> `summarize`</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="groupby-tab" data-toggle="tab" href="#groupby" role="tab" aria-controls="groupby" aria-selected="false"> `groupby`</a>
+</li>
+<li class="nav-item">
 <a class="nav-link" id="code-monsters-tab" data-toggle="tab" href="#code-monsters" role="tab" aria-controls="code-monsters" aria-selected="false"> `R code`</a>
 </li>
 
@@ -89,6 +95,31 @@
 
 </div>
 
+
+<div class="tab-pane fade" id="summarize" role="tabpanel" aria-labelledby="summarize-tab">
+
+<h3 class="blue-h3"> Average age </h3>
+
+![](../images/monsters/summarize_monsters2.png){style="width: 98%; margin-top: 12px;"}
+
+<br>
+
+</div>
+
+
+<div class="tab-pane fade" id="groupby" role="tabpanel" aria-labelledby="groupby-tab">
+
+<h3 class="blue-h3"> Average age by color </h3>
+
+![](../images/monsters/groupby_summarize_single_monsters2.png){style="width: 98%; margin-top: 12px;"}
+
+<h3 class="blue-h3" style="margin-top: 50px;">Add a new column </h3>
+
+![](../images/monsters/groupby_summarize_multi_monsters2.png){style="width: 98%;"}
+<br>
+
+</div>
+
 <div class="tab-pane fade" id="code-monsters" role="tabpanel" aria-labelledby="code-monsters-tab">
 
 
@@ -100,7 +131,7 @@ monsters <- data.frame(id = 1:5,
                        age = c(8,2,7,3,1),
                        hat = c(T,T,F,T,F) )
 
-# FILTER ----
+# Filter ----
 
 ## Use a single condition/test
 monsters %>% filter(color == "pink")
@@ -109,7 +140,7 @@ monsters %>% filter(color == "pink")
 monsters %>% filter(color == "pink", age > 7)
 
 
-# SELECT ----
+# Select ----
 
 ## Keep only 2 columns
 monsters %>% select(id, age)
@@ -118,7 +149,7 @@ monsters %>% select(id, age)
 monsters %>% select(-hat)
 
 
-# ARRANGE ----
+# Arrange ----
 
 ## From low to high
 monsters %>% arrange(age)
@@ -127,7 +158,7 @@ monsters %>% arrange(age)
 monsters %>% arrange(desc(age))
 
 
-# MUTATE ----
+# Mutate ----
 
 ## Update an existing column
 monsters %>% mutate(age = age + 2)

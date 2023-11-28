@@ -23,7 +23,7 @@ tools <- tibble::tribble(
 
 toolbox <- tools %>% 
   mutate(Function = paste("<code>", Function, "  </code>")) %>%
-  kable(format = "html", escape = F, align = c("c","l","l"))
+  kable(format = "html", escape = F, align = c("c","l"))
 
 #toolbox %>% cat(file = "tools_starter.html")
    

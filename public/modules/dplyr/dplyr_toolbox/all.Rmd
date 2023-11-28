@@ -18,7 +18,9 @@ tools <- tibble::tribble(
 "filter()", "Keep rows that pass your tests",
 "select()", "Select columns to keep or drop",  
 "arrange()", "Sort a table based on a column's values",  
-"mutate()", "Add new columns or update existing columns"
+"mutate()", "Add new columns or update existing columns", 
+"summarize()", "Get summary statistics for an entire table",   
+"group_by()", "Group data for group specific summaries"
 )
 
 toolbox <- tools %>% 

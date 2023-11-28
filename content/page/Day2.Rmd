@@ -69,7 +69,7 @@ blockquote code {background: #f8fdff;}
 
 > **`To:`** `Bot Bakery`  
 > **`Subject:`** `Big treat order`  
-> **`Attached:`** <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode">`crew_preferences.xlsx`</span>
+> **`Attached:`** <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode">`crew_food_prefs.xlsx`</span>
 > <hr>
 > 
 > Hi friend,
@@ -100,8 +100,10 @@ Have an EXCEL file? The **readxl** package has the function `read_excel()` for r
 ### Let's install and load `readxl`: {-}
 
 ```{r, eval=F}
+# Run the install line only one time to get the package
 install.packages(readxl)
 
+# Run this line every time you open R to load the package from your library
 library(readxl)
 ```
 
@@ -121,23 +123,39 @@ crew_df <- read_excel("data/crew_food_prefs.xlsx", skip = 1)
 
 <br>
 
+
+> Having troubles loading the data? Here is an identical CSV version to load so you can carry on.
+
+```{r}
+crew_df <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv")
+```
+
+
+<br>
+
 ### An Excellent alternative {-}
 
 ```{r fun-options, child='../../static/modules/readr/readr_csv/excel_csv.Rmd'}
 ```
 
 
-```{r, include=F}
-crew_df <- read_csv("data/crew_food_prefs.csv")
-```
-
-
 ## Glimpse the data {-}
 
 ```{r,eval=F}
+head(crew_df)
+
 glimpse(crew_df)
 
 summary(crew_df)
+```
+
+
+## **`filter()`** to rows with missing values or NA's {-}
+
+Use `filter()` to view the rows where `nut_allergy` is missing or is `NA`.
+
+```{r}
+filter(crew_df, is.na(nut_allergy))
 ```
 
 
@@ -152,15 +170,7 @@ crew_df <- filter(crew_df, id != "test")
 
 ## **`select()`** what we need {-}
 
-There's also some columns in here we don't need. Let's drop the country people are from since that won't help us.
-
-```{r}
-crew_df <- select(crew_df, -country)
-```
-
-<br>
-
-Let's create a separate smaller `favorites` table with only the `id` and `favorite_goody` columns.
+Let's create a separate smaller `favorites` dataframe with only the `id` and `favorite_goody` columns.
 
 ```{r}
 favorites_df <- select(crew_df, id, favorite_goody)
@@ -174,13 +184,21 @@ Let's create a separate `allergy` table with only the `id` and all of the column
 allergy_df <- select(crew_df, id, contains("allergy"))
 ```
 
+<br>
+
+There's also some columns in here we don't need. Let's drop the country people are from since that won't help us at the moment.
+
+```{r}
+crew_df <- select(crew_df, -country)
+```
+
 
 <br>
 
 Finally, for easier reference, use `select()` to make the `id` and `days_on_ship` columns the first two columns in the table. Everything else can be in the same order.
 
 ```{r}
-favorites_df <- select(crew_df, id, days_on_ship, everything())
+crew_df <- select(crew_df, id, days_on_the_ship, everything())
 ```
 
 
@@ -197,18 +215,18 @@ crew_df <- arrange(crew_df, days_on_ship)
 
 ### Descending order (biggest on top) {-}
 ```{r}
-crew_df <- arrange(crew_df, desc(days_on_ship))
+crew_df <- arrange(crew_df, desc(days_on_the_ship))
 ```
 
-### Alternative: use `-column_name` instead of `desc(column_name)` {-}
+### Alternative: put a `-` in front of the column name to do the opposite {-}
 ```{r}
-crew_df <- arrange(crew_df, -days_on_ship)
+crew_df <- arrange(crew_df, -days_on_the_ship)
 ```
 
 
 ## **`mutate()`** new columns {-}
 
-Let's get an idea of the total meals each crew mate will be eating baked goods. For that, we'll need to take their `days_on_the_ship` times their `meals_per_day`.
+Let's get an idea of the total meals each crew mate will be eating our baked goods. For that, we'll need to take their `days_on_the_ship` and multiply it by their `meals_per_day`.
 
 ```{r}
 # Use the * to multiply and the / to divide
@@ -219,10 +237,10 @@ crew_df <- mutate(crew_df, total_trip_meals = days_on_the_ship * meals_per_day)
 ### Sidebar: Counting TRUE's and FALSE's {-}
 
 ```{r}
-# This new column wouldn't be too helpful
+# This new column doesn't give us much new info
 crew_df <- mutate(crew_df, no_egg_allergy = egg_allergy == FALSE)
 
-## Drop it
+## Let's drop it
 crew_df <- select(crew_df, -no_egg_allergy)
 
 
@@ -231,20 +249,14 @@ crew_df <- select(crew_df, -no_egg_allergy)
 crew_df <- mutate(crew_df, 
                   n_allergies = egg_allergy + nut_allergy)
 
-# This is the same
-crew_df <- mutate(crew_df, 
-                  n_allergies = egg_allergy == TRUE + nut_allergy == TRUE)
-
-# This is also the same
-crew_df <- mutate(crew_df, 
-                  n_allergies = sum(egg_allergy, nut_allergy))
+# Now we can easily filter to crew with ANY allergies
+allergy_crew_df <- filter(crew_df, n_allergies > 0)
 
 ```
 
 <br>
 
-> You know, it'd be great if we could label the crew that were going to be on board less than a week. Sounds like it's time to expand our data toolbox...
-
+> You know, it'd be great if we could split the crew into groups based on how long they were going to be onboard the ship. Sounds like it's time to expand our data toolbox...
 
 
 # <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Forks in the road: `if_else` + `case_when`](videos/day2/02-2-fork-in-the-road)
@@ -483,52 +495,107 @@ crew_df <- crew_df %>%
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Simmer it down: Summarize the data
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Simmer it down: Summarize the data](https://tidy-mn.github.io/R-camp-penguins/page/videos/day2/02-3-simmer-it-down.html)
+
+
+## <i class="fa fa-toolbox blue"></i> Your <span class="blue">EXPANDED</span> data toolbox {-}
+
+```{r child = '../../static/modules/dplyr/dplyr_toolbox/all.Rmd', eval=T}
+```
+
+
+## A MONSTER summary {-} 
+
 
 Time to simmer things down. Let's use `summarize()` to find a few summary statistics for our data.
 
 
-> `count()`
+```{r child = '../insert_monster_tabs_full2.Rmd', eval=T}
+```
 
-```{r, eval=F}
-# Most popular goody
-count(crew_df, favorite_goody)
 
-# How many from each country
-count(crew_df, country)
+## Crew examples {-}
 
-crew_df %>% count(country)
+
+**Load the data**
+```{r, eval=T}
+library(tidyverse)
+
+crew_df <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv")
+
+# Drop the test row
+crew_df <- crew_df %>% filter(id != "test")
 ```
 
 
 > `summarize()`
 
-```{r, eval=F}
-# How many Canadiens?
-summarize(crew_df, canadiens = sum(country == "Canada"))
-
-# Mean days on board ship?
-summarize(crew_df, days_avg = mean(days_on_ship))
-
-# How many Long trippers
-summarize(crew_df, n_long_trippers = sum(time_onboard == "Long trip"))
-
-
-# Total meals
-crew_df <- mutate(df, total_meals = meals_per_day * days_on_ship)
-
-summarize(crew_df, total_meals = sum(total_meals))
+```{r, eval=T}
+# Average days on the ship
+crew_df %>% summarize(days_avg = mean(days_on_the_ship))
 ```
 
 
-> `group_by()`
+> `group_by()` %>% `summarize()`
+
+```{r, eval=T}
+# Average days on ship grouped by nut allergy column
+crew_df %>%
+  group_by(nut_allergy) %>%
+  summarize(days_avg = mean(days_on_the_ship))
+```
+
+
+> `mutate()` %>% `group_by()` %>% `summarize()`
+
+
+Which goody will be most in demand on the ship?
+
+```{r, eval=T}
+# Add a total meals column
+## And then group by goody type and sum the total meals
+crew_df %>%
+  mutate(total_meals = meals_per_day * days_on_the_ship) %>%
+  group_by(favorite_goody) %>%
+  summarize(goody_total_meals = sum(total_meals))
+
+# Arrange total goody meals in descending order
+crew_df %>%
+  mutate(total_meals = meals_per_day * days_on_the_ship) %>%
+  group_by(favorite_goody) %>%
+  summarize(goody_total_meals = sum(total_meals)) %>%
+  arrange(desc(goody_total_meals))
+```
+
+
+## Bonus {-}
+
+
+How many crew are from each country? How many crew voted for each goody for their favorite?
 
 ```{r, eval=F}
 # Crew count for each country
-crew_df %>% group_by(country) summarize(n_crew = n())
+crew_df %>% 
+  group_by(country) %>% 
+  summarize(n_crew = n())
 
-# Total meals per goody type
-crew_df %>% group_by(favorite_goody) %>% summarize(total_meals = sum(total_meals))
+# Most popular goody
+crew_df %>% 
+  group_by(favorite_goody) %>% 
+  summarize(n_favorites = n())
+```
+
+
+> Alternative: `count()`
+
+```{r, eval=F}
+# Crew count for each country
+count(crew_df, country)
+
+crew_df %>% count(country)
+
+# Most popular goody
+crew_df %>% count(favorite_goody)
 ```
 
 

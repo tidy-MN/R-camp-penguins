@@ -63,7 +63,7 @@
   "headline": "Day 2",
   "description" : "1 Data wrangling 2 Forks in the road: if_else \u002b case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
   "inLanguage" : "en",
-  "wordCount":  1476 ,
+  "wordCount":  2059 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -446,7 +446,7 @@ Add new columns or update existing columns
 <a class="nav-link" id="arrange-tab" data-toggle="tab" href="#arrange" role="tab" aria-controls="arrange" aria-selected="false"> <code>arrange</code></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="mutate3-tab" data-toggle="tab" href="#mutate3" role="tab" aria-controls="mutate3" aria-selected="false"> <code>mutate</code></a>
+<a class="nav-link" id="mutate-tab" data-toggle="tab" href="#mutate" role="tab" aria-controls="mutate" aria-selected="false"> <code>mutate</code></a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="code-monsters-tab" data-toggle="tab" href="#code-monsters" role="tab" aria-controls="code-monsters" aria-selected="false"> <code>R code</code></a>
@@ -490,7 +490,7 @@ Arrange from highest to lowest
 <p><img src="../images/monsters/arrange_monsters_desc.png" style="width: 98%;" />
 <br></p>
 </div>
-<div id="mutate3" class="tab-pane fade" role="tabpanel" aria-labelledby="mutate3-tab">
+<div id="mutate" class="tab-pane fade" role="tabpanel" aria-labelledby="mutate-tab">
 <h3 class="blue-h3">
 Update an existing column
 </h3>
@@ -508,7 +508,7 @@ Add a new column
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>                       <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>),</span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>                       <span class="at">hat =</span> <span class="fu">c</span>(T,T,F,T,F) )</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># Filter ----</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># FILTER ----</span></span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="do">## Use a single condition/test</span></span>
 <span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>)</span>
@@ -517,7 +517,7 @@ Add a new column
 <span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>, age <span class="sc">&gt;</span> <span class="dv">7</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co"># Select ----</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co"># SELECT ----</span></span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="do">## Keep only 2 columns</span></span>
 <span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, age)</span>
@@ -526,7 +526,7 @@ Add a new column
 <span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>hat)</span>
 <span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="co"># Arrange ----</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="co"># ARRANGE ----</span></span>
 <span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a></span>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a><span class="do">## From low to high</span></span>
 <span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(age)</span>
@@ -535,7 +535,7 @@ Add a new column
 <span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(age))</span>
 <span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a></span>
 <span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="co"># Mutate ----</span></span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="co"># MUTATE ----</span></span>
 <span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a></span>
 <span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="do">## Update an existing column</span></span>
 <span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">age =</span> age <span class="sc">+</span> <span class="dv">2</span>)</span>
@@ -555,7 +555,7 @@ blockquote code {background: #f8fdff;}
 <blockquote>
 <strong><code>To:</code></strong> <code>Bot Bakery</code><br />
 <strong><code>Subject:</code></strong> <code>Big treat order</code><br />
-<strong><code>Attached:</code></strong> <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode"><code>crew_preferences.xlsx</code></span>
+<strong><code>Attached:</code></strong> <i class="fas fa-paperclip" aria-hidden="true"></i><span class="bluecode"><code>crew_food_prefs.xlsx</code></span>
 <hr>
 <p>Hi friend,</p>
 <p>Here’s the table of my crew’s goody preferences. 😋</p>
@@ -582,9 +582,11 @@ blockquote code {background: #f8fdff;}
 <p>Have an EXCEL file? The <strong>readxl</strong> package has the function <code>read_excel()</code> for reading Excel data into R.</p>
 <div id="lets-install-and-load-readxl" class="section level3 unnumbered">
 <h3>Let’s install and load <code>readxl</code>:</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">install.packages</span>(readxl)</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Run the install line only one time to get the package</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">install.packages</span>(readxl)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Run this line every time you open R to load the package from your library</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
 </div>
 <div id="now-we-can-read-in-our-excel-file" class="section level3 unnumbered">
 <h3>Now we can read in our Excel file:</h3>
@@ -595,6 +597,11 @@ blockquote code {background: #f8fdff;}
 <p><br></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/crew_food_prefs.xlsx&quot;</span>, <span class="at">skip =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p><br></p>
+<blockquote>
+<p>Having troubles loading the data? Here is an identical CSV version to load so you can carry on.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv&quot;</span>)</span></code></pre></div>
+<p><br></p>
 </div>
 <div id="an-excellent-alternative" class="section level3 unnumbered">
 <h3>An Excellent alternative</h3>
@@ -602,74 +609,76 @@ blockquote code {background: #f8fdff;}
 </div>
 <div id="glimpse-the-data" class="section level2 unnumbered">
 <h2>Glimpse the data</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">glimpse</span>(crew_df)</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">summary</span>(crew_df)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">head</span>(crew_df)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">glimpse</span>(crew_df)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">summary</span>(crew_df)</span></code></pre></div>
+</div>
+<div id="filter-to-rows-with-missing-values-or-nas" class="section level2 unnumbered">
+<h2><strong><code>filter()</code></strong> to rows with missing values or NA’s</h2>
+<p>Use <code>filter()</code> to view the rows where <code>nut_allergy</code> is missing or is <code>NA</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">filter</span>(crew_df, <span class="fu">is.na</span>(nut_allergy))</span></code></pre></div>
 </div>
 <div id="filter-out-the-test-data" class="section level2 unnumbered">
 <h2><strong><code>filter()</code></strong> out the test data</h2>
 <p>There appears to be test data included in the table. Yuk! Let’s filter it out so it doesn’t influence our results.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(crew_df, id <span class="sc">!=</span> <span class="st">&quot;test&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(crew_df, id <span class="sc">!=</span> <span class="st">&quot;test&quot;</span>)</span></code></pre></div>
 </div>
 <div id="select-what-we-need" class="section level2 unnumbered">
 <h2><strong><code>select()</code></strong> what we need</h2>
-<p>There’s also some columns in here we don’t need. Let’s drop the country people are from since that won’t help us.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, <span class="sc">-</span>country)</span></code></pre></div>
-<p><br></p>
-<p>Let’s create a separate smaller <code>favorites</code> table with only the <code>id</code> and <code>favorite_goody</code> columns.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>favorites_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, favorite_goody)</span></code></pre></div>
+<p>Let’s create a separate smaller <code>favorites</code> dataframe with only the <code>id</code> and <code>favorite_goody</code> columns.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>favorites_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, favorite_goody)</span></code></pre></div>
 <p><br></p>
 <p>Let’s create a separate <code>allergy</code> table with only the <code>id</code> and all of the columns that contain the word <strong>“allergy”</strong>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>allergy_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, <span class="fu">contains</span>(<span class="st">&quot;allergy&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>allergy_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, <span class="fu">contains</span>(<span class="st">&quot;allergy&quot;</span>))</span></code></pre></div>
+<p><br></p>
+<p>There’s also some columns in here we don’t need. Let’s drop the country people are from since that won’t help us at the moment.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, <span class="sc">-</span>country)</span></code></pre></div>
 <p><br></p>
 <p>Finally, for easier reference, use <code>select()</code> to make the <code>id</code> and <code>days_on_ship</code> columns the first two columns in the table. Everything else can be in the same order.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>favorites_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, days_on_ship, <span class="fu">everything</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, days_on_the_ship, <span class="fu">everything</span>())</span></code></pre></div>
 </div>
 <div id="arrange-the-crew" class="section level2 unnumbered">
 <h2><strong><code>arrange()</code></strong> the crew</h2>
 <p>Let’s use <code>arrange()</code> to sort the crew members so the ones that will be on the ship the longest are on top. They’ll be the ones munching on are goodies the longest.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, days_on_ship)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, days_on_ship)</span></code></pre></div>
 <blockquote>
 <p>Ope! What happened?</p>
 </blockquote>
 <div id="descending-order-biggest-on-top" class="section level3 unnumbered">
 <h3>Descending order (biggest on top)</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="fu">desc</span>(days_on_ship))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="fu">desc</span>(days_on_the_ship))</span></code></pre></div>
 </div>
-<div id="alternative-use--column_name-instead-of-desccolumn_name" class="section level3 unnumbered">
-<h3>Alternative: use <code>-column_name</code> instead of <code>desc(column_name)</code></h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="sc">-</span>days_on_ship)</span></code></pre></div>
+<div id="alternative-put-a---in-front-of-the-column-name-to-do-the-opposite" class="section level3 unnumbered">
+<h3>Alternative: put a <code>-</code> in front of the column name to do the opposite</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="sc">-</span>days_on_the_ship)</span></code></pre></div>
 </div>
 </div>
 <div id="mutate-new-columns" class="section level2 unnumbered">
 <h2><strong><code>mutate()</code></strong> new columns</h2>
-<p>Let’s get an idea of the total meals each crew mate will be eating baked goods. For that, we’ll need to take their <code>days_on_the_ship</code> times their <code>meals_per_day</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Use the * to multiply and the / to divide</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">total_trip_meals =</span> days_on_the_ship <span class="sc">*</span> meals_per_day)</span></code></pre></div>
+<p>Let’s get an idea of the total meals each crew mate will be eating our baked goods. For that, we’ll need to take their <code>days_on_the_ship</code> and multiply it by their <code>meals_per_day</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Use the * to multiply and the / to divide</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">total_trip_meals =</span> days_on_the_ship <span class="sc">*</span> meals_per_day)</span></code></pre></div>
 <div id="sidebar-counting-trues-and-falses" class="section level3 unnumbered">
 <h3>Sidebar: Counting TRUE’s and FALSE’s</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># This new column wouldn&#39;t be too helpful</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">no_egg_allergy =</span> egg_allergy <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="do">## Drop it</span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, <span class="sc">-</span>no_egg_allergy)</span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co"># Let&#39;s show whether someone has any allergies</span></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="do">## Note: TRUE&#39;s count as 1, and FALSE&#39;s count as 0</span></span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
-<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>                  <span class="at">n_allergies =</span> egg_allergy <span class="sc">+</span> nut_allergy)</span>
-<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a><span class="co"># This is the same</span></span>
-<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
-<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a>                  <span class="at">n_allergies =</span> egg_allergy <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">+</span> nut_allergy <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a></span>
-<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a><span class="co"># This is also the same</span></span>
-<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
-<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a>                  <span class="at">n_allergies =</span> <span class="fu">sum</span>(egg_allergy, nut_allergy))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># This new column doesn&#39;t give us much new info</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">no_egg_allergy =</span> egg_allergy <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="do">## Let&#39;s drop it</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, <span class="sc">-</span>no_egg_allergy)</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="co"># Let&#39;s show whether someone has any allergies</span></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="do">## Note: TRUE&#39;s count as 1, and FALSE&#39;s count as 0</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, </span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>                  <span class="at">n_allergies =</span> egg_allergy <span class="sc">+</span> nut_allergy)</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="co"># Now we can easily filter to crew with ANY allergies</span></span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>allergy_crew_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(crew_df, n_allergies <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
-<p>You know, it’d be great if we could label the crew that were going to be on board less than a week. Sounds like it’s time to expand our data toolbox…</p>
+<p>You know, it’d be great if we could split the crew into groups based on how long they were going to be onboard the ship. Sounds like it’s time to expand our data toolbox…</p>
 </blockquote>
 </div>
 </div>
@@ -680,9 +689,9 @@ blockquote code {background: #f8fdff;}
 <h2><code>if_else( )</code></h2>
 <div id="how-to-survive" class="section level3 unnumbered">
 <h3>How to survive</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">if_else</span>(path_is_scary, </span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>        <span class="st">&quot;Turn back!&quot;</span>, </span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>        <span class="st">&quot;Keep going.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">if_else</span>(path_is_scary, </span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>        <span class="st">&quot;Turn back!&quot;</span>, </span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>        <span class="st">&quot;Keep going.&quot;</span>)</span></code></pre></div>
 </div>
 <div id="monster-bakers" class="section level3 unnumbered">
 <h3>Monster bakers</h3>
@@ -692,22 +701,22 @@ blockquote code {background: #f8fdff;}
 <h3>Hat check</h3>
 <p>If the monster is wearing a hat (the <code>hat</code> column is <code>TRUE</code>), then they are definitely a baker. Otherwise they are not a baker.</p>
 <p><strong>The if_else() statement</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">if_else</span>(hat, <span class="st">&quot;Baker&quot;</span>, <span class="st">&quot;Not a baker&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">if_else</span>(hat, <span class="st">&quot;Baker&quot;</span>, <span class="st">&quot;Not a baker&quot;</span>)</span></code></pre></div>
 <p><strong>Assign the result to a new column named “job”</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>job <span class="ot">=</span> <span class="fu">if_else</span>(hat, <span class="st">&quot;Baker&quot;</span>, <span class="st">&quot;Not a baker&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>job <span class="ot">=</span> <span class="fu">if_else</span>(hat, <span class="st">&quot;Baker&quot;</span>, <span class="st">&quot;Not a baker&quot;</span>)</span></code></pre></div>
 <p><strong>Use mutate() to add the column to the monster data</strong></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">mutate</span>(monsters, </span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>       <span class="at">job =</span> <span class="fu">if_else</span>(hat, <span class="st">&quot;Baker&quot;</span>, <span class="st">&quot;Not a baker&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">mutate</span>(monsters, </span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>       <span class="at">job =</span> <span class="fu">if_else</span>(hat, <span class="st">&quot;Baker&quot;</span>, <span class="st">&quot;Not a baker&quot;</span>))</span></code></pre></div>
 </div>
 <div id="baby-check-age-comparison" class="section level3 unnumbered">
 <h3>Baby check: Age comparison</h3>
 <p><strong>The if_else() statement</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
 <p><strong>Assign the result to a new column named “life_stage”</strong></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>life_stage <span class="ot">=</span> <span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>life_stage <span class="ot">=</span> <span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
 <p><strong>Use mutate() to add the column to the monster data</strong></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">mutate</span>(monsters, </span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>       <span class="at">life_stage =</span> <span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">mutate</span>(monsters, </span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>       <span class="at">life_stage =</span> <span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>))</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>What if we have more than 2 categories we want to assign things to? Say we wanted to sort the monsters into babies, kids, and adults?</p>
@@ -720,35 +729,35 @@ blockquote code {background: #f8fdff;}
 <div id="what-to-wear" class="section level3 unnumbered">
 <h3>What to wear</h3>
 <p>The footwear we choose to wear depends on our activity. If we are running we may choose sneakers. If we are swimming we may choose flippers. And in this case, when we aren’t running or swimming we will be wearing slippers. The final <code>TRUE</code> option in <code>case_when</code> will be used as the default choice when none of the other options above it are true.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>footwear <span class="ot">=</span> <span class="fu">case_when</span>(</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>                     run_from_monsters  <span class="sc">~</span>  <span class="st">&quot;Sneakers&quot;</span>,</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>                     swim_from_monsters  <span class="sc">~</span>  <span class="st">&quot;Flippers&quot;</span>,</span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>                     <span class="cn">TRUE</span>  <span class="sc">~</span>  <span class="st">&quot;Slippers&quot;</span></span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>                    )</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>footwear <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>                     run_from_monsters  <span class="sc">~</span>  <span class="st">&quot;Sneakers&quot;</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>                     swim_from_monsters  <span class="sc">~</span>  <span class="st">&quot;Flippers&quot;</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>                     <span class="cn">TRUE</span>  <span class="sc">~</span>  <span class="st">&quot;Slippers&quot;</span></span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>                    )</span></code></pre></div>
 </div>
 <div id="back-to-monster-babies" class="section level3 unnumbered">
 <h3>Back to monster babies</h3>
 <p><strong>This if_else() statement</strong></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">if_else</span>(age <span class="sc">&lt;</span> <span class="dv">3</span>, <span class="st">&quot;Baby&quot;</span>, <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
 <p><strong>Turns into this <code>case_when</code> statement</strong></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
 <blockquote>
 <p>Now we can add more life stages</p>
 </blockquote>
 <p><strong>Add a “Kid” option</strong></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>          age <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">&quot;Kid&quot;</span>,</span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>          age <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">&quot;Kid&quot;</span>,</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Not a baby&quot;</span>)</span></code></pre></div>
 <p><strong>Set the default option to “Adult”</strong></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>          age <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">&quot;Kid&quot;</span>,</span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Adult&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>          age <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">&quot;Kid&quot;</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Adult&quot;</span>)</span></code></pre></div>
 <p><strong>Use mutate() to add the column to the monster data</strong></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">mutate</span>(monsters, </span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>       <span class="at">life_stage =</span> <span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>                              age <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">&quot;Kid&quot;</span>,</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>                              <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Adult&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">mutate</span>(monsters, </span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>       <span class="at">life_stage =</span> <span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Baby&quot;</span>, </span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>                              age <span class="sc">&lt;</span> <span class="dv">6</span> <span class="sc">~</span> <span class="st">&quot;Kid&quot;</span>,</span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>                              <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;Adult&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="the-pipe-take-this-and-then" class="section level2" number="2.1">
@@ -756,10 +765,10 @@ blockquote code {background: #f8fdff;}
 <p><img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/pipe.png" style="width: 32%; margin-top: 0;"></p>
 <div id="patty-cake" class="section level3 unnumbered">
 <h3>Patty cake</h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>patty_cake <span class="sc">%&gt;%</span> </span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>  <span class="fu">roll_it</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>  <span class="fu">prick_it</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>  <span class="fu">mark_it</span>(<span class="at">letter =</span> <span class="st">&quot;B&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>patty_cake <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>  <span class="fu">roll_it</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>  <span class="fu">prick_it</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>  <span class="fu">mark_it</span>(<span class="at">letter =</span> <span class="st">&quot;B&quot;</span>)</span></code></pre></div>
 <p><strong>Read as:</strong></p>
 <blockquote>
 <p>Take a <strong>patty cake</strong> (and then)<br />
@@ -771,16 +780,16 @@ mark it - with the letter “B”.</p>
 <div id="with-our-toolbox" class="section level3 unnumbered">
 <h3>%&gt;% with our toolbox</h3>
 <p><strong>Without the pipe</strong></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">select</span>(monsters, <span class="sc">-</span>hat)</span>
-<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">mutate</span>(monsters, <span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">select</span>(monsters, <span class="sc">-</span>hat)</span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">mutate</span>(monsters, <span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><strong>With the pipe</strong></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> monsters <span class="sc">%&gt;%</span></span>
-<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>                      <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>                      <span class="fu">select</span>(<span class="sc">-</span>hat) <span class="sc">%&gt;%</span></span>
-<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>                      <span class="fu">mutate</span>(<span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> monsters <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>                      <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>                      <span class="fu">select</span>(<span class="sc">-</span>hat) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>                      <span class="fu">mutate</span>(<span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="short-trippers" class="section level2 unnumbered">
@@ -788,104 +797,392 @@ mark it - with the letter “B”.</p>
 <blockquote>
 <p><code>if_else()</code></p>
 </blockquote>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a>days_on_ship <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a><span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>)</span>
-<span id="cb32-6"><a href="#cb32-6" tabindex="-1"></a><span class="co"># ERROR: What did we forget?</span></span>
-<span id="cb32-7"><a href="#cb32-7" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="#cb32-8" tabindex="-1"></a><span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>, <span class="st">&quot;Long trip&quot;</span>)</span>
-<span id="cb32-9"><a href="#cb32-9" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" tabindex="-1"></a>time_onboard <span class="ot">=</span> <span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>, <span class="st">&quot;Long trip&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a>days_on_ship <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a><span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a><span class="co"># ERROR: What did we forget?</span></span>
+<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a><span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>, <span class="st">&quot;Long trip&quot;</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" tabindex="-1"></a>time_onboard <span class="ot">=</span> <span class="fu">if_else</span>(days_on_ship <span class="sc">&lt;=</span> <span class="dv">7</span>, <span class="st">&quot;Short trip&quot;</span>, <span class="st">&quot;Long trip&quot;</span>)</span></code></pre></div>
 <blockquote>
 <p><code>case_when()</code></p>
 </blockquote>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">case_when</span>(days_on_trip <span class="sc">&lt;=</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;Short trip&quot;</span>,</span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>          days_on_trip <span class="sc">&lt;=</span> <span class="dv">14</span> <span class="sc">~</span> <span class="st">&quot;Long trip&quot;</span>,</span>
-<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;A very long trip&quot;</span>)</span>
-<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a><span class="co"># Run again with a new value</span></span>
-<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a>days_on_ship <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a></span>
-<span id="cb33-8"><a href="#cb33-8" tabindex="-1"></a><span class="fu">case_when</span>(days_on_trip <span class="sc">&lt;=</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;Short trip&quot;</span>,</span>
-<span id="cb33-9"><a href="#cb33-9" tabindex="-1"></a>          days_on_trip <span class="sc">&lt;=</span> <span class="dv">14</span> <span class="sc">~</span> <span class="st">&quot;Long trip&quot;</span>,</span>
-<span id="cb33-10"><a href="#cb33-10" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;A very long trip&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">case_when</span>(days_on_trip <span class="sc">&lt;=</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;Short trip&quot;</span>,</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>          days_on_trip <span class="sc">&lt;=</span> <span class="dv">14</span> <span class="sc">~</span> <span class="st">&quot;Long trip&quot;</span>,</span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;A very long trip&quot;</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="co"># Run again with a new value</span></span>
+<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a>days_on_ship <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a><span class="fu">case_when</span>(days_on_trip <span class="sc">&lt;=</span> <span class="dv">7</span> <span class="sc">~</span> <span class="st">&quot;Short trip&quot;</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a>          days_on_trip <span class="sc">&lt;=</span> <span class="dv">14</span> <span class="sc">~</span> <span class="st">&quot;Long trip&quot;</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a>          <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;A very long trip&quot;</span>)</span></code></pre></div>
 <blockquote>
 <p>Add columns to the <code>crew_df</code> data</p>
 </blockquote>
 <div id="region" class="section level3 unnumbered">
 <h3>Region</h3>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv&quot;</span>)</span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>  </span>
-<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="co"># The if_else statement  </span></span>
-<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a><span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States America&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
-<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a>        <span class="st">&quot;North America&quot;</span>,</span>
-<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a>        <span class="st">&quot;Other&quot;</span>)</span>
-<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a></span>
-<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a><span class="co"># Use mutate to add a column</span></span>
-<span id="cb34-9"><a href="#cb34-9" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span></span>
-<span id="cb34-10"><a href="#cb34-10" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States America&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
-<span id="cb34-11"><a href="#cb34-11" tabindex="-1"></a>                                   <span class="st">&quot;North America&quot;</span>,</span>
-<span id="cb34-12"><a href="#cb34-12" tabindex="-1"></a>                                   <span class="st">&quot;Other&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv&quot;</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>  </span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a><span class="co"># The if_else statement  </span></span>
+<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a><span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States America&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
+<span id="cb36-5"><a href="#cb36-5" tabindex="-1"></a>        <span class="st">&quot;North America&quot;</span>,</span>
+<span id="cb36-6"><a href="#cb36-6" tabindex="-1"></a>        <span class="st">&quot;Other&quot;</span>)</span>
+<span id="cb36-7"><a href="#cb36-7" tabindex="-1"></a></span>
+<span id="cb36-8"><a href="#cb36-8" tabindex="-1"></a><span class="co"># Use mutate to add a column</span></span>
+<span id="cb36-9"><a href="#cb36-9" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span></span>
+<span id="cb36-10"><a href="#cb36-10" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States America&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
+<span id="cb36-11"><a href="#cb36-11" tabindex="-1"></a>                                   <span class="st">&quot;North America&quot;</span>,</span>
+<span id="cb36-12"><a href="#cb36-12" tabindex="-1"></a>                                   <span class="st">&quot;Other&quot;</span>))</span></code></pre></div>
 </div>
 <div id="cocoa-powder-shortage" class="section level3 unnumbered">
 <h3>Cocoa powder shortage</h3>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="co"># The if_else statement </span></span>
-<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="fu">if_else</span>(favorite_goody <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;brownies&quot;</span>, <span class="st">&quot;chocolate croissant&quot;</span>),</span>
-<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>        <span class="st">&quot;Needs cocoa&quot;</span>,</span>
-<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a>        <span class="st">&quot;No cocoa&quot;</span>)</span>
-<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a></span>
-<span id="cb35-6"><a href="#cb35-6" tabindex="-1"></a><span class="co"># Use mutate to add a column</span></span>
-<span id="cb35-7"><a href="#cb35-7" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span></span>
-<span id="cb35-8"><a href="#cb35-8" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">cocoa_check =</span> <span class="fu">if_else</span>(favorite_goody <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;brownies&quot;</span>, <span class="st">&quot;chocolate croissant&quot;</span>),</span>
-<span id="cb35-9"><a href="#cb35-9" tabindex="-1"></a>                                        <span class="st">&quot;Needs cocoa&quot;</span>,</span>
-<span id="cb35-10"><a href="#cb35-10" tabindex="-1"></a>                                        <span class="st">&quot;No cocoa&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># The if_else statement </span></span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="fu">if_else</span>(favorite_goody <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;brownies&quot;</span>, <span class="st">&quot;chocolate croissant&quot;</span>),</span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>        <span class="st">&quot;Needs cocoa&quot;</span>,</span>
+<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a>        <span class="st">&quot;No cocoa&quot;</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" tabindex="-1"></a><span class="co"># Use mutate to add a column</span></span>
+<span id="cb37-7"><a href="#cb37-7" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span></span>
+<span id="cb37-8"><a href="#cb37-8" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">cocoa_check =</span> <span class="fu">if_else</span>(favorite_goody <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;brownies&quot;</span>, <span class="st">&quot;chocolate croissant&quot;</span>),</span>
+<span id="cb37-9"><a href="#cb37-9" tabindex="-1"></a>                                        <span class="st">&quot;Needs cocoa&quot;</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" tabindex="-1"></a>                                        <span class="st">&quot;No cocoa&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
 <div id="simmer-it-down-summarize-the-data" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Simmer it down: Summarize the data</h1>
+<h1><span class="header-section-number">3</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="https://tidy-mn.github.io/R-camp-penguins/page/videos/day2/02-3-simmer-it-down.html">Simmer it down: Summarize the data</a></h1>
+<div id="your-expanded-data-toolbox" class="section level2 unnumbered">
+<h2><i class="fa fa-toolbox blue"></i> Your <span class="blue">EXPANDED</span> data toolbox</h2>
+<style>
+.remark-slide table {border-top: 0;}
+th, td {padding: 10px; padding-left: 16px; padding-right: 16px; padding-top: 14px;}
+.bluecode code {font-weight: 700}    
+</style>
+<div class="bluecode" style="font-size: 1.6rem; width: 85%; margin-top: 4px;">
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Function
+</th>
+<th style="text-align:left;">
+Job
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+<code> filter() </code>
+</td>
+<td style="text-align:left;">
+Keep rows that pass your tests
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code> select() </code>
+</td>
+<td style="text-align:left;">
+Select columns to keep or drop
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code> arrange() </code>
+</td>
+<td style="text-align:left;">
+Sort a table based on a column’s values
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code> mutate() </code>
+</td>
+<td style="text-align:left;">
+Add new columns or update existing columns
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code> summarize() </code>
+</td>
+<td style="text-align:left;">
+Get summary statistics for an entire table
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<code> group_by() </code>
+</td>
+<td style="text-align:left;">
+Group data for group specific summaries
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="a-monster-summary" class="section level2 unnumbered">
+<h2>A MONSTER summary</h2>
 <p>Time to simmer things down. Let’s use <code>summarize()</code> to find a few summary statistics for our data.</p>
-<blockquote>
-<p><code>count()</code></p>
-</blockquote>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="co"># Most popular goody</span></span>
-<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="fu">count</span>(crew_df, favorite_goody)</span>
-<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a><span class="co"># How many from each country</span></span>
-<span id="cb36-5"><a href="#cb36-5" tabindex="-1"></a><span class="fu">count</span>(crew_df, country)</span>
-<span id="cb36-6"><a href="#cb36-6" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(country)</span></code></pre></div>
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="monsters-tab2" data-toggle="tab" href="#monsters2" role="tab" aria-controls="monsters2" aria-selected="true"> <code>monsters</code> </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="filter3-tab2" data-toggle="tab" href="#filter32" role="tab" aria-controls="filter32" aria-selected="false"> <code>filter</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="select-tab2" data-toggle="tab" href="#select2" role="tab" aria-controls="select2" aria-selected="false"> <code>select</code> </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="arrange-tab2" data-toggle="tab" href="#arrange2" role="tab" aria-controls="arrange2" aria-selected="false"> <code>arrange</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="mutate-tab2" data-toggle="tab" href="#mutate2" role="tab" aria-controls="mutate2" aria-selected="false"> <code>mutate</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="summarize-tab2" data-toggle="tab" href="#summarize2" role="tab" aria-controls="summarize2" aria-selected="false"> <code>summarize</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="groupby-tab2" data-toggle="tab" href="#groupby2" role="tab" aria-controls="groupby2" aria-selected="false"> <code>groupby</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="code-monsters-tab2" data-toggle="tab" href="#code-monsters2" role="tab" aria-controls="code-monsters2" aria-selected="false"> <code>R code</code></a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content monsters" style="background-color: white;">
+<div id="monsters2" class="tab-pane fade active in" role="tabpanel" aria-labelledby="monsters-tab2">
+<p><img src="../images/monsters/monster_data.png" style="width: 85%;" /></p>
+<p><br></p>
+</div>
+<div id="filter32" class="tab-pane fade" role="tabpanel" aria-labelledby="filter3-tab2">
+<h3 class="blue-h3">
+Filter with a single condition / test
+</h3>
+<p><img src="../images/monsters/filter_monsters.png" style="width: 95%; margin-top: 12px;" /></p>
+<h3 class="blue-h3" style="margin-top: 50px;">
+Filter with multiple conditions / tests
+</h3>
+<p><img src="../images/monsters/filter_monsters_multiple.png" style="width: 95%;" /></p>
+<p><br></p>
+</div>
+<div id="select2" class="tab-pane fade" role="tabpanel" aria-labelledby="select-tab2">
+<h3 class="blue-h3">
+Keep columns
+</h3>
+<p><img src="../images/monsters/select_monsters2.png" style="width: 98%; margin-top: 6px;" /></p>
+<h3 class="blue-h3" style="margin-top: 50px;">
+Drop columns
+</h3>
+<p><img src="../images/monsters/select_monsters_drop2.png" style="width: 70%;" /></p>
+<p><br></p>
+</div>
+<div id="arrange2" class="tab-pane fade" role="tabpanel" aria-labelledby="arrange-tab2">
+<h3 class="blue-h3">
+Arrange from lowest to highest
+</h3>
+<p><img src="../images/monsters/arrange_monsters.png" style="width: 98%; margin-top: 12px;" /></p>
+<h3 class="blue-h3" style="margin-top: 50px;">
+Arrange from highest to lowest
+</h3>
+<p><img src="../images/monsters/arrange_monsters_desc.png" style="width: 98%;" />
+<br></p>
+</div>
+<div id="mutate2" class="tab-pane fade" role="tabpanel" aria-labelledby="mutate-tab2">
+<h3 class="blue-h3">
+Update an existing column
+</h3>
+<p><img src="../images/monsters/mutate_monsters_update.png" style="width: 98%; margin-top: 12px;" /></p>
+<h3 class="blue-h3" style="margin-top: 50px;">
+Add a new column
+</h3>
+<p><img src="../images/monsters/mutate_monsters_new.png" style="width: 98%;" />
+<br></p>
+</div>
+<div id="summarize2" class="tab-pane fade" role="tabpanel" aria-labelledby="summarize-tab2">
+<h3 class="blue-h3">
+Average age
+</h3>
+<p><img src="../images/monsters/summarize_monsters2.png" style="width: 98%; margin-top: 12px;" /></p>
+<p><br></p>
+</div>
+<div id="groupby2" class="tab-pane fade" role="tabpanel" aria-labelledby="groupby-tab2">
+<h3 class="blue-h3">
+Average age by color
+</h3>
+<p><img src="../images/monsters/groupby_summarize_single_monsters2.png" style="width: 98%; margin-top: 12px;" /></p>
+<h3 class="blue-h3" style="margin-top: 50px;">
+Add a new column
+</h3>
+<p><img src="../images/monsters/groupby_summarize_multi_monsters2.png" style="width: 98%;" />
+<br></p>
+</div>
+<div id="code-monsters2" class="tab-pane fade" role="tabpanel" aria-labelledby="code-monsters-tab2">
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="co"># Create monsters</span></span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>                       <span class="at">color =</span> <span class="fu">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;green&quot;</span>,  <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;green&quot;</span>),</span>
+<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a>                       <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>),</span>
+<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a>                       <span class="at">hat =</span> <span class="fu">c</span>(T,T,F,T,F) )</span>
+<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" tabindex="-1"></a><span class="co"># FILTER ----</span></span>
+<span id="cb38-8"><a href="#cb38-8" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="#cb38-9" tabindex="-1"></a><span class="do">## Use a single condition/test</span></span>
+<span id="cb38-10"><a href="#cb38-10" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>)</span>
+<span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" tabindex="-1"></a><span class="do">## Use multiple conditions/tests</span></span>
+<span id="cb38-13"><a href="#cb38-13" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">&quot;pink&quot;</span>, age <span class="sc">&gt;</span> <span class="dv">7</span>)</span>
+<span id="cb38-14"><a href="#cb38-14" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="#cb38-15" tabindex="-1"></a></span>
+<span id="cb38-16"><a href="#cb38-16" tabindex="-1"></a><span class="co"># SELECT ----</span></span>
+<span id="cb38-17"><a href="#cb38-17" tabindex="-1"></a></span>
+<span id="cb38-18"><a href="#cb38-18" tabindex="-1"></a><span class="do">## Keep only 2 columns</span></span>
+<span id="cb38-19"><a href="#cb38-19" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">select</span>(id, age)</span>
+<span id="cb38-20"><a href="#cb38-20" tabindex="-1"></a></span>
+<span id="cb38-21"><a href="#cb38-21" tabindex="-1"></a><span class="do">## Drop columns with a &#39;-&#39; in front</span></span>
+<span id="cb38-22"><a href="#cb38-22" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>hat)</span>
+<span id="cb38-23"><a href="#cb38-23" tabindex="-1"></a></span>
+<span id="cb38-24"><a href="#cb38-24" tabindex="-1"></a></span>
+<span id="cb38-25"><a href="#cb38-25" tabindex="-1"></a><span class="co"># ARRANGE ----</span></span>
+<span id="cb38-26"><a href="#cb38-26" tabindex="-1"></a></span>
+<span id="cb38-27"><a href="#cb38-27" tabindex="-1"></a><span class="do">## From low to high</span></span>
+<span id="cb38-28"><a href="#cb38-28" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(age)</span>
+<span id="cb38-29"><a href="#cb38-29" tabindex="-1"></a></span>
+<span id="cb38-30"><a href="#cb38-30" tabindex="-1"></a><span class="do">## Descend from high to low</span></span>
+<span id="cb38-31"><a href="#cb38-31" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(age))</span>
+<span id="cb38-32"><a href="#cb38-32" tabindex="-1"></a></span>
+<span id="cb38-33"><a href="#cb38-33" tabindex="-1"></a></span>
+<span id="cb38-34"><a href="#cb38-34" tabindex="-1"></a><span class="co"># MUTATE ----</span></span>
+<span id="cb38-35"><a href="#cb38-35" tabindex="-1"></a></span>
+<span id="cb38-36"><a href="#cb38-36" tabindex="-1"></a><span class="do">## Update an existing column</span></span>
+<span id="cb38-37"><a href="#cb38-37" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">age =</span> age <span class="sc">+</span> <span class="dv">2</span>)</span>
+<span id="cb38-38"><a href="#cb38-38" tabindex="-1"></a></span>
+<span id="cb38-39"><a href="#cb38-39" tabindex="-1"></a><span class="do">## Create a new column</span></span>
+<span id="cb38-40"><a href="#cb38-40" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">is_baby =</span> age <span class="sc">&lt;</span> <span class="dv">3</span>)</span>
+<span id="cb38-41"><a href="#cb38-41" tabindex="-1"></a></span>
+<span id="cb38-42"><a href="#cb38-42" tabindex="-1"></a></span>
+<span id="cb38-43"><a href="#cb38-43" tabindex="-1"></a><span class="co"># SUMMARIZE ----</span></span>
+<span id="cb38-44"><a href="#cb38-44" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">age_avg =</span> <span class="fu">mean</span>(age))</span>
+<span id="cb38-45"><a href="#cb38-45" tabindex="-1"></a></span>
+<span id="cb38-46"><a href="#cb38-46" tabindex="-1"></a></span>
+<span id="cb38-47"><a href="#cb38-47" tabindex="-1"></a><span class="co"># GROUP_BY ----</span></span>
+<span id="cb38-48"><a href="#cb38-48" tabindex="-1"></a></span>
+<span id="cb38-49"><a href="#cb38-49" tabindex="-1"></a><span class="do">## Create a single summary statistic</span></span>
+<span id="cb38-50"><a href="#cb38-50" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> </span>
+<span id="cb38-51"><a href="#cb38-51" tabindex="-1"></a>  <span class="fu">group_by</span>(color) <span class="sc">%&gt;%</span></span>
+<span id="cb38-52"><a href="#cb38-52" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">age_avg =</span> <span class="fu">mean</span>(age))</span>
+<span id="cb38-53"><a href="#cb38-53" tabindex="-1"></a></span>
+<span id="cb38-54"><a href="#cb38-54" tabindex="-1"></a><span class="do">## Create multiple summary stats</span></span>
+<span id="cb38-55"><a href="#cb38-55" tabindex="-1"></a>monsters <span class="sc">%&gt;%</span> </span>
+<span id="cb38-56"><a href="#cb38-56" tabindex="-1"></a>  <span class="fu">group_by</span>(color) <span class="sc">%&gt;%</span></span>
+<span id="cb38-57"><a href="#cb38-57" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">age_avg =</span> <span class="fu">mean</span>(age),</span>
+<span id="cb38-58"><a href="#cb38-58" tabindex="-1"></a>            <span class="at">n_monsters =</span> <span class="fu">n</span>())</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="crew-examples" class="section level2 unnumbered">
+<h2>Crew examples</h2>
+<p><strong>Load the data</strong></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv&quot;</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a><span class="co"># Drop the test row</span></span>
+<span id="cb39-6"><a href="#cb39-6" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(id <span class="sc">!=</span> <span class="st">&quot;test&quot;</span>)</span></code></pre></div>
 <blockquote>
 <p><code>summarize()</code></p>
 </blockquote>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># How many Canadiens?</span></span>
-<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="fu">summarize</span>(crew_df, <span class="at">canadiens =</span> <span class="fu">sum</span>(country <span class="sc">==</span> <span class="st">&quot;Canada&quot;</span>))</span>
-<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a><span class="co"># Mean days on board ship?</span></span>
-<span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a><span class="fu">summarize</span>(crew_df, <span class="at">days_avg =</span> <span class="fu">mean</span>(days_on_ship))</span>
-<span id="cb37-6"><a href="#cb37-6" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" tabindex="-1"></a><span class="co"># How many Long trippers</span></span>
-<span id="cb37-8"><a href="#cb37-8" tabindex="-1"></a><span class="fu">summarize</span>(crew_df, <span class="at">n_long_trippers =</span> <span class="fu">sum</span>(time_onboard <span class="sc">==</span> <span class="st">&quot;Long trip&quot;</span>))</span>
-<span id="cb37-9"><a href="#cb37-9" tabindex="-1"></a></span>
-<span id="cb37-10"><a href="#cb37-10" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="#cb37-11" tabindex="-1"></a><span class="co"># Total meals</span></span>
-<span id="cb37-12"><a href="#cb37-12" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(df, <span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_ship)</span>
-<span id="cb37-13"><a href="#cb37-13" tabindex="-1"></a></span>
-<span id="cb37-14"><a href="#cb37-14" tabindex="-1"></a><span class="fu">summarize</span>(crew_df, <span class="at">total_meals =</span> <span class="fu">sum</span>(total_meals))</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co"># Average days on the ship</span></span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">days_avg =</span> <span class="fu">mean</span>(days_on_the_ship))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##   days_avg
+##      &lt;dbl&gt;
+## 1     19.7</code></pre>
 <blockquote>
-<p><code>group_by()</code></p>
+<p><code>group_by()</code> %&gt;% <code>summarize()</code></p>
 </blockquote>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="co"># Crew count for each country</span></span>
-<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(country) <span class="fu">summarize</span>(<span class="at">n_crew =</span> <span class="fu">n</span>())</span>
-<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a><span class="co"># Total meals per goody type</span></span>
-<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">total_meals =</span> <span class="fu">sum</span>(total_meals))</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Average days on ship grouped by nut allergy column</span></span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
+<span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a>  <span class="fu">group_by</span>(nut_allergy) <span class="sc">%&gt;%</span></span>
+<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">days_avg =</span> <span class="fu">mean</span>(days_on_the_ship))</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 2
+##   nut_allergy days_avg
+##   &lt;lgl&gt;          &lt;dbl&gt;
+## 1 FALSE           20  
+## 2 TRUE            19.7</code></pre>
+<blockquote>
+<p><code>mutate()</code> %&gt;% <code>group_by()</code> %&gt;% <code>summarize()</code></p>
+</blockquote>
+<p>Which goody will be most in demand on the ship?</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="co"># Add a total meals column</span></span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="do">## And then group by goody type and sum the total meals</span></span>
+<span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
+<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_the_ship) <span class="sc">%&gt;%</span></span>
+<span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span></span>
+<span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals))</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 2
+##   favorite_goody      goody_total_meals
+##   &lt;chr&gt;                           &lt;dbl&gt;
+## 1 apple pie                         435
+## 2 baklava                           160
+## 3 banana bread                      455
+## 4 brownies                          504
+## 5 chocolate croissant               758
+## 6 cinnamon rolls                    615
+## 7 jelly donuts                      630
+## 8 oatmeal cookies                   240
+## 9 short-bread                       350</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="co"># Arrange total goody meals in descending order</span></span>
+<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
+<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_the_ship) <span class="sc">%&gt;%</span></span>
+<span id="cb46-4"><a href="#cb46-4" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span></span>
+<span id="cb46-5"><a href="#cb46-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals)) <span class="sc">%&gt;%</span></span>
+<span id="cb46-6"><a href="#cb46-6" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(goody_total_meals))</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 2
+##   favorite_goody      goody_total_meals
+##   &lt;chr&gt;                           &lt;dbl&gt;
+## 1 chocolate croissant               758
+## 2 jelly donuts                      630
+## 3 cinnamon rolls                    615
+## 4 brownies                          504
+## 5 banana bread                      455
+## 6 apple pie                         435
+## 7 short-bread                       350
+## 8 oatmeal cookies                   240
+## 9 baklava                           160</code></pre>
+</div>
+<div id="bonus" class="section level2 unnumbered">
+<h2>Bonus</h2>
+<p>How many crew are from each country? How many crew voted for each goody for their favorite?</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="co"># Crew count for each country</span></span>
+<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> </span>
+<span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_crew =</span> <span class="fu">n</span>())</span>
+<span id="cb48-5"><a href="#cb48-5" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="#cb48-6" tabindex="-1"></a><span class="co"># Most popular goody</span></span>
+<span id="cb48-7"><a href="#cb48-7" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> </span>
+<span id="cb48-8"><a href="#cb48-8" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-9"><a href="#cb48-9" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_favorites =</span> <span class="fu">n</span>())</span></code></pre></div>
+<blockquote>
+<p>Alternative: <code>count()</code></p>
+</blockquote>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="co"># Crew count for each country</span></span>
+<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a><span class="fu">count</span>(crew_df, country)</span>
+<span id="cb49-3"><a href="#cb49-3" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(country)</span>
+<span id="cb49-5"><a href="#cb49-5" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" tabindex="-1"></a><span class="co"># Most popular goody</span></span>
+<span id="cb49-7"><a href="#cb49-7" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">count</span>(favorite_goody)</span></code></pre></div>
 <p><br></p>
 <div id="jump-to-the-top" class="section level3 unnumbered">
 <h3><i class="fas fa-carrot"> </i> <a href="../page/day2.html">Jump to the top</a></h3>
 <p><br></p>
+</div>
 </div>
 </div>
 
