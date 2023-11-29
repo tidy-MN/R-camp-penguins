@@ -143,7 +143,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- [Homeward bound](page/exercise/day4/4_homeward_bound.html)
+- [Homeward bound](page/exercise/day4/4-homeward-bound.html)
 
 </div> 
 

@@ -6,7 +6,7 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: "../../css/camp_style.css"
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
@@ -18,7 +18,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE, eval = F)
 ```
 
-## R Markdown
+## Maps
 
 The three rings to rule the world in R and spatial analysis are *sf*, *tigris*, and *ggplot* or *leaflet*. OK, it is also easier to take over places in the US if you also have the tidycensus package. But first, let's look at some bird data to go through each of these super powers.
 
