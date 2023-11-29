@@ -472,7 +472,7 @@ case_when(days_on_ship <= 7 ~ "Short trip",
 ### Regions {-}
 
 
-Let's assign some countries to North America. We can use the `%in%` operator to check if a value is in a list. Below, we'll check if a given country is in a list of some of the countries in North America. If it is, we'll give the region a label of *North America*. And if it isn't in the list, we'll label the region as *Other*.
+Let's assign some countries to North America. We can use the `%in%` operator to check if a value is in a list. Below, we'll check if a given country is in a list of some of the countries in North America. If it is in the list, we'll give the region a value of `"North America"`. But if it isn't in the list, we'll label the region as `"Other"`.
 
 ```{r, eval=F}
 crew_df <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv")
@@ -480,13 +480,13 @@ crew_df <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/crew_food_pr
 # The if_else statement
 country <- "Brazil"
   
-if_else(country %in% c("United States America", "Canada", "Mexico"),
+if_else(country %in% c("United States", "Canada", "Mexico"),
         "North America",
         "Other")
 
 # Use mutate to add the region column
 crew_df <- crew_df %>%
-           mutate(region = if_else(country %in% c("United States America", "Canada", "Mexico"),
+           mutate(region = if_else(country %in% c("United States", "Canada", "Mexico"),
                                    "North America",
                                    "Other"))
 ```
@@ -494,7 +494,7 @@ crew_df <- crew_df %>%
 
 ### Cocoa powder shortage {-}
 
-Uh-oh. We need to identify the goodies that include cocoa powder. Similar to the previous example, we can use `%in%` to check if a person's `favorite_goody` is in a list of chocolate goodies.
+Uh-oh. Our cocoa is running low. We need to identify the goodies that include cocoa powder. Similar to the previous example, let's  use `%in%` to check if a person's `favorite_goody` is in a list of chocolate goodies and flag them as needing cocoa.
 
 ```{r, eval=F}
 # The if_else statement 
@@ -504,7 +504,7 @@ if_else(favorite_goody %in% c("brownies", "chocolate croissant"),
         "Needs cocoa",
         "No cocoa")
 
-# Use mutate to add a column
+# Use mutate to add the column cocoa_check
 crew_df <- crew_df %>%
            mutate(cocoa_check = if_else(favorite_goody %in% c("brownies", 
                                                               "chocolate croissant"),

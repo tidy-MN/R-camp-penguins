@@ -63,7 +63,7 @@
   "headline": "Day 2",
   "description" : "1 Data wrangling 2 Forks in the road: if_else \u002b case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst",
   "inLanguage" : "en",
-  "wordCount":  2051 ,
+  "wordCount":  2063 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -830,25 +830,25 @@ mark it - with the letter “B”.</p>
 </blockquote>
 <div id="regions" class="section level3 unnumbered">
 <h3>Regions</h3>
-<p>Let’s assign some countries to North America. We can use the <code>%in%</code> operator to check if a value is in a list. Below, we’ll check if a given country is in a list of some of the countries in North America. If it is, we’ll give the region a label of <em>North America</em>. And if it isn’t in the list, we’ll label the region as <em>Other</em>.</p>
+<p>Let’s assign some countries to North America. We can use the <code>%in%</code> operator to check if a value is in a list. Below, we’ll check if a given country is in a list of some of the countries in North America. If it is in the list, we’ll give the region a value of <code>"North America"</code>. But if it isn’t in the list, we’ll label the region as <code>"Other"</code>.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/crew_food_prefs.csv&quot;</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>  </span>
 <span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a><span class="co"># The if_else statement</span></span>
 <span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a>country <span class="ot">&lt;-</span> <span class="st">&quot;Brazil&quot;</span></span>
 <span id="cb36-5"><a href="#cb36-5" tabindex="-1"></a>  </span>
-<span id="cb36-6"><a href="#cb36-6" tabindex="-1"></a><span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States America&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
+<span id="cb36-6"><a href="#cb36-6" tabindex="-1"></a><span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
 <span id="cb36-7"><a href="#cb36-7" tabindex="-1"></a>        <span class="st">&quot;North America&quot;</span>,</span>
 <span id="cb36-8"><a href="#cb36-8" tabindex="-1"></a>        <span class="st">&quot;Other&quot;</span>)</span>
 <span id="cb36-9"><a href="#cb36-9" tabindex="-1"></a></span>
 <span id="cb36-10"><a href="#cb36-10" tabindex="-1"></a><span class="co"># Use mutate to add the region column</span></span>
 <span id="cb36-11"><a href="#cb36-11" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span></span>
-<span id="cb36-12"><a href="#cb36-12" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States America&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
+<span id="cb36-12"><a href="#cb36-12" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">if_else</span>(country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;United States&quot;</span>, <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Mexico&quot;</span>),</span>
 <span id="cb36-13"><a href="#cb36-13" tabindex="-1"></a>                                   <span class="st">&quot;North America&quot;</span>,</span>
 <span id="cb36-14"><a href="#cb36-14" tabindex="-1"></a>                                   <span class="st">&quot;Other&quot;</span>))</span></code></pre></div>
 </div>
 <div id="cocoa-powder-shortage" class="section level3 unnumbered">
 <h3>Cocoa powder shortage</h3>
-<p>Uh-oh. We need to identify the goodies that include cocoa powder. Similar to the previous example, we can use <code>%in%</code> to check if a person’s <code>favorite_goody</code> is in a list of chocolate goodies.</p>
+<p>Uh-oh. Our cocoa is running low. We need to identify the goodies that include cocoa powder. Similar to the previous example, let’s use <code>%in%</code> to check if a person’s <code>favorite_goody</code> is in a list of chocolate goodies and flag them as needing cocoa.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="co"># The if_else statement </span></span>
 <span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>favorite_goody <span class="ot">&lt;-</span> <span class="st">&quot;brownies&quot;</span></span>
 <span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a></span>
@@ -856,7 +856,7 @@ mark it - with the letter “B”.</p>
 <span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a>        <span class="st">&quot;Needs cocoa&quot;</span>,</span>
 <span id="cb37-6"><a href="#cb37-6" tabindex="-1"></a>        <span class="st">&quot;No cocoa&quot;</span>)</span>
 <span id="cb37-7"><a href="#cb37-7" tabindex="-1"></a></span>
-<span id="cb37-8"><a href="#cb37-8" tabindex="-1"></a><span class="co"># Use mutate to add a column</span></span>
+<span id="cb37-8"><a href="#cb37-8" tabindex="-1"></a><span class="co"># Use mutate to add the column cocoa_check</span></span>
 <span id="cb37-9"><a href="#cb37-9" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span></span>
 <span id="cb37-10"><a href="#cb37-10" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">cocoa_check =</span> <span class="fu">if_else</span>(favorite_goody <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;brownies&quot;</span>, </span>
 <span id="cb37-11"><a href="#cb37-11" tabindex="-1"></a>                                                              <span class="st">&quot;chocolate croissant&quot;</span>),</span>
