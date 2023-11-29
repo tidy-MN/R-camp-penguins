@@ -63,7 +63,7 @@
   "headline": "Summarize penguin populations",
   "description" : "Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.",
   "inLanguage" : "en",
-  "wordCount":  777 ,
+  "wordCount":  776 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -359,16 +359,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Since the dataset is included in the package itself, we don’t need to read in a csv from the web or from our computer folders. Many R packages include datasets so that you can test the functions included in them. <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">Here</a> is a website with packages that include 1000s of datasets! Once you have loaded your R package that contains a dataset, you can pull that dataset into your environment by giving the dataset an object name. If you are ever wondering if a package includes a practice data set, just run this code to get a list of the datasets <code>data(package='palmerpenguins')</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span></code></pre></div>
 </div>
-<div id="compare-flipper-lengths" class="section level3">
-<h3>Compare flipper lengths</h3>
+</div>
+<div id="compare-flipper-lengths" class="section level2">
+<h2>Compare flipper lengths</h2>
 <p>The <code>group_by</code> and <code>summarize</code> functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. <code>data_summary &lt;-</code>, or you can avoid the name and have your summary information printed into the console. Now that you have your penguin data, please create a dataset that summarizes the flipper lengths of the penguin populations by species. Please make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species has the shortest flippers?</li>
 <li>Is there a flipper length range that includes all three penguin species?</li>
 </ol>
-</div>
-<div id="grouped-summarize" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize</h3>
+<div id="flipper-summary" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Flipper summary</h3>
 <ul class="nav nav-pills" id="myTab0" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="description0-tab" data-toggle="tab" href="#description0" role="tab" aria-controls="description0" aria-selected="true">Description</a>
@@ -404,16 +404,16 @@ penguins %>%
 </div>
 </div>
 </div>
-<div id="compare-weights" class="section level3">
-<h3>Compare weights</h3>
+</div>
+<div id="compare-weights" class="section level2">
+<h2>Compare weights</h2>
 <p>Now we are interested in how much penguins weigh by species AND island. You can do this using the <code>group_by</code> function on more than one variable. Here’s your task: Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights for each group.</p>
 <ol style="list-style-type: decimal">
 <li>Which penguin species is the heaviest?</li>
 <li>On which island are Adelie penguins the heaviest?</li>
 </ol>
-</div>
-<div id="grouped-multiple-summarize" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped multiple summarize</h3>
+<div id="weight-summary" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Weight summary</h3>
 <ul class="nav nav-pills" id="myTab42" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="description42-tab" data-toggle="tab" href="#description42" role="tab" aria-controls="description42" aria-selected="true">Description</a>
@@ -453,8 +453,9 @@ penguins %>%
 </div>
 </div>
 </div>
-<div id="compare-penguin-bills" class="section level3">
-<h3>Compare penguin bills</h3>
+</div>
+<div id="compare-penguin-bills" class="section level2">
+<h2>Compare penguin bills</h2>
 <p>Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, <code>group_by</code> lets this happen as long as your data allow it.</p>
 <p>In this final exercise, we want you to create a dataset that summarizes the bill lengths and bill depths of the penguin populations by species, sex, and island. Calculate the mean bill lengths and bill depths of each group.</p>
 <ol style="list-style-type: decimal">
@@ -462,9 +463,8 @@ penguins %>%
 <li>Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills also have the shallowest bills?</li>
 <li>From the table, would you assume bill size is most associated with species, sex, or island?</li>
 </ol>
-</div>
-<div id="grouped-summarize-x3" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize X3</h3>
+<div id="bill-summary" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Bill summary</h3>
 <ul class="nav nav-pills" id="myTab13" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
 <a class="nav-link" id="description13-tab" data-toggle="tab" href="#description13" role="tab" aria-controls="description13" aria-selected="true">Description</a>
@@ -478,8 +478,8 @@ penguins %>%
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
 <div id="description13" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description13-tab">
-<p><b> First use group_by() to group the data by species, island, and sex, AND THEN use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument <code>na.rm = TRUE</code>. Store the result in the new table “bill_summary”. </b></p>
-<p><br></p>
+<p><b> First use group_by() to group the data by species, island, and sex, AND THEN use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument <code>na.rm = TRUE</code>.</p>
+<p>Store the result in a new table named <code>bill_summary</code>. </b></p>
 </div>
 <div id="showhint13" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint13-tab">
 <pre class="sourceCode r">
@@ -495,8 +495,10 @@ bill_summary <- penguins %>%
 <pre class="sourceCode r">
 bill_summary <- penguins %>%
                   group_by(species, island, sex) %>%
-                  summarize(mean_bill_depth  = mean(bill_depth_mm, na.rm = TRUE),
-                            mean_bill_length = mean(bill_length_mm, na.rm = TRUE)) 
+                  summarize(mean_bill_depth  = mean(bill_depth_mm, 
+                                                      na.rm = TRUE),
+                            mean_bill_length = mean(bill_length_mm, 
+                                                      na.rm = TRUE)) 
             
 </pre>
 </div>

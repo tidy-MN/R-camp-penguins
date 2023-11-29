@@ -36,7 +36,9 @@ Since the dataset is included in the package itself, we don't need to read in a 
 penguins <- penguins
 ```
 
-### Compare flipper lengths
+
+
+## Compare flipper lengths
 
 The `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. `data_summary <-`, or you can avoid the name and have your summary information printed into the console. Now that you have your penguin data, please create a dataset that summarizes the flipper lengths of the penguin populations by species. Please make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
 
@@ -46,7 +48,7 @@ The `group_by` and `summarize` functions allow us to compare values by categorie
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Flipper summary {-}
 
 ```{r, results='asis', echo=F}
 source("../insert_tabs.R")
@@ -80,7 +82,7 @@ cat(paste0(tab_html, collapse = "\n"))
 </div>
 
 
-### Compare weights
+## Compare weights
 
 Now we are interested in how much penguins weigh by species AND island. You can do this using the `group_by` function on more than one variable. Here's your task: Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights for each group. 
 
@@ -90,7 +92,7 @@ Now we are interested in how much penguins weigh by species AND island. You can 
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped multiple summarize {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Weight summary {-}
 
 ```{r, results='asis', echo=F}
 source("../insert_tabs.R")
@@ -129,7 +131,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 
 
-### Compare penguin bills
+## Compare penguin bills
 
 Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, `group_by` lets this happen as long as your data allow it. 
 
@@ -141,16 +143,16 @@ In this final exercise, we want you to create a dataset that summarizes the bill
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Grouped summarize X3 {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Bill summary {-}
 
 ```{r, results='asis', echo=F}
 source("../insert_tabs.R")
 
 tabs <- c("Description", "Show hint", "Show code")
 
-content <- c(Exercise = '<b> First use group_by() to group the data by species, island, and sex, AND THEN use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument `na.rm = TRUE`. Store the result in the new table "bill_summary". </b>
+content <- c(Exercise = '<b> First use group_by() to group the data by species, island, and sex, AND THEN use summarize() to add new columns for the mean bill depth and bill length. Ignore the NA values with the argument `na.rm = TRUE`. 
 
-<br>',
+Store the result in a new table named `bill_summary`. </b>',
 
 show_hint = 'code_start
 # Remember to account for NA values in your summary functions
@@ -164,8 +166,10 @@ code_end',
 show_code = 'code_start
 bill_summary <- penguins %>%
                   group_by(species, island, sex) %>%
-                  summarize(mean_bill_depth  = mean(bill_depth_mm, na.rm = TRUE),
-                            mean_bill_length = mean(bill_length_mm, na.rm = TRUE)) 
+                  summarize(mean_bill_depth  = mean(bill_depth_mm, 
+                                                      na.rm = TRUE),
+                            mean_bill_length = mean(bill_length_mm, 
+                                                      na.rm = TRUE)) 
             
 code_end')
 
