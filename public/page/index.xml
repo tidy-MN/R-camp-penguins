@@ -6,16 +6,7 @@
     <description>Recent content in Pages on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/page/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>test tabs</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/tab_test.html</link>
-      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/tab_test.html</guid>
-      <description> Top summarize(monsters, age_avg = mean(age)) Tab1 summarize(monsters, ) Tab 2 summarize(monsters, ) Tab3 summarize(monsters, ) Over and out </description>
-    </item>
-    
+    <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sf is for birds</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/sf.html</link>

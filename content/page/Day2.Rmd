@@ -496,7 +496,8 @@ if_else(favorite_goody %in% c("brownies", "chocolate croissant"),
 
 # Use mutate to add a column
 crew_df <- crew_df %>%
-           mutate(cocoa_check = if_else(favorite_goody %in% c("brownies", "chocolate croissant"),
+           mutate(cocoa_check = if_else(favorite_goody %in% c("brownies", 
+                                                              "chocolate croissant"),
                                         "Needs cocoa",
                                         "No cocoa")
 ```

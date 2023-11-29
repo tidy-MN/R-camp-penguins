@@ -852,9 +852,10 @@ mark it - with the letter “B”.</p>
 <span id="cb37-5"><a href="#cb37-5" tabindex="-1"></a></span>
 <span id="cb37-6"><a href="#cb37-6" tabindex="-1"></a><span class="co"># Use mutate to add a column</span></span>
 <span id="cb37-7"><a href="#cb37-7" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> crew_df <span class="sc">%&gt;%</span></span>
-<span id="cb37-8"><a href="#cb37-8" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">cocoa_check =</span> <span class="fu">if_else</span>(favorite_goody <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;brownies&quot;</span>, <span class="st">&quot;chocolate croissant&quot;</span>),</span>
-<span id="cb37-9"><a href="#cb37-9" tabindex="-1"></a>                                        <span class="st">&quot;Needs cocoa&quot;</span>,</span>
-<span id="cb37-10"><a href="#cb37-10" tabindex="-1"></a>                                        <span class="st">&quot;No cocoa&quot;</span>)</span></code></pre></div>
+<span id="cb37-8"><a href="#cb37-8" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">cocoa_check =</span> <span class="fu">if_else</span>(favorite_goody <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;brownies&quot;</span>, </span>
+<span id="cb37-9"><a href="#cb37-9" tabindex="-1"></a>                                                              <span class="st">&quot;chocolate croissant&quot;</span>),</span>
+<span id="cb37-10"><a href="#cb37-10" tabindex="-1"></a>                                        <span class="st">&quot;Needs cocoa&quot;</span>,</span>
+<span id="cb37-11"><a href="#cb37-11" tabindex="-1"></a>                                        <span class="st">&quot;No cocoa&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 </div>

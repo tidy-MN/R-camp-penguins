@@ -125,35 +125,39 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - Notes and code examples
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day3/03-1-Plots-graphics-grammar.html#1)
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- [ggplot - Exercise 1](page/exercise/day3/3-1-ggplot_exercises.html)
-- [ggplot - Exercise 2](page/exercise/day3/3-2-ggplot_exercises.html)
-
-</div> 
-
-<div class="tab-pane fade" id="day4" role="tabpanel" aria-labelledby="day4-tab">   
-
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
-
-- [Date mischief and data joins](page/exercise/day4/04-1-date-mischief-and-data-joins.html)
-
+- [Exercise 1 - ggplot](page/exercise/day3/3-1-ggplot_exercises.html)
+- [Exercise 2 - ggplot](page/exercise/day3/3-2-ggplot_exercises.html)
 
 </div> 
 
-<div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">  
-
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.1 - </span> Intro to Maps
-
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.2 - </span> Welcome to `sf`
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Map exercises
+<div class="tab-pane fade" id="day4" role="tabpanel" aria-labelledby="day4-tab">  
 
-- [Homeward bound](page/exercise/day5/5_homeward_bound.html)
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.1 - </span> Intro to Maps
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.2 - </span> Welcome to `sf`
+
+
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+
+- [Homeward bound](page/exercise/day4/4_homeward_bound.html)
+
+</div> 
+
+
+
+<div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">   
+
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+
+- [Date mischief and data joins](page/exercise/day5/05-1-date-mischief-and-data-joins.html)
 
 
 </div> 
+
 
 
 <div class="tab-pane fade" id="day6" role="tabpanel" aria-labelledby="day6-tab"> 

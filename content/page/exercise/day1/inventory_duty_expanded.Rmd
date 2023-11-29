@@ -63,12 +63,14 @@ Here are a few general steps to follow when you receive a file in an unknown for
 
 > A delimiter is a sequence of one or more characters for specifying the boundary between independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the `:` used to separate parts of the time, such as in 03:30. 
 >  
-> [Wikipedia](https://en.wikipedia.org/wiki/Delimiter)
+> *Ref: [Wikipedia](https://en.wikipedia.org/wiki/Delimiter)*
 
-```{r}
+```{r, tidy=TRUE}
 library(tidyverse)
 
-audit_df <- read_delim("https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt")
+url <- "https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt"
+
+audit_df <- read_delim(url)
 ```
 
 # Getting to know the data
