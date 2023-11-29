@@ -259,7 +259,8 @@ allergy_crew_df <- filter(crew_df, n_allergies > 0)
 > You know, it'd be great if we could split the crew into groups based on how long they were going to be onboard the ship. Sounds like it's time to expand our data toolbox...
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Forks in the road: `if_else` + `case_when`](videos/day2/02-2-fork-in-the-road)
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Forks in the road: `if_else` + `case_when`](videos/day2/02-2-forks-in-the-road)
+
 
 ## `if_else( )` {-}
 
