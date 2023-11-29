@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Exercise 1: filtering data
 
-The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.
+The goal of this exercise is to pare down a dataset using the filter function multiple times until you only have one row of data left. This game is a throw back to those days on long road trips when you were down to one last game... the game of Guess Who. You were BORED because you had already played all the games, done all the puzzles, noone would stop for snacks, and you were still miles from home. So you began, Am I bigger than a bread box? Am I the color green? In this exercise you are writing code to winnow down the list of possibilities. FUN STUFF! Pre-hint - if you are new to R, you might want to begin by using multiple lines of code, but in the end you will able to write this in only one filter function with multiple criteria within.
 
-Using the `penguins` dataset in the `palmerpenguins` package, isolate a penguin who meets one of the following sets of criteria. What is its study number?
+Using the `penguins` dataset in the `palmerpenguins` package, use the filter function multiple times to find the penguin that meets one of the following sets of criteria. What is its study number?
 
 1. I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.
 1. I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm long, but my flippers are less than 20cm long. 
@@ -48,7 +48,7 @@ For a greater challenge, try to isolate these penguins.
 
 ## Exercise 2: using case_when
 
-Select the same penguin that you selected above. Create a new variable using case_when that uses the criteria provided to identify your selected penguin and only your selected penguin in your dataset.
+Select the same penguin that you selected above. Create a new TRUE/FALSE variable using case_when that uses the criteria provided to identify your selected penguin and only your selected penguin as *TRUE*. This time your answer will be available as a variable in your dataset.
 
 <details>
 <summary>**CODE HINT**</summary>
