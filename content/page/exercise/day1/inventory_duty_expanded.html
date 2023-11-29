@@ -115,11 +115,13 @@ hr {background:  cornflowerblue;}
 <p><strong>Side-bar discussion: What is a delimiter?</strong></p>
 <blockquote>
 <p>A delimiter is a sequence of one or more characters for specifying the boundary between independent regions in plain text, mathematical expressions or other data streams. An example of a delimiter is the comma character, which acts as a field delimiter in a sequence of comma-separated values. Another example of a delimiter is the <code>:</code> used to separate parts of the time, such as in 03:30.</p>
-<p><a href="https://en.wikipedia.org/wiki/Delimiter">Wikipedia</a></p>
+<p><em>Ref: <a href="https://en.wikipedia.org/wiki/Delimiter">Wikipedia</a></em></p>
 </blockquote>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>audit_df <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt&quot;</span>)</span></code></pre></div>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>audit_df <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(url)</span></code></pre></div>
 </div>
 <div id="getting-to-know-the-data" class="section level1">
 <h1>Getting to know the data</h1>
@@ -142,23 +144,23 @@ hr {background:  cornflowerblue;}
 <p>Our first task it to make sure that each ingredient has a category. Let’s start by determining if anything <em>doesn’t</em> have a category.</p>
 <div id="category-missing" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Category: Missing</h3>
-<ul class="nav nav-pills" id="myTab8254" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab1284" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="categoryisna8254-tab" data-toggle="tab" href="#categoryisna8254" role="tab" aria-controls="categoryisna8254" aria-selected="true">Category is NA</a>
+<a class="nav-link" id="categoryisna1284-tab" data-toggle="tab" href="#categoryisna1284" role="tab" aria-controls="categoryisna1284" aria-selected="true">Category is NA</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8254-tab" data-toggle="tab" href="#showhint8254" role="tab" aria-controls="showhint8254" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint1284-tab" data-toggle="tab" href="#showhint1284" role="tab" aria-controls="showhint1284" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8254-tab" data-toggle="tab" href="#showcode8254" role="tab" aria-controls="showcode8254" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode1284-tab" data-toggle="tab" href="#showcode1284" role="tab" aria-controls="showcode1284" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="categoryisna8254" class="tab-pane fade active in" role="tabpanel" aria-labelledby="categoryisna8254-tab">
+<div id="categoryisna1284" class="tab-pane fade active in" role="tabpanel" aria-labelledby="categoryisna1284-tab">
 <p><b> It can often be easier to look for the absence of something than the presence of something, in this case we want to identify all rows where Category is missing. </b></p>
 <p><br></p>
 </div>
-<div id="showhint8254" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8254-tab">
+<div id="showhint1284" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1284-tab">
 <pre class="sourceCode r">
 # What goes inside is.na() and what does is.na() do?
 
@@ -166,7 +168,7 @@ filter(audit_df, is.na( _____ ) )
 
 </pre>
 </div>
-<div id="showcode8254" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8254-tab">
+<div id="showcode1284" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1284-tab">
 <pre class="sourceCode r">
 
 filter(audit_df, is.na(CATEGORY))
@@ -195,28 +197,28 @@ filter(audit_df, is.na(CATEGORY))
 <p>Now for the finishing touch! Similar to Excel, we can now specify the location to update using matrix-style indices: [<code>Row number</code>, <code>Column position</code>]</p>
 <div id="writing-wrongs" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Writing wrongs</h3>
-<ul class="nav nav-pills" id="myTab3967" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab8069" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="updatingvalues3967-tab" data-toggle="tab" href="#updatingvalues3967" role="tab" aria-controls="updatingvalues3967" aria-selected="true">Updating values</a>
+<a class="nav-link" id="updatingvalues8069-tab" data-toggle="tab" href="#updatingvalues8069" role="tab" aria-controls="updatingvalues8069" aria-selected="true">Updating values</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint3967-tab" data-toggle="tab" href="#showhint3967" role="tab" aria-controls="showhint3967" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint8069-tab" data-toggle="tab" href="#showhint8069" role="tab" aria-controls="showhint8069" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode3967-tab" data-toggle="tab" href="#showcode3967" role="tab" aria-controls="showcode3967" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode8069-tab" data-toggle="tab" href="#showcode8069" role="tab" aria-controls="showcode8069" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="updatingvalues3967" class="tab-pane fade active in" role="tabpanel" aria-labelledby="updatingvalues3967-tab">
+<div id="updatingvalues8069" class="tab-pane fade active in" role="tabpanel" aria-labelledby="updatingvalues8069-tab">
 <p><b> Now we have the row and column location of the missing value and the types of acceptable values that it should be, overwrite the NA with the new value you picked. </b></p>
 <p><br></p>
 </div>
-<div id="showhint3967" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3967-tab">
+<div id="showhint8069" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8069-tab">
 <pre class="sourceCode r">
 audit_df[ROW, COLUMN] <- INSERT VALUE HERE
 </pre>
 </div>
-<div id="showcode3967" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3967-tab">
+<div id="showcode8069" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8069-tab">
 <pre class="sourceCode r">
 
 audit_df[18, 2] <- "ADDITITIVES"
@@ -238,23 +240,23 @@ audit_df[18, "CATEGORY"] <- "ADDITITIVES"
 <p>We don’t want too much food laying around or it might spoil. Let’s use filter to check each of the ingredient stock values and see if any are more than 10 above its order threshold. We’ve got this!</p>
 <div id="not-on-my-watch" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Not on my watch!</h3>
-<ul class="nav nav-pills" id="myTab1065" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4773" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="overstock1065-tab" data-toggle="tab" href="#overstock1065" role="tab" aria-controls="overstock1065" aria-selected="true">Overstock</a>
+<a class="nav-link" id="overstock4773-tab" data-toggle="tab" href="#overstock4773" role="tab" aria-controls="overstock4773" aria-selected="true">Overstock</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint1065-tab" data-toggle="tab" href="#showhint1065" role="tab" aria-controls="showhint1065" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4773-tab" data-toggle="tab" href="#showhint4773" role="tab" aria-controls="showhint4773" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode1065-tab" data-toggle="tab" href="#showcode1065" role="tab" aria-controls="showcode1065" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4773-tab" data-toggle="tab" href="#showcode4773" role="tab" aria-controls="showcode4773" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="overstock1065" class="tab-pane fade active in" role="tabpanel" aria-labelledby="overstock1065-tab">
+<div id="overstock4773" class="tab-pane fade active in" role="tabpanel" aria-labelledby="overstock4773-tab">
 <p><b> Filter the audit dataset to find rows where the number of units in stock are more than 10 above the order threshold. </b></p>
 <p><br></p>
 </div>
-<div id="showhint1065" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1065-tab">
+<div id="showhint4773" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4773-tab">
 <pre class="sourceCode r">
 # Try doing some math in the filter function
 
@@ -262,7 +264,7 @@ filter(audit_df, SOMETHING_IS > ORDER_THRESHOLD + 10)
 
 </pre>
 </div>
-<div id="showcode1065" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1065-tab">
+<div id="showcode4773" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4773-tab">
 <pre class="sourceCode r">
 
 filter(audit_df, NUMBER_OF_UNITS_IN_STOCK > ORDER_THRESHOLD + 10)
@@ -307,29 +309,29 @@ filter(audit_df, NUMBER_OF_UNITS_IN_STOCK - ORDER_THRESHOLD > 10)
 <p>Enough about eggs! Let’s make our summary stats and wrap up this audit.</p>
 <div id="summary-stats" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Summary Stats</h3>
-<ul class="nav nav-pills" id="myTab938" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab5237" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="calcuatesummarystatistics938-tab" data-toggle="tab" href="#calcuatesummarystatistics938" role="tab" aria-controls="calcuatesummarystatistics938" aria-selected="true">Calcuate summary statistics</a>
+<a class="nav-link" id="calcuatesummarystatistics5237-tab" data-toggle="tab" href="#calcuatesummarystatistics5237" role="tab" aria-controls="calcuatesummarystatistics5237" aria-selected="true">Calcuate summary statistics</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint938-tab" data-toggle="tab" href="#showhint938" role="tab" aria-controls="showhint938" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint5237-tab" data-toggle="tab" href="#showhint5237" role="tab" aria-controls="showhint5237" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode938-tab" data-toggle="tab" href="#showcode938" role="tab" aria-controls="showcode938" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode5237-tab" data-toggle="tab" href="#showcode5237" role="tab" aria-controls="showcode5237" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="calcuatesummarystatistics938" class="tab-pane fade active in" role="tabpanel" aria-labelledby="calcuatesummarystatistics938-tab">
+<div id="calcuatesummarystatistics5237" class="tab-pane fade active in" role="tabpanel" aria-labelledby="calcuatesummarystatistics5237-tab">
 <p><b> Use the datasets that you made using filter to calculate summary statistics for each one and store them in another object (give it a good, descriptive name). </b></p>
 <p><br></p>
 </div>
-<div id="showhint938" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint938-tab">
+<div id="showhint5237" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5237-tab">
 <pre class="sourceCode r">
 liquid_summary <- summary(_______)
 dry_summary <- summary(_____)
 </pre>
 </div>
-<div id="showcode938" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode938-tab">
+<div id="showcode5237" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5237-tab">
 <pre class="sourceCode r">
 liquid_summary <- summary(liquid)
 dry_summary <- summary(dry)
