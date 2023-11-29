@@ -16,6 +16,17 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Before you start...
+
+Jump back into the project you created for the previous sessions exercises and then create a new R script. Save it as soon as you make it and give it a good name like `ex_1_day_2.R` or `cameron.R` and you'll be ready to go!
+
+# The story so far
+
+So remember that big order we had? For those researchers who were doing work in Antarctica studying penguins? Well it turns out their analytics computer broke down and they might not able to complete their work! They have some data and were planning to go out again to gather more information but now they might not be able to!
+
+So we might have told them that we could...well...we might have said that we were an...analytic bot. They were so excited that they hired us on the spot! But now we're in a sticky situation because we really need to prove to them that we have what it takes to do the work.
+
+Let's get practicing on using our data tools!
 
 ## Summarize the data on penguin populations
 
@@ -40,7 +51,7 @@ penguins <- penguins
 
 ## Compare flipper lengths
 
-The `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. `data_summary <-`, or you can avoid the name and have your summary information printed into the console. Now that you have your penguin data, please create a dataset that summarizes the flipper lengths of the penguin populations by species. Please make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
+The `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. `data_summary <-`, or you can avoid the name and have your summary information printed into the console. Now that we have our penguin data, lets create a dataset that summarizes the flipper lengths of the penguin populations by species. We gotta make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
 
 1. Which penguin species has the shortest flippers?
 1. Is there a flipper length range that includes all three penguin species?
@@ -84,7 +95,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 ## Compare weights
 
-Now we are interested in how much penguins weigh by species AND island. You can do this using the `group_by` function on more than one variable. Here's your task: Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights for each group. 
+Now we are interested in how much penguins weigh by species AND island. We can do this using the `group_by` function on more than one variable. Here's our task: Create a dataset that summarizes the weights of the penguin populations by species and island. Calculate the minimum, maximum, and mean weights for each group. 
 
 1. Which penguin species is the heaviest?
 1. On which island are Adelie penguins the heaviest?
@@ -135,7 +146,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, `group_by` lets this happen as long as your data allow it. 
 
-In this final exercise, we want you to create a dataset that summarizes the bill lengths and bill depths of the penguin populations by species, sex, and island. Calculate the mean bill lengths and bill depths of each group. 
+In this final exercise, let's create a dataset that summarizes the bill lengths and bill depths of the penguin populations by species, sex, and island. Calculate the mean bill lengths and bill depths of each group. 
 
 1. In general, do male and female bills tend to be the same length and depth? If not, how do they differ?
 1. Do the groups with the longest bills also have the deepest bills? Do the groups with the shortest bills also have the shallowest bills?
@@ -179,3 +190,9 @@ cat(paste0(tab_html, collapse = "\n"))
 ```
 
 </div>
+
+Great work! Let's keep at it while we start our to...ANTARTICA! TO SEE PENGUINS!
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 
