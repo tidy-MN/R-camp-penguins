@@ -7,6 +7,15 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Before you start...
+
+Jump back into the project you created for the previous sessions exercises and then create a new R script. Save it as soon as you make it and give it a good name like `ex_2_day_2.R` or `spencer.R` and you'll be ready to go!
+
+# Cruising right through!
+
+This is the life! Smell that sea-air! Feel that wind in your antenna. While a research vessel is no cruise ship, it's pretty nice when you're used to hot kitchens and stuffy backrooms that smell oddly like stale yogurt.
+
+The only problem is...what's a baking bot turned analytic bot supposed to do while we wait to get more data? We've already looked at the data...what if we get *bored*?
 
 ## Exercise 1: filtering data
 
