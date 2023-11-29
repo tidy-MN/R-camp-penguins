@@ -6,10 +6,18 @@ output: html_document
 
 
 
+<div id="before-you-start" class="section level1">
+<h1>Before you start…</h1>
+<p>Jump back into the project you created for the previous sessions exercises and then create a new R script. Save it as soon as you make it and give it a good name like <code>ex_2_day_2.R</code> or <code>spencer.R</code> and you’ll be ready to go!</p>
+</div>
+<div id="cruising-right-through" class="section level1">
+<h1>Cruising right through!</h1>
+<p>This is the life! Smell that sea-air! Feel that wind in your antenna. While a research vessel is no cruise ship, it’s pretty nice when you’re used to hot kitchens and stuffy backrooms that smell oddly like stale yogurt.</p>
+<p>The only problem is…what’s a baking bot turned analytic bot supposed to do while we wait to get more data? We’ve already looked at the data…what if we get <em>bored</em>?</p>
 <div id="exercise-1-filtering-data" class="section level2">
 <h2>Exercise 1: filtering data</h2>
-<p>The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.</p>
-<p>Using the <code>penguins</code> dataset in the <code>palmerpenguins</code> package, isolate a penguin who meets one of the following sets of criteria. What is its study number?</p>
+<p>The goal of this exercise is to pare down a dataset using the filter function multiple times until you only have one row of data left. This game is a throw back to those days on long road trips when you were down to one last game… the game of Guess Who. You were BORED because you had already played all the games, done all the puzzles, noone would stop for snacks, and you were still miles from home. So you began, Am I bigger than a bread box? Am I the color green? In this exercise you are writing code to winnow down the list of possibilities. FUN STUFF! Pre-hint - if you are new to R, you might want to begin by using multiple lines of code, but in the end you will able to write this in only one filter function with multiple criteria within.</p>
+<p>Using the <code>penguins</code> dataset in the <code>palmerpenguins</code> package, use the filter function multiple times to find the penguin that meets one of the following sets of criteria. What is its study number?</p>
 <ol style="list-style-type: decimal">
 <li>I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.</li>
 <li>I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm long, but my flippers are less than 20cm long.</li>
@@ -46,7 +54,7 @@ Remember to account for <code>NA</code> values.</p>
 </div>
 <div id="exercise-2-using-case_when" class="section level2">
 <h2>Exercise 2: using case_when</h2>
-<p>Select the same penguin that you selected above. Create a new variable using case_when that uses the criteria provided to identify your selected penguin and only your selected penguin in your dataset.</p>
+<p>Select the same penguin that you selected above. Create a new TRUE/FALSE variable using case_when that uses the criteria provided to identify your selected penguin and only your selected penguin as <em>TRUE</em>. This time your answer will be available as a variable in your dataset.</p>
 <details>
 <summary>
 <strong>CODE HINT</strong>
@@ -68,4 +76,5 @@ Remember to account for <code>NA</code> values.</p>
 </details>
 </details>
 </details>
+</div>
 </div>

@@ -7,6 +7,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 # Before you start...
 
 Jump back into the project you created for the previous sessions exercises and then create a new R script. Save it as soon as you make it and give it a good name like `ex_2_day_2.R` or `spencer.R` and you'll be ready to go!

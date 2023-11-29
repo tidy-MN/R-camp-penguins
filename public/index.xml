@@ -358,7 +358,7 @@ Before you start… Make sure you are still in your project that you created for
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html</guid>
-      <description>Exercise 1: filtering data The goal of this exercise is to filter a dataset using repeated filter commands until you only have one row of data left.</description>
+      <description>Before you start… Jump back into the project you created for the previous sessions exercises and then create a new R script.</description>
     </item>
     
     <item>
@@ -442,7 +442,7 @@ porg_data &amp;lt;- read_csv(&amp;quot;https://itep-r.netlify.com/data/Porg_samp
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/describe_penguin_populations.html</guid>
-      <description>Summarize the data on penguin populations The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations.</description>
+      <description>Before you start… Jump back into the project you created for the previous sessions exercises and then create a new R script.</description>
     </item>
     
     <item>
