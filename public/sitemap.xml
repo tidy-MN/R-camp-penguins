@@ -130,8 +130,6 @@
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/explore_gis_maps.html</loc>
   </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html</loc>
-  </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/tags/help.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/help.html</loc>
@@ -163,5 +161,7 @@
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/videos.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/_index2.html</loc>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/find_the_penguin.html</loc>
   </url>
 </urlset>
