@@ -1,0 +1,36 @@
+---
+title: "Day 2 Agenda"
+comments: false
+hidden: false
+tags: [day2]
+output: 
+  blogdown::html_page: 
+    self_contained: true
+    toc: false
+    toc_depth: 2
+---
+
+<br>
+
+> **WELCOME!**
+
+
+1. [Day 2 review quiz](https://forms.office.com/g/gy9GnD5fPL)
+    - Questions and other review topics
+1. Open your exercise R project
+    - Create an R script
+1. Exercise 1
+    - load `tidyverse` and `palmerpenguins`
+    - Use `group_by` and `summarize` functions
+    - Practice using functions like `mean`, `min`, and `max`
+
+**10-minute Break**
+
+4. Exercise 2: Who am I?
+    - Use all the tools in your datatool box!
+    - Use `filter` to play a game!
+    - Don't forget about `is.na` and `names`
+    - Challenge yourself with a `case_when`
+5. Question Time!
+
+<br><br>

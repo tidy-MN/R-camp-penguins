@@ -270,14 +270,14 @@ ggplot(all_penguins,
   geom_point(aes(color = island),
              size = 10, 
              alpha = 0.45) +
-  geom_text(aes(label = island)) +
+  geom_text(aes(label = island), size = 3) +
   lims(x = c(40, 55),
        y = c(200, 225))
 
 ```
 
 
-Now that is a beautiful plot. It sure looks like our lost penguins came from Biscoe island. 
+Now that is a beautiful masterpiece. And it sure looks like our lost penguins came from Biscoe island. 
 
 <br>
 
