@@ -63,7 +63,7 @@
   "headline": "Day 3",
   "description" : "1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece in 4 easy steps.",
   "inLanguage" : "en",
-  "wordCount":  1133 ,
+  "wordCount":  1137 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -371,10 +371,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>How to create a beautiful masterpiece in 4 easy steps.</p>
 <div id="load-some-data" class="section level2 unnumbered">
 <h2>1. Load some data</h2>
+<p><img src="../images/penguins_torn.png"></p>
+<p><br></p>
 <blockquote>
 <p>We stumbled upon a torn page from a field notebook with a few penguin observations. The only problem is the species and island information is torn off. Let’s use graphicial analysis to fill in the gaps for these lost penguins.</p>
 </blockquote>
-<p><img src="../images/penguins_torn.png"></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/torn_penguins.csv&quot;</span></span>
@@ -394,8 +395,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm))</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day3_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
-<div id="add-geom_s" class="section level2 unnumbered">
-<h2>4. Add <code>geom_*()</code>’s</h2>
+<div id="add-geoms" class="section level2 unnumbered">
+<h2>4. Add geom’s</h2>
 <p>Let’s start with <code>geom_point()</code>. This will create a scatterplot comparing the bill length to flipper length of the lost penguins.</p>
 <blockquote>
 <p><strong>NOTE</strong></p>
@@ -422,7 +423,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>good_penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code></pre></div>
 <p><br></p>
-<p>To view all the data in one plot, it helps to get the data into a single table. Let’s combine the good penguin data and the lost penguin data into one dataframe with the function <code>bind_rows()</code>. We pass this function the name of two dataframes, and then it returns a combined table with the first table’s rows appearing on top. Let’s call our combined table <code>"all_penguins"</code>.</p>
+</div>
+<div id="bind_rows" class="section level2 unnumbered">
+<h2><code>bind_rows()</code></h2>
+<p>It helps to have all our data in a single table when creating plots. Let’s combine the good penguin data and the lost penguin data into one dataframe with the function <code>bind_rows()</code>. We pass this function the name of two dataframes, and then it returns a combined table with the first table’s rows appearing on top. Let’s call our combined table <code>"all_penguins"</code>.</p>
 <p><strong>Combine / stack the two penguin tables with <code>bind_rows()</code></strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>all_penguins <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(good_penguins, lost_penguins)</span></code></pre></div>
 <p><br></p>
@@ -436,7 +440,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Oof! That is a lot of penguins.</p>
 <p><br></p>
 <blockquote>
-<p>The <code>alpha</code> argument is used to control the transparency of the points. Let’s set it to 0.25 (25%) to see if that helps view the data’s distribution better. The darker areas will show where there are more overlayed points on the plot, and will indicate that there’s a cluster of penguin observations with that combination of bill and flipper length.</p>
+<p>The <code>alpha</code> argument is used to control the transparency of the points. Let’s set it to 0.25 (25%) and see if that helps view the data’s distribution better. The darker areas will show where there are more overlayed points, which indicates that there is a cluster of penguin observations in that area with the same combination of bill and flipper length.</p>
 </blockquote>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
@@ -466,8 +470,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.45</span>)</span></code></pre></div>
 <p>Well then. It certainly looks like our lost penguins have flippers most similar to the Gentoo species.</p>
 </div>
-<div id="a-geom_-for-every-occasion" class="section level2 unnumbered">
-<h2>A <code>geom_*</code> for every occasion</h2>
+<div id="a-geom-for-every-occasion" class="section level2 unnumbered">
+<h2>A <code>geom</code> for every occasion</h2>
 <p>View the full list of geoms in the <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf"><em>ggplot cheatsheet</em></a>.</p>
 <p><img src="../images/geoms_1var.png"></p>
 <p><img src="../images/geoms_diagram.png" style="width: 97%;"></p>
@@ -477,7 +481,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Let’s use <code>geom_text()</code> to add a layer that makes the species clusters in our plot easier to pick out. It’s good practice to use something other than color changes to convey important information in your plots.</p>
 <p><br></p>
 <blockquote>
-<p>The <code>label =</code> argument inside the aes of <code>geom_text(aes())</code> is used to a. Remember the <code>+</code> sign!</p>
+<p>The <code>label =</code> argument used inside<code>geom_text()</code> tells ggplot which values to print on the plot. Remember the <code>+</code> sign when adding new layers!</p>
 </blockquote>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
 <span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
@@ -522,6 +526,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> island)) <span class="sc">+</span></span>
 <span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>  <span class="fu">lims</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">55</span>),</span>
 <span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">225</span>))</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Now that is a beautiful plot. It sure looks like our lost penguins came from Biscoe island.</p>
 <p><br></p>
 <blockquote>

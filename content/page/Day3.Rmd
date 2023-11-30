@@ -40,9 +40,14 @@ How to create a beautiful masterpiece in 4 easy steps.
 
 ## 1. Load some data {-}
 
-> We stumbled upon a torn page from a field notebook with a few penguin observations. The only problem is the species and island information is torn off. Let's use graphicial analysis to fill in the gaps for these lost penguins.
 
 <img src="../images/penguins_torn.png">
+
+<br>
+
+> We stumbled upon a torn page from a field notebook with a few penguin observations. The only problem is the species and island information is torn off. Let's use graphicial analysis to fill in the gaps for these lost penguins.
+
+
 
 ```{r, eval=T}
 library(tidyverse)
@@ -74,7 +79,7 @@ ggplot(lost_penguins,
 ```
 
 
-## 4. Add  `geom_*()`'s {-}
+## 4. Add geom's {-}
 
 Let's start with `geom_point()`. This will create a scatterplot comparing the bill length to flipper length of the lost penguins.
 
@@ -117,7 +122,10 @@ good_penguins <- read_csv(url)
 
 <br>
 
-To view all the data in one plot, it helps to get the data into a single table. Let's combine the good penguin data and the lost penguin data into one dataframe with the function `bind_rows()`. We pass this function the name of two dataframes, and then it returns a combined table with the first table's rows appearing on top. Let's call our combined table `"all_penguins"`.
+
+## `bind_rows()` {-}
+
+It helps to have all our data in a single table when creating plots. Let's combine the good penguin data and the lost penguin data into one dataframe with the function `bind_rows()`. We pass this function the name of two dataframes, and then it returns a combined table with the first table's rows appearing on top. Let's call our combined table `"all_penguins"`.
 
 **Combine / stack the two penguin tables with `bind_rows()`**
 ```{r, eval=T}
@@ -142,7 +150,7 @@ Oof! That is a lot of penguins.
 
 <br>
 
-> The `alpha` argument is used to control the transparency of the points. Let's set it to 0.25 (25%) to see if that helps view the data's distribution better. The darker areas will show where there are more overlayed points on the plot, and will indicate that there's a cluster of penguin observations with that combination of bill and flipper length.
+> The `alpha` argument is used to control the transparency of the points. Let's set it to 0.25 (25%) and see if that helps view the data's distribution better. The darker areas will show where there are more overlayed points, which indicates that there is a cluster of penguin observations in that area with the same combination of bill and flipper length.
 
 ```{r, eval=F}
 ggplot(all_penguins, 
@@ -188,7 +196,7 @@ ggplot(all_penguins,
 Well then. It certainly looks like our lost penguins have flippers most similar to the Gentoo species.
 
 
-## A `geom_*` for every occasion {-}
+## A `geom` for every occasion {-}
 
 View the full list of geoms in the [*ggplot cheatsheet*](https://rstudio.github.io/cheatsheets/data-visualization.pdf).
 
@@ -205,7 +213,7 @@ Let's use `geom_text()` to add a layer that makes the species clusters in our pl
 
 <br>
 
-> The `label = ` argument inside the aes of `geom_text(aes())` is used to a. Remember the `+` sign!
+> The `label = ` argument used inside`geom_text()` tells ggplot which values to print on the plot. Remember the `+` sign when adding new layers!
 
 ```{r, eval=F}
 ggplot(all_penguins, 
@@ -255,7 +263,7 @@ We can start with the code from our last plot, and simply swap in `island` colum
 
 > Island comparison
 
-```{r, eval=F}
+```{r, eval=T}
 ggplot(all_penguins, 
        aes(x = bill_length_mm, 
            y = flipper_length_mm)) +

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Learn R - Learn R</title>
+  <meta property="og:title" content="Learn R" />
+  <meta name="twitter:title" content="Learn R" />
+  <meta name="description" content="Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.">
+  <meta property="og:description" content="Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.">
+  <meta name="twitter:description" content="Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/videos\/day3\/plots_for_real_script.html",
+          "name": ""
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "",
+  "description" : "Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.",
+  "inLanguage" : "en",
+  "wordCount":  517 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/videos\/day3\/plots_for_real_script.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Learn R" />
+<meta property="og:description" content="Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/plots_for_real_script.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Learn R" />
+  <meta name="twitter:description" content="Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/plots_for_real_script.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/index.html">Home</a>
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  <div class="intro-header"></div>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="plots-for-real">Plots for Real</h1>
+<p><strong>Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.
+The penguins seems to be growing at an alarming rate which is expected to exceed all expectations and estimations.</strong></p>
+<p><strong>We are cutting live to our reporter Jane Francis who is currently on the scene - what can you tell us Jane?</strong></p>
+<p><em>Thank you Lois. We have direct quote from an eye-witness from the R/V Topsy-Scurvy that claims that the penguins are growing.
+In fact they have just shared some disturbing data with us that penguins growth appears to nearing the speed of light!
+This chart depicting mean bill length in mm showing the drastic increasing year on year was produced by the analytic bot on the R/V Topsy-Scurvy using
+<code>ggplot2</code> and I must say it looks highly professional.</em></p>
+<p><em>They&rsquo;ve even shared the code they used to create. I&rsquo;m here now with the an expert in the field of R programming who is good enough to explain this to us and the people watching at home.</em></p>
+<p><em>What can you tell us about this code and it&rsquo;s purpose Professor Cowells?</em></p>
+<p>Well as you can see the first thing they are doing, which is extremely smart by the way, is to call their libraries - including a fairly new one called <code>ggthemes</code>.</p>
+<p>Next we get into the meat of the code which created the graphic and I want to call you and your viewers attention to this line right here
+Notice the tight limits and the specification of the limts in the first place. Not starting your plots at 0 can often make them misleading
+If we change that line to go from 0 to 47.2 we go from this very extreme image to something much less worrisome.</p>
+<p>The other line of code that I noticed is the addition of the <code>geom_line</code>, by creating this red arrow showing the upward trajectory, it can be very alarming.
+I would recommend removing the line and letting the data speak for itself rather than forcing my opinion on others.</p>
+<p><em>Professor - would you comment on the use of labels to incite panic?</em></p>
+<p>Well, I don&rsquo;t think I would say that they incited a <em>panic</em> but they do lend themselves to exargeration, with a few small changes you should be able to get
+a much more reasonable title and subtitle. I also think the addtion of axis labels is a good habit to get into.</p>
+<p><em>What is your opinion on the addition of an extra library just for themes?</em></p>
+<p>There&rsquo;s nothing wrong with using packages, but I also think there are some excellent themes already available in ggplot such as <code>theme_bw</code> and <code>theme_minimal</code>
+Using built in themes can make plots easier for others to replicate since they won&rsquo;t need to install another package to run your code.</p>
+<p>There, a much more reasonable graphic of the data I would say.</p>
+<p><em>Thank you for that blow-by-blow assessment professor. You heard it here first folks - penguin bills are increasing at a very modest rate if at all. More local news starts at 8.</em></p>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
