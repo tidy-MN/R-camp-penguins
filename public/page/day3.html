@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Day 2 - Learn R</title>
+  <meta property="og:title" content="Day 2" />
+  <meta name="twitter:title" content="Day 2" />
+  <meta name="description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+  <meta property="og:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+  <meta name="twitter:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/day3.html",
+          "name": "Day 2"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "Day 2",
+  "description" : "1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.",
+  "inLanguage" : "en",
+  "wordCount":  1177 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/day3.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Day 2" />
+<meta property="og:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day3.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Day 2" />
+  <meta name="twitter:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day3.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/index.html">Home</a>
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Day 2</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="/R-camp-penguins/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
+
+<div id="TOC">
+<ul>
+<li><a href="#ggplot-a-grammar-of-graphics" id="toc-ggplot-a-grammar-of-graphics"><span class="toc-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> ggplot: A grammar of graphics</a></li>
+<li><a href="#ggplot-facets-colors-and-labels" id="toc-ggplot-facets-colors-and-labels"><span class="toc-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> ggplot: Facets, colors, and labels</a></li>
+</ul>
+</div>
+
+<style>
+h1 .header-section-number {background: #031718;}
+hr {background:  white;}
+</style>
+<p><link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
+<p><br></p>
+<div id="ggplot-a-grammar-of-graphics" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="videos/day3/03-1-ggplot.html">ggplot: A grammar of graphics</a></h1>
+<p>How to create a beautiful <del>plot</del> masterpiece - in 4 steps.</p>
+<div id="load-some-data" class="section level2 unnumbered">
+<h2>1. Load some data</h2>
+<blockquote>
+<p>We stumbled upon a torn page from a field notebook with a few penguin observations. The only problem is the species and island information is torn off. Let’s use graphicial analysis to fill in the gaps for these lost penguins.</p>
+</blockquote>
+<p><img src="../images/penguins_torn.png"></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/torn_penguins.csv&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>lost_penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code></pre></div>
+</div>
+<div id="start-a-blank-canvas" class="section level2 unnumbered">
+<h2>2. Start a blank canvas</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">ggplot</span>(lost_penguins)</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="add-aesthetics-with-aes" class="section level2 unnumbered">
+<h2>3. Add aesthetics with <code>aes()</code></h2>
+<p>Assign the <strong>X</strong> and <strong>Y</strong> axes inside the aesthetics.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">ggplot</span>(lost_penguins, </span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm))</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="add-geom_s" class="section level2 unnumbered">
+<h2>4. Add <code>geom_*()</code>’s</h2>
+<p>Let’s start with <code>geom_point()</code>. This will create a scatterplot comparing the bill length to flipper length of the lost penguins.</p>
+<blockquote>
+<p><strong>NOTE</strong></p>
+<p>Use a plus sign (<code>+</code>) to add more layers to your ggplot masterpiece. Similar to how the <code>%&gt;%</code> chains functions together, the <code>+</code> in ggplot stacks on more layers to your plot. If we were to say the <code>+</code> out loud, we could read it as <em>“take my plot and <b>ADD</b> X to it”</em>.</p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(lost_penguins, </span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><br></p>
+<blockquote>
+<p>Increase the size of the points with the argument <code>size =</code>. Let’s bump the size up to 10.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">ggplot</span>(lost_penguins, </span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><br></p>
+<p>Now that we’ve taken a quick look at the lost penguins, let’s bring in the rest of our penguin observations to see if we can determine where they best fit it the overall population.</p>
+<p><strong>Load the untorn penguins observations</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/untorn_penguins.csv&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>good_penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code></pre></div>
+<p><br></p>
+<p>To view all the data in one plot, it helps to get the data into a single table. Let’s combine the good penguin data and the lost penguin data into one dataframe with the function <code>bind_rows()</code>. We pass this function the name of two dataframes, and then it returns a combined table with the first table’s rows appearing on top. Let’s call our combined table <code>"all_penguins"</code>.</p>
+<p><strong>Combine / stack the two penguin tables with <code>bind_rows()</code></strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>all_penguins <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(good_penguins, lost_penguins)</span></code></pre></div>
+<p><br></p>
+<blockquote>
+<p>Update our scatterplot to use the <code>all_penguins</code> data.</p>
+</blockquote>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>Oof! That is a lot of penguins.</p>
+<p><br></p>
+<blockquote>
+<p>The <code>alpha</code> argument is used to control the transparency of the points. Let’s set it to 0.25 (25%) to see if that helps view the data’s distribution better. The darker areas will show where there are more overlayed points on the plot, and will indicate that there’s a cluster of penguin observations with that combination of bill and flipper length.</p>
+</blockquote>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">10</span>, </span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.25</span>)</span></code></pre></div>
+<p><br></p>
+<blockquote>
+<p>Let’s color the points by the <code>species</code> column in the data and see if the clusters are related to penguin species. We can bump up the alpha value to better see the individual “missing” species penguins.</p>
+</blockquote>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">10</span>, </span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.45</span>)</span></code></pre></div>
+<p>Looks like the clusters are species related! And even better news, our lost penguins appear to all be chilling up top with the Gentoo cluster.</p>
+<p><br></p>
+<blockquote>
+<p>As another visual check for the “missing” penguin species, let’s set the X-axis to the <code>species</code> column to more clearly see how the flippers length of our lost penguins stack up against each of the three species.</p>
+</blockquote>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> species, </span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">10</span>, </span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.45</span>)</span></code></pre></div>
+<p>Well then. It certainly looks like our lost penguins have flippers most similar to the Gentoo species.</p>
+</div>
+<div id="a-geom_-for-every-occasion" class="section level2 unnumbered">
+<h2>A <code>geom_*</code> for every occasion</h2>
+<p>View the full list of geoms in the <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf"><em>ggplot cheatsheet</em></a>.</p>
+<p><img src="../images/geoms_1var.png"></p>
+<p><img src="../images/geoms_diagram.png" style="width: 97%;"></p>
+</div>
+<div id="geom_text" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> <code>geom_text()</code></h2>
+<p>Let’s use <code>geom_text()</code> to add a layer that makes the species clusters in our plot easier to pick out. It’s good practice to use something other than color changes to convey important information in your plots.</p>
+<p><br></p>
+<blockquote>
+<p>The <code>label =</code> argument inside the aes of <code>geom_text(aes())</code> is used to a. Remember the <code>+</code> sign!</p>
+</blockquote>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">10</span>, </span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.45</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> species)) </span></code></pre></div>
+<p>Now, that’s a bit too busy to pick out where the missing species penguins are. I wonder if there is a way to zoom in on them in the chart?</p>
+</div>
+<div id="lims" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> <code>lims()</code></h2>
+<p>The <code>lims()</code> or limits function is used to set the boundaries of the X and Y axes. This can be helpful to zoom in on an area, or to force multiple charts to have the same axes range regardless of their values. Let’s use <code>lims()</code> to zoom in on the upper right portion of our chart. We can set the X-axis to focus on the upper range of bill lengths, let’s say <em>(40, 55)</em>, and set the Y-axis limit to focus on the upper range of flipper lengths, say <em>(200, 225)</em>.</p>
+<p><br></p>
+<blockquote>
+<p>The X and Y limit range is placed inside our old friend the <code>c(min_value, max_value)</code> vector. The first value will be used for the minimum of the axis and the second value will be used for the maximum.</p>
+</blockquote>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species),</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">10</span>, </span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.45</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> species)) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>  <span class="fu">lims</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">55</span>),</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">225</span>))</span></code></pre></div>
+</div>
+<div id="island-plot" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Island plot</h2>
+<p>Now let’s make an entire new plot that compares bill length and flipper length for each of the islands. Shucks, do we have to start all over? Nope! It’s time for some <strong>code magic</strong>.</p>
+<p>We can start with the code from our last plot, and simply swap in <code>island</code> column for <code>species</code>. Voila!</p>
+<p><br></p>
+<blockquote>
+<p>Island comparison</p>
+</blockquote>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">ggplot</span>(all_penguins, </span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>           <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> island),</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">10</span>, </span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.45</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> island)) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>  <span class="fu">lims</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">55</span>),</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">225</span>))</span></code></pre></div>
+<p>Now that is a beautiful plot. It sure looks like our lost penguins came from Biscoe island.</p>
+<p><br></p>
+<blockquote>
+<p>Good work! The lost penguin saga has come to a close. The three Gentoo penguins from Biscoe island can now safely join the rest of the penguin population.</p>
+</blockquote>
+</div>
+<div id="ggplot-glossary" class="section level2 unnumbered">
+<h2>ggplot glossary</h2>
+<p><strong>Common aesthetics used in <code>aes()</code></strong></p>
+<div class="line-block">aes() | | Description |</div>
+<p>|:————–| |:—————|<br />
+| <code>x =</code> | | X-axis values |
+| <code>y =</code> | | Y-axis values |
+| <code>size =</code> | | The size of the point, column or line |
+| <code>alpha =</code> | | The transparency of the object (0.25 equates to 25%) |<br />
+| <code>fill =</code> | | The fill color of a column or area (points and lines do not have fill) |<br />
+| <code>color =</code> | | The color for points and lines, the <strong>outline</strong> color for columns and areas |<br />
+| <code>linetype =</code> | | The type of line to use. Examples include <code>solid</code>, <code>dotted</code>, <code>dashed</code> and more |
+| <code>shape =</code> | | The shape for points. The default is a solid circle there are diamonds, squares and more |</p>
+<p><br></p>
+<blockquote>
+<p>View more details and the aesthetics used for each geom in the <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf"><em>ggplot cheatsheet</em></a>.</p>
+</blockquote>
+</div>
+</div>
+<div id="ggplot-facets-colors-and-labels" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> ggplot: Facets, colors, and labels</h1>
+<p><em>Coming soon…</em></p>
+<div id="jump-to-the-top" class="section level3 unnumbered">
+<h3><i class="fas fa-carrot"> </i> <a href="../page/day3.html">Jump to the top</a></h3>
+<p><br></p>
+</div>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,8 +1,8 @@
 ---
-title: "Day 2 - AM"
+title: "Day 2"
 output: 
   blogdown::html_page: 
-    toc: true
+    toc: true   
     toc_depth: 1
     highlight: tango
     css: css/camp_style.css
@@ -12,326 +12,297 @@ output:
     monofont: Source Code Pro
 ---
 
+
 <style>
-h1 .header-section-number {background: #62BE2C;}
-hr {background: #62BE2C;}
+h1 .header-section-number {background: #031718;}
+hr {background:  white;}
 </style>
 
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
-knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE, eval=F)
+
 xaringanExtra::use_clipboard()
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
-## Good morning, Jedis! {-}
-<hr class="hrlvl2">
-
-![](../images/day2_bb8_sq.png){width="260" style="float: left; margin-right: 60px; margin-top: -10px;"}
+<br>
 
 
-<div style="clear: both;"></div>
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [ggplot: A grammar of graphics](videos/day3/03-1-ggplot.html)
 
 
-# Review - New project
-<hr>
+How to create a beautiful ~~plot~~ masterpiece - in 4 steps. 
 
-```{r rev-proj, child='../../static/modules/_example_7steps/ozone_review_simple.Rmd'}
-```
 
-## Porg review {-}
-<hr class="hrlvl2">
+## 1. Load some data {-}
 
-The _poggle_ of porgs has returned to help review the `dplyr` functions. Follow along by reading the __porgs__ data from the URL below.
+> We stumbled upon a torn page from a field notebook with a few penguin observations. The only problem is the species and island information is torn off. Let's use graphicial analysis to fill in the gaps for these lost penguins.
 
-```{r, eval = F}
+<img src="../images/penguins_torn.png">
+
+```{r, eval=T}
 library(tidyverse)
 
-porgs <- read_csv("https://rcamp.netlify.com/data/porg_data.csv")
+url <- "https://tidy-mn.github.io/R-camp-penguins/data/torn_penguins.csv"
+
+lost_penguins <- read_csv(url)
 ```
 
-<br>
 
-```{r porg-tabs, results='asis', echo=F}
-cat(readLines("porg_tabs.txt"))
+## 2. Start a blank canvas {-}
+
+```{r, eval=T}
+ggplot(lost_penguins)
+
 ```
 
-<br>
+
+## 3. Add aesthetics with `aes()` {-}
+
+Assign the **X** and **Y** axes inside the aesthetics.
 
 
-> ### Wait.... __So where's Finn?__ {-}
+```{r, eval=T}
+ggplot(lost_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm))
+
+```
+
+
+## 4. Add  `geom_*()`'s {-}
+
+Let's start with `geom_point()`. This will create a scatterplot comparing the bill length to flipper length of the lost penguins.
+
+> **NOTE**
 >
+> Use a plus sign (`+`) to add more layers to your ggplot masterpiece. Similar to how the `%>%` chains functions together, the `+` in ggplot stacks on more layers to your plot. If we were to say the `+` out loud, we could read it as *"take my plot and <b>ADD</b> X to it"*.
 
+```{r, eval=T}
+ggplot(lost_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point()
 
-# Finn needs us! {-}
-
-Turn this ship around BB8, Finn needs us back on Jakku. We're going to have to get better at our roll call procedure. Here we come Finn.  __Blast off!__ 
-
-![](../images/finn_run.gif){style="margin-left: 18%; width: 60%; margin-top: 6px;"}
-
-
-# Jakku re-visited
-<hr>
-
-Okay, so we're back on this ol' dust bucket planet. Let's try not to forget anyone this time. Data droid, let me know if anyone goes missing. 
-
-```{r convert-tbl, child='../../static/modules/ton_conversion_tbl.Rmd'}
-```
-
-
-# Join tables with **left_join**
-<hr>
-```{r intro-join, child='../../static/modules/dplyr/dplyr_leftjoin/intro_scrap.Rmd'}
-```
-
-```{r porg-join, child='../../static/modules/dplyr/dplyr_leftjoin/porg_names.Rmd'}
-```
-
-```{r c3po-join, child='../../static/modules/dplyr/dplyr_leftjoin/c3po_xtra_rows.Rmd'}
-```
-
-
-## Back to the scrap yard {-}
-<hr class="hrlvl2">
-```{r join-convert, child='../../static/modules/dplyr/dplyr_leftjoin/convert_&_scrap.Rmd'}
-```
-
-```{r calc-lbs-item, child='../../static/modules/dplyr/dplyr_mutate/pounds_per_scrap.Rmd'}
-```
-
-
-
-# `summarize()`
-<hr>
-```{r summarize, child='../../static/modules/dplyr/dplyr_summarize/summarize.Rmd'}
-```
-
-
-# `group_by()` category
-<hr>
-
-`group_by()` gives us the power to calculate separate results for each category in the data. This could be the average concentration at each of your monitoring sites, or the total emissions of a pollutant from each facility or stack.
-
-```{r group-by, child='../../static/modules/dplyr/dplyr_groupby/groupby_nopipe.Rmd'}
-```
-
-
-
-## Save results {-}
-```{r save2pm}
-write_csv(scrap, "results/scrap_day2.csv")
-```
- 
- 
-# A sickness grows... 
-<hr>
-
-> **Your turn!** Practicing joining and summarizing
-
-
-<style>
-
-.button-dl {
-    padding: 7px;
-    padding-right: 15px;
-    padding-left: 14px;
-    color: #254d67;
-    background-color: #e8e8e8;
-    margin-left: 12px;
-    margin-top: 16px;
-    margin-bottom: 6px;
-    position: relative;
-    z-index: 99;
-    border-color: #a3b6c6;
-    border-width: 1px;
-    border-radius: 2px;
-}
-</style>
-
-
-A sickness is spreading throughout the galaxy. To slow its spread should we restrict travel to some planets? Or is it too late?
-   
-   
-Follow the steps below to collect the current disease records and summarize cases by planet. To do so, you'll need to join the disease records to a separate table with the planet information. 
-  
-
-```{r, echo=F, eval=F}
-library(tidyverse)
-
-# Generate the disease records
-people <- starwars
-
-n_rows <- 333
-
-records <- tibble(date = sample(seq.Date(as.Date("2018-01-01"), as.Date("2023-01-01"), 1), n_rows, replace = T),
-                  caseid = sample(111111:999999, n_rows),
-                  name = people %>% filter(!is.na(homeworld)) %>% .$name %>% sample(33) %>% sample(n_rows-1, replace = T) %>% c(., "Rey"),
-                  status = sample(1:3, n_rows, replace = T))
-
-joined <- left_join(records, people)
-
-joined <- group_by(joined, homeworld)
-
-a <- summarize(joined, total = n()) %>% arrange(-total)
-
-writexl::write_xlsx(records, "data/disease_records.xlsx")
-write_csv(records, "data/disease_records.csv")
-```
-  
-### Create a new project {-}
-
-Go to `File` > `New Project...` > `New Directory` > `New Project`
-
-- Name the project `sickness`
-
-
-## Get the disease data {-}
-  
-<a href="https://mn-r.netlify.app/data/disease_records.xlsx"><button class="button-dl" download="disease_records.xlsx">
-Download (XLSX) &nbsp; <i class="fa fa-download"></i>
-</button></a>  
-  
-Click the button above to download the Excel file *disease_records.xlsx*    
-
-- Save the file to your project folder 
-
-If the file was automatically downloaded to your *Downloads* folder, move or copy the file to your project folder. 
-  
-  
-### Load the data {-}
-
-> Create a new R script and save it as *disease_report.R*
-
-To load the data, use `read_xlsx()` from the `readxl` library to load the disease data into R. Add the code below to your R script and ensure the file name matches the file added to your project folder.
-
-```{r, eval=F}
-library(readxl)
-
-records <- read_xlsx("disease_records.xlsx")
-```
-
-
-<details>
-<summary class="btn_code_blue">**Plan B** - Read the data from CSV</summary>
-
-```{r, eval=F}
-library(readr)
-
-records <- read_csv("https://mn-r.netlify.app/data/disease_records.csv")
-```
-
-</details>
-
-
-### Explore {-}
-
-Use `glimpse()` to view a summary of the data columns.
-
-
-## Planet data {-}
-
-To find the planets these records are associated with, we will need to join the records data to the `starwars` data set in the package `dplyr`.  
-
-To load the planet data, add the following to your R script:
-  
-```{r, eval=F}
-library(tidyverse)
-
-people <- starwars
-```
-
-
-### Explore {-}
-
-> What is the number of distinct values in the `homeworld` column of the *people* data set?
-
-- Use `n_distinct()` to count the number of 'homeworld' planets.
-
-```{r, eval=F}
-summarize(people, n_planets = n_distinct( _______ ))
-```
-
-
-> What are they? Print the unique values of the `homeworld` column in the *people* data set:
-
-- Use `distinct()` to show the unique values of `homeworld` column.
-
-```{r, eval=F}
-distinct(people, ________ )
-```
-
-> Is one of the homeworlds `NA`? What does the 'NA' mean here?
-
-<br>
-
-### Join the homeworld planets to disease records {-}
-
-Complete the script below to join the two data sets. 
-
-1. In the 1st blank, with the name of the data you want to join to `records`.  
-2. In the 2nd blank, put the column name found in both data sets that you want to join **by** in quotes `""`. This is the column that both tables have in common.  
-
-> You can run `names(records)` to view the column names in the dataframe.
-
-
-```{r, eval=F}
-joined <- left_join(records, _______ , 
-                    by = "______" )
-```
-
-
-### Summarize the records by homeworld {-}
-
-Use `group_by()` to group the records by the planet column:`homeworld`
-
-```{r, eval=F}
-joined <- group_by(joined, homeworld) 
 ```
 
 <br>
 
-Now you can use the `n()` function to find the number of records by `homeworld`.
+> Increase the size of the points with the argument `size = `. Let's bump the size up to 10.
 
-```{r, eval=F}
-planet_totals <- summarize(joined, cases = _______ )
+```{r, eval=T}
+ggplot(lost_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(size = 10)
+
 ```
 
-
-### Restricted travel? {-}
-
-> Which planet has the most cases?
-
-Use `arrange()` and `desc()` to sort the results by the `cases` column. 
-
-```{r, eval=F}
-planet_totals <- arrange(planet_totals, ________ )
-```
 
 <br>
 
-> How many planets are off limits?
 
-The health liaison has recommended cutting off travel to any planet with more than 20 cases.
+Now that we've taken a quick look at the lost penguins, let's bring in the rest of our penguin observations to see if we can determine where they best fit it the overall population. 
 
-Use `filter()` to keep only the planets in the data with more than 20 in the `cases` column.
+**Load the untorn penguins observations**
+```{r, eval=T}
+url <- "https://tidy-mn.github.io/R-camp-penguins/data/untorn_penguins.csv"
 
-```{r, eval=F}
-off_limits <- filter(planet_totals, ________ )
+good_penguins <- read_csv(url)
 ```
 
 <br>
 
-### Save {-}
+To view all the data in one plot, it helps to get the data into a single table. Let's combine the good penguin data and the lost penguin data into one dataframe with the function `bind_rows()`. We pass this function the name of two dataframes, and then it returns a combined table with the first table's rows appearing on top. Let's call our combined table `"all_penguins"`.
 
-1. Use `write_csv()` to save the planet list as **"restricted_planets.csv"**.  
-1. Save your R script.  
-1. Clap 3 times for your great work.  
-1. When ready, return to your `jakku` project.  
+**Combine / stack the two penguin tables with `bind_rows()`**
+```{r, eval=T}
+all_penguins <- bind_rows(good_penguins, lost_penguins)
+```
+
+
+<br>
+
+> Update our scatterplot to use the `all_penguins` data.
+
+```{r, eval=F}
+ggplot(all_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(size = 10)
+
+```
+
+Oof! That is a lot of penguins.
 
 
 <br>
 
-### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-2.html) {-}
+> The `alpha` argument is used to control the transparency of the points. Let's set it to 0.25 (25%) to see if that helps view the data's distribution better. The darker areas will show where there are more overlayed points on the plot, and will indicate that there's a cluster of penguin observations with that combination of bill and flipper length.
+
+```{r, eval=F}
+ggplot(all_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(size = 10, 
+             alpha = 0.25)
+
+```
+
 
 <br>
 
+> Let's color the points by the `species` column in the data and see if the clusters are related to penguin species. We can bump up the alpha value to better see the individual "missing" species penguins.
+
+```{r, eval=F}
+ggplot(all_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(aes(color = species),
+             size = 10, 
+             alpha = 0.45)
+
+```
+
+Looks like the clusters are species related! And even better news, our lost penguins appear to all be chilling up top with the Gentoo cluster.
+
+
+<br>
+
+> As another visual check for the "missing" penguin species, let's set the X-axis to the `species` column to more clearly see how the flippers length of our lost penguins stack up against each of the three species.
+
+```{r, eval=F}
+ggplot(all_penguins, 
+       aes(x = species, 
+           y = flipper_length_mm)) +
+  geom_point(aes(color = species),
+             size = 10, 
+             alpha = 0.45)
+
+```
+
+Well then. It certainly looks like our lost penguins have flippers most similar to the Gentoo species.
+
+
+## A `geom_*` for every occasion {-}
+
+View the full list of geoms in the [*ggplot cheatsheet*](https://rstudio.github.io/cheatsheets/data-visualization.pdf).
+
+<img src="../images/geoms_1var.png">
+
+<img src="../images/geoms_diagram.png" style="width: 97%;">
+
+
+
+## `geom_text()`
+
+Let's use `geom_text()` to add a layer that makes the species clusters in our plot easier to pick out. It's good practice to use something other than color changes to convey important information in your plots.
+
+
+<br>
+
+> The `label = ` argument inside the aes of `geom_text(aes())` is used to a. Remember the `+` sign!
+
+```{r, eval=F}
+ggplot(all_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(aes(color = species),
+             size = 10, 
+             alpha = 0.45) +
+  geom_text(aes(label = species)) 
+
+```
+
+
+Now, that's a bit too busy to pick out where the missing species penguins are. I wonder if there is a way to zoom in on them in the chart?
+
+
+## `lims()`
+
+The `lims()` or limits function is used to set the boundaries of the X and Y axes. This can be helpful to zoom in on an area, or to force multiple charts to have the same axes range regardless of their values. Let's use `lims()` to zoom in on the upper right portion of our chart. We can set the X-axis to focus on the upper range of bill lengths, let's say *(40, 55)*, and set the Y-axis limit to focus on the upper range of flipper lengths, say *(200, 225)*.
+
+
+<br>
+
+> The X and Y limit range is placed inside our old friend the `c(min_value, max_value)` vector. The first value will be used for the minimum of the axis and the second value will be used for the maximum.
+
+```{r, eval=F}
+ggplot(all_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(aes(color = species),
+             size = 10, 
+             alpha = 0.45) +
+  geom_text(aes(label = species)) +
+  lims(x = c(40, 55),
+       y = c(200, 225))
+
+```
+
+
+## Island plot
+
+Now let's make an entire new plot that compares bill length and flipper length for each of the islands. Shucks, do we have to start all over? Nope! It's time for some **code magic**.
+
+We can start with the code from our last plot, and simply swap in `island` column for `species`. Voila!
+
+<br>
+
+> Island comparison
+
+```{r, eval=F}
+ggplot(all_penguins, 
+       aes(x = bill_length_mm, 
+           y = flipper_length_mm)) +
+  geom_point(aes(color = island),
+             size = 10, 
+             alpha = 0.45) +
+  geom_text(aes(label = island)) +
+  lims(x = c(40, 55),
+       y = c(200, 225))
+
+```
+
+
+Now that is a beautiful plot. It sure looks like our lost penguins came from Biscoe island. 
+
+<br>
+
+> Good work! The lost penguin saga has come to a close. The three Gentoo penguins from Biscoe island can now safely join the rest of the penguin population.
+
+
+## ggplot glossary {-}
+
+**Common aesthetics used in `aes()`**
+
+| aes()         | | Description    |
+|:--------------| |:---------------|   
+| `x = `        | | X-axis values.    |
+| `y = `        | | Y-axis values.    | 
+| `size = `     | | The size of the point, column or line.    |
+| `alpha = `    | | The transparency of the object (0.25 equates to 25%).   |    
+| `fill = `     | | The fill color of a column or area (points and lines do not have fill).  |     
+| `color = `    | | The color for points and lines, the **outline** color for columns and areas.   |   
+| `linetype = ` | | The type of line to use. Examples include `solid`, `dotted`, `dashed` and more.     |
+| `shape = `    | | The shape for points. Includes the default solid circle, diamonds, squares and more.   |
+
+<br>
+
+> View more details and the aesthetics used for each geom in the [*ggplot cheatsheet*](https://rstudio.github.io/cheatsheets/data-visualization.pdf).
+
+
+
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> ggplot: Facets, colors, and labels
+
+*Coming soon...*
+
+
+
+### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day3.html) {-}
+
+<br>

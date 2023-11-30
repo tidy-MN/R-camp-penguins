@@ -213,6 +213,15 @@ PM
     </item>
     
     <item>
+      <title>2.3 ggplot</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/03-1-ggplot.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/03-1-ggplot.html</guid>
+      <description> </description>
+    </item>
+    
+    <item>
       <title>2.3 Simmer it Down</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day2/02-3-simmer-it-down.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -286,6 +295,15 @@ Start a new R project Create an R script</description>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/day2.html</guid>
       <description>1 Data wrangling 2 Forks in the road: if_else + case_when 3 Simmer it down: Summarize the data 1 Data wrangling WRANGLE that DATA Artwork by @allison_horst</description>
+    </item>
+    
+    <item>
+      <title>Day 2</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/day3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day3.html</guid>
+      <description>1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.</description>
     </item>
     
     <item>

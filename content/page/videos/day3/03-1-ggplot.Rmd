@@ -1,0 +1,15 @@
+---
+title: "2.3 ggplot"
+comments: false
+hidden: false
+tags: [videos, day3]
+output: 
+  blogdown::html_page: 
+    self_contained: false
+    toc: false
+---
+
+<br>
+
+
+<iframe style="border: 0;" width="100%" height="415" src="https://www.youtube-nocookie.com/embed/oNJALem82HA?si=9Tcaq5TbSEgVGV_S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

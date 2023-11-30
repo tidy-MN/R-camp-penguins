@@ -1,15 +1,21 @@
 
-__Table of `aesthetics`__
+**Common aesthetics used in `aes()`**
 
-| aes()         |    
-|:--------------|  
-| `x = `        |     
-| `y = `        |      
-| `alpha = `    |     
-| `fill = `     |      
-| `color = `    |    
-| `size = `     |     
-| `linetype = ` |      
+| aes()         | | Description    |
+|:--------------| |:---------------|   
+| `x = `        | | X-axis values.    |
+| `y = `        | | Y-axis values.    | 
+| `size = `     | | The size of the point, column or line.    |
+| `alpha = `    | | The transparency of the object (0.25 equates to 25%).   |    
+| `fill = `     | | The fill color of a column or area (points and lines do not have fill).  |     
+| `color = `    | | The color for points and lines, the **outline** color for columns and areas.   |   
+| `linetype = ` | | The type of line to use. Examples include `solid`, `dotted`, `dashed` and more.     |
+| `shape = `    | | The shape for points. Includes the default solid circle, diamonds, squares and more.   |
+
+<br>
+
+> View more details and the aesthetics used for each geom in the [*ggplot cheatsheet*](https://rstudio.github.io/cheatsheets/data-visualization.pdf).
+
 
 <br>
 
