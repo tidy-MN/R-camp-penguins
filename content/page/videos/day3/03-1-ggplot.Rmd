@@ -1,5 +1,5 @@
 ---
-title: "2.3 ggplot"
+title: "3.1 ggplot"
 comments: false
 hidden: false
 tags: [videos, day3]
