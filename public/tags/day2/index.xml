@@ -33,5 +33,15 @@
       <description> </description>
     </item>
     
+    <item>
+      <title>Day 2 Agenda</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/agenda.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/agenda.html</guid>
+      <description>WELCOME!
+Day 2 review quiz Questions and other review topics Open your exercise R project Create an R script Exercise 1 load tidyverse and palmerpenguins Use group_by and summarize functions Practice using functions like mean, min, and max 10-minute Break</description>
+    </item>
+    
   </channel>
 </rss>
