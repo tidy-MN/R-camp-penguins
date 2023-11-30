@@ -63,7 +63,7 @@
   "headline": "Guess who!",
   "description" : "Before you start… Jump back into the project you created for the previous sessions exercises and then create a new R script.",
   "inLanguage" : "en",
-  "wordCount":  522 ,
+  "wordCount":  1276 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -280,6 +280,71 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="../css/camp_style.css" type="text/css" />
 
 
 <div id="before-you-start" class="section level1">
@@ -292,66 +357,326 @@
 <p>The only problem is…what’s a baking bot turned analytic bot supposed to do while we wait to get more data? We’ve already looked at the data…what if we get <em>bored</em>?</p>
 <div id="exercise-1-filtering-data" class="section level2">
 <h2>Exercise 1: filtering data</h2>
-<p>The goal of this exercise is to pare down a dataset using the filter function multiple times until you only have one row of data left. This game is a throw back to those days on long road trips when you were down to one last game… the game of Guess Who. You were BORED because you had already played all the games, done all the puzzles, noone would stop for snacks, and you were still miles from home. So you began, Am I bigger than a bread box? Am I the color green? In this exercise you are writing code to winnow down the list of possibilities. FUN STUFF! Pre-hint - if you are new to R, you might want to begin by using multiple lines of code, but in the end you will able to write this in only one filter function with multiple criteria within.</p>
-<p>Using the <code>penguins</code> dataset in the <code>palmerpenguins</code> package, use the filter function multiple times to find the penguin that meets one of the following sets of criteria. What is its study number?</p>
+<p>The goal of this exercise is to pare down a dataset using the filter function with as many conditions as you need in order to filter the data down to a single penguin. This game is a throw back to those days on long road trips when you were down to one last game… the game of Guess Who.</p>
+<p>You were BORED because you had already played all the games, done all the puzzles, no one would stop for snacks, and you were still miles from home. So you began, Am I bigger than a bread box? Am I the color green? In this exercise you are writing code to winnow down the list of possibilities. FUN STUFF!</p>
+<p><br></p>
+<blockquote>
+<p>Using the <code>penguins</code> dataset in the <code>palmerpenguins</code> package, use the filter function (with multiple conditions if necessary) to find the penguin that meets one of the following sets of criteria. What is its secret ID number?</p>
+</blockquote>
 <ol style="list-style-type: decimal">
-<li>I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.</li>
-<li>I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm long, but my flippers are less than 20cm long.</li>
-<li>I am a female Gentoo penguin weighing over 5kg, but my bill is shorter at under 4.5cm long.</li>
+<li>I am a female penguin living on Biscoe Island. I was observed in the latest year and my friends tell me I have a very handsome bill depth of 17.7 mm. Who am I?</li>
+<li>I am a male Chinstrap penguin weighing exactly 4000 g or maybe more. Probably more. My bill is a bit over 50 mm long, but I am most proud of my short flippers, which are less than 200 mm long. Who am I?</li>
+<li>Hi! I am a female Gentoo penguin that likes to wear colorful hats. My bill length is a smidgeon under 45 mm long. Last time I checked, I weighed over 5000 g but that was quite a while ago. Who am I?</li>
 </ol>
-<p>For a greater challenge, try to isolate these penguins.</p>
-<ol style="list-style-type: decimal">
-<li>I have the lowest weight of the male penguins.</li>
-<li>I am the heaviest female Adelie penguin.</li>
-<li>I have the longest flippers of the Adelie penguins on Dream Island.</li>
-</ol>
-<details>
-<summary>
-<strong>CODE HINT</strong>
-</summary>
-<p>Example:
-<code>filter(data, x &lt; 0)</code><br />
-Remember to account for <code>NA</code> values.</p>
-<details>
-<summary>
-**ADVANCED *CODE HINT**
-</summary>
-<p>Example:
-<code>filter(body_mass_g &gt; 4000)</code></p>
-<details>
-<summary>
-<strong>PRECISE CODE HINT</strong>
-</summary>
-<p>Example:
-<code>filter(penguins, body_mass_g == min(body_mass_g, na.rm = TRUE))</code></p>
-</details>
-</details>
-</details>
+<p><br></p>
+<p><strong>Load the penguin data</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+## ✔ tibble  3.1.8     ✔ dplyr   1.0.9
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span></code></pre></div>
+<p><strong>Add a top secret ID column with mutate</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">mutate</span>(penguins, <span class="at">secret_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) </span></code></pre></div>
+<p><br></p>
+<blockquote>
+<p>Ack! Typing is hard. To help avoid typing errors it can help to copy column names. You can use <code>names(penguins)</code> or <code>glimpse(penguins)</code> to print the columns to the console and copy the column name that you need.</p>
+</blockquote>
+<div id="penguin-1" class="section level3 unnumbered quiz">
+<h3>🐧 Penguin 1</h3>
+<ul class="nav nav-pills" id="myTab0" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="description0-tab" data-toggle="tab" href="#description0" role="tab" aria-controls="description0" aria-selected="true">Description</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint0-tab" data-toggle="tab" href="#showhint0" role="tab" aria-controls="showhint0" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode0-tab" data-toggle="tab" href="#showcode0" role="tab" aria-controls="showcode0" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="description0" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description0-tab">
+<p><b> I am a female penguin living on Biscoe Island. I was observed in the latest year and my friends tell me I have a very handsome bill depth of 17.7 mm.</b></p>
+<p><br></p>
 </div>
-<div id="exercise-2-using-case_when" class="section level2">
-<h2>Exercise 2: using case_when</h2>
-<p>Select the same penguin that you selected above. Create a new TRUE/FALSE variable using case_when that uses the criteria provided to identify your selected penguin and only your selected penguin as <em>TRUE</em>. This time your answer will be available as a variable in your dataset.</p>
-<details>
-<summary>
-<strong>CODE HINT</strong>
-</summary>
-<p>Example:
-<code>case_when(x == y ~ TRUE, .default = FALSE)</code></p>
-<details>
-<summary>
-**ADVANCED *CODE HINT**
-</summary>
-<p>Example:
-<code>case_when(body_mass_g &gt; 4000 ~ TRUE, .default = FALSE)</code></p>
-<details>
-<summary>
-<strong>PRECISE CODE HINT</strong>
-</summary>
-<p>Example:
-<code>mutate(penguins, subject = case_when(body_mass_g &gt; 4000 &amp; bill_length_mm &gt; 50 ~ TRUE, .default = FALSE))</code></p>
-</details>
-</details>
-</details>
+<div id="showhint0" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint0-tab">
+<pre class="sourceCode r">
+p1 <- penguins %>% 
+      filter(sex == "female",
+             island == _______,
+             _______    _______ ) 
+  
+</pre>
+</div>
+<div id="showcode0" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode0-tab">
+<pre class="sourceCode r">
+p1 <- penguins %>%
+      filter(sex == "female", 
+             island == "Biscoe", 
+             year == 2009, 
+             bill_depth_mm == 17.7)
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div id="penguin-2" class="section level3 unnumbered quiz">
+<h3>🐧 Penguin 2</h3>
+<ul class="nav nav-pills" id="myTab2" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="description2-tab" data-toggle="tab" href="#description2" role="tab" aria-controls="description2" aria-selected="true">Description</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint2-tab" data-toggle="tab" href="#showhint2" role="tab" aria-controls="showhint2" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode2-tab" data-toggle="tab" href="#showcode2" role="tab" aria-controls="showcode2" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="description2" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description2-tab">
+<p><b> I am a male Chinstrap penguin weighing exactly 4000 g or maybe more. Probably more. My bill is a bit over 50 mm long, but I am most proud of my short flippers, which are less than 200 mm long. </b></p>
+<p><br></p>
+</div>
+<div id="showhint2" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2-tab">
+<pre class="sourceCode r">
+p2 <- penguins %>% 
+      filter(sex == _______ ,
+             species == _________ ,
+             body_mass_g >= ________ ,
+             _______    _______ ,
+             _______    _______ ) 
+  
+</pre>
+</div>
+<div id="showcode2" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2-tab">
+<pre class="sourceCode r">
+p2 <- penguins %>% 
+      filter(sex == "male" ,
+             species == "Chinstrap" ,
+             body_mass_g > 4000, 
+             bill_length_mm > 50, 
+             flipper_length_mm < 200)
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div id="penguin-3" class="section level3 unnumbered quiz">
+<h3>🐧 Penguin 3</h3>
+<ul class="nav nav-pills" id="myTab3" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="description3-tab" data-toggle="tab" href="#description3" role="tab" aria-controls="description3" aria-selected="true">Description</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint3-tab" data-toggle="tab" href="#showhint3" role="tab" aria-controls="showhint3" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode3-tab" data-toggle="tab" href="#showcode3" role="tab" aria-controls="showcode3" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="description3" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description3-tab">
+<p><b> I am a female Gentoo penguin that likes to wear colorful hats. My bill length is a smidgeon under 45 mm long. Last time I checked, I weighed over 5000 g but that was quite a while ago. </b></p>
+<p><br></p>
+</div>
+<div id="showhint3" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3-tab">
+<pre class="sourceCode r">
+p3 <- penguins %>% 
+      filter(sex == _______ ,
+             species == _________ ,
+             _______    _______ ,
+             _______    _______ ) 
+  
+</pre>
+</div>
+<div id="showcode3" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3-tab">
+<pre class="sourceCode r">
+p3 <- penguins %>% 
+      filter(sex == "female" ,
+             species == "Gentoo" ,
+             bill_length_mm < 45,  
+             body_mass_g > 5000)
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<blockquote>
+<p>For a more advanced challenge, try to isolate these penguins.</p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li>I forgot my name and I really do not know many details about myself. I know I am an Adelie penguin that lives on Torgersen, but all my physical measurements are missing.<br />
+</li>
+<li>I have the lowest weight of the male penguins. Who am I?</li>
+<li>I am the heaviest female Adelie penguin. Who am I?</li>
+<li>I have the longest flippers of the Adelie penguins on Dream Island. Who am I?</li>
+</ol>
+<div id="penguin-4" class="section level3 unnumbered quiz">
+<h3>🐧 Penguin 4</h3>
+<ul class="nav nav-pills" id="myTab4" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="description4-tab" data-toggle="tab" href="#description4" role="tab" aria-controls="description4" aria-selected="true">Description</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint4-tab" data-toggle="tab" href="#showhint4" role="tab" aria-controls="showhint4" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode4-tab" data-toggle="tab" href="#showcode4" role="tab" aria-controls="showcode4" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="description4" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description4-tab">
+<p><b>I forgot my name and I really do not know many details about myself. I know I am an Adelie penguin that lives on Torgersen, but all my physical measurements are missing. </b></p>
+<p><br></p>
+</div>
+<div id="showhint4" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4-tab">
+<pre class="sourceCode r">
+# is.na() checks if a columns value is missing
+p4 <- penguins %>% 
+      filter(species == _______,
+             island == _______ ,
+             is.na( __________ ))
+      
+</pre>
+</div>
+<div id="showcode4" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4-tab">
+<pre class="sourceCode r">
+p4 <- penguins %>% 
+      filter(species == "Adelie",
+             island == "Torgersen" ,
+             is.na(bill_length_mm))
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<div id="penguin-5" class="section level3 unnumbered quiz">
+<h3>🐧 Penguin 5</h3>
+<ul class="nav nav-pills" id="myTab5" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="description5-tab" data-toggle="tab" href="#description5" role="tab" aria-controls="description5" aria-selected="true">Description</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint5-tab" data-toggle="tab" href="#showhint5" role="tab" aria-controls="showhint5" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode5-tab" data-toggle="tab" href="#showcode5" role="tab" aria-controls="showcode5" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="description5" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description5-tab">
+<p><b> I have the lowest weight of the male penguins. </b></p>
+<p><br></p>
+</div>
+<div id="showhint5" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5-tab">
+<pre class="sourceCode r">
+# Filter by sex first
+p5 <- penguins %>% 
+      filter(sex == _______ )
+      
+# And then pipe it to filter by body_mass_g
+# Remember to use `na.rm = TRUE` to account for NA values
+p5 <- penguins %>% 
+      filter(sex == ________ ) %>%
+      filter(body_mass_g == _________ ) 
+  
+</pre>
+</div>
+<div id="showcode5" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5-tab">
+<pre class="sourceCode r">
+p5 <- penguins %>% 
+      filter(sex == "male" ) %>%
+      filter(body_mass_g == min(body_mass_g, na.rm = TRUE)) 
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="exercise-2-sorting-with-case_when" class="section level2">
+<h2>Exercise 2: Sorting with case_when( )</h2>
+<p>I love grouping things, which was part of the reason I loved being a baking bot. I could spend all day sorting measuring spoons and measuring cups into groups like “tiny”, “super tiny”, and “the tiny-est of the tiny”. Maybe I can put my grouping skills to use on the penguin data?</p>
+<p>Let’s use <code>case_when()</code> to add some sorting columns to the data. Pick one of the options below to split the penguins into various groups based on their measurements.</p>
+<ol style="list-style-type: decimal">
+<li>Assign the penguins a value for the new column <code>flipper_group</code> based on the following criteria:
+<ul>
+<li>If flipper length is greater than 210 mm, then they are <code>"big flips"</code></li>
+<li>Otherwise they are <code>"small flips"</code></li>
+</ul></li>
+<li>Assign the penguins a value for <code>weight_class</code> based on the following criteria:
+<ul>
+<li>If body mass is less than or equal to 3500 g, then they are <code>"littles"</code></li>
+<li>If body mass is more than 3500 by less than or equal to 4300 g, then they are <code>"middles"</code></li>
+<li>Otherwise they are <code>"biggles"</code></li>
+</ul></li>
+<li>Assign the penguins a value for <code>bill_class</code> based on the following criteria:
+<ul>
+<li>If bill depth is missing, then they are <code>"unknown"</code></li>
+<li>If bill depth is more than 18, then they are <code>"deep"</code></li>
+<li>If bill depth is less than 18 but more than 16, then they are <code>"middling"</code></li>
+<li>Otherwise they are <code>"shallow"</code></li>
+</ul></li>
+</ol>
+<div id="flipper_group" class="section level3 unnumbered quiz">
+<h3>flipper_group</h3>
+<ul class="nav nav-pills" id="myTab11" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="description11-tab" data-toggle="tab" href="#description11" role="tab" aria-controls="description11" aria-selected="true">Description</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint11-tab" data-toggle="tab" href="#showhint11" role="tab" aria-controls="showhint11" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode11-tab" data-toggle="tab" href="#showcode11" role="tab" aria-controls="showcode11" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="description11" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description11-tab">
+<p><b> Assign the penguins a value for the new column <code>flipper_group</code> based on the following criteria: 1.) If flipper length is greater than 210 mm, then they are <code>"big flips"</code> 2.) Otherwise they are <code>"small flips"</code> </b></p>
+<p><br></p>
+</div>
+<div id="showhint11" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint11-tab">
+<pre class="sourceCode r">
+penguins %>% 
+  mutate(flipper_group = case_when(flipper_length_mm  > _______ ~ ________,
+                                   TRUE ~ _________ ))
+  
+</pre>
+</div>
+<div id="showcode11" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode11-tab">
+<pre class="sourceCode r">
+penguins %>% 
+    mutate(flipper_group = case_when(flipper_length_mm  > 210 ~ "big flips",
+                                     TRUE ~ "small flips" ))
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Onwards!</p>
+<p><i class="fa fa-cookie-bite"></i>
+<i class="fa fa-robot"></i>
+<i class="fa fa-cookie-bite"></i></p>
 </div>
 </div>
 

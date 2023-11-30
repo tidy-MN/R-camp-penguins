@@ -33,9 +33,10 @@ Let's get practicing on using our data tools!
 
 The goal of this exercise is to create summary datasets that answer specific questions about the penguin populations. We will use the `penguins` dataset in the `palmerpenguins` package. Please ask for help if you get stuck or would like a hint.
 
-### Load the `palmerpenguins` package 
+### Load the `tidyverse` and `palmerpenguins` packages 
 
 ```{r, eval=F}
+library(tidyverse)
 library(palmerpenguins)
 ```
 
@@ -192,7 +193,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 </div>
 
-Great work! Let's keep at it while we start our to...ANTARTICA! TO SEE PENGUINS!
+Great work! Let's keep at it while we start our trip to...ANTARTICA! HERE WE COME PENGUINS!
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 

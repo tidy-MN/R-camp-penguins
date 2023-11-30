@@ -281,7 +281,7 @@ Now that is a beautiful plot. It sure looks like our lost penguins came from Bis
 
 <br>
 
-> Good work! The lost penguin saga has come to a close. The three Gentoo penguins from Biscoe island can now safely join the rest of the penguin population.
+> Good work! The lost penguin saga has come to a close. The three Gentoo penguins from Biscoe island can now safely join the data with the rest of the penguin population.
 
 
 ## Glossary for ggplot {-}
