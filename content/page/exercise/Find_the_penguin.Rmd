@@ -300,7 +300,7 @@ Let's use `case_when()` to add some sorting columns to the data. Pick one of the
     - Otherwise they are `"biggles"`
 1. Assign the penguins a value for `bill_class` based on the following criteria:
     - If bill depth is missing, then they are `"unknown"`
-    - If bill depth is more than 18, then they are `"deep"`
+    - If bill depth is more than or equal to 18, then they are `"deep"`
     - If bill depth is less than 18 but more than 16, then they are `"middling"`
     - Otherwise they are `"shallow"`
 
@@ -340,10 +340,8 @@ cat(paste0(tab_html, collapse = "\n"))
 </div>
 <br>
 
-Onwards!
+BON VOYAGE!
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 
 <i class="fa fa-cookie-bite"></i> 
-
-
