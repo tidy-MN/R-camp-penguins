@@ -10,9 +10,9 @@
   <title>Day 2 - Learn R</title>
   <meta property="og:title" content="Day 2" />
   <meta name="twitter:title" content="Day 2" />
-  <meta name="description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
-  <meta property="og:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
-  <meta name="twitter:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+  <meta name="description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece - in 4 steps.">
+  <meta property="og:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece - in 4 steps.">
+  <meta name="twitter:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece - in 4 steps.">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Day 2",
-  "description" : "1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.",
+  "description" : "1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece - in 4 steps.",
   "inLanguage" : "en",
-  "wordCount":  1177 ,
+  "wordCount":  1134 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 2" />
-<meta property="og:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+<meta property="og:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece - in 4 steps.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day3.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 2" />
-  <meta name="twitter:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.">
+  <meta name="twitter:description" content="1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece - in 4 steps.">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -368,7 +368,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p><br></p>
 <div id="ggplot-a-grammar-of-graphics" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <a href="videos/day3/03-1-ggplot.html">ggplot: A grammar of graphics</a></h1>
-<p>How to create a beautiful <del>plot</del> masterpiece - in 4 steps.</p>
+<p>How to create a beautiful masterpiece - in 4 steps.</p>
 <div id="load-some-data" class="section level2 unnumbered">
 <h2>1. Load some data</h2>
 <blockquote>
@@ -472,8 +472,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p><img src="../images/geoms_1var.png"></p>
 <p><img src="../images/geoms_diagram.png" style="width: 97%;"></p>
 </div>
-<div id="geom_text" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> <code>geom_text()</code></h2>
+<div id="geom_text" class="section level2 unnumbered">
+<h2><code>geom_text()</code></h2>
 <p>Let’s use <code>geom_text()</code> to add a layer that makes the species clusters in our plot easier to pick out. It’s good practice to use something other than color changes to convey important information in your plots.</p>
 <p><br></p>
 <blockquote>
@@ -488,8 +488,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> species)) </span></code></pre></div>
 <p>Now, that’s a bit too busy to pick out where the missing species penguins are. I wonder if there is a way to zoom in on them in the chart?</p>
 </div>
-<div id="lims" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> <code>lims()</code></h2>
+<div id="lims" class="section level2 unnumbered">
+<h2><code>lims()</code></h2>
 <p>The <code>lims()</code> or limits function is used to set the boundaries of the X and Y axes. This can be helpful to zoom in on an area, or to force multiple charts to have the same axes range regardless of their values. Let’s use <code>lims()</code> to zoom in on the upper right portion of our chart. We can set the X-axis to focus on the upper range of bill lengths, let’s say <em>(40, 55)</em>, and set the Y-axis limit to focus on the upper range of flipper lengths, say <em>(200, 225)</em>.</p>
 <p><br></p>
 <blockquote>
@@ -505,8 +505,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>  <span class="fu">lims</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">55</span>),</span>
 <span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">225</span>))</span></code></pre></div>
 </div>
-<div id="island-plot" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Island plot</h2>
+<div id="island-plot" class="section level2 unnumbered">
+<h2>Island plot</h2>
 <p>Now let’s make an entire new plot that compares bill length and flipper length for each of the islands. Shucks, do we have to start all over? Nope! It’s time for some <strong>code magic</strong>.</p>
 <p>We can start with the code from our last plot, and simply swap in <code>island</code> column for <code>species</code>. Voila!</p>
 <p><br></p>
@@ -528,19 +528,65 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Good work! The lost penguin saga has come to a close. The three Gentoo penguins from Biscoe island can now safely join the rest of the penguin population.</p>
 </blockquote>
 </div>
-<div id="ggplot-glossary" class="section level2 unnumbered">
-<h2>ggplot glossary</h2>
+<div id="glossary-for-ggplot" class="section level2 unnumbered">
+<h2>Glossary for ggplot</h2>
 <p><strong>Common aesthetics used in <code>aes()</code></strong></p>
-<div class="line-block">aes() | | Description |</div>
-<p>|:————–| |:—————|<br />
-| <code>x =</code> | | X-axis values |
-| <code>y =</code> | | Y-axis values |
-| <code>size =</code> | | The size of the point, column or line |
-| <code>alpha =</code> | | The transparency of the object (0.25 equates to 25%) |<br />
-| <code>fill =</code> | | The fill color of a column or area (points and lines do not have fill) |<br />
-| <code>color =</code> | | The color for points and lines, the <strong>outline</strong> color for columns and areas |<br />
-| <code>linetype =</code> | | The type of line to use. Examples include <code>solid</code>, <code>dotted</code>, <code>dashed</code> and more |
-| <code>shape =</code> | | The shape for points. The default is a solid circle there are diamonds, squares and more |</p>
+<table>
+<colgroup>
+<col width="44%" />
+<col width="8%" />
+<col width="47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">aes()</th>
+<th align="left"></th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>x =</code></td>
+<td align="left"></td>
+<td align="left">X-axis values.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>y =</code></td>
+<td align="left"></td>
+<td align="left">Y-axis values.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>size =</code></td>
+<td align="left"></td>
+<td align="left">The size of the point, column or line.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>alpha =</code></td>
+<td align="left"></td>
+<td align="left">The transparency of the object (0.25 equates to 25%).</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>fill =</code></td>
+<td align="left"></td>
+<td align="left">The fill color of a column or area (points and lines do not have fill).</td>
+</tr>
+<tr class="even">
+<td align="left"><code>color =</code></td>
+<td align="left"></td>
+<td align="left">The color for points and lines, the <strong>outline</strong> color for columns and areas.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>linetype =</code></td>
+<td align="left"></td>
+<td align="left">The type of line to use. Examples include <code>solid</code>, <code>dotted</code>, <code>dashed</code> and more.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>shape =</code></td>
+<td align="left"></td>
+<td align="left">The shape for points. Includes the default solid circle, diamonds, squares and more.</td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
 <blockquote>
 <p>View more details and the aesthetics used for each geom in the <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf"><em>ggplot cheatsheet</em></a>.</p>
@@ -550,6 +596,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <div id="ggplot-facets-colors-and-labels" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> ggplot: Facets, colors, and labels</h1>
 <p><em>Coming soon…</em></p>
+<p><br></p>
 <div id="jump-to-the-top" class="section level3 unnumbered">
 <h3><i class="fas fa-carrot"> </i> <a href="../page/day3.html">Jump to the top</a></h3>
 <p><br></p>

@@ -1,8 +1,18 @@
 ---
 title: Guess who!
 author: "Abigail Stamm"
-output: html_document
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: false
+    toc_depth: 1
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -22,17 +32,58 @@ The only problem is...what's a baking bot turned analytic bot supposed to do whi
 
 The goal of this exercise is to pare down a dataset using the filter function multiple times until you only have one row of data left. This game is a throw back to those days on long road trips when you were down to one last game... the game of Guess Who. You were BORED because you had already played all the games, done all the puzzles, noone would stop for snacks, and you were still miles from home. So you began, Am I bigger than a bread box? Am I the color green? In this exercise you are writing code to winnow down the list of possibilities. FUN STUFF! Pre-hint - if you are new to R, you might want to begin by using multiple lines of code, but in the end you will able to write this in only one filter function with multiple criteria within.
 
-Using the `penguins` dataset in the `palmerpenguins` package, use the filter function multiple times to find the penguin that meets one of the following sets of criteria. What is its study number?
+<br>
+
+> Using the `penguins` dataset in the `palmerpenguins` package, use the filter function multiple times to find the penguin that meets one of the following sets of criteria. What is its study number?
 
 1. I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.
 1. I am a male Chinstrap penguin weighing over 4kg. My bill is over 5cm long, but my flippers are less than 20cm long. 
 1. I am a female Gentoo penguin weighing over 5kg, but my bill is shorter at under 4.5cm long. 
 
-For a greater challenge, try to isolate these penguins.
 
-1. I have the lowest weight of the male penguins.
-1. I am the heaviest female Adelie penguin.
-1. I have the longest flippers of the Adelie penguins on Dream Island.
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Penguin 1 {-}
+
+```{r, results='asis', echo=F}
+source("../insert_tabs.R")
+
+tabs <- c("Description", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> I am a female Adelie penguin hatched on November 12th on Biscoe Island. I was part of the latest study.</b>
+
+<br>',
+
+show_hint = 'code_start
+# Remember to account for NA values in your summary function
+penguins %>% 
+  group_by( _______ ) %>%
+  summarize(min_flipper_length = ________ )
+  
+code_end',
+
+show_code = 'code_start
+penguins %>% 
+  group_by(species) %>%
+  summarize(min_flipper_length = min(flipper_length_mm, na.rm = TRUE))
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content, 0)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
+
+<br>
+
+> For a greater challenge, try to isolate these penguins.
+
+4. I have the lowest weight of the male penguins.
+5. I am the heaviest female Adelie penguin.
+6. I have the longest flippers of the Adelie penguins on Dream Island.
+
 
 
 <details>

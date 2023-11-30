@@ -177,6 +177,15 @@ PM
     </item>
     
     <item>
+      <title></title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/plots_for_real_script.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/plots_for_real_script.html</guid>
+      <description>Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.</description>
+    </item>
+    
+    <item>
       <title>1.1 Welcome</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day1/01-1-welcome.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -330,7 +339,7 @@ Start a new R project Create an R script</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/day3.html</guid>
-      <description>1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful plot masterpiece - in 4 steps.</description>
+      <description>1 ggplot: A grammar of graphics 2 ggplot: Facets, colors, and labels 1 ggplot: A grammar of graphics How to create a beautiful masterpiece - in 4 steps.</description>
     </item>
     
     <item>
