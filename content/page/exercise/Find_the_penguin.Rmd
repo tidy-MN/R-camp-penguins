@@ -14,6 +14,10 @@ output:
 ---
 
 
+<style>
+body {line-height: 1.6}
+</style>
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -48,7 +52,7 @@ You were BORED because you had already played all the games, done all the puzzle
 
 **Load the penguin data**
 
-```{r, eval=T}
+```{r, eval=F}
 library(tidyverse)
 library(palmerpenguins)
 
@@ -58,15 +62,15 @@ penguins <- penguins
 
 **Add a top secret ID column with mutate**
 
-```{r, eval=T}
+```{r, eval=F}
 library(tidyverse)
 library(palmerpenguins)
 
 penguins <- penguins
 
-penguins <- mutate(penguins, secret_id = 1:n()) 
+penguins <- mutate(penguins, 
+                   secret_id = 1:n()) 
 ```
-
 
 
 <br>
@@ -292,16 +296,16 @@ Let's use `case_when()` to add some sorting columns to the data. Pick one of the
 
 
 1. Assign the penguins a value for the new column `flipper_group` based on the following criteria:
-    - If flipper length is greater than 210 mm, then they are `"big flips"`
+    - First check if flipper length is **greater than** 210 mm, if it is they are `"big flips"`
     - Otherwise they are `"small flips"`
 1. Assign the penguins a value for `weight_class` based on the following criteria:
-    - If body mass is less than or equal to 3500 g, then they are `"littles"`
-    - If body mass is more than 3500 g, but less than or equal to 4300 g, then they are `"middles"`
+    - First check if body mass is less than or equal to 3500 g, if so they are `"littles"`
+    - Then check if body mass is less than 4300 g, then they are `"middles"`
     - Otherwise they are `"biggles"`
 1. Assign the penguins a value for `bill_class` based on the following criteria:
-    - If bill depth is missing, then they are `"unknown"`
-    - If bill depth is more than or equal to 18, then they are `"deep"`
-    - If bill depth is less than 18 but more than 16, then they are `"middling"`
+    - First check if bill depth is missing, then they are `"unknown"`
+    - Then check if bill depth is more than or equal to 18, then they are `"deep"`
+    - Then check if bill depth is more than 16, then they are `"middling"`
     - Otherwise they are `"shallow"`
 
 
@@ -315,7 +319,7 @@ source("../insert_tabs.R")
 
 tabs <- c("Description", "Show hint", "Show code")
 
-content <- c(Exercise = '<b> Assign the penguins a value for the new column `flipper_group` based on the following criteria: 1.) If flipper length is greater than 210 mm, then they are `"big flips"` 2.) Otherwise they are `"small flips"` </b>
+content <- c(Exercise = '<b> Assign the penguins a value for the new column `flipper_group` based on the following criteria: 1.) First check if flipper length is **greater than** 210 mm, if it is they are `"big flips"` 2.) Otherwise they are `"small flips"` </b>
 
 <br>',
 

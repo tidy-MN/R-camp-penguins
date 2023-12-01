@@ -80,6 +80,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   <link rel="stylesheet" href="../css/camp_style.css" type="text/css" />
 
 
+<style>
+body {line-height: 1.6}
+</style>
 <div id="before-you-start" class="section level1">
 <h1>Before you start…</h1>
 <p>Jump back into the project you created for the previous sessions exercises and then create a new R script. Save it as soon as you make it and give it a good name like <code>ex_2_day_2.R</code> or <code>spencer.R</code> and you’ll be ready to go!</p>
@@ -103,25 +106,18 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p><br></p>
 <p><strong>Load the penguin data</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-## ✔ tibble  3.1.8     ✔ dplyr   1.0.9
-## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
-## ✔ readr   2.1.2     ✔ forcats 0.5.1
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span></code></pre></div>
 <p><strong>Add a top secret ID column with mutate</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">mutate</span>(penguins, <span class="at">secret_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) </span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">mutate</span>(penguins, </span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>                   <span class="at">secret_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) </span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Ack! Typing is hard. To help avoid typing errors it can help to copy column names. You can use <code>names(penguins)</code> or <code>glimpse(penguins)</code> to print the columns to the console and copy the column name that you need.</p>
@@ -352,20 +348,20 @@ p5 <- penguins %>%
 <ol style="list-style-type: decimal">
 <li>Assign the penguins a value for the new column <code>flipper_group</code> based on the following criteria:
 <ul>
-<li>If flipper length is greater than 210 mm, then they are <code>"big flips"</code></li>
+<li>First check if flipper length is <strong>greater than</strong> 210 mm, if it is they are <code>"big flips"</code></li>
 <li>Otherwise they are <code>"small flips"</code></li>
 </ul></li>
 <li>Assign the penguins a value for <code>weight_class</code> based on the following criteria:
 <ul>
-<li>If body mass is less than or equal to 3500 g, then they are <code>"littles"</code></li>
-<li>If body mass is more than 3500 g, but less than or equal to 4300 g, then they are <code>"middles"</code></li>
+<li>First check if body mass is less than or equal to 3500 g, if so they are <code>"littles"</code></li>
+<li>Then check if body mass is less than 4300 g, then they are <code>"middles"</code></li>
 <li>Otherwise they are <code>"biggles"</code></li>
 </ul></li>
 <li>Assign the penguins a value for <code>bill_class</code> based on the following criteria:
 <ul>
-<li>If bill depth is missing, then they are <code>"unknown"</code></li>
-<li>If bill depth is more than or equal to 18, then they are <code>"deep"</code></li>
-<li>If bill depth is less than 18 but more than 16, then they are <code>"middling"</code></li>
+<li>First check if bill depth is missing, then they are <code>"unknown"</code></li>
+<li>Then check if bill depth is more than or equal to 18, then they are <code>"deep"</code></li>
+<li>Then check if bill depth is more than 16, then they are <code>"middling"</code></li>
 <li>Otherwise they are <code>"shallow"</code></li>
 </ul></li>
 </ol>
@@ -384,7 +380,7 @@ p5 <- penguins %>%
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
 <div id="description11" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description11-tab">
-<p><b> Assign the penguins a value for the new column <code>flipper_group</code> based on the following criteria: 1.) If flipper length is greater than 210 mm, then they are <code>"big flips"</code> 2.) Otherwise they are <code>"small flips"</code> </b></p>
+<p><b> Assign the penguins a value for the new column <code>flipper_group</code> based on the following criteria: 1.) First check if flipper length is <strong>greater than</strong> 210 mm, if it is they are <code>"big flips"</code> 2.) Otherwise they are <code>"small flips"</code> </b></p>
 <p><br></p>
 </div>
 <div id="showhint11" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint11-tab">
