@@ -1,4 +1,4 @@
-id,submit_date,country,nut_allergy,egg_allergy,days_on_the_ship,meals_per_day,favorite_goody
+id,submit_date,country,nut_allergy,egg_allergy,days_on_ship,meals_per_day,favorite_goody
 1,2023-11-22,Myanmar,FALSE,TRUE,22,2,cinnamon rolls
 2,2023-11-26,Nicaragua,TRUE,TRUE,18,4,chocolate croissant
 3,2023-11-18,Sweden,TRUE,TRUE,23,2,jelly donuts
@@ -20,7 +20,7 @@ id,submit_date,country,nut_allergy,egg_allergy,days_on_the_ship,meals_per_day,fa
 19,2023-11-25,El Salvador,TRUE,TRUE,15,2,chocolate croissant
 20,2023-11-20,Ireland,TRUE,TRUE,16,3,chocolate croissant
 21,2023-11-17,Uzbekistan,TRUE,TRUE,22,2,brownies
-22,2023-11-24,Bosnia and Herzegovina          ,TRUE,TRUE,21,3,brownies
+22,2023-11-24,Bosnia and Herzegovina,TRUE,TRUE,21,3,brownies
 23,2023-11-20,Azerbaijan,TRUE,TRUE,21,3,cinnamon rolls
 24,2023-11-24,Sierra Leone,TRUE,TRUE,18,3,brownies
 25,2023-11-26,Kazakhstan,TRUE,TRUE,28,4,cinnamon rolls
@@ -39,7 +39,7 @@ id,submit_date,country,nut_allergy,egg_allergy,days_on_the_ship,meals_per_day,fa
 38,2023-11-23,Armenia,TRUE,FALSE,11,3,apple pie
 39,2023-11-18,Mozambique,TRUE,TRUE,19,2,apple pie
 40,2023-11-25,Rwanda,TRUE,TRUE,23,2,cinnamon rolls
-41,2023-11-24,Bosnia and Herzegovina          ,TRUE,TRUE,26,2,cinnamon rolls
+41,2023-11-24,Bosnia and Herzegovina,TRUE,TRUE,26,2,cinnamon rolls
 42,2023-11-23,Zimbabwe,TRUE,TRUE,25,3,jelly donuts
 43,2023-11-24,Myanmar,TRUE,TRUE,13,4,short-bread
 44,2023-11-26,Peru,TRUE,TRUE,27,2,cinnamon rolls

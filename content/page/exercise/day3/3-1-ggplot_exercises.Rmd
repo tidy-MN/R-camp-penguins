@@ -1,9 +1,9 @@
 ---
-title: "ggplot2 Exercise 1"
+title: "ggplot"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: css/camp_style.css
+    css: ../../css/camp_style.css
     number_sections: false
     self_contained: false
     fontsize: 18pt
@@ -31,7 +31,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_1_day_4.R` or `george.R` and you'll be ready to go!
 
-# Palmer Penguin Exploration - Solving problems, making friends
+# Palmer Penguin Exploration
+### Solving problems, making friends
 
 This is our big chance to show the researchers that we can be the best analysis bot ever. Now that the researchers have collected the data they are starting to form questions about what the data *actually* tell us.
 
@@ -178,11 +179,12 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-Annnnd of course one the researchers had a last minute request. They didn't like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!
+Annnnd of course one of the researchers had a last minute request. They didn't like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!
 
 <div class="quiz">
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions {-}
+
 ```{r exer-tabs4, results='asis', echo=F}
 source("../../insert_tabs.R")
 
@@ -223,7 +225,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-TA-DAAaaaaaaaaaaa!!! I think we all deserve some cookies after that don't you? Wait...there's *more*??? Okay, cookies will have to wait, let's get cracking!
+TA-DAAaaaaaaaaa!!! I think we all deserve some cookies after that don't you? Wait...there's *more*? Okay, cookies will have to wait, let's get cracking!
 
 # Which species has the longest bill?
 
@@ -266,6 +268,8 @@ ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   theme_bw()
 ```
 
+
+
 Fascinating... the Gentoo are really all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same among the different penguin species. You can add a trend-line to the graph using `geom_smooth` to see that easier or see if the human eye is being tricked by very fun looking dots.
 
 ```{r}
@@ -281,7 +285,9 @@ ggplot(data = penguins,
   theme_bw()
 ```
 
-Let's try doing the same exercise but let's use the `facet_wrap` function.
+
+
+Let's try doing the same exercise, but let's use the `facet_wrap` function.
 
 ```{r}
 ggplot(data = penguins, 

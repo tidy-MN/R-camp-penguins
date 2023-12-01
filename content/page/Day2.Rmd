@@ -198,7 +198,7 @@ crew_df <- select(crew_df, -country)
 Finally, for easier reference, use `select()` to make the `id` and `days_on_ship` columns the first two columns in the table. Everything else can be in the same order.
 
 ```{r}
-crew_df <- select(crew_df, id, days_on_the_ship, everything())
+crew_df <- select(crew_df, id, days_on_ship, everything())
 ```
 
 
@@ -215,22 +215,22 @@ crew_df <- arrange(crew_df, days_on_ship)
 
 ### Descending order (biggest on top) {-}
 ```{r}
-crew_df <- arrange(crew_df, desc(days_on_the_ship))
+crew_df <- arrange(crew_df, desc(days_on_ship))
 ```
 
 ### Alternative: put a `-` in front of the column name to do the opposite {-}
 ```{r}
-crew_df <- arrange(crew_df, -days_on_the_ship)
+crew_df <- arrange(crew_df, -days_on_ship)
 ```
 
 
 ## **`mutate()`** new columns {-}
 
-Let's get an idea of the total meals each crew mate will be eating our baked goods. For that, we'll need to take their `days_on_the_ship` and multiply it by their `meals_per_day`.
+Let's get an idea of the total meals each crew mate will be eating our baked goods. For that, we'll need to take their `days_on_ship` and multiply it by their `meals_per_day`.
 
 ```{r}
 # Use the * to multiply and the / to divide
-crew_df <- mutate(crew_df, total_trip_meals = days_on_the_ship * meals_per_day)
+crew_df <- mutate(crew_df, total_trip_meals = days_on_ship * meals_per_day)
 ```
 
 
@@ -553,7 +553,7 @@ crew_df <- crew_df %>% filter(id != "test")
 
 ```{r, eval=T}
 # Average days on the ship
-crew_df %>% summarize(days_avg = mean(days_on_the_ship))
+crew_df %>% summarize(days_avg = mean(days_on_ship))
 ```
 
 
@@ -565,7 +565,7 @@ crew_df %>% summarize(days_avg = mean(days_on_the_ship))
 # Average days on ship grouped by nut allergy column
 crew_df %>%
   group_by(nut_allergy) %>%
-  summarize(days_avg = mean(days_on_the_ship))
+  summarize(days_avg = mean(days_on_ship))
 ```
 
 
@@ -580,13 +580,13 @@ Which goody will be most in demand on the ship?
 # Add a total meals column
 ## And then group by goody type and sum the total meals
 crew_df %>%
-  mutate(total_meals = meals_per_day * days_on_the_ship) %>%
+  mutate(total_meals = meals_per_day * days_on_ship) %>%
   group_by(favorite_goody) %>%
   summarize(goody_total_meals = sum(total_meals))
 
 # Arrange total goody meals in descending order
 crew_df %>%
-  mutate(total_meals = meals_per_day * days_on_the_ship) %>%
+  mutate(total_meals = meals_per_day * days_on_ship) %>%
   group_by(favorite_goody) %>%
   summarize(goody_total_meals = sum(total_meals)) %>%
   arrange(desc(goody_total_meals))

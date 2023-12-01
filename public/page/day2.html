@@ -637,7 +637,7 @@ blockquote code {background: #f8fdff;}
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, <span class="sc">-</span>country)</span></code></pre></div>
 <p><br></p>
 <p>Finally, for easier reference, use <code>select()</code> to make the <code>id</code> and <code>days_on_ship</code> columns the first two columns in the table. Everything else can be in the same order.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, days_on_the_ship, <span class="fu">everything</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">select</span>(crew_df, id, days_on_ship, <span class="fu">everything</span>())</span></code></pre></div>
 </div>
 <div id="arrange-the-crew" class="section level2 unnumbered">
 <h2><strong><code>arrange()</code></strong> the crew</h2>
@@ -648,18 +648,18 @@ blockquote code {background: #f8fdff;}
 </blockquote>
 <div id="descending-order-biggest-on-top" class="section level3 unnumbered">
 <h3>Descending order (biggest on top)</h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="fu">desc</span>(days_on_the_ship))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="fu">desc</span>(days_on_ship))</span></code></pre></div>
 </div>
 <div id="alternative-put-a---in-front-of-the-column-name-to-do-the-opposite" class="section level3 unnumbered">
 <h3>Alternative: put a <code>-</code> in front of the column name to do the opposite</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="sc">-</span>days_on_the_ship)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">arrange</span>(crew_df, <span class="sc">-</span>days_on_ship)</span></code></pre></div>
 </div>
 </div>
 <div id="mutate-new-columns" class="section level2 unnumbered">
 <h2><strong><code>mutate()</code></strong> new columns</h2>
-<p>Let’s get an idea of the total meals each crew mate will be eating our baked goods. For that, we’ll need to take their <code>days_on_the_ship</code> and multiply it by their <code>meals_per_day</code>.</p>
+<p>Let’s get an idea of the total meals each crew mate will be eating our baked goods. For that, we’ll need to take their <code>days_on_ship</code> and multiply it by their <code>meals_per_day</code>.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Use the * to multiply and the / to divide</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">total_trip_meals =</span> days_on_the_ship <span class="sc">*</span> meals_per_day)</span></code></pre></div>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>crew_df <span class="ot">&lt;-</span> <span class="fu">mutate</span>(crew_df, <span class="at">total_trip_meals =</span> days_on_ship <span class="sc">*</span> meals_per_day)</span></code></pre></div>
 <div id="sidebar-counting-trues-and-falses" class="section level3 unnumbered">
 <h3>Sidebar: Counting TRUE’s and FALSE’s</h3>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># This new column doesn&#39;t give us much new info</span></span>
@@ -1113,7 +1113,7 @@ Average age and monster count by color
 <p><code>summarize()</code></p>
 </blockquote>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co"># Average days on the ship</span></span>
-<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">days_avg =</span> <span class="fu">mean</span>(days_on_the_ship))</span></code></pre></div>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">days_avg =</span> <span class="fu">mean</span>(days_on_ship))</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 1
 ##   days_avg
 ##      &lt;dbl&gt;
@@ -1125,7 +1125,7 @@ Average age and monster count by color
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Average days on ship grouped by nut allergy column</span></span>
 <span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
 <span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a>  <span class="fu">group_by</span>(nut_allergy) <span class="sc">%&gt;%</span></span>
-<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">days_avg =</span> <span class="fu">mean</span>(days_on_the_ship))</span></code></pre></div>
+<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">days_avg =</span> <span class="fu">mean</span>(days_on_ship))</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ##   nut_allergy days_avg
 ##   &lt;lgl&gt;          &lt;dbl&gt;
@@ -1139,13 +1139,13 @@ Average age and monster count by color
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="co"># Add a total meals column</span></span>
 <span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="do">## And then group by goody type and sum the total meals</span></span>
 <span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
-<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_the_ship) <span class="sc">%&gt;%</span></span>
+<span id="cb44-4"><a href="#cb44-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_ship) <span class="sc">%&gt;%</span></span>
 <span id="cb44-5"><a href="#cb44-5" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span></span>
 <span id="cb44-6"><a href="#cb44-6" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals))</span>
 <span id="cb44-7"><a href="#cb44-7" tabindex="-1"></a></span>
 <span id="cb44-8"><a href="#cb44-8" tabindex="-1"></a><span class="co"># Arrange total goody meals in descending order</span></span>
 <span id="cb44-9"><a href="#cb44-9" tabindex="-1"></a>crew_df <span class="sc">%&gt;%</span></span>
-<span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_the_ship) <span class="sc">%&gt;%</span></span>
+<span id="cb44-10"><a href="#cb44-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_meals =</span> meals_per_day <span class="sc">*</span> days_on_ship) <span class="sc">%&gt;%</span></span>
 <span id="cb44-11"><a href="#cb44-11" tabindex="-1"></a>  <span class="fu">group_by</span>(favorite_goody) <span class="sc">%&gt;%</span></span>
 <span id="cb44-12"><a href="#cb44-12" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">goody_total_meals =</span> <span class="fu">sum</span>(total_meals)) <span class="sc">%&gt;%</span></span>
 <span id="cb44-13"><a href="#cb44-13" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(goody_total_meals))</span></code></pre></div>
