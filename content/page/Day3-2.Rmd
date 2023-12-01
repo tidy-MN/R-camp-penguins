@@ -1,5 +1,5 @@
 ---
-title: "Day 3"
+title: "Day 3.2 notes"
 output: 
   blogdown::html_page: 
     toc: true   
@@ -30,6 +30,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 <br>
+
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [ggplot: Facets, colors, and labels](videos/day3/03-2-ggplot-breaking-news.html)
+
 
 
 ## Load the raw R/V Topscy-scurvy data {-}
