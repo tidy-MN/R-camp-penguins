@@ -121,10 +121,17 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">  
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">3.1 - </span> [ggplot: A grammar of graphics](page/videos/day3/03-1-ggplot.html))
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">3.1 - </span> [ggplot: A grammar of graphics](page/videos/day3/03-1-ggplot.html)
   
 - [Notes and code examples](page/day3.html) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day3/03-1-Plots-graphics-grammar.html#1)
+
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">3.2 - </span> ggplot: Facets, colors, and labels
+  
+- Notes and code examples
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day3/03-2-Facets-labels-colors.html#1)
+
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
