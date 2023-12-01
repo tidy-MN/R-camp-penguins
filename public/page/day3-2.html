@@ -63,7 +63,7 @@
   "headline": "Day 3.2 notes",
   "description" : "1 ggplot: Facets, colors, and labels 1 ggplot: Facets, colors, and labels Load the raw R\/V Topscy-scurvy data library(tidyverse) url \u0026lt;- \u0026quot;https:\/\/tidy-mn.",
   "inLanguage" : "en",
-  "wordCount":  988 ,
+  "wordCount":  975 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -442,7 +442,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><br></p>
 <blockquote>
-<p>Sooo…looking over at ’09 the observations do look a bit sparse on the low end under 40 mm or so. What’s that about?</p>
+<p>Sooo…looking over at the ’09 the observations do look a bit sparse on the low end under 40 mm or so. What’s that about?</p>
 </blockquote>
 <p><br></p>
 <blockquote>
@@ -452,41 +452,35 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), </span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.40</span>, </span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>              <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>              <span class="at">size =</span> <span class="dv">4</span>, </span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>              <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(rv_penguins,</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), </span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.40</span>, </span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p><br></p>
 <blockquote>
 <p>Now that is odd. Where did all the smallies on the low end go in 2008 and 2009?</p>
 </blockquote>
-<p>Let’s check things by island. Earlier we learned how to split our plot into groups by color, but what if we want each island on its own separate chart?</p>
+<p>Let’s check things out by island. Earlier we learned how to split our plot into groups by color, but now we want each island to be on its own separate chart.</p>
 </div>
 </div>
 <div id="i-facet_wrap" class="section level2 unnumbered">
 <h2>I ❤️ facet_wrap()</h2>
 <p>Facet wrap will create a new version of your chart for every value in a column of your choosing. These charts are also referred to as <em>multi-panel</em> or <em>small-multiples</em>.</p>
 <p>They are popular with maps as well. Here is one showing how much/little sunshine we get each month of the year.</p>
-<p><img src="https://pbs.twimg.com/media/CKbj56EWwAAMavd?format=png&name=large" style="width: 42%; margin-top: 12px; margin-left: 28%;"></p>
+<p><img src="https://pbs.twimg.com/media/CKbj56EWwAAMavd?format=png&name=large" style="width: 65%; margin-top: 12px; margin-left: 28%;"></p>
 <p><br></p>
 <p>Let’s split our plot so each island has its own panel</p>
 <div id="facet-by-island" class="section level3 unnumbered">
 <h3>Facet by island</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(rv_penguins,</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), </span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.20</span>, </span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>, </span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(island)) <span class="sc">+</span></span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(rv_penguins,</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.40</span>, </span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>, </span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(island)) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p><br></p>
 <blockquote>
 <p>Oh my lands! Look at the later years on Torgersen. Now that is fishy. The observations on that island plummeted in 2008, and only 3 penguins in 2009! Somebody was really struggling to catch those little penguins!</p>
@@ -495,15 +489,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 </div>
 <div id="facet-by-species" class="section level3 unnumbered">
 <h3>Facet by species</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(rv_penguins,</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), </span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.20</span>, </span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>, </span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(rv_penguins,</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> year), </span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.40</span>, </span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">4</span>, </span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>             <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p><br></p>
 <blockquote>
 <p>It’s not as glaring as the island chart, but it does look like the Adelie penguins really take a hit in ’09.</p>
@@ -512,32 +506,32 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <div id="simmer-time" class="section level3 unnumbered">
 <h3>Simmer time</h3>
 <p>To double check, let’s simmer things down and count the number of observations for each species by year.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> rv_penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>                 <span class="fu">group_by</span>(species, year) <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>                 <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> rv_penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>                 <span class="fu">group_by</span>(species, year) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>                 <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
 <p>Now, we can use the simple column chart with facet_wrap.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Woops-a-daisy! I did <code>color =</code> instead of <code>fill =</code>. For columns, color controls the color of the column border. Oh, and I forgot to hide the legend.</p>
+<p>Here we go:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
 <span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>Woops-a-daisy! I did <code>color =</code> instead of <code>fill =</code>. For columns, color controls the color of the column border. Oh, and I forgot to hide the legend.</p>
-<p>Here we go:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="add-some-labels-for-the-people-in-back." class="section level3 unnumbered">
 <h3>Add some labels for the people in back.</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p><br></p>
 </div>
 </div>
@@ -545,17 +539,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <h2>Colors</h2>
 <p>A variety of color palettes are available right in ggplot. A quick way to see some options is to begin by typing <code>scale_</code> and then pressing <kbd> TAB </kbd>.</p>
 <p>A menu will appear with a long list of options. The key is to pick the “scale_” that matches the aesthetic we’re using. In this case we’re using <code>fill</code> so we want to use one of the <code>scale_fill_*</code> functions.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="co">#scale_fill_fivethirtyeight() +</span></span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;viridis&quot;</span>) <span class="sc">+</span></span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="co">#scale_fill_fivethirtyeight() +</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;viridis&quot;</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="titles-and-labels" class="section level2 unnumbered">
 <h2>Titles and labels</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;viridis&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sampling bias in Adelie species&quot;</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Number of penguin observations by species&quot;</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;Source: Analytical bot Bitsy-42, 2023&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><br></p>
+<div id="pump-up-the-text-size" class="section level3 unnumbered">
+<h3>Pump up the text size</h3>
+<p>We can add <code>base_size =</code> as an option inside our <code>theme_minimal()</code> layer to adjust the overall size of the plot’s text.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
@@ -566,30 +576,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
 <span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
 <span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;Source: Analytical bot Bitsy-42, 2023&quot;</span>) <span class="sc">+</span></span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>()</span></code></pre></div>
-<p><br></p>
-<div id="pump-up-the-text-size" class="section level3 unnumbered">
-<h3>Pump up the text size</h3>
-<p>We can add <code>base_size =</code> as an option inside our <code>theme_minimal()</code> layer to adjust the overall size of the plot’s text.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(species_count, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;viridis&quot;</span>) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species)) <span class="sc">+</span></span>
-<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Sampling bias in Adelie species&quot;</span>,</span>
-<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Number of penguin observations by species&quot;</span>,</span>
-<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Year&quot;</span>,</span>
-<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
-<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;Source: Analytical bot Bitsy-42, 2023&quot;</span>) <span class="sc">+</span></span>
-<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>(<span class="at">base_size =</span> <span class="dv">22</span>)</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>  <span class="fu">theme_ft_rc</span>(<span class="at">base_size =</span> <span class="dv">22</span>)</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day3-2_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="save-our-masterpiece" class="section level3 unnumbered">
 <h3>Save our masterpiece</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;2023_giant_penguins_debunked.png&quot;</span>, </span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">10</span>, </span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>       <span class="at">height =</span> <span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;2023_giant_penguins_debunked.png&quot;</span>, </span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">10</span>, </span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>       <span class="at">height =</span> <span class="dv">7</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Seems the real question here is where did all the Adelie penguins go on Torgersen? Did they get slippery and harder to catch or did they swim off to a new home?</p>

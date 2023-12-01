@@ -121,7 +121,7 @@ ggplot(rv_penguins,
 
 <br>
 
-> Sooo...looking over at '09 the observations do look a bit sparse on the low end under 40 mm or so. What's that about?
+> Sooo...looking over at the '09 the observations do look a bit sparse on the low end under 40 mm or so. What's that about?
 
 <br>
 
@@ -132,16 +132,8 @@ ggplot(rv_penguins,
        aes(x = year, y = flipper_length_mm)) +
   geom_jitter(aes(color = year), 
               alpha = 0.40, 
-              size = 4) +
-  theme_ft_rc()
-```
-
-```{r, eval=T}
-ggplot(rv_penguins,
-       aes(x = year, y = flipper_length_mm)) +
-  geom_point(aes(color = year), 
-             alpha = 0.40, 
-             size = 4) +
+              size = 4, 
+              show.legend = FALSE) +
   theme_ft_rc()
 ```
 
@@ -151,7 +143,7 @@ ggplot(rv_penguins,
 > Now that is odd. Where did all the smallies on the low end go in 2008 and 2009?
 
 
-Let's check things by island. Earlier we learned how to split our plot into groups by color, but what if we want each island on its own separate chart?
+Let's check things out by island. Earlier we learned how to split our plot into groups by color, but now we want each island to be on its own separate chart. 
 
 
 ## I ❤️ facet_wrap() {-}
@@ -160,7 +152,7 @@ Facet wrap will create a new version of your chart for every value in a column o
 
 They are popular with maps as well. Here is one showing how much/little sunshine we get each month of the year.
 
-<img src="https://pbs.twimg.com/media/CKbj56EWwAAMavd?format=png&name=large" style="width: 42%; margin-top: 12px; margin-left: 28%;">
+<img src="https://pbs.twimg.com/media/CKbj56EWwAAMavd?format=png&name=large" style="width: 65%; margin-top: 12px; margin-left: 28%;">
 
 
 <br>
@@ -172,7 +164,7 @@ Let's split our plot so each island has its own panel
 ggplot(rv_penguins,
        aes(x = year, y = bill_depth_mm)) +
   geom_point(aes(color = year), 
-             alpha = 0.20, 
+             alpha = 0.40, 
              size = 4, 
              show.legend = FALSE) +
   facet_wrap(vars(island)) +
@@ -191,7 +183,7 @@ ggplot(rv_penguins,
 ggplot(rv_penguins,
        aes(x = year, y = bill_length_mm)) +
   geom_point(aes(color = year), 
-             alpha = 0.20, 
+             alpha = 0.40, 
              size = 4, 
              show.legend = FALSE) +
   facet_wrap(vars(species)) +
@@ -264,7 +256,7 @@ ggplot(species_count, aes(x = year, y = n)) +
 
 ## Titles and labels {-}
 
-```{r, eval=F}
+```{r, eval=T}
 ggplot(species_count, aes(x = year, y = n)) +
   geom_col(aes(fill = species), show.legend = FALSE) +
   geom_label(aes(label = n), color = "black", size = 6) +
