@@ -462,7 +462,7 @@ trees_in_san_fran <- trees_in_san_fran %>%
   mutate(distance_to_loon_m = st_distance(geometry, loon_mn))
 ```
 
-We may also add an kilometer column by dividing the calculated distance by 1,000 meters. 
+Let's also add a column with the distance shown in kilometers by dividing the calculated distance by 1,000 meters. 
 
 > The `as.numeric()` is added below to remove the *meters* units from the original distance value.
 
@@ -473,7 +473,7 @@ trees_in_san_fran <- trees_in_san_fran %>%
 
 <br>
 
-Now we can determine the closest tree in San Francisco to our loon by using the *min()* function, which will return the minimum calculated value in a column. 
+To determine the closest tree in San Francisco to our loon we use the *min()* function, which will return the minimum calculated value in a column. 
 
 Let's run *min()* on the column `distance_to_leech_km`, and use `filter()` to keep the only row where its distance is equal to the minimum distance.
 
@@ -486,7 +486,7 @@ trees_in_san_fran %>%
 
 <br>
 
-> **That's our tree!** Number `256051`: the bark shedding *Platanus x hispanica*, aka, the London plane tree. And only ~2,500 kilometers away.
+> **That's our tree!** Number `256051`: the wonderful bark shedding *Platanus x hispanica*, also known as the London plane tree. And it is only ~2,500 kilometers away.
 
 <img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 40%">
 
