@@ -63,7 +63,7 @@
   "headline": "Day 4",
   "description" : "1 Maps: GIS and Coordinate reference systems (CRS) 2 Points, Lines, and Polygons 3 sf is so awesome 4 sf spatial analysis (Part 2) 1 Maps: GIS and Coordinate reference systems (CRS) What is GIS?",
   "inLanguage" : "en",
-  "wordCount":  2449 ,
+  "wordCount":  2507 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -374,7 +374,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <a href="videos/day4/04-1-maps-gis-crs.html">Maps: GIS and Coordinate reference systems (CRS)</a></h1>
 <div id="what-is-gis" class="section level2 unnumbered">
 <h2>What is GIS?</h2>
-<p>GIS stands for <code>Geographic Information System</code>.</p>
+<p>GIS stands for: <code>Geographic Information System</code></p>
 <p>It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.</p>
 <ul>
 <li>This is a terrific resource: <a href="https://education.nationalgeographic.org/resource/geographic-information-system-gis/">National Geopgraphic - GIS</a></li>
@@ -383,10 +383,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 </div>
 <div id="what-is-a-crs" class="section level2 unnumbered">
 <h2>What is a CRS?</h2>
-<p>CRS stands for <code>Coordinate Reference System</code>.</p>
+<p>CRS stands for: <code>Coordinate Reference System</code></p>
 <p>A coordinate reference system, or CRS, is how spatial data that represent the earth’s <strong>round AND 3-Dimensional</strong> surface are flattened onto a 2 dimensional surface (think of squishing half of a tennis ball flat so that it could be represented on a piece of paper).</p>
 <p>There are Geographic Coordinate Systems which have angular units and are developed from a spheroid representation of the Earth, and a <em>prime meridian</em> for reference. There are also projected coordinate systems which have linear units (e.g. feet or meters).</p>
-<p>Go through this tutorial to get a better understanding of coordinate reference systems: <a href="https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/">Earth data science</a></p>
+<p>Go through this tutorial to get a better understanding of coordinate reference systems</p>
+<ul>
+<li><a href="https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/">Earth data science</a></li>
+</ul>
 <p><br></p>
 <blockquote>
 <p>The components of a CRS are:</p>
@@ -394,35 +397,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 </div>
 <div id="coordinate-system" class="section level2 unnumbered">
 <h2>1. Coordinate system</h2>
-<p><a href="https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system" class="uri">https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system</a></p>
-<p><img src="https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg" width="30%"></p>
+<p><img src="https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg" width="50%"></p>
 <ul>
-<li><a href="https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg">Source</a></li>
+<li><a href="https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system">Source: What is a coordinate system?</a></li>
 </ul>
 <p><br></p>
 </div>
 <div id="units-of-the-datum-horizontal-and-vertical" class="section level2 unnumbered">
 <h2>2. Units of the datum (horizontal and vertical)</h2>
-<p>If your spatial analysis requires distance in meters, you will need to make sure that your Coordinate Reference System is in meters. UTM stands for Universal Transverse Mercator and is one of the main CRS’s you will encounter. The UTM CRS contains a series of small projections that minimize the distortion you might see if you use latitude and longitude. A geographic coordinate, such as the one on the left below, has angular units.</p>
+<p>A geographic coordinate system, such as the one on the left below, has angular units and defines locations on a sphere. A projected coordinate sytem is flat, and has linear units. If your spatial analysis requires calculating distances in meters, you will want to set your Coordinate Reference System to one that uses meters. UTM stands for Universal Transverse Mercator and is one of the main CRS’s you will encounter. UTM contains a series of small projections that minimize the distortion you might see if you use latitude and longitude.</p>
 <p><br></p>
-<div class="float">
-<img src="https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png" alt="https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/" />
-<div class="figcaption"><a href="https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/" class="uri">https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/</a></div>
-</div>
+<p><img src="https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png" /></p>
 <ul>
 <li><a href="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/"><em>Source: ESRI</em></a></li>
+<li><a href="https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/">Differences in coordinate systems</a>
+<br></li>
 </ul>
-<p><br></p>
 </div>
 <div id="the-datum" class="section level2 unnumbered">
 <h2>3. The Datum</h2>
 <p>Geographic information system datum define the position of the spheroid relative to the center of the earth.</p>
-<div class="float">
-<img src="https://www.esri.com/news/arcuser/0401/graphics/geoids.gif" alt="https://www.esri.com/news/arcuser/0401/datum.html" />
-<div class="figcaption"><a href="https://www.esri.com/news/arcuser/0401/datum.html" class="uri">https://www.esri.com/news/arcuser/0401/datum.html</a></div>
-</div>
+<p><img src="https://static.packt-cdn.com/products/9781782175797/graphics/B04664_02_07.jpg" style="width: 50%;"></p>
 <ul>
-<li><a href="https://www.esri.com/news/arcuser/0401/graphics/geoids.gif"><em>Source: ESRI</em></a></li>
+<li><a href="https://www.esri.com/news/arcuser/0401/datum.html"><em>Source: Why we need datums</em></a></li>
 </ul>
 <p><br></p>
 </div>
@@ -430,8 +427,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <h2>4. Projection information</h2>
 <p>Again, the projection is a representation of a round surface (the Earth) onto a 2-dimensional flat surface (a map). This involves algorithms that transform each of the Earth’s graticules (lines on the earth, latitude and longitude) onto a flat surface. The projection information documents how this was done and what the units of the outcome are.</p>
 <ul>
-<li>This is a great source for CRS numeric codes: <a href="https://spatialreference.org/ref/epsg/" class="uri">https://spatialreference.org/ref/epsg/</a></li>
-<li>And another resource: <a href="https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html" class="uri">https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html</a></li>
+<li>This is a great source for <a href="https://spatialreference.org/ref/epsg/">CRS IDs</a></li>
+<li>And another resource on <a href="https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html">Using projections in R</a></li>
 </ul>
 </div>
 </div>
@@ -442,26 +439,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <li><strong>Lines</strong> are a series of connected points. Examples are depictions of roads, railways, and hiking trails.</li>
 <li><strong>Polygons</strong> are a series of lines that connect with area in the middle. Think of lakes, a soccer field, or a county boundary. Sometimes polygons can have holes or spaces in them like a donut. An example is a lake with islands in the middle of it.</li>
 </ul>
-<p>A collection of each of these GIS shapes can be stored in a single object. Examples include:</p>
+<p>A collection of each of these GIS shapes can be stored together as single object. Examples include:</p>
 <ul>
-<li>A collection of points showing the location of every school or hospital</li>
-<li>A collection of lines showing the entire highway system</li>
-<li>A collection of polygons showing every county in the state</li>
+<li>A collection of points: Every school or hospital</li>
+<li>A collection of lines: Every highway</li>
+<li>A collection of polygons: Every county boundary</li>
 </ul>
 <p><br></p>
-<div class="float">
-<img src="https://developers.arcgis.com/python/guide/base64-images/part1_introduction_what_is_geometry-g09a3765a-2257-b87b-563a-0fead0b89723.gif" alt="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/" />
-<div class="figcaption"><a href="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/" class="uri">https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/</a></div>
-</div>
+<p><img src="../images/map_geometries.gif" /></p>
+<ul>
+<li><a href="https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/"><em>Source: What is geometry?</em></a></li>
+</ul>
 <div id="rasters" class="section level2 unnumbered">
 <h2>Rasters</h2>
 <p>Rasters are continuous data, think of color spectra or the range of moods you may have from very angry to quite happy. You are rarely just one of these and there are infinite gradations depending on how irksome other drivers are or if you got the perfect birthday cupcake.</p>
 <p>Rasters come from technologies such as aerial photography and remote sensing imagery. The colors or variations in the cells reflect information like air pollution concentrations or tree canopy cover.</p>
 <p>Rasters are stored in a matrix of cells, like a table and the size of the cell represents the resolution of the information. If the cell is 50m x 50m, then there will be no additional information variation within that size of a cell. If the raster was showing temperature, then their will be a single temperature value for that entire. The smaller the cell size, the greater or finer the resolution of the data.</p>
-<div class="float">
-<img src="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/GUID-6754AF39-CDE9-4F9D-8C3A-D59D93059BDD-web.png" alt="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm" />
-<div class="figcaption"><a href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm" class="uri">https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm</a></div>
-</div>
+<p><img src="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/GUID-6754AF39-CDE9-4F9D-8C3A-D59D93059BDD-web.png" /></p>
+<ul>
+<li><a href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm"><em>Source: What is raster data?</em></a></li>
+</ul>
 <p><br></p>
 </div>
 </div>
@@ -469,19 +466,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <h1><span class="header-section-number">3</span> <i class="fa fa-video-camera"></i> <a href="videos/day4/04-3-sf-spatial-analysis-part1.html"><strong>sf</strong> is so awesome</a></h1>
 <div id="spatial-analysis-with-r" class="section level2 unnumbered">
 <h2>Spatial analysis with R</h2>
-<p>A powerful tool in R for spatial analysis and geography data processing is the <a href="https://r-spatial.github.io/sf/">sf package</a>.</p>
-<div class="float">
-<img src="https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png" style="width:30.0%" alt="https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20" />
-<div class="figcaption"><a href="https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20" class="uri">https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20</a></div>
-</div>
+<p>A powerful tool in R for spatial analysis and geospatial data is the <a href="https://r-spatial.github.io/sf/">sf package</a>.</p>
+<p><img src="https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png" style="width:30.0%" /></p>
 </div>
 <div id="reading-in-data" class="section level2 unnumbered">
 <h2>Reading in data</h2>
-<p>The main type of data you will be reading in are <a href="https://en.wikipedia.org/wiki/Shapefile">shapefiles</a>. Shapefiles are not one file, but are actually a set of files that include the data, the attributes of the coordinates, the projection, the coordinates, and information that tells the software the type of data it is.</p>
-<p>The other main type of data you will experience is a flat table of data with x,y coordinates, like longitude and latitude. This is the type of data we will work with today, but once we set it up as a spatial data set, we will save it as a shapefile.</p>
+<p>The main type of data you will be reading in are <a href="https://en.wikipedia.org/wiki/Shapefile">shapefiles</a>. Shapefiles are not one file, but are actually a set of files that include the data, the projection, the coordinates, and information that tells the software the type of data it is.</p>
+<p>The other main type of data you will experience is a flat table of data with X/Y coordinates, like longitude and latitude. This is the type of data we will work with today, but once we set it up as a spatial data set we will save it as a shapefile.</p>
 <p>Let’s pull in some point data. Each point in this data represents a specific tree in San Francisco.</p>
 <blockquote>
-<p>Read more about this dataset at <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28">San Francisco Trees</a></p>
+<p>The curious can see more about this dataset at <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28">San Francisco Trees</a>.</p>
 </blockquote>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -489,63 +483,63 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/sf_trees.csv&quot;</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code></pre></div>
-<p><br></p>
 <p>Now, let’s look at the data.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">View</span>(sf_trees)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">class</span>(sf_trees)</span></code></pre></div>
 <p><br></p>
-<p>The dataframe has latitude and longitude columns containing each point’s coordinates, but R does not yet know that this is a geographic data set. If we begin with a CSV file of coordinates, we must tell R to convert it to a spatial dataset. This will add a new <code>geometry</code> column to the dataframe, which will be used for mapping the data.</p>
+<p>The dataframe has latitude and longitude columns containing each point’s coordinates, but R does not yet know that this is a geographic data set.</p>
+<p>When we begin with a CSV file of coordinates, we must tell R to convert it to a spatial dataset. This will add a new <code>geometry</code> column to the dataframe that will be used for mapping the data.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Error!</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>sf_trees_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_trees, </span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>), </span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4269</span>, </span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>                         <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## Error in st_as_sf.data.frame(sf_trees, coords = c(&quot;longitude&quot;, &quot;latitude&quot;), : missing values in coordinates not allowed</code></pre>
 <p>Drats! R is right again. There are some missing coordinates or NA’s in the latitude and longitude columns. If we attempt to convert the missing data to a <code>geometry</code> we will get an error for missing coordinates.</p>
-<p>Let’s get rid of the trees/rows with missing coordinates.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># With filter() and !is.na()</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">filter</span>(sf_trees, </span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>                   <span class="sc">!</span><span class="fu">is.na</span>(longitude), </span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>                   <span class="sc">!</span><span class="fu">is.na</span>(latitude))</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># Alternative: drop_na( )</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="do">## If NA appears in *either* of the columns you provide, the row will be dropped</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(sf_trees, </span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>                    longitude, </span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>                    latitude)</span></code></pre></div>
 <p><br></p>
-<p>Now that we have filtered out the missing latitude and longitude values, we will run the <a href="https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf">st_as_sf() function</a>. This function requires the data, the name of the columns that contain the coordinates, and the data’s coordinate reference system.</p>
+<p>We need to get rid of the trees or rows in the data with missing coordinates. Here are two ways.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># With filter() and !is.na()</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">filter</span>(sf_trees, <span class="sc">!</span><span class="fu">is.na</span>(longitude), <span class="sc">!</span><span class="fu">is.na</span>(latitude))</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># Alternative: drop_na( )</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="do">## If NA appears in *either* of the columns you provide, the row will be dropped</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(sf_trees, longitude, latitude)</span></code></pre></div>
+<p><br></p>
+<p>Now that we have filtered out the missing latitude and longitude values, we can run <a href="https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf">st_as_sf()</a> without an error. This function requires the data, the name of the columns that contain the coordinates, and the data’s current coordinate reference system.</p>
 <blockquote>
-<p>If you include the argument, <code>remove = FALSE</code>, your latitude and longitude columns will be retained in addtion to adding a <code>geometry</code> column. Otherwise they will be removed as they are combined into the <code>geometry</code>.</p>
+<p>If you include the argument, <code>remove = FALSE</code>, the latitude and longitude columns will be retained in addtion to adding a <code>geometry</code> column. Otherwise they will be removed as they are combined into the <code>geometry</code> column.</p>
 </blockquote>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>sf_trees_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_trees, </span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>), </span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4269</span>, </span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>                         <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>sf_trees_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_trees, </span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>), </span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4269</span>, </span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                         <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><br></p>
-<p>To check this worked properly, try making a simple plot of the data using the base R function <code>plot()</code>. To start, we will only map the first column. This is simply to make the plotting faster. Feel free to try plotting all of the attributes and see what happens. <em>Heads up, this may take a few minutes for large datasets like this one.</em></p>
+<p>To check this worked properly, try making a simple plot of the data using the base R function <code>plot()</code>. To start with, we will only map the first column. This is simply to make the plotting faster. Feel free to try plotting all of the attributes and see what happens.</p>
+<p><em>Heads up, this may take a few minutes for large datasets like this one.</em></p>
 <blockquote>
 <p>It will be difficult to see what is going on here, since at least one tree is very far away from the rest of the trees. Apparently out in the middle of the ocean. Perhaps it is growing on a ship?</p>
 </blockquote>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Show a single layer</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Show a single layer</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo[<span class="dv">1</span>])</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day4_files/figure-html/trees-plot-1.png" width="672" /></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Show all the layers</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Show all the layers</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo)</span></code></pre></div>
 <p><br></p>
 <blockquote>
-<p>It looks like there is at least one tree that is quite far from the others. We are really only interested in the trees within the City of San Francisco border. So, let’s look at which trees are within or overlap with the City of San Francisco limits.</p>
+<p>Not too impressive, is it?.</p>
+<p>Since we are only interested in the trees within the City of San Francisco boundaries, let’s look at which trees overlap or <em>intersect</em> with the City of San Francisco limits.</p>
 </blockquote>
 <p><br></p>
-<p>We first need to read in a city spatial dataset. Then we will filter it to only include San Francisco, and then finally run the intersection/within function.</p>
+<p>We first need to read in a city spatial dataset. Then we will filter it to only include San Francisco. Finally, we will run the intersection <em>(within)</em> function on the trees.</p>
 <div id="city-data" class="section level3 unnumbered">
 <h3>1. City data</h3>
 <p>The <strong>tigris</strong> package allows us to pull political boundaries, like cities, into R.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">metro_divisions</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">metro_divisions</span>()</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="filter-to-san-francisco" class="section level3 unnumbered">
@@ -555,42 +549,40 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p><strong>NOTE:</strong> <code>str_detect</code> performs the same task as <code>grepl</code> in the video, with the benefit of putting the name of the column as the first argument.</p>
 </blockquote>
 <p>Filtering using <a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect()</a> is useful when you aren’t sure if San Francisco will be proceeded by “the City of”, or some similar but slightly different text. There is an entire <a href="https://rstudio.github.io/cheatsheets/html/strings.html">cheatsheet</a> for working with strings, so check it out when you need to search for a certain word or manipulate text in some way.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>san_fran <span class="ot">&lt;-</span> <span class="fu">filter</span>(cities, <span class="fu">str_detect</span>(NAME, <span class="st">&quot;San Francisco&quot;</span>))</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="fu">plot</span>(san_fran[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>san_fran <span class="ot">&lt;-</span> <span class="fu">filter</span>(cities, <span class="fu">str_detect</span>(NAME, <span class="st">&quot;San Francisco&quot;</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">plot</span>(san_fran[<span class="dv">1</span>])</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day4_files/figure-html/city-filter-1.png" width="672" /></p>
 <p><br></p>
 </div>
 <div id="view-the-coordinate-reference-system" class="section level3 unnumbered">
 <h3>3. View the coordinate reference system</h3>
 <p>To do an intersection or check where things overlap, the two datasets need to be using the same CRS. Let’s check.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">st_crs</span>(san_fran)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">st_crs</span>(sf_trees_geo)</span></code></pre></div>
-<p><br></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">st_crs</span>(san_fran)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">st_crs</span>(sf_trees_geo)</span></code></pre></div>
 <blockquote>
 <p>Ooofda. That’s a lot of information. The important part is that their last line showing their EPSG ID as <code>4269</code> id identical. We are good to go.</p>
 </blockquote>
+<p><br></p>
 </div>
-<div id="intersects-overlaps-is-within" class="section level3 unnumbered">
-<h3>4. Intersects / Overlaps / Is within</h3>
-<p>Order of arguments?</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(sf_trees_geo, san_fran)</span></code></pre></div>
+<div id="intersects-with-overlaps-with-or-is-within" class="section level3 unnumbered">
+<h3>4. Intersects with <em>(overlaps with or is within)</em></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(sf_trees_geo, san_fran)</span></code></pre></div>
 <p><br></p>
-<p>Look at our new data in the environment: <code>trees_in_san_fran</code>. You will see that we filtered out some of the tree records because they didn’t intersect with the boundary of the City of San Francisco. The number of rows was reduced from 19,006 to 18,994.</p>
-<p><br></p>
+<p>Now, look at our new data in the environment: <code>trees_in_san_fran</code>. You’ll see that we filtered out some of the tree records because they didn’t intersect with the boundary of the City of San Francisco. The number of rows was reduced from 19,006 to 18,994.</p>
 <p>Take a look at the new tree map.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Plots a single layer</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">plot</span>(trees_in_san_fran[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Plots a single layer</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">plot</span>(trees_in_san_fran[<span class="dv">1</span>])</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day4_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <blockquote>
-<p>Aha! That looks more like the city.</p>
+<p>Aha! Now that looks more like a city.</p>
 </blockquote>
 <p><br></p>
 </div>
 </div>
-<div id="st_write" class="section level2 unnumbered">
-<h2>st_write</h2>
+<div id="saving-maps-st_write" class="section level2 unnumbered">
+<h2>Saving maps: <code>st_write( )</code></h2>
 <p>Since we are very interested in these trees and know we’ll use the data later, let’s save this new spatial data set with <code>st_write()</code>.</p>
 <p>The first argument in <code>st_write()</code> is the name of the data in R we are saving, and the second argument is the file location and name to save to. The <strong>.shp</strong> file ending saves the data as a spatial shapefile. This is a common GIS file format for ESRI users and consists of several files.</p>
 <p>The main files have the following extensions:</p>
@@ -599,19 +591,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <li><code>.dbf</code>: The attribute data, or the columns of data in our dataframe</li>
 <li><code>.shp</code>: The shape information, or the <em>geometry</em> column in our dataframe</li>
 </ul>
+<p><br></p>
 <blockquote>
 <p>Another common spatial format is <strong>.geojson</strong>, which has the advantage of only being a single file. This makes it easier to share with others and will generally save a bit of storage space.</p>
 </blockquote>
+<p><br></p>
 <p>Finally, we include <code>delete_layer = TRUE</code> to the <strong>st_write</strong> funciton to say it’s okay to save over previous versions of the file if it already exist in the folder we are saving to.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Save as a shapefile (multiple files, good for ESRI/ArcGIS)</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">st_write</span>(trees_in_san_fran, </span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>         <span class="st">&quot;trees_in_san_fran.shp&quot;</span>, </span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>         <span class="at">delete_layer =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co"># Save as geojson (single file, good for sharing)</span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="fu">st_write</span>(trees_in_san_fran, </span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>         <span class="st">&quot;trees_in_san_fran.geojson&quot;</span>, </span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>         <span class="at">delete_layer =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Save as a shapefile (multiple files, good for ESRI/ArcGIS)</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">st_write</span>(trees_in_san_fran, </span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>         <span class="st">&quot;trees_in_san_fran.shp&quot;</span>, </span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>         <span class="at">delete_layer =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co"># Save as geojson (single file, good for sharing)</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="fu">st_write</span>(trees_in_san_fran, </span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>         <span class="st">&quot;trees_in_san_fran.geojson&quot;</span>, </span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>         <span class="at">delete_layer =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
 <p><br></p>
 </div>
 </div>
@@ -619,88 +613,107 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <h1><span class="header-section-number">4</span> <i class="fa fa-video-camera"></i> <a href="videos/day4/04-4-sf-spatial-analysis-part2.html"><strong>sf</strong> spatial analysis (Part 2)</a></h1>
 <div id="buffers-go-beyond-the-point" class="section level2 unnumbered">
 <h2>Buffers: Go beyond the point</h2>
-<p>Let’s draw a buffer around each tree in our filtered data set. In your work you may need to draw buffers around point data either when locations are uncertain to a specific level of precision, or for example, if you want to find how many people live within 5 miles of a school or hospital.</p>
-<p>To draw a buffer we want to make sure the coordinates are linear rather than angular. Remember when we talked about coordinate reference systems? Lat/Long uses angular coordinates and is not so great for calculating distances between points or areas of polygons. The Universal Transverse Mercator or UTM system on the other hand has coordinates in meters and is great for calculating surface distances.</p>
+<p>Let’s draw a buffer around each tree in our filtered data set. In your work you may need to draw buffers around point data either when locations are uncertain to a specific level of precision, or if you want to find how many people live within 5 miles of a school or hospital.</p>
+<p>To draw a buffer we must make sure the coordinates are linear rather than angular. Remember when we talked about coordinate reference systems? Lat/long uses angular coordinates and is not so great for calculating distances between points or for calculating areas of polygons. The Universal Transverse Mercator or UTM system on the other hand has coordinates in meters and is a better fit for calculating surface distances.</p>
+<p>Let’s transform the tree coordinates from lat/long to UTM.</p>
 <blockquote>
-<p>San Francisco is in UTM zone 10: CRS = 32610.</p>
+<p>San Francisco is in UTM Zone 10: CRS = 32610.</p>
 </blockquote>
 <p><br></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Convert CRS from Lat/Long to UTM zone 10 (San Francisco)</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(trees_in_san_fran, <span class="at">crs =</span> <span class="dv">32610</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co"># Add a 1,000 meter (1 KM) buffer around each tree</span></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(trees_in_san_fran, <span class="at">dist =</span> <span class="dv">1000</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co"># View the new plot, w/ BIG overlapping circles</span></span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="fu">plot</span>(trees_in_san_fran[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Convert CRS from Lat/Long to UTM zone 10 (San Francisco)</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(trees_in_san_fran, <span class="at">crs =</span> <span class="dv">32610</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co"># Add a 1,000 meter (1 KM) buffer around each tree</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_buffer</span>(trees_in_san_fran, <span class="at">dist =</span> <span class="dv">1000</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co"># View the new plot, w/ BIG overlapping circles</span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="fu">plot</span>(trees_in_san_fran[<span class="dv">1</span>])</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="going-the-distance" class="section level2 unnumbered">
 <h2>Going the distance</h2>
-<p>As a next step, we will calculate the distances between the trees and another location of interest. Let’s find which tree is closest to a specific loon floating on Leech Lake all the way over in Minnesota. <em>(As one does.)</em></p>
-<p>Below, we create a dataset with a single point using the coordinates stored as latitude and longitude. This is our special loon!</p>
-<ol style="list-style-type: decimal">
-<li>Use <a href="https://rdrr.io/github/etiennebr/geotidy/man/st_point.html">st_point()</a> to tell R these are spatial coordinates and not just numbers.</li>
-<li>Use <a href="https://r-spatial.github.io/sf/reference/sfc.html">st_sfc()</a> to create a simple feature geometry list.</li>
-<li>Use <a href="https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf">st_as_sf()</a> to make the point a simple feature object with an assigned coordinate reference system (CRS).</li>
-</ol>
+<p>As a next step, we will calculate the distances between the trees and another location of interest. Let’s find which tree is closest to a specific loon floating on Leech Lake all the way over in Minnesota. <em>You know… as one does.</em></p>
+<p>Below, we create a dataset with a single point using the coordinates stored as latitude and longitude. This is our <strong>special loon</strong>!</p>
 <p><br></p>
 <div id="create-the-loon-coordinates" class="section level3 unnumbered">
 <h3>1. Create the loon coordinates</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Our very exact loon coordinates in MN</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>loon_lat <span class="ot">&lt;-</span> <span class="fl">47.1505</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>loon_long <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">94.3839</span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co"># Add coords to a dataframe</span></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>loon_coords <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">lake =</span> <span class="st">&quot;Leech Lake&quot;</span>,</span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>                          <span class="at">lon =</span> loon_long, </span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>                          <span class="at">lat =</span> loon_lat)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Our very exact loon coordinates in MN</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>loon_lat <span class="ot">&lt;-</span> <span class="fl">47.1505</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>loon_long <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">94.3839</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="co"># Add coords to a dataframe</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>loon_coords <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">lake =</span> <span class="st">&quot;Leech Lake&quot;</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>                          <span class="at">lon =</span> loon_long, </span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>                          <span class="at">lat =</span> loon_lat)</span></code></pre></div>
 </div>
-<div id="convert-dataframe-to-a-sf-spatial-object" class="section level3 unnumbered">
-<h3>2. Convert dataframe to a sf spatial object</h3>
+<div id="convert-the-dataframe-to-sf-spatial-object-with-a-projection" class="section level3 unnumbered">
+<h3>2. Convert the dataframe to sf spatial object with a projection</h3>
 <blockquote>
 <p>The CRS ID for Lat/Long data is <code>4269</code>.</p>
 </blockquote>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>loon_mn <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(loon_coords,</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>                    <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>, <span class="st">&quot;lat&quot;</span>),</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>                    <span class="at">crs =</span> <span class="dv">4269</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>loon_mn <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(loon_coords,</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>                    <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>, <span class="st">&quot;lat&quot;</span>),</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>                    <span class="at">crs =</span> <span class="dv">4269</span>)</span></code></pre></div>
 <p><br></p>
 </div>
-<div id="transform-both-to-the-same-crs" class="section level3 unnumbered">
-<h3>3. Transform both to the same CRS</h3>
+<div id="transform-the-trees-to-the-same-crs" class="section level3 unnumbered">
+<h3>3. Transform the trees to the same CRS</h3>
 <p>To transform from one projection to another we use <code>st_transform()</code>, and assign the new projection with the argument <code>crs = 4269</code>.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(trees_in_san_fran, <span class="at">crs =</span> <span class="dv">4269</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(trees_in_san_fran, <span class="at">crs =</span> <span class="dv">4269</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 </div>
 <div id="calculate-the-st_distance" class="section level2 unnumbered">
 <h2>Calculate the <strong>st_distance( )</strong></h2>
-<p>We’ll use the <code>st_distance()</code> function to calculate the distance between each of the trees and our loon. We can also add an <code>*_km</code> column by dividing the distance by 1,000 meters. The <code>as.numeric()</code> is added to remove the <em>meters</em> units from the original distance value.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> trees_in_san_fran <span class="sc">%&gt;%</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance_to_loon_m =</span> <span class="fu">st_distance</span>(geometry, loon_mn),</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>         <span class="at">distance_to_loon_km =</span> <span class="fu">as.numeric</span>(distance_to_loon_m) <span class="sc">/</span> <span class="dv">1000</span>)</span></code></pre></div>
+<p>We’ll use the <code>st_distance()</code> function to calculate the distance between each of the trees and our loon.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> trees_in_san_fran <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance_to_loon_m =</span> <span class="fu">st_distance</span>(geometry, loon_mn))</span></code></pre></div>
+<p>We may also add an kilometer column by dividing the calculated distance by 1,000 meters.</p>
+<blockquote>
+<p>The <code>as.numeric()</code> is added below to remove the <em>meters</em> units from the original distance value.</p>
+</blockquote>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>trees_in_san_fran <span class="ot">&lt;-</span> trees_in_san_fran <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance_to_loon_km =</span> <span class="fu">as.numeric</span>(distance_to_loon_m) <span class="sc">/</span> <span class="dv">1000</span>)</span></code></pre></div>
 <p><br></p>
-<p>Now we can determine the closest tree in San Francisco to our loon by using the <em>min()</em> function, which will return the minimum calculated value in the column. Let’s run <em>min()</em> on the column <code>distance_to_leech_km</code>, and use <code>filter()</code> to keep the one row where its distance is equal to the minimum distance.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>trees_in_san_fran <span class="sc">%&gt;%</span> </span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">filter</span>(distance_to_loon_km <span class="sc">==</span> <span class="fu">min</span>(distance_to_loon_km))</span></code></pre></div>
-<pre><code>## Simple feature collection with 1 feature and 26 fields
-## Geometry type: POINT
-## Dimension:     XY
-## Bounding box:  xmin: -122.3904 ymin: 37.79167 xmax: -122.3904 ymax: 37.79167
-## Geodetic CRS:  NAD83
-## # A tibble: 1 × 27
-##   tree_id legal_status species  address site_…¹ site_…² caret…³ date     dbh
-## *   &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;date&gt; &lt;dbl&gt;
-## 1  256051 Undocumented Platanu… 200 Th…       8 Sidewa… DPW     NA        NA
-## # … with 18 more variables: plot_size &lt;chr&gt;, latitude &lt;dbl&gt;, longitude &lt;dbl&gt;,
-## #   CSAFP &lt;chr&gt;, CBSAFP &lt;chr&gt;, METDIVFP &lt;chr&gt;, GEOID &lt;chr&gt;, NAME &lt;chr&gt;,
-## #   NAMELSAD &lt;chr&gt;, LSAD &lt;chr&gt;, MTFCC &lt;chr&gt;, ALAND &lt;dbl&gt;, AWATER &lt;dbl&gt;,
-## #   INTPTLAT &lt;chr&gt;, INTPTLON &lt;chr&gt;, geometry &lt;POINT [°]&gt;,
-## #   distance_to_loon_m [m], distance_to_loon_km &lt;dbl&gt;, and abbreviated variable
-## #   names ¹​site_order, ²​site_info, ³​caretaker
-## # ℹ Use `colnames()` to see all variable names</code></pre>
-<p>That’s our tree! Number <code>256051</code>: the bark shedding <em>Platanus x hispanica</em>, aka, the London plane tree.</p>
+<p>Now we can determine the closest tree in San Francisco to our loon by using the <em>min()</em> function, which will return the minimum calculated value in a column.</p>
+<p>Let’s run <em>min()</em> on the column <code>distance_to_leech_km</code>, and use <code>filter()</code> to keep the only row where its distance is equal to the minimum distance.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>trees_in_san_fran <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>  <span class="fu">filter</span>(distance_to_loon_km <span class="sc">==</span> <span class="fu">min</span>(distance_to_loon_km)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 1
+## Columns: 27
+## $ tree_id             &lt;dbl&gt; 256051
+## $ legal_status        &lt;chr&gt; &quot;Undocumented&quot;
+## $ species             &lt;chr&gt; &quot;Platanus x hispanica :: Sycamore: London Plane&quot;
+## $ address             &lt;chr&gt; &quot;200 The Embarcadero&quot;
+## $ site_order          &lt;dbl&gt; 8
+## $ site_info           &lt;chr&gt; &quot;Sidewalk: Curb side : Cutout&quot;
+## $ caretaker           &lt;chr&gt; &quot;DPW&quot;
+## $ date                &lt;date&gt; NA
+## $ dbh                 &lt;dbl&gt; NA
+## $ plot_size           &lt;chr&gt; &quot;3x3&quot;
+## $ latitude            &lt;dbl&gt; 37.79167
+## $ longitude           &lt;dbl&gt; -122.3904
+## $ CSAFP               &lt;chr&gt; &quot;488&quot;
+## $ CBSAFP              &lt;chr&gt; &quot;41860&quot;
+## $ METDIVFP            &lt;chr&gt; &quot;41884&quot;
+## $ GEOID               &lt;chr&gt; &quot;4186041884&quot;
+## $ NAME                &lt;chr&gt; &quot;San Francisco-San Mateo-Redwood City, CA&quot;
+## $ NAMELSAD            &lt;chr&gt; &quot;San Francisco-San Mateo-Redwood City, CA Metro Di…
+## $ LSAD                &lt;chr&gt; &quot;M3&quot;
+## $ MTFCC               &lt;chr&gt; &quot;G3120&quot;
+## $ ALAND               &lt;dbl&gt; 1283429125
+## $ AWATER              &lt;dbl&gt; 1236270696
+## $ INTPTLAT            &lt;chr&gt; &quot;+37.5126658&quot;
+## $ INTPTLON            &lt;chr&gt; &quot;-122.4361768&quot;
+## $ geometry            &lt;POINT [°]&gt; POINT (-122.3904 37.79167)
+## $ distance_to_loon_m  [m] &lt;units[1 x 1]&gt;
+## $ distance_to_loon_km &lt;dbl&gt; 2503.986</code></pre>
+<p><br></p>
+<blockquote>
+<p><strong>That’s our tree!</strong> Number <code>256051</code>: the bark shedding <em>Platanus x hispanica</em>, aka, the London plane tree. And only ~2,500 kilometers away.</p>
+</blockquote>
 <p><img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 40%"></p>
 <p><br></p>
 <div id="jump-to-the-top" class="section level3 unnumbered">

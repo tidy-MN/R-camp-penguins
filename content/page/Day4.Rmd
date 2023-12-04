@@ -37,7 +37,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ## What is GIS? {-}
 
-GIS stands for `Geographic Information System`.
+GIS stands for: `Geographic Information System`
 
 It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth's surface.
 
@@ -47,7 +47,7 @@ It is a computer system for capturing, storing, checking, and displaying data re
 
 ## What is a CRS? {-}
 
-CRS stands for `Coordinate Reference System`.
+CRS stands for: `Coordinate Reference System`
 
 A coordinate reference system, or CRS, is how spatial data that represent the earth’s **round AND 3-Dimensional** surface are flattened onto a 2 dimensional surface (think of squishing half of a tennis ball flat so that it could be represented on a piece of paper). 
 
@@ -63,33 +63,32 @@ Go through this tutorial to get a better understanding of coordinate reference s
 
 ## 1. Coordinate system {-}
 
-https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system
 
-<img src="https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg" width="30%">
+<img src="https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg" width="50%">
 
-- [Source](https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg)
+- [Source: What is a coordinate system?](https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system)
 
 <br>
 
 ## 2. Units of the datum (horizontal and vertical) {-}
 
-If your spatial analysis requires distance in meters, you will need to make sure that your Coordinate Reference System is in meters. UTM stands for Universal Transverse Mercator and is one of the main CRS's you will encounter. The UTM CRS contains a series of small projections that minimize the distortion you might see if you use latitude and longitude. A geographic coordinate, such as the one on the left below, has angular units.
+A geographic coordinate system, such as the one on the left below, has angular units and defines locations on a sphere. A projected coordinate sytem is flat, and has linear units. If your spatial analysis requires calculating distances in meters, you will want to set your Coordinate Reference System to one that uses meters. UTM stands for Universal Transverse Mercator and is one of the main CRS's you will encounter. UTM contains a series of small projections that minimize the distortion you might see if you use latitude and longitude. 
 
 <br>
 
-![https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/](https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png)
+![](https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png)
 
 - [*Source: ESRI*](https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/)
-
+- [Differences in coordinate systems](https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/)
 <br>
 
 ## 3. The Datum {-}
 
 Geographic information system datum define the position of the spheroid relative to the center of the earth.
 
-![https://www.esri.com/news/arcuser/0401/datum.html](https://www.esri.com/news/arcuser/0401/graphics/geoids.gif)
+<img src="https://static.packt-cdn.com/products/9781782175797/graphics/B04664_02_07.jpg" style="width: 50%;">
 
-- [*Source: ESRI*](https://www.esri.com/news/arcuser/0401/graphics/geoids.gif)
+- [*Source: Why we need datums*](https://www.esri.com/news/arcuser/0401/datum.html)
 
 <br>
 
@@ -98,8 +97,8 @@ Geographic information system datum define the position of the spheroid relative
 
 Again, the projection is a representation of a round surface (the Earth) onto a 2-dimensional flat surface (a map). This involves algorithms that transform each of the Earth's graticules (lines on the earth, latitude and longitude) onto a flat surface. The projection information documents how this was done and what the units of the outcome are.
 
-- This is a great source for CRS numeric codes: https://spatialreference.org/ref/epsg/
-- And another resource: https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html
+- This is a great source for [CRS IDs](https://spatialreference.org/ref/epsg/)
+- And another resource on [Using projections in R](https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html)
 
 
 # <i class="fa fa-video-camera"></i> [Points, Lines, and Polygons](videos/day4/04-2-points-lines-polygons.html)
@@ -109,15 +108,19 @@ Again, the projection is a representation of a round surface (the Earth) onto a 
 - **Polygons** are a series of lines that connect with area in the middle. Think of lakes, a soccer field, or a county boundary. Sometimes polygons can have holes or spaces in them like a donut. An example is a lake with islands in the middle of it.
 
 
-A collection of each of these GIS shapes can be stored in a single object. Examples include:
+A collection of each of these GIS shapes can be stored together as single object. Examples include:
 
-- A collection of points showing the location of every school or hospital
-- A collection of lines showing the entire highway system
-- A collection of polygons showing every county in the state
+- A collection of points: Every school or hospital
+- A collection of lines: Every highway
+- A collection of polygons: Every county boundary
 
 <br>
 
-![https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/](https://developers.arcgis.com/python/guide/base64-images/part1_introduction_what_is_geometry-g09a3765a-2257-b87b-563a-0fead0b89723.gif)
+![](../images/map_geometries.gif)
+
+
+- [*Source: What is geometry?*](https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/)
+
 
 
 ## Rasters {-}
@@ -128,7 +131,10 @@ Rasters come from technologies such as aerial photography and remote sensing ima
 
 Rasters are stored in a matrix of cells, like a table and the size of the cell represents the resolution of the information. If the cell is 50m x 50m, then there will be no additional information variation within that size of a cell. If the raster was showing temperature, then their will be a single temperature value for that entire. The smaller the cell size, the greater or finer the resolution of the data.
 
-![https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/GUID-6754AF39-CDE9-4F9D-8C3A-D59D93059BDD-web.png)
+![](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/GUID-6754AF39-CDE9-4F9D-8C3A-D59D93059BDD-web.png)
+
+- [*Source: What is raster data?*](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm)
+
 
 <br>
 
@@ -138,19 +144,20 @@ Rasters are stored in a matrix of cells, like a table and the size of the cell r
 
 ## Spatial analysis with R {-}
 
-A powerful tool in R for spatial analysis and geography data processing is the [sf package](https://r-spatial.github.io/sf/).
+A powerful tool in R for spatial analysis and geospatial data is the [sf package](https://r-spatial.github.io/sf/).
 
-![https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png){width=30%}
+![](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png){width=30%}
+
 
 ## Reading in data {-}
 
-The main type of data you will be reading in are [shapefiles](https://en.wikipedia.org/wiki/Shapefile). Shapefiles are not one file, but are actually a set of files that include the data, the attributes of the coordinates, the projection, the coordinates, and information that tells the software the type of data it is. 
+The main type of data you will be reading in are [shapefiles](https://en.wikipedia.org/wiki/Shapefile). Shapefiles are not one file, but are actually a set of files that include the data, the projection, the coordinates, and information that tells the software the type of data it is. 
 
-The other main type of data you will experience is a flat table of data with x,y coordinates, like longitude and latitude. This is the type of data we will work with today, but once we set it up as a spatial data set, we will save it as a shapefile.
+The other main type of data you will experience is a flat table of data with X/Y coordinates, like longitude and latitude. This is the type of data we will work with today, but once we set it up as a spatial data set we will save it as a shapefile.
 
 Let's pull in some point data. Each point in this data represents a specific tree in San Francisco.
 
-> Read more about this dataset at [San Francisco Trees](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28)
+> The curious can see more about this dataset at [San Francisco Trees](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28).
 
 
 ```{r birds-trees, eval=T}
@@ -174,7 +181,6 @@ set.seed(50)
 sf_trees <- sample_n(sf_trees_all, 19298)
 ```
 
-<br>
 
 Now, let's look at the data.
 
@@ -186,10 +192,12 @@ class(sf_trees)
 
 <br>
 
-The dataframe has latitude and longitude columns containing each point's coordinates, but R does not yet know that this is a geographic data set. If we begin with a CSV file of coordinates, we must tell R to convert it to a spatial dataset. This will add a new `geometry` column to the dataframe, which will be used for mapping the data. 
+The dataframe has latitude and longitude columns containing each point's coordinates, but R does not yet know that this is a geographic data set. 
+
+When we begin with a CSV file of coordinates, we must tell R to convert it to a spatial dataset. This will add a new `geometry` column to the dataframe that will be used for mapping the data. 
 
 
-```{r error, eval=F}
+```{r error, error=TRUE}
 # Error!
 sf_trees_geo <- st_as_sf(sf_trees, 
                          coords = c("longitude", "latitude"), 
@@ -200,26 +208,24 @@ sf_trees_geo <- st_as_sf(sf_trees,
 
 Drats! R is right again. There are some missing coordinates or NA's in the latitude and longitude columns. If we attempt to convert the missing data to a `geometry` we will get an error for missing coordinates. 
 
-Let's get rid of the trees/rows with missing coordinates. 
+<br>
+
+We need to get rid of the trees or rows in the data with missing coordinates. Here are two ways.
 
 ```{r na-filter}
 # With filter() and !is.na()
-sf_trees <- filter(sf_trees, 
-                   !is.na(longitude), 
-                   !is.na(latitude))
+sf_trees <- filter(sf_trees, !is.na(longitude), !is.na(latitude))
 
 # Alternative: drop_na( )
 ## If NA appears in *either* of the columns you provide, the row will be dropped
-sf_trees <- drop_na(sf_trees, 
-                    longitude, 
-                    latitude)
+sf_trees <- drop_na(sf_trees, longitude, latitude)
 ```
 
 <br>
 
-Now that we have filtered out the missing latitude and longitude values, we will run the [st_as_sf() function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf). This function requires the data, the name of the columns that contain the coordinates, and the data's coordinate reference system. 
+Now that we have filtered out the missing latitude and longitude values, we can run [st_as_sf()](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) without an error. This function requires the data, the name of the columns that contain the coordinates, and the data's current coordinate reference system. 
 
-> If you include the argument, `remove = FALSE`, your latitude and longitude columns will be retained in addtion to adding a `geometry` column. Otherwise they will be removed as they are combined into the `geometry`.
+> If you include the argument, `remove = FALSE`, the latitude and longitude columns will be retained in addtion to adding a `geometry` column. Otherwise they will be removed as they are combined into the `geometry` column.
 
 ```{r trees-geo-na}
 sf_trees_geo <- st_as_sf(sf_trees, 
@@ -230,7 +236,9 @@ sf_trees_geo <- st_as_sf(sf_trees,
 
 <br>
 
-To check this worked properly, try making a simple plot of the data using the base R function `plot()`. To start, we will only map the first column. This is simply to make the plotting faster. Feel free to try plotting all of the attributes and see what happens. *Heads up, this may take a few minutes for large datasets like this one.*
+To check this worked properly, try making a simple plot of the data using the base R function `plot()`. To start with, we will only map the first column. This is simply to make the plotting faster. Feel free to try plotting all of the attributes and see what happens. 
+
+*Heads up, this may take a few minutes for large datasets like this one.*
 
 > It will be difficult to see what is going on here, since at least one tree is very far away from the rest of the trees. Apparently out in the middle of the ocean. Perhaps it is growing on a ship?
 
@@ -258,11 +266,13 @@ leaflet(sf_trees %>% sample_n(2000)) %>%
 
 <br>
 
-> It looks like there is at least one tree that is quite far from the others. We are really only interested in the trees within the City of San Francisco border. So, let's look at which trees are within or overlap with the City of San Francisco limits. 
+> Not too impressive, is it?. 
+> 
+> Since we are only interested in the trees within the City of San Francisco boundaries, let's look at which trees overlap or *intersect* with the City of San Francisco limits. 
 
 <br>
 
-We first need to read in a city spatial dataset. Then we will filter it to only include San Francisco, and then finally run the intersection/within function. 
+We first need to read in a city spatial dataset. Then we will filter it to only include San Francisco. Finally, we will run the intersection *(within)* function on the trees. 
 
 ### 1. City data {-}
 
@@ -307,14 +317,11 @@ st_crs(san_fran)
 st_crs(sf_trees_geo)
 ```
 
-<br>
-
 > Ooofda. That's a lot of information. The important part is that their last line showing their EPSG ID as `4269` id identical. We are good to go.
 
+<br>
 
-### 4. Intersects / Overlaps / Is within {-} 
-
-Order of arguments?
+### 4. Intersects with *(overlaps with or is within)* {-} 
 
 ```{r intersects-sf}
 trees_in_san_fran <- st_intersection(sf_trees_geo, san_fran)
@@ -322,9 +329,8 @@ trees_in_san_fran <- st_intersection(sf_trees_geo, san_fran)
 
 <br>
 
-Look at our new data in the environment: `trees_in_san_fran`. You will see that we filtered out some of the tree records because they didn't intersect with the boundary of the City of San Francisco. The number of rows was reduced from 19,006 to 18,994. 
+Now, look at our new data in the environment: `trees_in_san_fran`. You'll see that we filtered out some of the tree records because they didn't intersect with the boundary of the City of San Francisco. The number of rows was reduced from 19,006 to 18,994. 
 
-<br>
 
 Take a look at the new tree map.
 ```{r}
@@ -332,11 +338,11 @@ Take a look at the new tree map.
 plot(trees_in_san_fran[1])
 ```
 
-> Aha! That looks more like the city.
+> Aha! Now that looks more like a city.
 
 <br>
 
-## st_write {-}
+## Saving maps: `st_write( )` {-}
 
 Since we are very interested in these trees and know we'll use the data later, let's save this new spatial data set with `st_write()`. 
 
@@ -348,7 +354,11 @@ The main files have the following extensions:
 - `.dbf`: The attribute data, or the columns of data in our dataframe
 - `.shp`: The shape information, or the *geometry* column in our dataframe
 
+<br>
+
 > Another common spatial format is **.geojson**, which has the advantage of only being a single file. This makes it easier to share with others and will generally save a bit of storage space.
+
+<br>
 
 Finally, we include `delete_layer = TRUE` to the **st_write** funciton to say it's okay to save over previous versions of the file if it already exist in the folder we are saving to.
 
@@ -372,11 +382,14 @@ st_write(trees_in_san_fran,
 
 ## Buffers: Go beyond the point {-}
 
-Let's draw a buffer around each tree in our filtered data set. In your work you may need to draw buffers around point data either when locations are uncertain to a specific level of precision, or for example, if you want to find how many people live within 5 miles of a school or hospital. 
+Let's draw a buffer around each tree in our filtered data set. In your work you may need to draw buffers around point data either when locations are uncertain to a specific level of precision, or if you want to find how many people live within 5 miles of a school or hospital. 
 
-To draw a buffer we want to make sure the coordinates are linear rather than angular. Remember when we talked about coordinate reference systems? Lat/Long uses angular coordinates and is not so great for calculating distances between points or areas of polygons. The Universal Transverse Mercator or UTM system on the other hand has coordinates in meters and is great for calculating surface distances. 
+To draw a buffer we must make sure the coordinates are linear rather than angular. Remember when we talked about coordinate reference systems? Lat/long uses angular coordinates and is not so great for calculating distances between points or for calculating areas of polygons. The Universal Transverse Mercator or UTM system on the other hand has coordinates in meters and is a better fit for calculating surface distances. 
 
-> San Francisco is in UTM zone 10: CRS = 32610.
+
+Let's transform the tree coordinates from lat/long to UTM.
+
+> San Francisco is in UTM Zone 10: CRS = 32610.
 
 <br>
 
@@ -396,14 +409,9 @@ plot(trees_in_san_fran[1])
 
 ## Going the distance {-}
 
-As a next step, we will calculate the distances between the trees and another location of interest. Let's find which tree is closest to a specific loon floating on Leech Lake all the way over in Minnesota. *(As one does.)*
+As a next step, we will calculate the distances between the trees and another location of interest. Let's find which tree is closest to a specific loon floating on Leech Lake all the way over in Minnesota. *You know... as one does.*
 
-Below, we create a dataset with a single point using the coordinates stored as latitude and longitude. This is our special loon!
-
-1. Use [st_point()](https://rdrr.io/github/etiennebr/geotidy/man/st_point.html) to tell R these are spatial coordinates and not just numbers. 
-1. Use [st_sfc()](https://r-spatial.github.io/sf/reference/sfc.html) to create a simple feature geometry list. 
-1. Use [st_as_sf()](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) to make the point a simple feature object with an assigned coordinate reference system (CRS).
-
+Below, we create a dataset with a single point using the coordinates stored as latitude and longitude. This is our **special loon**!
 
 <br>
 
@@ -421,7 +429,7 @@ loon_coords <- data.frame(lake = "Leech Lake",
 ```
 
 
-### 2. Convert dataframe to a sf spatial object {-}
+### 2. Convert the dataframe to sf spatial object with a projection {-}
 
 > The CRS ID for Lat/Long data is `4269`.
 
@@ -435,7 +443,7 @@ loon_mn <- st_as_sf(loon_coords,
 <br>
 
 
-### 3. Transform both to the same CRS {-}
+### 3. Transform the trees to the same CRS {-}
 
 To transform from one projection to another we use `st_transform()`, and assign the new projection with the argument `crs = 4269`.
 
@@ -448,25 +456,37 @@ trees_in_san_fran <- st_transform(trees_in_san_fran, crs = 4269)
 
 ## Calculate the **st_distance( )** {-}
 
-We'll use the `st_distance()` function to calculate the distance between each of the trees and our loon. We can also add an `*_km` column by dividing the distance by 1,000 meters. The `as.numeric()` is added to remove the *meters* units from the original distance value.
+We'll use the `st_distance()` function to calculate the distance between each of the trees and our loon. 
+```{r}
+trees_in_san_fran <- trees_in_san_fran %>%
+  mutate(distance_to_loon_m = st_distance(geometry, loon_mn))
+```
+
+We may also add an kilometer column by dividing the calculated distance by 1,000 meters. 
+
+> The `as.numeric()` is added below to remove the *meters* units from the original distance value.
 
 ```{r}
 trees_in_san_fran <- trees_in_san_fran %>%
-  mutate(distance_to_loon_m = st_distance(geometry, loon_mn),
-         distance_to_loon_km = as.numeric(distance_to_loon_m) / 1000)
+  mutate(distance_to_loon_km = as.numeric(distance_to_loon_m) / 1000)
 ```
 
 <br>
 
-Now we can determine the closest tree in San Francisco to our loon by using the *min()* function, which will return the minimum calculated value in the column. Let's run *min()* on the column `distance_to_leech_km`, and use `filter()` to keep the one row where its distance is equal to the minimum distance.
+Now we can determine the closest tree in San Francisco to our loon by using the *min()* function, which will return the minimum calculated value in a column. 
+
+Let's run *min()* on the column `distance_to_leech_km`, and use `filter()` to keep the only row where its distance is equal to the minimum distance.
 
 ```{r distance-min}
 trees_in_san_fran %>% 
-  filter(distance_to_loon_km == min(distance_to_loon_km))
+  filter(distance_to_loon_km == min(distance_to_loon_km)) %>%
+  glimpse()
 ```
 
 
-That's our tree! Number `256051`: the bark shedding *Platanus x hispanica*, aka, the London plane tree.
+<br>
+
+> **That's our tree!** Number `256051`: the bark shedding *Platanus x hispanica*, aka, the London plane tree. And only ~2,500 kilometers away.
 
 <img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 40%">
 
