@@ -53,7 +53,9 @@ A coordinate reference system, or CRS, is how spatial data that represent the ea
 
 There are Geographic Coordinate Systems which have angular units and are developed from a spheroid representation of the Earth, and a *prime meridian* for reference. There are also projected coordinate systems which have linear units (e.g. feet or meters).
 
-Go through this tutorial to get a better understanding of coordinate reference systems: [Earth data science](https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/)
+Go through this tutorial to get a better understanding of coordinate reference systems
+
+- [Earth data science](https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/)
 
 <br>
 
