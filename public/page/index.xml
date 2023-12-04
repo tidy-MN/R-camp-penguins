@@ -240,6 +240,51 @@ PM
     </item>
     
     <item>
+      <title>3.2 Facets, colors, labels</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/03-2-ggplot-facets-colors-labels.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/03-2-ggplot-facets-colors-labels.html</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>4.1 Maps: GIS and CRS</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-1-maps-gis-crs.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-1-maps-gis-crs.html</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>4.2 Points, Lines, Polygons</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-2-points-lines-polygons.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-2-points-lines-polygons.html</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>4.3 sf is so awesome</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-3-sf-spatial-analysis-part1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-3-sf-spatial-analysis-part1.html</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>4.4 sf part2</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-4-sf-spatial-analysis-part2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day4/04-4-sf-spatial-analysis-part2.html</guid>
+      <description> </description>
+    </item>
+    
+    <item>
       <title>Air, wind and roses</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/explore_wind_rose.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -332,6 +377,15 @@ Day 2 review quiz Questions and other review topics Open your exercise R project
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/day3-2.html</guid>
       <description>1 ggplot: Facets, colors, and labels 1 ggplot: Facets, colors, and labels Load the raw R/V Topscy-scurvy data library(tidyverse) url &amp;lt;- &amp;quot;https://tidy-mn.</description>
+    </item>
+    
+    <item>
+      <title>Day 4</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/day4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/day4.html</guid>
+      <description>1 Maps: GIS and Coordinate reference systems (CRS) 2 Points, Lines, and Polygons 3 sf is so awesome 4 sf spatial analysis (Part 2) 1 Maps: GIS and Coordinate reference systems (CRS) What is GIS?</description>
     </item>
     
     <item>

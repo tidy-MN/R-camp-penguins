@@ -127,9 +127,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day3/03-1-Plots-graphics-grammar.html#1)
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">3.2 - </span> ggplot: Facets, colors, and labels
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">3.2 - </span> [ggplot: Facets, colors, and labels](page/videos/day3/03-2-ggplot-facets-colors-labels.html)
   
-- Notes and code examples
+- [Notes and code examples](page/day3.html#ggplot-facets-colors-and-labels) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day3/03-2-Facets-labels-colors.html#1)
 
 
@@ -141,12 +141,24 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 </div> 
 
 
-
 <div class="tab-pane fade" id="day4" role="tabpanel" aria-labelledby="day4-tab">  
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.1 - </span> Intro to Maps
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.1 - </span> [Maps: GIS and Coordinate reference systems (CRS)](page/videos/day4/04-1-maps-gis-crs.html) 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.2 - </span> Welcome to `sf`
+- [Notes and code examples](page/day4.html)
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.2 - </span> [Points, Lines, and Polygons](page/videos/day4/04-2-points-lines-polygons.html)
+
+- [Notes and code examples](page/day4.html#points-lines-and-polygons)
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.3 - </span> [**sf** is so awesome](page/videos/day4/04-3-sf-spatial-analysis-part1.html) 
+
+- [Notes and code examples](page/day4.html#sf-is-so-awesome)
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.4 - </span> [**sf** spatial analysis (Part 2)](page/videos/day4/04-4-sf-spatial-analysis-part2.html)
+
+- [Notes and code examples](page/day4.html#sf-spatial-analysis-part2)
+
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
@@ -154,7 +166,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Homeward bound](page/exercise/day4/4-homeward-bound.html)
 
 </div> 
-
 
 
 <div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">   
@@ -167,13 +178,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 </div> 
 
 
-
 <div class="tab-pane fade" id="day6" role="tabpanel" aria-labelledby="day6-tab"> 
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> Databases and passwords
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> R markdown: Reports, dashboards, presentations, and webpages  
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> R markdown: Reports, dashboards, presentations, and web pages  
 
 </div>
-
 </div>
+

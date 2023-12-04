@@ -1,5 +1,5 @@
 
-You've made some plots you can be proud of, so let's learn to save them so we can cherish them forever. There's a function called `ggsave` to do just that. 
+We've made some plots we can be proud of, so let's save them so we can cherish them forever. There's a function called `ggsave` to do just that. 
 
 So how do we `ggsave` our plots? 
 
@@ -16,7 +16,7 @@ ggplot(data, aes()) +
    ....
 
 # Then save your plot to a png file of your choosing
-ggsave("results/plot_name.png")
+ggsave("my_masterpiece.png")
 ```
 
 

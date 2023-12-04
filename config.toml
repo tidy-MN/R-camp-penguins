@@ -89,6 +89,11 @@ uglyURLs = true
     url = "page/day3.html"
     weight = 3
 
+[[menu.main]]
+    parent = "Training"
+    name = "Day 4"
+    url = "page/day4.html"
+    weight = 4
 
 
 [[menu.main]]

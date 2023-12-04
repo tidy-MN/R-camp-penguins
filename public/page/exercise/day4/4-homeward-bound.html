@@ -63,7 +63,7 @@
   "headline": "Getting home",
   "description" : "Maps The three rings to rule the world in R and spatial analysis are sf, tigris, and ggplot or leaflet.",
   "inLanguage" : "en",
-  "wordCount":  708 ,
+  "wordCount":  726 ,
   "datePublished" : "2023-11-03T00:00:00",
   "dateModified" : "2023-11-03T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -146,6 +146,8 @@
                   <a href="/R-camp-penguins/page/day2.html">Day 2</a>
                 
                   <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+                  <a href="/R-camp-penguins/page/day4.html">Day 4</a>
                 
               </div>
             </li>
@@ -354,8 +356,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png" alt="https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20" />
 <div class="figcaption"><a href="https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20" class="uri">https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20</a></div>
 </div>
-<p>Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the the center of Smoky Mountain National Park in Tennesse. Let’s set up 2 points, and then measure how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join with the states to develop a final list of states that the birds will fly through and make some maps. We will <em>of course</em> follow up this exercise by setting up strict conservation laws to protect these flight paths.</p>
-<p>A tree in the center of St. Paul.</p>
+<p>Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the the center of Smoky Mountain National Park in Tennessee.</p>
+<p>We’ll first set up 2 points and then calculate how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join it with any overlapping states to get a list of states that the bird will fly through. The we will make some maps of the migration path. <em>As an additional piece of homework, we’ll leave it to you to develop strict conservation laws to protect the trees in along this flight path.</em></p>
+<p>We begin.</p>
+<p><br></p>
+</div>
+<div id="a-tree-stands-in-the-center-of-st.-paul" class="section level2 unnumbered">
+<h2>A tree stands in the center of St. Paul</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>lat_y <span class="ot">&lt;-</span> <span class="fl">44.9283966</span> <span class="co">#Always remember that latitude is a ladder.</span></span>
@@ -365,8 +372,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>nest_mn <span class="ot">&lt;-</span> <span class="fu">st_sfc</span>(<span class="fu">st_point</span>(coords))</span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>nest_mn <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(nest_mn, <span class="at">crs =</span> <span class="dv">4326</span>)</span></code></pre></div>
-<p>A tree in the center of Smoky Mountain National Park</p>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>nest_mn <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(nest_mn, <span class="at">crs =</span> <span class="dv">4269</span>)</span></code></pre></div>
+</div>
+<div id="a-tree-stands-in-the-center-of-smoky-mountain-national-park" class="section level2 unnumbered">
+<h2>A tree stands in the center of Smoky Mountain National Park</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>lat_y <span class="ot">&lt;-</span> <span class="fl">35.5812</span> <span class="co"># Remember that latitude is a ladder going up and down</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>long_x <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">83.8609</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
@@ -374,7 +383,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>nest_smnp <span class="ot">&lt;-</span> <span class="fu">st_sfc</span>(<span class="fu">st_point</span>(coords)) <span class="co"># setting up the datum</span></span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>nest_smnp <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(nest_smnp, <span class="at">crs =</span> <span class="dv">4326</span>) <span class="co"># providing the coordinate reference system</span></span></code></pre></div>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>nest_smnp <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(nest_smnp, <span class="at">crs =</span> <span class="dv">4269</span>) <span class="co"># providing the coordinate reference system</span></span></code></pre></div>
+<p><br></p>
 <p>How far part are these two nests? We need to convert the coordinate reference systems to make sure that the two locations are comparable and our final answer is in meters.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>nest_mn_meters <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(nest_mn, <span class="at">crs =</span> <span class="dv">9822</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
@@ -408,7 +418,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="fu">plot</span>(tree_route)</span>
 <span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>tree_route <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(tree_route, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>tree_route <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(tree_route, <span class="at">crs =</span> <span class="dv">4269</span>)</span>
 <span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="fu">plot</span>(tree_route)</span></code></pre></div>
 <p>Looking at that shape in our Plots window is satisfying, but doesn’t tell us anything about what states the polygon goes through, and we’d like a pretty map in the end. So, let’s get started. First, we are going to pull in our tigris package and grab the U.S. states’ polygons.</p>

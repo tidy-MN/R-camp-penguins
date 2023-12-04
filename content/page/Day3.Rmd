@@ -23,7 +23,7 @@ hr {background:  white;}
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE, eval=F)
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE)
 
 xaringanExtra::use_clipboard()
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
@@ -46,7 +46,6 @@ How to create a beautiful masterpiece in 4 easy steps.
 <br>
 
 > We stumbled upon a torn page from a field notebook with a few penguin observations. The only problem is the species and island information is torn off. Let's use graphicial analysis to fill in the gaps for these lost penguins.
-
 
 
 ```{r, eval=T}
@@ -305,10 +304,314 @@ Now that is a beautiful masterpiece. And it sure looks like our lost penguins ca
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> ggplot: Facets, colors, and labels
 
-*Coming soon...*
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [ggplot: Facets, colors, and labels](page/videos/day3/03-2-ggplot-facets-colors-labels.html)
 
+
+
+## Load the raw R/V Topscy-scurvy data {-}
+
+```{r}
+library(tidyverse)
+
+url <- "https://tidy-mn.github.io/R-camp-penguins/data/rv_scurvy_penguins.csv"
+
+rv_penguins <- read_csv(url)
+```
+
+
+## Something is fishy {-}
+
+Let's dig into this data to see if something stands out and helps explain the unexpected size difference between the years. First we'll need to break out of those column boxes and plot the the raw bill length values.
+
+### 1. We begin with a **ggplot( )** canvas {-}
+```{r, eval=T}
+ggplot(rv_penguins)
+```
+
+
+### 2. Assign X/Y axes in **aes()** {-}
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = bill_length_mm))
+```
+
+<br>
+
+### 3. Add a **geom_point** layer with a **+** sign {-}
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = bill_length_mm)) +
+  geom_point(alpha = 0.40)
+```
+
+<br>
+
+### 4. Add some color and jitter with **geom_jitter** {-}
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = bill_length_mm)) +
+  geom_jitter(aes(color = year), 
+              alpha = 0.4)
+```
+
+<br>
+
+### 5. Increase point **size** {-}
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = bill_length_mm)) +
+  geom_jitter(aes(color = year), 
+              alpha = 0.40, 
+              size = 4) 
+```
+
+<br>
+
+### 6. Hide the legend {-}
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = bill_length_mm)) +
+  geom_jitter(aes(color = year), 
+              alpha = 0.40, 
+              size = 4, 
+              show.legend = FALSE) 
+```
+
+<br>
+
+### 7. Since we're data *sleuthing*, let's plot in undercover night mode {-}
+```{r, eval=T}
+library(hrbrthemes)
+
+ggplot(rv_penguins,
+       aes(x = year, y = bill_length_mm)) +
+  geom_jitter(aes(color = year), 
+              alpha = 0.40, 
+              size = 4, 
+              show.legend = FALSE) +
+  theme_ft_rc()
+```
+
+<br>
+
+> Sooo...looking over at the '09 the observations do look a bit sparse on the low end under 40 mm or so. What's that about?
+
+<br>
+
+> How about flipper length?
+
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = flipper_length_mm)) +
+  geom_jitter(aes(color = year), 
+              alpha = 0.40, 
+              size = 4, 
+              show.legend = FALSE) +
+  theme_ft_rc()
+```
+
+
+<br>
+
+> Now that is odd. Where did all the smallies on the low end go in 2008 and 2009?
+
+
+Let's check things out by island. Earlier we learned how to split our plot into groups by color, but now we want each island to be on its own separate chart. 
+
+
+## I ❤️ facet_wrap() {-}
+
+Facet wrap will create a new version of your chart for every value in a column of your choosing. These charts are also referred to as *multi-panel* or *small-multiples*. 
+
+They are popular with maps as well. Here is one showing how much/little sunshine we get each month of the year.
+
+<img src="https://pbs.twimg.com/media/CKbj56EWwAAMavd?format=png&name=large" style="width: 65%; margin-top: 12px; margin-left: 28%;">
+
+
+<br>
+
+Let's split our plot so each island has its own panel
+
+### Facet by island {-}
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = bill_depth_mm)) +
+  geom_point(aes(color = year), 
+             alpha = 0.40, 
+             size = 4, 
+             show.legend = FALSE) +
+  facet_wrap(vars(island)) +
+  theme_ft_rc()
+```
+
+<br>
+
+> Oh my lands! Look at the later years on Torgersen. Now that is fishy. The observations on that island plummeted in 2008, and only 3 penguins in 2009! Somebody was really struggling to catch those little penguins!
+>
+> But still, why the longer bills in later years? Let's see if this sampling bias affected the species as well. We can make the same chart but swap in `species` for `island` in the facet wrap.
+
+
+### Facet by species {-}
+```{r, eval=T}
+ggplot(rv_penguins,
+       aes(x = year, y = bill_length_mm)) +
+  geom_point(aes(color = year), 
+             alpha = 0.40, 
+             size = 4, 
+             show.legend = FALSE) +
+  facet_wrap(vars(species)) +
+  theme_ft_rc()
+```
+
+<br>
+
+> It's not as glaring as the island chart, but it does look like the Adelie penguins really take a hit in '09.
+
+
+### Simmer time {-}
+
+To double check, let's simmer things down and count the number of observations for each species by year.
+
+```{r, eval=T}
+species_count <- rv_penguins %>% 
+                 group_by(species, year) %>%
+                 summarize(n = n())
+```
+
+
+Now, we can use the simple column chart with facet_wrap.
+```{r, eval=T}
+ggplot(species_count, aes(x = year, y = n)) +
+  geom_col(aes(color = species)) +
+  facet_wrap(vars(species)) +
+  theme_ft_rc()
+```
+
+Woops-a-daisy! I did `color =` instead of `fill = `. For columns, color controls the color of the column border. Oh, and I forgot to hide the legend. 
+
+Here we go:
+```{r}
+ggplot(species_count, aes(x = year, y = n)) +
+  geom_col(aes(fill = species), show.legend = FALSE) +
+  facet_wrap(vars(species)) +
+  theme_ft_rc()
+```
+
+<br>
+
+### Add some labels for the people in back. {-}
+```{r}
+ggplot(species_count, aes(x = year, y = n)) +
+  geom_col(aes(fill = species), show.legend = FALSE) +
+  geom_label(aes(label = n), color = "black") +
+  facet_wrap(vars(species)) +
+  theme_ft_rc()
+```
+
+<br>
+
+## Colors {-}
+
+A variety of color palettes are available right in ggplot. A quick way to see some options is to begin by typing `scale_` and then pressing <kbd> TAB </kbd>. 
+
+A menu will appear with a long list of options. The key is to pick the "scale_" that matches the aesthetic we're using. In this case we're using `fill` so we want to use one of the `scale_fill_*` functions.
+
+```{r}
+ggplot(species_count, aes(x = year, y = n)) +
+  geom_col(aes(fill = species), show.legend = FALSE) +
+  geom_label(aes(label = n), color = "black") +
+  #scale_fill_fivethirtyeight() +
+  scale_fill_viridis_d(option = "viridis") +
+  facet_wrap(vars(species)) +
+  theme_ft_rc()
+```
+
+
+## Titles and labels {-}
+
+```{r, eval=T}
+ggplot(species_count, aes(x = year, y = n)) +
+  geom_col(aes(fill = species), show.legend = FALSE) +
+  geom_label(aes(label = n), color = "black", size = 6) +
+  scale_fill_viridis_d(option = "viridis") +
+  facet_wrap(vars(species)) +
+  labs(title = "Sampling bias in Adelie species",
+       subtitle = "Number of penguin observations by species",
+       x = "Year",
+       y = "Count",
+       caption = "Source: Analytical bot Bitsy-42, 2023") +
+  theme_ft_rc()
+```
+
+
+<br>
+
+### Pump up the text size {-}
+
+We can add `base_size = ` as an option inside our `theme_minimal()` layer to adjust the overall size of the plot's text.
+
+```{r, eval=T}
+ggplot(species_count, aes(x = year, y = n)) +
+  geom_col(aes(fill = species), show.legend = FALSE) +
+  geom_label(aes(label = n), color = "black", size = 6) +
+  scale_fill_viridis_d(option = "viridis") +
+  facet_wrap(vars(species)) +
+  labs(title = "Sampling bias in Adelie species",
+       subtitle = "Number of penguin observations by species",
+       x = "Year",
+       y = "Count",
+       caption = "Source: Analytical bot Bitsy-42, 2023") +
+  theme_ft_rc(base_size = 22)
+```
+
+<br>
+
+### Save our masterpiece {-}
+
+
+We've made some plots we can be proud of, so let's save them so we can cherish them forever. There's a function called `ggsave` to do just that. 
+
+So how do we `ggsave` our plots? 
+
+Let's try `help(ggsave)` or `?ggsave`.
+```{r ggsave, eval=F, echo=T}
+# Get help
+help(ggsave)
+?ggsave
+
+# Run the R code for your favorite plot first
+ggplot(data, aes()) +
+   .... +
+   ....
+
+# Then save your plot to a png file of your choosing
+ggsave("my_masterpiece.png")
+```
+
+
+<br>
+
+Okay, let's give it a shot.
+```{r, eval=F}
+ggsave("2023_giant_penguins_debunked.png", 
+       width = 10, 
+       height = 7)
+```
+
+<br>
+
+- *Learn more about saving plots at* [http://stat545.com/](http://stat545.com/block017_write-figure-to-file.html)
+
+
+<br>
+
+> Seems the real question here is where did all the Adelie penguins go on Torgersen? Did they get slippery and harder to catch or did they swim off to a new home? 
+>
+> I dare say the sea is full mysteries. But anyways, I unfortunately don't expect to see penguin-zilla anytime soon. 
+> 
+> Over and out.  
+> *-Bitsy-42*
 
 <br>
 

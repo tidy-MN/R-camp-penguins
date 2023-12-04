@@ -24,9 +24,15 @@ The three rings to rule the world in R and spatial analysis are *sf*, *tigris*, 
 
 ![https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png)
 
-Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the the center of Smoky Mountain National Park in Tennesse. Let's set up 2 points, and then measure how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join with the states to develop a final list of states that the birds will fly through and make some maps. We will *of course* follow up this exercise by setting up strict conservation laws to protect these flight paths.
+Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the the center of Smoky Mountain National Park in Tennessee. 
 
-A tree in the center of St. Paul.
+We'll first set up 2 points and then calculate how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join it with any overlapping states to get a list of states that the bird will fly through. The we will make some maps of the migration path. *As an additional piece of homework, we'll leave it to you to develop strict conservation laws to protect the trees in along this flight path.*
+
+We begin.
+
+<br>
+
+## A tree stands in the center of St. Paul {-}
 
 ```{r, tree 1}
 library(sf)
@@ -38,10 +44,11 @@ coords <- c(long_x, lat_y)
 
 nest_mn <- st_sfc(st_point(coords))
 
-nest_mn <- st_as_sf(nest_mn, crs = 4326)
+nest_mn <- st_as_sf(nest_mn, crs = 4269)
 ```
 
-A tree in the center of Smoky Mountain National Park
+
+## A tree stands in the center of Smoky Mountain National Park {-}
 
 ```{r, tree 2}
 
@@ -52,9 +59,11 @@ coords <- c(long_x, lat_y)
 
 nest_smnp <- st_sfc(st_point(coords)) # setting up the datum
 
-nest_smnp <- st_as_sf(nest_smnp, crs = 4326) # providing the coordinate reference system
+nest_smnp <- st_as_sf(nest_smnp, crs = 4269) # providing the coordinate reference system
 ```
 
+
+<br>
 
 How far part are these two nests? We need to convert the coordinate reference systems to make sure that the two locations are comparable and our final answer is in meters.
 
@@ -105,10 +114,9 @@ tree_route <- st_buffer(tree_route, dist = 1000)
 
 plot(tree_route)
 
-tree_route <- st_transform(tree_route, crs = 4326)
+tree_route <- st_transform(tree_route, crs = 4269)
 
 plot(tree_route)
-
 ```
 
 
@@ -121,8 +129,6 @@ Looking at that shape in our Plots window is satisfying, but doesn't tell us any
 library(tigris)
 
 all_states <- states()
-
-
 ```
 
 

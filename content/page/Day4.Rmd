@@ -1,8 +1,8 @@
 ---
-title: "Day 2 - PM"
+title: "Day 4"
 output: 
   blogdown::html_page: 
-    toc: true
+    toc: true   
     toc_depth: 1
     highlight: tango
     css: css/camp_style.css
@@ -12,528 +12,464 @@ output:
     monofont: Source Code Pro
 ---
 
+
 <style>
 h1 .header-section-number {background: #62BE2C;}
 hr {background: #62BE2C;}
 </style>
 
 
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=TRUE, warning=F, message=F)
-knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE)
+
 xaringanExtra::use_clipboard()
 
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
-library(ggplot2)
-library(readr)
-library(dplyr)
-
-# Read in the full scrap data
-#scrap <- read_csv("scrap_day2.csv")
-```
-
-
-<br>
-
-<div style="border: 2px solid; border-color: hotpink; padding: 22px; border-radius: 25px; padding-top: 0;">
-
-# Guess Who? {-}
-<h2 style="margin-top: -24px;"> _Star Wars edition_ </h2>
-```{r guesswho, child='../../static/modules/games_guesswho/starwars.Rmd'}
-```
-</div>
-
-<br>
-
-
-**Load your saved scrap data**
-```{r, eval=T}
-# Your saved data
-scrap <- read_csv("results/scrap_day2.csv")
-
-# For those just joining us
-#scrap <- read_csv("https://mn-r.netlify.app/data/scrap_day2.csv")
 ```
 
 <br>
 
 
-# `ifelse()`
-<hr>
-```{r if-yoda, child='../../static/modules/base/base_ifelse/yoda.Rmd'}
-```
+# <i class="fa fa-video-camera"></i> [Maps: GIS and Coordinate reference systems (CRS)](page/videos/day4/04-1-maps-gis-crs.html) 
 
-```{r if-cheap, child='../../static/modules/base/base_ifelse/cheap_items.Rmd'}
-```
+## What is GIS? {-}
 
+GIS stands for `Geographic Information System`.
 
-> __CONGRATULATIONS__ of galactic proportions to you. 
->
-> We now have a clean and tidy data set. If BB8 ever receives new data again, we can re-run this script and in seconds we'll have it all cleaned up.
->
+It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth's surface.
+
+- This is a terrific resource: [National Geopgraphic - GIS](https://education.nationalgeographic.org/resource/geographic-information-system-gis/)
+- This is another: [ESRI - What is GIS?](https://www.esri.com/en-us/what-is-gis/overview)
 
 
-<div style="clear: both;"></div>
+## What is a CRS? {-}
+
+CRS stands for `Coordinate Reference System`.
+
+A coordinate reference system, or CRS, is how spatial data that represent the earth’s **round AND 3-Dimensional** surface are flattened onto a 2 dimensional surface (think of squishing half of a tennis ball flat so that it could be represented on a piece of paper). 
+
+There are Geographic Coordinate Systems which have angular units and are developed from a spheroid representation of the Earth, and a *prime meridian* for reference. There are also projected coordinate systems which have linear units (e.g. feet or meters).
+
+Go through this tutorial to get a better understanding of coordinate reference systems: [Earth data science](https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/)
+
+<br>
+
+> The components of a CRS are:
+
+## 1. Coordinate system {-}
+
+https://www.houseofmath.com/encyclopedia/functions/theory-of-functions/fundamentals-of-functions/what-is-a-coordinate-system
+
+<img src="https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg" width="30%">
+
+- [Source](https://dctqed2pc42y2.cloudfront.net/overleaf-assets/images/s140_koordinatsystem1eng.svg)
+
+<br>
+
+## 2. Units of the datum (horizontal and vertical) {-}
+
+If your spatial analysis requires distance in meters, you will need to make sure that your Coordinate Reference System is in meters. UTM stands for Universal Transverse Mercator and is one of the main CRS's you will encounter. The UTM CRS contains a series of small projections that minimize the distortion you might see if you use latitude and longitude. A geographic coordinate, such as the one on the left below, has angular units.
+
+<br>
+
+![https://esri.com/arcgis-blog/products/arcgis-pro/mapping/coordinate-systems-difference/](https://www.esri.com/arcgis-blog/wp-content/uploads/2022/02/grid2.png)
+
+- [*Source: ESRI*](https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/)
+
+<br>
+
+## 3. The Datum {-}
+
+Geographic information system datum define the position of the spheroid relative to the center of the earth.
+
+![https://www.esri.com/news/arcuser/0401/datum.html](https://www.esri.com/news/arcuser/0401/graphics/geoids.gif)
+
+- [*Source: ESRI*](https://www.esri.com/news/arcuser/0401/graphics/geoids.gif)
 
 <br>
 
 
-# Plots with _ggplot2_
-<hr>
+## 4. Projection information {-}
 
-#### _Plot the data, Plot the data, Plot the data_ {-}
+Again, the projection is a representation of a round surface (the Earth) onto a 2-dimensional flat surface (a map). This involves algorithms that transform each of the Earth's graticules (lines on the earth, latitude and longitude) onto a flat surface. The projection information documents how this was done and what the units of the outcome are.
 
-<br>
-
-![](../images/ggplot2_hex.png){align="right" width="180" style="margin-right: 70px; margin-top: -124px;"}
-
-```{r gg-sand, child = '../../static/modules/ggplot/ggplot_sandwich/sandwich.Rmd'}
-```
+- This is a great source for CRS numeric codes: https://spatialreference.org/ref/epsg/
+- And another resource: https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html
 
 
-<br>
+# <i class="fa fa-video-camera"></i> [Points, Lines, and Polygons](page/videos/day4/04-2-points-lines-polygons.html)
+
+- **Points** are simply a pair of geographic coordinates, like a X-Y pair on a plot. They are dimensionless. Examples of point data in GIS are locations of trees in a park, locations where you stopped on a hike, or locations of defibrillators in a building.
+- **Lines** are a series of connected points. Examples are depictions of roads, railways, and hiking trails. 
+- **Polygons** are a series of lines that connect with area in the middle. Think of lakes, a soccer field, or a county boundary. Sometimes polygons can have holes or spaces in them like a donut. An example is a lake with islands in the middle of it.
 
 
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> A short detour {-}
+A collection of each of these GIS shapes can be stored in a single object. Examples include:
 
-#### Who's the tallest of them all? {-}
-
-```{r, eval=F}
-# Install new packages
-install.packages("ggrepel")
-```
+- A collection of points showing the location of every school or hospital
+- A collection of lines showing the entire highway system
+- A collection of polygons showing every county in the state
 
 <br>
 
-```{r, message=F, warning=F}
-# Load packages
+![https://developers.arcgis.com/python/guide/part1-introduction-what-is-geometry/](https://developers.arcgis.com/python/guide/base64-images/part1_introduction_what_is_geometry-g09a3765a-2257-b87b-563a-0fead0b89723.gif)
+
+
+## Rasters {-}
+
+Rasters are continuous data, think of color spectra or the range of moods you may have from very angry to quite happy. You are rarely just one of these and there are infinite gradations depending on how irksome other drivers are or if you got the perfect birthday cupcake.
+
+Rasters come from technologies such as aerial photography and remote sensing imagery. The colors or variations in the cells reflect information like air pollution concentrations or tree canopy cover. 
+
+Rasters are stored in a matrix of cells, like a table and the size of the cell represents the resolution of the information. If the cell is 50m x 50m, then there will be no additional information variation within that size of a cell. If the raster was showing temperature, then their will be a single temperature value for that entire. The smaller the cell size, the greater or finer the resolution of the data.
+
+![https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/GUID-6754AF39-CDE9-4F9D-8C3A-D59D93059BDD-web.png)
+
+<br>
+
+
+# <i class="fa fa-video-camera"></i> [**sf** is so awesome](page/videos/day4/04-3-sf-spatial-analysis-part1.html)
+
+
+## Spatial analysis with R {-}
+
+A powerful tool in R for spatial analysis and geography data processing is the [sf package](https://r-spatial.github.io/sf/).
+
+![https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png){width=30%}
+
+## Reading in data {-}
+
+The main type of data you will be reading in are [shapefiles](https://en.wikipedia.org/wiki/Shapefile). Shapefiles are not one file, but are actually a set of files that include the data, the attributes of the coordinates, the projection, the coordinates, and information that tells the software the type of data it is. 
+
+The other main type of data you will experience is a flat table of data with x,y coordinates, like longitude and latitude. This is the type of data we will work with today, but once we set it up as a spatial data set, we will save it as a shapefile.
+
+Let's pull in some point data. Each point in this data represents a specific tree in San Francisco.
+
+> Read more about this dataset at [San Francisco Trees](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28)
+
+
+```{r birds-trees, eval=T}
+library(sf)
 library(tidyverse)
-library(ggrepel)
 
-# Get starwars character data
-star_df <- starwars
+url <- "https://tidy-mn.github.io/R-camp-penguins/data/sf_trees.csv"
+
+sf_trees <- read_csv(url)
+```
+
+
+```{r, echo=F, eval=F}
+library(sf)
+library(tidyverse)
+
+sf_trees_all <- read_csv("C:/Users/kvaleD1/Downloads/sf_trees.csv")
+
+set.seed(50)
+
+sf_trees <- sample_n(sf_trees_all, 19298)
 ```
 
 <br>
 
-```{r, warning=F}
-# What is this?
-glimpse(star_df)
+Now, let's look at the data.
+
+```{r trees-view, eval=F}
+View(sf_trees)
+
+class(sf_trees)
 ```
 
 <br>
 
-Plot a histogram of the character heights.
+The dataframe has latitude and longitude columns containing each point's coordinates, but R does not yet know that this is a geographic data set. If we begin with a CSV file of coordinates, we must tell R to convert it to a spatial dataset. This will add a new `geometry` column to the dataframe, which will be used for mapping the data. 
 
-```{r, message=F, warning=F}
-# Height distribution
-ggplot(star_df, aes(x = height)) + geom_histogram(fill = "hotpink")
+
+```{r error, eval=F}
+# Error!
+sf_trees_geo <- st_as_sf(sf_trees, 
+                         coords = c("longitude", "latitude"), 
+                         crs = 4269, 
+                         remove = FALSE)
+```
+
+
+Drats! R is right again. There are some missing coordinates or NA's in the latitude and longitude columns. If we attempt to convert the missing data to a `geometry` we will get an error for missing coordinates. 
+
+Let's get rid of the trees/rows with missing coordinates. 
+
+```{r na-filter}
+# With filter() and !is.na()
+sf_trees <- filter(sf_trees, 
+                   !is.na(longitude), 
+                   !is.na(latitude))
+
+# Alternative: drop_na( )
+## If NA appears in *either* of the columns you provide, the row will be dropped
+sf_trees <- drop_na(sf_trees, 
+                    longitude, 
+                    latitude)
 ```
 
 <br>
 
-<div class="note">
+Now that we have filtered out the missing latitude and longitude values, we will run the [st_as_sf() function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf). This function requires the data, the name of the columns that contain the coordinates, and the data's coordinate reference system. 
 
-- Try changing the fill color to __"<span style="color: #FD6A02;">darkorange</span>"__.
+> If you include the argument, `remove = FALSE`, your latitude and longitude columns will be retained in addtion to adding a `geometry` column. Otherwise they will be removed as they are combined into the `geometry`.
 
-- Try making a histogram of the column `mass`.
-
-</div>
-
-<br>
-
-Plot comparisons between height and mass with `geom_point(...)`.
-```{r, eval=F, message=F, warning=F}
-# Height vs. Mass scatterplot
-ggplot(star_df, aes(y = mass, x = height)) +
-   geom_point(aes(color = species), size = 5)
-```
-<br>
-
-Who's who? Let's add some labels to the points.
-```{r, eval=F, message=F, warning=F}
-# Add labels
-ggplot(star_df, aes(y = mass, x = height)) +
-  geom_point(aes(color = species), size = 5) +
-  geom_text_repel(aes(label = name))
-
-
-# Use a log scale for Mass on the y-axis
-ggplot(star_df, aes(y = mass, x = height)) +
-  geom_point(aes(color = species), size = 5) +
-  geom_text_repel(aes(label = name)) +
-  scale_y_log10()
-
+```{r trees-geo-na}
+sf_trees_geo <- st_as_sf(sf_trees, 
+                         coords = c("longitude", "latitude"), 
+                         crs = 4269, 
+                         remove = FALSE)
 ```
 
 <br>
 
-Let's drop the "Hutt" species before plotting.
-```{r, eval=F, message=F, warning=F}
-# Without the Hutt
-ggplot(filter(star_df, species != "Hutt"), aes(y = mass, x = height)) +
-  geom_point(aes(color = species), size = 5) +
-  geom_text_repel(aes(label = name, color = species))
+To check this worked properly, try making a simple plot of the data using the base R function `plot()`. To start, we will only map the first column. This is simply to make the plotting faster. Feel free to try plotting all of the attributes and see what happens. *Heads up, this may take a few minutes for large datasets like this one.*
+
+> It will be difficult to see what is going on here, since at least one tree is very far away from the rest of the trees. Apparently out in the middle of the ocean. Perhaps it is growing on a ship?
+
+```{r trees-plot}
+# Show a single layer
+plot(sf_trees_geo[1])
+```
+
+```{r trees-plot-all, eval=F}
+# Show all the layers
+plot(sf_trees_geo)
+```
+
+
+```{r, echo=F, eval=F}
+library(leaflet)
+
+leaflet(sf_trees %>% sample_n(2000)) %>%
+  addTiles() %>%
+  addMarkers(#lat = ~latitude,
+             #lng = ~longitude
+    )
 
 ```
 
 <br>
 
-We can add `facet_wrap` to make a chart for each species.
-```{r, eval=T, message=F, warning=F}
-# Split out by species
-ggplot(star_df, aes(x = mass, y = height)) +
-  geom_point(aes(color = species), size = 3) +
-  facet_wrap("species") +
-  guides(color = "none")
-```
-</div>
-
+> It looks like there is at least one tree that is quite far from the others. We are really only interested in the trees within the City of San Francisco border. So, let's look at which trees are within or overlap with the City of San Francisco limits. 
 
 <br>
 
-<div class="note" style="line-height: 1.6;">
-### Teaser {-}
+We first need to read in a city spatial dataset. Then we will filter it to only include San Francisco, and then finally run the intersection/within function. 
 
-Analysts often get asked questions:
+### 1. City data {-}
 
-- What's the highest number? 
-- What's the lowest number? 
-- What was the average tons of scrap from Cratertown last year? 
-- Which town's scrap was worth the most credits?
+The **tigris** package allows us to pull political boundaries, like cities, into R. 
 
-</div>
+```{r tigris}
+library(tigris)
 
+options(tigris_use_cache = TRUE)
 
-<br>
-
-
-## Plots of garbage {-}
-<hr class="hrlvl2">
-
-
-Try making a scatterplot of any two columns with `geom_point()`.
-
-_Hint: Numeric variables will be more informative._
-
-```{r, eval=F, echo=T}
-ggplot(scrap, aes(x = __column1__, y = __column2__)) + 
-    geom_point()
-```
-
-
-
-## Colors {-}
-<hr class="hrlvl2">
-
-Now let's use color to show the origins of the scrap
-```{r, eval=T}
-ggplot(scrap, aes(x = destination, y = credits, color = origin)) +
-  geom_point()
+cities <- metro_divisions()
 ```
 
 <br>
 
-This is a **A LOT** of detail. Let's make a bar chart and add up the sales to make it easier to understand.
+### 2. Filter to San Francisco {-} 
 
-```{r, eval = T}
-ggplot(scrap, aes(x = destination, y = credits, fill = origin)) + geom_col()
-```
+We'll use `str_detect()`, which tests whether some given characters occur anywhere in a string of text. 
 
-
->
-> It's still tricky to compare sales by origin. Let's change the position of the columns. 
->
+> **NOTE:** `str_detect` performs the same task as `grepl` in the video, with the benefit of putting the name of the column as the first argument.  
 
 
-```{r, eval = T}
-ggplot(scrap, aes(x = destination, y = credits, fill = origin)) +
-  geom_col(position = "dodge")
-```
+Filtering using [str_detect()](https://stringr.tidyverse.org/reference/str_detect.html) is useful when you aren't sure if San Francisco will be proceeded by "the City of", or some similar but slightly different text. There is an entire [cheatsheet](https://rstudio.github.io/cheatsheets/html/strings.html) for working with strings, so check it out when you need to search for a certain word or manipulate text in some way.
 
 
+```{r city-filter}
+san_fran <- filter(cities, str_detect(NAME, "San Francisco"))
 
-# More Plots
-<hr>
-
-## Colors {-}
-<hr class="hrlvl2">
-
-Now let's use color to show the destinations of the scrap.
-
-```{r, eval=T, echo = T}
-ggplot(scrap, aes(x = origin, y = credits, color = destination)) +
-  geom_point()
+plot(san_fran[1])
 ```
 
 <br>
 
 
-<div class="yoda">
-###  Yoda says {-}
+### 3. View the coordinate reference system {-} 
 
-<img src="../images/yoda_baby_sq.png" class="yoda-img">
+To do an intersection or check where things overlap, the two datasets need to be using the same CRS. Let's check.
 
-One way to experiment with colors is to add the layers `+ scale_fill_brewer()` or `+ scale_color_brewer()` to your plot. These link to [**colorBrewer**](https://ggplot2.tidyverse.org/reference/scale_brewer.html) palettes to give you accessible color themes.
-</div>
+```{r sf-crs, eval=F}
+st_crs(san_fran)
 
-
-## Bar charts {-}
-
-This is way too much detail. Let's simplify by making a bar chart that shows the total sales. Note that we use `fill=` inside `aes()` instead of `color=`. If we use color, we get a colorful outline and gray bars.
-
-
-```{r, eval = T, echo = T}
-ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
-  geom_col()
+st_crs(sf_trees_geo)
 ```
 
 <br>
 
-Let's change the position of the bars to make it easier to compare sales by destination for each origin? Remember, you can use `help(geom_col)` to learn about the different options for that plot. Feel free to do the same with other `geom_`'s as well.
+> Ooofda. That's a lot of information. The important part is that their last line showing their EPSG ID as `4269` id identical. We are good to go.
 
 
-```{r, eval = T, echo = T}
-ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
-  geom_col(position = "dodge")
-```
+### 4. Intersects / Overlaps / Is within {-} 
 
+Order of arguments?
 
-## Facet wrap {-}
-
-Does the chart feel crowded to you? Let's use the `facet wrap` function to put each origin on a separate chart.
-
-```{r, eval = T, echo = T}
-ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
-  geom_col(position = "dodge") +
-  facet_wrap("destination")
-```
-
-
-## Labels {-}
-
-We can add lables to the chart by adding the `labs()` layer. Let's give our chart from above a title.
-
-__Titles and labels__
-```{r, eval = T, echo = T}
-ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
-  geom_col(position = "dodge") +
-  facet_wrap("destination") +
-  labs(title    = "Scrap sales by origin and destination",
-       subtitle = "Planet Jakku",
-       x        = "Origin", 
-       y        = "Total sales")
+```{r intersects-sf}
+trees_in_san_fran <- st_intersection(sf_trees_geo, san_fran)
 ```
 
 <br>
 
+Look at our new data in the environment: `trees_in_san_fran`. You will see that we filtered out some of the tree records because they didn't intersect with the boundary of the City of San Francisco. The number of rows was reduced from 19,006 to 18,994. 
 
-## Add lines {-}
+<br>
 
-> More layers! Let's say we were advised to avoid sales that were over _50 Billion_ credits. Let's add that as a horizontal line to our chart. For that, we use `geom_hline()`.
-
-__Reference lines__
+Take a look at the new tree map.
 ```{r}
-ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
-  geom_col(position = "dodge") +
-  facet_wrap("destination") +
-  labs(title    = "Scrap sales by origin and destination",
-       subtitle = "Planet Jakku",
-       x        = "Origin", 
-       y        = "Total sales") +
-  geom_hline(yintercept = 5E+10, color = "black", size = 1)
+# Plots a single layer
+plot(trees_in_san_fran[1])
 ```
 
-
-
-## Drop `2.2e+06` scientific notation {-}
-
-Want to get rid of that ugly scientific notation? We can use `options(scipen = 999)`. Note that this is a general setting in R. Once you use `options(scipen = 999)` in your current session, you don't have to use it again. _(Like loading a package, you only need to run the line once when you start a new R session)._
+> Aha! That looks more like the city.
 
 <br>
 
-```{r, eval=T, echo=T}
-options(scipen = 999)
+## st_write {-}
 
-ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
-  geom_col(position = "dodge") +
-  facet_wrap("destination") +
-  theme_bw() +
-  labs(title = "Scrap sales by origin and destination", 
-       x     = "Origin", 
-       y     = "Total sales")
+Since we are very interested in these trees and know we'll use the data later, let's save this new spatial data set with `st_write()`. 
+
+The first argument in `st_write()` is the name of the data in R we are saving, and the second argument is the file location and name to save to. The **.shp** file ending saves the data as a spatial shapefile. This is a common GIS file format for ESRI users and consists of several files. 
+
+The main files have the following extensions:
+
+- `.prj`: The detailed projection information, such as *Lat/Long* or *UTM*
+- `.dbf`: The attribute data, or the columns of data in our dataframe
+- `.shp`: The shape information, or the *geometry* column in our dataframe
+
+> Another common spatial format is **.geojson**, which has the advantage of only being a single file. This makes it easier to share with others and will generally save a bit of storage space.
+
+Finally, we include `delete_layer = TRUE` to the **st_write** funciton to say it's okay to save over previous versions of the file if it already exist in the folder we are saving to.
+
+```{r save, eval=F}
+# Save as a shapefile (multiple files, good for ESRI/ArcGIS)
+st_write(trees_in_san_fran, 
+         "trees_in_san_fran.shp", 
+         delete_layer = TRUE) 
+
+# Save as geojson (single file, good for sharing)
+st_write(trees_in_san_fran, 
+         "trees_in_san_fran.geojson", 
+         delete_layer = TRUE) 
 ```
 
 <br>
 
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
-
-Let's say we don't like printing so many zeros and want the labels to be in __Millions__ of credits. Any ideas on how to make that happen?
-</div>
 
 
-## Themes {-}
+# <i class="fa fa-video-camera"></i> [**sf** spatial analysis (Part 2)](page/videos/day4/04-4-sf-spatial-analysis-part2.html)
 
-You may not like the appearance of these plots. `ggplot2` uses `theme` functions to change the appearance of a plot. View the list of themes [here](#theme-tbl).
+## Buffers: Go beyond the point {-}
 
-Try some.
+Let's draw a buffer around each tree in our filtered data set. In your work you may need to draw buffers around point data either when locations are uncertain to a specific level of precision, or for example, if you want to find how many people live within 5 miles of a school or hospital. 
 
-```{r, eval=T, echo=T}
-ggplot(scrap, aes(x = origin, y = credits, fill = destination)) +
-  geom_col(position = "dodge") +
-  facet_wrap("destination") +
-  theme_dark()
-```
+To draw a buffer we want to make sure the coordinates are linear rather than angular. Remember when we talked about coordinate reference systems? Lat/Long uses angular coordinates and is not so great for calculating distances between points or areas of polygons. The Universal Transverse Mercator or UTM system on the other hand has coordinates in meters and is great for calculating surface distances. 
 
-
-<div class="tip">
-### <i class="fa fa-user-astronaut" style="color: green;"></i> Explore! {-}
-
-Be bold and make a __boxplot__. We've covered how to do a scatterplot with `geom_point` and a bar chart with `geom_col`, but how would you make a boxplot showing the prices at each destination? Feel free to experiment with `color` ,`facet_wrap`, `theme`, and `labs`. 
-
-> May the force be with you.
-
-</div>
-
-
-## Save plots {-}
-<hr class="hrlvl2">
-```{r glossary, child='../../static/modules/ggplot/ggplot_save/save_plot.Rmd'}
-```
-
-
-# It's Finn time {-}
-<hr class="hr2">
-
-Seriously, let's pay that ransom already. 
-
->
-> __Q:__  __Where should we go to get our 10,000 Black boxes?__
->
+> San Francisco is in UTM zone 10: CRS = 32610.
 
 <br>
 
-```{r, echo=F}
-cheap_scrap <- filter(scrap, item == "Black box")
+```{r trees-buffer2, eval=F}
+# Convert CRS from Lat/Long to UTM zone 10 (San Francisco)
+trees_in_san_fran <- st_transform(trees_in_san_fran, crs = 32610)
+
+# Add a 1,000 meter (1 KM) buffer around each tree
+trees_in_san_fran <- st_buffer(trees_in_san_fran, dist = 1000)
+
+# View the new plot, w/ BIG overlapping circles
+plot(trees_in_san_fran[1])
+```
+
+<br>
+
+
+## Going the distance {-}
+
+As a next step, we will calculate the distances between the trees and another location of interest. Let's find which tree is closest to a specific loon floating on Leech Lake all the way over in Minnesota. *(As one does.)*
+
+Below, we create a dataset with a single point using the coordinates stored as latitude and longitude. This is our special loon!
+
+1. Use [st_point()](https://rdrr.io/github/etiennebr/geotidy/man/st_point.html) to tell R these are spatial coordinates and not just numbers. 
+1. Use [st_sfc()](https://r-spatial.github.io/sf/reference/sfc.html) to create a simple feature geometry list. 
+1. Use [st_as_sf()](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) to make the point a simple feature object with an assigned coordinate reference system (CRS).
+
+
+<br>
+
+### 1. Create the loon coordinates {-}
+```{r trees-distance}
+# Our very exact loon coordinates in MN
+loon_lat <- 47.1505
+
+loon_long <- -94.3839
+
+# Add coords to a dataframe
+loon_coords <- data.frame(lake = "Leech Lake",
+                          lon = loon_long, 
+                          lat = loon_lat)
 ```
 
 
-__Step 1:__ Make a `geom_col()` plot showing the total pounds of Black boxes shipped to each destination. 
+### 2. Convert dataframe to a sf spatial object {-}
 
-```{r, eval=F}
-ggplot(cheap_scrap, aes(x =  ______ , y =  ______ )) + 
-   geom_
-```
-
-<details>
-<summary class="btn_code">_Show code_</summary>
-
-<div class="quiz" style="margin-top: -9px;">
-<p>
+> The CRS ID for Lat/Long data is `4269`.
 
 ```{r}
-ggplot(cheap_scrap, aes(x = destination, y = total_pounds) ) + 
-   geom_col()
+loon_mn <- st_as_sf(loon_coords,
+                    coords = c("lon", "lat"),
+                    crs = 4269)
+
 ```
 
-</p></div></details>
-
-
-
-<div class="quiz">
-### Pop Quiz! {-}
-
-__Which destination has the most pounds of the cheapest item?__
-
-<input type="radio" name="town"> _Trade caravan_  <br> 
-<input type="radio" name="town"> _Niima Outpost_  <br> 
-<input type="radio" name="town"> _Raiders_        <br> 
-<br>
-
-<details>
-<summary class="btn_code">_Show solution_</summary>
-
-<p>
-<i class="fa fa-check" style="color: green;"></i> `Raiders`  
-
-_Woop! Go get em! So long Jakku - see you never!_
-
-</p>
-</details></div>
-
-
 <br>
 
 
-## <i class="fa fa-star" style="color: gold"></i> PORGTASTIC <i class="fa fa-star" style="color: gold"></i> {-}
+### 3. Transform both to the same CRS {-}
 
-> ### Woop! {-} 
->
-> We found enough Black Boxes to trade Plutt and get the whole crew back together. Serious kudos to you.  
->
-> Let's sit back, relax, and read some ggplot glossaries.
+To transform from one projection to another we use `st_transform()`, and assign the new projection with the argument `crs = 4269`.
 
-
-<br>
-
-
-**Finally...**
-
-![](../images/blast_off_ship_jakku.gif){style="margin-left: 12%; width: 75%;"}
-
-<br><br>
-
-
-# Plot glossary {-}
-<hr class="hr2">
-
-```{r glossary, child='../../static/modules/ggplot/ggplot_glossary/glossary.Rmd'}
+```{r}
+trees_in_san_fran <- st_transform(trees_in_san_fran, crs = 4269)
 ```
 
 <br>
 
-# Homeworld training {-}
-<hr class="hr2">
 
-![](../images/porg.png){style="float: right; margin-top: -10px;"}
+## Calculate the **st_distance( )** {-}
 
-1. Load one of the data sets below into R
-    - Porg contamination on Ahch-To: "https://mn-r.netlify.com/data/porg_samples.csv"
-    - Planet Endor air samples: "https://mn-r.netlify.com/data/air_endor.csv"
-    - Or use data from a recent project of yours  
+We'll use the `st_distance()` function to calculate the distance between each of the trees and our loon. We can also add an `*_km` column by dividing the distance by 1,000 meters. The `as.numeric()` is added to remove the *meters* units from the original distance value.
 
-<br>
-  
-2. Create 3 plots using the data. 
-3. Don't worry if it looks __really wrong__. Consider it art and try again.  
-
-
-<br>
-
-<div class="yoda">
-###  Yoda says {-}
-
-<img src="../images/yoda_baby_sq.png" class="yoda-img">
-
-When you add more layers to your plot using `+`, remember to place it at the end of each line.
-
-```{r, eval = F, echo = T}
-# This will work
-ggplot(scrap, aes(x = origin, y = credits)) +
-  geom_point()
-
-# So will this
-ggplot(scrap, aes(x = origin, y = credits)) + geom_point()
-
-# But this won't
-ggplot(scrap, aes(x = origin, y = credits))
-  + geom_point()
-
+```{r}
+trees_in_san_fran <- trees_in_san_fran %>%
+  mutate(distance_to_loon_m = st_distance(geometry, loon_mn),
+         distance_to_loon_km = as.numeric(distance_to_loon_m) / 1000)
 ```
-</div>
 
 <br>
 
-### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-2.html) {-}
+Now we can determine the closest tree in San Francisco to our loon by using the *min()* function, which will return the minimum calculated value in the column. Let's run *min()* on the column `distance_to_leech_km`, and use `filter()` to keep the one row where its distance is equal to the minimum distance.
+
+```{r distance-min}
+trees_in_san_fran %>% 
+  filter(distance_to_loon_km == min(distance_to_loon_km))
+```
+
+
+That's our tree! Number `256051`: the bark shedding *Platanus x hispanica*, aka, the London plane tree.
+
+<img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 40%">
+
+<br>
+
+### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day4.html) {-}
+
+<br>
