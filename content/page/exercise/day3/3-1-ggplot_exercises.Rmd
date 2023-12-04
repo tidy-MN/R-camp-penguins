@@ -120,7 +120,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
        y = "Number of penguins observed") +
-  theme_futuram()
+  theme_bw()
   
 code_end')
 

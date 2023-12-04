@@ -4,33 +4,46 @@ output: html_document
 date: "2023-12-04"
 ---
 
+# Before you start...
+
+Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_1_day_4.R` or `franz.R` and you'll be ready to go!
+
+
+# Day-dreams
+
+All these flightless birds have been making us think...if we were a bird who could *fly*, where would we go? Would we follow other birds or would we make your own path? Where's home if you can fly?
+
+One of these days we'll learn our lesson about asking questions but for now we have endless curiosity and a _need to know_.
 
 ## R Markdown
 
-The three rings to rule the world in R and spatial analysis are [sf](https://r-spatial.github.io/sf/), [tigris](https://cran.r-project.org/web/packages/tigris/readme/README.html), and [ggplot](https://ggplot2.tidyverse.org/) or [leaflet](https://rstudio.github.io/leaflet/). It is even easier in the U.S. if you also have the [tidycensus package](https://walker-data.com/tidycensus/). In this exercise we will analyse a bird flight path and the health of the bird's forest home by using these super powers. Our steps will be as follows:
+The three rings to rule the world in R and spatial analysis are
+
+1. [sf](https://r-spatial.github.io/sf/), 
+1. [tigris](https://cran.r-project.org/web/packages/tigris/readme/README.html), and 
+1. [ggplot2](https://ggplot2.tidyverse.org/) or [leaflet](https://rstudio.github.io/leaflet/). It is even easier in the U.S. if you also have the [tidycensus package](https://walker-data.com/tidycensus/). 
+
+In this exercise we will analyse a bird flight path.Our steps will be as follows:
 
 * Make two point geometries.
 * Make a line geometry.
 * Make a polygon geometry.
 * Read in U.S. states spatial dataset.
 * Make a map with the polygon geometry and the states.
-* Read in a polygon shapefile.
-* Summarize the information in the shapefile by county.
-* Join the summarized data to a Minnesota county spatial dataset.
-* Make a map of Minnesota county forest health data.
 
 <br>
 
 ![https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png){width=30%}
 
 <br>
-Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the center of Smoky Mountain National Park in Tennessee. Let's set up 2 points, and then measure how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join with the states to develop a final list of states that the birds will fly through and make some maps. We will *of course* follow up this exercise by setting up strict conservation laws to protect these flight paths.
+
+Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the center of Smoky Mountain National Park in Tennessee. Let's set up 2 points, and then measure how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join with the states to develop a final list of states that the birds will fly through and make some maps. We will *of course* follow up this exercise by recommending setting up strict conservation laws to protect these flight paths.
 
 <br>
 
 **A tree in the center of St. Paul.**
 
-We set up the simplest point data, 1 point using their latitude and longitude. We use the [st_point function](https://rdrr.io/github/etiennebr/geotidy/man/st_point.html) to tell R that these are coordinates. The [st_sfc](https://r-spatial.github.io/sf/reference/sfc.html) function creates a simple feature geometry list. Then we finally set up point as a simple feature using the [st_as_sf() function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) and include the coordinate reference system.
+We set up the simplest point data, 1 point using their latitude and longitude. We use the [`st_point` function](https://rdrr.io/github/etiennebr/geotidy/man/st_point.html) to tell R that these are coordinates. The [`st_sfc` function](https://r-spatial.github.io/sf/reference/sfc.html) creates a simple feature geometry list. Then we finally set up point as a simple feature using the [`st_as_sf` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) and include the coordinate reference system (CRS).
 
 <br>
 
@@ -52,7 +65,7 @@ nest_mn <- st_as_sf(nest_mn, crs = 4326)
 
 **A tree in the center of Smoky Mountain National Park.**
 
-Now we make another point in Tenneessee. Remember points are singular geometries and have no area. Sometimes, if you are attempting to intersect points with polygons, you may have to draw a buffer around them.
+Now we make another point in Tennessee. Remember points are singular geometries and have no area. Sometimes, if you are attempting to intersect points with polygons, you may have to draw a buffer around them.
 
 <br>
 
@@ -71,7 +84,8 @@ nest_smnp <- st_as_sf(nest_smnp, crs = 4326) # providing the coordinate referenc
 
 <br>
 
-How far apart are these two nests? We need to convert the coordinate reference systems to make sure that the two locations are comparable and our final answer is in meters. You can change coordinate reference systems by using the function [st_transform](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_transform). Next we use the [st_distance](https://gis.stackexchange.com/questions/371104/calculate-st-distance-between-the-point-in-km-m). Since we are using a coordinate reference system with units in meters, our distance units will be meters as well. So, we can convert to kilometers by dividing by 1000.
+How far apart are these two nests? We need to convert the coordinate reference systems to make sure that the two locations are comparable and our final answer is in meters. You can change coordinate reference systems by using the function [`st_transform`](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_transform). 
+Next we use the [`st_distance`](https://gis.stackexchange.com/questions/371104/calculate-st-distance-between-the-point-in-km-m). Since we are using a coordinate reference system with units in meters, our distance units will be meters as well. So, we can convert to kilometers by dividing by 1000.
 
 <br>
 
@@ -95,7 +109,7 @@ knitr::include_graphics("https://www.nceas.ucsb.edu/sites/default/files/2020-04/
 [Click here to open and download](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)
 
 <br>
-We will make a data frame with our two polygons by binding the two points together as rows of a table using the [rbind function](https://www.digitalocean.com/community/tutorials/rbind-function-r). Then, let's say that the birds fly in roughly a straight line. So, let's cast these two points into a line between them by first joining them using [the st_union function](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using [the st_cast function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast). 
+We will make a data frame with our two polygons by binding the two points together as rows of a table using the [`rbind` function](https://www.digitalocean.com/community/tutorials/rbind-function-r). Then, let's say that the birds fly in roughly a straight line. So, let's cast these two points into a line between them by first joining them using [the `st_union` function](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using [the `st_cast` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast). 
 
 <br>
 
@@ -114,7 +128,7 @@ plot(tree_route$geometry)
 
 <br>
 
-We can be fairly sure the birds won't fly in an exactly straight line from Minnesota to Tennessee. So, let's put a buffer around this line and make it a polygon. Let's assume the birds will fly within 1000 meters on either side of our line. So, REMEMBER about units? Let's check what our units currently are (hint latitude and longitude have what units?), and then change the units and draw our new polygon. It will be glorious.
+We can be fairly sure the birds won't fly in an exactly straight line from Minnesota to Tennessee. So, let's put a buffer around this line and make it a polygon. Let's assume the birds will fly within 1000 meters on either side of our line. So, REMEMBER about units? Let's check what our units currently are (hint - latitude and longitude have what units?), and then change the units and draw our new polygon. It will be glorious.
 
 <br>
 
@@ -136,7 +150,7 @@ plot(tree_route)
 
 <br>
 
-Looking at that shape in our Plots window is satisfying, but doesn't tell us anything about what states the polygon goes through, and we'd like a pretty map in the end. So, let's get started. First, we are going to pull in our tigris package and grab the U.S. states' polygons.
+Looking at that shape in our Plots window is satisfying, but doesn't tell us anything about what states the polygon goes through, and we'd like a pretty map in the end. So, let's get started. First, we are going to pull in our `tigris` package and grab the U.S. states' polygons.
 
 ![https://github.com/walkerke/tigris](https://github.com/walkerke/tigris/raw/master/tools/readme/tigris_sticker.png){width=30%}
 
@@ -153,11 +167,34 @@ all_states <- states()
 
 <br>
 
-Now let's see which states intersect with our polygon bird path. We bring back some sf magic for this. But remember, CRS must be the same!! SO, we will need to do some transformation. This time we use st_crs to transform one geometry to the CRS of the other one. Then we can use [st_filter](https://r-spatial.github.io/sf/reference/st_join.html) to filter one geometry to the extent of the other.
+Now let's see which states intersect with our polygon bird path. We bring back some `sf` magic for this. But remember, the CRS must be the same!! SO, we will need to do some transformation. This time we use `st_crs` to transform one geometry to the CRS of the other one. Then we can use [`st_filter`](https://r-spatial.github.io/sf/reference/st_join.html) to filter one geometry to the extent of the other.
 
 <br>
 
-```{r, buffer and states, message = FALSE, progress=FALSE, warning = FALSE}
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> State of Bird {-}
+
+```{r results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Find the intersection", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Check the CRS for each object and transform them if necessary so they match. Then use `st_filter` to find the states that intersect with the bird path. </h4>
+
+<br>',
+
+show_hint = 'code_start
+
+st_crs(all_states)
+st_crs(tree_route)
+
+tree_route <- st_xxxx(tree_route, crs = _________)
+
+bird_route_states <- st_xxxxx(______, _________)
+code_end',
+
+show_code = 'code_start
 
 st_crs(all_states)
 st_crs(tree_route)
@@ -165,8 +202,14 @@ st_crs(tree_route)
 tree_route <- st_transform(tree_route, crs = st_crs(all_states))
 
 bird_route_states <- st_filter(all_states, tree_route)
+  
+code_end')
 
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
 ```
+</div>
 
 <br>
 
@@ -190,186 +233,53 @@ leaflet() %>%
 
 <br>
 
-Now, ggplot2
-
-<br>
-
 ![ggplot2 R package](https://ggplot2.tidyverse.org/logo.png)
+<br>
+
+Now, let's do one in ggplot2! We know how to do that! We just need to use some more functions like `geom_sf` and `geom_sf_text` to make it work! 
 
 <br>
 
-```{r, ggplot2 map, message = FALSE, warning = FALSE, progress=FALSE}
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Making maps with `ggplot2` {-}
+```{r results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Make a map", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Make a map of the route the bird overlaid with the states that the bird will cross to get to the tree using `geom_sf` and `geom_sf_text` to add labels to the states. </h4>
+
+<br>',
+
+show_hint = 'code_start
+
+ggplot() +
+  geom_sf(data = _______, aes(fill = ____)) +
+  geom_sf_text(data = ______, aes(label = ______)) +
+  geom_sf(data = ________, aes(fill = route), size = 10) +
+  theme(legend.position = "none")
+  code_end',
+
+show_code = 'code_start
 
 ggplot() +
   geom_sf(data = bird_route_states, aes(fill = NAME)) +
   geom_sf_text(data = bird_route_states, aes(label = NAME)) +
   geom_sf(data = tree_route, aes(fill = route), size = 10) +
   theme(legend.position = "none")
+  
+code_end')
 
+tab_html <- add_tabs(tabs, content)
 
+cat(paste0(tab_html, collapse = "\n"))
 ```
+</div>
 
 <br>
 
-Now let's protect some birds! Let's check out the health of the forest by county in the state of Minnesota. We will need to know the locations of the counties in Minnesota, and we will also need some forest health data.
-
-The [Minnesota Geospatial Commons]("https://gisdata.mn.gov") is an excellent source of geospatial data in Minnesota and very searchable.
-
-If you search *forest health* you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2021. Let's read in a shapefile using the [sf package](https://r-spatial.github.io/sf/). You will note that the shapefile is zipped. So we first create two temporary folders to begin the process of grabbing this file, next unzipping it, and then reading it in as a simple feature (sf object). The *temp* and *temp2* folders, and the shapefile, is saved in a local temporary folder. If you want to save the shapefile on your computer for the longterm, you can use the [st_write()](https://r-spatial.github.io/sf/reference/st_write.html) function in the [sf package](https://r-spatial.github.io/sf/).
-
-<br>
-
-```{r, forests, message = FALSE, warning = FALSE, progress=FALSE}
-
-# Create temp files
-temp <- tempfile()
-temp2 <- tempfile()
-
-# Download the zip file and save to 'temp' 
-URL <- "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_dnr/env_forest_health_survey_2021/shp_env_forest_health_survey_2021.zip"
-
-download.file(URL, temp)
-
-# Unzip the contents of the temp and save unzipped content in 'temp2'
-unzip(zipfile = temp, exdir = temp2)
-
-# Read the shapefile. Alternatively make an assignment, such as f<-sf::read_sf(your_SHP_file)
-forest_damage <- sf::st_read(temp2)
-
-```
-
-<br>
-
-We can look at the data in two ways, view the attributes by clicking *forest_damage* in the Environment in R Studio. Go ahead, and do that now. Look at the geometry column, that is where the spatial information is saved and it is where R looks for it. Each row in this dataset is a different polygon, but are all a part of the same dataset or shapefile.
-
-Next, we can plot the data simply in base R to make sure it has the appropriate geographic information and plots as a map. This is generally a good check to make sure you've succesfully pulled in a proper shapefile.
-
-<br>
-
-```{r, forest damage map, message = FALSE, progress=FALSE, warning = FALSE}
-
-plot(forest_damage[1])
-
-```
-
-<br>
-
-When we look at this, we see that there are many polygons, and if we look at the data (by typing view(forest_damage), or clicking on forest_damage in the environment) we can see that there are severity ratings for each polygon. Let's do a very simple analysis and sum the area in each county that has damage to tree canopy. Then, we can join to a county geospatial dataset to look at the places in MN with the most treecanopy damage and see if our bird was affected. First let's use the power of [tigris](https://cran.r-project.org/web/packages/tigris/readme/README.html) and pull in the county shapefile for Minnesota.
-
-<br>
-
-```{r counties, results = "hide", warning = FALSE, message = FALSE, progress=FALSE}
-
-counties <- counties(state = "MN")
-
-```
-
-<br>
-
-And, of course we want to check to see if our CRS match, because we want to join these two geospatial datasets.
-
-<br>
-
-```{r check geospatial, warning = FALSE, progress=FALSE, message = FALSE}
-
-st_crs(counties)
-st_crs(forest_damage)
-
-```
-
-<br>
-
-The forest damage dataset has a coordinate reference system in UTMs (Universal Transverse Mercator), and remember that those have units of meters, which are very nice for working with area measurements. So, let's convert the county dataset into UTMs, zone 15 (Minnesota's main UTM zone).
-
-<br>
-
-```{r, change crs county, warning = FALSE, progress=FALSE, message = FALSE}
-
-counties <- st_transform(counties, crs = 26915)
-
-```
-
-
-<br>
-
-Now, we can run a spatial intersect on the two geospatial datasets. The [st_intersection](https://r-spatial.github.io/sf/reference/geos_binary_ops.html) function returns the polygons where the two geometries intersect, [here's a short description with images](https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects). All of the polygons in the *forest_damage* dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties, this will add to our work. But no worries, R has us covered!
-
-<br>
-
-```{r join forest damage county, warning = FALSE, message = FALSE, progress=FALSE}
-
-forest_damage_counties <- st_intersection(counties, forest_damage)
-```
-
-<br>
-
-Next, we can calculate the area for each of the *forest_damage* polygons within each joined county. Some of our polygons might look a bit like this,
-![Split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg)
-
-<br>
-
-```{r polygon areas, warning = FALSE, progress=FALSE, message = FALSE}
-
-forest_damage_counties <- forest_damage_counties %>%
-  mutate(damage_area = st_area(geometry))
-
-```
-
-<br>
-
-Now, we are going to sum the areas with tree canopy tree data within each county, returning the following information: the total area in the polygon and the name of the County. We no longer need each individual polygon geometry, so we set the geometry of the dataset to NULL.
-
-<br>
-
-```{r sum areas,  warning = FALSE, message = FALSE, progress=FALSE}
-
-st_geometry(forest_damage_counties) <- NULL
-
-forest_damage_counties <- forest_damage_counties %>%
-  group_by(NAME) %>%
-  summarise(total_damaged_area = sum(damage_area, na.rm = T)) %>%
-  ungroup() %>%
-  mutate(total_damaged_area = as.numeric(total_damaged_area))
-
-```
-
-<br>
-
-We need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map.
-
-<br>
-
-```{r rejoin counties, warning = FALSE, progress=FALSE, message = FALSE}
-
-counties_forest_damage <- left_join(counties, forest_damage_counties, by = "NAME")
-```
-
-<br>
-
-Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset). Sometimes a NULL means there is no information, which means that you don't know what the value is and you do not have adequate information for replacements.
-
-<br>
-
-```{r map counties, warning = FALSE, progress=FALSE, message = FALSE}
-
-counties_forest_damage <- counties_forest_damage %>%
-  mutate(total_damaged_area = replace_na(total_damaged_area, 0))
-
-```
-
-
-<br>
-
-Finally we get to make a map. Remember, data prep is more than half the battle!
-
-<br>
-
-```{r forest health map, warning = FALSE, progress=FALSE, message = FALSE}
-ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
-  geom_sf()
-```
-
-Our bird originated in St. Paul, MN so it looks like there wasn't a lot of damaged forest canopy where our bird lived. That's good news!
+Don't forget the last part of our exercise about recommendation on conservation efforts: What states would need to be informed about the flight pattern and nesting behavior? What data could you give them to make their job easier? What might you do to expand on the work that we have already done to better answer any questions from legislators?
 
 **Happy spatial analysis friends!**
 
