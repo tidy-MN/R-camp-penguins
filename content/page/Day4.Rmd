@@ -33,7 +33,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# <i class="fa fa-video-camera"></i> [Maps: GIS and Coordinate reference systems (CRS)](page/videos/day4/04-1-maps-gis-crs.html) 
+# <i class="fa fa-video-camera"></i> [Maps: GIS and Coordinate reference systems (CRS)](videos/day4/04-1-maps-gis-crs.html) 
 
 ## What is GIS? {-}
 
@@ -100,7 +100,7 @@ Again, the projection is a representation of a round surface (the Earth) onto a 
 - And another resource: https://bookdown.org/mcwimberly/gdswr-book/coordinate-reference-systems.html
 
 
-# <i class="fa fa-video-camera"></i> [Points, Lines, and Polygons](page/videos/day4/04-2-points-lines-polygons.html)
+# <i class="fa fa-video-camera"></i> [Points, Lines, and Polygons](videos/day4/04-2-points-lines-polygons.html)
 
 - **Points** are simply a pair of geographic coordinates, like a X-Y pair on a plot. They are dimensionless. Examples of point data in GIS are locations of trees in a park, locations where you stopped on a hike, or locations of defibrillators in a building.
 - **Lines** are a series of connected points. Examples are depictions of roads, railways, and hiking trails. 
@@ -131,7 +131,7 @@ Rasters are stored in a matrix of cells, like a table and the size of the cell r
 <br>
 
 
-# <i class="fa fa-video-camera"></i> [**sf** is so awesome](page/videos/day4/04-3-sf-spatial-analysis-part1.html)
+# <i class="fa fa-video-camera"></i> [**sf** is so awesome](videos/day4/04-3-sf-spatial-analysis-part1.html)
 
 
 ## Spatial analysis with R {-}
@@ -366,7 +366,7 @@ st_write(trees_in_san_fran,
 
 
 
-# <i class="fa fa-video-camera"></i> [**sf** spatial analysis (Part 2)](page/videos/day4/04-4-sf-spatial-analysis-part2.html)
+# <i class="fa fa-video-camera"></i> [**sf** spatial analysis (Part 2)](videos/day4/04-4-sf-spatial-analysis-part2.html)
 
 ## Buffers: Go beyond the point {-}
 
