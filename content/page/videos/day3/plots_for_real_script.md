@@ -1,5 +1,9 @@
 # Plots for Real
 
+We're going to be talking about *more* things that ggplot2 can do and how we can use it to create infinitely customizable graphics!
+
+__We interupt this broadcast for a breaking news announcement__
+
 __Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing. 
 The penguins seems to be growing at an alarming rate which is expected to exceed all expectations and estimations.__
 
