@@ -300,7 +300,7 @@ Now that is a beautiful masterpiece. And it sure looks like our lost penguins ca
 
 <br>
 
-> [**ggplot cheatsheet**](https://rstudio.github.io/cheatsheets/data-visualization.pdf) - View more examples and the aesthetics used in each geom
+> The [**ggplot cheatsheet**](https://rstudio.github.io/cheatsheets/data-visualization.pdf) - View more examples and the aesthetics used in each geom
 
 
 
@@ -601,14 +601,14 @@ ggsave("2023_giant_penguins_debunked.png",
 
 <br>
 
-- *Learn more about saving plots at* [http://stat545.com/](http://stat545.com/block017_write-figure-to-file.html)
+- Learn more about saving plots at [http://stat545.com/](http://stat545.com/block017_write-figure-to-file.html)
 
 
 <br>
 
 > Seems the real question here is where did all the Adelie penguins go on Torgersen? Did they get slippery and harder to catch or did they swim off to a new home? 
 >
-> I dare say the sea is full mysteries. But anyways, I unfortunately don't expect to see penguin-zilla anytime soon. 
+> I dare say the sea is full of serious mystery. But unfortunately I don't expect to see penguinZILLA anytime soon. 
 > 
 > Over and out.  
 > *-Bitsy-42*

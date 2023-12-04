@@ -182,7 +182,7 @@ PM
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/videos/day3/plots_for_real_script.html</guid>
-      <description>Plots for Real Hello, this is local news reporter Lois Jones here to report on the extreme penguin conditions we have been seeing.</description>
+      <description>Plots for Real We&amp;rsquo;re going to be talking about more things that ggplot2 can do and how we can use it to create infinitely customizable graphics!</description>
     </item>
     
     <item>
@@ -435,7 +435,7 @@ Before you start… Make sure you are still in your project that you created for
     </item>
     
     <item>
-      <title>ggplot2: the remix</title>
+      <title>ggplot: the remix</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

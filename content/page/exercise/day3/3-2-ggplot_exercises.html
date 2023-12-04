@@ -1,5 +1,5 @@
 ---
-title: "ggplot2: the remix"
+title: "ggplot: the remix"
 output: 
   blogdown::html_page: 
     highlight: tango
@@ -131,10 +131,13 @@ hr {background:  cornflowerblue;}
 ## $ `Delta 13 C (o/oo)`   &lt;dbl&gt; NA, -24.69454, -25.33302, NA, -25.32426, -25.298…
 ## $ Comments              &lt;chr&gt; &quot;Not enough blood for isotopes.&quot;, NA, NA, &quot;Adult…</code></pre>
 <p>If we want to do anything else with this data, it might be a good idea to clean the names because some of these look like they would be annoying to type…<code>Delta 15 N (o/oo)</code>? No thank you.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co">#always good practice to load your libraries at the beginning of your script so go ahead and move this up to the rest of your library calls.</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>penguins_raw_clean <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguins_raw)</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="fu">names</span>(penguins_raw_clean)</span></code></pre></div>
+<p>Good news! There’s a package that’s made just for cleaning up things and it’s called <a href="https://sfirke.github.io/janitor/reference/janitor-package.html"><code>janitor</code></a> and it’s incredibly useful, just like real-life janitors!</p>
+<p>It can clean your names, find duplicates, and even make really nice tables.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;janitor&quot;</span>) <span class="co"># comment this out if you already installed it &lt;3</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co">#always good practice to load your libraries at the beginning of your script so go ahead and move this up to the rest of your library calls.</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>penguins_raw_clean <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguins_raw)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">names</span>(penguins_raw_clean)</span></code></pre></div>
 <pre><code>##  [1] &quot;study_name&quot;        &quot;sample_number&quot;     &quot;species&quot;          
 ##  [4] &quot;region&quot;            &quot;island&quot;            &quot;stage&quot;            
 ##  [7] &quot;individual_id&quot;     &quot;clutch_completion&quot; &quot;date_egg&quot;         
@@ -183,25 +186,25 @@ hr {background:  cornflowerblue;}
 </blockquote>
 <div id="changing-positions" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab7665" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4432" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side7665-tab" data-toggle="tab" href="#side-by-side7665" role="tab" aria-controls="side-by-side7665" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="side-by-side4432-tab" data-toggle="tab" href="#side-by-side4432" role="tab" aria-controls="side-by-side4432" aria-selected="true">Side-by-side</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint7665-tab" data-toggle="tab" href="#showhint7665" role="tab" aria-controls="showhint7665" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4432-tab" data-toggle="tab" href="#showhint4432" role="tab" aria-controls="showhint4432" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode7665-tab" data-toggle="tab" href="#showcode7665" role="tab" aria-controls="showcode7665" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4432-tab" data-toggle="tab" href="#showcode4432" role="tab" aria-controls="showcode4432" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side7665" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side7665-tab">
+<div id="side-by-side4432" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side4432-tab">
 <h4>
 Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint7665" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7665-tab">
+<div id="showhint4432" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4432-tab">
 <pre class="sourceCode r">
 
 ggplot(data = __________, 
@@ -214,7 +217,7 @@ ggplot(data = __________,
   theme_bw()
 </pre>
 </div>
-<div id="showcode7665" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7665-tab">
+<div id="showcode4432" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4432-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -244,25 +247,25 @@ ggplot(data = penguin_island_dist,
 </ol>
 <div id="changing-positions-1" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab6773" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab3584" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side6773-tab" data-toggle="tab" href="#side-by-side6773" role="tab" aria-controls="side-by-side6773" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="side-by-side3584-tab" data-toggle="tab" href="#side-by-side3584" role="tab" aria-controls="side-by-side3584" aria-selected="true">Side-by-side</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint6773-tab" data-toggle="tab" href="#showhint6773" role="tab" aria-controls="showhint6773" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint3584-tab" data-toggle="tab" href="#showhint3584" role="tab" aria-controls="showhint3584" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode6773-tab" data-toggle="tab" href="#showcode6773" role="tab" aria-controls="showcode6773" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode3584-tab" data-toggle="tab" href="#showcode3584" role="tab" aria-controls="showcode3584" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side6773" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side6773-tab">
+<div id="side-by-side3584" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side3584-tab">
 <h4>
 Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint6773" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint6773-tab">
+<div id="showhint3584" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3584-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -277,7 +280,7 @@ ggplot(data = penguin_island_dist,
   theme_bw()
 </pre>
 </div>
-<div id="showcode6773" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode6773-tab">
+<div id="showcode3584" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3584-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 

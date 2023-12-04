@@ -1,5 +1,5 @@
 ---
-title: "ggplot2: the remix"
+title: "ggplot: the remix"
 output: 
   blogdown::html_page: 
     highlight: tango

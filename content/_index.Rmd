@@ -136,7 +136,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
 - [Exercise 1 - ggplot](page/exercise/day3/3-1-ggplot_exercises.html)
-- [Exercise 2 - ggplot](page/exercise/day3/3-2-ggplot_exercises.html)
+- [Exercise 2 - ggplot: The remix](page/exercise/day3/3-2-ggplot_exercises.html)
 
 </div> 
 
