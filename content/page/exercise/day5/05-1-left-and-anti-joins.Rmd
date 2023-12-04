@@ -1,0 +1,202 @@
+---
+title: 'Summarize penguin populations'
+author: "Abigail Stamm"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: false
+    toc_depth: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Before you start...
+
+Jump back into the project you created for the previous sessions exercises and then create a new R script. Save it as soon as you make it and give it a good name like `ex_1_day_5.R` or `jamie.R` and you'll be ready to go!
+
+# The story so far
+
+After careful study and pain-staking note collection we finally have the data that we have been waiting for...THE PENGUINS' FAVORITE FOOD! 
+
+Now we can make [delicious seafood puff pastries](https://www.flavourandsavour.com/seafood-pot-pie-with-puff-pastry/) that penguins will love because it will have all their favorites!
+
+The only problem is that the island data and the food data are in different data files...so in order for us to figure out *where* we should take the completed pastries we have to make the data play nice with each other.
+
+Let's start first with getting the data, that seems like a pretty good place to start!
+
+### Load the `tidyverse` and `palmerpenguins` packages 
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+data(penguins)
+```
+
+We need to read in the new data and it even includes the penguin names! We can customize their orders! This is excellent news, maybe we can even mark each pie with their initial so they'll know who's is who's...
+
+```{r}
+penguin_names <- read_csv("penguin_names.csv")
+```
+
+Now that we've read the data in, we need to know what columns it contains so that we know how to join the data frames together! We're going to just take a quick *peek* at the data and then pull the names from our new data and see which ones match to our old data.
+
+```{r}
+glimpse(penguin_names)
+names(penguin_names)
+names(penguins_raw)
+```
+
+Fantastic, looks like the column names all match, but if you *reallllly* want to be sure you can always use the function `intersect` to see where the names line up!
+
+```{r}
+intersect(names(penguins_raw), names(penguin_names))
+```
+
+Now it's time to join up! Join functions are smart, so if your columns have the same names it will automatically figure out which ones to join on so you don't have to specify but if they don't all you have to do is pass the function an argument called `by` where you give it specific information on what to join by. 
+
+```{r}
+named_penguins <- left_join(penguins_raw, penguin_names)
+```
+Annnnd just like that, it figured out what to join! Here's how it specified the `join_by` statement: ```by = join_by(studyName, `Sample Number`, Species, Sex)```
+
+So we did a left join, meaning that we expect to keep all the records from the *first* dataframe we pass it and only those in the second that __match__. 
+
+Let's filter our new dataset to see if we have all the data that we need!
+
+```{r}
+filter(named_penguins, is.na(Name))
+```
+
+Uh-oh. We have some penguins that don't have matches...which seems odd because both datasets have the same number of rows...that must mean that something happened to the data!
+
+Let's use `anti-join` to figure out which rows from `penguin_names` didn't join to `penguins_raw`!
+
+```{r}
+anti_join(penguin_names, penguins_raw)
+```
+Looks like someone made a typo...do you think we can fix it?
+
+First things first, let's check and make sure that those values don't exist in our `penguins_raw` data - it would be bad if we fixed data that wasn't actually wrong!
+
+```{r}
+filter(penguins_raw, `Sample Number` %in% c(222,153))
+```
+Whew, okay, so those numbers *don't* exist in the original data, so looks like we just need to update the values to the correct numbers! We should also check to make sure it worked!
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Fixing typos {-}
+
+```{r, results='asis', echo=F}
+source("../insert_tabs.R")
+
+tabs <- c("Description", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> Use the values from the filtered `penguins_raw` to correct the sample numbers in `penguin_names` so they match and then check to make sure all values join.</b>
+
+<br>',
+
+show_hint = 'code_start
+penguin_names <- penguin_names %>% 
+  mutate(`Sample Number` = case_when(`Sample Number` == ______,
+                                     ________ == _______,
+                                     TRUE ~ ________))
+  
+______(penguins_raw, penguin_names) # should have 0 rows if this works!
+  
+code_end',
+
+show_code = 'code_start
+penguin_names <- penguin_names %>% 
+  mutate(`Sample Number` = case_when(`Sample Number` == 222 ~ 22,
+                                     `Sample Number` == 153 ~ 133,
+                                     TRUE ~ `Sample Number`))
+
+anti_join(penguin_names, penguins_raw)
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content, 0)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
+
+Yay! Let's try this again...also let's add `clean_names` after we join because those names are *hard* to keep spelling correctly.
+
+```{r}
+named_penguins <- left_join(penguins_raw, penguin_names) %>% 
+  clean_names()
+```
+
+Now, let's make a plot to see what the penguins favorite food by island is! Check the solution for a way to bring everything we've learned together into one beautiful code chunk and for exciting new color developments!
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Fixing typos {-}
+
+```{r, results='asis', echo=F}
+source("../insert_tabs.R")
+
+tabs <- c("Description", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> Feel free to make whatever plot you think is best: we want to know how many penguins like each food by island. Use labels, summaries, or other methods to convey this information and have some fun!</b>
+
+<br>',
+
+show_hint = 'code_start
+# we decided to go bar-chart and we want the bar in decending order by count!
+ggplot(named_penguins %>% 
+         group_by(______, ______) %>% 
+         summarise(count = _____), 
+       aes(x=_____, y = ____, fill = reorder(favorite_food, -count))) +
+  _____(position = ___________)+
+  labs(title = "Number of penguins by their favorite food and island",
+       x = "Island home",
+       y = "Number of penguins we need to serve!")+
+  geom_text(aes(label = count, y = _____), 
+            position = position_dodge2(width = 0.9, preserve = "single")) +
+  scale_fill_xxxx(name = _______) +
+  theme_xxxx()
+  
+code_end',
+
+show_code = 'code_start
+ggplot(named_penguins %>% 
+         group_by(island, favorite_food) %>% 
+         summarise(count = n()), 
+       aes(x=island, y = count, fill = reorder(favorite_food, -count))) +
+  geom_col(position = position_dodge2(preserve = "single"))+
+  labs(title = "Number of penguins by their favorite food and island",
+       x = "Island home",
+       y = "Number of penguins we need to serve!")+
+  geom_text(aes(label = count, y = count + 5), 
+            position = position_dodge2(width = 0.9, preserve = "single")) +
+  scale_fill_viridis_d(name = "Favorite Food") +
+  theme_minimal()
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content, 0)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
+
+We might just be showing off now...but look how pretty it looks! 
+
+Anyway, krill seem to be the winner by a wide margin, so let's get baking!
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 
