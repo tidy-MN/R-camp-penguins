@@ -305,7 +305,7 @@ Now that is a beautiful masterpiece. And it sure looks like our lost penguins ca
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [ggplot: Facets, colors, and labels](page/videos/day3/03-2-ggplot-facets-colors-labels.html)
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [ggplot: Facets, colors, and labels](videos/day3/03-2-ggplot-facets-colors-labels.html)
 
 
 

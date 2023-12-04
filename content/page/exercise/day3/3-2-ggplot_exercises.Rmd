@@ -36,7 +36,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # Before you start...
 
-Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_2_day_4.R` or `herriot.R` and you'll be ready to go!
+Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_2_day_3.R` or `herriot.R` and you'll be ready to go!
 
 <!-- order the axis (factors or dosages etc), reversing axis -->
 <!-- Reminder of what does in aes and what DOESN'T - static colors, sizes, shapes go OUTSIDE -->
