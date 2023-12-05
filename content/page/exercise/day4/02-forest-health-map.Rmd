@@ -1,0 +1,253 @@
+---
+title: "Maps - Exercise 2"
+output: html_document
+date: "2023-12-04"
+---
+
+
+# Before you start...
+
+Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_2_day_4.R` or `katya.R` and you'll be ready to go!
+
+# Building on our previous work...
+
+Now that we know *where* the birds go, we need to make sure that they have a safe and healthy home to go to!
+
+Let's check out the health of the forest by county in the state of Minnesota. We will need to know the locations of the counties in Minnesota, and we will also need some forest health data.
+
+The [Minnesota Geospatial Commons]("https://gisdata.mn.gov") is an excellent source of geospatial data in Minnesota and very searchable.
+
+If you search *forest health* you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let's read in a shapefile using the [`sf` package](https://r-spatial.github.io/sf/). You will note that the shapefile is [zipped](https://en.wikipedia.org/wiki/ZIP_(file_format)). So we first create two temporary folders to begin the process of grabbing this file, next unzipping it, and then reading it in as a simple feature (`sf` object). The *temp* and *temp2* folders, and the shapefile, is saved in a local temporary folder. If you want to save the shapefile on your computer for the longterm, you can use the [`st_write` function](https://r-spatial.github.io/sf/reference/st_write.html) in the [`sf` package](https://r-spatial.github.io/sf/).
+
+<br>
+
+```{r, forests, message = FALSE, warning = FALSE, progress=FALSE}
+
+# Create temp files
+temp <- tempfile()
+temp2 <- tempfile()
+
+# Download the zip file and save to 'temp' 
+URL <- "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_dnr/env_forest_health_survey_2022/shp_env_forest_health_survey_2022.zip"
+
+download.file(URL, temp)
+
+# Unzip the contents of the temp and save unzipped content in 'temp2'
+unzip(zipfile = temp, exdir = temp2)
+
+# Read the shapefile. Alternatively make an assignment, such as f<-sf::read_sf(your_SHP_file)
+forest_damage <- sf::st_read(temp2)
+
+```
+
+<br>
+
+We can look at the data in two ways: 
+
+1. View the attributes by clicking `forest_damage` in the Environment in RStudio. Go ahead, and do that now. Look at the geometry column, that is where the spatial information is saved and it is where R looks for it. Each row in this dataset is a different polygon, but are all a part of the same dataset or shapefile.
+1. Next, we can plot the data simply in base R to make sure it has the appropriate geographic information and plots as a map. This is generally a good check to make sure you've successfully pulled in a proper shapefile.
+
+<br>
+
+```{r, forest damage map, message = FALSE, progress=FALSE, warning = FALSE}
+
+plot(forest_damage[1]) #try taking out the [1] and see what happens.
+
+```
+
+<br>
+
+When we look at this, we see that there are many polygons, and if we look at the data (by typing `View(forest_damage)`, or clicking on `forest_damage` in the environment) we can see that there are severity ratings for each polygon. Let's do a very simple analysis and sum the area in each county that has damage to tree canopy. Then, we can join to a county geospatial dataset to look at the places in MN with the most tree canopy damage and see if our bird was affected. First let's use the power of [`tigris`](https://cran.r-project.org/web/packages/tigris/readme/README.html) and pull in the county shapefile for Minnesota.
+
+<br>
+
+```{r counties, results = "hide", warning = FALSE, message = FALSE, progress=FALSE}
+
+counties <- counties(state = "MN")
+
+```
+
+<br>
+
+And, of course we want to check to see if our CRS match, because we want to join these two geospatial datasets.
+
+<br>
+
+```{r check geospatial, warning = FALSE, progress=FALSE, message = FALSE}
+
+st_crs(counties)
+st_crs(forest_damage)
+
+```
+
+<br>
+
+The forest damage dataset has a coordinate reference system in UTMs (Universal Transverse Mercator), and remember that those have units of meters, which are very nice for working with area measurements. So, let's convert the county dataset into UTMs, zone 15 (Minnesota's main UTM zone).
+
+<br>
+
+```{r, change crs county, warning = FALSE, progress=FALSE, message = FALSE}
+
+counties <- st_transform(counties, crs = 26915)
+
+```
+
+
+<br>
+
+Now, we can run a spatial intersect on the two geospatial datasets. The [`st_intersection` function](https://r-spatial.github.io/sf/reference/geos_binary_ops.html) returns the polygons where the two geometries intersect, [here's a short description with images](https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects). All of the polygons in the `forest_damage` dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties, this will add to our work. But no worries, R has us covered!
+
+<br>
+
+```{r join forest damage county, warning = FALSE, message = FALSE, progress=FALSE}
+
+forest_damage_counties <- st_intersection(counties, forest_damage)
+```
+
+<br>
+
+Next, we can calculate the area for each of the `forest_damage` polygons within each joined county. Some of our polygons might look a bit like this (but not exactly like this, it's just an example!),
+![Split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg)
+
+<br>
+
+```{r polygon areas, warning = FALSE, progress=FALSE, message = FALSE}
+
+forest_damage_counties <- forest_damage_counties %>%
+  mutate(damage_area = st_area(geometry))
+
+```
+
+<br>
+
+Now, we are going to sum the areas with tree canopy tree data within each county, returning the following information: the total area in the polygon and the name of the County. We no longer need each individual polygon geometry, so we set the geometry of the dataset to NULL.
+
+<br>
+
+```{r sum areas,  warning = FALSE, message = FALSE, progress=FALSE}
+
+st_geometry(forest_damage_counties) <- NULL
+
+```
+
+<br>
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Simmer it down {-}
+```{r exer-tabs3, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Group_by and Summarize", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> We are going to sum the areas with tree canopy tree data within each county, returning the following information: the total area in the polygon and the name of the County. </h4>
+
+<br>',
+
+show_hint = 'code_start
+
+forest_damage_counties <- forest_damage_counties %>%
+  group_by(______) %>%
+  summarise(total_damaged_area = __________) %>%
+  ungroup() %>%
+  xxxxx(total_damaged_area = as.numeric(__________)) #why do we do this?
+  code_end',
+
+show_code = 'code_start
+
+forest_damage_counties <- forest_damage_counties %>%
+  group_by(NAME) %>%
+  summarise(total_damaged_area = sum(damage_area, na.rm = T)) %>%
+  ungroup() %>%
+  mutate(total_damaged_area = as.numeric(total_damaged_area))
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+We need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map.
+
+<br>
+
+```{r rejoin counties, warning = FALSE, progress=FALSE, message = FALSE}
+
+counties_forest_damage <- left_join(counties, forest_damage_counties, by = "NAME")
+```
+
+<br>
+
+Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset). Sometimes a NULL means there is no information, which means that you don't know what the value is and you do not have adequate information for replacements.
+
+<br>
+
+```{r map counties, warning = FALSE, progress=FALSE, message = FALSE}
+
+counties_forest_damage <- counties_forest_damage %>%
+  mutate(total_damaged_area = replace_na(total_damaged_area, 0))
+
+```
+
+<br>
+
+Finally we get to make a map. Remember, data prep is more than half the battle!
+
+<br>
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Mapping it out {-}
+```{r exer-tabs3, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Make a map using `ggplot`", "Show hint", "Show code")
+
+content <- c(Exercise = '<h4> Make a map using `ggplot` and `geom_sf`. Remember to add good plot elements like titles and fun colors. Fun colors are very important. </h4>
+
+<br>',
+
+show_hint = '
+What should you add to make this a more complete plot?
+<br>
+code_start
+
+ggplot(data = ________, aes(fill = total_damaged_area)) +
+  geom_sf()
+  code_end',
+
+show_code = 'code_start
+
+ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
+  geom_sf()+
+  labs(title = "Minnesota Counties by Total Forest Canopy Area Damage",
+       x = "Longitude",
+       y = "Latitude",
+       caption = "Source: 2022 MN DNR Forest Health Survey") +
+  scale_fill_viridis_c(name = "Total Damaged Area", labels = comma) +
+  theme_minimal()
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+</div>
+
+<br>
+
+Our bird originated in St. Paul, MN so it looks like there wasn't a lot of damaged forest canopy where our bird lived (Ramsey county). That's good news!
+
+**Happy spatial analysis friends!**
+
+<br>
+
+![https://www.brproud.com/news/science-why-do-some-birds-fly-in-v-formation/](https://www.brproud.com/wp-content/uploads/sites/80/2022/08/birds-flying-in-v-formation.jpg?w=1280&h=720&crop=1)
+
+
+

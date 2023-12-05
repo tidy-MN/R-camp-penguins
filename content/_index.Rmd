@@ -2,6 +2,7 @@
 title: Welcome
 comments: false
 hidden: false
+date: "2023-11-30"
 output: 
   blogdown::html_page: 
     css: page/css/camp_style.css
@@ -163,7 +164,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- [Homeward bound](page/exercise/day4/4-homeward-bound.html)
+- Homeward bound
+- Healthy forest
 
 </div> 
 

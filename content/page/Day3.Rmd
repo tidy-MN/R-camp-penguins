@@ -381,7 +381,17 @@ ggplot(rv_penguins,
 <br>
 
 ### 7. Since we're data *sleuthing*, let's plot in undercover night mode {-}
-```{r, eval=T}
+
+We'll install the `hrbrthemes` package.
+```{r, eval=F}
+install.packages("hrbrthemes")
+```
+
+Now we can add a custom theme.
+
+> We can safely ignore all the font *WARNINGS*. We'll save changing fonts for another day.
+
+```{r}
 library(hrbrthemes)
 
 ggplot(rv_penguins,

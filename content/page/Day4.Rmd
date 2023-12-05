@@ -429,7 +429,7 @@ loon_coords <- data.frame(lake = "Leech Lake",
 ```
 
 
-### 2. Convert the dataframe to sf spatial object with a projection {-}
+### 2. Convert the dataframe to **sf** spatial object with a projection {-}
 
 > The CRS ID for Lat/Long data is `4269`.
 

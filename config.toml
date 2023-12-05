@@ -46,7 +46,6 @@ uglyURLs = true
   #twitter = ""
   #gitlab = "username"
 
-
     
 [[menu.main]]
     identifier = "Training"

@@ -6,35 +6,7 @@
     <description>Recent content in Pages on Learn R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/page/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>sf is for birds</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/sf.html</link>
-      <pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/sf.html</guid>
-      <description>1 Spatial analysis with R 1 Spatial analysis with R A major powertool in R for spatial analysis and geograpy data processing is the sf package.</description>
-    </item>
-    
-    <item>
-      <title>Getting home</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4-homeward-bound.html</link>
-      <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/4-homeward-bound.html</guid>
-      <description>Maps The three rings to rule the world in R and spatial analysis are sf, tigris, and ggplot or leaflet.</description>
-    </item>
-    
-    <item>
-      <title>Intro to GIS</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/intro_to_gis.html</link>
-      <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/intro_to_gis.html</guid>
-      <description>1 The basics 2 Coordinate Reference Systems 1 The basics GIS stands for ‘geographic information system’
-It is a computer system for capturing, storing, checking, and displaying data related to positions on Earth’s surface.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tidy-mn.github.io/R-camp-penguins/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Back in a few...</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/timer10_chewie_dance.html</link>
@@ -57,15 +29,6 @@ Candy Poll Breakout - Greetings! 3-4 (Dorian)
 5-8 (Derek)
 PM
 1-2 (Barbara) 3-5+Bingo (Dorian) 6-7 (Derek) 8-Shutdown (Barbara) Day 2 AM</description>
-    </item>
-    
-    <item>
-      <title>Agenda</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/agenda.html</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/agenda.html</guid>
-      <description>R Camp || Day 1&amp;hellip;</description>
     </item>
     
     <item>
