@@ -32,7 +32,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
-<img src="../images/map-of-Tenochtitlan-1524.png" style="width: 54%;">
+<img src="../images/map-of-Tenochtitlan-1524.png" style="width: 50%;">
 
 <p class="caption">Map of Mexico-Tenochtitlan, dated 1524</p>
 
