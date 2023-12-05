@@ -443,7 +443,7 @@ loon_mn <- st_as_sf(loon_coords,
 
 ### 3. Transform the trees to the same CRS {-}
 
-For improved distance calculations we will transform both datasets to the projection: *Albers Equal Area contiguous USA*. 
+For improved distance calculations we will transform both datasets to the projection: *USA Contiguous Albers Equal Area*. 
 
 To transform from one projection to another we use `st_transform()`, and assign the new projection with the argument `crs = "ESRI:102003"`.
 
@@ -479,9 +479,7 @@ tree_distances <- tree_distances %>%
 
 <br>
 
-To determine the closest tree in San Francisco to our loon we use the *min()* function, which will return the minimum calculated value in a column. 
-
-Let's run *min()* on the column `distance_to_leech_km`, and use `filter()` to keep the only row where its distance is equal to the minimum distance.
+To determine the closest tree in San Francisco to our loon, let's run *min()* on the column `distance_to_leech_km`, and use `filter()` to keep the only row where its distance is equal to the minimum distance.
 
 ```{r distance-min}
 closest_tree <- tree_distances %>% 
@@ -495,12 +493,12 @@ glimpse(closest_tree)
 
 > **That's our tree!** Number `256051`. The wonderful bark shedding *Platanus x hispanica*, also known as the London plane tree. And good news, it is only ~2,500 kilometers away.
 
-<img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 40%">
+<img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 43%">
 
 <br>
 
 
-Pssst... for the extra curious bees in the room. Here is where that tree is in San Francisco. Looks to be planted along The Embarcadero near the little *Rincon Park*.
+Pssst... for the extra curious bees in the room. Here is where the tree is in San Francisco. It looks to be planted along The Embarcadero near little Rincon Park.
 ```{r leaflet-install, eval=F}
 install.packages(leaflet)
 ```
@@ -517,7 +515,6 @@ leaflet(trees_in_san_fran) %>%
   addCircles(lat = ~latitude, 
              lng = ~longitude,
              color = "darkgreen") %>%
-  addCircles(data = closest_tree, color = "blue") %>%
   addMarkers(data = closest_tree,
              lat = ~latitude,
              lng = ~longitude) 
@@ -525,6 +522,6 @@ leaflet(trees_in_san_fran) %>%
 
 
 
-### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day4.html) {-}
+### <i class="fas fa-carrot"></i> [Jump to the top](../page/day4.html) {-}
 
 <br>
