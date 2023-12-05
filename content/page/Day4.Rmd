@@ -32,6 +32,10 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
+<img src="../images/map_geometries.gif" style="width: 64%;">
+
+<p class="caption">Map of Mexico-Tenochtitlan, dated 1524</p>
+
 
 # <i class="fa fa-video-camera"></i> [Maps: GIS and Coordinate reference systems (CRS)](videos/day4/04-1-maps-gis-crs.html) 
 
