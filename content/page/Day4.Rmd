@@ -155,7 +155,7 @@ The main type of data you will be reading in are [shapefiles](https://en.wikiped
 
 The other main type of data you will experience is a flat table of data with X/Y coordinates, like longitude and latitude. This is the type of data we will work with today, but once we set it up as a spatial data set we will save it as a shapefile.
 
-Let's pull in some point data. Each point in this data represents a specific tree in San Francisco.
+Let's pull in some point data. Each point in this dataset represents a specific tree planted along a street in San Francisco.
 
 > The curious can see more about this dataset at [San Francisco Trees](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28).
 
@@ -174,7 +174,7 @@ sf_trees <- read_csv(url)
 library(sf)
 library(tidyverse)
 
-sf_trees_all <- read_csv("C:/Users/kvaleD1/Downloads/sf_trees.csv")
+sf_trees_all <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-28/sf_trees.csv")
 
 set.seed(50)
 
@@ -211,12 +211,11 @@ Drats! R is right again. There are some missing coordinates or NA's in the latit
 <br>
 
 We need to get rid of the trees or rows in the data with missing coordinates. Here are two ways.
-
 ```{r na-filter}
 # With filter() and !is.na()
 sf_trees <- filter(sf_trees, !is.na(longitude), !is.na(latitude))
 
-# Alternative: drop_na( )
+# Alternative: drop_na()
 ## If NA appears in *either* of the columns you provide, the row will be dropped
 sf_trees <- drop_na(sf_trees, longitude, latitude)
 ```
@@ -317,7 +316,7 @@ st_crs(san_fran)
 st_crs(sf_trees_geo)
 ```
 
-> Ooofda. That's a lot of information. The important part is that their last line showing their EPSG ID as `4269` id identical. We are good to go.
+> Ooofda. That prints a lot of information. The important part is that their last line showing their EPSG ID as `4269` id identical. We are good to go.
 
 <br>
 
@@ -422,7 +421,7 @@ loon_lat <- 47.1505
 
 loon_long <- -94.3839
 
-# Add coords to a dataframe
+# Add the coords to a dataframe
 loon_coords <- data.frame(lake = "Leech Lake",
                           lon = loon_long, 
                           lat = loon_lat)
@@ -437,7 +436,6 @@ loon_coords <- data.frame(lake = "Leech Lake",
 loon_mn <- st_as_sf(loon_coords,
                     coords = c("lon", "lat"),
                     crs = 4269)
-
 ```
 
 <br>
@@ -445,11 +443,19 @@ loon_mn <- st_as_sf(loon_coords,
 
 ### 3. Transform the trees to the same CRS {-}
 
-To transform from one projection to another we use `st_transform()`, and assign the new projection with the argument `crs = 4269`.
+For improved distance calculations we will transform both datasets to the projection: *Albers Equal Area contiguous USA*. 
+
+To transform from one projection to another we use `st_transform()`, and assign the new projection with the argument `crs = "ESRI:102003"`.
+
 
 ```{r}
-trees_in_san_fran <- st_transform(trees_in_san_fran, crs = 4269)
+loon_mn <- st_transform(loon_mn, crs = "ESRI:102003")
 ```
+ 
+```{r}
+trees_in_san_fran <- st_transform(trees_in_san_fran, crs = "ESRI:102003")
+```
+
 
 <br>
 
@@ -458,8 +464,8 @@ trees_in_san_fran <- st_transform(trees_in_san_fran, crs = 4269)
 
 We'll use the `st_distance()` function to calculate the distance between each of the trees and our loon. 
 ```{r}
-trees_in_san_fran <- trees_in_san_fran %>%
-  mutate(distance_to_loon_m = st_distance(geometry, loon_mn))
+tree_distances <- trees_in_san_fran %>% 
+                  mutate(distance_to_loon_m = st_distance(geometry, loon_mn))
 ```
 
 Let's also add a column with the distance shown in kilometers by dividing the calculated distance by 1,000 meters. 
@@ -467,8 +473,8 @@ Let's also add a column with the distance shown in kilometers by dividing the ca
 > The `as.numeric()` is added below to remove the *meters* units from the original distance value.
 
 ```{r}
-trees_in_san_fran <- trees_in_san_fran %>%
-  mutate(distance_to_loon_km = as.numeric(distance_to_loon_m) / 1000)
+tree_distances <- tree_distances %>%
+                  mutate(distance_to_loon_km = as.numeric(distance_to_loon_m) / 1000)
 ```
 
 <br>
@@ -478,19 +484,46 @@ To determine the closest tree in San Francisco to our loon we use the *min()* fu
 Let's run *min()* on the column `distance_to_leech_km`, and use `filter()` to keep the only row where its distance is equal to the minimum distance.
 
 ```{r distance-min}
-trees_in_san_fran %>% 
-  filter(distance_to_loon_km == min(distance_to_loon_km)) %>%
-  glimpse()
+closest_tree <- tree_distances %>% 
+                filter(distance_to_loon_km == min(distance_to_loon_km))
+
+glimpse(closest_tree)
 ```
 
 
 <br>
 
-> **That's our tree!** Number `256051`: the wonderful bark shedding *Platanus x hispanica*, also known as the London plane tree. And it is only ~2,500 kilometers away.
+> **That's our tree!** Number `256051`. The wonderful bark shedding *Platanus x hispanica*, also known as the London plane tree. And good news, it is only ~2,500 kilometers away.
 
 <img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 40%">
 
 <br>
+
+
+Pssst... for the extra curious bees in the room. Here is where that tree is in San Francisco. Looks to be planted along The Embarcadero near the little *Rincon Park*.
+```{r leaflet-install, eval=F}
+install.packages(leaflet)
+```
+
+```{r leaflet-plot, eval=T}
+library(leaflet)
+
+# Transform the closest tree back to Lat/Long 
+closest_tree <- st_transform(closest_tree, crs = 4326)
+
+# Add it to a leaflet map along with ALL the trees
+leaflet(trees_in_san_fran) %>%
+  addTiles() %>%
+  addCircles(lat = ~latitude, 
+             lng = ~longitude,
+             color = "darkgreen") %>%
+  addCircles(data = closest_tree, color = "blue") %>%
+  addMarkers(data = closest_tree,
+             lat = ~latitude,
+             lng = ~longitude) 
+```
+
+
 
 ### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day4.html) {-}
 
