@@ -63,7 +63,7 @@
   "headline": "Maps - Exercise 2",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1340 ,
+  "wordCount":  1365 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -365,9 +365,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <h1>Building on our previous work…</h1>
 <p>Now that we know <em>where</em> the birds go, we need to make sure that they have a safe and healthy home to go to!</p>
 <p>Let’s check out the health of the forest by county in the state of Minnesota. We will need to know the locations of the counties in Minnesota, and we will also need some forest health data.</p>
-<p>The <a href="%22https://gisdata.mn.gov%22">Minnesota Geospatial Commons</a> is an excellent source of geospatial data in Minnesota and is very searchable.</p>
-<p>If you search <em>forest health</em> you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let’s read in a shapefile using the <a href="https://r-spatial.github.io/sf/">sf package</a>. You will note that the shapefile is <a href="https://en.wikipedia.org/wiki/ZIP_(file_format)">zipped</a>. So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The <em>temp</em> and <em>temp2</em> folders, and the shapefile, is saved in a local temporary folder.</p>
-<p>If you want to save the shapefile on your computer for the longterm, you can use the <a href="https://r-spatial.github.io/sf/reference/st_write.html">st_write function</a>.</p>
+<p>The <a href="https://gisdata.mn.gov">Minnesota Geospatial Commons</a> is an excellent source of geospatial data in Minnesota and is very searchable.</p>
+<p>If you search <em>forest health</em> you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let’s read in a shapefile using the <a href="https://r-spatial.github.io/sf/">sf package</a>. You will note that the shapefile is [zipped](<a href="https://en.wikipedia.org/wiki/ZIP_(file_format)" class="uri">https://en.wikipedia.org/wiki/ZIP_(file_format)</a>. So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The <em>temp</em> and <em>temp2</em> folders, and the shapefile, is saved in a local temporary folder.</p>
+<p>If you want to save the shapefile on your computer for the longterm, you can use the <a href="https://r-spatial.github.io/sf/reference/st_write.html">st_write</a> function.</p>
 <p><br></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -388,7 +388,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Read the shapefile</span></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>forest_damage <span class="ot">&lt;-</span> <span class="fu">st_read</span>(temp2)</span></code></pre></div>
 <pre><code>## Reading layer `forest_health_survey_2022&#39; from data source 
-##   `/tmp/RtmpiDz2Rz/file64546ad288e&#39; using driver `ESRI Shapefile&#39;
+##   `/tmp/RtmpwQ15vT/file5ab774c479e&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 2825 features and 10 fields
 ## Geometry type: POLYGON
 ## Dimension:     XY
@@ -436,6 +436,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <div class="figcaption">Example of split polygons across two counties from GIS stackexchange.com</div>
 </div>
 <p><br></p>
+<div id="st_area" class="section level3">
+<h3>st_area</h3>
 <p>Next, we can calculate the area for each of the new split up <code>forest_damage</code> polygons.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
@@ -443,29 +445,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Since we no longer need each individual polygon geometry, we can set the geometry of the dataset to NULL. This can help save some memory for R when working with large datasets.</p>
 <p><br></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
+<blockquote>
+<p>Check the dataframe to see if the <code>geometry</code> column vanished. I hope so!</p>
+</blockquote>
 <p><br></p>
 <p>Now, we want to sum the damaged tree area within each county. This will be a throwback to our group_by and summarize work. We want our new summarized dataframe to have the following information: the total area in the polygon and the name of the county.</p>
+</div>
 <div id="sum-up-the-damaged-areas" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Sum up the damaged areas</h3>
-<ul class="nav nav-pills" id="myTab4884" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab2444" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="group_byandsummarize4884-tab" data-toggle="tab" href="#group_byandsummarize4884" role="tab" aria-controls="group_byandsummarize4884" aria-selected="true">group_by and summarize</a>
+<a class="nav-link" id="group_byandsummarize2444-tab" data-toggle="tab" href="#group_byandsummarize2444" role="tab" aria-controls="group_byandsummarize2444" aria-selected="true">group_by and summarize</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint4884-tab" data-toggle="tab" href="#showhint4884" role="tab" aria-controls="showhint4884" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint2444-tab" data-toggle="tab" href="#showhint2444" role="tab" aria-controls="showhint2444" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode4884-tab" data-toggle="tab" href="#showcode4884" role="tab" aria-controls="showcode4884" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode2444-tab" data-toggle="tab" href="#showcode2444" role="tab" aria-controls="showcode2444" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="group_byandsummarize4884" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize4884-tab">
+<div id="group_byandsummarize2444" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize2444-tab">
 <h4>
 We are going to sum the damaged areas within each county, returning the following information: the total area in the polygon and the name of the County. Call the summarized data <code>forest_damage_total</code>.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint4884" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4884-tab">
+<div id="showhint2444" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2444-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -474,7 +480,7 @@ forest_damage_total <- forest_damage_counties %>%
   
 </pre>
 </div>
-<div id="showcode4884" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4884-tab">
+<div id="showcode2444" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2444-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -486,10 +492,15 @@ forest_damage_total <- forest_damage_counties %>%
 </div>
 </div>
 <p><br></p>
+<div id="join-tables" class="section level3">
+<h3>Join tables</h3>
 <p>Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use <code>left_join</code> below to add the forest damage totals to the county polygons. The rows are joined based on where their county names match in their <code>NAME</code> columns. We’ll cover joins in great detail next session, so consider this a preview teaser.</p>
 <p><br></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
 <p><br></p>
+</div>
+<div id="should-the-missing-values-for-damaged-area-be-zero" class="section level3">
+<h3>Should the missing values for damaged area be zero?</h3>
 <p>Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset).</p>
 <p>Sometimes a NULL means there is no information, which means that you don’t know what the value is and you do not have adequate information for replacements.</p>
 <p><br></p>
@@ -509,6 +520,7 @@ forest_damage_total <- forest_damage_counties %>%
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
 <p><br></p>
 <p>Finally we get to make a map. Remember, data prep is more than half the battle!</p>
+</div>
 <div id="map-it-out" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Map it out</h3>
 <ul class="nav nav-pills" id="myTab1ab" role="tablist" style="margin-top: 18px;">
@@ -534,7 +546,7 @@ Make a map using <code>ggplot</code> and <code>geom_sf</code>. Remember to add g
 <br></p>
 <pre class="sourceCode r">
 
-ggplot(data = ________, aes(fill = total_damaged_area)) +
+ggplot(data = ________, aes(fill = as.numeric(total_damaged_area))) +
   geom_sf()
   
 </pre>
@@ -542,7 +554,7 @@ ggplot(data = ________, aes(fill = total_damaged_area)) +
 <div id="showcode1ab" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1ab-tab">
 <pre class="sourceCode r">
 
-ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
+ggplot(data = counties_forest_damage, aes(fill = as.numeric(total_damaged_area))) +
   geom_sf()+
   labs(title = "Total forest canopy area damage",
        subtitle = "Minnesota counties",

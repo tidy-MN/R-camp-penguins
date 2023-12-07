@@ -42,11 +42,11 @@ Now that we know *where* the birds go, we need to make sure that they have a saf
 
 Let's check out the health of the forest by county in the state of Minnesota. We will need to know the locations of the counties in Minnesota, and we will also need some forest health data.
 
-The [Minnesota Geospatial Commons]("https://gisdata.mn.gov") is an excellent source of geospatial data in Minnesota and is very searchable.
+The [Minnesota Geospatial Commons](https://gisdata.mn.gov) is an excellent source of geospatial data in Minnesota and is very searchable.
 
-If you search *forest health* you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let's read in a shapefile using the [sf package](https://r-spatial.github.io/sf/). You will note that the shapefile is [zipped](https://en.wikipedia.org/wiki/ZIP_(file_format)). So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The *temp* and *temp2* folders, and the shapefile, is saved in a local temporary folder. 
+If you search *forest health* you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let's read in a shapefile using the [sf package](https://r-spatial.github.io/sf/). You will note that the shapefile is [zipped](https://en.wikipedia.org/wiki/ZIP_(file_format). So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The *temp* and *temp2* folders, and the shapefile, is saved in a local temporary folder. 
 
-If you want to save the shapefile on your computer for the longterm, you can use the [st_write function](https://r-spatial.github.io/sf/reference/st_write.html).
+If you want to save the shapefile on your computer for the longterm, you can use the [st_write](https://r-spatial.github.io/sf/reference/st_write.html) function.
 
 <br>
 
@@ -139,7 +139,7 @@ Now, we can run a spatial intersect on the two geospatial datasets. The [st_inte
 
 <br>
 
-```{r join forest damage county}
+```{r intersect forest damage county}
 forest_damage_counties <- st_intersection(counties, forest_damage)
 ```
 
@@ -150,6 +150,9 @@ Now some of our polygons within the counties might look a bit like this:
 ![Example of split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg){width=55%}
 
 <br>
+
+
+### st_area
 
 Next, we can calculate the area for each of the new split up `forest_damage` polygons. 
 
@@ -168,6 +171,8 @@ Since we no longer need each individual polygon geometry, we can set the geometr
 ```{r sum areas,  }
 forest_damage_counties <- st_set_geometry(forest_damage_counties, NULL)
 ```
+
+> Check the dataframe to see if the `geometry` column vanished. I hope so!
 
 <br>
 
@@ -215,6 +220,8 @@ forest_damage_total <- forest_damage_counties %>%
 
 <br>
 
+### Join tables
+
 Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use `left_join` below to add the forest damage totals to the county polygons. The rows are joined based on where their county names match in their `NAME` columns. We'll cover joins in great detail next session, so consider this a preview teaser. 
 
 <br>
@@ -224,6 +231,8 @@ counties_forest_damage <- left_join(counties, forest_damage_total, by = "NAME")
 ```
 
 <br>
+
+### Should the missing values for damaged area be zero?
 
 Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset). 
 
@@ -270,14 +279,14 @@ What should you add to make this a more complete plot?
 
 code_start
 
-ggplot(data = ________, aes(fill = total_damaged_area)) +
+ggplot(data = ________, aes(fill = as.numeric(total_damaged_area))) +
   geom_sf()
   
   code_end',
 
 show_code = 'code_start
 
-ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
+ggplot(data = counties_forest_damage, aes(fill = as.numeric(total_damaged_area))) +
   geom_sf()+
   labs(title = "Total forest canopy area damage",
        subtitle = "Minnesota counties",
