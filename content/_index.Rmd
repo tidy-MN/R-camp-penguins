@@ -164,8 +164,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- Homeward bound
-- Healthy forest
+- [Homeward bound](page/exercise/day4/01-homeward-bound.html)
+- [Healthy forests](page/exercise/day4/02-forest-health-map.html)
 
 </div> 
 

@@ -32,7 +32,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <br>
 
-<img src="../images/map_of_tenochtitlan_full.jpg" style="width: 90%;">
+<img src="../images/map_of_tenochtitlan_full.jpg" style="width: 86%;">
 
 <p class="caption">Map of Mexico-Tenochtitlan, dated 1524</p>
 
@@ -525,6 +525,7 @@ leaflet(trees_in_san_fran) %>%
 ```
 
 
+<br>
 
 ### <i class="fas fa-carrot"></i> [Jump to the top](../page/day4.html) {-}
 

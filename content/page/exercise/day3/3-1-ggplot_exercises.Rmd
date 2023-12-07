@@ -14,7 +14,7 @@ output:
 
 <link rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
----
+
 
 ```{r setup, include=FALSE}
 library(rmarkdown)
@@ -109,7 +109,7 @@ show_hint = 'code_start
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar() +
-  labs() + #use help if you want to learn more about what goes inside!
+  labs() + # Use help if you want to learn more about what goes inside!
   theme_xxx() #pick one of the themes above! 
 code_end',
 
@@ -197,7 +197,7 @@ content <- c(Exercise = '<h4> Change the bar-chart from a stacked bar-chart to a
 show_hint = 'code_start
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
-  geom_bar(position = position_xxxx()) + #try help(position) for more deets
+  geom_bar(position = position_xxxx()) + # Try help(geom_bar) and 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",

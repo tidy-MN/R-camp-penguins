@@ -1,0 +1,209 @@
+
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="monsters-tab2" data-toggle="tab" href="#monsters2" role="tab" aria-controls="monsters2" aria-selected="true"> `monsters` </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="filter3-tab2" data-toggle="tab" href="#filter32" role="tab" aria-controls="filter32" aria-selected="false"> `filter`</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="select-tab2" data-toggle="tab" href="#select2" role="tab" aria-controls="select2" aria-selected="false"> `select` </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="arrange-tab2" data-toggle="tab" href="#arrange2" role="tab" aria-controls="arrange2" aria-selected="false"> `arrange`</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="mutate-tab2" data-toggle="tab" href="#mutate2" role="tab" aria-controls="mutate2" aria-selected="false"> `mutate`</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="summarize-tab2" data-toggle="tab" href="#summarize2" role="tab" aria-controls="summarize2" aria-selected="false"> `summarize`</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="groupby-tab2" data-toggle="tab" href="#groupby2" role="tab" aria-controls="groupby2" aria-selected="false"> `groupby`</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="code-monsters-tab2" data-toggle="tab" href="#code-monsters2" role="tab" aria-controls="code-monsters2" aria-selected="false"> `R code`</a>
+</li>
+
+</ul>
+
+<div class="well tab-content monsters" id="myTabContent" style="background-color: white;">
+
+<div class="tab-pane fade active in" id="monsters2" role="tabpanel" aria-labelledby="monsters-tab2">
+
+![](../images/monsters/monster_data.png){style="width: 85%;"}
+
+<br>
+
+</div>
+
+<div class="tab-pane fade" id="filter32" role="tabpanel" aria-labelledby="filter3-tab2">
+
+
+<h3 class="blue-h3"> Filter with a single condition / test </h3>
+
+![](../images/monsters/filter_monsters.png){style="width: 95%; margin-top: 12px;"}
+
+<h3 class="blue-h3" style="margin-top: 50px;">Filter with multiple conditions / tests </h3>
+
+![](../images/monsters/filter_monsters_multiple.png){style="width: 95%;"}
+
+<br>
+</div>
+
+
+<div class="tab-pane fade" id="select2" role="tabpanel" aria-labelledby="select-tab2">
+
+<h3 class="blue-h3"> Keep columns </h3>
+
+![](../images/monsters/select_monsters2.png){style="width: 98%; margin-top: 6px;"}
+
+<h3 class="blue-h3" style="margin-top: 50px;">Drop columns </h3>
+
+![](../images/monsters/select_monsters_drop2.png){style="width: 70%;"}
+
+<br>
+
+</div>
+
+<div class="tab-pane fade" id="arrange2" role="tabpanel" aria-labelledby="arrange-tab2">
+
+
+<h3 class="blue-h3"> Arrange from lowest to highest </h3>
+
+![](../images/monsters/arrange_monsters.png){style="width: 98%; margin-top: 12px;"}
+
+
+<h3 class="blue-h3" style="margin-top: 50px;"> Arrange from highest to lowest </h3>
+
+![](../images/monsters/arrange_monsters_desc.png){style="width: 98%;"}
+<br>
+
+</div>
+
+
+<div class="tab-pane fade" id="mutate2" role="tabpanel" aria-labelledby="mutate-tab2">
+
+
+<h3 class="blue-h3"> Update an existing column </h3>
+
+![](../images/monsters/mutate_monsters_update.png){style="width: 98%; margin-top: 12px;"}
+
+<h3 class="blue-h3" style="margin-top: 50px;">Add a new column </h3>
+
+![](../images/monsters/mutate_monsters_new.png){style="width: 98%;"}
+<br>
+
+</div>
+
+
+<div class="tab-pane fade" id="summarize2" role="tabpanel" aria-labelledby="summarize-tab2">
+
+<h3 class="blue-h3"> Average age </h3>
+
+![](../images/monsters/summarize_monsters2.png){style="width: 98%; margin-top: 12px;"}
+
+<br>
+
+</div>
+
+
+<div class="tab-pane fade" id="groupby2" role="tabpanel" aria-labelledby="groupby-tab2">
+
+<h3 class="blue-h3"> Average age by monster color type </h3>
+
+![](../images/monsters/groupby_summarize_pipe_monsters3.png){style="width: 95%; margin-top: 12px;"}
+
+![](../images/monsters/groupby_summarize_single_monsters2.png){style="width: 98%; margin-top: 12px;"}
+
+<h3 class="blue-h3" style="margin-top: 50px;"> Average age and monster count by color </h3>
+
+![](../images/monsters/groupby_summarize_pipe_multi_monsters2.png){style="width: 96%;"}
+
+![](../images/monsters/groupby_summarize_multi_monsters2.png){style="width: 98%;"}
+<br>
+
+</div>
+
+<div class="tab-pane fade" id="code-monsters2" role="tabpanel" aria-labelledby="code-monsters-tab2">
+
+```{r, eval=F, echo=T}
+
+# Create monsters
+monsters <- data.frame(id = 1:5,
+                       color = c("pink", "green",  "pink", "green", "green"),
+                       age = c(8,2,7,3,1),
+                       hat = c(T,T,F,T,F) )
+
+# FILTER ----
+
+## Use a single condition/test
+monsters %>% filter(color == "pink")
+
+## Use multiple conditions/tests
+monsters %>% filter(color == "pink", age > 7)
+
+
+# SELECT ----
+
+## Keep only 2 columns
+monsters %>% select(id, age)
+
+## Drop columns with a '-' in front
+monsters %>% select(-hat)
+
+
+# ARRANGE ----
+
+## From low to high
+monsters %>% arrange(age)
+
+## Descend from high to low
+monsters %>% arrange(desc(age))
+
+
+# MUTATE ----
+
+## Update an existing column
+monsters %>% mutate(age = age + 2)
+
+## Create a new column
+monsters %>% mutate(is_baby = age < 3)
+
+
+# SUMMARIZE ----
+monsters %>% summarize(age_avg = mean(age))
+
+
+# GROUP_BY ----
+
+## Create a single summary statistic
+monsters %>% 
+  group_by(color) %>%
+  summarize(age_avg = mean(age))
+
+## Create multiple summary stats
+monsters %>% 
+  group_by(color) %>%
+  summarize(age_avg = mean(age),
+            n_monsters = n())
+
+
+#  LEFT_JOIN ----
+
+nicknames <- data.frame(id = c(1,2,3,5,7),
+                        name = c("Kid", "Cheeky", "Spritz", "Littles", "Lucky"))
+
+named_monsters <- left_join(monsters, nicknames, by = "id")
+
+named_monsters
+
+
+#  ANTI_JOIN ----
+
+no_name_monsters <- anti_join(monsters, nicknames, by = "id")
+
+```
+
+</div>
+</div>

@@ -24,9 +24,11 @@ The three rings to rule the world in R and spatial analysis are *sf*, *tigris*, 
 
 ![https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png)
 
+<br>
+
 Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the the center of Smoky Mountain National Park in Tennessee. 
 
-We'll first set up 2 points and then calculate how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join it with any overlapping states to get a list of states that the bird will fly through. The we will make some maps of the migration path. *As an additional piece of homework, we'll leave it to you to develop strict conservation laws to protect the trees in along this flight path.*
+We'll first set up 2 points and then calculate how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join it with any overlapping states to get a list of states that the bird will fly through. The we will make some maps of the migration path. *We'll leave it to you to develop strict conservation laws to protect the trees along this important flight path.*
 
 We begin.
 

@@ -1,0 +1,337 @@
+---
+title: "Maps - Exercise 2"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../../css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: false
+    toc_depth: 1
+---
+
+<script src="/R-camp-penguins/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.min.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="../../css/camp_style.css" type="text/css" />
+
+
+<p><link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
+<div id="before-you-start" class="section level1">
+<h1>Before you start…</h1>
+<p>Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like <code>exercise_2_day_4.R</code> or <code>katya.R</code> and you’ll be ready to go!</p>
+</div>
+<div id="building-on-our-previous-work" class="section level1">
+<h1>Building on our previous work…</h1>
+<p>Now that we know <em>where</em> the birds go, we need to make sure that they have a safe and healthy home to go to!</p>
+<p>Let’s check out the health of the forest by county in the state of Minnesota. We will need to know the locations of the counties in Minnesota, and we will also need some forest health data.</p>
+<p>The <a href="%22https://gisdata.mn.gov%22">Minnesota Geospatial Commons</a> is an excellent source of geospatial data in Minnesota and is very searchable.</p>
+<p>If you search <em>forest health</em> you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let’s read in a shapefile using the <a href="https://r-spatial.github.io/sf/"><code>sf</code> package</a>. You will note that the shapefile is <a href="https://en.wikipedia.org/wiki/ZIP_(file_format)">zipped</a>. So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The <em>temp</em> and <em>temp2</em> folders, and the shapefile, is saved in a local temporary folder.</p>
+<p>If you want to save the shapefile on your computer for the longterm, you can use the <a href="https://r-spatial.github.io/sf/reference/st_write.html"><code>st_write</code> function</a>.</p>
+<p><br></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># Create temp files</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">tempfile</span>()</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>temp2 <span class="ot">&lt;-</span> <span class="fu">tempfile</span>()</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co"># ZIP file URL</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_dnr/env_forest_health_survey_2022/shp_env_forest_health_survey_2022.zip&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># Download the zip file and save to temp </span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="fu">download.file</span>(url, temp)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co"># Unzip the contents of the temp and save unzipped content in temp2</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> temp, <span class="at">exdir =</span> temp2)</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Read the shapefile</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>forest_damage <span class="ot">&lt;-</span> <span class="fu">st_read</span>(temp2)</span></code></pre></div>
+<pre><code>## Reading layer `forest_health_survey_2022&#39; from data source 
+##   `/tmp/RtmpUdrezi/file4732f5ac502&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 2825 features and 10 fields
+## Geometry type: POLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 194139.8 ymin: 4998795 xmax: 748411.6 ymax: 5467028
+## Projected CRS: NAD83 / UTM zone 15N</code></pre>
+<p><br></p>
+<p>We can look at the data in two ways:</p>
+<ol style="list-style-type: decimal">
+<li>View the attributes by clicking <code>forest_damage</code> in the Environment pane. Look at the geometry column. That is where the spatial information is stored. Each row in the dataset is a different polygon shape, but all belong to the same dataset or shapefile.</li>
+<li>Next, we can plot the data in base R to make sure it has the appropriate geographic information and at least looks like a map. This is a good first check to see if you’ve successfully pulled in the proper shapefile.</li>
+</ol>
+<p><br></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">plot</span>(forest_damage[<span class="dv">1</span>]) </span></code></pre></div>
+<p><img src="/R-camp-penguins/page/exercise/day4/02-forest-health-map_files/figure-html/forest%20damage%20map-1.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Try dropping the [1] and see what happens.</span></span></code></pre></div>
+<p><br></p>
+<p>When we look at this, we see that there are many polygons, and if we look at the data (by running <code>glimpse(forest_damage)</code>, or clicking on <code>forest_damage</code> in the environment) we see that there are severity ratings for each polygon in the column <code>PERCENT_AF</code>.</p>
+<p>For our first analysis let’s sum the area in each county that has damage to tree canopy. Then, we can bring in another county dataset to look at the places in MN with the most tree canopy damage and see if our bird’s flight path has been affected. For step one, let’s use <a href="https://cran.r-project.org/web/packages/tigris/readme/README.html"><code>tigris</code></a> and pull in the county shapefile for Minnesota.</p>
+<p><br></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">counties</span>(<span class="at">state =</span> <span class="st">&quot;MN&quot;</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><br></p>
+<p>And, of course we want to check to see if our CRS match, because we want to join these two geospatial datasets.</p>
+<p><br></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">st_crs</span>(counties)</span></code></pre></div>
+<pre><code>## Coordinate Reference System:
+##   User input: NAD83 
+##   wkt:
+## GEOGCRS[&quot;NAD83&quot;,
+##     DATUM[&quot;North American Datum 1983&quot;,
+##         ELLIPSOID[&quot;GRS 1980&quot;,6378137,298.257222101,
+##             LENGTHUNIT[&quot;metre&quot;,1]]],
+##     PRIMEM[&quot;Greenwich&quot;,0,
+##         ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+##     CS[ellipsoidal,2],
+##         AXIS[&quot;latitude&quot;,north,
+##             ORDER[1],
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+##         AXIS[&quot;longitude&quot;,east,
+##             ORDER[2],
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+##     ID[&quot;EPSG&quot;,4269]]</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">st_crs</span>(forest_damage)</span></code></pre></div>
+<pre><code>## Coordinate Reference System:
+##   User input: NAD83 / UTM zone 15N 
+##   wkt:
+## PROJCRS[&quot;NAD83 / UTM zone 15N&quot;,
+##     BASEGEOGCRS[&quot;NAD83&quot;,
+##         DATUM[&quot;North American Datum 1983&quot;,
+##             ELLIPSOID[&quot;GRS 1980&quot;,6378137,298.257222101,
+##                 LENGTHUNIT[&quot;metre&quot;,1]]],
+##         PRIMEM[&quot;Greenwich&quot;,0,
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+##         ID[&quot;EPSG&quot;,4269]],
+##     CONVERSION[&quot;UTM zone 15N&quot;,
+##         METHOD[&quot;Transverse Mercator&quot;,
+##             ID[&quot;EPSG&quot;,9807]],
+##         PARAMETER[&quot;Latitude of natural origin&quot;,0,
+##             ANGLEUNIT[&quot;Degree&quot;,0.0174532925199433],
+##             ID[&quot;EPSG&quot;,8801]],
+##         PARAMETER[&quot;Longitude of natural origin&quot;,-93,
+##             ANGLEUNIT[&quot;Degree&quot;,0.0174532925199433],
+##             ID[&quot;EPSG&quot;,8802]],
+##         PARAMETER[&quot;Scale factor at natural origin&quot;,0.9996,
+##             SCALEUNIT[&quot;unity&quot;,1],
+##             ID[&quot;EPSG&quot;,8805]],
+##         PARAMETER[&quot;False easting&quot;,500000,
+##             LENGTHUNIT[&quot;metre&quot;,1],
+##             ID[&quot;EPSG&quot;,8806]],
+##         PARAMETER[&quot;False northing&quot;,0,
+##             LENGTHUNIT[&quot;metre&quot;,1],
+##             ID[&quot;EPSG&quot;,8807]]],
+##     CS[Cartesian,2],
+##         AXIS[&quot;(E)&quot;,east,
+##             ORDER[1],
+##             LENGTHUNIT[&quot;metre&quot;,1]],
+##         AXIS[&quot;(N)&quot;,north,
+##             ORDER[2],
+##             LENGTHUNIT[&quot;metre&quot;,1]],
+##     ID[&quot;EPSG&quot;,26915]]</code></pre>
+<p><br></p>
+<p>The forest damage dataset has a coordinate reference system in UTMs (Universal Transverse Mercator), and remember that those have units of meters, which are very nice for working with area measurements. So, let’s convert the county dataset into UTMs as well. Zone 15 is Minnesota’s primary UTM zone, and the ID for UTM Zone 15 is <code>26915</code>.</p>
+<p><br></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(counties, <span class="at">crs =</span> <span class="dv">26915</span>)</span></code></pre></div>
+<p><br></p>
+<p>Now, we can run a spatial intersect on the two geospatial datasets. The <a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html"><code>st_intersection</code></a> function returns the polygons where the two geometries intersect. (<a href="https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects">Here’s a short description with images</a>.) All of the polygons in the <code>forest_damage</code> dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties. But no worries, R has us covered!</p>
+<p><br></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(counties, forest_damage)</span></code></pre></div>
+<pre><code>## Error in (function (msg) : TopologyException: Input geom 1 is invalid: Ring Self-intersection at or near point 556415.80040000007 5327603.9776000008 at 556415.80040000007 5327603.9776000008</code></pre>
+<p><br></p>
+<p>Next, we can calculate the area for each of the <code>forest_damage</code> polygons within each joined county. Some of our polygons might look a bit like this:</p>
+<div class="float">
+<img src="https://i.stack.imgur.com/vLlAZ.jpg" alt="Split polygons across two counties from GIS stackexchange.com" />
+<div class="figcaption">Split polygons across two counties from GIS stackexchange.com</div>
+</div>
+<p><br></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
+<pre><code>## Error in mutate(., damage_area = st_area(geometry)): object &#39;forest_damage_counties&#39; not found</code></pre>
+<p><br></p>
+<p>Now, we are going to sum the areas with tree canopy tree data within each county, returning the following information: the total area in the polygon and the name of the County. We no longer need each individual polygon geometry, so we set the geometry of the dataset to NULL.</p>
+<p><br></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
+<pre><code>## Error in st_set_geometry(forest_damage_counties, NULL): object &#39;forest_damage_counties&#39; not found</code></pre>
+<p><br></p>
+<div id="sum-up-the-damaged-areas" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Sum up the damaged areas</h3>
+<ul class="nav nav-pills" id="myTab1136" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="group_byandsummarize1136-tab" data-toggle="tab" href="#group_byandsummarize1136" role="tab" aria-controls="group_byandsummarize1136" aria-selected="true">group_by and summarize</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint1136-tab" data-toggle="tab" href="#showhint1136" role="tab" aria-controls="showhint1136" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode1136-tab" data-toggle="tab" href="#showcode1136" role="tab" aria-controls="showcode1136" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="group_byandsummarize1136" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize1136-tab">
+<h4>
+We are going to sum the damaged areas within each county, returning the following information: the total area in the polygon and the name of the County. Call the summarized data <code>forest_damage_total</code>.
+</h4>
+<p><br></p>
+</div>
+<div id="showhint1136" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1136-tab">
+<pre class="sourceCode r">
+
+forest_damage_total <- forest_damage_counties %>%
+  group_by(______) %>%
+  summarise(total_damaged_area = __________)
+  
+</pre>
+</div>
+<div id="showcode1136" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1136-tab">
+<pre class="sourceCode r">
+
+forest_damage_total <- forest_damage_counties %>%
+  group_by(NAME) %>%
+  summarise(total_damaged_area = sum(damage_area, na.rm = T))
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use <code>left_join</code> below to add the forest damage totals to the counties polygon data based on the <code>NAME</code> of the county. We’ll cover joins in great detail next session, but this is a good preview.</p>
+<p><br></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in check_join(x, y): object &#39;forest_damage_total&#39; not found</code></pre>
+<p><br></p>
+<p>Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset).</p>
+<p>Sometimes a NULL means there is no information, which means that you don’t know what the value is and you do not have adequate information for replacements.</p>
+<p><br></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="dv">0</span>))</span></code></pre></div>
+<pre><code>## Error in mutate(., total_damaged_area = replace_na(total_damaged_area, : object &#39;counties_forest_damage&#39; not found</code></pre>
+<p><br></p>
+<p>Finally we get to make a map. Remember, data prep is more than half the battle!</p>
+<p><br></p>
+<div id="map-it-out" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Map it out</h3>
+<ul class="nav nav-pills" id="myTab7053" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="mapusing`ggplot`7053-tab" data-toggle="tab" href="#mapusing`ggplot`7053" role="tab" aria-controls="mapusing`ggplot`7053" aria-selected="true">Map using <code>ggplot</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showhint7053-tab" data-toggle="tab" href="#showhint7053" role="tab" aria-controls="showhint7053" aria-selected="false">Show hint</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="showcode7053-tab" data-toggle="tab" href="#showcode7053" role="tab" aria-controls="showcode7053" aria-selected="false">Show code</a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content" style="background-color: white;">
+<div id="mapusing`ggplot`7053" class="tab-pane fade active in" role="tabpanel" aria-labelledby="mapusing`ggplot`7053-tab">
+<h4>
+Make a map using <code>ggplot</code> and <code>geom_sf</code>. Remember to add good plot elements like titles and colors. Fun colors are very important.
+</h4>
+<p><br></p>
+</div>
+<div id="showhint7053" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7053-tab">
+<p>What should you add to make this a more complete plot?
+<br></p>
+<pre class="sourceCode r">
+
+ggplot(data = ________, aes(fill = total_damaged_area)) +
+  geom_sf()
+  
+</pre>
+</div>
+<div id="showcode7053" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7053-tab">
+<pre class="sourceCode r">
+
+ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
+  geom_sf()+
+  labs(title = "Total forest canopy area damage",
+       subtitle = "Minnesota counties",
+       x = "Longitude",
+       y = "Latitude",
+       caption = "Source: 2022 MN DNR Forest Health Survey") +
+  scale_fill_viridis_c(name = "Total Damaged Area") +
+  theme_minimal()
+  
+</pre>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Our bird originated in St. Paul, MN and it looks like there wasn’t a lot of damaged forest canopy in Ramsey county. Of course, to get a better look we could make a map of just the SE states, but that will have to wait.</p>
+<p><strong>Happy spatial analysis friends!</strong></p>
+<p><br></p>
+<p><i class="fa fa-cookie-bite"></i>
+<i class="fa fa-robot"></i>
+<i class="fa fa-cookie-bite"></i></p>
+</div>

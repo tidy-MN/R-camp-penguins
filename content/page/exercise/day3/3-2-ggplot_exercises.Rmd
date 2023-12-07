@@ -20,8 +20,6 @@ h1 .header-section-number {background: cornflowerblue;}
 hr {background:  cornflowerblue;}
 </style>
 
----
-
 ```{r setup, include=FALSE}
 library(rmarkdown)
 library(knitr)
@@ -98,7 +96,9 @@ tabyl(penguins_raw_clean, species, island) %>%
   adorn_totals(where = 'col')
 ```
 
-Nice! A quick way to generate a two-by-two table that we could include in a report. Now we just need a visual to accompany it...
+Nice! A quick way to generate a two-by-two table that we could include in a report. Now we just need a pretty chart to go with it.
+
+
 
 # Graphing summary data
 
@@ -265,6 +265,8 @@ The links below will take you to the specific section of the R Graphics Cookbook
 - [try adding Minnesota State brand colors using the home-grown package `mncolors`](https://github.com/tidy-MN/mncolors)
   + `install.packages("remotes")`
   + `remotes::install_github("tidy-MN/mncolors")`
+
+<br>
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 

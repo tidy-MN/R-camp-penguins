@@ -1,8 +1,32 @@
 ---
 title: "Maps - Exercise 1"
-output: html_document
-date: "2023-12-04"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../../css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: false
+    toc_depth: 1
 ---
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(magrittr)
+
+xaringanExtra::use_clipboard()
+
+opts_chunk$set(error=TRUE, color=NULL, message=FALSE, eval=T, progress=F)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
 
 # Before you start...
 
@@ -11,25 +35,24 @@ Make sure you are still in your project that you created for doing exercises and
 
 # Day-dreams
 
-All these flightless birds have been making us think...if we were a bird who could *fly*, where would we go? Would we follow other birds or would we make your own path? Where's home if you can fly?
+All these flightless birds have been making us think...if we were a bird who could *fly*, where would we go? Would we follow other birds or would we make your own path? Where is home when you can fly?
 
-One of these days we'll learn our lesson about asking questions but for now we have endless curiosity and a _need to know_.
+One of these days we'll learn our lesson about asking questions, but for now we have endless curiosity and a _need to know_.
 
-## R Markdown
+## The pillars of spatial analysis in R
 
-The three rings to rule the world in R and spatial analysis are
+1. [sf](https://r-spatial.github.io/sf/) for spatial functions
+1. [tigris](https://cran.r-project.org/web/packages/tigris/readme/README.html) for geographic boundaries
+1. [ggplot2](https://ggplot2.tidyverse.org/) or [leaflet](https://rstudio.github.io/leaflet/) for map making
+1. [tidycensus](https://walker-data.com/tidycensus/) for Census data
 
-1. [sf](https://r-spatial.github.io/sf/), 
-1. [tigris](https://cran.r-project.org/web/packages/tigris/readme/README.html), and 
-1. [ggplot2](https://ggplot2.tidyverse.org/) or [leaflet](https://rstudio.github.io/leaflet/). It is even easier in the U.S. if you also have the [tidycensus package](https://walker-data.com/tidycensus/). 
+In this exercise we will analyze a bird flight path. Our steps will be as follows:
 
-In this exercise we will analyse a bird flight path.Our steps will be as follows:
-
-* Make two point geometries.
+* Make two point geometries representing trees.
 * Make a line geometry.
 * Make a polygon geometry.
-* Read in U.S. states spatial dataset.
-* Make a map with the polygon geometry and the states.
+* Read in U.S. state boundaries.
+* Make a map with the state boundaries and the flight path.
 
 <br>
 
@@ -37,13 +60,17 @@ In this exercise we will analyse a bird flight path.Our steps will be as follows
 
 <br>
 
-Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the center of Smoky Mountain National Park in Tennessee. Let's set up 2 points, and then measure how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join with the states to develop a final list of states that the birds will fly through and make some maps. We will *of course* follow up this exercise by recommending setting up strict conservation laws to protect these flight paths.
+Say you want to measure how far a bird must fly from their nest in St. Paul, MN down to the center of Smoky Mountain National Park in Tennessee. 
+
+Let's set up 2 points, and then measure how far apart they are. Next we will develop a polygon that is a straight path between these two nesting locations and join with the states to develop a final list of states that the birds will fly through and make some maps. *We'll leave it to you to develop strict conservation laws to protect the trees along this important flight path.*
+
+It begins.
 
 <br>
 
-**A tree in the center of St. Paul.**
+## A tree stands in the center of St. Paul {-}
 
-We set up the simplest point data, 1 point using their latitude and longitude. We use the [`st_point` function](https://rdrr.io/github/etiennebr/geotidy/man/st_point.html) to tell R that these are coordinates. The [`st_sfc` function](https://r-spatial.github.io/sf/reference/sfc.html) creates a simple feature geometry list. Then we finally set up point as a simple feature using the [`st_as_sf` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) and include the coordinate reference system (CRS).
+First we set up the simplest point data, a single point with a latitude and longitude. The [`st_as_sf` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) will convert the dataframe to an *sf* (simple feature) object and assign it a coordinate reference system (CRS).
 
 <br>
 
@@ -51,34 +78,40 @@ We set up the simplest point data, 1 point using their latitude and longitude. W
 library(sf)
 library(tidyverse)
 
-lat_y <- 44.9283966 #Always remember that latitude is a ladder.
-long_x <- -93.1734448
+# Latitude is like a ladder, up and down, north to south
+lat_y <- 44.928397 
+long_x <- -93.173445
 
-coords <- c(long_x, lat_y)
+nest_mn <- data.frame(nest = "MN",
+                      longitude = long_x, 
+                      latitude = lat_y)
 
-nest_mn <- st_sfc(st_point(coords))
-
-nest_mn <- st_as_sf(nest_mn, crs = 4326)
+nest_mn <- st_as_sf(nest_mn, 
+                    coords = c("longitude", "latitude"), # Longitude column goes first!
+                    crs = 4326, # Provide the coordinate reference system
+                    remove = FALSE)
 ```
 
 <br>
 
-**A tree in the center of Smoky Mountain National Park.**
+## A tree stands in the center of Smoky Mountain National Park {-}
 
 Now we make another point in Tennessee. Remember points are singular geometries and have no area. Sometimes, if you are attempting to intersect points with polygons, you may have to draw a buffer around them.
 
 <br>
 
 ```{r, tree 2, progress=FALSE}
+lat_y <- 35.581196
+long_x <- -83.860947
 
-lat_y <- 35.5811962 
-long_x <- -83.8609472
+nest_smnp <- data.frame(nest = "SMNP",
+                        longitude = long_x, 
+                        latitude = lat_y)
 
-coords <- c(long_x, lat_y) # making a list of coordinates, still just a list of numbers to R
-
-nest_smnp <- st_sfc(st_point(coords)) # setting up the geometry list datum
-
-nest_smnp <- st_as_sf(nest_smnp, crs = 4326) # providing the coordinate reference system
+nest_smnp <- st_as_sf(nest_smnp,
+                      coords = c("longitude", "latitude"), 
+                      crs = 4326,
+                      remove = FALSE) # Keeps the original coordinate columns
 ```
 
 
@@ -86,19 +119,23 @@ nest_smnp <- st_as_sf(nest_smnp, crs = 4326) # providing the coordinate referenc
 
 How far apart are these two nests? We need to convert the coordinate reference systems to make sure that the two locations are comparable and our final answer is in meters. You can change coordinate reference systems by using the function [`st_transform`](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_transform). 
 
-Next we use the [`st_distance`](https://gis.stackexchange.com/questions/371104/calculate-st-distance-between-the-point-in-km-m). Since we are using a coordinate reference system with units in meters, our distance units will be meters as well. So, we can convert to kilometers by dividing by 1000.
+Next we use the [`st_distance`](https://gis.stackexchange.com/questions/371104/calculate-st-distance-between-the-point-in-km-m). Since we are using a coordinate reference system with units in meters, our distance units will be meters as well. So, we can convert to kilometers by dividing by 1,000.
 
 <br>
 
 ```{r, distances, progress=FALSE}
-nest_mn_meters <- st_transform(nest_mn, crs = 9822)
 
-nest_smnp_meters <- st_transform(nest_smnp, crs = 9822)
+# Transform the projections
+nest_mn <- st_transform(nest_mn, crs = "ESRI:102003")
 
-tree_distances <- st_distance(nest_mn_meters, nest_smnp_meters)
+nest_smnp <- st_transform(nest_smnp, crs = "ESRI:102003")
 
-tree_distances <- tree_distances/1000
 
+# Calculate the distance between them in meters
+tree_distance_m <- st_distance(nest_mn, nest_smnp)
+
+# Kilometers
+tree_distance_km <- tree_distance_m / 1000
 ```
 
 
@@ -110,60 +147,53 @@ knitr::include_graphics("https://www.nceas.ucsb.edu/sites/default/files/2020-04/
 [Click here to open and download](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)
 
 <br>
-We will make a data frame with our two polygons by binding the two points together as rows of a table using the [`rbind` function](https://www.digitalocean.com/community/tutorials/rbind-function-r). Then, let's say that the birds fly in roughly a straight line. So, let's cast these two points into a line between them by first joining them using [the `st_union` function](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using [the `st_cast` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast). 
+We will make a dataframe with our two nest points by binding the two points together as rows of a table using `bind_rows`. Then, let's say that the birds fly in roughly a straight line. So we can cast these two points into a line between them by first joining them using [`st_union`](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using [the `st_cast` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast). 
 
 <br>
 
 ```{r, tree connecting line, progress=FALSE}
+tree_points <- bind_rows(nest_mn, nest_smnp)
 
-tree_points <- rbind(nest_mn, nest_smnp)
-
-tree_route <-  tree_points %>%
-    summarize(geometry = st_union(.)) %>%
-    st_cast("LINESTRING") %>%
-  mutate(route = "Minnesota to Smoky Mountain National Park")
+tree_route <- tree_points %>%
+                summarize(geometry = st_union(geometry)) %>%
+                st_cast("LINESTRING") %>%
+                mutate(route = "Minnesota to Smoky Mountain National Park")
     
-plot(tree_route$geometry)
-
+plot(tree_route)
 ```
 
 <br>
 
-We can be fairly sure the birds won't fly in an exactly straight line from Minnesota to Tennessee. So, let's put a buffer around this line and make it a polygon. Let's assume the birds will fly within 1000 meters on either side of our line. So, REMEMBER about units? Let's check what our units currently are (hint - latitude and longitude have what units?), and then change the units and draw our new polygon. It will be glorious.
+We can be fairly sure the birds won't fly in an exactly straight line from Minnesota to Tennessee. So, let's put a buffer around this line. This will make it a polygon object. Let's assume the birds will fly within 20,000 meters around our entire line. 
+
+Let's double check that our route's projection has units in meters or *metres*, and then add a 20,000 meter buffer. It will be glorious.
 
 <br>
 
 ```{r, transform, progress=FALSE}
-
 st_crs(tree_route)
 
-tree_route <- st_transform(tree_route, crs = 9822)
-
-st_crs(tree_route)
-
-tree_route <- st_buffer(tree_route, dist = 1000)
-
-tree_route <- st_transform(tree_route, crs = 4326)
+tree_route <- st_buffer(tree_route, dist = 20000)
 
 plot(tree_route)
-
 ```
 
 <br>
 
-Looking at that shape in our Plots window is satisfying, but doesn't tell us anything about what states the polygon goes through, and we'd like a pretty map in the end. So, let's get started. First, we are going to pull in our `tigris` package and grab the U.S. states' polygons.
+Looking at that shape in our plots window is a bit underwhelming. Sorry `plot` function, but I want to see what states the flight path goes through, and I'd eventually like a map to use as a reference. So, let's get started. 
+
+First, we are going to pull in our `tigris` package and get polygons of the state boundaries.
 
 ![https://github.com/walkerke/tigris](https://github.com/walkerke/tigris/raw/master/tools/readme/tigris_sticker.png){width=30%}
 
 <br>
 
 ```{r, grab us states, results = "hide", message = FALSE, progress = FALSE, warning = FALSE}
-
 library(tigris)
 
+options(tigris_use_cache = TRUE)
+
 all_states <- states()
-
-
 ```
 
 <br>
@@ -174,14 +204,14 @@ Now let's see which states intersect with our polygon bird path. We bring back s
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> State of Bird {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> States flown over {-}
 
 ```{r results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Find the intersection", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> Check the CRS for each object and transform them if necessary so they match. Then use `st_filter` to find the states that intersect with the bird path. </h4>
+content <- c(Exercise = '<h4> Check the CRS for each object and transform them if necessary to make them match. Then use `st_filter` to find the states that intersect with the bird path. </h4>
 
 <br>',
 
@@ -190,9 +220,10 @@ show_hint = 'code_start
 st_crs(all_states)
 st_crs(tree_route)
 
-tree_route <- st_xxxx(tree_route, crs = _________)
+all_states <- st_xxxx(all_states, crs = _________)
 
-bird_route_states <- st_xxxxx(______, _________)
+bird_route_states <- st_filter(_______ , _________)
+
 code_end',
 
 show_code = 'code_start
@@ -200,7 +231,7 @@ show_code = 'code_start
 st_crs(all_states)
 st_crs(tree_route)
 
-tree_route <- st_transform(tree_route, crs = st_crs(all_states))
+all_states <- st_transform(all_states, crs = st_crs(tree_route))
 
 bird_route_states <- st_filter(all_states, tree_route)
   
@@ -212,6 +243,12 @@ cat(paste0(tab_html, collapse = "\n"))
 ```
 </div>
 
+```{r, echo=F}
+all_states <- st_transform(all_states, crs = st_crs(tree_route))
+
+bird_route_states <- st_filter(all_states, tree_route)
+```
+
 <br>
 
 Now we have two types of polygons, a set of states that intersect with our bird path and the bird flight path itself. We will make a map of these two shapes in two ways. First with leaflet then with ggplot2.
@@ -222,14 +259,15 @@ Now we have two types of polygons, a set of states that intersect with our bird 
 
 <br>
 
-```{r, leaflet map, progress=FALSE}
+Leaflet prefers coordinates to be in Lat/Long. No problem. We can use `st_transfrorm` on the fly in our leaflet pipeline.
 
+```{r, leaflet map, progress=FALSE}
 library(leaflet)
 
 leaflet() %>% 
   addTiles() %>% 
-  addPolygons(data = bird_route_states) %>%
-  addPolygons(data = tree_route, weight = 8, fillColor = 'darkorange', color = 'darkorange')
+  addPolygons(data = st_transform(bird_route_states, crs = 4326)) %>%
+  addPolygons(data = st_transform(tree_route, crs = 4326), weight = 5, color = 'darkorange')
 ```
 
 <br>
@@ -237,38 +275,49 @@ leaflet() %>%
 ![ggplot2 R package](https://ggplot2.tidyverse.org/logo.png)
 <br>
 
-Now, let's do one in ggplot2! We know how to do that! We just need to use some more functions like `geom_sf` and `geom_sf_text` to make it work! 
+Now, let's do one in ggplot2. Time to flex those ggplot muscles from last session! We're going to add a few map geoms to our toolbox: `geom_sf` and `geom_sf_text`. 
 
 <br>
 
+```{r, echo=F}
+ggplot(bird_route_states) +
+  geom_sf(aes(fill = NAME), show.legend = FALSE) +
+  geom_sf_text(aes(label = NAME)) +
+  geom_sf(data = tree_route, fill = "gray", alpha = 0.50) +
+  labs(title = "Flight path to a warmer home")
+
+```
+
+
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Making maps with `ggplot2` {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Maps with `ggplot2` {-}
+
 ```{r results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Make a map", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> Make a map of the route the bird overlaid with the states that the bird will cross to get to the tree using `geom_sf` and `geom_sf_text` to add labels to the states. </h4>
+content <- c(Exercise = '<h4> Make a map of the flight route with the state boundaries underneath. Use `geom_sf` to plot the shapes and use `geom_sf_text` to add labels to the states. </h4>
 
 <br>',
 
 show_hint = 'code_start
 
-ggplot() +
-  geom_sf(data = _______, aes(fill = ____)) +
-  geom_sf_text(data = ______, aes(label = ______)) +
-  geom_sf(data = ________, aes(fill = route), size = 10) +
-  theme(legend.position = "none")
+ggplot(bird_route_states) +
+  geom_sf(aes(fill = ______ )) +
+  geom_sf_text(aes(label = ______ )) +
+  geom_sf(data = ________ ) 
+  
   code_end',
 
 show_code = 'code_start
 
-ggplot() +
-  geom_sf(data = bird_route_states, aes(fill = NAME)) +
-  geom_sf_text(data = bird_route_states, aes(label = NAME)) +
-  geom_sf(data = tree_route, aes(fill = route), size = 10) +
-  theme(legend.position = "none")
+ggplot(bird_route_states) +
+  geom_sf(aes(fill = NAME), show.legend = TRUE) +
+  geom_sf_text(aes(label = NAME)) +
+  geom_sf(data = tree_route, alpha = 0.5) 
+  labs(title = "Flight path to a warmer home")
   
 code_end')
 
@@ -280,11 +329,15 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-Don't forget the last part of our exercise about recommendation on conservation efforts: What states would need to be informed about the flight pattern and nesting behavior? What data could you give them to make their job easier? What might you do to expand on the work that we have already done to better answer any questions from legislators?
+Don't forget the important work left to do on conservation efforts: What states would need to be informed about the flight pattern and nesting behavior? What data could you give them to make their job easier? What might you do to expand on the work that we have already done to better answer any questions from legislators?
 
-**Happy spatial analysis friends!**
 
 <br>
 
 ![https://www.brproud.com/news/science-why-do-some-birds-fly-in-v-formation/](https://www.brproud.com/wp-content/uploads/sites/80/2022/08/birds-flying-in-v-formation.jpg?w=1280&h=720&crop=1)
 
+<br>
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 
