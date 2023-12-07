@@ -63,7 +63,7 @@
   "headline": "Day 4",
   "description" : "1 Maps: GIS and Coordinate reference systems (CRS) 2 Points, Lines, and Polygons 3 sf is so awesome 4 sf spatial analysis (Part 2) Map of Mexico-Tenochtitlan, dated 1524 1 Maps: GIS and Coordinate reference systems (CRS) What is GIS?",
   "inLanguage" : "en",
-  "wordCount":  2784 ,
+  "wordCount":  2632 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -490,54 +490,56 @@ Map of Mexico-Tenochtitlan, dated 1524
 <blockquote>
 <p>The curious can see more about this dataset at <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28">San Francisco Trees</a>.</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/sf_trees.csv&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Only need to run this once</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/sf_trees.csv&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code></pre></div>
 <p>Now, let’s look at the data.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">View</span>(sf_trees)</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">class</span>(sf_trees)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">View</span>(sf_trees)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">class</span>(sf_trees)</span></code></pre></div>
 <p><br></p>
 <p>The dataframe has latitude and longitude columns containing each point’s coordinates, but R does not yet know that this is a geographic data set.</p>
 <p>When we begin with a CSV file of coordinates, we must tell R to convert it to a spatial dataset. This will add a new <code>geometry</code> column to the dataframe that will be used for mapping the data.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Error!</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>sf_trees_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_trees, </span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>), </span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4269</span>, </span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>                         <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Error!</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>sf_trees_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_trees, </span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>), </span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4269</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>                         <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## Error in st_as_sf.data.frame(sf_trees, coords = c(&quot;longitude&quot;, &quot;latitude&quot;), : missing values in coordinates not allowed</code></pre>
 <p>Drats! R is right again. There are some missing coordinates or NA’s in the latitude and longitude columns. If we attempt to convert the missing data to a <code>geometry</code> we will get an error for missing coordinates.</p>
 <p><br></p>
 <p>We need to get rid of the trees or rows in the data with missing coordinates. Here are two ways.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># With filter() and !is.na()</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">filter</span>(sf_trees, <span class="sc">!</span><span class="fu">is.na</span>(longitude), <span class="sc">!</span><span class="fu">is.na</span>(latitude))</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># Alternative: drop_na()</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="do">## If NA appears in *either* of the columns you provide, the row will be dropped</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(sf_trees, longitude, latitude)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># With filter() and !is.na()</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">filter</span>(sf_trees, <span class="sc">!</span><span class="fu">is.na</span>(longitude), <span class="sc">!</span><span class="fu">is.na</span>(latitude))</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># Alternative: drop_na()</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="do">## If NA appears in *either* of the columns you provide, the row will be dropped</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>sf_trees <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(sf_trees, longitude, latitude)</span></code></pre></div>
 <p><br></p>
 <p>Now that we have filtered out the missing latitude and longitude values, we can run <a href="https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf">st_as_sf()</a> without an error. This function requires the data, the name of the columns that contain the coordinates, and the data’s current coordinate reference system.</p>
 <blockquote>
 <p>If you include the argument, <code>remove = FALSE</code>, the latitude and longitude columns will be retained in addtion to adding a <code>geometry</code> column. Otherwise they will be removed as they are combined into the <code>geometry</code> column.</p>
 </blockquote>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>sf_trees_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_trees, </span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>), </span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4269</span>, </span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                         <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>sf_trees_geo <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sf_trees, </span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>), </span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4269</span>, </span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                         <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><br></p>
 <p>To check this worked properly, try making a simple plot of the data using the base R function <code>plot()</code>. To start with, we will only map the first column. This is simply to make the plotting faster. Feel free to try plotting all of the attributes and see what happens.</p>
 <p><em>Heads up, this may take a few minutes for large datasets like this one.</em></p>
 <blockquote>
 <p>It will be difficult to see what is going on here, since at least one tree is very far away from the rest of the trees. Apparently out in the middle of the ocean. Perhaps it is growing on a ship?</p>
 </blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Show a single layer</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Show a single layer</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo[<span class="dv">1</span>])</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day4_files/figure-html/trees-plot-1.png" width="672" /></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Show all the layers</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Show all the layers</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">plot</span>(sf_trees_geo)</span></code></pre></div>
 <p><br></p>
 <blockquote>
 <p>Not too impressive, is it?.</p>
@@ -548,96 +550,11 @@ Map of Mexico-Tenochtitlan, dated 1524
 <div id="city-data" class="section level3 unnumbered">
 <h3>1. City data</h3>
 <p>The <strong>tigris</strong> package allows us to pull political boundaries, like cities, into R.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">metro_divisions</span>()</span></code></pre></div>
-<pre><code>## 
-  |                                                                            
-  |                                                                      |   0%
-  |                                                                            
-  |=                                                                     |   1%
-  |                                                                            
-  |=                                                                     |   2%
-  |                                                                            
-  |==                                                                    |   2%
-  |                                                                            
-  |==                                                                    |   3%
-  |                                                                            
-  |===                                                                   |   4%
-  |                                                                            
-  |===                                                                   |   5%
-  |                                                                            
-  |====                                                                  |   6%
-  |                                                                            
-  |=====                                                                 |   6%
-  |                                                                            
-  |=====                                                                 |   7%
-  |                                                                            
-  |======                                                                |   8%
-  |                                                                            
-  |======                                                                |   9%
-  |                                                                            
-  |=======                                                               |  10%
-  |                                                                            
-  |========                                                              |  11%
-  |                                                                            
-  |========                                                              |  12%
-  |                                                                            
-  |=========                                                             |  13%
-  |                                                                            
-  |==========                                                            |  14%
-  |                                                                            
-  |===========                                                           |  15%
-  |                                                                            
-  |============                                                          |  17%
-  |                                                                            
-  |=============                                                         |  18%
-  |                                                                            
-  |==============                                                        |  20%
-  |                                                                            
-  |===============                                                       |  22%
-  |                                                                            
-  |================                                                      |  23%
-  |                                                                            
-  |=================                                                     |  24%
-  |                                                                            
-  |==================                                                    |  26%
-  |                                                                            
-  |===================                                                   |  27%
-  |                                                                            
-  |=====================                                                 |  30%
-  |                                                                            
-  |========================                                              |  34%
-  |                                                                            
-  |==========================                                            |  37%
-  |                                                                            
-  |============================                                          |  40%
-  |                                                                            
-  |==============================                                        |  43%
-  |                                                                            
-  |================================                                      |  46%
-  |                                                                            
-  |===================================                                   |  50%
-  |                                                                            
-  |=====================================                                 |  53%
-  |                                                                            
-  |=======================================                               |  56%
-  |                                                                            
-  |=========================================                             |  59%
-  |                                                                            
-  |============================================                          |  62%
-  |                                                                            
-  |==============================================                        |  66%
-  |                                                                            
-  |===============================================                       |  67%
-  |                                                                            
-  |====================================================                  |  75%
-  |                                                                            
-  |========================================================              |  79%
-  |                                                                            
-  |======================================================================| 100%</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tigris_use_cache =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>cities <span class="ot">&lt;-</span> <span class="fu">metro_divisions</span>()</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="filter-to-san-francisco" class="section level3 unnumbered">
@@ -672,7 +589,7 @@ Map of Mexico-Tenochtitlan, dated 1524
 <p>Take a look at the new tree map.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Plots a single layer</span></span>
 <span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">plot</span>(trees_in_san_fran[<span class="dv">1</span>])</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day4_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/page/Day4_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <blockquote>
 <p>Aha! Now that looks more like a city.</p>
 </blockquote>
@@ -817,10 +734,11 @@ Map of Mexico-Tenochtitlan, dated 1524
 <p><img src="https://www.treesforcities.org/imager/images/776/plane-tree-511483_1920_0fdd18ba2bf4890d64d12902ca97caa6.jpg" style="width: 43%"></p>
 <p><br></p>
 <p>Pssst… for the extra curious bees in the room. Here is where the tree is in San Francisco. It looks to be planted along The Embarcadero near little Rincon Park.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Only need to run this once</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
 <span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="co"># Transform the closest tree back to Lat/Long </span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="co"># Transform the closest tree back to Lat/Long coordinates</span></span>
 <span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>closest_tree <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(closest_tree, <span class="at">crs =</span> <span class="dv">4326</span>)</span>
 <span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a></span>
 <span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="co"># Add it to a leaflet map along with ALL the trees</span></span>

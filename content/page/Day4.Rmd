@@ -164,6 +164,11 @@ Let's pull in some point data. Each point in this dataset represents a specific 
 > The curious can see more about this dataset at [San Francisco Trees](https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-01-28).
 
 
+```{r, eval=F}
+# Only need to run this once
+install.packages("sf")
+```
+
 ```{r birds-trees, eval=T}
 library(sf)
 library(tidyverse)
@@ -281,7 +286,7 @@ We first need to read in a city spatial dataset. Then we will filter it to only 
 
 The **tigris** package allows us to pull political boundaries, like cities, into R. 
 
-```{r tigris}
+```{r tigris, results='hide'}
 library(tigris)
 
 options(tigris_use_cache = TRUE)
@@ -504,13 +509,14 @@ glimpse(closest_tree)
 
 Pssst... for the extra curious bees in the room. Here is where the tree is in San Francisco. It looks to be planted along The Embarcadero near little Rincon Park.
 ```{r leaflet-install, eval=F}
+# Only need to run this once
 install.packages("leaflet")
 ```
 
 ```{r leaflet-plot, eval=T}
 library(leaflet)
 
-# Transform the closest tree back to Lat/Long 
+# Transform the closest tree back to Lat/Long coordinates
 closest_tree <- st_transform(closest_tree, crs = 4326)
 
 # Add it to a leaflet map along with ALL the trees

@@ -77,6 +77,9 @@ First we set up the simplest point data, a single point with a latitude and long
 <br>
 
 ```{r, tree 1, progress=FALSE}
+# Only need to run this once
+install.packages("sf")
+
 library(sf)
 library(tidyverse)
 
@@ -267,6 +270,11 @@ Now we have two types of polygons, a set of states that intersect with our bird 
 
 Leaflet prefers coordinates to be in Lat/Long. No problem. We can use `st_transfrorm` on the fly in our leaflet pipeline.
 
+```{r leaflet-install, eval=F}
+# Only need to run this once
+install.packages("leaflet")
+```
+
 ```{r, leaflet map, progress=FALSE}
 library(leaflet)
 
@@ -321,7 +329,7 @@ show_code = 'code_start
 ggplot(bird_route_states) +
   geom_sf(aes(fill = NAME), show.legend = TRUE) +
   geom_sf_text(aes(label = NAME)) +
-  geom_sf(data = tree_route, alpha = 0.5) 
+  geom_sf(data = tree_route, alpha = 0.5) +
   labs(title = "Flight path to a warmer home")
   
 code_end')

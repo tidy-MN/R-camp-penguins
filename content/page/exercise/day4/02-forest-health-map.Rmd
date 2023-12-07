@@ -240,7 +240,7 @@ counties_forest_damage <- counties_forest_damage %>%
 
 > Oh, right! Our area column has units attached and is not a simple number. We could convert the column to `as.numeric` or we can replace the NA values with a value that has units, such as `0 m^2`. Let's do that with the `units` package.
 
-```{r map counties units, }
+```{r map counties units}
 library(units)
 
 counties_forest_damage <- counties_forest_damage %>%
