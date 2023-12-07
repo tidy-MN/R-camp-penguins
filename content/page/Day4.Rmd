@@ -504,7 +504,7 @@ glimpse(closest_tree)
 
 Pssst... for the extra curious bees in the room. Here is where the tree is in San Francisco. It looks to be planted along The Embarcadero near little Rincon Park.
 ```{r leaflet-install, eval=F}
-install.packages(leaflet)
+install.packages("leaflet")
 ```
 
 ```{r leaflet-plot, eval=T}

@@ -190,7 +190,7 @@ source("../../insert_tabs.R")
 
 tabs <- c("Side-by-side", "Show hint", "Show code")
 
-content <- c(Exercise = '<h4> Change the bar-chart from a stacked bar-chart to a side-by-side bar-chart by chaning the position argument </h4>
+content <- c(Exercise = '<h4> Change the bar-chart from a stacked bar-chart to a side-by-side bar-chart by changing the position argument </h4>
 
 <br>',
 
