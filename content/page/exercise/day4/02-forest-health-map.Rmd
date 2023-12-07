@@ -94,7 +94,7 @@ For our first analysis let's sum the area in each county that has damage to tree
 
 <br>
 
-```{r counties, progress=F, cache=F, results = "hide"}
+```{r counties, progress=F, cache=T, results = "hide"}
 library(tigris)
 
 counties <- counties(state = "MN", cb = TRUE)
@@ -316,7 +316,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-Our bird originated in St. Paul, MN and it looks like there wasn't a lot of damaged forest canopy in Ramsey county. Of course, to get a better look we could make a map of just the SE states, but that will have to wait.
+Our bird originated in St. Paul, MN and it looks like there wasn't a lot of damaged forest canopy in Ramsey county. Of course, to get a better look we could make a map of just the SE counties, but that will have to wait.
 
 **Happy spatial analysis friends!**
 
