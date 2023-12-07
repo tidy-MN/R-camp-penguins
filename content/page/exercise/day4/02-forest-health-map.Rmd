@@ -316,7 +316,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-Our bird originated in St. Paul, MN and it looks like there wasn't a lot of damaged forest canopy in Ramsey county. Of course, to get a better look we could make a map of just the SE counties, but that will have to wait.
+Our bird originated in St. Paul, MN and it looks like there wasn't a lot of damaged forest canopy in Ramsey county. So I'm going to assume our bird is whistling away in a healthy little tree.
 
 **Happy spatial analysis friends!**
 
