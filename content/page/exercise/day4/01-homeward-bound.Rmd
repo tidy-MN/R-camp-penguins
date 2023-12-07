@@ -46,6 +46,8 @@ One of these days we'll learn our lesson about asking questions, but for now we 
 1. [ggplot2](https://ggplot2.tidyverse.org/) or [leaflet](https://rstudio.github.io/leaflet/) for map making
 1. [tidycensus](https://walker-data.com/tidycensus/) for Census data
 
+<br>
+
 In this exercise we will analyze a bird flight path. Our steps will be as follows:
 
 * Make two point geometries representing trees.
@@ -149,7 +151,7 @@ knitr::include_graphics("https://www.nceas.ucsb.edu/sites/default/files/2020-04/
 <br>
 We will make a dataframe with our two nest points by binding the two points together as rows of a table using `bind_rows`. 
 
-Then we'll say that the birds will fly in roughly a straight line. So we can cast these two points into a line by first joining them using [st_union](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using [the st_cast](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast) function. 
+Then we'll say that the birds will fly in roughly a straight line. So we can cast these two points into a line by first joining them using [st_union](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using the [st_cast](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast) function. 
 
 <br>
 
@@ -172,9 +174,11 @@ Let's double check that our route's projection has units in meters or *metres*, 
 
 <br>
 
-```{r, transform, progress=FALSE}
+```{r, eval=F}
 st_crs(tree_route)
+```
 
+```{r}
 tree_route <- st_buffer(tree_route, dist = 20000)
 
 plot(tree_route)
@@ -208,7 +212,7 @@ Now let's see which states intersect with our polygon bird path. We bring back s
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> States flown over {-}
 
-```{r results='asis', echo=F}
+```{r exer12, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("Find the intersection", "Show hint", "Show code")
@@ -294,7 +298,7 @@ ggplot(bird_route_states) +
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Maps with `ggplot` {-}
 
-```{r results='asis', echo=F}
+```{r exer412, results='asis', echo=F}
 source("../../insert_tabs.R")
 
 tabs <- c("A ggplot map", "Show hint", "Show code")
