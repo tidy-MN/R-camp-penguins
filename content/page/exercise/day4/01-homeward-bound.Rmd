@@ -321,7 +321,7 @@ show_code = 'code_start
 ggplot(bird_route_states) +
   geom_sf(aes(fill = NAME), show.legend = TRUE) +
   geom_sf_text(aes(label = NAME)) +
-  geom_sf(data = tree_route, alpha = 0.5) 
+  geom_sf(data = tree_route, alpha = 0.5) +
   labs(title = "Flight path to a warmer home")
   
 code_end')
