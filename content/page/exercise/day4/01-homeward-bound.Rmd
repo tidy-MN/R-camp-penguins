@@ -72,7 +72,7 @@ It begins.
 
 ## A tree stands in the center of St. Paul {-}
 
-First we set up the simplest point data, a single point with a latitude and longitude. The [st_as_sf function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) will convert the dataframe to an *sf* (simple feature) object and assign it a coordinate reference system (CRS).
+First we set up the simplest point data, a single point with a latitude and longitude. The [st_as_sf](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) function will convert the dataframe to an *sf* (simple feature) object and assign it a coordinate reference system (CRS).
 
 <br>
 

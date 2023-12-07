@@ -47,7 +47,7 @@ If you want to save the shapefile on your computer for the longterm, you can use
 
 <br>
 
-```{r, read-forests, cache=F}
+```{r, read-forests, cache=F, progress=F}
 library(tidyverse)
 library(sf)
 
@@ -91,7 +91,7 @@ For our first analysis let's sum the area in each county that has damage to tree
 
 <br>
 
-```{r counties}
+```{r counties, progress=F, cache=T}
 library(tigris)
 
 counties <- counties(state = "MN", cb = TRUE)
@@ -103,7 +103,7 @@ plot(counties[1])
 
 <br>
 
-And, of course we want to check to see if our CRS match, because we want to join these two geospatial datasets.
+And of course we want to check to see if our CRS match, because we want to join these two geospatial datasets.
 
 <br>
 
@@ -142,11 +142,13 @@ forest_damage_counties <- st_intersection(counties, forest_damage)
 
 <br>
 
-Next, we can calculate the area for each of the `forest_damage` polygons within each joined county. Some of our polygons might look a bit like this:
+Now some of our polygons within the counties might look a bit like this:
 
-![Split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg){width=55%}
+![Example of split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg){width=55%}
 
 <br>
+
+Next, we can calculate the area for each of the new split up `forest_damage` polygons. 
 
 ```{r polygon areas, }
 forest_damage_counties <- forest_damage_counties %>%
@@ -156,7 +158,7 @@ forest_damage_counties <- forest_damage_counties %>%
 
 <br>
 
-Now, we are going to sum the areas with tree canopy tree data within each county, returning the following information: the total area in the polygon and the name of the County. We no longer need each individual polygon geometry, so we set the geometry of the dataset to NULL.
+Since we no longer need each individual polygon geometry, we can set the geometry of the dataset to NULL. This can help save some memory for R when working with large datasets.
 
 <br>
 
@@ -165,6 +167,8 @@ forest_damage_counties <- st_set_geometry(forest_damage_counties, NULL)
 ```
 
 <br>
+
+Now, we want to sum the damaged tree area within each county. This will be a throwback to our group_by and summarize work. We want our new summarized dataframe to have the following information: the total area in the polygon and the name of the county. 
 
 <div class="quiz">
 
@@ -208,7 +212,7 @@ forest_damage_total <- forest_damage_counties %>%
 
 <br>
 
-Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use `left_join` below to add the forest damage totals to the counties polygon data based on the `NAME` of the county. We'll cover joins in great detail next session, but this is a good preview. 
+Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use `left_join` below to add the forest damage totals to the county polygons. The rows are joined based on where their county names match in their `NAME` columns. We'll cover joins in great detail next session, so consider this a preview teaser. 
 
 <br>
 
@@ -224,10 +228,19 @@ Sometimes a NULL means there is no information, which means that you don't know 
 
 <br>
 
-```{r map counties, }
+```{r map counties, error=TRUE}
 counties_forest_damage <- counties_forest_damage %>%
-  mutate(total_damaged_area = replace_na(total_damaged_area, 0))
+    mutate(total_damaged_area = replace_na(total_damaged_area, 0))
 ```
+
+
+Oh, right. Our area column has units attached and is not a simple number. We could convert the column to `as.numeric` or we can replace the NA values with a value that has units, such as `0 m^2`. Let's do that.
+
+```{r map counties units, }
+counties_forest_damage <- counties_forest_damage %>%
+    mutate(total_damaged_area = replace_na(total_damaged_area, as_units(0, "m^2")))
+```
+
 
 <br>
 
