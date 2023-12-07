@@ -63,7 +63,7 @@
   "headline": "Maps - Exercise 2",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1411 ,
+  "wordCount":  1235 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -366,8 +366,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Now that we know <em>where</em> the birds go, we need to make sure that they have a safe and healthy home to go to!</p>
 <p>Let’s check out the health of the forest by county in the state of Minnesota. We will need to know the locations of the counties in Minnesota, and we will also need some forest health data.</p>
 <p>The <a href="%22https://gisdata.mn.gov%22">Minnesota Geospatial Commons</a> is an excellent source of geospatial data in Minnesota and is very searchable.</p>
-<p>If you search <em>forest health</em> you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let’s read in a shapefile using the <a href="https://r-spatial.github.io/sf/"><code>sf</code> package</a>. You will note that the shapefile is <a href="https://en.wikipedia.org/wiki/ZIP_(file_format)">zipped</a>. So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The <em>temp</em> and <em>temp2</em> folders, and the shapefile, is saved in a local temporary folder.</p>
-<p>If you want to save the shapefile on your computer for the longterm, you can use the <a href="https://r-spatial.github.io/sf/reference/st_write.html"><code>st_write</code> function</a>.</p>
+<p>If you search <em>forest health</em> you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let’s read in a shapefile using the <a href="https://r-spatial.github.io/sf/">sf package</a>. You will note that the shapefile is <a href="https://en.wikipedia.org/wiki/ZIP_(file_format)">zipped</a>. So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The <em>temp</em> and <em>temp2</em> folders, and the shapefile, is saved in a local temporary folder.</p>
+<p>If you want to save the shapefile on your computer for the longterm, you can use the <a href="https://r-spatial.github.io/sf/reference/st_write.html">st_write function</a>.</p>
 <p><br></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -388,7 +388,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Read the shapefile</span></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>forest_damage <span class="ot">&lt;-</span> <span class="fu">st_read</span>(temp2)</span></code></pre></div>
 <pre><code>## Reading layer `forest_health_survey_2022&#39; from data source 
-##   `/tmp/RtmpUdrezi/file4732f5ac502&#39; using driver `ESRI Shapefile&#39;
+##   `/tmp/RtmpuIQXeE/filef8578a0163f&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 2825 features and 10 fields
 ## Geometry type: POLYGON
 ## Dimension:     XY
@@ -406,7 +406,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Try dropping the [1] and see what happens.</span></span></code></pre></div>
 <p><br></p>
 <p>When we look at this, we see that there are many polygons, and if we look at the data (by running <code>glimpse(forest_damage)</code>, or clicking on <code>forest_damage</code> in the environment) we see that there are severity ratings for each polygon in the column <code>PERCENT_AF</code>.</p>
-<p>For our first analysis let’s sum the area in each county that has damage to tree canopy. Then, we can bring in another county dataset to look at the places in MN with the most tree canopy damage and see if our bird’s flight path has been affected. For step one, let’s use <a href="https://cran.r-project.org/web/packages/tigris/readme/README.html"><code>tigris</code></a> and pull in the county shapefile for Minnesota.</p>
+<p>For our first analysis let’s sum the area in each county that has damage to tree canopy. Then, we can bring in another county dataset to look at the places in MN with the most tree canopy damage and see if our bird’s flight path has been affected. For step one, let’s use <a href="https://cran.r-project.org/web/packages/tigris/readme/README.html">tigris</a> and pull in the county shapefile for Minnesota.</p>
 <p><br></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
@@ -414,108 +414,54 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p><br></p>
 <p>And, of course we want to check to see if our CRS match, because we want to join these two geospatial datasets.</p>
 <p><br></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">st_crs</span>(counties)</span></code></pre></div>
-<pre><code>## Coordinate Reference System:
-##   User input: NAD83 
-##   wkt:
-## GEOGCRS[&quot;NAD83&quot;,
-##     DATUM[&quot;North American Datum 1983&quot;,
-##         ELLIPSOID[&quot;GRS 1980&quot;,6378137,298.257222101,
-##             LENGTHUNIT[&quot;metre&quot;,1]]],
-##     PRIMEM[&quot;Greenwich&quot;,0,
-##         ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
-##     CS[ellipsoidal,2],
-##         AXIS[&quot;latitude&quot;,north,
-##             ORDER[1],
-##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
-##         AXIS[&quot;longitude&quot;,east,
-##             ORDER[2],
-##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
-##     ID[&quot;EPSG&quot;,4269]]</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">st_crs</span>(forest_damage)</span></code></pre></div>
-<pre><code>## Coordinate Reference System:
-##   User input: NAD83 / UTM zone 15N 
-##   wkt:
-## PROJCRS[&quot;NAD83 / UTM zone 15N&quot;,
-##     BASEGEOGCRS[&quot;NAD83&quot;,
-##         DATUM[&quot;North American Datum 1983&quot;,
-##             ELLIPSOID[&quot;GRS 1980&quot;,6378137,298.257222101,
-##                 LENGTHUNIT[&quot;metre&quot;,1]]],
-##         PRIMEM[&quot;Greenwich&quot;,0,
-##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
-##         ID[&quot;EPSG&quot;,4269]],
-##     CONVERSION[&quot;UTM zone 15N&quot;,
-##         METHOD[&quot;Transverse Mercator&quot;,
-##             ID[&quot;EPSG&quot;,9807]],
-##         PARAMETER[&quot;Latitude of natural origin&quot;,0,
-##             ANGLEUNIT[&quot;Degree&quot;,0.0174532925199433],
-##             ID[&quot;EPSG&quot;,8801]],
-##         PARAMETER[&quot;Longitude of natural origin&quot;,-93,
-##             ANGLEUNIT[&quot;Degree&quot;,0.0174532925199433],
-##             ID[&quot;EPSG&quot;,8802]],
-##         PARAMETER[&quot;Scale factor at natural origin&quot;,0.9996,
-##             SCALEUNIT[&quot;unity&quot;,1],
-##             ID[&quot;EPSG&quot;,8805]],
-##         PARAMETER[&quot;False easting&quot;,500000,
-##             LENGTHUNIT[&quot;metre&quot;,1],
-##             ID[&quot;EPSG&quot;,8806]],
-##         PARAMETER[&quot;False northing&quot;,0,
-##             LENGTHUNIT[&quot;metre&quot;,1],
-##             ID[&quot;EPSG&quot;,8807]]],
-##     CS[Cartesian,2],
-##         AXIS[&quot;(E)&quot;,east,
-##             ORDER[1],
-##             LENGTHUNIT[&quot;metre&quot;,1]],
-##         AXIS[&quot;(N)&quot;,north,
-##             ORDER[2],
-##             LENGTHUNIT[&quot;metre&quot;,1]],
-##     ID[&quot;EPSG&quot;,26915]]</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">st_crs</span>(counties)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">st_crs</span>(forest_damage)</span></code></pre></div>
 <p><br></p>
 <p>The forest damage dataset has a coordinate reference system in UTMs (Universal Transverse Mercator), and remember that those have units of meters, which are very nice for working with area measurements. So, let’s convert the county dataset into UTMs as well. Zone 15 is Minnesota’s primary UTM zone, and the ID for UTM Zone 15 is <code>26915</code>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(counties, <span class="at">crs =</span> <span class="dv">26915</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(counties, <span class="at">crs =</span> <span class="dv">26915</span>)</span></code></pre></div>
 <p><br></p>
-<p>Now, we can run a spatial intersect on the two geospatial datasets. The <a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html"><code>st_intersection</code></a> function returns the polygons where the two geometries intersect. (<a href="https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects">Here’s a short description with images</a>.) All of the polygons in the <code>forest_damage</code> dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties. But no worries, R has us covered!</p>
+<p>Now, we can run a spatial intersect on the two geospatial datasets. The <a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html">st_intersection</a> function returns the polygons where the two geometries intersect. (<a href="https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects">Here’s a short description with images</a>.) All of the polygons in the <code>forest_damage</code> dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties. But no worries, R has us covered!</p>
 <p><br></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(counties, forest_damage)</span></code></pre></div>
-<pre><code>## Error in (function (msg) : TopologyException: Input geom 1 is invalid: Ring Self-intersection at or near point 556415.80040000007 5327603.9776000008 at 556415.80040000007 5327603.9776000008</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(counties, forest_damage)</span></code></pre></div>
+<pre><code>## Warning: attribute variables are assumed to be spatially constant throughout
+## all geometries</code></pre>
 <p><br></p>
 <p>Next, we can calculate the area for each of the <code>forest_damage</code> polygons within each joined county. Some of our polygons might look a bit like this:</p>
 <div class="float">
-<img src="https://i.stack.imgur.com/vLlAZ.jpg" alt="Split polygons across two counties from GIS stackexchange.com" />
+<img src="https://i.stack.imgur.com/vLlAZ.jpg" style="width:55.0%" alt="Split polygons across two counties from GIS stackexchange.com" />
 <div class="figcaption">Split polygons across two counties from GIS stackexchange.com</div>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
-<pre><code>## Error in mutate(., damage_area = st_area(geometry)): object &#39;forest_damage_counties&#39; not found</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
 <p><br></p>
 <p>Now, we are going to sum the areas with tree canopy tree data within each county, returning the following information: the total area in the polygon and the name of the County. We no longer need each individual polygon geometry, so we set the geometry of the dataset to NULL.</p>
 <p><br></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
-<pre><code>## Error in st_set_geometry(forest_damage_counties, NULL): object &#39;forest_damage_counties&#39; not found</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
 <p><br></p>
 <div id="sum-up-the-damaged-areas" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Sum up the damaged areas</h3>
-<ul class="nav nav-pills" id="myTab1136" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab1856" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="group_byandsummarize1136-tab" data-toggle="tab" href="#group_byandsummarize1136" role="tab" aria-controls="group_byandsummarize1136" aria-selected="true">group_by and summarize</a>
+<a class="nav-link" id="group_byandsummarize1856-tab" data-toggle="tab" href="#group_byandsummarize1856" role="tab" aria-controls="group_byandsummarize1856" aria-selected="true">group_by and summarize</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint1136-tab" data-toggle="tab" href="#showhint1136" role="tab" aria-controls="showhint1136" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint1856-tab" data-toggle="tab" href="#showhint1856" role="tab" aria-controls="showhint1856" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode1136-tab" data-toggle="tab" href="#showcode1136" role="tab" aria-controls="showcode1136" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode1856-tab" data-toggle="tab" href="#showcode1856" role="tab" aria-controls="showcode1856" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="group_byandsummarize1136" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize1136-tab">
+<div id="group_byandsummarize1856" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize1856-tab">
 <h4>
 We are going to sum the damaged areas within each county, returning the following information: the total area in the polygon and the name of the County. Call the summarized data <code>forest_damage_total</code>.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint1136" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1136-tab">
+<div id="showhint1856" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1856-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -524,7 +470,7 @@ forest_damage_total <- forest_damage_counties %>%
   
 </pre>
 </div>
-<div id="showcode1136" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1136-tab">
+<div id="showcode1856" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1856-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -538,39 +484,39 @@ forest_damage_total <- forest_damage_counties %>%
 <p><br></p>
 <p>Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use <code>left_join</code> below to add the forest damage totals to the counties polygon data based on the <code>NAME</code> of the county. We’ll cover joins in great detail next session, but this is a good preview.</p>
 <p><br></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
 <pre><code>## Error in check_join(x, y): object &#39;forest_damage_total&#39; not found</code></pre>
 <p><br></p>
 <p>Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset).</p>
 <p>Sometimes a NULL means there is no information, which means that you don’t know what the value is and you do not have adequate information for replacements.</p>
 <p><br></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="dv">0</span>))</span></code></pre></div>
 <pre><code>## Error in mutate(., total_damaged_area = replace_na(total_damaged_area, : object &#39;counties_forest_damage&#39; not found</code></pre>
 <p><br></p>
 <p>Finally we get to make a map. Remember, data prep is more than half the battle!</p>
 <p><br></p>
 <div id="map-it-out" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Map it out</h3>
-<ul class="nav nav-pills" id="myTab7053" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab374" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="mapusing`ggplot`7053-tab" data-toggle="tab" href="#mapusing`ggplot`7053" role="tab" aria-controls="mapusing`ggplot`7053" aria-selected="true">Map using <code>ggplot</code></a>
+<a class="nav-link" id="mapusing`ggplot`374-tab" data-toggle="tab" href="#mapusing`ggplot`374" role="tab" aria-controls="mapusing`ggplot`374" aria-selected="true">Map using <code>ggplot</code></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint7053-tab" data-toggle="tab" href="#showhint7053" role="tab" aria-controls="showhint7053" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint374-tab" data-toggle="tab" href="#showhint374" role="tab" aria-controls="showhint374" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode7053-tab" data-toggle="tab" href="#showcode7053" role="tab" aria-controls="showcode7053" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode374-tab" data-toggle="tab" href="#showcode374" role="tab" aria-controls="showcode374" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="mapusing`ggplot`7053" class="tab-pane fade active in" role="tabpanel" aria-labelledby="mapusing`ggplot`7053-tab">
+<div id="mapusing`ggplot`374" class="tab-pane fade active in" role="tabpanel" aria-labelledby="mapusing`ggplot`374-tab">
 <h4>
 Make a map using <code>ggplot</code> and <code>geom_sf</code>. Remember to add good plot elements like titles and colors. Fun colors are very important.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint7053" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7053-tab">
+<div id="showhint374" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint374-tab">
 <p>What should you add to make this a more complete plot?
 <br></p>
 <pre class="sourceCode r">
@@ -580,7 +526,7 @@ ggplot(data = ________, aes(fill = total_damaged_area)) +
   
 </pre>
 </div>
-<div id="showcode7053" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7053-tab">
+<div id="showcode374" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode374-tab">
 <pre class="sourceCode r">
 
 ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +

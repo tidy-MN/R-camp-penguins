@@ -158,7 +158,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">4.4 - </span> [**sf** spatial analysis (Part 2)](page/videos/day4/04-4-sf-spatial-analysis-part2.html)
 
-- [Notes and code examples](page/day4.html#sf-spatial-analysis-part2)
+- [Notes and code examples](page/day4.html#sf-spatial-analysis-part-2)
 
 
 

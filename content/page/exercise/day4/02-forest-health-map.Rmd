@@ -41,13 +41,13 @@ Let's check out the health of the forest by county in the state of Minnesota. We
 
 The [Minnesota Geospatial Commons]("https://gisdata.mn.gov") is an excellent source of geospatial data in Minnesota and is very searchable.
 
-If you search *forest health* you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let's read in a shapefile using the [`sf` package](https://r-spatial.github.io/sf/). You will note that the shapefile is [zipped](https://en.wikipedia.org/wiki/ZIP_(file_format)). So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The *temp* and *temp2* folders, and the shapefile, is saved in a local temporary folder. 
+If you search *forest health* you will find some forest health datasets of large scale tree canopy damage prepared for several years. We will use the most recent, 2022. Let's read in a shapefile using the [sf package](https://r-spatial.github.io/sf/). You will note that the shapefile is [zipped](https://en.wikipedia.org/wiki/ZIP_(file_format)). So we first create two temporary folders to begin the process of grabbing this file, unzipping it, and then reading it in as a simple feature (sf) object. The *temp* and *temp2* folders, and the shapefile, is saved in a local temporary folder. 
 
-If you want to save the shapefile on your computer for the longterm, you can use the [`st_write` function](https://r-spatial.github.io/sf/reference/st_write.html).
+If you want to save the shapefile on your computer for the longterm, you can use the [st_write function](https://r-spatial.github.io/sf/reference/st_write.html).
 
 <br>
 
-```{r, read-forests, cache=T}
+```{r, read-forests, cache=F}
 library(tidyverse)
 library(sf)
 
@@ -77,7 +77,7 @@ We can look at the data in two ways:
 
 <br>
 
-```{r, forest damage map}
+```{r, forest damage map, eval=T}
 plot(forest_damage[1]) 
 
 # Try dropping the [1] and see what happens.
@@ -87,15 +87,16 @@ plot(forest_damage[1])
 
 When we look at this, we see that there are many polygons, and if we look at the data (by running `glimpse(forest_damage)`, or clicking on `forest_damage` in the environment) we see that there are severity ratings for each polygon in the column `PERCENT_AF`. 
 
-For our first analysis let's sum the area in each county that has damage to tree canopy. Then, we can bring in another county dataset to look at the places in MN with the most tree canopy damage and see if our bird's flight path has been affected. For step one, let's use [`tigris`](https://cran.r-project.org/web/packages/tigris/readme/README.html) and pull in the county shapefile for Minnesota.
+For our first analysis let's sum the area in each county that has damage to tree canopy. Then, we can bring in another county dataset to look at the places in MN with the most tree canopy damage and see if our bird's flight path has been affected. For step one, let's use [tigris](https://cran.r-project.org/web/packages/tigris/readme/README.html) and pull in the county shapefile for Minnesota.
 
 <br>
 
-```{r counties, results = "hide", cache=T}
+```{r counties, results = "hide"}
 library(tigris)
 
 counties <- counties(state = "MN", cb = TRUE)
 ```
+
 
 <br>
 
@@ -103,7 +104,7 @@ And, of course we want to check to see if our CRS match, because we want to join
 
 <br>
 
-```{r check geospatial}
+```{r check geospatial, eval=F}
 st_crs(counties)
 
 st_crs(forest_damage)
@@ -120,13 +121,19 @@ counties <- st_transform(counties, crs = 26915)
 ```
 
 
+```{r, results = "hide", echo=F}
+#counties <- st_buffer(counties, 1)
+
+forest_damage <- st_buffer(forest_damage, 0.1)
+```
+
 <br>
 
-Now, we can run a spatial intersect on the two geospatial datasets. The [`st_intersection`](https://r-spatial.github.io/sf/reference/geos_binary_ops.html) function returns the polygons where the two geometries intersect. ([Here's a short description with images](https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects).) All of the polygons in the `forest_damage` dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties. But no worries, R has us covered!
+Now, we can run a spatial intersect on the two geospatial datasets. The [st_intersection](https://r-spatial.github.io/sf/reference/geos_binary_ops.html) function returns the polygons where the two geometries intersect. ([Here's a short description with images](https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects).) All of the polygons in the `forest_damage` dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties. But no worries, R has us covered!
 
 <br>
 
-```{r join forest damage county, }
+```{r join forest damage county}
 forest_damage_counties <- st_intersection(counties, forest_damage)
 ```
 
@@ -134,7 +141,7 @@ forest_damage_counties <- st_intersection(counties, forest_damage)
 
 Next, we can calculate the area for each of the `forest_damage` polygons within each joined county. Some of our polygons might look a bit like this:
 
-![Split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg)
+![Split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg){width=55%}
 
 <br>
 

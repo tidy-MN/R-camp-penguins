@@ -56,7 +56,7 @@ In this exercise we will analyze a bird flight path. Our steps will be as follow
 
 <br>
 
-![https://gist.github.com/edzer/f461a3a95570c4ab7edf3125c2f19d20](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png){width=30%}
+![](https://user-images.githubusercontent.com/520851/34849243-0972e474-f722-11e7-9a3d-2d4bf5075835.png){width=30%}
 
 <br>
 
@@ -70,7 +70,7 @@ It begins.
 
 ## A tree stands in the center of St. Paul {-}
 
-First we set up the simplest point data, a single point with a latitude and longitude. The [`st_as_sf` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) will convert the dataframe to an *sf* (simple feature) object and assign it a coordinate reference system (CRS).
+First we set up the simplest point data, a single point with a latitude and longitude. The [st_as_sf function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_as_sf) will convert the dataframe to an *sf* (simple feature) object and assign it a coordinate reference system (CRS).
 
 <br>
 
@@ -144,10 +144,12 @@ tree_distance_km <- tree_distance_m / 1000
 knitr::include_graphics("https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf")
 ```
 
-[Click here to open and download](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)
+[Click here to view the full PDF](https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf)
 
 <br>
-We will make a dataframe with our two nest points by binding the two points together as rows of a table using `bind_rows`. Then, let's say that the birds fly in roughly a straight line. So we can cast these two points into a line between them by first joining them using [`st_union`](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using [the `st_cast` function](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast). 
+We will make a dataframe with our two nest points by binding the two points together as rows of a table using `bind_rows`. 
+
+Then we'll say that the birds will fly in roughly a straight line. So we can cast these two points into a line by first joining them using [st_union](https://search.r-project.org/CRAN/refmans/sf/html/geos_combine.html) and then casting them to a "linestring" (this is a line geometry) using [the st_cast](https://www.rdocumentation.org/packages/sf/versions/1.0-14/topics/st_cast) function. 
 
 <br>
 
@@ -184,11 +186,11 @@ Looking at that shape in our plots window is a bit underwhelming. Sorry `plot` f
 
 First, we are going to pull in our `tigris` package and get polygons of the state boundaries.
 
-![https://github.com/walkerke/tigris](https://github.com/walkerke/tigris/raw/master/tools/readme/tigris_sticker.png){width=30%}
+![](https://github.com/walkerke/tigris/raw/master/tools/readme/tigris_sticker.png){width=30%}
 
 <br>
 
-```{r, grab us states, results = "hide", message = FALSE, progress = FALSE, warning = FALSE}
+```{r, grab us states, results = "hide"}
 library(tigris)
 
 options(tigris_use_cache = TRUE)
@@ -198,7 +200,7 @@ all_states <- states()
 
 <br>
 
-Now let's see which states intersect with our polygon bird path. We bring back some `sf` magic for this. But remember, the CRS must be the same!! SO, we will need to do some transformation. This time we use `st_crs` to transform one geometry to the CRS of the other one. Then we can use [`st_filter`](https://r-spatial.github.io/sf/reference/st_join.html) to filter one geometry to the extent of the other.
+Now let's see which states intersect with our polygon bird path. We bring back some `sf` magic for this. But remember, the CRS must be the same!! SO, we will need to do some transformation. This time we use `st_crs` to transform one geometry to the CRS of the other one. Then we can use [st_filter](https://r-spatial.github.io/sf/reference/st_join.html) to filter one geometry to the extent of the other.
 
 <br>
 
@@ -255,7 +257,7 @@ Now we have two types of polygons, a set of states that intersect with our bird 
 
 <br>
 
-![Leaflet R package](https://camo.githubusercontent.com/78577bd152138d3a58f4527d101511295aa9282a4ab9d96b712ff9729aaa8980/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3439363235352f313735343436352f38626435656465362d363635312d313165332d393633332d6638643831383131393233622e706e67)
+![](https://camo.githubusercontent.com/78577bd152138d3a58f4527d101511295aa9282a4ab9d96b712ff9729aaa8980/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3439363235352f313735343436352f38626435656465362d363635312d313165332d393633332d6638643831383131393233622e706e67)
 
 <br>
 
@@ -275,9 +277,8 @@ leaflet() %>%
 ![ggplot2 R package](https://ggplot2.tidyverse.org/logo.png)
 <br>
 
-Now, let's do one in ggplot2. Time to flex those ggplot muscles from last session! We're going to add a few map geoms to our toolbox: `geom_sf` and `geom_sf_text`. 
+Now, let'make a ggplot map. Time to flex those ggplot muscles from last session! We're going to add a few new geoms to our toolbox: `geom_sf` and `geom_sf_text`. 
 
-<br>
 
 ```{r, echo=F}
 ggplot(bird_route_states) +
@@ -291,12 +292,12 @@ ggplot(bird_route_states) +
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Maps with `ggplot2` {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Maps with `ggplot` {-}
 
 ```{r results='asis', echo=F}
 source("../../insert_tabs.R")
 
-tabs <- c("Make a map", "Show hint", "Show code")
+tabs <- c("A ggplot map", "Show hint", "Show code")
 
 content <- c(Exercise = '<h4> Make a map of the flight route with the state boundaries underneath. Use `geom_sf` to plot the shapes and use `geom_sf_text` to add labels to the states. </h4>
 

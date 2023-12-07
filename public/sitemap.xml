@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/01-homeward-bound.html</loc>
-    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page.html</loc>
-    <lastmod>2023-12-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/</loc>
     <lastmod>2023-11-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -30,6 +24,9 @@
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/timer10_chewie_dance.html</loc>
+    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page.html</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/teach.html</loc>
@@ -147,6 +144,8 @@
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day1/inventory_duty.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/level1_jakku_explore.html</loc>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/01-homeward-bound.html</loc>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/02-forest-health-map.html</loc>
   </url><url>
