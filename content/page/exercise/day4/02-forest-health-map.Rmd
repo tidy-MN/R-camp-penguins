@@ -255,10 +255,10 @@ Finally we get to make a map. Remember, data prep is more than half the battle!
 <div class="quiz">
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Map it out {-}
-```{r exer-tabs34, results='asis', echo=F}
+```{r exer-tabs355, results='asis', echo=F}
 source("../../insert_tabs.R")
 
-tabs <- c("Map using `ggplot`", "Show hint", "Show code")
+tabs <- c("Map using ggplot", "Show hint", "Show code")
 
 content <- c(Exercise = '<h4> Make a map using `ggplot` and `geom_sf`. Remember to add good plot elements like titles and colors. Fun colors are very important. </h4>
 
@@ -289,7 +289,7 @@ ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
   
 code_end')
 
-tab_html <- add_tabs(tabs, content)
+tab_html <- add_tabs(tabs, content, "1ab")
 
 cat(paste0(tab_html, collapse = "\n"))
 ```
