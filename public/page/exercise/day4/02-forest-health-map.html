@@ -63,7 +63,7 @@
   "headline": "Maps - Exercise 2",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1365 ,
+  "wordCount":  1406 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -388,7 +388,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Read the shapefile</span></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>forest_damage <span class="ot">&lt;-</span> <span class="fu">st_read</span>(temp2)</span></code></pre></div>
 <pre><code>## Reading layer `forest_health_survey_2022&#39; from data source 
-##   `/tmp/RtmpwQ15vT/file5ab774c479e&#39; using driver `ESRI Shapefile&#39;
+##   `/tmp/RtmpNlkkR4/fileb84236099a0&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 2825 features and 10 fields
 ## Geometry type: POLYGON
 ## Dimension:     XY
@@ -453,25 +453,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 </div>
 <div id="sum-up-the-damaged-areas" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Sum up the damaged areas</h3>
-<ul class="nav nav-pills" id="myTab2444" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab8461" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="group_byandsummarize2444-tab" data-toggle="tab" href="#group_byandsummarize2444" role="tab" aria-controls="group_byandsummarize2444" aria-selected="true">group_by and summarize</a>
+<a class="nav-link" id="group_byandsummarize8461-tab" data-toggle="tab" href="#group_byandsummarize8461" role="tab" aria-controls="group_byandsummarize8461" aria-selected="true">group_by and summarize</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint2444-tab" data-toggle="tab" href="#showhint2444" role="tab" aria-controls="showhint2444" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint8461-tab" data-toggle="tab" href="#showhint8461" role="tab" aria-controls="showhint8461" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode2444-tab" data-toggle="tab" href="#showcode2444" role="tab" aria-controls="showcode2444" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode8461-tab" data-toggle="tab" href="#showcode8461" role="tab" aria-controls="showcode8461" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="group_byandsummarize2444" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize2444-tab">
+<div id="group_byandsummarize8461" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize8461-tab">
 <h4>
 We are going to sum the damaged areas within each county, returning the following information: the total area in the polygon and the name of the County. Call the summarized data <code>forest_damage_total</code>.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint2444" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2444-tab">
+<div id="showhint8461" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8461-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -480,7 +480,7 @@ forest_damage_total <- forest_damage_counties %>%
   
 </pre>
 </div>
-<div id="showcode2444" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2444-tab">
+<div id="showcode8461" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8461-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -519,6 +519,11 @@ forest_damage_total <- forest_damage_counties %>%
 <span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
 <p><br></p>
+<p>Okay that was fun, but now let’s drop the units entirely. They don’t really play that nice with ggplot and leaflet. They’re always like, just show me the raw numbers!</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Drop the units</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">as.numeric</span>(total_damaged_area))</span></code></pre></div>
+<p><br></p>
 <p>Finally we get to make a map. Remember, data prep is more than half the battle!</p>
 </div>
 <div id="map-it-out" class="section level3 unnumbered quiz">
@@ -546,7 +551,7 @@ Make a map using <code>ggplot</code> and <code>geom_sf</code>. Remember to add g
 <br></p>
 <pre class="sourceCode r">
 
-ggplot(data = ________, aes(fill = as.numeric(total_damaged_area))) +
+ggplot(data = ________, aes(fill = total_damaged_area)) +
   geom_sf()
   
 </pre>
@@ -554,7 +559,7 @@ ggplot(data = ________, aes(fill = as.numeric(total_damaged_area))) +
 <div id="showcode1ab" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1ab-tab">
 <pre class="sourceCode r">
 
-ggplot(data = counties_forest_damage, aes(fill = as.numeric(total_damaged_area))) +
+ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
   geom_sf()+
   labs(title = "Total forest canopy area damage",
        subtitle = "Minnesota counties",

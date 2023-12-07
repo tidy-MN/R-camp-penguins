@@ -259,6 +259,16 @@ counties_forest_damage <- counties_forest_damage %>%
 
 <br>
 
+Okay that was fun, but now let's drop the units entirely. They don't really play that nice with ggplot and leaflet. They're always like, just show me the raw numbers!
+
+```{r,}
+# Drop the units
+counties_forest_damage <- counties_forest_damage %>%
+  mutate(total_damaged_area = as.numeric(total_damaged_area))
+```
+
+<br>
+
 Finally we get to make a map. Remember, data prep is more than half the battle!
 
 <div class="quiz">
@@ -279,14 +289,14 @@ What should you add to make this a more complete plot?
 
 code_start
 
-ggplot(data = ________, aes(fill = as.numeric(total_damaged_area))) +
+ggplot(data = ________, aes(fill = total_damaged_area)) +
   geom_sf()
   
   code_end',
 
 show_code = 'code_start
 
-ggplot(data = counties_forest_damage, aes(fill = as.numeric(total_damaged_area))) +
+ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
   geom_sf()+
   labs(title = "Total forest canopy area damage",
        subtitle = "Minnesota counties",
