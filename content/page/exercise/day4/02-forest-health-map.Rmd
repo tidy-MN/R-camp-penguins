@@ -77,7 +77,7 @@ We can look at the data in two ways:
 
 <br>
 
-```{r, forest damage map, eval=T}
+```{r, forest-damage-plot-base, eval=F}
 plot(forest_damage[1]) 
 
 # Try dropping the [1] and see what happens.
@@ -91,12 +91,15 @@ For our first analysis let's sum the area in each county that has damage to tree
 
 <br>
 
-```{r counties, results = "hide"}
+```{r counties}
 library(tigris)
 
 counties <- counties(state = "MN", cb = TRUE)
 ```
 
+```{r}
+plot(counties[1])
+```
 
 <br>
 
@@ -196,6 +199,12 @@ tab_html <- add_tabs(tabs, content)
 cat(paste0(tab_html, collapse = "\n"))
 ```
 </div>
+
+```{r, echo=F}
+forest_damage_total <- forest_damage_counties %>%
+  group_by(NAME) %>%
+  summarise(total_damaged_area = sum(damage_area, na.rm = T))
+```
 
 <br>
 
