@@ -195,9 +195,10 @@ content <- c(Exercise = '<h4> Change the bar-chart from a stacked bar-chart to a
 <br>',
 
 show_hint = 'code_start
+# Try typing "position_" and then wait a second, a menu of options should appear
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
-  geom_bar(position = position_xxxx()) + # Try help(geom_bar) and 
+  geom_bar(position = position_xxxx()) + 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -208,7 +209,7 @@ code_end',
 show_code = 'code_start
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
-  geom_bar(position = position_dodge2(preserve = "single")) + 
+  geom_bar(position = position_dodge(preserve = "single")) + 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -225,7 +226,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-TA-DAAaaaaaaaaa!!! I think we all deserve some cookies after that don't you? Wait...there's *more*? Okay, cookies will have to wait, let's get cracking!
+TA-DAAaaaaa!!! I think we all deserve some cookies after that don't you? Wait...there's *more*? Okay, cookies will have to wait, let's get cracking!
 
 # Which species has the longest bill?
 
@@ -233,7 +234,7 @@ TA-DAAaaaaaaaaa!!! I think we all deserve some cookies after that don't you? Wai
 ggplot(data = penguins, aes(x = bill_length_mm))+
   geom_histogram(aes(fill = species),
                      alpha = 0.5, 
-                     position = 'identity') + # need to have position = 'identity' to have the alpha work!
+                     position = 'identity') + # Need to have position = 'identity' to have the alpha work!
   scale_fill_brewer(type = 'qual', palette = 3) +
   labs(title = "Distribution of bill length (mm) by species",
        x = "Bill Length (mm)",

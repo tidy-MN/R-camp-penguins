@@ -106,7 +106,7 @@ So below is a recreation of our previous chart using the raw data...What would w
 
 ```{r, echo = F}
 ggplot(data = penguins_raw, aes(x = Island, fill = Species)) +
-  geom_bar(position = position_dodge2(preserve = "single")) + 
+  geom_bar(position = position_dodge(preserve = "single")) + 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -136,7 +136,7 @@ show_hint = 'code_start
 
 ggplot(data = __________, 
        aes(x = ______, y = ______, fill = ________)) +
-  geom_xxx(position = position_dodge2(preserve = "single")) + 
+  geom_xxx(position = position_dodge(preserve = "single")) + 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -148,7 +148,7 @@ show_code = 'code_start
 
 ggplot(data = penguin_island_dist, 
        aes(x = island, y = count, fill = species)) +
-  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_col(position = position_dodge(preserve = "single")) + 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -191,9 +191,9 @@ show_hint = 'code_start
 
 ggplot(data = penguin_island_dist, 
        aes(x = island, y = count, fill = species)) +
-  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_col(position = position_dodge(preserve = "single")) + 
   geom_xxxx(aes(label = ______, y = _____ + 5), 
-            position = position_dodge2(width = ______)) +
+            position = position_dodge(width = ______)) +
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -205,9 +205,9 @@ show_code = 'code_start
 
 ggplot(data = penguin_island_dist, 
        aes(x = island, y = count, fill = species)) +
-  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_col(position = position_dodge(preserve = "single")) + 
   geom_text(aes(label = count, y = count + 5), 
-            position = position_dodge2(width = 0.9)) +
+            position = position_dodge(width = 0.9)) +
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",

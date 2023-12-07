@@ -63,7 +63,7 @@
   "headline": "ggplot",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1843 ,
+  "wordCount":  1854 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -286,8 +286,8 @@
 <link href="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
 <script src="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
 <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
-<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.css" rel="stylesheet" />
-<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.min.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -430,19 +430,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Back to the drawing board…let’s start with labels! We want to add a title and make the axis labels be capitalized vs lower-case. Also someone complained about the background color and asked us to make it look “cleaner”.</p>
 <div id="cleaning-up" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Cleaning up</h3>
-<ul class="nav nav-pills" id="myTab2458" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab3816" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="addlabelsandtheme2458-tab" data-toggle="tab" href="#addlabelsandtheme2458" role="tab" aria-controls="addlabelsandtheme2458" aria-selected="true">Add labels and theme</a>
+<a class="nav-link" id="addlabelsandtheme3816-tab" data-toggle="tab" href="#addlabelsandtheme3816" role="tab" aria-controls="addlabelsandtheme3816" aria-selected="true">Add labels and theme</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint2458-tab" data-toggle="tab" href="#showhint2458" role="tab" aria-controls="showhint2458" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint3816-tab" data-toggle="tab" href="#showhint3816" role="tab" aria-controls="showhint3816" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode2458-tab" data-toggle="tab" href="#showcode2458" role="tab" aria-controls="showcode2458" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode3816-tab" data-toggle="tab" href="#showcode3816" role="tab" aria-controls="showcode3816" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="addlabelsandtheme2458" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addlabelsandtheme2458-tab">
+<div id="addlabelsandtheme3816" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addlabelsandtheme3816-tab">
 <h4>
 Add a title, x-axis and y-axis labels, and change the theme, below are some possible options for you to choose from:
 </h4>
@@ -455,16 +455,16 @@ Add a title, x-axis and y-axis labels, and change the theme, below are some poss
 </ul>
 <p><br></p>
 </div>
-<div id="showhint2458" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2458-tab">
+<div id="showhint3816" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3816-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
   geom_bar() +
-  labs() + #use help if you want to learn more about what goes inside!
+  labs() + # Use help if you want to learn more about what goes inside!
   theme_xxx() #pick one of the themes above! 
 </pre>
 </div>
-<div id="showcode2458" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2458-tab">
+<div id="showcode3816" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3816-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -483,25 +483,25 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <p>Now we just need to tackle color…hmmm, we know it’s a bar-chart which means that we need to specify ‘fill’ vs ‘color’ so we can use the function <code>scale_fill_brewer</code> to pick out our favorite <a href="https://colorbrewer2.org/">RColorBrewer palette</a> for this graph. We want a qualitative one and we also want one that is colorblind safe so let’s pick palette 3 (but if you have a different favorite you should use that one)!</p>
 <div id="color-time" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Color time</h3>
-<ul class="nav nav-pills" id="myTab4519" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab9093" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="addingfillcolors4519-tab" data-toggle="tab" href="#addingfillcolors4519" role="tab" aria-controls="addingfillcolors4519" aria-selected="true">Adding fill colors</a>
+<a class="nav-link" id="addingfillcolors9093-tab" data-toggle="tab" href="#addingfillcolors9093" role="tab" aria-controls="addingfillcolors9093" aria-selected="true">Adding fill colors</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint4519-tab" data-toggle="tab" href="#showhint4519" role="tab" aria-controls="showhint4519" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint9093-tab" data-toggle="tab" href="#showhint9093" role="tab" aria-controls="showhint9093" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode4519-tab" data-toggle="tab" href="#showcode4519" role="tab" aria-controls="showcode4519" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode9093-tab" data-toggle="tab" href="#showcode9093" role="tab" aria-controls="showcode9093" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="addingfillcolors4519" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addingfillcolors4519-tab">
+<div id="addingfillcolors9093" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addingfillcolors9093-tab">
 <h4>
 Change the fill colors for the bar-chart using RColorBrewer palettes.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint4519" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4519-tab">
+<div id="showhint9093" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9093-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -513,7 +513,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_bw()
 </pre>
 </div>
-<div id="showcode4519" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4519-tab">
+<div id="showcode9093" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9093-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -532,29 +532,30 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <p>Annnnd of course one of the researchers had a last minute request. They didn’t like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!</p>
 <div id="changing-positions" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab5426" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab8635" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side5426-tab" data-toggle="tab" href="#side-by-side5426" role="tab" aria-controls="side-by-side5426" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="side-by-side8635-tab" data-toggle="tab" href="#side-by-side8635" role="tab" aria-controls="side-by-side8635" aria-selected="true">Side-by-side</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint5426-tab" data-toggle="tab" href="#showhint5426" role="tab" aria-controls="showhint5426" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint8635-tab" data-toggle="tab" href="#showhint8635" role="tab" aria-controls="showhint8635" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode5426-tab" data-toggle="tab" href="#showcode5426" role="tab" aria-controls="showcode5426" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode8635-tab" data-toggle="tab" href="#showcode8635" role="tab" aria-controls="showcode8635" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side5426" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side5426-tab">
+<div id="side-by-side8635" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side8635-tab">
 <h4>
-Change the bar-chart from a stacked bar-chart to a side-by-side bar-chart by chaning the position argument
+Change the bar-chart from a stacked bar-chart to a side-by-side bar-chart by changing the position argument
 </h4>
 <p><br></p>
 </div>
-<div id="showhint5426" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5426-tab">
+<div id="showhint8635" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8635-tab">
 <pre class="sourceCode r">
+# Try typing "position_" and then wait a second, a menu of options should appear
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
-  geom_bar(position = position_xxxx()) + #try help(position) for more deets
+  geom_bar(position = position_xxxx()) + 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -562,11 +563,11 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_bw()
 </pre>
 </div>
-<div id="showcode5426" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5426-tab">
+<div id="showcode8635" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8635-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
-  geom_bar(position = position_dodge2(preserve = "single")) + 
+  geom_bar(position = position_dodge(preserve = "single")) + 
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -578,20 +579,20 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 </div>
 </div>
 <p><br></p>
-<p>TA-DAAaaaaaaaaa!!! I think we all deserve some cookies after that don’t you? Wait…there’s <em>more</em>? Okay, cookies will have to wait, let’s get cracking!</p>
+<p>TA-DAAaaaaa!!! I think we all deserve some cookies after that don’t you? Wait…there’s <em>more</em>? Okay, cookies will have to wait, let’s get cracking!</p>
 </div>
 <div id="which-species-has-the-longest-bill" class="section level1">
 <h1>Which species has the longest bill?</h1>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm))<span class="sc">+</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species),</span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>                     <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                     <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span> <span class="co"># need to have position = &#39;identity&#39; to have the alpha work!</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                     <span class="at">position =</span> <span class="st">&#39;identity&#39;</span>) <span class="sc">+</span> <span class="co"># Need to have position = &#39;identity&#39; to have the alpha work!</span></span>
 <span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&#39;qual&#39;</span>, <span class="at">palette =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribution of bill length (mm) by species&quot;</span>,</span>
 <span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Bill Length (mm)&quot;</span>,</span>
 <span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of Penguins observed&quot;</span>) <span class="sc">+</span></span>
 <span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_bin).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (`stat_bin()`).</code></pre>
 <p><img src="/R-camp-penguins/page/exercise/day3/3-1-ggplot_exercises_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Looks like Gentoo and Chinstrap are pretty much tied for longest bill! Wonder if bill length is related to other measurements…Always more questions!</p>
 </div>
@@ -619,7 +620,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Body Mass (g)&quot;</span>,</span>
 <span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Flipper Length (mm)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
 <p><img src="/R-camp-penguins/page/exercise/day3/3-1-ggplot_exercises_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Fascinating… the Gentoo are really all in a class by themselves. Otherwise it looks like the overall relationship between body mass and flipper length is the same among the different penguin species. You can add a trend-line to the graph using <code>geom_smooth</code> to see that easier or see if the human eye is being tricked by very fun looking dots.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, </span>
@@ -632,8 +633,8 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Body Mass (g)&quot;</span>,</span>
 <span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Flipper Length (mm)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
 <p><img src="/R-camp-penguins/page/exercise/day3/3-1-ggplot_exercises_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Let’s try doing the same exercise, but let’s use the <code>facet_wrap</code> function.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, </span>
@@ -647,8 +648,8 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Flipper Length (mm)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="at">facets =</span> <span class="sc">~</span>species)</span></code></pre></div>
-<pre><code>## Warning: Removed 2 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing non-finite values (`stat_smooth()`).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (`geom_point()`).</code></pre>
 <p><img src="/R-camp-penguins/page/exercise/day3/3-1-ggplot_exercises_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>What’s the danger in using the <code>scales = 'free'</code> argument? What happens when you add it? How would you explain the result to someone else?</p>
 <p>As we’ve said before…always more questions!</p>
