@@ -246,8 +246,6 @@ counties_forest_damage <- counties_forest_damage %>%
 
 Finally we get to make a map. Remember, data prep is more than half the battle!
 
-<br>
-
 <div class="quiz">
 
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Map it out {-}
