@@ -63,7 +63,7 @@
   "headline": "Maps - Exercise 2",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1362 ,
+  "wordCount":  1340 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -388,7 +388,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Read the shapefile</span></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>forest_damage <span class="ot">&lt;-</span> <span class="fu">st_read</span>(temp2)</span></code></pre></div>
 <pre><code>## Reading layer `forest_health_survey_2022&#39; from data source 
-##   `/tmp/RtmpnAsUz2/file2022db7b2b1&#39; using driver `ESRI Shapefile&#39;
+##   `/tmp/RtmpjtvmHG/file3e6640625d8&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 2825 features and 10 fields
 ## Geometry type: POLYGON
 ## Dimension:     XY
@@ -447,25 +447,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Now, we want to sum the damaged tree area within each county. This will be a throwback to our group_by and summarize work. We want our new summarized dataframe to have the following information: the total area in the polygon and the name of the county.</p>
 <div id="sum-up-the-damaged-areas" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Sum up the damaged areas</h3>
-<ul class="nav nav-pills" id="myTab2910" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab3983" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="group_byandsummarize2910-tab" data-toggle="tab" href="#group_byandsummarize2910" role="tab" aria-controls="group_byandsummarize2910" aria-selected="true">group_by and summarize</a>
+<a class="nav-link" id="group_byandsummarize3983-tab" data-toggle="tab" href="#group_byandsummarize3983" role="tab" aria-controls="group_byandsummarize3983" aria-selected="true">group_by and summarize</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint2910-tab" data-toggle="tab" href="#showhint2910" role="tab" aria-controls="showhint2910" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint3983-tab" data-toggle="tab" href="#showhint3983" role="tab" aria-controls="showhint3983" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode2910-tab" data-toggle="tab" href="#showcode2910" role="tab" aria-controls="showcode2910" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode3983-tab" data-toggle="tab" href="#showcode3983" role="tab" aria-controls="showcode3983" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="group_byandsummarize2910" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize2910-tab">
+<div id="group_byandsummarize3983" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize3983-tab">
 <h4>
 We are going to sum the damaged areas within each county, returning the following information: the total area in the polygon and the name of the County. Call the summarized data <code>forest_damage_total</code>.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint2910" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2910-tab">
+<div id="showhint3983" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3983-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -474,7 +474,7 @@ forest_damage_total <- forest_damage_counties %>%
   
 </pre>
 </div>
-<div id="showcode2910" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2910-tab">
+<div id="showcode3983" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3983-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -501,38 +501,35 @@ forest_damage_total <- forest_damage_counties %>%
 ## ! Can&#39;t convert `replace` &lt;double&gt; to match type of `data` &lt;units&gt;.</code></pre>
 <p><br></p>
 <blockquote>
-<p>Oh, right! Our area column has units attached and is not a simple number. We could convert the column to <code>as.numeric</code> or we can replace the NA values with a value that has units, such as <code>0 m^2</code>. Let’s do that.</p>
+<p>Oh, right! Our area column has units attached and is not a simple number. We could convert the column to <code>as.numeric</code> or we can replace the NA values with a value that has units, such as <code>0 m^2</code>. Let’s do that with the <code>units</code> package.</p>
 </blockquote>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
-<pre><code>## Error in `stopifnot()`:
-## ℹ In argument: `total_damaged_area = replace_na(total_damaged_area,
-##   as_units(0, &quot;m^2&quot;))`.
-## Caused by error in `as_units()`:
-## ! could not find function &quot;as_units&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">library</span>(units)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
 <p><br></p>
 <p>Finally we get to make a map. Remember, data prep is more than half the battle!</p>
 <div id="map-it-out" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Map it out</h3>
-<ul class="nav nav-pills" id="myTab9920" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab1104" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="mapusing`ggplot`9920-tab" data-toggle="tab" href="#mapusing`ggplot`9920" role="tab" aria-controls="mapusing`ggplot`9920" aria-selected="true">Map using <code>ggplot</code></a>
+<a class="nav-link" id="mapusing`ggplot`1104-tab" data-toggle="tab" href="#mapusing`ggplot`1104" role="tab" aria-controls="mapusing`ggplot`1104" aria-selected="true">Map using <code>ggplot</code></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint9920-tab" data-toggle="tab" href="#showhint9920" role="tab" aria-controls="showhint9920" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint1104-tab" data-toggle="tab" href="#showhint1104" role="tab" aria-controls="showhint1104" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode9920-tab" data-toggle="tab" href="#showcode9920" role="tab" aria-controls="showcode9920" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode1104-tab" data-toggle="tab" href="#showcode1104" role="tab" aria-controls="showcode1104" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="mapusing`ggplot`9920" class="tab-pane fade active in" role="tabpanel" aria-labelledby="mapusing`ggplot`9920-tab">
+<div id="mapusing`ggplot`1104" class="tab-pane fade active in" role="tabpanel" aria-labelledby="mapusing`ggplot`1104-tab">
 <h4>
 Make a map using <code>ggplot</code> and <code>geom_sf</code>. Remember to add good plot elements like titles and colors. Fun colors are very important.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint9920" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9920-tab">
+<div id="showhint1104" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1104-tab">
 <p>What should you add to make this a more complete plot?
 <br></p>
 <pre class="sourceCode r">
@@ -542,7 +539,7 @@ ggplot(data = ________, aes(fill = total_damaged_area)) +
   
 </pre>
 </div>
-<div id="showcode9920" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9920-tab">
+<div id="showcode1104" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1104-tab">
 <pre class="sourceCode r">
 
 ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
