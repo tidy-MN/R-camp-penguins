@@ -1,5 +1,5 @@
 ---
-title: "ggplot: the remix"
+title: "ggplot: The remix"
 output: 
   blogdown::html_page: 
     highlight: tango
@@ -88,7 +88,9 @@ penguin_island_dist <- penguins_raw_clean %>%
 penguin_island_dist
 ```
 
-That's okay but let's try the `tabyl` function from the `janitor` package as well, see if we like how that looks better. The benefits of the `tabyl` function are that you can use the `adorn_` functions from janitor to do things like add row and column totals really easily which make summary tables like this a breeze!
+<br>
+
+That's okay looking, but let's try the `tabyl` function from the `janitor` package as well. The benefits of the `tabyl` function are that you can use the `adorn_` functions from janitor to do things like add row and column totals really easily. This makes summary tables like the one below a breeze!
 
 ```{r}
 tabyl(penguins_raw_clean, species, island) %>% 
@@ -102,7 +104,7 @@ Nice! A quick way to generate a two-by-two table that we could include in a repo
 
 # Graphing summary data
 
-So below is a recreation of our previous chart using the raw data...What would we need to change in order to make this same chart only using summarized data we stored in `penguin_island_dist`?
+So below is a recreation of our previous chart using the raw data. What would we need to change to make this chart using the summarized data we stored in `penguin_island_dist`?
 
 ```{r, echo = F}
 ggplot(data = penguins_raw, aes(x = Island, fill = Species)) +
@@ -191,9 +193,9 @@ show_hint = 'code_start
 
 ggplot(data = penguin_island_dist, 
        aes(x = island, y = count, fill = species)) +
-  geom_col(position = position_dodge(preserve = "single")) + 
+  geom_col(position = position_dodge2(preserve = "single")) + 
   geom_xxxx(aes(label = ______, y = _____ + 5), 
-            position = position_dodge(width = ______)) +
+            position = position_dodge2(width = ______)) +
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -205,9 +207,9 @@ show_code = 'code_start
 
 ggplot(data = penguin_island_dist, 
        aes(x = island, y = count, fill = species)) +
-  geom_col(position = position_dodge(preserve = "single")) + 
+  geom_col(position = position_dodge2(preserve = "single")) + 
   geom_text(aes(label = count, y = count + 5), 
-            position = position_dodge(width = 0.9)) +
+            position = position_dodge2(width = 0.9)) +
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -224,10 +226,10 @@ cat(paste0(tab_html, collapse = "\n"))
 
 <br>
 
-We had to do three things when using `geom_text` (or `geom_label`) - try both and see which one you like the best!
+We had to do three things when using `geom_text` or `geom_label` - try both and see which one you like the best!
 
-1. Make sure the positions matched, so if your `geom_` is using `dodge`, your `geom_text` should be using `dodge`
-1. Increase the `y` value by some amount so that the label will sit higher than the top of the labeled point
+1. Make sure the positions matched, so if your `geom_` is using `dodge2`, your `geom_text` should be using `dodge2`.
+1. Increase the `y` value by some amount so that the label will sit higher than the top of the labeled bar.
 1. For bar/column charts, decrease the width so they sit nicer on top.
 
 <br>
@@ -255,14 +257,15 @@ Now that you have some experience under your belt, it's important to shake thing
 
 The links below will take you to the specific section of the R Graphics Cookbook that will answer the question of how you do the thing.
 
-- [change the font](http://www.cookbook-r.com/Graphs/Fonts/)
-- [save a graphic as a .png (and don't cheat using the export feature in RStudio!)](http://www.cookbook-r.com/Graphs/Output_to_a_file/)
-- [put the islands in a different order on the x-axis!](http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/)
-- [make the legend labels easier to read (they're a little long...)](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
-- [use any theme from the package ThemePark](http://matthewbjane.com/ThemePark/) (you'll have install two packages before you can use, `remotes` and then of course, `ThemePark`)
+- [Change the font](http://www.cookbook-r.com/Graphs/Fonts/)
+- [Save a graphic as a .png (and don't cheat using the export feature in RStudio!)](http://www.cookbook-r.com/Graphs/Output_to_a_file/)
+- [Put the islands in a different order on the x-axis!](http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/)
+- [Make the legend labels easier to read (they're a little long...)](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
+- [Use any theme from the package ThemePark](http://matthewbjane.com/ThemePark/)
+  + You'll have install two packages before you can use: `remotes` and then `ThemePark`
   + `install.packages("remotes")`
   + `remotes::install_github("MatthewBJane/ThemePark")`
-- [try adding Minnesota State brand colors using the home-grown package `mncolors`](https://github.com/tidy-MN/mncolors)
+- [Try to add MN State brand colors using the home-grown package `mncolors`](https://github.com/tidy-MN/mncolors)
   + `install.packages("remotes")`
   + `remotes::install_github("tidy-MN/mncolors")`
 

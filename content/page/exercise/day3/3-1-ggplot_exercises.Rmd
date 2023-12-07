@@ -32,6 +32,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 Make sure you are still in your project that you created for doing exercises and then make a new R script. Save it as soon as you make it and give it a good name like `exercise_1_day_3.R` or `george.R` and you'll be ready to go!
 
 # Palmer Penguin Exploration
+
 ### Solving problems, making friends
 
 This is our big chance to show the researchers that we can be the best analysis bot ever. Now that the researchers have collected the data they are starting to form questions about what the data *actually* tell us.
@@ -46,10 +47,13 @@ Let's make a graphical analysis of the data for them and show how awesome we are
 
 ```{r, message = FALSE, warning= FALSE}
 library(tidyverse)
-# install.packages('palmerpenguins') #you might not have this package yet so make sure you install it!
+
+# You may not have this package yet, so you may need to install it
+# install.packages('palmerpenguins') 
 library(palmerpenguins)
 
-data("penguins") #this will read in the data from the package and load it to to our environment
+# This reads in the data from the package and adds it to our environment
+data("penguins") 
 ```
 
 # What does the data look like?
@@ -134,7 +138,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 Okay - whew! We added a title, a nice x-axis and y-axis label, changed the theme to `theme_bw` which we think looks pretty clean so hopefully they do too.
 
-Now we just need to tackle color...hmmm, we know it's a bar-chart which means that we need to specify 'fill' vs 'color' so we can use the function `scale_fill_brewer` to pick out our favorite [RColorBrewer palette](https://colorbrewer2.org/) for this graph. We want a qualitative one and we also want one that is colorblind safe so let's pick palette 3 (but if you have a different favorite you should use that one)!
+Now we just need to tackle color. Hmmmm...we know it's a bar chart which means that we need to specify 'fill' vs 'color', so we can use the function `scale_fill_brewer` to pick out our favorite [RColorBrewer palette](https://colorbrewer2.org/) for this graph. We want a qualitative one and we also want one that is colorblind friendly, so let's pick palette `3`, but if you have a different favorite you should use that one!
 
 <div class="quiz">
 
@@ -244,7 +248,7 @@ ggplot(data = penguins, aes(x = bill_length_mm))+
 
 Looks like Gentoo and Chinstrap are pretty much tied for longest bill! Wonder if bill length is related to other measurements...Always more questions!
 
-# What measurements are related to each other?
+# Which measurements are related to each other?
 
 ```{r}
 cor(penguins[3:6])
@@ -312,7 +316,7 @@ Try to think of your own question that you use this data to answer or go back to
 
 The researchers have one more thing they'd like to say...
 
-__THANK YOU!__
+> "__THANK YOU!__"
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 

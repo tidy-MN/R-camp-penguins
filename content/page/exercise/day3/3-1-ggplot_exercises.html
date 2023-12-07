@@ -104,10 +104,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 </ul>
 <p>Let’s make a graphical analysis of the data for them and show how awesome we are!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># install.packages(&#39;palmerpenguins&#39;) #you might not have this package yet so make sure you install it!</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins&quot;</span>) <span class="co">#this will read in the data from the package and load it to to our environment</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># You may not have this package yet, so you may need to install it</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># install.packages(&#39;palmerpenguins&#39;) </span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># This reads in the data from the package and adds it to our environment</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins&quot;</span>) </span></code></pre></div>
 </div>
 </div>
 <div id="what-does-the-data-look-like" class="section level1">
@@ -160,19 +163,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Back to the drawing board…let’s start with labels! We want to add a title and make the axis labels be capitalized vs lower-case. Also someone complained about the background color and asked us to make it look “cleaner”.</p>
 <div id="cleaning-up" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Cleaning up</h3>
-<ul class="nav nav-pills" id="myTab3816" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab3567" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="addlabelsandtheme3816-tab" data-toggle="tab" href="#addlabelsandtheme3816" role="tab" aria-controls="addlabelsandtheme3816" aria-selected="true">Add labels and theme</a>
+<a class="nav-link" id="addlabelsandtheme3567-tab" data-toggle="tab" href="#addlabelsandtheme3567" role="tab" aria-controls="addlabelsandtheme3567" aria-selected="true">Add labels and theme</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint3816-tab" data-toggle="tab" href="#showhint3816" role="tab" aria-controls="showhint3816" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint3567-tab" data-toggle="tab" href="#showhint3567" role="tab" aria-controls="showhint3567" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode3816-tab" data-toggle="tab" href="#showcode3816" role="tab" aria-controls="showcode3816" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode3567-tab" data-toggle="tab" href="#showcode3567" role="tab" aria-controls="showcode3567" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="addlabelsandtheme3816" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addlabelsandtheme3816-tab">
+<div id="addlabelsandtheme3567" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addlabelsandtheme3567-tab">
 <h4>
 Add a title, x-axis and y-axis labels, and change the theme, below are some possible options for you to choose from:
 </h4>
@@ -185,7 +188,7 @@ Add a title, x-axis and y-axis labels, and change the theme, below are some poss
 </ul>
 <p><br></p>
 </div>
-<div id="showhint3816" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3816-tab">
+<div id="showhint3567" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3567-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -194,7 +197,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_xxx() #pick one of the themes above! 
 </pre>
 </div>
-<div id="showcode3816" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3816-tab">
+<div id="showcode3567" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3567-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -210,28 +213,28 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 </div>
 <p><br></p>
 <p>Okay - whew! We added a title, a nice x-axis and y-axis label, changed the theme to <code>theme_bw</code> which we think looks pretty clean so hopefully they do too.</p>
-<p>Now we just need to tackle color…hmmm, we know it’s a bar-chart which means that we need to specify ‘fill’ vs ‘color’ so we can use the function <code>scale_fill_brewer</code> to pick out our favorite <a href="https://colorbrewer2.org/">RColorBrewer palette</a> for this graph. We want a qualitative one and we also want one that is colorblind safe so let’s pick palette 3 (but if you have a different favorite you should use that one)!</p>
+<p>Now we just need to tackle color. Hmmmm…we know it’s a bar chart which means that we need to specify ‘fill’ vs ‘color’, so we can use the function <code>scale_fill_brewer</code> to pick out our favorite <a href="https://colorbrewer2.org/">RColorBrewer palette</a> for this graph. We want a qualitative one and we also want one that is colorblind friendly, so let’s pick palette <code>3</code>, but if you have a different favorite you should use that one!</p>
 <div id="color-time" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Color time</h3>
-<ul class="nav nav-pills" id="myTab9093" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab1367" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="addingfillcolors9093-tab" data-toggle="tab" href="#addingfillcolors9093" role="tab" aria-controls="addingfillcolors9093" aria-selected="true">Adding fill colors</a>
+<a class="nav-link" id="addingfillcolors1367-tab" data-toggle="tab" href="#addingfillcolors1367" role="tab" aria-controls="addingfillcolors1367" aria-selected="true">Adding fill colors</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint9093-tab" data-toggle="tab" href="#showhint9093" role="tab" aria-controls="showhint9093" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint1367-tab" data-toggle="tab" href="#showhint1367" role="tab" aria-controls="showhint1367" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode9093-tab" data-toggle="tab" href="#showcode9093" role="tab" aria-controls="showcode9093" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode1367-tab" data-toggle="tab" href="#showcode1367" role="tab" aria-controls="showcode1367" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="addingfillcolors9093" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addingfillcolors9093-tab">
+<div id="addingfillcolors1367" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addingfillcolors1367-tab">
 <h4>
 Change the fill colors for the bar-chart using RColorBrewer palettes.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint9093" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9093-tab">
+<div id="showhint1367" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint1367-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -243,7 +246,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_bw()
 </pre>
 </div>
-<div id="showcode9093" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9093-tab">
+<div id="showcode1367" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1367-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -262,25 +265,25 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <p>Annnnd of course one of the researchers had a last minute request. They didn’t like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!</p>
 <div id="changing-positions" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab8635" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4980" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side8635-tab" data-toggle="tab" href="#side-by-side8635" role="tab" aria-controls="side-by-side8635" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="side-by-side4980-tab" data-toggle="tab" href="#side-by-side4980" role="tab" aria-controls="side-by-side4980" aria-selected="true">Side-by-side</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8635-tab" data-toggle="tab" href="#showhint8635" role="tab" aria-controls="showhint8635" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4980-tab" data-toggle="tab" href="#showhint4980" role="tab" aria-controls="showhint4980" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8635-tab" data-toggle="tab" href="#showcode8635" role="tab" aria-controls="showcode8635" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4980-tab" data-toggle="tab" href="#showcode4980" role="tab" aria-controls="showcode4980" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side8635" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side8635-tab">
+<div id="side-by-side4980" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side4980-tab">
 <h4>
 Change the bar-chart from a stacked bar-chart to a side-by-side bar-chart by changing the position argument
 </h4>
 <p><br></p>
 </div>
-<div id="showhint8635" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8635-tab">
+<div id="showhint4980" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4980-tab">
 <pre class="sourceCode r">
 # Try typing "position_" and then wait a second, a menu of options should appear
 
@@ -293,7 +296,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_bw()
 </pre>
 </div>
-<div id="showcode8635" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8635-tab">
+<div id="showcode4980" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4980-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -326,8 +329,8 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <p><img src="/R-camp-penguins/page/exercise/day3/3-1-ggplot_exercises_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Looks like Gentoo and Chinstrap are pretty much tied for longest bill! Wonder if bill length is related to other measurements…Always more questions!</p>
 </div>
-<div id="what-measurements-are-related-to-each-other" class="section level1">
-<h1>What measurements are related to each other?</h1>
+<div id="which-measurements-are-related-to-each-other" class="section level1">
+<h1>Which measurements are related to each other?</h1>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">cor</span>(penguins[<span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>])</span></code></pre></div>
 <pre><code>##                   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ## bill_length_mm                 1            NA                NA          NA
@@ -385,7 +388,9 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <p>As we’ve said before…always more questions!</p>
 <p>Try to think of your own question that you use this data to answer or go back to the correlation matrix and see if there’s other relationships you’d like to explore!</p>
 <p>The researchers have one more thing they’d like to say…</p>
-<p><strong>THANK YOU!</strong></p>
+<blockquote>
+<p>“<strong>THANK YOU!</strong>”</p>
+</blockquote>
 <p><i class="fa fa-cookie-bite"></i>
 <i class="fa fa-robot"></i>
 <i class="fa fa-cookie-bite"></i></p>

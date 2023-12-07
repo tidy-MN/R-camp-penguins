@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>ggplot: the remix - Learn R</title>
-  <meta property="og:title" content="ggplot: the remix" />
-  <meta name="twitter:title" content="ggplot: the remix" />
+  <title>ggplot: The remix - Learn R</title>
+  <meta property="og:title" content="ggplot: The remix" />
+  <meta name="twitter:title" content="ggplot: The remix" />
   <meta name="description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
   <meta property="og:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
   <meta name="twitter:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
@@ -60,10 +60,10 @@
   "author": {
     "name" : "Pengu"
   },
-  "headline": "ggplot: the remix",
+  "headline": "ggplot: The remix",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1564 ,
+  "wordCount":  1556 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -82,13 +82,13 @@
 }
 </script>
 
-<meta property="og:title" content="ggplot: the remix" />
+<meta property="og:title" content="ggplot: The remix" />
 <meta property="og:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
-  <meta name="twitter:title" content="ggplot: the remix" />
+  <meta name="twitter:title" content="ggplot: The remix" />
   <meta name="twitter:description" content="Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
@@ -261,7 +261,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
               
-                <h1>ggplot: the remix</h1>
+                <h1>ggplot: The remix</h1>
               
               
                 <hr class="small">
@@ -433,7 +433,8 @@ hr {background:  cornflowerblue;}
 ## 3 Anvers Dream     Adelie Penguin (Pygoscelis adeliae)          56
 ## 4 Anvers Dream     Chinstrap penguin (Pygoscelis antarctica)    68
 ## 5 Anvers Torgersen Adelie Penguin (Pygoscelis adeliae)          52</code></pre>
-<p>That’s okay but let’s try the <code>tabyl</code> function from the <code>janitor</code> package as well, see if we like how that looks better. The benefits of the <code>tabyl</code> function are that you can use the <code>adorn_</code> functions from janitor to do things like add row and column totals really easily which make summary tables like this a breeze!</p>
+<p><br></p>
+<p>That’s okay looking, but let’s try the <code>tabyl</code> function from the <code>janitor</code> package as well. The benefits of the <code>tabyl</code> function are that you can use the <code>adorn_</code> functions from janitor to do things like add row and column totals really easily. This makes summary tables like the one below a breeze!</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">tabyl</span>(penguins_raw_clean, species, island) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="at">where =</span> <span class="st">&#39;row&#39;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">adorn_totals</span>(<span class="at">where =</span> <span class="st">&#39;col&#39;</span>)</span></code></pre></div>
@@ -446,7 +447,7 @@ hr {background:  cornflowerblue;}
 </div>
 <div id="graphing-summary-data" class="section level1">
 <h1>Graphing summary data</h1>
-<p>So below is a recreation of our previous chart using the raw data…What would we need to change in order to make this same chart only using summarized data we stored in <code>penguin_island_dist</code>?</p>
+<p>So below is a recreation of our previous chart using the raw data. What would we need to change to make this chart using the summarized data we stored in <code>penguin_island_dist</code>?</p>
 <p><img src="/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Remember that helpful tip from the help of <code>geom_bar</code>?</p>
 <blockquote>
@@ -455,25 +456,25 @@ hr {background:  cornflowerblue;}
 </blockquote>
 <div id="changing-positions" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab3803" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab9641" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side3803-tab" data-toggle="tab" href="#side-by-side3803" role="tab" aria-controls="side-by-side3803" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="side-by-side9641-tab" data-toggle="tab" href="#side-by-side9641" role="tab" aria-controls="side-by-side9641" aria-selected="true">Side-by-side</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint3803-tab" data-toggle="tab" href="#showhint3803" role="tab" aria-controls="showhint3803" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint9641-tab" data-toggle="tab" href="#showhint9641" role="tab" aria-controls="showhint9641" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode3803-tab" data-toggle="tab" href="#showcode3803" role="tab" aria-controls="showcode3803" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode9641-tab" data-toggle="tab" href="#showcode9641" role="tab" aria-controls="showcode9641" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side3803" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side3803-tab">
+<div id="side-by-side9641" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side9641-tab">
 <h4>
 Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint3803" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3803-tab">
+<div id="showhint9641" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9641-tab">
 <pre class="sourceCode r">
 
 ggplot(data = __________, 
@@ -486,7 +487,7 @@ ggplot(data = __________,
   theme_bw()
 </pre>
 </div>
-<div id="showcode3803" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3803-tab">
+<div id="showcode9641" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9641-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -516,32 +517,32 @@ ggplot(data = penguin_island_dist,
 </ol>
 <div id="changing-positions-1" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab6176" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab2892" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side6176-tab" data-toggle="tab" href="#side-by-side6176" role="tab" aria-controls="side-by-side6176" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="side-by-side2892-tab" data-toggle="tab" href="#side-by-side2892" role="tab" aria-controls="side-by-side2892" aria-selected="true">Side-by-side</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint6176-tab" data-toggle="tab" href="#showhint6176" role="tab" aria-controls="showhint6176" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint2892-tab" data-toggle="tab" href="#showhint2892" role="tab" aria-controls="showhint2892" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode6176-tab" data-toggle="tab" href="#showcode6176" role="tab" aria-controls="showcode6176" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode2892-tab" data-toggle="tab" href="#showcode2892" role="tab" aria-controls="showcode2892" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side6176" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side6176-tab">
+<div id="side-by-side2892" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side2892-tab">
 <h4>
 Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint6176" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint6176-tab">
+<div id="showhint2892" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2892-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
        aes(x = island, y = count, fill = species)) +
-  geom_col(position = position_dodge(preserve = "single")) + 
+  geom_col(position = position_dodge2(preserve = "single")) + 
   geom_xxxx(aes(label = ______, y = _____ + 5), 
-            position = position_dodge(width = ______)) +
+            position = position_dodge2(width = ______)) +
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -549,14 +550,14 @@ ggplot(data = penguin_island_dist,
   theme_bw()
 </pre>
 </div>
-<div id="showcode6176" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode6176-tab">
+<div id="showcode2892" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2892-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
        aes(x = island, y = count, fill = species)) +
-  geom_col(position = position_dodge(preserve = "single")) + 
+  geom_col(position = position_dodge2(preserve = "single")) + 
   geom_text(aes(label = count, y = count + 5), 
-            position = position_dodge(width = 0.9)) +
+            position = position_dodge2(width = 0.9)) +
   scale_fill_brewer(type = "qual", palette = 3) +
   labs(title = "Distribution of penguin species by island",
        x = "Island",
@@ -568,10 +569,10 @@ ggplot(data = penguin_island_dist,
 </div>
 </div>
 <p><br></p>
-<p>We had to do three things when using <code>geom_text</code> (or <code>geom_label</code>) - try both and see which one you like the best!</p>
+<p>We had to do three things when using <code>geom_text</code> or <code>geom_label</code> - try both and see which one you like the best!</p>
 <ol style="list-style-type: decimal">
-<li>Make sure the positions matched, so if your <code>geom_</code> is using <code>dodge</code>, your <code>geom_text</code> should be using <code>dodge</code></li>
-<li>Increase the <code>y</code> value by some amount so that the label will sit higher than the top of the labeled point</li>
+<li>Make sure the positions matched, so if your <code>geom_</code> is using <code>dodge2</code>, your <code>geom_text</code> should be using <code>dodge2</code>.</li>
+<li>Increase the <code>y</code> value by some amount so that the label will sit higher than the top of the labeled bar.</li>
 <li>For bar/column charts, decrease the width so they sit nicer on top.</li>
 </ol>
 <p><br></p>
@@ -581,16 +582,17 @@ ggplot(data = penguin_island_dist,
 <p>Now that you have some experience under your belt, it’s important to shake things up and have some <em>fun</em>. Depending on how much time you have left, pick 1 or several of the challenges below and see what you can make!</p>
 <p>The links below will take you to the specific section of the R Graphics Cookbook that will answer the question of how you do the thing.</p>
 <ul>
-<li><a href="http://www.cookbook-r.com/Graphs/Fonts/">change the font</a></li>
-<li><a href="http://www.cookbook-r.com/Graphs/Output_to_a_file/">save a graphic as a .png (and don’t cheat using the export feature in RStudio!)</a></li>
-<li><a href="http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/">put the islands in a different order on the x-axis!</a></li>
-<li><a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">make the legend labels easier to read (they’re a little long…)</a></li>
-<li><a href="http://matthewbjane.com/ThemePark/">use any theme from the package ThemePark</a> (you’ll have install two packages before you can use, <code>remotes</code> and then of course, <code>ThemePark</code>)
+<li><a href="http://www.cookbook-r.com/Graphs/Fonts/">Change the font</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/Output_to_a_file/">Save a graphic as a .png (and don’t cheat using the export feature in RStudio!)</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/">Put the islands in a different order on the x-axis!</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">Make the legend labels easier to read (they’re a little long…)</a></li>
+<li><a href="http://matthewbjane.com/ThemePark/">Use any theme from the package ThemePark</a>
 <ul>
+<li>You’ll have install two packages before you can use: <code>remotes</code> and then <code>ThemePark</code></li>
 <li><code>install.packages("remotes")</code></li>
 <li><code>remotes::install_github("MatthewBJane/ThemePark")</code></li>
 </ul></li>
-<li><a href="https://github.com/tidy-MN/mncolors">try adding Minnesota State brand colors using the home-grown package <code>mncolors</code></a>
+<li><a href="https://github.com/tidy-MN/mncolors">Try to add MN State brand colors using the home-grown package <code>mncolors</code></a>
 <ul>
 <li><code>install.packages("remotes")</code></li>
 <li><code>remotes::install_github("tidy-MN/mncolors")</code></li>
