@@ -20,6 +20,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 library(rmarkdown)
 library(knitr)
 library(magrittr)
+library(tigris)
+
+options(tigris_use_cache = TRUE)
 
 xaringanExtra::use_clipboard()
 
@@ -91,7 +94,7 @@ For our first analysis let's sum the area in each county that has damage to tree
 
 <br>
 
-```{r counties, progress=F, cache=T}
+```{r counties, progress=F, cache=F, results = "hide"}
 library(tigris)
 
 counties <- counties(state = "MN", cb = TRUE)
@@ -233,8 +236,9 @@ counties_forest_damage <- counties_forest_damage %>%
     mutate(total_damaged_area = replace_na(total_damaged_area, 0))
 ```
 
+<br>
 
-Oh, right. Our area column has units attached and is not a simple number. We could convert the column to `as.numeric` or we can replace the NA values with a value that has units, such as `0 m^2`. Let's do that.
+> Oh, right! Our area column has units attached and is not a simple number. We could convert the column to `as.numeric` or we can replace the NA values with a value that has units, such as `0 m^2`. Let's do that.
 
 ```{r map counties units, }
 counties_forest_damage <- counties_forest_damage %>%

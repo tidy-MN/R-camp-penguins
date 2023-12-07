@@ -63,7 +63,7 @@
   "headline": "Maps - Exercise 2",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1665 ,
+  "wordCount":  1362 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -388,7 +388,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Read the shapefile</span></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>forest_damage <span class="ot">&lt;-</span> <span class="fu">st_read</span>(temp2)</span></code></pre></div>
 <pre><code>## Reading layer `forest_health_survey_2022&#39; from data source 
-##   `/tmp/Rtmp2jd29H/file1f3b3929c038&#39; using driver `ESRI Shapefile&#39;
+##   `/tmp/RtmpnAsUz2/file2022db7b2b1&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 2825 features and 10 fields
 ## Geometry type: POLYGON
 ## Dimension:     XY
@@ -411,175 +411,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">counties</span>(<span class="at">state =</span> <span class="st">&quot;MN&quot;</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## 
-  |                                                                            
-  |                                                                      |   0%
-  |                                                                            
-  |                                                                      |   1%
-  |                                                                            
-  |=                                                                     |   1%
-  |                                                                            
-  |=                                                                     |   2%
-  |                                                                            
-  |==                                                                    |   2%
-  |                                                                            
-  |==                                                                    |   3%
-  |                                                                            
-  |===                                                                   |   4%
-  |                                                                            
-  |===                                                                   |   5%
-  |                                                                            
-  |====                                                                  |   6%
-  |                                                                            
-  |=====                                                                 |   7%
-  |                                                                            
-  |======                                                                |   8%
-  |                                                                            
-  |======                                                                |   9%
-  |                                                                            
-  |=======                                                               |   9%
-  |                                                                            
-  |=======                                                               |  10%
-  |                                                                            
-  |=======                                                               |  11%
-  |                                                                            
-  |========                                                              |  11%
-  |                                                                            
-  |========                                                              |  12%
-  |                                                                            
-  |=========                                                             |  12%
-  |                                                                            
-  |=========                                                             |  13%
-  |                                                                            
-  |==========                                                            |  14%
-  |                                                                            
-  |==========                                                            |  15%
-  |                                                                            
-  |===========                                                           |  15%
-  |                                                                            
-  |===========                                                           |  16%
-  |                                                                            
-  |============                                                          |  17%
-  |                                                                            
-  |============                                                          |  18%
-  |                                                                            
-  |=============                                                         |  19%
-  |                                                                            
-  |==============                                                        |  19%
-  |                                                                            
-  |==============                                                        |  20%
-  |                                                                            
-  |===============                                                       |  21%
-  |                                                                            
-  |===============                                                       |  22%
-  |                                                                            
-  |=================                                                     |  24%
-  |                                                                            
-  |=================                                                     |  25%
-  |                                                                            
-  |==================                                                    |  25%
-  |                                                                            
-  |==================                                                    |  26%
-  |                                                                            
-  |===================                                                   |  26%
-  |                                                                            
-  |===================                                                   |  27%
-  |                                                                            
-  |===================                                                   |  28%
-  |                                                                            
-  |====================                                                  |  28%
-  |                                                                            
-  |====================                                                  |  29%
-  |                                                                            
-  |=====================                                                 |  29%
-  |                                                                            
-  |=====================                                                 |  30%
-  |                                                                            
-  |======================                                                |  31%
-  |                                                                            
-  |=======================                                               |  33%
-  |                                                                            
-  |========================                                              |  35%
-  |                                                                            
-  |=========================                                             |  35%
-  |                                                                            
-  |==========================                                            |  38%
-  |                                                                            
-  |============================                                          |  40%
-  |                                                                            
-  |=============================                                         |  42%
-  |                                                                            
-  |===============================                                       |  44%
-  |                                                                            
-  |================================                                      |  46%
-  |                                                                            
-  |==================================                                    |  49%
-  |                                                                            
-  |====================================                                  |  51%
-  |                                                                            
-  |=====================================                                 |  53%
-  |                                                                            
-  |=======================================                               |  55%
-  |                                                                            
-  |========================================                              |  57%
-  |                                                                            
-  |==========================================                            |  60%
-  |                                                                            
-  |===========================================                           |  62%
-  |                                                                            
-  |=============================================                         |  64%
-  |                                                                            
-  |==============================================                        |  66%
-  |                                                                            
-  |================================================                      |  68%
-  |                                                                            
-  |=================================================                     |  69%
-  |                                                                            
-  |=================================================                     |  71%
-  |                                                                            
-  |===================================================                   |  73%
-  |                                                                            
-  |=====================================================                 |  75%
-  |                                                                            
-  |======================================================                |  77%
-  |                                                                            
-  |========================================================              |  80%
-  |                                                                            
-  |=========================================================             |  82%
-  |                                                                            
-  |===========================================================           |  84%
-  |                                                                            
-  |============================================================          |  86%
-  |                                                                            
-  |==============================================================        |  88%
-  |                                                                            
-  |===============================================================       |  91%
-  |                                                                            
-  |=================================================================     |  93%
-  |                                                                            
-  |==================================================================    |  95%
-  |                                                                            
-  |====================================================================  |  97%
-  |                                                                            
-  |======================================================================|  99%
-  |                                                                            
-  |======================================================================| 100%</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">plot</span>(counties[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">plot</span>(counties[<span class="dv">1</span>])</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/exercise/day4/02-forest-health-map_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p><br></p>
 <p>And of course we want to check to see if our CRS match, because we want to join these two geospatial datasets.</p>
 <p><br></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">st_crs</span>(counties)</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="fu">st_crs</span>(forest_damage)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">st_crs</span>(counties)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">st_crs</span>(forest_damage)</span></code></pre></div>
 <p><br></p>
 <p>The forest damage dataset has a coordinate reference system in UTMs (Universal Transverse Mercator), and remember that those have units of meters, which are very nice for working with area measurements. So, let’s convert the county dataset into UTMs as well. Zone 15 is Minnesota’s primary UTM zone, and the ID for UTM Zone 15 is <code>26915</code>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(counties, <span class="at">crs =</span> <span class="dv">26915</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(counties, <span class="at">crs =</span> <span class="dv">26915</span>)</span></code></pre></div>
 <p><br></p>
 <p>Now, we can run a spatial intersect on the two geospatial datasets. The <a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html">st_intersection</a> function returns the polygons where the two geometries intersect. (<a href="https://stackoverflow.com/questions/62442150/why-use-st-intersection-rather-than-st-intersects">Here’s a short description with images</a>.) All of the polygons in the <code>forest_damage</code> dataset will be split into their respective Minnesota county. So, some of the forest damage polygons may be split across several counties. But no worries, R has us covered!</p>
 <p><br></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(counties, forest_damage)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(counties, forest_damage)</span></code></pre></div>
 <pre><code>## Warning: attribute variables are assumed to be spatially constant throughout
 ## all geometries</code></pre>
 <p><br></p>
@@ -590,35 +437,35 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 </div>
 <p><br></p>
 <p>Next, we can calculate the area for each of the new split up <code>forest_damage</code> polygons.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
 <p><br></p>
 <p>Since we no longer need each individual polygon geometry, we can set the geometry of the dataset to NULL. This can help save some memory for R when working with large datasets.</p>
 <p><br></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
 <p><br></p>
 <p>Now, we want to sum the damaged tree area within each county. This will be a throwback to our group_by and summarize work. We want our new summarized dataframe to have the following information: the total area in the polygon and the name of the county.</p>
 <div id="sum-up-the-damaged-areas" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Sum up the damaged areas</h3>
-<ul class="nav nav-pills" id="myTab8153" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab2910" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="group_byandsummarize8153-tab" data-toggle="tab" href="#group_byandsummarize8153" role="tab" aria-controls="group_byandsummarize8153" aria-selected="true">group_by and summarize</a>
+<a class="nav-link" id="group_byandsummarize2910-tab" data-toggle="tab" href="#group_byandsummarize2910" role="tab" aria-controls="group_byandsummarize2910" aria-selected="true">group_by and summarize</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8153-tab" data-toggle="tab" href="#showhint8153" role="tab" aria-controls="showhint8153" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint2910-tab" data-toggle="tab" href="#showhint2910" role="tab" aria-controls="showhint2910" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8153-tab" data-toggle="tab" href="#showcode8153" role="tab" aria-controls="showcode8153" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode2910-tab" data-toggle="tab" href="#showcode2910" role="tab" aria-controls="showcode2910" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="group_byandsummarize8153" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize8153-tab">
+<div id="group_byandsummarize2910" class="tab-pane fade active in" role="tabpanel" aria-labelledby="group_byandsummarize2910-tab">
 <h4>
 We are going to sum the damaged areas within each county, returning the following information: the total area in the polygon and the name of the County. Call the summarized data <code>forest_damage_total</code>.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint8153" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8153-tab">
+<div id="showhint2910" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2910-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -627,7 +474,7 @@ forest_damage_total <- forest_damage_counties %>%
   
 </pre>
 </div>
-<div id="showcode8153" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8153-tab">
+<div id="showcode2910" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2910-tab">
 <pre class="sourceCode r">
 
 forest_damage_total <- forest_damage_counties %>%
@@ -641,20 +488,23 @@ forest_damage_total <- forest_damage_counties %>%
 <p><br></p>
 <p>Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use <code>left_join</code> below to add the forest damage totals to the county polygons. The rows are joined based on where their county names match in their <code>NAME</code> columns. We’ll cover joins in great detail next session, so consider this a preview teaser.</p>
 <p><br></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <p>Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset).</p>
 <p>Sometimes a NULL means there is no information, which means that you don’t know what the value is and you do not have adequate information for replacements.</p>
 <p><br></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="dv">0</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="dv">0</span>))</span></code></pre></div>
 <pre><code>## Error in `stopifnot()`:
 ## ℹ In argument: `total_damaged_area = replace_na(total_damaged_area, 0)`.
 ## Caused by error in `vec_assign()`:
 ## ! Can&#39;t convert `replace` &lt;double&gt; to match type of `data` &lt;units&gt;.</code></pre>
-<p>Oh, right. Our area column has units attached and is not a simple number. We could convert the column to <code>as.numeric</code> or we can replace the NA values with a value that has units, such as <code>0 m^2</code>. Let’s do that.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
+<p><br></p>
+<blockquote>
+<p>Oh, right! Our area column has units attached and is not a simple number. We could convert the column to <code>as.numeric</code> or we can replace the NA values with a value that has units, such as <code>0 m^2</code>. Let’s do that.</p>
+</blockquote>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
 <pre><code>## Error in `stopifnot()`:
 ## ℹ In argument: `total_damaged_area = replace_na(total_damaged_area,
 ##   as_units(0, &quot;m^2&quot;))`.
@@ -664,25 +514,25 @@ forest_damage_total <- forest_damage_counties %>%
 <p>Finally we get to make a map. Remember, data prep is more than half the battle!</p>
 <div id="map-it-out" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Map it out</h3>
-<ul class="nav nav-pills" id="myTab7821" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab9920" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="mapusing`ggplot`7821-tab" data-toggle="tab" href="#mapusing`ggplot`7821" role="tab" aria-controls="mapusing`ggplot`7821" aria-selected="true">Map using <code>ggplot</code></a>
+<a class="nav-link" id="mapusing`ggplot`9920-tab" data-toggle="tab" href="#mapusing`ggplot`9920" role="tab" aria-controls="mapusing`ggplot`9920" aria-selected="true">Map using <code>ggplot</code></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint7821-tab" data-toggle="tab" href="#showhint7821" role="tab" aria-controls="showhint7821" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint9920-tab" data-toggle="tab" href="#showhint9920" role="tab" aria-controls="showhint9920" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode7821-tab" data-toggle="tab" href="#showcode7821" role="tab" aria-controls="showcode7821" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode9920-tab" data-toggle="tab" href="#showcode9920" role="tab" aria-controls="showcode9920" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="mapusing`ggplot`7821" class="tab-pane fade active in" role="tabpanel" aria-labelledby="mapusing`ggplot`7821-tab">
+<div id="mapusing`ggplot`9920" class="tab-pane fade active in" role="tabpanel" aria-labelledby="mapusing`ggplot`9920-tab">
 <h4>
 Make a map using <code>ggplot</code> and <code>geom_sf</code>. Remember to add good plot elements like titles and colors. Fun colors are very important.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint7821" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7821-tab">
+<div id="showhint9920" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9920-tab">
 <p>What should you add to make this a more complete plot?
 <br></p>
 <pre class="sourceCode r">
@@ -692,7 +542,7 @@ ggplot(data = ________, aes(fill = total_damaged_area)) +
   
 </pre>
 </div>
-<div id="showcode7821" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7821-tab">
+<div id="showcode9920" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9920-tab">
 <pre class="sourceCode r">
 
 ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
