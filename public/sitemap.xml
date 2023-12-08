@@ -2,11 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/</loc>
-    <lastmod>2023-11-30T00:00:00+00:00</lastmod>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/tags/agenda.html</loc>
+    <lastmod>2023-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page/agenda.html</loc>
+    <lastmod>2023-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/categories.html</loc>
-    <lastmod>2023-11-09T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/page.html</loc>
+    <lastmod>2023-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/tags.html</loc>
+    <lastmod>2023-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/categories/training.html</loc>
+    <lastmod>2023-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tidy-mn.github.io/R-camp-penguins/</loc>
+    <lastmod>2023-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/post/day-1.html</loc>
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
@@ -14,19 +29,10 @@
     <loc>https://tidy-mn.github.io/R-camp-penguins/post.html</loc>
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/tags.html</loc>
-    <lastmod>2023-11-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/tags/training.html</loc>
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/categories/training.html</loc>
-    <lastmod>2023-11-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/timer10_chewie_dance.html</loc>
-    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tidy-mn.github.io/R-camp-penguins/page.html</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tidy-mn.github.io/R-camp-penguins/page/teach.html</loc>

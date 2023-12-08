@@ -114,8 +114,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
 - [AGENDA](page/exercise/agenda.html)
-- [Describe penguin populations](page/exercise/describe_penguin_populations.html)
-- [Guess Who! *Hint: I'm a penguin*](page/exercise/find_the_penguin.html)
+- [Exercise 1 - Describe penguin populations](page/exercise/describe_penguin_populations.html)
+- [Exercise 2 - Guess Who! *Hint: I'm a penguin*](page/exercise/find_the_penguin.html)
 
 </div>
 
@@ -164,8 +164,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- [Homeward bound](page/exercise/day4/01-homeward-bound.html)
-- [Healthy forests](page/exercise/day4/02-forest-health-map.html)
+- [Exercise 1 - Homeward bound](page/exercise/day4/01-homeward-bound.html)
+- [Exercise 2 - Healthy forests](page/exercise/day4/02-forest-health-map.html)
 
 </div> 
 
