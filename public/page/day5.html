@@ -63,7 +63,7 @@
   "headline": "Day 5",
   "description" : "1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.",
   "inLanguage" : "en",
-  "wordCount":  1579 ,
+  "wordCount":  1555 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -497,8 +497,8 @@ This is a great reference when you need to manipulate dates or timezones in your
 </div>
 <div id="clean-the-dates" class="section level3 unnumbered note">
 <h3><i class="fa fa-broom" aria-hidden="true"></i> Clean the dates</h3>
-<div id="real-world-examples" class="section level4 unnumbered">
-<h4>Real world examples</h4>
+<div id="real-world-dates" class="section level4 unnumbered">
+<h4>Real world dates</h4>
 <p>Does your date column look like one of these?</p>
 <p>Here’s the <code>lubridate</code> function to convert the column to a date.</p>
 <table>
@@ -673,7 +673,7 @@ That means….<strong>May the 4th</strong> will be on Saturday. Perfect! That’
 <h2>Mutate to the rescue</h2>
 <p>We really don’t want to check every date one by one do we?</p>
 <p>Let’s add a new <code>week_day</code> column to our survey table that checks ALL the dates ALL at once. To add a new column we call on <code>mutate()</code>.</p>
-<p>Complete the code below to add a <code>week_day</code> column to our <em>survey_dates</em> table.</p>
+<p>Complete the code below to add a <code>week_day</code> column to our <em>survey</em> table.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>                 <span class="at">week_day =</span> ________ )</span></code></pre></div>
 <details>
@@ -681,6 +681,10 @@ That means….<strong>May the 4th</strong> will be on Saturday. Perfect! That’
 Show answer
 </summary>
 <p><br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                 <span class="at">week_day =</span> <span class="fu">wday</span>(count_date, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
 </details>
 <p><br></p>
 </div>
@@ -693,16 +697,16 @@ Show answer
 <li><code>Tuesday</code> for Biscoe</li>
 </ul>
 <p><br></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey,  ______ <span class="sc">==</span>  ________ )</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, ______ <span class="sc">==</span>  ________ )</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey,  ______ <span class="sc">==</span>  ________ )</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, ______ <span class="sc">==</span>  ________ )</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Saturday&quot;</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Tuesday&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Saturday&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Tuesday&quot;</span>)</span></code></pre></div>
 </details>
 <p><br></p>
 <p><strong>How many survey dates will occur at each island?</strong></p>
@@ -713,9 +717,7 @@ Show code
 <summary class="btn_code_blue">
 Show answer
 </summary>
-<blockquote>
-<p><strong>26 survey days</strong></p>
-</blockquote>
+<p><i class="fa fa-check" aria-hidden="true" style="color: green;"></i> <strong>26 survey days</strong></p>
 </details>
 <p><br></p>
 </div>
@@ -813,20 +815,21 @@ Show answer
 <p><br></p>
 <p>Use <code>mutate()</code> to update the <strong>week_day</strong> column for the Dream island schedule.</p>
 <p><strong>Here’s a start</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Set date format to match 08-18-2024</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, _______  ))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Set date format to match 08-18-2024</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, _______  ))</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Set date format to 08-18-2024</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Set date format to 08-18-2024</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="howd-we-do" class="section level3 unnumbered">
 <h3>How’d we do?</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Dream island schedule</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">head</span>(dream_dates, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Dream island schedule</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">head</span>(dream_dates, <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -858,31 +861,32 @@ Show code
 <div id="stamp-your-dates" class="section level3 unnumbered">
 <h3><i class="fa-solid fa-stamp"></i> [<span class="teal"><strong>Stamp</strong></span>] your dates</h3>
 <p>Now for <code>stamp_date()</code>. We’ll first create a stamp of our desired date format for Biscoe island, and then we will apply it to all the dates in our Biscoe schedule.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Create date stamp with format of Aug 18, 2024</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>biscoe_stamp <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Aug 18, 2024&quot;</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Test the stamp</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>test_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;1985-10-26&quot;</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="fu">biscoe_stamp</span>(test_date)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># Create date stamp with format of Aug 18, 2024</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>biscoe_stamp <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Aug 18, 2024&quot;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># Test the stamp</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>test_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;1985-10-26&quot;</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="fu">biscoe_stamp</span>(test_date)</span></code></pre></div>
 <pre><code>## [1] &quot;Oct 26, 1985&quot;</code></pre>
 <p><br></p>
 <p>Good to go! Use <code>mutate()</code> and the new stamp to update the <strong>week_day</strong> column for the Biscoe island schedules.</p>
 <p><strong>Here’s a start</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> ___________ )</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> ___________ )</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> <span class="fu">biscoe_stamp</span>(count_date))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> <span class="fu">biscoe_stamp</span>(count_date))</span></code></pre></div>
 </details>
+<p><br></p>
 </div>
 <div id="howd-we-do-1" class="section level3 unnumbered">
 <h3>How’d we do?</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Biscoe island schedule</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">head</span>(biscoe_dates, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Biscoe island schedule</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">head</span>(biscoe_dates, <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -918,7 +922,7 @@ Show code
 <h2>3. Results</h2>
 <div id="load-the-monster-survey-results." class="section level3 unnumbered">
 <h3>Load the monster survey results.</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/2024_monster_survey.csv&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/2024_monster_survey.csv&quot;</span>) </span></code></pre></div>
 <p><br></p>
 <p><em>Explore a bit.</em></p>
 <blockquote>
@@ -934,7 +938,7 @@ location. We do know the date however.</p>
 <p>On <code>2024-06-25</code> there were a whopping 7 monsters counted - but we just don’t know where.</p>
 <p><br></p>
 <p><strong>Can you determine the island based on the date of the monster count?</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>mystery_island_date <span class="ot">&lt;-</span> <span class="st">&quot;2024-06-25&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>mystery_island_date <span class="ot">&lt;-</span> <span class="st">&quot;2024-06-25&quot;</span></span></code></pre></div>
 <blockquote>
 <p><em>Hint: What weekday is this?</em></p>
 <p>Try the <code>wday(date)</code> function.</p>
@@ -943,7 +947,7 @@ location. We do know the date however.</p>
 <p><strong>Good sleuthing baking bot.</strong></p>
 <p>Right now we’re in a bit of a hurry, so let’s remove the row using filter.</p>
 <p>Use <code>filter()</code> to keep only the rows in the survey data where <code>island</code> is <strong>NOT</strong> <em>NA</em> (missing).</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span><span class="fu">is.na</span>(island))  </span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span><span class="fu">is.na</span>(island))  </span></code></pre></div>
 <p><br></p>
 </div>
 </div>
@@ -953,17 +957,17 @@ location. We do know the date however.</p>
 <h3 id="what-is-the-best-month-to-see-monsters" class="unnumbered">What is the best month to see monsters?</h3>
 </blockquote>
 <p><strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">mutate</span>(monsters, <span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">mutate</span>(monsters, <span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
 <p><br></p>
 <p><strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the monster sightings by month.</strong></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> island)) <span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> monster_count, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> monster_count, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </details>
 <p><br></p>
@@ -975,37 +979,28 @@ Show code
 <div id="time-series-all-the-data" class="section level2 unnumbered">
 <h2>5. Time series: All the data</h2>
 <p>Plot all the data with <code>geom_point()</code>. Put <code>count_date</code> on the x-axis, and the <code>monster_count</code> on the y-axis. Set the color to match the <code>island</code> column.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) </span></code></pre></div>
 <p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 </details>
 <p><br></p>
 <p>Oof! That’s a busy plot. Try adding <code>+ facet_wrap("island")</code> to the end.
-What happens?</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;island&quot;</span>)   <span class="co">#&lt;&lt;</span></span></code></pre></div>
-<p><br></p>
-<p>Try adding <code>+ geom_line()</code>.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> island) <span class="sc">+</span></span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()                <span class="co">#&lt;&lt;</span></span></code></pre></div>
+What happens? Then try adding <code>+ geom_line()</code>.</p>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> island) <span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;island&quot;</span>) <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </details>
 <p><br></p>
 </div>
