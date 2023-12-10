@@ -1,5 +1,5 @@
 ---
-title: "Day 3 - AM"
+title: "Day 5"
 output: 
   blogdown::html_page: 
     toc: true
@@ -14,181 +14,598 @@ output:
 
 
 <style>
-h1 .header-section-number {background: #c75a16;}
-hr {background: #c75a16;}
+h1 .header-section-number {background: #491aab;}
+hr {background: #491aab;}
 </style>
 
 
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
-knitr::opts_chunk$set(fig.width = 10, fig.height = 5.2) 
-htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE)
+
 xaringanExtra::use_clipboard()
-```
-
-
-# Day 1 review
-<hr>
-
-
-## Get to know your __DATA__ {-}
-
-<div class="tip">
-
-| Function | Information             |  
-|:------|:---------------------------|  
-| `names(scrap)`  | column names            |  
-| `nrow(...)`     | number of rows          |  
-| `ncol(...)`     | number of columns       | 
-| `summary(...)`  | summary of all column values (ex. _max_, _mean_, _median_)  | 
-| `glimpse(...)`  | column names + a glimpse of first values (requires _dplyr_ package)   |  
-
-
-</div>
-
-## Filtering {-}
-
-<div class="pinkcode">
-
-> <h3 style="margin-top: 8px; margin-bottom: -4px;"> Menu of comparisons </h3>
->
-> | Symbol | Comparison               |
-> |:-------|:-------------------------|
-> | `>`    | greater than             |
-> | `>=`   | greater than or equal to |
-> | `<`    | less than                |
-> | `<=`   | less than or equal to    |
-> | `==`   | equal to                 |
-> | `!=`   | NOT equal to             |
-> | `%in%` | value is in list: `X %in% c(1,3,7)` |
-> | `is.na(...)`  | is the value missing? |
-> | `str_detect(col_name, "word")`  | "word" appears in text? |
->
-
-</div>
-
-```{r tools, child='../../static/modules/dplyr/dplyr_toolbox/general.Rmd'}
-```
-
-
-## `dplyr` with Porgs {-}
-
-The _poggle_ of porgs are back to help us review `dplyr` functions. 
-
-```{r, eval = F}
-library(tidyverse)
-
-porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 <br>
 
-```{r porg-tabs, results='asis', echo=F}
-cat(readLines("porg_tabs.txt"))
-```
+
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> **lubridate:** Date and time travel
 
 
-# Day 2 review
-<hr>
+## Monsters <span class="teal">**EVERYWHERE!** </span> {-}
 
-- Join tables with `left_join()`
-- `summarize()` functions
-- Group by category with `group_by()`
-- `ifelse()`: if THIS IS TRUE do a thing, otherwise do a different thing
-- Plots and charts with `ggplot`
+<div style="overflow: hidden; margin-top: 6px; width: 100%; margin-left: 0; height: 302px;">
+    
+<img src="../../slides/images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -133px; width: 75%;">
 
+</div>
 
-```{r, eval = F}
-library(tidyverse)
+It seemed like a good idea to bring those helpful monsters along, and they're so so cute. People hate to say it, but they are starting to become a real nuisance. 
 
-porgs <- read_csv("https://mn-r.netlify.com/data/porg_data.csv")
-
-porg_names <- read_csv("https://mn-r.netlify.com/data/porg_names.csv")
-```
+To get a grasp on the population explosion of monsters our research vessel is launching a full-scale monster survey. And they need our **help**.
 
 
-![](../images/porgs/leftjoin_porgs.png){style="width: 98%; margin-top: 12px;"}
+## <i class="fa fa-calendar" aria-hidden="true"></i> Dates with `lubridate` {-}
+
+
+### The `lubridate` package. {-}
+
+![](../images/lubridate.png){style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;"}
 
 <br>
 
-### __The joined table__ {-}
+It's about time! Lubridate makes working with dates much easier.
 
-```{r, eval = F}
-named_porgs <- left_join(porgs, porg_names, by = "id")
-```
+We can find how much time has elapsed, add or subtract days, and find season and day of the week averages. The package is included in the `tidyverse` bundle of packages, so it's already installed!
+
+<br>
+
+<div style="clear: both;"></div>
+
+**View the date cheatsheet [HERE](https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf)**. 
+
+It's a great reference when you need to manipulate dates or timezones in your data.
+
+
+## Menu of date functions {-}
+
+
+#### Convert text to a `DATE` {-}
+
+| Function to use   |  Order of date elements                                 |
+|----|:-----------------------------------------------------------------|
+|`mdy()  `    | Month-Day-Year :: `05-18-2019` or `05/18/2019`                 |
+|`dmy()  `    | Day-Month-Year (Euro dates) :: `18-05-2019` or `18/05/2019`    |
+|`ymd()  `    | Year-Month-Day (science dates) :: `2019-05-18` or `2019/05/18` |
+|`ymd_hm() `  | Year-Month-Day Hour:Minutes ::  `2019-05-18 8:35 AM`          |
+|`ymd_hms() ` | Year-Month-Day Hour:Minutes:Seconds ::  `2019-05-18 8:35:22 AM`    |
+
+<br>
+
+
+### Get specific date parts (eg. the year, month, day... ) {-}
+
+| Function to use   |  Date element                                            |
+|----|:-----------------------------------------------------------------|
+|`year()  `  | Year          |
+|`month()`   | Month as _1,2,3_; For _Jan, Feb, Mar_ use `label=TRUE`  |
+|`week()`    | Week of the year  |
+|`day()`     | Day of the month  |
+|`wday()`    | Day of the week as _1,2,3_; For _Sun, Mon, Tue_ use `label=TRUE` |
+| _- Time -_   |            |
+|`hour() `   |  Hour of the day _(24hr)_ |
+|`minute() ` |  Minutes   |
+|`second() ` |  Seconds   |
+|`tz()  `    |  Time zone |
+
+<br>
+
+<div class="note">
+### <i class="fa fa-broom" aria-hidden="true"></i> Clean the dates {-}
+
+#### Real world examples {-}
+
+Does your date column look like one of these? 
+
+Here's the `lubridate` function to convert the column to a date.
+
+| Format |  Function to use         |   
+|--------|:-------------------------|  
+| "05/18/2019" | `mdy(date_column)  ` |  
+| "May 18, 2019" | `mdy(date_column)  `       |
+| "05/18/2019 8:00 CDT" | `mdy_hm(date_column, tz = "US/Central")  `|
+| "05/18/2019 11:05:32 GMT" | `mdy_hms(date_column, tz = "GMT")  `|
+
+<br>
+
+__European dates__
+
+| Format |  Function to use         |   
+|--------|:-------------------------| 
+| "30.05.2019" | `dmy(date_column) `  |
+| "30-05-2019" | `dmy(date_column) `  |
+| "30/05/2019" | `dmy(date_column) `  |
+
+<br>
+
+__Simple number dates__
+
+| Format |  Function to use         |   
+|--------|:-------------------------| 
+| "20190518" | `ymd(sample_date) `  |
+| "201905180630" | `ymd_hm(sample_date, tz = "US/Central") `  |
+
+</div>
+
+
+<br>
+
+### Survey objective {-}
 
 <div class="well">
-![](../images/porgs/named_porgs.png){style="width: 92%;"}
+
+- Organize the monster survey schedule.
+- Starting May 2024, they would like to schedule a monster count once a week until October.
+- They have enough volunteers to run the survey on two islands
+    - `Dream` and `Biscoe`
+    
 </div>
 
 <br>
 
+Let's generate the full list of dates during this time span with the sequence function: ` seq()`
+
+#### Run the code below to create a list of dates for the survey. {-}
+```{r}
+library(tidyverse)
+
+start_date <- ymd("2024-05-01")
+
+end_date   <- ymd("2024-10-31")
+
+# Sequence from start to end, counting by a 1 day interval
+survey_dates <- seq(from = start_date, 
+                    to = end_date, 
+                    by = "day")
+```
+
+<br>
+
+### How many days will the survey run? {-}
+
+<details>
+<summary class = "btn_code">Show answer</summary>
+  
+> *184 days*
+
+</details>
+
+<br>
+
+### Let's put the dates in a dataframe {-}
+
+> You can create a dataframe with the functions `data.frame()` or `tibble()`.
 
 
-## Welcome to Endor! {-}
-<hr class="hrlvl2">
+### Here's a reminder {-}
+```{r}
+survey <- data.frame(count_date = survey_dates)
 
-![](https://mn-r.netlify.com/images/planet_endor.jpg){style="width: 75%; margin-top: -4px; margin-left: 11%;"}
+# or
+
+survey <- tibble(count_date = survey_dates)
+
+head(survey)
+```
+
+<br>
 
 
-```{r sf, child='../../static/modules/maps/leaflet.Rmd'}
+## 1. Scheduling weekdays {-}
+
+<img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right />
+
+Scientists on our boat are busy people. They only have one day per week when they can volunteer. 
+
+Here is the weekday when volunteers are available for each island:
+
+- Dream: ` Saturdays`
+- Biscoe: ` Tuesdays`
+
+<br>
+
+
+> ### When is the first Saturday in May of 2024? {-}
+
+<br>
+
+For that, we can use the `wday()` (the "weekday") function.
+
+> Try changing some of the TRUE/FALSE values to see what the arguments are doing.
+
+```{r, eval=T}
+new_date <- ymd('2024-05-01')
+
+# wday tells you the day of week (Sun, Mon, etc..) for a specific date
+wday(new_date, label = TRUE, abbr = FALSE)
+```
+
+<br>
+
+So the `1st` of May will be a Wednesday. 
+That means....**May the 4th** will be on Saturday. Perfect! That's my favorite day.
+
+
+## Mutate to the rescue {-}
+
+We really don't want to check every date one by one do we? 
+
+Let's add a new `week_day` column to our survey table that checks ALL the dates ALL at once. To add a new column we call on `mutate()`.
+
+
+Complete the code below to add a `week_day` column to our *survey_dates* table.
+
+```{r, eval=F}
+survey <- mutate(survey, 
+                 week_day = ________ )
+```
+
+<details>
+<summary class = "btn_code">Show answer</summary>
+
+<br>
+
+```{r, eval=T, echo=F}
+library(knitr)
+
+survey <- mutate(survey, 
+                 week_day = wday(count_date, label = TRUE, abbr = FALSE))
+```
+
+</details>
+
+<br>
+
+
+## `filter()` week days {-}
+
+With **filter** we can pick out the days of the week that we want. 
+
+Split the schedule in two by filtering the survey to only the week day needed at each island: 
+
+- ` Saturday` for Dream
+- ` Tuesday` for Biscoe
+
+<br>
+
+```{r, eval=F}
+dream_dates <- filter(survey,  ______ ==  ________ )
+
+biscoe_dates <- filter(survey, ______ ==  ________ )
+```
+
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+<br>
+
+```{r, eval=T, echo=T}
+dream_dates <- filter(survey, week_day ==  "Thursday" )
+
+biscoe_dates   <- filter(survey, week_day ==  "Friday" )
+```
+
+</details>
+
+
+<br>
+
+
+**How many survey dates are at each island?**
+
+> *Hint: It's less than 50.*
+
+
+<details>
+<summary  class = "btn_code">Show answer</summary>
+  
+> **26 survey days**
+
+</details>
+
+<br>
+
+
+## 2. Custom date formats {-}
+
+Oh no! Each survey island has been assigned a very-very particular **Assistant to the Regional Manager**. And they are demanding a very **specific** date format be used for their work schedules. 
+
+<br>
+
+Before you send off the survey dates, you'll need to adjust the dates to match the requested formats below. 
+
+**Preferred date formats**
+
+- Dream: ` 08-18-2024`
+- Biscoe: ` Aug 18, 2024`
+
+<br>
+
+For the first case we will do things the more manual way and use `format` with specific date expressions to layout each piece of the date
+
+Use `format(count_date, ...)` and the date expressions below to format the schedule for each region accordingly. 
+
+> For example: `format(count_date, "%b, %Y")` prints the date as `May, 2024`.
+> 
+> - `%b`  stands for 3-letter month abbreviation 
+> - `%Y%` stands for the full 4 digit year
+
+
+### Date parts {-}
+
+| Expression    | Description                       | Example  |
+| :------------ | :-------------------------------- | :------- |
+| `%Y`          | Year (4 digit)                    | 2023     |
+| `%y`          | Year (2 digit)                    | 21       |
+| `%B`          | Month (full name)                 | December |
+| `%b`          | Month (abbreviated)               | Dec      |
+| `%m`          | Month (decimal number)            | 12       |
+| `%d`          | Day of the month (decimal number) | 30       |
+
+
+### Time parts {-}
+
+| Expression    | Description                       | Example  |
+| :------------ | :-------------------------------- | :------- |
+| `%H`          | Hour                              | 8        |
+| `%M`          | Minute                            | 13       |
+| `%S`          | Second                            | 35       |
+
+
+<br>
+
+Use `mutate()` to update the **week_day** column for the Dream island schedule.
+
+**Here's a start**
+
+```{r, eval=F, echo=T}
+# Set date format to match 08-18-2024
+dream_dates <- mutate(dream_dates, pretty_date = format(count_date, _______  ))
 ```
 
 
-# Invasive Porg Survey - 2023 
-<hr>
-```{r porg-survey, child='../../static/modules/dates/porg_survey.Rmd'}
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+```{r, eval=T, echo=T}
+# Set date format to 08-18-2024
+dream_dates <- mutate(dream_dates, pretty_date = format(count_date, "%m-%d-%Y"))
+
+```
+
+</details>
+
+
+### How'd we do? {-}
+
+```{r, eval=F, echo=T}
+# Dream island schedule
+head(dream_dates, 3)
+```
+
+```{r, eval=T, echo=F}
+head(dream_dates, 3) %>% kable()
+```
+
+<br>
+
+### <i class="fa-solid fa-stamp"></i> [.teal[**Stamp**]] your dates {-}
+
+Now for `stamp_date()`. We'll first create a stamp of our desired date format for Biscoe island, and then we will apply it to all the dates in our Biscoe schedule.
+
+```{r, eval=T, echo=T}
+# Create date stamp with format of Aug 18, 2024
+biscoe_stamp <- stamp_date("Aug 18, 2024")
+
+# Test the stamp
+test_date <- ymd("1985-10-26")
+
+biscoe_stamp(test_date)
+```
+
+<br>
+
+Good to go! Use `mutate()` and the new stamp to update the **week_day** column for the Biscoe island schedules.
+
+**Here's a start**
+
+```{r, eval=F, echo=T}
+# Set date format to match Aug 18, 2024
+biscoe_dates <- mutate(biscoe_dates, pretty_date = ___________ )
+```
+
+
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+```{r, eval=T, echo=T}
+# Set date format to match Aug 18, 2024
+biscoe_dates <- mutate(biscoe_dates, pretty_date = biscoe_stamp(count_date))
+```
+
+</details>
+
+### How'd we do? {-}
+
+```{r, eval=F, echo=T}
+# Biscoe island schedule
+head(biscoe_dates, 3)
+```
+
+```{r, eval=T, echo=F}
+head(biscoe_dates, 3) %>% kable()
 ```
 
 
 <br>
 
+**Congrats!**
 
-# <i class="fa fa-group" style="color: steelblue;"></i> Share with friends
-<hr>
+Your fine-tuned schedules worked perfectly. 
 
-
-## Create a GitHub account {-}
-<hr class="hrlvl2">
-
-It's time to share with your R friends. [Join GitHub](https://github.com/)
-
-[![](../images/github_signup.png)](https://github.com/)
+Now let’s jump ahead and take a look at the survey results.
 
 
-## Add a new repository {-}
+## 3. Results {-}
 
-Now we can create a new `repository` to store some of our new R plots and scripts. Click the bright green `New` button to get started.
+### Load the monster survey results. {-}
 
-![](../images/new_repo.png)
-
-- Give it a short name like `Rplots`
-- Keep it public
-- [x] Check the box to initialize with a README 
-- Click `[ Create repository ]`
-
-## Add an R script or plot {-}
-
-Click `Upload files` to add an image of an R plot or one of your `.R` scripts.
-
-![](../images/upload_files.png)
-
-
-## Package questions {-}
-
-Google: `"package name" + github`
-
-For example, here's the top page for `lubridate + github`
-
-<img src="../images/github_lubridate.png" width="80%">
-
-## Secret work projects {-}
-
-- `MDH`: Internal secret Gitlab
-- `MPCA`: Coming soon...
+```{r, eval=T}
+monsters <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/2024_monster_survey.csv") 
+```
 
 <br>
 
-### <i class="fa fa-rocket" aria-hidden="true"></i> Return to [Homebase](../post/day-3.html) {-}
+*Explore a bit.* 
+
+> Are there any missing values?
 
 <br>
+
+### A missing island {-}
+
+It looks like we have a slight missing data problem.
+
+There’s a data point in the results that wasn’t labeled with the island
+location. We do know the date however. 
+
+On `2024-06-25` there were a whopping 7 monsters counted - but we just don’t know where.
+
+<br>
+
+**Can you determine the island based on the date of the monster count?**
+
+```{r}
+mystery_island_date <- "2024-06-25"
+```
+
+> *Hint: What weekday is this?*
+>
+> Try the `wday(date)` function.
+
+<br>
+
+
+**Good sleuthing baking bot.**
+
+Right now we're in a bit of a hurry, so let's remove the row using filter.
+
+Use `filter()` to keep only the rows in the survey data where `island` is **NOT** *NA* (missing).
+
+```{r, eval=T}
+monsters <- filter(monsters, !is.na(island))  
+```
+
+<br>
+
+
+## 4. The best time for monsters {-}
+
+> ### What is the best month to see monsters? {-}
+
+**First, add a `month` column to the data with the function `month()` and the column `count_date`.**
+
+```{r, eval=T}
+monsters <- mutate(monsters, month = month(count_date))
+```
+
+<br>
+
+**Next, use `ggplot()` and `geom_col()` to plot the monster sightings by month.**
+
+```{r, eval=F}
+ggplot(monsters, aes(x = month, y = ______ , fill = island)) +
+    geom_col()
+```
+
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+```{r, eval=T, echo=T}
+ggplot(monsters, aes(x = month, y = monster_count, fill = island)) +
+    geom_col()
+```
+
+</details>
+
+<br>
+
+> Why might June be the lowest month?
+>
+> **Hint:** *When was that data we dropped?*
+
+
+## 5. Time series: All the data {-}
+
+Plot all the data with `geom_point()`. Put `count_date` on the x-axis, and the `monster_count` on the y-axis. Set the color to match the `island` column.
+
+```{r, eval=F}
+ggplot(monsters, aes(x = _______, y = ______ , color = _____ )) +
+    geom_point(size = 5)
+```
+
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+```{r, eval=T, echo=T}
+ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
+    geom_point(size = 5) 
+```
+
+</details>
+
+
+<br>
+
+Oof! That's a busy plot. Try adding `+ facet_wrap("island")` to the end. 
+What happens?
+
+```{r, eval=F}
+ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
+  geom_point(size = 5) +
+  facet_wrap("island")   #<<
+```
+
+<br>
+
+Try adding `+ geom_line()`. 
+
+```{r, eval=F}
+ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
+  geom_point(size = 5) +
+  facet_wrap(~ island) +
+  geom_line()                #<<
+```
+
+<details>
+<summary  class = "btn_code">Show code</summary>
+  
+```{r, eval=T, echo=T}
+ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
+  geom_point(size = 5) +
+  facet_wrap(~ island) +
+  geom_line()
+```
+
+</details>
+
+<br>
+
+
+## <i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work {-}
+
+The researchers were deeply thankful and rewarded you with a shiny penguin magnet. They'll be in touch for *Monster Survey 2025*.
+

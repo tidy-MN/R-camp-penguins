@@ -172,6 +172,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">   
 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.1 - </span> **Smash:** Joining tables
+
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.2 - </span> **lubridate:** Date and time travel
+
+- [Notes and code examples](page/day5.html)
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day5/05-2-date-and-time-travel#1)
+
+
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
 - Left joins and anti joins

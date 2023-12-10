@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Day 5 - Learn R</title>
+  <meta property="og:title" content="Day 5" />
+  <meta name="twitter:title" content="Day 5" />
+  <meta name="description" content="1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.">
+  <meta property="og:description" content="1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.">
+  <meta name="twitter:description" content="1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/day5.html",
+          "name": "Day 5"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "Day 5",
+  "description" : "1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.",
+  "inLanguage" : "en",
+  "wordCount":  1586 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/day5.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Day 5" />
+<meta property="og:description" content="1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day5.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Day 5" />
+  <meta name="twitter:description" content="1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day5.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/index.html">Home</a>
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+                  <a href="/R-camp-penguins/page/day4.html">Day 4</a>
+                
+                  <a href="/R-camp-penguins/page/day5.html">Day 5</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Day 5</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="/R-camp-penguins/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+<script src="/R-camp-penguins/rmarkdown-libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+<script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/all.min.css" rel="stylesheet" />
+<link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="css/camp_style.css" type="text/css" />
+
+<div id="TOC">
+<ul>
+<li><a href="#lubridate-date-and-time-travel" id="toc-lubridate-date-and-time-travel"><span class="toc-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <strong>lubridate:</strong> Date and time travel</a></li>
+</ul>
+</div>
+
+<style>
+h1 .header-section-number {background: #491aab;}
+hr {background: #491aab;}
+</style>
+<p><link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></p>
+<p><br></p>
+<div id="lubridate-date-and-time-travel" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <strong>lubridate:</strong> Date and time travel</h1>
+<div id="monsters-everywhere" class="section level2 unnumbered">
+<h2>Monsters <span class="teal"><strong>EVERYWHERE!</strong> </span></h2>
+<div style="overflow: hidden; margin-top: 6px; width: 100%; margin-left: 0; height: 302px;">
+<p><img src="../../slides/images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -133px; width: 75%;"></p>
+</div>
+<p>It seemed like a good idea to bring those helpful monsters along, and they’re so so cute. People hate to say it, but they are starting to become a real nuisance.</p>
+<p>To get a grasp on the population explosion of monsters our research vessel is launching a full-scale monster survey. And they need our <strong>help</strong>.</p>
+</div>
+<div id="dates-with-lubridate" class="section level2 unnumbered">
+<h2><i class="fa fa-calendar" aria-hidden="true"></i> Dates with <code>lubridate</code></h2>
+<div id="the-lubridate-package." class="section level3 unnumbered">
+<h3>The <code>lubridate</code> package.</h3>
+<p><img src="../images/lubridate.png" style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
+<p><br></p>
+<p>It’s about time! Lubridate makes working with dates much easier.</p>
+<p>We can find how much time has elapsed, add or subtract days, and find season and day of the week averages. The package is included in the <code>tidyverse</code> bundle of packages, so it’s already installed!</p>
+<p><br></p>
+<div style="clear: both;">
+
+</div>
+<p><strong>View the date cheatsheet <a href="https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf">HERE</a></strong>.</p>
+<p>It’s a great reference when you need to manipulate dates or timezones in your data.</p>
+</div>
+</div>
+<div id="menu-of-date-functions" class="section level2 unnumbered">
+<h2>Menu of date functions</h2>
+<div id="convert-text-to-a-date" class="section level4 unnumbered">
+<h4>Convert text to a <code>DATE</code></h4>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="94%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function to use</th>
+<th align="left">Order of date elements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mdy()</code></td>
+<td align="left">Month-Day-Year :: <code>05-18-2019</code> or <code>05/18/2019</code></td>
+</tr>
+<tr class="even">
+<td><code>dmy()</code></td>
+<td align="left">Day-Month-Year (Euro dates) :: <code>18-05-2019</code> or <code>18/05/2019</code></td>
+</tr>
+<tr class="odd">
+<td><code>ymd()</code></td>
+<td align="left">Year-Month-Day (science dates) :: <code>2019-05-18</code> or <code>2019/05/18</code></td>
+</tr>
+<tr class="even">
+<td><code>ymd_hm()</code></td>
+<td align="left">Year-Month-Day Hour:Minutes :: <code>2019-05-18 8:35 AM</code></td>
+</tr>
+<tr class="odd">
+<td><code>ymd_hms()</code></td>
+<td align="left">Year-Month-Day Hour:Minutes:Seconds :: <code>2019-05-18 8:35:22 AM</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="get-specific-date-parts-eg.-the-year-month-day" class="section level3 unnumbered">
+<h3>Get specific date parts (eg. the year, month, day… )</h3>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="94%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function to use</th>
+<th align="left">Date element</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>year()</code></td>
+<td align="left">Year</td>
+</tr>
+<tr class="even">
+<td><code>month()</code></td>
+<td align="left">Month as <em>1,2,3</em>; For <em>Jan, Feb, Mar</em> use <code>label=TRUE</code></td>
+</tr>
+<tr class="odd">
+<td><code>week()</code></td>
+<td align="left">Week of the year</td>
+</tr>
+<tr class="even">
+<td><code>day()</code></td>
+<td align="left">Day of the month</td>
+</tr>
+<tr class="odd">
+<td><code>wday()</code></td>
+<td align="left">Day of the week as <em>1,2,3</em>; For <em>Sun, Mon, Tue</em> use <code>label=TRUE</code></td>
+</tr>
+<tr class="even">
+<td><em>- Time -</em></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td><code>hour()</code></td>
+<td align="left">Hour of the day <em>(24hr)</em></td>
+</tr>
+<tr class="even">
+<td><code>minute()</code></td>
+<td align="left">Minutes</td>
+</tr>
+<tr class="odd">
+<td><code>second()</code></td>
+<td align="left">Seconds</td>
+</tr>
+<tr class="even">
+<td><code>tz()</code></td>
+<td align="left">Time zone</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="clean-the-dates" class="section level3 unnumbered note">
+<h3><i class="fa fa-broom" aria-hidden="true"></i> Clean the dates</h3>
+<div id="real-world-examples" class="section level4 unnumbered">
+<h4>Real world examples</h4>
+<p>Does your date column look like one of these?</p>
+<p>Here’s the <code>lubridate</code> function to convert the column to a date.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th align="left">Function to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“05/18/2019”</td>
+<td align="left"><code>mdy(date_column)</code></td>
+</tr>
+<tr class="even">
+<td>“May 18, 2019”</td>
+<td align="left"><code>mdy(date_column)</code></td>
+</tr>
+<tr class="odd">
+<td>“05/18/2019 8:00 CDT”</td>
+<td align="left"><code>mdy_hm(date_column, tz = "US/Central")</code></td>
+</tr>
+<tr class="even">
+<td>“05/18/2019 11:05:32 GMT”</td>
+<td align="left"><code>mdy_hms(date_column, tz = "GMT")</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>European dates</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th align="left">Function to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“30.05.2019”</td>
+<td align="left"><code>dmy(date_column)</code></td>
+</tr>
+<tr class="even">
+<td>“30-05-2019”</td>
+<td align="left"><code>dmy(date_column)</code></td>
+</tr>
+<tr class="odd">
+<td>“30/05/2019”</td>
+<td align="left"><code>dmy(date_column)</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>Simple number dates</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th align="left">Function to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“20190518”</td>
+<td align="left"><code>ymd(sample_date)</code></td>
+</tr>
+<tr class="even">
+<td>“201905180630”</td>
+<td align="left"><code>ymd_hm(sample_date, tz = "US/Central")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br></p>
+<div id="survey-objective" class="section level3 unnumbered">
+<h3>Survey objective</h3>
+<div class="well">
+<ul>
+<li>Organize the monster survey schedule.</li>
+<li>Starting May 2024, they would like to schedule a monster count once a week until October.</li>
+<li>They have enough volunteers to run the survey on two islands
+<ul>
+<li><code>Dream</code> and <code>Biscoe</code></li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
+<p>Let’s generate the full list of dates during this time span with the sequence function: <code>seq()</code></p>
+<div id="run-the-code-below-to-create-a-list-of-dates-for-the-survey." class="section level4 unnumbered">
+<h4>Run the code below to create a list of dates for the survey.</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-05-01&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>end_date   <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-10-31&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># Sequence from start to end, counting by a 1 day interval</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> start_date, </span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>                    <span class="at">to =</span> end_date, </span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>                    <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
+<p><br></p>
+</div>
+</div>
+<div id="how-many-days-will-the-survey-run" class="section level3 unnumbered">
+<h3>How many days will the survey run?</h3>
+<details>
+<summary class="btn_code">
+Show answer
+</summary>
+<blockquote>
+<p><em>184 days</em></p>
+</blockquote>
+</details>
+<p><br></p>
+</div>
+<div id="lets-put-the-dates-in-a-dataframe" class="section level3 unnumbered">
+<h3>Let’s put the dates in a dataframe</h3>
+<blockquote>
+<p>You can create a dataframe with the functions <code>data.frame()</code> or <code>tibble()</code>.</p>
+</blockquote>
+</div>
+<div id="heres-a-reminder" class="section level3 unnumbered">
+<h3>Here’s a reminder</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">count_date =</span> survey_dates)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">count_date =</span> survey_dates)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">head</span>(survey)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 1
+##   count_date
+##   &lt;date&gt;    
+## 1 2024-05-01
+## 2 2024-05-02
+## 3 2024-05-03
+## 4 2024-05-04
+## 5 2024-05-05
+## 6 2024-05-06</code></pre>
+<p><br></p>
+</div>
+</div>
+<div id="scheduling-weekdays" class="section level2 unnumbered">
+<h2>1. Scheduling weekdays</h2>
+<p><img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right /></p>
+<p>Scientists on our boat are busy people. They only have one day per week when they can volunteer.</p>
+<p>Here is the weekday when volunteers are available for each island:</p>
+<ul>
+<li>Dream: <code>Saturdays</code></li>
+<li>Biscoe: <code>Tuesdays</code></li>
+</ul>
+<p><br></p>
+<blockquote>
+<h3 id="when-is-the-first-saturday-in-may-of-2024" class="unnumbered">When is the first Saturday in May of 2024?</h3>
+</blockquote>
+<p><br></p>
+<p>For that, we can use the <code>wday()</code> (the “weekday”) function.</p>
+<blockquote>
+<p>Try changing some of the TRUE/FALSE values to see what the arguments are doing.</p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>new_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&#39;2024-05-01&#39;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># wday tells you the day of week (Sun, Mon, etc..) for a specific date</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="fu">wday</span>(new_date, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] Wednesday
+## 7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday</code></pre>
+<p><br></p>
+<p>So the <code>1st</code> of May will be a Wednesday.
+That means….<strong>May the 4th</strong> will be on Saturday. Perfect! That’s my favorite day.</p>
+</div>
+<div id="mutate-to-the-rescue" class="section level2 unnumbered">
+<h2>Mutate to the rescue</h2>
+<p>We really don’t want to check every date one by one do we?</p>
+<p>Let’s add a new <code>week_day</code> column to our survey table that checks ALL the dates ALL at once. To add a new column we call on <code>mutate()</code>.</p>
+<p>Complete the code below to add a <code>week_day</code> column to our <em>survey_dates</em> table.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>                 <span class="at">week_day =</span> ________ )</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show answer
+</summary>
+<p><br></p>
+</details>
+<p><br></p>
+</div>
+<div id="filter-week-days" class="section level2 unnumbered">
+<h2><code>filter()</code> week days</h2>
+<p>With <strong>filter</strong> we can pick out the days of the week that we want.</p>
+<p>Split the schedule in two by filtering the survey to only the week day needed at each island:</p>
+<ul>
+<li><code>Saturday</code> for Dream</li>
+<li><code>Tuesday</code> for Biscoe</li>
+</ul>
+<p><br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey,  ______ <span class="sc">==</span>  ________ )</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, ______ <span class="sc">==</span>  ________ )</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<p><br></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Thursday&quot;</span> )</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>biscoe_dates   <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Friday&quot;</span> )</span></code></pre></div>
+</details>
+<p><br></p>
+<p><strong>How many survey dates are at each island?</strong></p>
+<blockquote>
+<p><em>Hint: It’s less than 50.</em></p>
+</blockquote>
+<details>
+<summary class="btn_code">
+Show answer
+</summary>
+<blockquote>
+<p><strong>26 survey days</strong></p>
+</blockquote>
+</details>
+<p><br></p>
+</div>
+<div id="custom-date-formats" class="section level2 unnumbered">
+<h2>2. Custom date formats</h2>
+<p>Oh no! Each survey island has been assigned a very-very particular <strong>Assistant to the Regional Manager</strong>. And they are demanding a very <strong>specific</strong> date format be used for their work schedules.</p>
+<p><br></p>
+<p>Before you send off the survey dates, you’ll need to adjust the dates to match the requested formats below.</p>
+<p><strong>Preferred date formats</strong></p>
+<ul>
+<li>Dream: <code>08-18-2024</code></li>
+<li>Biscoe: <code>Aug 18, 2024</code></li>
+</ul>
+<p><br></p>
+<p>For the first case we will do things the more manual way and use <code>format</code> with specific date expressions to layout each piece of the date</p>
+<p>Use <code>format(count_date, ...)</code> and the date expressions below to format the schedule for each region accordingly.</p>
+<blockquote>
+<p>For example: <code>format(count_date, "%b, %Y")</code> prints the date as <code>May, 2024</code>.</p>
+<ul>
+<li><code>%b</code> stands for 3-letter month abbreviation</li>
+<li><code>%Y%</code> stands for the full 4 digit year</li>
+</ul>
+</blockquote>
+<div id="date-parts" class="section level3 unnumbered">
+<h3>Date parts</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Expression</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>%Y</code></td>
+<td align="left">Year (4 digit)</td>
+<td align="left">2023</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%y</code></td>
+<td align="left">Year (2 digit)</td>
+<td align="left">21</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%B</code></td>
+<td align="left">Month (full name)</td>
+<td align="left">December</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%b</code></td>
+<td align="left">Month (abbreviated)</td>
+<td align="left">Dec</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%m</code></td>
+<td align="left">Month (decimal number)</td>
+<td align="left">12</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%d</code></td>
+<td align="left">Day of the month (decimal number)</td>
+<td align="left">30</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="time-parts" class="section level3 unnumbered">
+<h3>Time parts</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Expression</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>%H</code></td>
+<td align="left">Hour</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left"><code>%M</code></td>
+<td align="left">Minute</td>
+<td align="left">13</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>%S</code></td>
+<td align="left">Second</td>
+<td align="left">35</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Use <code>mutate()</code> to update the <strong>week_day</strong> column for the Dream island schedule.</p>
+<p><strong>Here’s a start</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Set date format to match 08-18-2024</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, _______  ))</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Set date format to 08-18-2024</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span></code></pre></div>
+</details>
+</div>
+<div id="howd-we-do" class="section level3 unnumbered">
+<h3>How’d we do?</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Dream island schedule</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">head</span>(dream_dates, <span class="dv">3</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">count_date</th>
+<th align="left">week_day</th>
+<th align="left">pretty_date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2024-05-02</td>
+<td align="left">Thursday</td>
+<td align="left">05-02-2024</td>
+</tr>
+<tr class="even">
+<td align="left">2024-05-09</td>
+<td align="left">Thursday</td>
+<td align="left">05-09-2024</td>
+</tr>
+<tr class="odd">
+<td align="left">2024-05-16</td>
+<td align="left">Thursday</td>
+<td align="left">05-16-2024</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="tealstamp-your-dates" class="section level3 unnumbered">
+<h3><i class="fa-solid fa-stamp"></i> [.teal[<strong>Stamp</strong>]] your dates</h3>
+<p>Now for <code>stamp_date()</code>. We’ll first create a stamp of our desired date format for Biscoe island, and then we will apply it to all the dates in our Biscoe schedule.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Create date stamp with format of Aug 18, 2024</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>biscoe_stamp <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Aug 18, 2024&quot;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Test the stamp</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>test_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;1985-10-26&quot;</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="fu">biscoe_stamp</span>(test_date)</span></code></pre></div>
+<pre><code>## [1] &quot;Oct 26, 1985&quot;</code></pre>
+<p><br></p>
+<p>Good to go! Use <code>mutate()</code> and the new stamp to update the <strong>week_day</strong> column for the Biscoe island schedules.</p>
+<p><strong>Here’s a start</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> ___________ )</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> <span class="fu">biscoe_stamp</span>(count_date))</span></code></pre></div>
+</details>
+</div>
+<div id="howd-we-do-1" class="section level3 unnumbered">
+<h3>How’d we do?</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Biscoe island schedule</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">head</span>(biscoe_dates, <span class="dv">3</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">count_date</th>
+<th align="left">week_day</th>
+<th align="left">pretty_date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2024-05-03</td>
+<td align="left">Friday</td>
+<td align="left">May 03, 2024</td>
+</tr>
+<tr class="even">
+<td align="left">2024-05-10</td>
+<td align="left">Friday</td>
+<td align="left">May 10, 2024</td>
+</tr>
+<tr class="odd">
+<td align="left">2024-05-17</td>
+<td align="left">Friday</td>
+<td align="left">May 17, 2024</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>Congrats!</strong></p>
+<p>Your fine-tuned schedules worked perfectly.</p>
+<p>Now let’s jump ahead and take a look at the survey results.</p>
+</div>
+</div>
+<div id="results" class="section level2 unnumbered">
+<h2>3. Results</h2>
+<div id="load-the-monster-survey-results." class="section level3 unnumbered">
+<h3>Load the monster survey results.</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/2024_monster_survey.csv&quot;</span>) </span></code></pre></div>
+<p><br></p>
+<p><em>Explore a bit.</em></p>
+<blockquote>
+<p>Are there any missing values?</p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="a-missing-island" class="section level3 unnumbered">
+<h3>A missing island</h3>
+<p>It looks like we have a slight missing data problem.</p>
+<p>There’s a data point in the results that wasn’t labeled with the island
+location. We do know the date however.</p>
+<p>On <code>2024-06-25</code> there were a whopping 7 monsters counted - but we just don’t know where.</p>
+<p><br></p>
+<p><strong>Can you determine the island based on the date of the monster count?</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>mystery_island_date <span class="ot">&lt;-</span> <span class="st">&quot;2024-06-25&quot;</span></span></code></pre></div>
+<blockquote>
+<p><em>Hint: What weekday is this?</em></p>
+<p>Try the <code>wday(date)</code> function.</p>
+</blockquote>
+<p><br></p>
+<p><strong>Good sleuthing baking bot.</strong></p>
+<p>Right now we’re in a bit of a hurry, so let’s remove the row using filter.</p>
+<p>Use <code>filter()</code> to keep only the rows in the survey data where <code>island</code> is <strong>NOT</strong> <em>NA</em> (missing).</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span><span class="fu">is.na</span>(island))  </span></code></pre></div>
+<p><br></p>
+</div>
+</div>
+<div id="the-best-time-for-monsters" class="section level2 unnumbered">
+<h2>4. The best time for monsters</h2>
+<blockquote>
+<h3 id="what-is-the-best-month-to-see-monsters" class="unnumbered">What is the best month to see monsters?</h3>
+</blockquote>
+<p><strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">mutate</span>(monsters, <span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
+<p><br></p>
+<p><strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the monster sightings by month.</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> monster_count, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+</details>
+<p><br></p>
+<blockquote>
+<p>Why might June be the lowest month?</p>
+<p><strong>Hint:</strong> <em>When was that data we dropped?</em></p>
+</blockquote>
+</div>
+<div id="time-series-all-the-data" class="section level2 unnumbered">
+<h2>5. Time series: All the data</h2>
+<p>Plot all the data with <code>geom_point()</code>. Put <code>count_date</code> on the x-axis, and the <code>monster_count</code> on the y-axis. Set the color to match the <code>island</code> column.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) </span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+</details>
+<p><br></p>
+<p>Oof! That’s a busy plot. Try adding <code>+ facet_wrap("island")</code> to the end.
+What happens?</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;island&quot;</span>)   <span class="co">#&lt;&lt;</span></span></code></pre></div>
+<p><br></p>
+<p>Try adding <code>+ geom_line()</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> island) <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()                <span class="co">#&lt;&lt;</span></span></code></pre></div>
+<details>
+<summary class="btn_code">
+Show code
+</summary>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> island) <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</details>
+<p><br></p>
+</div>
+<div id="great-work" class="section level2 unnumbered">
+<h2><i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work</h2>
+<p>The researchers were deeply thankful and rewarded you with a shiny penguin magnet. They’ll be in touch for <em>Monster Survey 2025</em>.</p>
+</div>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
