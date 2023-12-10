@@ -35,11 +35,11 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 # <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> **lubridate:** Date and time travel
 
 
-## Monsters <span class="teal">**EVERYWHERE!** </span> {-}
+## Monsters <span class="teal">**EVERYWHERE!**</span> {-}
 
 <div style="overflow: hidden; margin-top: 6px; width: 100%; margin-left: 0; height: 302px;">
     
-<img src="../../slides/images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -133px; width: 75%;">
+<img src="../images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -133px; width: 75%;">
 
 </div>
 
