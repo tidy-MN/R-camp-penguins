@@ -65,9 +65,8 @@ We can find how much time has elapsed, add or subtract days, and find season and
 
 <div style="clear: both;"></div>
 
-**View the date cheatsheet [HERE](https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf)**. 
-
-It's a great reference when you need to manipulate dates or timezones in your data.
+> **View the date cheatsheet [HERE](https://rawgit.com/rstudio/cheatsheets/master/lubridate.pdf)**. 
+> This is a great reference when you need to manipulate dates or timezones in your data.
 
 
 ## Menu of date functions {-}
@@ -86,7 +85,7 @@ It's a great reference when you need to manipulate dates or timezones in your da
 <br>
 
 
-### Get specific date parts (eg. the year, month, day... ) {-}
+### Date components (year, month, day) {-}
 
 | Function to use   |  Date element                                            |
 |----|:-----------------------------------------------------------------|
@@ -166,7 +165,7 @@ start_date <- ymd("2024-05-01")
 
 end_date   <- ymd("2024-10-31")
 
-# Sequence from start to end, counting by a 1 day interval
+# Sequence from start to end, counting by 1 day interval
 survey_dates <- seq(from = start_date, 
                     to = end_date, 
                     by = "day")
@@ -177,7 +176,7 @@ survey_dates <- seq(from = start_date,
 ### How many days will the survey run? {-}
 
 <details>
-<summary class = "btn_code">Show answer</summary>
+<summary class="btn_code_blue">Show answer</summary>
   
 > *184 days*
 
@@ -206,8 +205,6 @@ head(survey)
 
 ## 1. Scheduling weekdays {-}
 
-<img src="https://cdn.iconscout.com/icon/free/png-128/calendar-1562-518053.png" align=right />
-
 Scientists on our boat are busy people. They only have one day per week when they can volunteer. 
 
 Here is the weekday when volunteers are available for each island:
@@ -222,7 +219,7 @@ Here is the weekday when volunteers are available for each island:
 
 <br>
 
-For that, we can use the `wday()` (the "weekday") function.
+For that, we can use the `wday()` (weekday) function.
 
 > Try changing some of the TRUE/FALSE values to see what the arguments are doing.
 
@@ -254,7 +251,7 @@ survey <- mutate(survey,
 ```
 
 <details>
-<summary class = "btn_code">Show answer</summary>
+<summary class="btn_code_blue">Show answer</summary>
 
 <br>
 
@@ -288,14 +285,12 @@ biscoe_dates <- filter(survey, ______ ==  ________ )
 ```
 
 <details>
-<summary  class = "btn_code">Show code</summary>
+<summary class="btn_code_blue">Show code</summary>
   
-<br>
-
 ```{r, eval=T, echo=T}
-dream_dates <- filter(survey, week_day ==  "Thursday" )
+dream_dates <- filter(survey, week_day ==  "Saturday")
 
-biscoe_dates   <- filter(survey, week_day ==  "Friday" )
+biscoe_dates <- filter(survey, week_day ==  "Tuesday")
 ```
 
 </details>
@@ -304,15 +299,15 @@ biscoe_dates   <- filter(survey, week_day ==  "Friday" )
 <br>
 
 
-**How many survey dates are at each island?**
+**How many survey dates will occur at each island?**
 
 > *Hint: It's less than 50.*
 
 
 <details>
-<summary  class = "btn_code">Show answer</summary>
+<summary class="btn_code_blue">Show answer</summary>
   
-> **26 survey days**
+<i class="fa fa-check" aria-hidden="true" style="color: green;"></i> **26 survey days**
 
 </details>
 
@@ -322,8 +317,6 @@ biscoe_dates   <- filter(survey, week_day ==  "Friday" )
 ## 2. Custom date formats {-}
 
 Oh no! Each survey island has been assigned a very-very particular **Assistant to the Regional Manager**. And they are demanding a very **specific** date format be used for their work schedules. 
-
-<br>
 
 Before you send off the survey dates, you'll need to adjust the dates to match the requested formats below. 
 
@@ -378,7 +371,7 @@ dream_dates <- mutate(dream_dates, pretty_date = format(count_date, _______  ))
 
 
 <details>
-<summary  class = "btn_code">Show code</summary>
+<summary class="btn_code_blue">Show code</summary>
   
 ```{r, eval=T, echo=T}
 # Set date format to 08-18-2024
@@ -402,7 +395,7 @@ head(dream_dates, 3) %>% kable()
 
 <br>
 
-### <i class="fa-solid fa-stamp"></i> [.teal[**Stamp**]] your dates {-}
+### <i class="fa-solid fa-stamp"></i> [<span class="teal">**Stamp**</span>] your dates {-}
 
 Now for `stamp_date()`. We'll first create a stamp of our desired date format for Biscoe island, and then we will apply it to all the dates in our Biscoe schedule.
 
@@ -429,7 +422,7 @@ biscoe_dates <- mutate(biscoe_dates, pretty_date = ___________ )
 
 
 <details>
-<summary  class = "btn_code">Show code</summary>
+<summary class="btn_code_blue">Show code</summary>
   
 ```{r, eval=T, echo=T}
 # Set date format to match Aug 18, 2024
@@ -454,9 +447,7 @@ head(biscoe_dates, 3) %>% kable()
 
 **Congrats!**
 
-Your fine-tuned schedules worked perfectly. 
-
-Now let’s jump ahead and take a look at the survey results.
+Your fine-tuned schedules worked perfectly. Now let’s jump ahead and take a look at the survey results.
 
 
 ## 3. Results {-}
@@ -532,7 +523,7 @@ ggplot(monsters, aes(x = month, y = ______ , fill = island)) +
 ```
 
 <details>
-<summary  class = "btn_code">Show code</summary>
+<summary class="btn_code_blue">Show code</summary>
   
 ```{r, eval=T, echo=T}
 ggplot(monsters, aes(x = month, y = monster_count, fill = island)) +
@@ -558,7 +549,7 @@ ggplot(monsters, aes(x = _______, y = ______ , color = _____ )) +
 ```
 
 <details>
-<summary  class = "btn_code">Show code</summary>
+<summary class="btn_code_blue">Show code</summary>
   
 ```{r, eval=T, echo=T}
 ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
@@ -591,7 +582,7 @@ ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
 ```
 
 <details>
-<summary  class = "btn_code">Show code</summary>
+<summary class="btn_code_blue">Show code</summary>
   
 ```{r, eval=T, echo=T}
 ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
