@@ -253,8 +253,6 @@ survey <- mutate(survey,
 <details>
 <summary class="btn_code_blue">Show code</summary>
 
-<br>
-
 ```{r, eval=T, echo=T}
 library(knitr)
 
