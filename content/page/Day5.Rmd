@@ -251,7 +251,7 @@ survey <- mutate(survey,
 ```
 
 <details>
-<summary class="btn_code_blue">Show answer</summary>
+<summary class="btn_code_blue">Show code</summary>
 
 <br>
 
