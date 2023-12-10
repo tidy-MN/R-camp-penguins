@@ -23,6 +23,8 @@ hr {background: #491aab;}
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 ```{r setup, include=FALSE}
+library(knitr)
+
 knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE)
 
 xaringanExtra::use_clipboard()
@@ -254,8 +256,6 @@ survey <- mutate(survey,
 <summary class="btn_code_blue">Show code</summary>
 
 ```{r, eval=T, echo=T}
-library(knitr)
-
 survey <- mutate(survey, 
                  week_day = wday(count_date, label = TRUE, abbr = FALSE))
 ```
