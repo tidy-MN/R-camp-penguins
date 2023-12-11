@@ -1,10 +1,9 @@
 ---
-title: 'Summarize penguin populations'
-author: "Abigail Stamm"
+title: 'A fishy dinner'
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: ../css/camp_style.css
+    css: ../../css/camp_style.css
     number_sections: false
     self_contained: false
     fontsize: 18pt
