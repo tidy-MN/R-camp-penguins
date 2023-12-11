@@ -470,6 +470,15 @@ In RStudio go to Help &amp;gt; Cheatsheets Data Transformation :: Helpful functi
     </item>
     
     <item>
+      <title>Joins: A fishy dinner</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-1-left-and-anti-joins.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-1-left-and-anti-joins.html</guid>
+      <description>Before you start… Jump back into the project you created for the previous sessions exercises and then create a new R script.</description>
+    </item>
+    
+    <item>
       <title>Maps - Exercise 1</title>
       <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day4/01-homeward-bound.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

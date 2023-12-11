@@ -185,8 +185,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- Exercise 1 - Left joins and anti joins
-- Exercise 2 - Date mischief all around
+- Exercise 1 - [Joins: A fishy dinner](page/exercise/day5/05-1-left-and-anti-joins.html)
+- Exercise 2 - [Date mischief all around(page/exercise/day5/05-2-date-mischief-and-data-joins.html))
 
 
 </div> 

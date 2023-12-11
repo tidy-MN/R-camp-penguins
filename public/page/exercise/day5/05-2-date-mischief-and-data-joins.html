@@ -63,7 +63,7 @@
   "headline": "Date mischief",
   "description" : "Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.",
   "inLanguage" : "en",
-  "wordCount":  904 ,
+  "wordCount":  902 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -353,18 +353,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="getting-started" class="section level2">
 <h2>Getting started</h2>
-<p>The research crew wants to determine if there is a relationship between isotope levels in the <code>penguins_raw</code> data and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.</p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv" class="uri">https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv</a></li>
-<li><a href="https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv" class="uri">https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv</a></li>
-<li><a href="https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv" class="uri">https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv</a></li>
-</ul>
-<p>Let’s get all of this data into R so we can combine it with our <code>penguins_raw</code> data. Hint: use <code>read_csv</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Biscoe_temperatures.csv&quot;</span>)</span>
+<p>The research crew wants to determine if there is a relationship between isotope levels in the <code>penguins_raw</code> data and temperature. We have temperature data for each of the islands uploaded to the webpage.</p>
+<p>Let’s get all of this data into R so we can combine it with our <code>penguins_raw</code> data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>dream <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Dream_temperatures.csv&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Biscoe_temperatures.csv&quot;</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>torg <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_temperatures.csv&quot;</span>)</span></code></pre></div>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>dream <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Dream_temperatures.csv&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>torg <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_temperatures.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="data-exploration" class="section level2">
 <h2>Data exploration</h2>
@@ -389,22 +386,22 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h2>Clean-up time</h2>
 <p>The island names are in the file name, but are not in the data itself. Let’s add the island names to use for joining later. Remember that R is picky about names matching, so it’s important to make sure the names are exactly correct including caps. The island names are <code>Biscoe</code>, <code>Dream</code>, and <code>Torgersen</code>. Copy/paste is your friend here.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> biscoe <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Biscoe&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>          <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Biscoe&quot;</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>dream <span class="ot">&lt;-</span> dream <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Dream&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Dream&quot;</span>)</span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a></span>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>torg <span class="ot">&lt;-</span> torg <span class="sc">%&gt;%</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Torgersen&quot;</span>)</span></code></pre></div>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Torgersen&quot;</span>)</span></code></pre></div>
 <p>When exploring the data, did you notice anything about the dates? They are all in different formats! Luckily we have <code>lubridate</code> to come to the rescue. Let’s convert those dates so they are all in the same format.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> biscoe <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">mdy</span>(date))</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>          <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">mdy</span>(date))</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>dream <span class="ot">&lt;-</span> dream <span class="sc">%&gt;%</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">dmy</span>(date))</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">dmy</span>(date))</span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>torg <span class="ot">&lt;-</span> torg <span class="sc">%&gt;%</span></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date))</span></code></pre></div>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date))</span></code></pre></div>
 </div>
 <div id="putting-it-all-together" class="section level2">
 <h2>Putting it all together</h2>
@@ -413,8 +410,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="more-data-exploartion" class="section level2">
 <h2>More data exploartion</h2>
-<p>We have our temperature data in a happy place, but what about the penguin data? Let’s look at that data to figure out which columns we can use to combine it with our temperature data.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
+<p>We have our temperature data in a happy place, but what about the penguin data?
+Let’s get the data and determine which columns we can use to combine it with our temperature data.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>penguins_raw <span class="ot">&lt;-</span> penguins_raw</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
 <pre><code>## Rows: 344
 ## Columns: 17
 ## $ studyName             &lt;chr&gt; &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL…
@@ -435,7 +437,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## $ `Delta 13 C (o/oo)`   &lt;dbl&gt; NA, -24.69454, -25.33302, NA, -25.32426, -25.298…
 ## $ Comments              &lt;chr&gt; &quot;Not enough blood for isotopes.&quot;, NA, NA, &quot;Adult…</code></pre>
 <p>Now that we have a tidy penguin data frame and a tidy temperature data frame, it’s time to combine them into one mega data frame. Both data frames have an island name and a date. What operation do we want to use? Which type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. The resulting data frame should have the same number of rows as the penguin data frame.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#inner join works the same in this instance</span></span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># inner join works the same in this instance</span></span>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>penguins_temps <span class="ot">&lt;-</span> <span class="fu">left_join</span>(penguins_raw, temps,</span>
 <span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>                            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Island&quot;</span> <span class="ot">=</span> <span class="st">&quot;island&quot;</span>,</span>
 <span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>                                   <span class="st">&quot;Date Egg&quot;</span> <span class="ot">=</span> <span class="st">&quot;date&quot;</span>)</span>
@@ -459,7 +461,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="expedition-complete" class="section level2">
 <h2>Expedition complete</h2>
-<p>Congratulations! You have now learned how temperatures affect penguin chemistry. Time to begin the next expedition.</p>
+<p><strong>Congratulations!</strong> You have learned a bit about how temperature may affect penguin chemistry.</p>
+<p>Time to begin the next expedition…</p>
+<p><i class="fa fa-cookie-bite"></i>
+<i class="fa fa-robot"></i>
+<i class="fa fa-cookie-bite"></i></p>
 </div>
 
 

@@ -25,21 +25,21 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ## Getting started
 
-The research crew wants to determine if there is a relationship between isotope levels in the `penguins_raw` data and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.
+The research crew wants to determine if there is a relationship between isotope levels in the `penguins_raw` data and temperature. We have temperature data for each of the islands uploaded to the webpage.
 
-* https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv
-* https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv
-* https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv
 
-Let's get all of this data into R so we can combine it with our `penguins_raw` data. Hint: use `read_csv`.
+Let's get all of this data into R so we can combine it with our `penguins_raw` data. 
 
 ```{r read_data}
+library(tidyverse)
+
 biscoe <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Biscoe_temperatures.csv")
 
 dream <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Dream_temperatures.csv")
 
 torg <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_temperatures.csv")
 ```
+
 
 ## Data exploration
 
@@ -51,33 +51,35 @@ glimpse(dream)
 glimpse(torg)
 ```
 
+
 ## Clean-up time
 
 The island names are in the file name, but are not in the data itself. Let's add the island names to use for joining later. Remember that R is picky about names matching, so it's important to make sure the names are exactly correct including caps. The island names are `Biscoe`, `Dream`, and `Torgersen`. Copy/paste is your friend here.
 
 ```{r add_islands}
 biscoe <- biscoe %>%
-  mutate(island = "Biscoe")
+          mutate(island = "Biscoe")
 
 dream <- dream %>%
-  mutate(island = "Dream")
+         mutate(island = "Dream")
 
 torg <- torg %>%
-  mutate(island = "Torgersen")
+        mutate(island = "Torgersen")
 ```
 
 When exploring the data, did you notice anything about the dates? They are all in different formats! Luckily we have `lubridate` to come to the rescue. Let's convert those dates so they are all in the same format.
 
 ```{r convert_dates}
 biscoe <- biscoe %>%
-  mutate(date = mdy(date))
+          mutate(date = mdy(date))
 
 dream <- dream %>%
-  mutate(date = dmy(date))
+         mutate(date = dmy(date))
 
 torg <- torg %>%
-  mutate(date = ymd(date))
+        mutate(date = ymd(date))
 ```
+
 
 ## Putting it all together
 
@@ -87,23 +89,32 @@ To join the temperature data to our penguin data easily, we want to combine all 
 temps <- bind_rows(biscoe, dream, torg)
 ```
 
+
+
 ## More data exploartion
 
-We have our temperature data in a happy place, but what about the penguin data? Let's look at that data to figure out which columns we can use to combine it with our temperature data.
+We have our temperature data in a happy place, but what about the penguin data? 
+Let's get the data and determine which columns we can use to combine it with our temperature data.
 
 ```{r explore_penguin_data}
+library(palmerpenguins)
+
+penguins_raw <- penguins_raw
+
 glimpse(penguins_raw)
 ```
 
 Now that we have a tidy penguin data frame and a tidy temperature data frame, it's time to combine them into one mega data frame. Both data frames have an island name and a date. What operation do we want to use? Which type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. The resulting data frame should have the same number of rows as the penguin data frame.
 
 ```{r join}
-#inner join works the same in this instance
+# inner join works the same in this instance
 penguins_temps <- left_join(penguins_raw, temps,
                             by = c("Island" = "island",
                                    "Date Egg" = "date")
                             )
 ```
+
+
 
 ## Looking at the relationship between temp and isotopes
 
@@ -127,6 +138,14 @@ ggplot(penguins_temps,
   scale_color_discrete(type = c("green", "blue", "purple"))
 ```
 
+
 ## Expedition complete
 
-Congratulations! You have now learned how temperatures affect penguin chemistry. Time to begin the next expedition.
+**Congratulations!** You have learned a bit about how temperature may affect penguin chemistry. 
+
+Time to begin the next expedition...
+
+
+<i class="fa fa-cookie-bite"></i> 
+<i class="fa fa-robot"></i> 
+<i class="fa fa-cookie-bite"></i> 

@@ -1,5 +1,5 @@
 ---
-title: 'A fishy dinner'
+title: 'Joins: A fishy dinner'
 output: 
   blogdown::html_page: 
     highlight: tango
@@ -97,7 +97,7 @@ Whew, okay, so those numbers *don't* exist in the original data, so looks like w
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Fixing typos {-}
 
 ```{r, results='asis', echo=F}
-source("../insert_tabs.R")
+source("../../insert_tabs.R")
 
 tabs <- c("Description", "Show hint", "Show code")
 
@@ -135,6 +135,8 @@ cat(paste0(tab_html, collapse = "\n"))
 Yay! Let's try this again...also let's add `clean_names` after we join because those names are *hard* to keep spelling correctly.
 
 ```{r}
+library(janitor)
+
 named_penguins <- left_join(penguins_raw, penguin_names) %>% 
                   clean_names()
 ```
@@ -146,7 +148,7 @@ Now, let's make a plot to see what the penguins favorite food by island is! Chec
 ### <i class="fas fa-cookie-bite" style="color: gray;"></i> Fixing typos {-}
 
 ```{r, results='asis', echo=F}
-source("../insert_tabs.R")
+source("../../insert_tabs.R")
 
 tabs <- c("Description", "Show hint", "Show code")
 
