@@ -63,7 +63,7 @@
   "headline": "Day 5",
   "description" : "1 Dataframe SMASH: Joining tables 2 lubridate: Date and time travel 1 Dataframe SMASH: Joining tables left_join( ) library(tidyverse) left_join(left_table, right_table, by = \u0026quot;shared_column_name\u0026quot;) anti_join( ) anti_join(left_table, right_table, by = \u0026quot;shared_column_name\u0026quot;) Joining monsters monsters left_join anti_join R code # Create monsters df monsters \u0026lt;- data.",
   "inLanguage" : "en",
-  "wordCount":  1711 ,
+  "wordCount":  1709 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -407,12 +407,12 @@ hr {background: #491aab;}
 </div>
 <div id="left-join2" class="tab-pane fade" role="tabpanel" aria-labelledby="left-join-tab2">
 <p><img src="../images/monsters/left_join_all.png" style="width: 98%; margin-top: 12px;" /></p>
-<p><img src="../images/monsters/left_join_named_monsters.png" style="width: 78%; margin-top: 19px;" /></p>
+<p><img src="../images/monsters/left_join_named_monsters.png" style="width: 78%; margin-top: 12px; margin-left: 19px;" /></p>
 <p><br></p>
 </div>
 <div id="anti-join2" class="tab-pane fade" role="tabpanel" aria-labelledby="anti-join-tab2">
 <p><img src="../images/monsters/anti_join_all.png" style="width: 95%; margin-top: 12px;" /></p>
-<p><img src="../images/monsters/anti_join_no_name_monsters.png" style="width: 78%; margin-top: 19px;" /></p>
+<p><img src="../images/monsters/anti_join_no_name_monsters.png" style="width: 60%; padding-top: 10px; margin-left: 23px;" /></p>
 <p><br></p>
 </div>
 <div id="code-monsters2" class="tab-pane fade" role="tabpanel" aria-labelledby="code-monsters-tab2">
@@ -442,7 +442,6 @@ hr {background: #491aab;}
 <span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a>no_name_monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span>id <span class="sc">%in%</span> nicknames<span class="sc">$</span>id)</span></code></pre></div>
 </div>
 </div>
-<p><br></p>
 </div>
 </div>
 <div id="lubridate-date-and-time-travel" class="section level1" number="2">
@@ -673,7 +672,7 @@ This is a great reference when you need to manipulate dates or timezones in your
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>report_style <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Reported on December 15th, 2023&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
-<p>Stamp on your data</p>
+<p>Stamp your data</p>
 </blockquote>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>new_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-05-15&quot;</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
@@ -1062,7 +1061,7 @@ location. We do know the date however.</p>
 <p><br></p>
 <p><strong>Good sleuthing baking bot.</strong></p>
 <p>Right now we’re in a bit of a hurry, so let’s remove the row using filter.</p>
-<p>Use <code>filter()</code> to keep only the rows in the survey data where <code>island</code> is <strong>NOT</strong> <em>NA</em> (missing).</p>
+<p>Use <code>filter()</code> to keep only the rows in the survey data where <code>island</code> is <strong>NOT</strong> <em>NA</em>.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span><span class="fu">is.na</span>(island))  </span></code></pre></div>
 <p><br></p>
 </div>

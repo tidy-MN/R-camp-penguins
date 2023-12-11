@@ -593,7 +593,7 @@ mystery_island_date <- "2024-06-25"
 
 Right now we're in a bit of a hurry, so let's remove the row using filter.
 
-Use `filter()` to keep only the rows in the survey data where `island` is **NOT** *NA* (missing).
+Use `filter()` to keep only the rows in the survey data where `island` is **NOT** *NA*.
 
 ```{r, eval=T}
 monsters <- filter(monsters, !is.na(island))  
