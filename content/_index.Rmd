@@ -172,12 +172,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day5" role="tabpanel" aria-labelledby="day5-tab">   
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.1 - </span> [Dataframe SMASH: **Joining tables**](page/videos/day5/05-1-smash-table-joins.Rmd)
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.1 - </span> [Dataframe SMASH: **Joining tables**](page/videos/day5/05-1-smash-table-joins.html)
 
 - [Notes and code examples](page/day5.html)
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day5/05-1-SMASH-table-joins.html#1)
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.2 - </span> [**lubridate:** Date and time travel](page/videos/day5/05-2-lubridate-date-and-time-travel)
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">5.2 - </span> [**lubridate:** Date and time travel](page/videos/day5/05-2-lubridate-date-and-time-travel.html)
 
 - [Notes and code examples](page/day5.html#lubridate-date-and-time-travel)
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day5/05-2-date-and-time-travel#1)
