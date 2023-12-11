@@ -35,8 +35,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Dataframe SMASH: **Joining tables**
-
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [Dataframe SMASH: **Joining tables**](videos/day5/05-1-smash-table-joins.Rmd)
 
 
 ## <span class="blue">left_join( )</span> {-}
@@ -72,7 +71,7 @@ anti_join(left_table, right_table, by = "shared_column_name")
 
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> **lubridate:** Date and time travel
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> [**lubridate:** Date and time travel](videos/day5/05-2-lubridate-date-and-time-travel)
 
 <img class="animated fadeInLeft" src="../images/lubridate_bttf_allison_horst.png" style="width: 78%; margin-top: -70px; margin-bottom: -4px;">
 
