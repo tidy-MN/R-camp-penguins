@@ -70,7 +70,6 @@ anti_join(left_table, right_table, by = "shared_column_name")
 ```{r child = '../insert_monster_tabs_only_joins.Rmd', eval=T}
 ```
 
-<br>
 
 
 # <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> **lubridate:** Date and time travel
@@ -209,7 +208,7 @@ report_style <- stamp_date("Reported on December 15th, 2023")
 
 <br>
 
-> Stamp on your data
+> Stamp your data
 
 ```{r, eval=T}
 new_date <- ymd("2024-05-15")

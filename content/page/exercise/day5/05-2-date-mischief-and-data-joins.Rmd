@@ -9,7 +9,6 @@ output:
     fontsize: 18pt
     monofont: Source Code Pro
     toc: false
-    toc_depth: 1
     #code_folding: hide
 ---
 
@@ -20,6 +19,7 @@ library(lubridate)
 library(palmerpenguins)
 library(janitor)
 library(ggplot2)
+
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 

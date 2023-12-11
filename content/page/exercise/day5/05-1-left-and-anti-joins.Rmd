@@ -164,12 +164,12 @@ content <- c(Exercise = '<b> Feel free to make whatever plot you think is best: 
 <br>',
 
 show_hint = 'code_start
-# we decided to go bar-chart and we want the bar in decending order by count!
+# We want the columns in decending order by count!
 ggplot(named_penguins %>% 
          group_by(______, ______) %>% 
          summarise(count = _____), 
        aes(x=_____, y = ____, fill = reorder(favorite_food, -count))) +
-  _____(position = ___________)+
+  geom_col(position = ___________) +
   labs(title = "Number of penguins by their favorite food and island",
        x = "Island home",
        y = "Number of penguins we need to serve!")+
@@ -185,7 +185,7 @@ ggplot(named_penguins %>%
          group_by(island, favorite_food) %>% 
          summarise(count = n()), 
        aes(x=island, y = count, fill = reorder(favorite_food, -count))) +
-  geom_col(position = position_dodge2(preserve = "single"))+
+  geom_col(position = position_dodge2(preserve = "single")) +
   labs(title = "Number of penguins by their favorite food and island",
        x = "Island home",
        y = "Number of penguins we need to serve!")+

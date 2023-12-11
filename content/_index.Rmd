@@ -196,8 +196,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> Databases and passwords
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> R markdown: Reports, dashboards, presentations, and web pages  
-
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> R markdown reports
 </div>
 </div>
 
