@@ -64,6 +64,9 @@ anti_join(left_table, right_table, by = "shared_column_name")
 
 <img src="../images/anti-join.gif" style="width: 75%; margin-top: 2px;">
 
+
+## Joining monsters {-}
+
 ```{r child = '../insert_monster_tabs_only_joins.Rmd', eval=T}
 ```
 
