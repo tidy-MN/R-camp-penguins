@@ -19,8 +19,9 @@ hr {background: #491aab;}
 </style>
 
 
-<link rel="stylesheet" 
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 ```{r setup, include=FALSE}
 library(knitr)
@@ -34,20 +35,42 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> **Smash:** Joining tables
+
+
+## JOINS {-}
+
+
+### <span class="blue">left_join( )</span>
+
+```{r}
+library(tidyverse)
+```
+
+```{r, eval=F}
+left_join(left_table, right_table,
+          by = "shared_column")
+```
+
+<br>
+
+<img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/left-join.gif" style="width: 80%; max-width: 122%; margin-top: 4px;">
+
+
+```{r monster-tabs, results='asis', echo=F, eval=F}
+cat(readLines("../insert_monster_tabs_only_joins.R"))
+```
+
+
+<br>
+
+
+
+
 # <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> **lubridate:** Date and time travel
 
 
-## Monsters <span class="teal">**EVERYWHERE!**</span> {-}
-
-<div style="overflow: hidden; margin-top: 6px; width: 100%; margin-left: 0; height: 302px;">
-    
-<img src="../images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -133px; width: 75%;">
-
-</div>
-
-It seemed like a good idea to bring those helpful monsters along, and they're so so cute. People hate to say it, but they are starting to become a real nuisance. 
-
-To get a grasp on the population explosion of monsters our research vessel is launching a full-scale monster survey. And they need our **help**.
+<img class="animated fadeInLeft" src="../images/lubridate_bttf_allison_horst.png" style="width: 80%;">
 
 
 ## <i class="fa fa-calendar" aria-hidden="true"></i> Dates with `lubridate` {-}
@@ -71,75 +94,138 @@ We can find how much time has elapsed, add or subtract days, and find season and
 > This is a great reference when you need to manipulate dates or timezones in your data.
 
 
-## Menu of date functions {-}
+
+## **Step 1:** Become a date {-}
+
+### Convert "<span class="teal">text</span>" to <span class="blue">DATE</span> {-}
+
+Does your date column look like one of these formats? Here's the `lubridate` function to convert the text column to a date.
+
+<div class="bluecode">
+
+| Format | Function to use   |
+|:----|:-----------------------------------------------------------------|
+| Month-Day-Year ~ "<span class="teal">05-18-2023</span>" or "<span class="teal">05/18/2023</span>"                | `mdy(`date`)  `    |  
+| Day-Month-Year (Euro dates) ~ "<span class="teal">18-05-2023</span>" or "<span class="teal">18/05/2023</span>"  | `dmy()  `    | 
+| Year-Month-Day (Science dates) ~ "<span class="teal">2023-05-18</span>" or "<span class="teal">2023/05/18</span>" | `ymd()  `    | 
+| Year-Month-Day Hour:Minutes:Seconds ~  "<span class="teal">2023-05-18 8:35:22 AM</span>"   | `ymd_hms() ` | 
+
+</div>
 
 
-#### Convert text to a `DATE` {-}
+### <i class="fa fa-clock teal" aria-hidden="true"></i> Real world dates {-}
 
-| Function to use   |  Order of date elements                                 |
-|----|:-----------------------------------------------------------------|
-|`mdy()  `    | Month-Day-Year :: `05-18-2019` or `05/18/2019`                 |
-|`dmy()  `    | Day-Month-Year (Euro dates) :: `18-05-2019` or `18/05/2019`    |
-|`ymd()  `    | Year-Month-Day (science dates) :: `2019-05-18` or `2019/05/18` |
-|`ymd_hm() `  | Year-Month-Day Hour:Minutes ::  `2019-05-18 8:35 AM`          |
-|`ymd_hms() ` | Year-Month-Day Hour:Minutes:Seconds ::  `2019-05-18 8:35:22 AM`    |
+
+#### <span class="teal">**Month**</span>-<span class="teal">**Day**</span>-<span class="teal">**Year**</span> **dates** {-}
+
+<div class="bluecode">
+
+| Format |  Function to use         |  
+|:------|:-------------------------|  
+| "<span class="teal">05/18/2023 </span>" | `mdy(`date`)  ` |  
+| "<span class="teal">May 18, 2023 </span>"| `mdy(`date`)  `       | 
+| "<span class="teal">05/18/2023 8:00 CDT </span>"| `mdy_hm(`date`, tz = `"US/Central"`)  `| 
+| "<span class="teal">05/18/2023 11:05:32 GMT </span>"| `mdy_hms(`date`, tz = `"GMT"`)  `| 
+
+</div>
+
+<br>
+
+<div class="bluecode">
+
+#### <span class="teal">**European**</span> **dates** {-}
+
+| Format  |  Function to use         |    
+|:--------|:-------------------------|
+| "<span class="teal">18-05-2023</span>" | `dmy(`date`) `  |  
+| "<span class="teal">18/05/2023</span>" | `dmy(`date`) `  |  
+| "<span class="teal">18.05.2023</span>" | `dmy(`date`) `  |
+
+
+</div>
+
+<br>
+
+#### <span class="teal">**No nonsense**</span> **dates** {-}
+
+
+<div class="bluecode">
+
+| Format  |  Function to use         |   
+|:--------|:-------------------------| 
+| "<span class="teal">20230518</span>"     | `ymd(`date`, tz = `"US/Central"`) `     |
+| "<span class="teal">202305180630</span>" | `ymd_hm(`date`, tz = `"US/Central"`) `  |
+
+</div>
 
 <br>
 
 
+## **Step 2:** Sort your components {-}
+
+<img class="animated fadeInLeft" src="../images/lubridate_sort_allison_horst.png" style="width: 77%;">
+
+
+
 ### Date components (year, month, day) {-}
 
-| Function to use   |  Date element                                            |
-|----|:-----------------------------------------------------------------|
-|`year()  `  | Year          |
-|`month()`   | Month as _1,2,3_; For _Jan, Feb, Mar_ use `label=TRUE`  |
+<div class="bluecode">
+
+| Function to use  |  Date component                                    |
+|:-------|:-------------------------------------------------------------|
+|`year(`date`)  `  | Year          |
+|`month()`   | Month: _1, 2, 3_; Use <span class="teal">label=TRUE</span> for _Jan, Feb, Mar_  |
 |`week()`    | Week of the year  |
 |`day()`     | Day of the month  |
-|`wday()`    | Day of the week as _1,2,3_; For _Sun, Mon, Tue_ use `label=TRUE` |
+|`wday()`    | Day of the week: _1, 2, 3_; Use <span class="teal">label=TRUE</span> for _Sun, Mon, Tue_  |
 | _- Time -_   |            |
 |`hour() `   |  Hour of the day _(24hr)_ |
 |`minute() ` |  Minutes   |
 |`second() ` |  Seconds   |
 |`tz()  `    |  Time zone |
 
-<br>
-
-<div class="note">
-### <i class="fa fa-broom" aria-hidden="true"></i> Clean the dates {-}
-
-#### Real world dates {-}
-
-Does your date column look like one of these? 
-
-Here's the `lubridate` function to convert the column to a date.
-
-| Format |  Function to use         |   
-|--------|:-------------------------|  
-| "05/18/2019" | `mdy(date_column)  ` |  
-| "May 18, 2019" | `mdy(date_column)  `       |
-| "05/18/2019 8:00 CDT" | `mdy_hm(date_column, tz = "US/Central")  `|
-| "05/18/2019 11:05:32 GMT" | `mdy_hms(date_column, tz = "GMT")  `|
+</div>
 
 <br>
 
-__European dates__
+## **Step 3:** Show your style {-}
 
-| Format |  Function to use         |   
-|--------|:-------------------------| 
-| "30.05.2019" | `dmy(date_column) `  |
-| "30-05-2019" | `dmy(date_column) `  |
-| "30/05/2019" | `dmy(date_column) `  |
+### <i class="fa-solid fa-stamp"></i> [<span class="teal">**Stamp**</span>] your dates
 
 <br>
 
-__Simple number dates__
+> Create your stamp format with `stamp_date( )`
 
-| Format |  Function to use         |   
-|--------|:-------------------------| 
-| "20190518" | `ymd(sample_date) `  |
-| "201905180630" | `ymd_hm(sample_date, tz = "US/Central") `  |
+```{r, message=F}
+library(tidyverse)
+
+report_style <- stamp_date("Reported on December 15th, 2023")
+```
+
+
+<br>
+
+> Use the stamp on your data
+
+```{r, eval=T}
+new_date <- ymd("2024-05-15")
+
+report_style(new_date)
+```
+
+
+
+## Monsters <span class="teal">**EVERYWHERE!**</span> {-}
+
+<div style="overflow: hidden; margin-top: 6px; width: 100%; margin-left: 0; height: 302px;">
+    
+<img src="../images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -133px; width: 75%;">
 
 </div>
+
+It seemed like a good idea to bring those helpful monsters along, and they're so so cute. People hate to say it, but they are starting to become a real nuisance. 
+
+To get a grasp on the population explosion of monsters our research vessel is launching a full-scale monster survey. And they need our **help**.
 
 
 <br>
@@ -337,6 +423,8 @@ Use `format(count_date, ...)` and the date expressions below to format the sched
 
 ### Date parts {-}
 
+<div class="bluecode">
+
 | Expression    | Description                       | Example  |
 | :------------ | :-------------------------------- | :------- |
 | `%Y`          | Year (4 digit)                    | 2023     |
@@ -346,8 +434,11 @@ Use `format(count_date, ...)` and the date expressions below to format the sched
 | `%m`          | Month (decimal number)            | 12       |
 | `%d`          | Day of the month (decimal number) | 30       |
 
+</div>
 
 ### Time parts {-}
+
+<div class="bluecode">
 
 | Expression    | Description                       | Example  |
 | :------------ | :-------------------------------- | :------- |
@@ -355,6 +446,7 @@ Use `format(count_date, ...)` and the date expressions below to format the sched
 | `%M`          | Minute                            | 13       |
 | `%S`          | Second                            | 35       |
 
+</div>
 
 <br>
 
@@ -586,4 +678,11 @@ ggplot(monsters, aes(x = count_date, y = monster_count, color = island)) +
 ## <i class="fas fa-hands-clapping" aria-hidden="true"></i> Great work {-}
 
 The researchers were deeply thankful and rewarded you with a shiny penguin magnet. They'll be in touch for *Monster Survey 2025*.
+
+
+<br>
+
+### <i class="fas fa-carrot"> </i> [Jump to the top](../page/day5.html) {-}
+
+<br>
 

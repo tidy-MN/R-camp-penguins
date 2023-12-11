@@ -19,7 +19,10 @@
 
 <div class="tab-pane fade active in" id="monsters2" role="tabpanel" aria-labelledby="monsters-tab2">
 
-![](../images/monsters/monster_data.png){style="width: 85%;"}
+<img class="animated infinite bounce" src="../images/monsters/monster_data2.png" style="width: 44%; margin-left: -2px; float: left;">
+
+<img src="../images/monsters/monster_names.png" style="width: 20%; margin-top: 6px; margin-right: 0;">
+
 
 <br>
 
@@ -32,6 +35,9 @@
 
 ![](../images/monsters/left_join_all.png){style="width: 98%; margin-top: 12px;"}
 
+![](../images/monsters/left_join_named_monsters.png){style="width: 98%; margin-top: 12px;"}
+
+
 <br>
 
 </div>
@@ -42,6 +48,9 @@
 <h3 class="blue-h3"> anti_join </h3>
 
 ![](../images/monsters/anti_join_all.png){style="width: 95%; margin-top: 12px;"}
+
+![](../images/monsters/anti_join_no_name_monsters.png){style="width: 98%; margin-top: 12px;"}
+
 
 <br>
 
@@ -71,7 +80,7 @@ named_monsters
 
 no_name_monsters <- anti_join(monsters, nicknames, by = "id")
 
-## filter alternative: monster id "NOT IN" nicknames id column
+## filter() alternative: monster id "NOT IN" nicknames id column
 no_name_monsters <- filter(monsters, !id %in% nicknames$id)
 
 ```

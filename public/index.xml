@@ -393,7 +393,7 @@ Day 2 review quiz Questions and other review topics Open your exercise R project
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/day5.html</guid>
-      <description>1 lubridate: Date and time travel 1 lubridate: Date and time travel Monsters EVERYWHERE! It seemed like a good idea to bring those helpful monsters along, and they’re so so cute.</description>
+      <description>1 Smash: Joining tables 2 lubridate: Date and time travel 1 Smash: Joining tables JOINS 1.0.1 left_join( ) library(tidyverse) left_join(left_table, right_table, by = &amp;quot;shared_column&amp;quot;) 2 lubridate: Date and time travel Dates with lubridate The lubridate package.</description>
     </item>
     
     <item>
