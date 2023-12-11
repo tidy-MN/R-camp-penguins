@@ -53,18 +53,25 @@ names(penguin_names)
 names(penguins_raw)
 ```
 
-Fantastic, looks like the column names all match, but if you *reallllly* want to be sure you can always use the function `intersect` to see where the names line up!
+
+<br>
+
+Fantastic! It looks like the column names all match, but if you *reallllly* want to be sure you can always use the function `intersect` to see where the names line up!
 
 ```{r}
 intersect(names(penguins_raw), names(penguin_names))
 ```
 
-Now it's time to join up! Join functions are smart, so if your columns have the same names it will automatically figure out which ones to join on so you don't have to specify but if they don't all you have to do is pass the function an argument called `by` where you give it specific information on what to join by. 
+Now it's time to join up! Join functions are smart, so if your columns have the same names it will automatically figure out which ones to join on so you don't have to specify. If they do have different column names,all you have to do is pass the function an argument called `by` where you give it the names of the columns to join by. 
 
 ```{r}
 named_penguins <- left_join(penguins_raw, penguin_names)
 ```
-Annnnd just like that, it figured out what to join! Here's how it specified the `join_by` statement: ```by = join_by(studyName, `Sample Number`, Species, Sex)```
+
+Annnnd just like that, it figured out what to join! Here's how it specified the `join_by` statement: `by = join_by(studyName, `Sample Number`, Species, Sex)`
+
+
+<br>
 
 So we did a left join, meaning that we expect to keep all the records from the *first* dataframe we pass it and only those in the second that __match__. 
 
@@ -189,7 +196,7 @@ ggplot(named_penguins %>%
   
 code_end')
 
-tab_html <- add_tabs(tabs, content, 0)
+tab_html <- add_tabs(tabs, content, 10)
 
 cat(paste0(tab_html, collapse = "\n"))
 ```

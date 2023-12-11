@@ -63,7 +63,7 @@
   "headline": "Joins: A fishy dinner",
   "description" : "Before you start… Jump back into the project you created for the previous sessions exercises and then create a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1530 ,
+  "wordCount":  1533 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -408,13 +408,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## [10] &quot;Culmen Length (mm)&quot;  &quot;Culmen Depth (mm)&quot;   &quot;Flipper Length (mm)&quot;
 ## [13] &quot;Body Mass (g)&quot;       &quot;Sex&quot;                 &quot;Delta 15 N (o/oo)&quot;  
 ## [16] &quot;Delta 13 C (o/oo)&quot;   &quot;Comments&quot;</code></pre>
-<p>Fantastic, looks like the column names all match, but if you <em>reallllly</em> want to be sure you can always use the function <code>intersect</code> to see where the names line up!</p>
+<p><br></p>
+<p>Fantastic! It looks like the column names all match, but if you <em>reallllly</em> want to be sure you can always use the function <code>intersect</code> to see where the names line up!</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">intersect</span>(<span class="fu">names</span>(penguins_raw), <span class="fu">names</span>(penguin_names))</span></code></pre></div>
 <pre><code>## [1] &quot;studyName&quot;     &quot;Sample Number&quot; &quot;Species&quot;       &quot;Sex&quot;</code></pre>
-<p>Now it’s time to join up! Join functions are smart, so if your columns have the same names it will automatically figure out which ones to join on so you don’t have to specify but if they don’t all you have to do is pass the function an argument called <code>by</code> where you give it specific information on what to join by.</p>
+<p>Now it’s time to join up! Join functions are smart, so if your columns have the same names it will automatically figure out which ones to join on so you don’t have to specify. If they do have different column names,all you have to do is pass the function an argument called <code>by</code> where you give it the names of the columns to join by.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>named_penguins <span class="ot">&lt;-</span> <span class="fu">left_join</span>(penguins_raw, penguin_names)</span></code></pre></div>
 <pre><code>## Joining with `by = join_by(studyName, `Sample Number`, Species, Sex)`</code></pre>
-<p>Annnnd just like that, it figured out what to join! Here’s how it specified the <code>join_by</code> statement: <code>by = join_by(studyName, `Sample Number`, Species, Sex)</code></p>
+<p>Annnnd just like that, it figured out what to join! Here’s how it specified the <code>join_by</code> statement: <code>by = join_by(studyName,</code>Sample Number<code>, Species, Sex)</code></p>
+<p><br></p>
 <p>So we did a left join, meaning that we expect to keep all the records from the <em>first</em> dataframe we pass it and only those in the second that <strong>match</strong>.</p>
 <p>Let’s filter our new dataset to see if we have all the data that we need!</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">filter</span>(named_penguins, <span class="fu">is.na</span>(Name))</span></code></pre></div>
@@ -507,23 +509,23 @@ anti_join(penguin_names, penguins_raw)
 <p>Now, let’s make a plot to see what the penguins favorite food by island is! Check the solution for a way to bring everything we’ve learned together into one beautiful code chunk and for exciting new color developments!</p>
 <div id="fixing-typos-1" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Fixing typos</h3>
-<ul class="nav nav-pills" id="myTab0" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab10" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="description0-tab" data-toggle="tab" href="#description0" role="tab" aria-controls="description0" aria-selected="true">Description</a>
+<a class="nav-link" id="description10-tab" data-toggle="tab" href="#description10" role="tab" aria-controls="description10" aria-selected="true">Description</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint0-tab" data-toggle="tab" href="#showhint0" role="tab" aria-controls="showhint0" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint10-tab" data-toggle="tab" href="#showhint10" role="tab" aria-controls="showhint10" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode0-tab" data-toggle="tab" href="#showcode0" role="tab" aria-controls="showcode0" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode10-tab" data-toggle="tab" href="#showcode10" role="tab" aria-controls="showcode10" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="description0" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description0-tab">
+<div id="description10" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description10-tab">
 <p><b> Feel free to make whatever plot you think is best: we want to know how many penguins like each food by island. Use labels, summaries, or other methods to convey this information and have some fun!</b></p>
 <p><br></p>
 </div>
-<div id="showhint0" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint0-tab">
+<div id="showhint10" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint10-tab">
 <pre class="sourceCode r">
 # we decided to go bar-chart and we want the bar in decending order by count!
 ggplot(named_penguins %>% 
@@ -541,7 +543,7 @@ ggplot(named_penguins %>%
   
 </pre>
 </div>
-<div id="showcode0" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode0-tab">
+<div id="showcode10" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode10-tab">
 <pre class="sourceCode r">
 ggplot(named_penguins %>% 
          group_by(island, favorite_food) %>% 
