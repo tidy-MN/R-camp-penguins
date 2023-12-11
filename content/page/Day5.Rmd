@@ -38,39 +38,33 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 # <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> SMASH: Joining tables
 
 
-## Joins {-}
 
-
-### <span class="blue">left_join( )</span> {-}
+## <span class="blue">left_join( )</span> {-}
 
 ```{r}
 library(tidyverse)
 ```
 
 ```{r, eval=F}
-left_join(left_table, right_table,
-          by = "shared_column")
+left_join(left_table, right_table, by = "shared_column_name")
 ```
 
 
 
-<img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/left-join.gif" style="width: 75%; margin-top: 2px;">
+<img src="../images/left-join.gif" style="width: 75%; margin-top: 2px;">
 
 
 
-### <span class="blue">anti_join( )</span> {-}
+## <span class="blue">anti_join( )</span> {-}
 
 ```{r, eval=F}
-anti_join(left_table, right_table,
-          by = "shared_column")
+anti_join(left_table, right_table, by = "shared_column_name")
 ```
 
 
-<img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/anti-join.gif" style="width: 75%; margin-top: 2px;">
+<img src="../images/anti-join.gif" style="width: 75%; margin-top: 2px;">
 
-
-```{r monster-tabs, results='asis', echo=F, eval=T}
-cat(readLines("../insert_monster_tabs_only_joins.R"))
+```{r child = '../insert_monster_tabs_only_joins.Rmd', eval=T}
 ```
 
 <br>

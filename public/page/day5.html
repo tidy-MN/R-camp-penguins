@@ -10,9 +10,9 @@
   <title>Day 5 - Learn R</title>
   <meta property="og:title" content="Day 5" />
   <meta name="twitter:title" content="Day 5" />
-  <meta name="description" content="1 Smash: Joining tables 2 lubridate: Date and time travel 1 Smash: Joining tables JOINS 1.0.1 left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column&quot;) 2 lubridate: Date and time travel Dates with lubridate The lubridate package.">
-  <meta property="og:description" content="1 Smash: Joining tables 2 lubridate: Date and time travel 1 Smash: Joining tables JOINS 1.0.1 left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column&quot;) 2 lubridate: Date and time travel Dates with lubridate The lubridate package.">
-  <meta name="twitter:description" content="1 Smash: Joining tables 2 lubridate: Date and time travel 1 Smash: Joining tables JOINS 1.0.1 left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column&quot;) 2 …">
+  <meta name="description" content="1 SMASH: Joining tables 2 lubridate: Date and time travel 1 SMASH: Joining tables left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column_name&quot;) anti_join( ) anti_join(left_table, right_table, by = &quot;shared_column_name&quot;) monsters left_join anti_join R code left_join anti_join # Create monsters monsters &lt;- data.">
+  <meta property="og:description" content="1 SMASH: Joining tables 2 lubridate: Date and time travel 1 SMASH: Joining tables left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column_name&quot;) anti_join( ) anti_join(left_table, right_table, by = &quot;shared_column_name&quot;) monsters left_join anti_join R code left_join anti_join # Create monsters monsters &lt;- data.">
+  <meta name="twitter:description" content="1 SMASH: Joining tables 2 lubridate: Date and time travel 1 SMASH: Joining tables left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column_name&quot;) anti_join( ) …">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Day 5",
-  "description" : "1 Smash: Joining tables 2 lubridate: Date and time travel 1 Smash: Joining tables JOINS 1.0.1 left_join( ) library(tidyverse) left_join(left_table, right_table, by = \u0026quot;shared_column\u0026quot;) 2 lubridate: Date and time travel Dates with lubridate The lubridate package.",
+  "description" : "1 SMASH: Joining tables 2 lubridate: Date and time travel 1 SMASH: Joining tables left_join( ) library(tidyverse) left_join(left_table, right_table, by = \u0026quot;shared_column_name\u0026quot;) anti_join( ) anti_join(left_table, right_table, by = \u0026quot;shared_column_name\u0026quot;) monsters left_join anti_join R code left_join anti_join # Create monsters monsters \u0026lt;- data.",
   "inLanguage" : "en",
-  "wordCount":  1617 ,
+  "wordCount":  1702 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Day 5" />
-<meta property="og:description" content="1 Smash: Joining tables 2 lubridate: Date and time travel 1 Smash: Joining tables JOINS 1.0.1 left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column&quot;) 2 lubridate: Date and time travel Dates with lubridate The lubridate package.">
+<meta property="og:description" content="1 SMASH: Joining tables 2 lubridate: Date and time travel 1 SMASH: Joining tables left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column_name&quot;) anti_join( ) anti_join(left_table, right_table, by = &quot;shared_column_name&quot;) monsters left_join anti_join R code left_join anti_join # Create monsters monsters &lt;- data.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/day5.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Day 5" />
-  <meta name="twitter:description" content="1 Smash: Joining tables 2 lubridate: Date and time travel 1 Smash: Joining tables JOINS 1.0.1 left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column&quot;) 2 …">
+  <meta name="twitter:description" content="1 SMASH: Joining tables 2 lubridate: Date and time travel 1 SMASH: Joining tables left_join( ) library(tidyverse) left_join(left_table, right_table, by = &quot;shared_column_name&quot;) anti_join( ) …">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -358,7 +358,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="TOC">
 <ul>
-<li><a href="#smash-joining-tables" id="toc-smash-joining-tables"><span class="toc-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <strong>Smash:</strong> Joining tables</a></li>
+<li><a href="#smash-joining-tables" id="toc-smash-joining-tables"><span class="toc-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> SMASH: Joining tables</a></li>
 <li><a href="#lubridate-date-and-time-travel" id="toc-lubridate-date-and-time-travel"><span class="toc-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <strong>lubridate:</strong> Date and time travel</a></li>
 </ul>
 </div>
@@ -371,27 +371,86 @@ hr {background: #491aab;}
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /></p>
 <p><br></p>
 <div id="smash-joining-tables" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <strong>Smash:</strong> Joining tables</h1>
-<div id="joins" class="section level2 unnumbered">
-<h2>JOINS</h2>
-<div id="left_join" class="section level3" number="1.0.1">
-<h3><span class="header-section-number">1.0.1</span> <span class="blue">left_join( )</span></h3>
+<h1><span class="header-section-number">1</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> SMASH: Joining tables</h1>
+<div id="left_join" class="section level2 unnumbered">
+<h2><span class="blue">left_join( )</span></h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">left_join</span>(left_table, right_table,</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>          <span class="at">by =</span> <span class="st">&quot;shared_column&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<p><img src="https://raw.githubusercontent.com/gadenbuie/tidyexplain/main/images/left-join.gif" style="width: 80%; max-width: 122%; margin-top: 4px;"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">left_join</span>(left_table, right_table, <span class="at">by =</span> <span class="st">&quot;shared_column_name&quot;</span>)</span></code></pre></div>
+<p><img src="../images/left-join.gif" style="width: 75%; margin-top: 2px;"></p>
+</div>
+<div id="anti_join" class="section level2 unnumbered">
+<h2><span class="blue">anti_join( )</span></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">anti_join</span>(left_table, right_table, <span class="at">by =</span> <span class="st">&quot;shared_column_name&quot;</span>)</span></code></pre></div>
+<p><img src="../images/anti-join.gif" style="width: 75%; margin-top: 2px;"></p>
+<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<li class="nav-item active">
+<a class="nav-link" id="monsters-tab2" data-toggle="tab" href="#monsters2" role="tab" aria-controls="monsters2" aria-selected="true"> <code>monsters</code> </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="left-join-tab2" data-toggle="tab" href="#left-join2" role="tab" aria-controls="left-join2" aria-selected="false"> <code>left_join</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="anti-join-tab2" data-toggle="tab" href="#anti-join2" role="tab" aria-controls="anti-join2" aria-selected="false"> <code>anti_join</code></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="code-monsters-tab2" data-toggle="tab" href="#code-monsters2" role="tab" aria-controls="code-monsters2" aria-selected="false"> <code>R code</code></a>
+</li>
+</ul>
+<div id="myTabContent" class="well tab-content monsters" style="background-color: white;">
+<div id="monsters2" class="tab-pane fade active in" role="tabpanel" aria-labelledby="monsters-tab2">
+<p><img class="animated infinite bounce" src="../images/monsters/monster_data2.png" style="width: 44%; margin-left: -2px; float: left;"></p>
+<p><img src="../images/monsters/monster_names.png" style="width: 20%; margin-top: 6px; margin-right: 0;"></p>
 <p><br></p>
 </div>
+<div id="left-join2" class="tab-pane fade" role="tabpanel" aria-labelledby="left-join-tab2">
+<h3 class="blue-h3">
+left_join
+</h3>
+<p><img src="../images/monsters/left_join_all.png" style="width: 98%; margin-top: 12px;" /></p>
+<p><img src="../images/monsters/left_join_named_monsters.png" style="width: 98%; margin-top: 12px;" /></p>
+<p><br></p>
+</div>
+<div id="anti_join2" class="tab-pane fade" role="tabpanel" aria-labelledby="anti-join-tab2">
+<h3 class="blue-h3">
+anti_join
+</h3>
+<p><img src="../images/monsters/anti_join_all.png" style="width: 95%; margin-top: 12px;" /></p>
+<p><img src="../images/monsters/anti_join_no_name_monsters.png" style="width: 98%; margin-top: 12px;" /></p>
+<p><br></p>
+</div>
+<div id="code-monsters2" class="tab-pane fade" role="tabpanel" aria-labelledby="code-monsters-tab2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Create monsters</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>                       <span class="at">color =</span> <span class="fu">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;green&quot;</span>,  <span class="st">&quot;pink&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;green&quot;</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>                       <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>                       <span class="at">hat =</span> <span class="fu">c</span>(T,T,F,T,F) )</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#  LEFT_JOIN ----</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>nicknames <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>),</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>                        <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Kid&quot;</span>, <span class="st">&quot;Cheeky&quot;</span>, <span class="st">&quot;Spritz&quot;</span>, <span class="st">&quot;Littles&quot;</span>, <span class="st">&quot;Lucky&quot;</span>))</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>named_monsters <span class="ot">&lt;-</span> <span class="fu">left_join</span>(monsters, nicknames, <span class="at">by =</span> <span class="st">&quot;id&quot;</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>named_monsters</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#  ANTI_JOIN ----</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>no_name_monsters <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(monsters, nicknames, <span class="at">by =</span> <span class="st">&quot;id&quot;</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="do">## filter() alternative: monster id &quot;NOT IN&quot; nicknames id column</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>no_name_monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span>id <span class="sc">%in%</span> nicknames<span class="sc">$</span>id)</span></code></pre></div>
+</div>
+</div>
+<p><br></p>
 </div>
 </div>
 <div id="lubridate-date-and-time-travel" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> <strong>lubridate:</strong> Date and time travel</h1>
-<p><img class="animated fadeInLeft" src="../images/lubridate_bttf_allison_horst.png" style="width: 80%;"></p>
+<p><img class="animated fadeInLeft" src="../images/lubridate_bttf_allison_horst.png" style="width: 78%; margin-top: -70px; margin-bottom: -4px;"></p>
 <div id="dates-with-lubridate" class="section level2 unnumbered">
-<h2><i class="fa fa-calendar" aria-hidden="true"></i> Dates with <code>lubridate</code></h2>
-<div id="the-lubridate-package." class="section level3 unnumbered">
-<h3>The <code>lubridate</code> package.</h3>
+<h2>Dates with <code>lubridate</code></h2>
 <p><img src="../images/lubridate.png" style="width: 21%; float: left; margin-right: 30px; margin-top: 8px; margin-bottom: 12px;" /></p>
 <p><br></p>
 <p>It’s about time! Lubridate makes working with dates much easier.</p>
@@ -405,17 +464,16 @@ hr {background: #491aab;}
 This is a great reference when you need to manipulate dates or timezones in your data.</p>
 </blockquote>
 </div>
-</div>
 <div id="step-1-become-a-date" class="section level2 unnumbered">
 <h2><strong>Step 1:</strong> Become a date</h2>
 <div id="convert-text-to-date" class="section level3 unnumbered">
 <h3>Convert “<span class="teal">text</span>” to <span class="blue">DATE</span></h3>
-<p>Does your date column look like one of these formats? Here’s the <code>lubridate</code> function to convert the text column to a date.</p>
+<p>Does your date column look like something on the left? Here’s the <code>lubridate</code> function to convert the text column to a date.</p>
 <div class="bluecode">
 <table>
 <colgroup>
-<col width="7%" />
-<col width="92%" />
+<col width="82%" />
+<col width="17%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -443,6 +501,7 @@ This is a great reference when you need to manipulate dates or timezones in your
 </tbody>
 </table>
 </div>
+<p><br></p>
 </div>
 <div id="real-world-dates" class="section level3 unnumbered">
 <h3><i class="fa fa-clock teal" aria-hidden="true"></i> Real world dates</h3>
@@ -451,8 +510,8 @@ This is a great reference when you need to manipulate dates or timezones in your
 <div class="bluecode">
 <table>
 <colgroup>
-<col width="21%" />
-<col width="78%" />
+<col width="85%" />
+<col width="14%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -540,7 +599,7 @@ This is a great reference when you need to manipulate dates or timezones in your
 </div>
 <div id="step-2-sort-your-components" class="section level2 unnumbered">
 <h2><strong>Step 2:</strong> Sort your components</h2>
-<p><img class="animated fadeInLeft" src="../images/lubridate_sort_allison_horst.png" style="width: 77%;"></p>
+<p><img class="animated fadeInLeft" src="../images/lubridate_sort_allison_horst.png" style="width: 76%; margin-top: -40px;"></p>
 <div id="date-components-year-month-day" class="section level3 unnumbered">
 <h3>Date components (year, month, day)</h3>
 <div class="bluecode">
@@ -604,29 +663,29 @@ This is a great reference when you need to manipulate dates or timezones in your
 </div>
 <div id="step-3-show-your-style" class="section level2 unnumbered">
 <h2><strong>Step 3:</strong> Show your style</h2>
-<div id="stamp-your-dates" class="section level3" number="2.0.1">
-<h3><span class="header-section-number">2.0.1</span> <i class="fa-solid fa-stamp"></i> [<span class="teal"><strong>Stamp</strong></span>] your dates</h3>
+<p><br></p>
+<div id="stamp-your-dates" class="section level3 unnumbered">
+<h3><i class="fa-solid fa-stamp"></i> [<span class="teal"><strong>Stamp</strong></span>] your dates</h3>
+<blockquote>
+<p>Create your stamp style with <code>stamp_date( )</code></p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>report_style <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Reported on December 15th, 2023&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <blockquote>
-<p>Create your stamp format with <code>stamp_date( )</code></p>
+<p>Stamp on your data</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>report_style <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Reported on December 15th, 2023&quot;</span>)</span></code></pre></div>
-<p><br></p>
-<blockquote>
-<p>Use the stamp on your data</p>
-</blockquote>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>new_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-05-15&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">report_style</span>(new_date)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>new_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-05-15&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">report_style</span>(new_date)</span></code></pre></div>
 <pre><code>## [1] &quot;Reported on May 15th, 2024&quot;</code></pre>
 </div>
 </div>
 <div id="monsters-everywhere" class="section level2 unnumbered">
 <h2>Monsters <span class="teal"><strong>EVERYWHERE!</strong></span></h2>
-<div style="overflow: hidden; margin-top: 6px; width: 100%; margin-left: 0; height: 302px;">
-<p><img src="../images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -133px; width: 75%;"></p>
+<div style="overflow: hidden; margin-top: 6px; width: 100%; margin-left: 0; height: 250px;">
+<p><img src="../images/gganimate_allison_horst.png" alt="Cartoon of a bunch of monsters watching data points of varing color and shape fly across a screen like fireworks. Several monsters are lighting the data off like fireworks." style="margin-top: -123px; width: 80%;"></p>
 </div>
 <p>It seemed like a good idea to bring those helpful monsters along, and they’re so so cute. People hate to say it, but they are starting to become a real nuisance.</p>
 <p>To get a grasp on the population explosion of monsters our research vessel is launching a full-scale monster survey. And they need our <strong>help</strong>.</p>
@@ -644,19 +703,19 @@ This is a great reference when you need to manipulate dates or timezones in your
 </ul>
 </div>
 <p><br></p>
-<p>Let’s generate the full list of dates during this time span with the sequence function: <code>seq()</code></p>
+<p>So the survey goes from May until October. Let’s use the <code>seq()</code> (sequence) to generate the full list of dates during this time span.</p>
 <div id="run-the-code-below-to-create-a-list-of-dates-for-the-survey." class="section level4 unnumbered">
 <h4>Run the code below to create a list of dates for the survey.</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-05-01&quot;</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>end_date   <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-10-31&quot;</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co"># Sequence from start to end, counting by 1 day interval</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> start_date, </span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>                    <span class="at">to =</span> end_date, </span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>                    <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-05-01&quot;</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>end_date   <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;2024-10-31&quot;</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co"># Sequence from start to end, counting by 1 day interval</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> start_date, </span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>                    <span class="at">to =</span> end_date, </span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>                    <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 </div>
@@ -680,13 +739,13 @@ Show answer
 </div>
 <div id="heres-a-reminder" class="section level3 unnumbered">
 <h3>Here’s a reminder</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">count_date =</span> survey_dates)</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co"># or</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">count_date =</span> survey_dates)</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="fu">head</span>(survey)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">count_date =</span> survey_dates)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">count_date =</span> survey_dates)</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">head</span>(survey)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 1
 ##   count_date
 ##   &lt;date&gt;    
@@ -716,10 +775,10 @@ Show answer
 <blockquote>
 <p>Try changing some of the TRUE/FALSE values to see what the arguments are doing.</p>
 </blockquote>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>new_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&#39;2024-05-01&#39;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co"># wday tells you the day of week (Sun, Mon, etc..) for a specific date</span></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="fu">wday</span>(new_date, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>new_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&#39;2024-05-01&#39;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co"># wday tells you the day of week (Sun, Mon, etc..) for a specific date</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="fu">wday</span>(new_date, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] Wednesday
 ## 7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday</code></pre>
 <p><br></p>
@@ -731,14 +790,14 @@ That means….<strong>May the 4th</strong> will be on Saturday. Perfect! That’
 <p>We really don’t want to check every date one by one do we?</p>
 <p>Let’s add a new <code>week_day</code> column to our survey table that checks ALL the dates ALL at once. To add a new column we call on <code>mutate()</code>.</p>
 <p>Complete the code below to add a <code>week_day</code> column to our <em>survey</em> table.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>                 <span class="at">week_day =</span> ________ )</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>                 <span class="at">week_day =</span> ________ )</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>                 <span class="at">week_day =</span> <span class="fu">wday</span>(count_date, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">mutate</span>(survey, </span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>                 <span class="at">week_day =</span> <span class="fu">wday</span>(count_date, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>))</span></code></pre></div>
 </details>
 <p><br></p>
 </div>
@@ -751,16 +810,16 @@ Show code
 <li><code>Tuesday</code> for Biscoe</li>
 </ul>
 <p><br></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey,  ______ <span class="sc">==</span>  ________ )</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, ______ <span class="sc">==</span>  ________ )</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey,  ______ <span class="sc">==</span>  ________ )</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, ______ <span class="sc">==</span>  ________ )</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Saturday&quot;</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Tuesday&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Saturday&quot;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">filter</span>(survey, week_day <span class="sc">==</span>  <span class="st">&quot;Tuesday&quot;</span>)</span></code></pre></div>
 </details>
 <p><br></p>
 <p><strong>How many survey dates will occur at each island?</strong></p>
@@ -873,21 +932,21 @@ Show answer
 <p><br></p>
 <p>Use <code>mutate()</code> to update the <strong>week_day</strong> column for the Dream island schedule.</p>
 <p><strong>Here’s a start</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Set date format to match 08-18-2024</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, _______  ))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Set date format to match 08-18-2024</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, _______  ))</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Set date format to 08-18-2024</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Set date format to 08-18-2024</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>dream_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(dream_dates, <span class="at">pretty_date =</span> <span class="fu">format</span>(count_date, <span class="st">&quot;%m-%d-%Y&quot;</span>))</span></code></pre></div>
 </details>
 <p><br></p>
 </div>
 <div id="howd-we-do" class="section level3 unnumbered">
 <h3>How’d we do?</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Dream island schedule</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">head</span>(dream_dates, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># Dream island schedule</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="fu">head</span>(dream_dates, <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -919,32 +978,32 @@ Show code
 <div id="stamp-your-dates-1" class="section level3 unnumbered">
 <h3><i class="fa-solid fa-stamp"></i> [<span class="teal"><strong>Stamp</strong></span>] your dates</h3>
 <p>Now for <code>stamp_date()</code>. We’ll first create a stamp of our desired date format for Biscoe island, and then we will apply it to all the dates in our Biscoe schedule.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Create date stamp with format of Aug 18, 2024</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>biscoe_stamp <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Aug 18, 2024&quot;</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co"># Test the stamp</span></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>test_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;1985-10-26&quot;</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="fu">biscoe_stamp</span>(test_date)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Create date stamp with format of Aug 18, 2024</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>biscoe_stamp <span class="ot">&lt;-</span> <span class="fu">stamp_date</span>(<span class="st">&quot;Aug 18, 2024&quot;</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="co"># Test the stamp</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>test_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">&quot;1985-10-26&quot;</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="fu">biscoe_stamp</span>(test_date)</span></code></pre></div>
 <pre><code>## [1] &quot;Oct 26, 1985&quot;</code></pre>
 <p><br></p>
 <p>Good to go! Use <code>mutate()</code> and the new stamp to update the <strong>week_day</strong> column for the Biscoe island schedules.</p>
 <p><strong>Here’s a start</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> ___________ )</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> ___________ )</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> <span class="fu">biscoe_stamp</span>(count_date))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="co"># Set date format to match Aug 18, 2024</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>biscoe_dates <span class="ot">&lt;-</span> <span class="fu">mutate</span>(biscoe_dates, <span class="at">pretty_date =</span> <span class="fu">biscoe_stamp</span>(count_date))</span></code></pre></div>
 </details>
 <p><br></p>
 </div>
 <div id="howd-we-do-1" class="section level3 unnumbered">
 <h3>How’d we do?</h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Biscoe island schedule</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">head</span>(biscoe_dates, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># Biscoe island schedule</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="fu">head</span>(biscoe_dates, <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -980,7 +1039,7 @@ Show code
 <h2>3. Results</h2>
 <div id="load-the-monster-survey-results." class="section level3 unnumbered">
 <h3>Load the monster survey results.</h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/2024_monster_survey.csv&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/2024_monster_survey.csv&quot;</span>) </span></code></pre></div>
 <p><br></p>
 <p><em>Explore a bit.</em></p>
 <blockquote>
@@ -996,7 +1055,7 @@ location. We do know the date however.</p>
 <p>On <code>2024-06-25</code> there were a whopping 7 monsters counted - but we just don’t know where.</p>
 <p><br></p>
 <p><strong>Can you determine the island based on the date of the monster count?</strong></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>mystery_island_date <span class="ot">&lt;-</span> <span class="st">&quot;2024-06-25&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>mystery_island_date <span class="ot">&lt;-</span> <span class="st">&quot;2024-06-25&quot;</span></span></code></pre></div>
 <blockquote>
 <p><em>Hint: What weekday is this?</em></p>
 <p>Try the <code>wday(date)</code> function.</p>
@@ -1005,7 +1064,7 @@ location. We do know the date however.</p>
 <p><strong>Good sleuthing baking bot.</strong></p>
 <p>Right now we’re in a bit of a hurry, so let’s remove the row using filter.</p>
 <p>Use <code>filter()</code> to keep only the rows in the survey data where <code>island</code> is <strong>NOT</strong> <em>NA</em> (missing).</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span><span class="fu">is.na</span>(island))  </span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">filter</span>(monsters, <span class="sc">!</span><span class="fu">is.na</span>(island))  </span></code></pre></div>
 <p><br></p>
 </div>
 </div>
@@ -1015,18 +1074,18 @@ location. We do know the date however.</p>
 <h3 id="what-is-the-best-month-to-see-monsters" class="unnumbered">What is the best month to see monsters?</h3>
 </blockquote>
 <p><strong>First, add a <code>month</code> column to the data with the function <code>month()</code> and the column <code>count_date</code>.</strong></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">mutate</span>(monsters, <span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>monsters <span class="ot">&lt;-</span> <span class="fu">mutate</span>(monsters, <span class="at">month =</span> <span class="fu">month</span>(count_date))</span></code></pre></div>
 <p><br></p>
 <p><strong>Next, use <code>ggplot()</code> and <code>geom_col()</code> to plot the monster sightings by month.</strong></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> island)) <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> ______ , <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> monster_count, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> monster_count, <span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>    <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 </details>
 <p><br></p>
 <blockquote>
@@ -1037,15 +1096,15 @@ Show code
 <div id="time-series-all-the-data" class="section level2 unnumbered">
 <h2>5. Time series: All the data</h2>
 <p>Plot all the data with <code>geom_point()</code>. Put <code>count_date</code> on the x-axis, and the <code>monster_count</code> on the y-axis. Set the color to match the <code>island</code> column.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> ______ , <span class="at">color =</span> _____ )) <span class="sc">+</span></span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
 <details>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) </span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) </span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 </details>
 <p><br></p>
 <p>Oof! That’s a busy plot. Try adding <code>+ facet_wrap("island")</code> to the end.
@@ -1054,11 +1113,11 @@ What happens? Then try adding <code>+ geom_line()</code>.</p>
 <summary class="btn_code_blue">
 Show code
 </summary>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
-<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;island&quot;</span>) <span class="sc">+</span></span>
-<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">ggplot</span>(monsters, <span class="fu">aes</span>(<span class="at">x =</span> count_date, <span class="at">y =</span> monster_count, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="st">&quot;island&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/Day5_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 </details>
 <p><br></p>
 </div>
