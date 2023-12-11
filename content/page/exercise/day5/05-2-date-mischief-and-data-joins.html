@@ -1,9 +1,9 @@
 ---
-title: "Date mischief and data joins"
+title: "Date mischief"
 output: 
   blogdown::html_page: 
     highlight: tango
-    css: "../../css/camp_style.css"
+    css: ../../css/camp_style.css
     number_sections: false
     self_contained: false
     fontsize: 18pt
@@ -89,11 +89,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv" class="uri">https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv</a></li>
 </ul>
 <p>Let’s get all of this data into R so we can combine it with our <code>penguins_raw</code> data. Hint: use <code>read_csv</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv&quot;</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Biscoe_temperatures.csv&quot;</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>dream <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>dream <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Dream_temperatures.csv&quot;</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>torg <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv&quot;</span>)</span></code></pre></div>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>torg <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_temperatures.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="data-exploration" class="section level2">
 <h2>Data exploration</h2>
@@ -179,12 +179,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> temperature_c, <span class="at">y =</span> delta_15_n_o_oo, <span class="at">color =</span> island)) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/exercise/day4/05-1-date-mischief-and-data-joins_files/figure-html/plots-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins_files/figure-html/plots-1.png" width="672" /></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins_temps,</span>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> temperature_c, <span class="at">y =</span> delta_13_c_o_oo, <span class="at">color =</span> island)) <span class="sc">+</span></span>
 <span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
-<p><img src="/R-camp-penguins/page/exercise/day4/05-1-date-mischief-and-data-joins_files/figure-html/plots-2.png" width="672" /></p>
+<p><img src="/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins_files/figure-html/plots-2.png" width="672" /></p>
 </div>
 <div id="expedition-complete" class="section level2">
 <h2>Expedition complete</h2>

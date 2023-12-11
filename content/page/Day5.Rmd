@@ -35,7 +35,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 
-# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> SMASH: Joining tables
+# <i class="fa fa-video-camera"></i> <span style="font-size: 90%"> Dataframe SMASH: **Joining tables**
 
 
 

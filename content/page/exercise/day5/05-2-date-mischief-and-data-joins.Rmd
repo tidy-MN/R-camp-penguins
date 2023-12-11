@@ -34,11 +34,11 @@ The research crew wants to determine if there is a relationship between isotope 
 Let's get all of this data into R so we can combine it with our `penguins_raw` data. Hint: use `read_csv`.
 
 ```{r read_data}
-biscoe <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv")
+biscoe <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Biscoe_temperatures.csv")
 
-dream <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv")
+dream <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Dream_temperatures.csv")
 
-torg <- read_csv("https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv")
+torg <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_temperatures.csv")
 ```
 
 ## Data exploration

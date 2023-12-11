@@ -42,7 +42,7 @@ data(penguins)
 We need to read in the new data and it even includes the penguin names! We can customize their orders! This is excellent news, maybe we can even mark each pie with their initial so they'll know who's is who's...
 
 ```{r}
-penguin_names <- read_csv("penguin_names.csv")
+penguin_names <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/penguin_names.csv")
 ```
 
 Now that we've read the data in, we need to know what columns it contains so that we know how to join the data frames together! We're going to just take a quick *peek* at the data and then pull the names from our new data and see which ones match to our old data.
@@ -81,13 +81,15 @@ Let's use `anti-join` to figure out which rows from `penguin_names` didn't join 
 ```{r}
 anti_join(penguin_names, penguins_raw)
 ```
+
 Looks like someone made a typo...do you think we can fix it?
 
 First things first, let's check and make sure that those values don't exist in our `penguins_raw` data - it would be bad if we fixed data that wasn't actually wrong!
 
 ```{r}
-filter(penguins_raw, `Sample Number` %in% c(222,153))
+filter(penguins_raw, `Sample Number` %in% c(222, 153))
 ```
+
 Whew, okay, so those numbers *don't* exist in the original data, so looks like we just need to update the values to the correct numbers! We should also check to make sure it worked!
 
 <div class="quiz">
@@ -134,7 +136,7 @@ Yay! Let's try this again...also let's add `clean_names` after we join because t
 
 ```{r}
 named_penguins <- left_join(penguins_raw, penguin_names) %>% 
-  clean_names()
+                  clean_names()
 ```
 
 Now, let's make a plot to see what the penguins favorite food by island is! Check the solution for a way to bring everything we've learned together into one beautiful code chunk and for exciting new color developments!

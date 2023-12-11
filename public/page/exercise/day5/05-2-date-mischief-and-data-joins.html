@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Date mischief - Learn R</title>
+  <meta property="og:title" content="Date mischief" />
+  <meta name="twitter:title" content="Date mischief" />
+  <meta name="description" content="Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.">
+  <meta property="og:description" content="Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.">
+  <meta name="twitter:description" content="Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day5\/05-2-date-mischief-and-data-joins.html",
+          "name": "Date mischief"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Pengu"
+  },
+  "headline": "Date mischief",
+  "description" : "Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.",
+  "inLanguage" : "en",
+  "wordCount":  904 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/exercise\/day5\/05-2-date-mischief-and-data-joins.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Date mischief" />
+<meta property="og:description" content="Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Date mischief" />
+  <meta name="twitter:description" content="Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/index.html">Home</a>
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+                  <a href="/R-camp-penguins/page/day4.html">Day 4</a>
+                
+                  <a href="/R-camp-penguins/page/day5.html">Day 5</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Date mischief</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+  <link rel="stylesheet" href="../../css/camp_style.css" type="text/css" />
+
+
+<div id="getting-started" class="section level2">
+<h2>Getting started</h2>
+<p>The research crew wants to determine if there is a relationship between isotope levels in the <code>penguins_raw</code> data and temperature. We have temperature data for each of the islands which have been helpfully uploaded to GitHub.</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv" class="uri">https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Biscoe_temperatures.csv</a></li>
+<li><a href="https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv" class="uri">https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Dream_temperatures.csv</a></li>
+<li><a href="https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv" class="uri">https://raw.githubusercontent.com/tidy-MN/R-camp-penguins/main/public/data/Torgersen_temperatures.csv</a></li>
+</ul>
+<p>Let’s get all of this data into R so we can combine it with our <code>penguins_raw</code> data. Hint: use <code>read_csv</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Biscoe_temperatures.csv&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>dream <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Dream_temperatures.csv&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>torg <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_temperatures.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="data-exploration" class="section level2">
+<h2>Data exploration</h2>
+<p>Let’s do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames? What do we need to do to make the data tidy?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">glimpse</span>(biscoe)</span></code></pre></div>
+<pre><code>## Rows: 1,096
+## Columns: 2
+## $ date          &lt;chr&gt; &quot;01/01/2007&quot;, &quot;01/02/2007&quot;, &quot;01/03/2007&quot;, &quot;01/04/2007&quot;, …
+## $ temperature_c &lt;dbl&gt; 2.2, 0.8, 1.6, 2.4, 2.6, 2.1, 1.0, 2.0, 3.2, 1.3, 1.0, 5…</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">glimpse</span>(dream)</span></code></pre></div>
+<pre><code>## Rows: 1,096
+## Columns: 2
+## $ date          &lt;chr&gt; &quot;01/01/2007&quot;, &quot;02/01/2007&quot;, &quot;03/01/2007&quot;, &quot;04/01/2007&quot;, …
+## $ temperature_c &lt;dbl&gt; 2.4, 0.7, 2.5, 1.5, 2.2, 2.4, 2.7, 4.1, -1.0, -1.0, 3.9,…</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">glimpse</span>(torg)</span></code></pre></div>
+<pre><code>## Rows: 2,192
+## Columns: 2
+## $ date          &lt;date&gt; 2007-01-01, 2007-01-02, 2007-01-03, 2007-01-04, 2007-01…
+## $ temperature_c &lt;dbl&gt; 1.5, 1.3, 4.1, -0.3, 2.3, -0.3, 2.8, 1.1, 3.7, 1.8, 2.3,…</code></pre>
+</div>
+<div id="clean-up-time" class="section level2">
+<h2>Clean-up time</h2>
+<p>The island names are in the file name, but are not in the data itself. Let’s add the island names to use for joining later. Remember that R is picky about names matching, so it’s important to make sure the names are exactly correct including caps. The island names are <code>Biscoe</code>, <code>Dream</code>, and <code>Torgersen</code>. Copy/paste is your friend here.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> biscoe <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Biscoe&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>dream <span class="ot">&lt;-</span> dream <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Dream&quot;</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>torg <span class="ot">&lt;-</span> torg <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">island =</span> <span class="st">&quot;Torgersen&quot;</span>)</span></code></pre></div>
+<p>When exploring the data, did you notice anything about the dates? They are all in different formats! Luckily we have <code>lubridate</code> to come to the rescue. Let’s convert those dates so they are all in the same format.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>biscoe <span class="ot">&lt;-</span> biscoe <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">mdy</span>(date))</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>dream <span class="ot">&lt;-</span> dream <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">dmy</span>(date))</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>torg <span class="ot">&lt;-</span> torg <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">ymd</span>(date))</span></code></pre></div>
+</div>
+<div id="putting-it-all-together" class="section level2">
+<h2>Putting it all together</h2>
+<p>To join the temperature data to our penguin data easily, we want to combine all 3 data frames into one data frame. Keeping in mind tidy data, what is the best way to do this?</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>temps <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(biscoe, dream, torg)</span></code></pre></div>
+</div>
+<div id="more-data-exploartion" class="section level2">
+<h2>More data exploartion</h2>
+<p>We have our temperature data in a happy place, but what about the penguin data? Let’s look at that data to figure out which columns we can use to combine it with our temperature data.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
+<pre><code>## Rows: 344
+## Columns: 17
+## $ studyName             &lt;chr&gt; &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL…
+## $ `Sample Number`       &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1…
+## $ Species               &lt;chr&gt; &quot;Adelie Penguin (Pygoscelis adeliae)&quot;, &quot;Adelie P…
+## $ Region                &lt;chr&gt; &quot;Anvers&quot;, &quot;Anvers&quot;, &quot;Anvers&quot;, &quot;Anvers&quot;, &quot;Anvers&quot;…
+## $ Island                &lt;chr&gt; &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgerse…
+## $ Stage                 &lt;chr&gt; &quot;Adult, 1 Egg Stage&quot;, &quot;Adult, 1 Egg Stage&quot;, &quot;Adu…
+## $ `Individual ID`       &lt;chr&gt; &quot;N1A1&quot;, &quot;N1A2&quot;, &quot;N2A1&quot;, &quot;N2A2&quot;, &quot;N3A1&quot;, &quot;N3A2&quot;, …
+## $ `Clutch Completion`   &lt;chr&gt; &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;No&quot;, …
+## $ `Date Egg`            &lt;date&gt; 2007-11-11, 2007-11-11, 2007-11-16, 2007-11-16,…
+## $ `Culmen Length (mm)`  &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34…
+## $ `Culmen Depth (mm)`   &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18…
+## $ `Flipper Length (mm)` &lt;dbl&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190,…
+## $ `Body Mass (g)`       &lt;dbl&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 34…
+## $ Sex                   &lt;chr&gt; &quot;MALE&quot;, &quot;FEMALE&quot;, &quot;FEMALE&quot;, NA, &quot;FEMALE&quot;, &quot;MALE&quot;…
+## $ `Delta 15 N (o/oo)`   &lt;dbl&gt; NA, 8.94956, 8.36821, NA, 8.76651, 8.66496, 9.18…
+## $ `Delta 13 C (o/oo)`   &lt;dbl&gt; NA, -24.69454, -25.33302, NA, -25.32426, -25.298…
+## $ Comments              &lt;chr&gt; &quot;Not enough blood for isotopes.&quot;, NA, NA, &quot;Adult…</code></pre>
+<p>Now that we have a tidy penguin data frame and a tidy temperature data frame, it’s time to combine them into one mega data frame. Both data frames have an island name and a date. What operation do we want to use? Which type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. The resulting data frame should have the same number of rows as the penguin data frame.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#inner join works the same in this instance</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>penguins_temps <span class="ot">&lt;-</span> <span class="fu">left_join</span>(penguins_raw, temps,</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>                            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Island&quot;</span> <span class="ot">=</span> <span class="st">&quot;island&quot;</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>                                   <span class="st">&quot;Date Egg&quot;</span> <span class="ot">=</span> <span class="st">&quot;date&quot;</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>                            )</span></code></pre></div>
+</div>
+<div id="looking-at-the-relationship-between-temp-and-isotopes" class="section level2">
+<h2>Looking at the relationship between temp and isotopes</h2>
+<p>With all of the data in one data frame, we can now plot isotope levels versus temperatures. But first we need to clean up those icky column names. How do we do that?</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>penguins_temps <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguins_temps)</span></code></pre></div>
+<p>Now we can finally make our plots. We’re interested in temperatures in comparison to isotope levels which are in the columns <code>Delta 15 N (o/oo)</code> and <code>Delta 13 C (o/oo)</code> in the original penguins_raw data frame. Which type of plot do you think is most appropriate here? Add some color to show the differences between the 3 islands.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins_temps,</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> temperature_c, <span class="at">y =</span> delta_15_n_o_oo, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins_files/figure-html/plots-1.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">ggplot</span>(penguins_temps,</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> temperature_c, <span class="at">y =</span> delta_13_c_o_oo, <span class="at">color =</span> island)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">type =</span> <span class="fu">c</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins_files/figure-html/plots-2.png" width="672" /></p>
+</div>
+<div id="expedition-complete" class="section level2">
+<h2>Expedition complete</h2>
+<p>Congratulations! You have now learned how temperatures affect penguin chemistry. Time to begin the next expedition.</p>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

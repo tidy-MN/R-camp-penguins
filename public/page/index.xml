@@ -285,11 +285,11 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
     </item>
     
     <item>
-      <title>Date mischief and data joins</title>
-      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-1-date-mischief-and-data-joins.html</link>
+      <title>Date mischief</title>
+      <link>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-1-date-mischief-and-data-joins.html</guid>
+      <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins.html</guid>
       <description>Getting started The research crew wants to determine if there is a relationship between isotope levels in the penguins_raw data and temperature.</description>
     </item>
     
