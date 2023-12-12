@@ -26,10 +26,14 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ## Getting started
 
+Create a new R script. Save it as soon as you make it and give it a good name like `5-2_exercise.R` or `temp_analysis.R` and you'll be ready to go!
+
+## The question
+
 The research crew wants to determine if there is a relationship between isotope levels in the `penguins_raw` data and temperature. We have temperature data for each of the islands uploaded to the webpage.
 
 
-Let's get all of this data into R so we can combine it with our `penguins_raw` data. 
+Let's get all of this temperature data into R first, and then we can combine it with our `penguins_raw` data. 
 
 ```{r read_data}
 library(tidyverse)
