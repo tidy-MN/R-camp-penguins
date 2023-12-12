@@ -194,12 +194,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day6" role="tabpanel" aria-labelledby="day6-tab"> 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> [Pivoting data: Wide <-> Long format](page/videos/day6/06-1-pivot-wide-long-format.html)
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> [Pivoting data: Wide & long format](page/videos/day6/06-1-pivot-wide-long-format.html)
 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day6/06-1-pivot-wider.html#1)
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> **Choose [1] of our favorite videos from the wider R community to watch** 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> Choose <span class="teal">**[1]**</span> of our favorites from the R community to watch
 
 - <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
 
