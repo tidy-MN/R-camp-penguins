@@ -6,7 +6,7 @@ editor: visual
 
 # Data
 
-For this analysis we'll use the `penguins` dataset from the palmerpenguins packages.
+For this analysis we'll use the `penguins` dataset from the palmerpenguins package.
 
 ```{r}
 #| label: load-packages
@@ -17,7 +17,6 @@ library(ggthemes)
 library(palmerpenguins)
 library(gt)
 ```
-
 
 ## Species
 
