@@ -201,9 +201,16 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> Choose <span class="teal">**[1]**</span> of our favorites from the R community to watch
 
-- <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
+**Stats**
+
+- <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%"> - [Regression and Linear Models](https://www.youtube.com/watch?v=j5mu5XcJD_w&list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX&index=8) *(20 min)*
+    - [Notes](page/videos/day6/amelia_stat220_regression_prelab.html)
+
+**Plots**
 
 - <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
+
+**Exploratory analysis**
 
 - <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
 

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Correlation and linear regression pre-lab: tidy - Learn R</title>
+  <meta property="og:title" content="Correlation and linear regression pre-lab: tidy" />
+  <meta name="twitter:title" content="Correlation and linear regression pre-lab: tidy" />
+  <meta name="description" content="Setup and packages We use three packages in this course: Lock5Data, tidyverse and infer. To load a package, you use the library() function, wrapped around the name of a package.">
+  <meta property="og:description" content="Setup and packages We use three packages in this course: Lock5Data, tidyverse and infer. To load a package, you use the library() function, wrapped around the name of a package.">
+  <meta name="twitter:description" content="Setup and packages We use three packages in this course: Lock5Data, tidyverse and infer. To load a package, you use the library() function, wrapped around the name of a package.">
+  <meta name="author" content="Pengu"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Learn R",
+    
+    "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/videos\/day6\/amelia_stat220_regression_prelab.html",
+          "name": "Correlation and linear regression pre lab tidy"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Professor Amelia McNamara"
+  },
+  "headline": "Correlation and linear regression pre-lab: tidy",
+  "description" : "Setup and packages We use three packages in this course: Lock5Data, tidyverse and infer. To load a package, you use the library() function, wrapped around the name of a package.",
+  "inLanguage" : "en",
+  "wordCount":  966 ,
+  "datePublished" : "0001-01-01T00:00:00",
+  "dateModified" : "0001-01-01T00:00:00",
+  "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/page\/videos\/day6\/amelia_stat220_regression_prelab.html",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Correlation and linear regression pre-lab: tidy" />
+<meta property="og:description" content="Setup and packages We use three packages in this course: Lock5Data, tidyverse and infer. To load a package, you use the library() function, wrapped around the name of a package.">
+<meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+<meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/videos/day6/amelia_stat220_regression_prelab.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Learn R" />
+  <meta name="twitter:title" content="Correlation and linear regression pre-lab: tidy" />
+  <meta name="twitter:description" content="Setup and packages We use three packages in this course: Lock5Data, tidyverse and infer. To load a package, you use the library() function, wrapped around the name of a package.">
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/videos/day6/amelia_stat220_regression_prelab.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Learn R" />
+
+  <meta name="generator" content="Hugo 0.119.0">
+  <link rel="alternate" href="https://tidy-mn.github.io/R-camp-penguins/index.xml" type="application/rss+xml" title="Learn R">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/syntax.css" /><link rel="stylesheet" href="https://tidy-mn.github.io/R-camp-penguins/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Training</a>
+              <div class="navlinks-children">
+                
+                  <a href="/R-camp-penguins/index.html">Home</a>
+                
+                  <a href="/R-camp-penguins/page/agenda.html">Agenda</a>
+                
+                  <a href="/R-camp-penguins/page/r_camp_primer.html">Camp Primer</a>
+                
+                  <a href="/R-camp-penguins/page/day1.html">Day 1</a>
+                
+                  <a href="/R-camp-penguins/page/day2.html">Day 2</a>
+                
+                  <a href="/R-camp-penguins/page/day3.html">Day 3</a>
+                
+                  <a href="/R-camp-penguins/page/day4.html">Day 4</a>
+                
+                  <a href="/R-camp-penguins/page/day5.html">Day 5</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Community" href="/R-camp-penguins/page/community.html">Community</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Install R" href="/R-camp-penguins/page/install.html">Install R</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Help" href="/R-camp-penguins/page/help.html">Help</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Learn R" href="https://tidy-mn.github.io/R-camp-penguins/">
+            <img class="avatar-img" src="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" alt="Learn R" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              
+                <h1>Correlation and linear regression pre-lab: tidy</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<div id="setup-and-packages" class="section level2">
+<h2>Setup and packages</h2>
+<p>We use three packages in this course: <code>Lock5Data</code>, <code>tidyverse</code> and <code>infer</code>. To load a package, you use the <code>library()</code> function, wrapped around the name of a package. I’ve put the code to load one package into the chunk below. Add the other two you need.</p>
+<pre class="r"><code>library(Lock5Data)
+# put in the other two packages you need here</code></pre>
+</div>
+<div id="loading-in-data" class="section level2">
+<h2>Loading in data</h2>
+<p>Let’s load the example dataset I have for this course, <code>GSS_clean.csv</code>. It should be inside the <code>data</code> folder in your RStudio Cloud. We’ll use the <code>read_csv()</code> function to read in the data.</p>
+<pre class="r"><code># this is where data-loading code goes
+GSS &lt;- read_csv(&quot;https://tidy-mn.github.io/R-camp-penguins/data/GSS_clean.csv&quot;)</code></pre>
+<pre><code>## Rows: 2348 Columns: 45
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (34): number_of_children, age_of_respondent, college_major_1, college_ma...
+## dbl (11): respondent_id_number, highest_year_of_school_completed, highest_ye...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div id="data-visualization-for-two-quantitative-variables" class="section level2">
+<h2>Data visualization for two quantitative variables</h2>
+<p>Our main data visualization for two quantitative variables is a scatterplot.</p>
+<p>To make our visualization, we will use the <code>ggplot()</code> function, with our data inside, and then use a <code>+</code> to add on a <code>geom_</code> to tell R what kind of plot we want. In this case, we want a <code>geom_point()</code> to make a scatterplot. Inside the <code>geom_</code> function, we use the <code>aes()</code> function and tell R how to map between variables in our dataset and variables in the plot. Here’s an example:</p>
+<pre class="r"><code>ggplot(GSS) +
+  geom_point(aes(x = highest_year_school_completed_spouse, y = highest_year_of_school_completed))</code></pre>
+<pre><code>## Warning: Removed 1361 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="/R-camp-penguins/page/videos/day6/amelia_stat220_regression_prelab_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>As with our plots in the last lab, we get a warning message about missing values being removed.</p>
+<p>Does this plot show a positive association, negative association, or no association? If it shows an association, how strong would you say it is?</p>
+</div>
+<div id="summary-statistics-for-two-quantitative-variables" class="section level2">
+<h2>Summary statistics for two quantitative variables</h2>
+<p>One way to quantify the strength and direction of the relationship is with correlation. To find this, we use the <code>cor()</code> function inside our <code>summarize()</code> in a data pipeline.</p>
+<pre class="r"><code>GSS %&gt;%
+  summarize(correlation = cor(y = highest_year_of_school_completed, 
+                              x = highest_year_school_completed_spouse))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   correlation
+##         &lt;dbl&gt;
+## 1          NA</code></pre>
+<p>Much like with our other summary statistics, this gives an <code>NA</code> value, because there are <code>NA</code> values in one or more of the variables in the dataset. We can use <code>drop_na()</code> on those two variables,</p>
+<pre class="r"><code>GSS %&gt;%
+  drop_na(highest_year_of_school_completed, highest_year_school_completed_spouse) %&gt;%
+  summarize(correlation = cor(
+    y = highest_year_of_school_completed,
+    x = highest_year_school_completed_spouse))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   correlation
+##         &lt;dbl&gt;
+## 1       0.596</code></pre>
+</div>
+<div id="linear-models" class="section level2">
+<h2>Linear models</h2>
+<p>Another way to study the relationship between two quantitative variables is to fit a linear model. R has a function that does least squares regression, called <code>lm()</code> for linear model. This uses the formula syntax, which we’re not focusing on in this class. The syntax requires you to write <span class="math inline">\(y~x\)</span> to specify your response and explanatory variable, with a “tilde” in between. (The tilde is up above your Tab key on the keyboard, along with the “tick” ``<code>).  You can run the</code>lm()` function in your Console or RMarkdown document and get a little information about your model,</p>
+<pre class="r"><code>lm(highest_year_of_school_completed ~ highest_year_school_completed_spouse, data = GSS)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = highest_year_of_school_completed ~ highest_year_school_completed_spouse, 
+##     data = GSS)
+## 
+## Coefficients:
+##                          (Intercept)  highest_year_school_completed_spouse  
+##                                5.847                                 0.594</code></pre>
+<p>but, it’s better practice to assign your model object to a name, so you can refer back to it later, and get more information about it. Recall that the assignment operator in R is <code>&lt;-</code>. I usually call my models <code>m1</code>, <code>m2</code>, etc., but you could think of a better name to use (like <code>schoolmodel</code> or similar) to remind you what it’s about.</p>
+<pre class="r"><code>m1 &lt;- lm(highest_year_of_school_completed ~ highest_year_school_completed_spouse, data = GSS)</code></pre>
+<p>When we run this code, nothing prints out. But, a new object should appear in our RStudio Environment pane. Now, we can run R functions on that model object. The most useful one is <code>summary()</code>,</p>
+<pre class="r"><code>m1 %&gt;%
+  summary()</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = highest_year_of_school_completed ~ highest_year_school_completed_spouse, 
+##     data = GSS)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -16.5400  -1.3519   0.0242   1.4600   7.0242 
+## 
+## Coefficients:
+##                                      Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                           5.84740    0.36316   16.10   &lt;2e-16 ***
+## highest_year_school_completed_spouse  0.59403    0.02553   23.27   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.462 on 985 degrees of freedom
+##   (1361 observations deleted due to missingness)
+## Multiple R-squared:  0.3547, Adjusted R-squared:  0.354 
+## F-statistic: 541.4 on 1 and 985 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>The same model coefficients are shown here, but there is also a lot more information about things like the <span class="math inline">\(R^2\)</span> value.</p>
+<div id="interpreting-coefficients" class="section level3">
+<h3>Interpreting coefficients</h3>
+<p>Let’s interpret our model coefficients. Here are the generic sentences I prefer:</p>
+<p><strong>Intercept</strong> If the value of [explanatory variable] was zero, our model would predict [response variable] to be [intercept value].</p>
+<p><strong>Slope</strong> For a one-[unit] increase in [explanatory variable], our model would predict a [slope value]-[unit] [increase/decrease] in [response variable].</p>
+<p>Let’s apply that to this model:</p>
+</div>
+</div>
+<div id="predicting-values" class="section level2">
+<h2>Predicting values</h2>
+<p>Models are also useful for prediction. There are more programmatic ways to do prediction in R, but for now I recommend you just use R as a big calculator. Let’s see what the model would predict for a person whose spouse had completed 12 years of school (high school):</p>
+<p>Does that make sense?</p>
+</div>
+<div id="residuals" class="section level2">
+<h2>Residuals</h2>
+<p>We are also interested in whether our model overpredicts or underpredicts certain points. We can compute a residual, which is <span class="math inline">\(observed - expected\)</span> or <span class="math inline">\(y_i-\hat{y}_i\)</span>. Look at row 21 in the dataset. It represents a 34-year-old person with one child whose spouse completed 12 years of school. What is the observed value of <code>highest_year_of_school_completed</code> for this person? What is their residual?</p>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        
+
+        <p class="credits copyright text-muted">
+        &copy;
+          
+            2023
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://tidy-mn.github.io/R-camp-penguins/">Learn R</a>
+          
+        </p>
+
+
+        
+        <p class="credits theme-by text-muted">
+          Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://tidy-mn.github.io/R-camp-penguins/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

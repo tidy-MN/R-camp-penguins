@@ -1,11 +1,12 @@
 ---
 title: 'Correlation and linear regression pre-lab: tidy'
-author: "Professor McNamara"
+author: "Professor Amelia McNamara"
 output:
   html_document:
     toc: true
-    toc_depth: 3
+    toc_depth: 2
     toc_float: true
+    code_download: true
 ---
 
 ## Setup and packages
@@ -14,6 +15,9 @@ We use three packages in this course: `Lock5Data`, `tidyverse` and `infer`. To l
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+
+library(tidyverse)
+library(infer)
 ```
 
 ```{r}
@@ -28,7 +32,7 @@ Let's load the example dataset I have for this course, `GSS_clean.csv`. It shoul
 
 ```{r data-load}
 # this is where data-loading code goes
-GSS <- read_csv("GSS_clean.csv")
+GSS <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/GSS_clean.csv")
 ```
 
 ## Data visualization for two quantitative variables
@@ -99,7 +103,6 @@ Let's interpret our model coefficients. Here are the generic sentences I prefer:
 **Slope** For a one-[unit] increase in [explanatory variable], our model would predict a [slope value]-[unit] [increase/decrease] in [response variable]. 
 
 Let's apply that to this model:
-
 
 
 
