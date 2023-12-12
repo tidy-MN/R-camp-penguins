@@ -56,7 +56,7 @@ names(penguins_raw)
 
 <br>
 
-Fantastic! It looks like the column names all match, but if you *reallllly* want to be sure you can always use the function `intersect` to see where the names line up!
+Fantastic! It looks like the spelling of the first four columns used to ID each penguin in *penguin_names* match the spelling in *penguins_raw*: `"studyName"`, `"Sample Number"`, `"Species"` and `"Sex"`. To be really sure we can use the function `intersect` to see where the names line up!
 
 ```{r}
 intersect(names(penguins_raw), names(penguin_names))
@@ -152,7 +152,7 @@ Now, let's make a plot to see what the penguins favorite food by island is! Chec
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Fixing typos {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Foodie plot {-}
 
 ```{r, results='asis', echo=F}
 source("../../insert_tabs.R")
