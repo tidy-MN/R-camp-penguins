@@ -388,6 +388,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 Time to prep for the next expedition...
 
+<br>
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 

@@ -207,6 +207,8 @@ We might just be showing off now...but look how pretty it looks!
 
 Anyway, krill seem to be the winner by a wide margin, so let's get baking!
 
+<br>
+
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 
 <i class="fa fa-cookie-bite"></i> 

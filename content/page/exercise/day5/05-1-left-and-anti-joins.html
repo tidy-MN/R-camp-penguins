@@ -255,12 +255,12 @@ anti_join(penguin_names, penguins_raw)
 </div>
 <div id="showhint10" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint10-tab">
 <pre class="sourceCode r">
-# we decided to go bar-chart and we want the bar in decending order by count!
+# We want the columns in decending order by count!
 ggplot(named_penguins %>% 
          group_by(______, ______) %>% 
          summarise(count = _____), 
        aes(x=_____, y = ____, fill = reorder(favorite_food, -count))) +
-  _____(position = ___________)+
+  geom_col(position = ___________) +
   labs(title = "Number of penguins by their favorite food and island",
        x = "Island home",
        y = "Number of penguins we need to serve!")+
@@ -277,7 +277,7 @@ ggplot(named_penguins %>%
          group_by(island, favorite_food) %>% 
          summarise(count = n()), 
        aes(x=island, y = count, fill = reorder(favorite_food, -count))) +
-  geom_col(position = position_dodge2(preserve = "single"))+
+  geom_col(position = position_dodge2(preserve = "single")) +
   labs(title = "Number of penguins by their favorite food and island",
        x = "Island home",
        y = "Number of penguins we need to serve!")+
@@ -292,6 +292,7 @@ ggplot(named_penguins %>%
 </div>
 <p>We might just be showing off now…but look how pretty it looks!</p>
 <p>Anyway, krill seem to be the winner by a wide margin, so let’s get baking!</p>
+<p><br></p>
 <p><i class="fa fa-cookie-bite"></i>
 <i class="fa fa-robot"></i>
 <i class="fa fa-cookie-bite"></i></p>

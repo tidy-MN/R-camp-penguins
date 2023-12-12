@@ -469,23 +469,23 @@ torg <- torg %>%
 </div>
 <div id="make-it-a-date" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Make it a Date</h3>
-<ul class="nav nav-pills" id="myTab8289" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab9950" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="description8289-tab" data-toggle="tab" href="#description8289" role="tab" aria-controls="description8289" aria-selected="true">Description</a>
+<a class="nav-link" id="description9950-tab" data-toggle="tab" href="#description9950" role="tab" aria-controls="description9950" aria-selected="true">Description</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8289-tab" data-toggle="tab" href="#showhint8289" role="tab" aria-controls="showhint8289" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint9950-tab" data-toggle="tab" href="#showhint9950" role="tab" aria-controls="showhint9950" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8289-tab" data-toggle="tab" href="#showcode8289" role="tab" aria-controls="showcode8289" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode9950-tab" data-toggle="tab" href="#showcode9950" role="tab" aria-controls="showcode9950" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="description8289" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description8289-tab">
+<div id="description9950" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description9950-tab">
 <p><b> Use <code>mutate( )</code> to convert the <em>date</em> column to a Date object in each of the data sets.</b></p>
 <p><br></p>
 </div>
-<div id="showhint8289" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8289-tab">
+<div id="showhint9950" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9950-tab">
 <pre class="sourceCode r">
 
 biscoe <- biscoe %>%
@@ -498,7 +498,7 @@ dream <- dream %>%
   
 </pre>
 </div>
-<div id="showcode8289" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8289-tab">
+<div id="showcode9950" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9950-tab">
 <pre class="sourceCode r">
 biscoe <- biscoe %>%
           mutate(date = mdy(date))
@@ -529,9 +529,9 @@ torg <- torg %>%
 ## 3 Torgersen</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Does the total number of rows check out</span></span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">nrow</span>(temps)</span></code></pre></div>
-<pre><code>## [1] 3289</code></pre>
+<pre><code>## [1] 3288</code></pre>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">nrow</span>(biscoe) <span class="sc">+</span> <span class="fu">nrow</span>(dream) <span class="sc">+</span> <span class="fu">nrow</span>(torg)</span></code></pre></div>
-<pre><code>## [1] 3289</code></pre>
+<pre><code>## [1] 3288</code></pre>
 </div>
 <div id="more-data-exploartion" class="section level2">
 <h2>More data exploartion</h2>
@@ -565,23 +565,23 @@ Let’s get the data and determine which columns we can use to combine with our 
 <p>Both data frames have an <strong>island</strong> name and a <strong>date</strong>. What operation do we want to use? Which join type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. We want the resulting data frame to have the same number of rows as the <em>penguins_raw</em> data frame.</p>
 <div id="table-join" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Table join</h3>
-<ul class="nav nav-pills" id="myTab499" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab3972" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="description499-tab" data-toggle="tab" href="#description499" role="tab" aria-controls="description499" aria-selected="true">Description</a>
+<a class="nav-link" id="description3972-tab" data-toggle="tab" href="#description3972" role="tab" aria-controls="description3972" aria-selected="true">Description</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint499-tab" data-toggle="tab" href="#showhint499" role="tab" aria-controls="showhint499" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint3972-tab" data-toggle="tab" href="#showhint3972" role="tab" aria-controls="showhint3972" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode499-tab" data-toggle="tab" href="#showcode499" role="tab" aria-controls="showcode499" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode3972-tab" data-toggle="tab" href="#showcode3972" role="tab" aria-controls="showcode3972" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="description499" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description499-tab">
+<div id="description3972" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description3972-tab">
 <p><b> Use a <code>****_join( )</code> function to combine the columns of the two data sets so the result has the same number of rows as <em>penguins_raw</em>.</b></p>
 <p><br></p>
 </div>
-<div id="showhint499" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint499-tab">
+<div id="showhint3972" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3972-tab">
 <pre class="sourceCode r">
 penguin_temps <- left_join(penguins_raw, temps,
                            by = c("Island" = "_______" ,
@@ -591,7 +591,7 @@ penguin_temps <- left_join(penguins_raw, temps,
 
 </pre>
 </div>
-<div id="showcode499" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode499-tab">
+<div id="showcode3972" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3972-tab">
 <pre class="sourceCode r">
 penguin_temps <- left_join(penguins_raw, temps,
                            by = c("Island" = "island",
@@ -616,23 +616,23 @@ penguin_temps <- left_join(penguins_raw, temps,
 <p><img src="/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins_files/figure-html/plots-1.png" width="672" /></p>
 <div id="isotope-plots" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Isotope plots</h3>
-<ul class="nav nav-pills" id="myTab8016" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4867" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="description8016-tab" data-toggle="tab" href="#description8016" role="tab" aria-controls="description8016" aria-selected="true">Description</a>
+<a class="nav-link" id="description4867-tab" data-toggle="tab" href="#description4867" role="tab" aria-controls="description4867" aria-selected="true">Description</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8016-tab" data-toggle="tab" href="#showhint8016" role="tab" aria-controls="showhint8016" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4867-tab" data-toggle="tab" href="#showhint4867" role="tab" aria-controls="showhint4867" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8016-tab" data-toggle="tab" href="#showcode8016" role="tab" aria-controls="showcode8016" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4867-tab" data-toggle="tab" href="#showcode4867" role="tab" aria-controls="showcode4867" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="description8016" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description8016-tab">
+<div id="description4867" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description4867-tab">
 <p><b> Use a <code>****_join( )</code> function to combine the columns of the two data sets so the result has the same number of rows as <em>penguins_raw</em>.</b></p>
 <p><br></p>
 </div>
-<div id="showhint8016" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8016-tab">
+<div id="showhint4867" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4867-tab">
 <pre class="sourceCode r">
 # Delta 15 plot
 ggplot(penguin_temps,
@@ -645,7 +645,7 @@ ggplot(penguin_temps,
 
 </pre>
 </div>
-<div id="showcode8016" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8016-tab">
+<div id="showcode4867" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4867-tab">
 <pre class="sourceCode r">
 # Delta 15 plot
 ggplot(penguin_temps,
@@ -668,6 +668,7 @@ ggplot(penguin_temps,
 <h2>Expedition complete</h2>
 <p><strong>Congratulations!</strong> You have learned a bit about how temperature may affect penguin chemistry.</p>
 <p>Time to prep for the next expedition…</p>
+<p><br></p>
 <p><i class="fa fa-cookie-bite"></i>
 <i class="fa fa-robot"></i>
 <i class="fa fa-cookie-bite"></i></p>
