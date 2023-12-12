@@ -319,7 +319,7 @@ penguin_temps <- clean_names(penguin_temps)
 We can finally make our plots. We're interested in temperatures in comparison to isotope levels. These were in the columns `Delta 15 N (o/oo)` and `Delta 13 C (o/oo)` in the original *penguins_raw* data frame before the column names were cleaned. Which type of plot do you think is most appropriate here? Add some color to show the differences between the 3 islands.
 
 
-```{r plots, echo=F}
+```{r plots, echo=F, out.width="73%"}
 # Delta 15 plot
 ggplot(penguin_temps,
        aes(x = temperature_c, y = delta_15_n_o_oo, color = island)) +
@@ -342,7 +342,7 @@ source("../../insert_tabs.R")
 
 tabs <- c("Description", "Show hint", "Show code")
 
-content <- c(Exercise = '<b> Use a `****_join( )` function to combine the columns of the two data sets so the result has the same number of rows as *penguins_raw*.</b>
+content <- c(Exercise = '<b> Make 2 plots. One comparing temperature to Delta 15 N, and one comparing temperature to Delta 13 C. Assign the data from each island to its own color.</b>
 
 <br>',
 
