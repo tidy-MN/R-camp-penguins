@@ -186,7 +186,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
 - Exercise 1 - [**Joins: A fishy dinner**](page/exercise/day5/05-1-left-and-anti-joins.html)
-- Exercise 2 - [**Date mischief all around**](page/exercise/day5/05-2-date-mischief-and-data-joins.html)
+- Exercise 2 - [**Date mischief with heat**](page/exercise/day5/05-2-date-mischief-and-data-joins.html)
 
 
 </div> 
@@ -199,12 +199,12 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day6/06-1-pivot-wider.html#1)
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> Choose <span class="teal">**[1]**</span> of our favorites from the R community to watch
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> Choose <span class="teal">**[1]**</span> of our favorites from the R community
 
 **Stats**
 
 - <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%"> [Regression and Linear Models](https://www.youtube.com/watch?v=j5mu5XcJD_w&list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX&index=8) *(20 min)*
-    - [Notes](page/videos/day6/amelia_stat220_regression_prelab.html) ([Download the .Rmd](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/page/videos/day6/amelia_stat220_regression_prelab.Rmd))
+    - [Notes](page/videos/day6/amelia_stat220_regression_prelab.html) or Download the [.Rmd file](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/page/videos/day6/amelia_stat220_regression_prelab.Rmd))
 
 **Plots**
 

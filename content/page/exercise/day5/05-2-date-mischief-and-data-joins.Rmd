@@ -45,7 +45,7 @@ torg <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_tempe
 
 Let's do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames? What do we need to do to make the data tidy?
 
-```{r explore_data}
+```{r explore_data, eval=F}
 glimpse(biscoe)
 glimpse(dream)
 glimpse(torg)
@@ -54,9 +54,83 @@ glimpse(torg)
 
 ## Clean-up time
 
-The island names are in the file name, but are not in the data itself. Let's add the island names to use for joining later. Remember that R is picky about names matching, so it's important to make sure the names are exactly correct including caps. The island names are `Biscoe`, `Dream`, and `Torgersen`. Copy/paste is your friend here.
+### Step 1
 
-```{r add_islands}
+Take a closer look at the `torg` data. Why does it have so many more rows? Try arranging the data by the *date* column, what do you notice?
+
+```{r arrange, eval=F}
+arrange(torg, date)
+```
+
+<br>
+
+> Icky... There are duplicate rows in the data. That seems to happen a lot. Since the temp value always appears to be the same for the duplicate row, I think it is safe to say the duplicate should be removed. 
+
+If you are 100% sure your data should not have duplicate rows in it, you can use the function `distinct( )` to keep only one row from each of the groups of duplicates. In the end, every row will be a distinct and unique row compared to ALL the others in the table.
+
+
+```{r distinct}
+torg <- distinct(torg)
+```
+
+
+> How many rows does *torg* you have now?
+
+
+### Step 2 
+
+
+The island names are in the file name, but are not in the data itself. That's not ideal when you're looking to join data together or perhaps want to label points on a chart with the island name.
+
+Let's add the island names to use for joining later. Remember that R is picky about name matching, so it's important to make sure the names are exactly correct, including CAPs. 
+
+The island names are `Biscoe`, `Dream`, and `Torgersen`. *Copy/Paste* is your friend here. Use `mutate( )` to add a new column called *island* to each of the data sets.
+
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Which island? {-}
+
+```{r, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Description", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> Use `mutate( )` to add a new column called *island* to each of the data sets.</b>
+
+<br>',
+
+show_hint = 'code_start
+
+biscoe <- biscoe %>%
+          mutate(island = ______ )
+
+dream <- dream %>%
+         
+#.....
+  
+code_end',
+
+show_code = 'code_start
+biscoe <- biscoe %>%
+          mutate(island = "Biscoe")
+
+dream <- dream %>%
+         mutate(island = "Dream")
+
+torg <- torg %>%
+        mutate(island = "Torgersen")
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content, "0a")
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
+
+```{r add_islands, echo=F}
 biscoe <- biscoe %>%
           mutate(island = "Biscoe")
 
@@ -67,9 +141,69 @@ torg <- torg %>%
         mutate(island = "Torgersen")
 ```
 
-When exploring the data, did you notice anything about the dates? They are all in different formats! Luckily we have `lubridate` to come to the rescue. Let's convert those dates so they are all in the same format.
 
-```{r convert_dates}
+<br>
+
+
+When exploring the data, did you notice anything about the dates? They are all in different formats! Luckily we have `lubridate` to come to the rescue. Let's convert those dates so they are all in the same format. Remember to choose your date function from the table below.
+
+<div class="bluecode">
+
+| Format | Function to use   |
+|:----------------------------------|:--------|
+| Month-Day-Year ~ "<span class="teal">05-18-2023</span>" or "<span class="teal">05/18/2023</span>"                | `mdy(`date`)  `    |  
+| Day-Month-Year (Euro dates) ~ "<span class="teal">18-05-2023</span>" or "<span class="teal">18/05/2023</span>"  | `dmy()  `    | 
+| Year-Month-Day (Science dates) ~ "<span class="teal">2023-05-18</span>" or "<span class="teal">2023/05/18</span>" | `ymd()  `    | 
+
+</div>
+
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Make it a Date {-}
+
+```{r, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Description", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> Use `mutate( )` to convert the *date* column to a Date object in each of the data sets.</b>
+
+<br>',
+
+show_hint = 'code_start
+
+biscoe <- biscoe %>%
+          mutate(date = mdy(date))
+
+dream <- dream %>%
+         mutate(date = ________ )
+         
+#.....
+  
+code_end',
+
+show_code = 'code_start
+biscoe <- biscoe %>%
+          mutate(date = mdy(date))
+
+dream <- dream %>%
+         mutate(date = dmy(date))
+
+torg <- torg %>%
+        mutate(date = ymd(date))
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
+
+
+```{r convert_dates, echo=F}
 biscoe <- biscoe %>%
           mutate(date = mdy(date))
 
@@ -90,11 +224,24 @@ temps <- bind_rows(biscoe, dream, torg)
 ```
 
 
+Run a few tests on the new table to ensure all the island data survived the `bind_rows` journey.
+
+```{r}
+# Check that all the islands made it into temps table
+distinct(temps, island)
+
+# Does the total number of rows check out
+nrow(temps)
+
+nrow(biscoe) + nrow(dream) + nrow(torg)
+```
+
+
 
 ## More data exploartion
 
 We have our temperature data in a happy place, but what about the penguin data? 
-Let's get the data and determine which columns we can use to combine it with our temperature data.
+Let's get the data and determine which columns we can use to combine with our temperature data.
 
 ```{r explore_penguin_data}
 library(palmerpenguins)
@@ -104,46 +251,142 @@ penguins_raw <- penguins_raw
 glimpse(penguins_raw)
 ```
 
-Now that we have a tidy penguin data frame and a tidy temperature data frame, it's time to combine them into one mega data frame. Both data frames have an island name and a date. What operation do we want to use? Which type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. The resulting data frame should have the same number of rows as the penguin data frame.
 
-```{r join}
-# inner join works the same in this instance
-penguins_temps <- left_join(penguins_raw, temps,
+Now that we have two tidy data sets, it's time to combine them into one mega data frame. 
+
+Both data frames have an **island** name and a **date**. What operation do we want to use? Which join type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. We want the resulting data frame to have the same number of rows as the *penguins_raw* data frame.
+
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Table join {-}
+
+```{r, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Description", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> Use a `****_join( )` function to combine the columns of the two data sets so the result has the same number of rows as *penguins_raw*.</b>
+
+<br>',
+
+show_hint = 'code_start
+penguin_temps <- left_join(penguins_raw, temps,
+                           by = c("Island" = "_______" ,
+                                  "Date Egg" =  "______" ))
+  
+# inner_join() would also in this case
+
+code_end',
+
+show_code = 'code_start
+penguin_temps <- left_join(penguins_raw, temps,
+                           by = c("Island" = "island",
+                                  "Date Egg" = "date"))
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
+```
+
+</div>
+
+
+```{r join, echo=F}
+penguin_temps <- left_join(penguins_raw, temps,
                             by = c("Island" = "island",
-                                   "Date Egg" = "date")
-                            )
+                                   "Date Egg" = "date"))
 ```
 
 
 
 ## Looking at the relationship between temp and isotopes
 
-With all of the data in one data frame, we can now plot isotope levels versus temperatures. But first we need to clean up those icky column names. How do we do that?
+With all of the data in one data frame, we can now plot isotope levels versus temperatures. But first, we need to clean up those long tricky column names. How do we do that?
 
 ```{r clean_names}
-penguins_temps <- clean_names(penguins_temps)
+#install.packages("janitor")
+library(janitor)
+
+penguin_temps <- clean_names(penguin_temps)
 ```
 
-Now we can finally make our plots. We're interested in temperatures in comparison to isotope levels which are in the columns `Delta 15 N (o/oo)` and `Delta 13 C (o/oo)` in the original penguins_raw data frame. Which type of plot do you think is most appropriate here? Add some color to show the differences between the 3 islands.
 
-```{r plots}
-ggplot(penguins_temps,
+## Plots
+
+We can finally make our plots. We're interested in temperatures in comparison to isotope levels. These were in the columns `Delta 15 N (o/oo)` and `Delta 13 C (o/oo)` in the original *penguins_raw* data frame before the column names were cleaned. Which type of plot do you think is most appropriate here? Add some color to show the differences between the 3 islands.
+
+
+```{r plots, echo=F}
+# Delta 15 plot
+ggplot(penguin_temps,
        aes(x = temperature_c, y = delta_15_n_o_oo, color = island)) +
-  geom_point(size = 3) +
-  scale_color_discrete(type = c("green", "blue", "purple"))
+  geom_point(size = 3)
 
-ggplot(penguins_temps,
+# Delta 13 plot
+#ggplot(penguin_temps,
+#       aes(x = temperature_c, y = delta_13_c_o_oo, color = island)) +
+#  geom_point(size = 3) +
+#  scale_color_discrete(type = c("green", "blue", "purple"))
+```
+
+
+<div class="quiz">
+
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Isotope plots {-}
+
+```{r, results='asis', echo=F}
+source("../../insert_tabs.R")
+
+tabs <- c("Description", "Show hint", "Show code")
+
+content <- c(Exercise = '<b> Use a `****_join( )` function to combine the columns of the two data sets so the result has the same number of rows as *penguins_raw*.</b>
+
+<br>',
+
+show_hint = 'code_start
+# Delta 15 plot
+ggplot(penguin_temps,
+       aes(x = temperature_c, y = delta_15_n_o_oo, _______ = _______ )) +
+  geom_*****(size = 3)
+
+# Delta 13 plot
+ggplot(penguin_temps,
+       aes(x = temperature_c, y = ......
+
+code_end',
+
+show_code = 'code_start
+# Delta 15 plot
+ggplot(penguin_temps,
+       aes(x = temperature_c, y = delta_15_n_o_oo, color = island)) +
+  geom_point(size = 3)
+
+
+# Delta 13 plot
+ggplot(penguin_temps,
        aes(x = temperature_c, y = delta_13_c_o_oo, color = island)) +
   geom_point(size = 3) +
   scale_color_discrete(type = c("green", "blue", "purple"))
+  
+code_end')
+
+tab_html <- add_tabs(tabs, content)
+
+cat(paste0(tab_html, collapse = "\n"))
 ```
+
+</div>
+
 
 
 ## Expedition complete
 
 **Congratulations!** You have learned a bit about how temperature may affect penguin chemistry. 
 
-Time to begin the next expedition...
+Time to prep for the next expedition...
 
 
 <i class="fa fa-cookie-bite"></i> 
