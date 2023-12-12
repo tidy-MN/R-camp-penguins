@@ -194,9 +194,19 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <div class="tab-pane fade" id="day6" role="tabpanel" aria-labelledby="day6-tab"> 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> Databases and passwords
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.1 - </span> [Pivoting data: Wide <-> Long format]((page/videos/day6/06-1-lubridate-date-and-time-travel.html))
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> R markdown reports
+- [Slides](https://tidy-mn.github.io/R-camp-slides/day6/06-1-pivot-wider.html#1)
+
+
+## Choose **~1~** of the videos below to watch {-}
+
+### <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
+
+### <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
+
+### <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
+
 
 </div>
 </div>
