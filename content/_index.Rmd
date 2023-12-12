@@ -199,7 +199,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day6/06-1-pivot-wider.html#1)
 
 
-**Choose [1] of our favorite videos from the wider R community to watch** 
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> **Choose [1] of our favorite videos from the wider R community to watch** 
 
 - <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
 
