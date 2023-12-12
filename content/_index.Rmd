@@ -199,8 +199,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day6/06-1-pivot-wider.html#1)
 
 
-### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> [Fancy reports: **Quarto documents**](https://quarto.org/docs/get-started/hello/rstudio.html)
+### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> Tutorial: Reports in R *(from our Posit friends)*
 
+- [Tutorial: Hello, Quarto!](https://quarto.org/docs/get-started/hello/rstudio.html)
 - [Download the Quarto file](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) and follow along with the *Get started* video
 
 
