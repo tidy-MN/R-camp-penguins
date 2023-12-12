@@ -73,7 +73,9 @@ arrange(torg, date)
 
 > Icky...It looks like there are duplicate rows in the data. That seems to happen a lot. Since the temp value always appears to be the same for the duplicate row, I think it is safe to say the duplicate should be removed. 
 
-If you are 100% sure your data should not have duplicate rows in it, you can use the function `distinct( )` to keep only one row from each of the groups of duplicates. In the end, every row will be a distinct and unique row compared to ALL the others in the table.
+<br>
+
+If you are 100% sure your data should not have duplicate rows in it, you can use the function `distinct( )` to keep only one row from each of the groups of duplicates. In the end, every row will be a distinct and unique row compared to ALL others in the table.
 
 
 ```{r distinct}
