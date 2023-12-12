@@ -201,8 +201,11 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fa fa-video-camera"></i> <span style="font-size: 90%">6.2 - </span> Tutorial: Reports in R *(from our Posit friends)*
 
+Download the Quarto file and follow along with the *Get started* video at the link below
+
+- [Download the Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.qmd)
 - [Tutorial: Hello, Quarto!](https://quarto.org/docs/get-started/hello/rstudio.html)
-- [Download the Quarto file](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) and follow along with the *Get started* video
+
 
 
 </div>
