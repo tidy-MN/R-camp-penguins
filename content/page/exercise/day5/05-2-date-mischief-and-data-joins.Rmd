@@ -26,7 +26,9 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ## Getting started
 
-Create a new R script. Save it as soon as you make it and give it a good name like `5-2_exercise.R` or `temp_analysis.R` and you'll be ready to go!
+- Create a new R script. 
+- Save it and give it a good name like `5-2_exercise.R` or `temp_analysis.R`.
+- You're ready to go!
 
 ## The question
 
@@ -50,14 +52,13 @@ torg <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_tempe
 
 Let's do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames? 
 
-What can we do to make the data more tidy?
-
 ```{r explore_data, eval=F}
 glimpse(biscoe)
 glimpse(dream)
 glimpse(torg)
 ```
 
+What are some things we could do to make the data more tidy?
 
 ## Clean-up time
 

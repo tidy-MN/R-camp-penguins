@@ -353,7 +353,7 @@ Download the data DOWNLOAD — La Jolla PM25 data</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tidy-mn.github.io/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins.html</guid>
-      <description>Getting started Create a new R script. Save it as soon as you make it and give it a good name like 5-2_exercise.</description>
+      <description>Getting started Create a new R script. Save it and give it a good name like 5-2_exercise.R or temp_analysis.R. You’re ready to go!</description>
     </item>
     
     <item>
