@@ -203,8 +203,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 **Stats**
 
-- <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%"> - [Regression and Linear Models](https://www.youtube.com/watch?v=j5mu5XcJD_w&list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX&index=8) *(20 min)*
-    - [Notes](page/videos/day6/amelia_stat220_regression_prelab.html)
+- <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%"> [Regression and Linear Models](https://www.youtube.com/watch?v=j5mu5XcJD_w&list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX&index=8) *(20 min)*
+    - [Notes](page/videos/day6/amelia_stat220_regression_prelab.html) ([Download the .Rmd](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/page/videos/day6/amelia_stat220_regression_prelab.Rmd))
 
 **Plots**
 
@@ -214,6 +214,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 - <i class="fa fa-video-camera teal"></i> <span style="font-size: 90%">
 
+</div>
+</div>
 
-</div>
-</div>
+
