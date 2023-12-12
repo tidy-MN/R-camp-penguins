@@ -93,7 +93,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="data-exploration" class="section level2">
 <h2>Data exploration</h2>
-<p>Let’s do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames? What do we need to do to make the data tidy?</p>
+<p>Let’s do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames?</p>
+<p>What can we do to make the data more tidy?</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">glimpse</span>(biscoe)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">glimpse</span>(dream)</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">glimpse</span>(torg)</span></code></pre></div>
@@ -104,15 +105,30 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h3>Step 1</h3>
 <p>Take a closer look at the <code>torg</code> data. Why does it have so many more rows? Try arranging the data by the <em>date</em> column, what do you notice?</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">arrange</span>(torg, date)</span></code></pre></div>
+<pre><code>## # A tibble: 2,192 × 2
+##    date       temperature_c
+##    &lt;date&gt;             &lt;dbl&gt;
+##  1 2007-01-01           1.5
+##  2 2007-01-01           1.5
+##  3 2007-01-02           1.3
+##  4 2007-01-02           1.3
+##  5 2007-01-03           4.1
+##  6 2007-01-03           4.1
+##  7 2007-01-04          -0.3
+##  8 2007-01-04          -0.3
+##  9 2007-01-05           2.3
+## 10 2007-01-05           2.3
+## # ℹ 2,182 more rows</code></pre>
 <p><br></p>
 <blockquote>
-<p>Icky… There are duplicate rows in the data. That seems to happen a lot. Since the temp value always appears to be the same for the duplicate row, I think it is safe to say the duplicate should be removed.</p>
+<p>Icky…It looks like there are duplicate rows in the data. That seems to happen a lot. Since the temp value always appears to be the same for the duplicate row, I think it is safe to say the duplicate should be removed.</p>
 </blockquote>
 <p>If you are 100% sure your data should not have duplicate rows in it, you can use the function <code>distinct( )</code> to keep only one row from each of the groups of duplicates. In the end, every row will be a distinct and unique row compared to ALL the others in the table.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>torg <span class="ot">&lt;-</span> <span class="fu">distinct</span>(torg)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>torg <span class="ot">&lt;-</span> <span class="fu">distinct</span>(torg)</span></code></pre></div>
 <blockquote>
-<p>How many rows does <em>torg</em> you have now?</p>
+<p>How many rows does <em>torg</em> have now?</p>
 </blockquote>
+<p><br></p>
 </div>
 <div id="step-2" class="section level3">
 <h3>Step 2</h3>
@@ -140,7 +156,6 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="showhint0a" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint0a-tab">
 <pre class="sourceCode r">
-
 biscoe <- biscoe %>%
           mutate(island = ______ )
 
@@ -185,11 +200,11 @@ torg <- torg %>%
 <td align="left"><code>mdy(</code>date<code>)</code></td>
 </tr>
 <tr class="even">
-<td align="left">Day-Month-Year (Euro dates) ~ “<span class="teal">18-05-2023</span>” or “<span class="teal">18/05/2023</span>”</td>
+<td align="left">Day-Month-Year ~ “<span class="teal">18-05-2023</span>” or “<span class="teal">18/05/2023</span>”</td>
 <td align="left"><code>dmy()</code></td>
 </tr>
 <tr class="odd">
-<td align="left">Year-Month-Day (Science dates) ~ “<span class="teal">2023-05-18</span>” or “<span class="teal">2023/05/18</span>”</td>
+<td align="left">Year-Month-Day ~ “<span class="teal">2023-05-18</span>” or “<span class="teal">2023/05/18</span>”</td>
 <td align="left"><code>ymd()</code></td>
 </tr>
 </tbody>
@@ -197,23 +212,23 @@ torg <- torg %>%
 </div>
 <div id="make-it-a-date" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Make it a Date</h3>
-<ul class="nav nav-pills" id="myTab5982" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab9685" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="description5982-tab" data-toggle="tab" href="#description5982" role="tab" aria-controls="description5982" aria-selected="true">Description</a>
+<a class="nav-link" id="description9685-tab" data-toggle="tab" href="#description9685" role="tab" aria-controls="description9685" aria-selected="true">Description</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint5982-tab" data-toggle="tab" href="#showhint5982" role="tab" aria-controls="showhint5982" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint9685-tab" data-toggle="tab" href="#showhint9685" role="tab" aria-controls="showhint9685" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode5982-tab" data-toggle="tab" href="#showcode5982" role="tab" aria-controls="showcode5982" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode9685-tab" data-toggle="tab" href="#showcode9685" role="tab" aria-controls="showcode9685" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="description5982" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description5982-tab">
+<div id="description9685" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description9685-tab">
 <p><b> Use <code>mutate( )</code> to convert the <em>date</em> column to a Date object in each of the data sets.</b></p>
 <p><br></p>
 </div>
-<div id="showhint5982" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5982-tab">
+<div id="showhint9685" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9685-tab">
 <pre class="sourceCode r">
 
 biscoe <- biscoe %>%
@@ -226,7 +241,7 @@ dream <- dream %>%
   
 </pre>
 </div>
-<div id="showcode5982" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5982-tab">
+<div id="showcode9685" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9685-tab">
 <pre class="sourceCode r">
 biscoe <- biscoe %>%
           mutate(date = mdy(date))
@@ -242,34 +257,28 @@ torg <- torg %>%
 </div>
 </div>
 </div>
-<div id="putting-it-all-together" class="section level2">
-<h2>Putting it all together</h2>
+<div id="binding-them-all-together" class="section level2">
+<h2>Binding them all together</h2>
 <p>To join the temperature data to our penguin data easily, we want to combine all 3 data frames into one data frame. Keeping in mind tidy data, what is the best way to do this?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>temps <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(biscoe, dream, torg)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>temps <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(biscoe, dream, torg)</span></code></pre></div>
 <p>Run a few tests on the new table to ensure all the island data survived the <code>bind_rows</code> journey.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Check that all the islands made it into temps table</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">distinct</span>(temps, island)</span></code></pre></div>
-<pre><code>## # A tibble: 3 × 1
-##   island   
-##   &lt;chr&gt;    
-## 1 Biscoe   
-## 2 Dream    
-## 3 Torgersen</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Does the total number of rows check out</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">nrow</span>(temps)</span></code></pre></div>
-<pre><code>## [1] 3288</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">nrow</span>(biscoe) <span class="sc">+</span> <span class="fu">nrow</span>(dream) <span class="sc">+</span> <span class="fu">nrow</span>(torg)</span></code></pre></div>
-<pre><code>## [1] 3288</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Check that all the islands made it into temps table</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">distinct</span>(temps, island)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># Does the total number of rows check out</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="fu">nrow</span>(temps)</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="fu">nrow</span>(biscoe) <span class="sc">+</span> <span class="fu">nrow</span>(dream) <span class="sc">+</span> <span class="fu">nrow</span>(torg)</span></code></pre></div>
 </div>
 <div id="more-data-exploartion" class="section level2">
 <h2>More data exploartion</h2>
 <p>We have our temperature data in a happy place, but what about the penguin data?
 Let’s get the data and determine which columns we can use to combine with our temperature data.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>penguins_raw <span class="ot">&lt;-</span> penguins_raw</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>penguins_raw <span class="ot">&lt;-</span> penguins_raw</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
 <pre><code>## Rows: 344
 ## Columns: 17
 ## $ studyName             &lt;chr&gt; &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL…
@@ -289,37 +298,37 @@ Let’s get the data and determine which columns we can use to combine with our 
 ## $ `Delta 15 N (o/oo)`   &lt;dbl&gt; NA, 8.94956, 8.36821, NA, 8.76651, 8.66496, 9.18…
 ## $ `Delta 13 C (o/oo)`   &lt;dbl&gt; NA, -24.69454, -25.33302, NA, -25.32426, -25.298…
 ## $ Comments              &lt;chr&gt; &quot;Not enough blood for isotopes.&quot;, NA, NA, &quot;Adult…</code></pre>
-<p>Now that we have two tidy data sets, it’s time to combine them into one mega data frame.</p>
-<p>Both data frames have an <strong>island</strong> name and a <strong>date</strong>. What operation do we want to use? Which join type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. We want the resulting data frame to have the same number of rows as the <em>penguins_raw</em> data frame.</p>
+<p><br></p>
+<p>Both data frames have an <strong>island</strong> column and a <strong>date</strong> column, but with different names. What operation do we want to use? Which join type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. We want the resulting data frame to have the same number of rows as the <em>penguins_raw</em> data frame.</p>
 <div id="table-join" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Table join</h3>
-<ul class="nav nav-pills" id="myTab8519" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab7513" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="description8519-tab" data-toggle="tab" href="#description8519" role="tab" aria-controls="description8519" aria-selected="true">Description</a>
+<a class="nav-link" id="description7513-tab" data-toggle="tab" href="#description7513" role="tab" aria-controls="description7513" aria-selected="true">Description</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8519-tab" data-toggle="tab" href="#showhint8519" role="tab" aria-controls="showhint8519" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint7513-tab" data-toggle="tab" href="#showhint7513" role="tab" aria-controls="showhint7513" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8519-tab" data-toggle="tab" href="#showcode8519" role="tab" aria-controls="showcode8519" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode7513-tab" data-toggle="tab" href="#showcode7513" role="tab" aria-controls="showcode7513" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="description8519" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description8519-tab">
+<div id="description7513" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description7513-tab">
 <p><b> Use a <code>****_join( )</code> function to combine the columns of the two data sets so the result has the same number of rows as <em>penguins_raw</em>.</b></p>
 <p><br></p>
 </div>
-<div id="showhint8519" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8519-tab">
+<div id="showhint7513" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7513-tab">
 <pre class="sourceCode r">
 penguin_temps <- left_join(penguins_raw, temps,
                            by = c("Island" = "_______" ,
                                   "Date Egg" =  "______" ))
   
-# inner_join() would also in this case
+# inner_join() would also work in this case
 
 </pre>
 </div>
-<div id="showcode8519" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8519-tab">
+<div id="showcode7513" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7513-tab">
 <pre class="sourceCode r">
 penguin_temps <- left_join(penguins_raw, temps,
                            by = c("Island" = "island",
@@ -330,13 +339,29 @@ penguin_temps <- left_join(penguins_raw, temps,
 </div>
 </div>
 </div>
-<div id="looking-at-the-relationship-between-temp-and-isotopes" class="section level2">
-<h2>Looking at the relationship between temp and isotopes</h2>
+<div id="the-relationship-between-temp-and-isotopes" class="section level2">
+<h2>The relationship between temp and isotopes</h2>
 <p>With all of the data in one data frame, we can now plot isotope levels versus temperatures. But first, we need to clean up those long tricky column names. How do we do that?</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co">#install.packages(&quot;janitor&quot;)</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>penguin_temps <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguin_temps)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># The current names</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">names</span>(penguin_temps)</span></code></pre></div>
+<pre><code>##  [1] &quot;studyName&quot;           &quot;Sample Number&quot;       &quot;Species&quot;            
+##  [4] &quot;Region&quot;              &quot;Island&quot;              &quot;Stage&quot;              
+##  [7] &quot;Individual ID&quot;       &quot;Clutch Completion&quot;   &quot;Date Egg&quot;           
+## [10] &quot;Culmen Length (mm)&quot;  &quot;Culmen Depth (mm)&quot;   &quot;Flipper Length (mm)&quot;
+## [13] &quot;Body Mass (g)&quot;       &quot;Sex&quot;                 &quot;Delta 15 N (o/oo)&quot;  
+## [16] &quot;Delta 13 C (o/oo)&quot;   &quot;Comments&quot;            &quot;temperature_c&quot;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#install.packages(&quot;janitor&quot;)</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>penguin_temps <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguin_temps)</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="fu">names</span>(penguin_temps)</span></code></pre></div>
+<pre><code>##  [1] &quot;study_name&quot;        &quot;sample_number&quot;     &quot;species&quot;          
+##  [4] &quot;region&quot;            &quot;island&quot;            &quot;stage&quot;            
+##  [7] &quot;individual_id&quot;     &quot;clutch_completion&quot; &quot;date_egg&quot;         
+## [10] &quot;culmen_length_mm&quot;  &quot;culmen_depth_mm&quot;   &quot;flipper_length_mm&quot;
+## [13] &quot;body_mass_g&quot;       &quot;sex&quot;               &quot;delta_15_n_o_oo&quot;  
+## [16] &quot;delta_13_c_o_oo&quot;   &quot;comments&quot;          &quot;temperature_c&quot;</code></pre>
 </div>
 <div id="plots" class="section level2">
 <h2>Plots</h2>
@@ -344,23 +369,23 @@ penguin_temps <- left_join(penguins_raw, temps,
 <p><img src="/R-camp-penguins/page/exercise/day5/05-2-date-mischief-and-data-joins_files/figure-html/plots-1.png" width="73%" /></p>
 <div id="isotope-plots" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Isotope plots</h3>
-<ul class="nav nav-pills" id="myTab5209" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab7445" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="description5209-tab" data-toggle="tab" href="#description5209" role="tab" aria-controls="description5209" aria-selected="true">Description</a>
+<a class="nav-link" id="description7445-tab" data-toggle="tab" href="#description7445" role="tab" aria-controls="description7445" aria-selected="true">Description</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint5209-tab" data-toggle="tab" href="#showhint5209" role="tab" aria-controls="showhint5209" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint7445-tab" data-toggle="tab" href="#showhint7445" role="tab" aria-controls="showhint7445" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode5209-tab" data-toggle="tab" href="#showcode5209" role="tab" aria-controls="showcode5209" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode7445-tab" data-toggle="tab" href="#showcode7445" role="tab" aria-controls="showcode7445" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="description5209" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description5209-tab">
+<div id="description7445" class="tab-pane fade active in" role="tabpanel" aria-labelledby="description7445-tab">
 <p><b> Make 2 plots. One comparing temperature to Delta 15 N, and one comparing temperature to Delta 13 C. Assign the data from each island to its own color.</b></p>
 <p><br></p>
 </div>
-<div id="showhint5209" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5209-tab">
+<div id="showhint7445" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint7445-tab">
 <pre class="sourceCode r">
 # Delta 15 plot
 ggplot(penguin_temps,
@@ -373,7 +398,7 @@ ggplot(penguin_temps,
 
 </pre>
 </div>
-<div id="showcode5209" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5209-tab">
+<div id="showcode7445" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode7445-tab">
 <pre class="sourceCode r">
 # Delta 15 plot
 ggplot(penguin_temps,

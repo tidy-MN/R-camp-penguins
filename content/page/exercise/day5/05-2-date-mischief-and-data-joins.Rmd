@@ -9,8 +9,9 @@ output:
     fontsize: 18pt
     monofont: Source Code Pro
     toc: false
-    #code_folding: hide
+    toc_depth: 1
 ---
+
 
 ```{r setup, include=FALSE}
 library(readr)
@@ -43,7 +44,9 @@ torg <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/Torgersen_tempe
 
 ## Data exploration
 
-Let's do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames? What do we need to do to make the data tidy?
+Let's do a quick overview of our temperature data. As you are exploring the data, look for what is different between the 3 data frames? 
+
+What can we do to make the data more tidy?
 
 ```{r explore_data, eval=F}
 glimpse(biscoe)
@@ -58,13 +61,13 @@ glimpse(torg)
 
 Take a closer look at the `torg` data. Why does it have so many more rows? Try arranging the data by the *date* column, what do you notice?
 
-```{r arrange, eval=F}
+```{r arrange}
 arrange(torg, date)
 ```
 
 <br>
 
-> Icky... There are duplicate rows in the data. That seems to happen a lot. Since the temp value always appears to be the same for the duplicate row, I think it is safe to say the duplicate should be removed. 
+> Icky...It looks like there are duplicate rows in the data. That seems to happen a lot. Since the temp value always appears to be the same for the duplicate row, I think it is safe to say the duplicate should be removed. 
 
 If you are 100% sure your data should not have duplicate rows in it, you can use the function `distinct( )` to keep only one row from each of the groups of duplicates. In the end, every row will be a distinct and unique row compared to ALL the others in the table.
 
@@ -74,8 +77,10 @@ torg <- distinct(torg)
 ```
 
 
-> How many rows does *torg* you have now?
+> How many rows does *torg* have now?
 
+
+<br>
 
 ### Step 2 
 
@@ -101,7 +106,6 @@ content <- c(Exercise = '<b> Use `mutate( )` to add a new column called *island*
 <br>',
 
 show_hint = 'code_start
-
 biscoe <- biscoe %>%
           mutate(island = ______ )
 
@@ -152,8 +156,8 @@ When exploring the data, did you notice anything about the dates? They are all i
 | Format | Function to use   |
 |:----------------------------------|:--------|
 | Month-Day-Year ~ "<span class="teal">05-18-2023</span>" or "<span class="teal">05/18/2023</span>"                | `mdy(`date`)  `    |  
-| Day-Month-Year (Euro dates) ~ "<span class="teal">18-05-2023</span>" or "<span class="teal">18/05/2023</span>"  | `dmy()  `    | 
-| Year-Month-Day (Science dates) ~ "<span class="teal">2023-05-18</span>" or "<span class="teal">2023/05/18</span>" | `ymd()  `    | 
+| Day-Month-Year ~ "<span class="teal">18-05-2023</span>" or "<span class="teal">18/05/2023</span>"  | `dmy()  `    | 
+| Year-Month-Day ~ "<span class="teal">2023-05-18</span>" or "<span class="teal">2023/05/18</span>" | `ymd()  `    | 
 
 </div>
 
@@ -215,7 +219,7 @@ torg <- torg %>%
 ```
 
 
-## Putting it all together
+## Binding them all together
 
 To join the temperature data to our penguin data easily, we want to combine all 3 data frames into one data frame. Keeping in mind tidy data, what is the best way to do this?
 
@@ -226,7 +230,7 @@ temps <- bind_rows(biscoe, dream, torg)
 
 Run a few tests on the new table to ensure all the island data survived the `bind_rows` journey.
 
-```{r}
+```{r, eval=F}
 # Check that all the islands made it into temps table
 distinct(temps, island)
 
@@ -252,9 +256,9 @@ glimpse(penguins_raw)
 ```
 
 
-Now that we have two tidy data sets, it's time to combine them into one mega data frame. 
+<br>
 
-Both data frames have an **island** name and a **date**. What operation do we want to use? Which join type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. We want the resulting data frame to have the same number of rows as the *penguins_raw* data frame.
+Both data frames have an **island** column and a **date** column, but with different names. What operation do we want to use? Which join type is most appropriate here? Remember that when combining data frames, column names are important and are case-sensitive. We want the resulting data frame to have the same number of rows as the *penguins_raw* data frame.
 
 
 <div class="quiz">
@@ -275,7 +279,7 @@ penguin_temps <- left_join(penguins_raw, temps,
                            by = c("Island" = "_______" ,
                                   "Date Egg" =  "______" ))
   
-# inner_join() would also in this case
+# inner_join() would also work in this case
 
 code_end',
 
@@ -302,15 +306,23 @@ penguin_temps <- left_join(penguins_raw, temps,
 
 
 
-## Looking at the relationship between temp and isotopes
+## The relationship between temp and isotopes
 
 With all of the data in one data frame, we can now plot isotope levels versus temperatures. But first, we need to clean up those long tricky column names. How do we do that?
+
+```{r tricky-names}
+# The current names
+names(penguin_temps)
+```
+
 
 ```{r clean_names}
 #install.packages("janitor")
 library(janitor)
 
 penguin_temps <- clean_names(penguin_temps)
+
+names(penguin_temps)
 ```
 
 
