@@ -10,7 +10,7 @@ editor: visual
 
 # Introduction
 
-This is good place to talk about what you want people to know about the work that you're doing. What data are you using? What does it mean? What questions are you trying to answer and why should I be *glued* to the screen while your brilliance unfolds before me?
+This is good place to talk about what you want people to know about the work that you're doing. What data are you using? What does it mean? What questions are you trying to answer and why?
 
 ## Setup 
 
