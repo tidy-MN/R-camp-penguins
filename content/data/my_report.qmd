@@ -1,0 +1,92 @@
+---
+title: "My Penguin Report"
+author: "Barbara Monaco"
+date: "`r lubridate::today()`"
+format: 
+  html: default
+  pdf: default
+editor: visual
+---
+
+# Introduction
+
+This is good place to talk about what you want people to know about the work that you're doing. What data are you using? What does it mean? What questions are you trying to answer and why should I be *glued* to the screen while your brilliance unfolds before me?
+
+## Setup 
+
+What do I need to make it all work?
+
+```{r}
+#| label: load-packages
+#| warning: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(janitor)
+library(gt)
+```
+
+## Read in data
+
+Get the data into R because that's important.
+
+```{r}
+data(penguins)
+```
+
+
+## Cleaning data
+
+All the steps to make the data more usable, because strangely...it usually isn't.
+
+```{r}
+penguins_raw_clean <- penguins_raw %>% 
+  clean_names()
+```
+
+# Graphs and summaries
+
+Ah yeah, let's see that good stuff - pretty pictures and amazing tables will make your report stand out from the crowd!
+
+```{r}
+tabyl(penguins_raw_clean, species, island) %>% 
+  adorn_totals(where = 'row') %>% 
+  adorn_totals(where = 'col')
+```
+
+```{r}
+
+penguin_island_dist <- penguins_raw_clean %>% 
+  group_by(region, island, species) %>% 
+  summarise(count = n())
+
+ggplot(data = penguin_island_dist, 
+       aes(x = island, y = count, fill = species)) +
+  geom_col(position = position_dodge2(preserve = "single")) + 
+  geom_text(aes(label = count, y = count + 5), 
+            position = position_dodge2(width = 0.9)) +
+  scale_fill_brewer(type = "qual", palette = 3) +
+  labs(title = "Distribution of penguin species by island",
+       x = "Island",
+       y = "Number of penguins observed") +
+  theme_bw()
+
+```
+
+# Conclusions and Next Steps
+
+Have any thoughts about what you'd do next if you were the analytic bot on the research vessel looking for cool penguin data? Or what you might do next if you were you working on your own project?
+
+## Lessons learned
+
+Some things I learned:
+
+> I learned how to load in libraries, use functions, and make data bend to my every whim (insert evil laugh here). I also learned how to make awesome graphs, maps, and tables - oh my!
+
+## What I liked best about R Camp
+
+Here's what I liked best and your thing might be different from my thing and that's cool.
+
+> I liked making videos and hanging out with my friends - we don't always get to work together so it's extra nice when we do!
+
+> I also enjoyed making new friends...Hello NEW FRIEND!

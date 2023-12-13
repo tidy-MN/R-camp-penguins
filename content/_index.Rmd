@@ -207,6 +207,9 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 - [Tutorial: Hello, Quarto!](https://quarto.org/docs/get-started/hello/rstudio.html)
 
 
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+
+- Exercise - [Download my_report.qmd](https://tidy-mn.github.io/R-camp-penguins/data/my_report.qmd)
 
 </div>
 </div>

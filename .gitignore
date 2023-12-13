@@ -11,16 +11,13 @@
 /*.Rcheck/
 # RStudio files
 .Rproj.user/
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-
 # content html files
 content/*.html
 content/page/*.html
 content/post/*.html
-
 # public folder
 #public/*
 #public/
@@ -39,3 +36,5 @@ rsconnect/
 .Rproj.user
 project.Rproj
 porgs.pptx
+/.quarto/
+blogdown
