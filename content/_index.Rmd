@@ -209,7 +209,7 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
 
-- Exercise - [Download my_report.qmd](https://tidy-mn.github.io/R-camp-penguins/data/my_report.qmd)
+- Download: [my_report.qmd](https://tidy-mn.github.io/R-camp-penguins/data/my_report.qmd)
 
 </div>
 </div>
