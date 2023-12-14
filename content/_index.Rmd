@@ -48,7 +48,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <li class="nav-item"><a class="nav-link" id="day4-tab" data-toggle="tab" href="#day4" role="tab" aria-controls="day4" aria-selected="false">`Day 4`</a></li> 
 <li class="nav-item"><a class="nav-link" id="day5-tab" data-toggle="tab" href="#day5" role="tab" aria-controls="day5" aria-selected="false">`Day 5`</a></li> 
 <li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">`Day 6`</a></li>
-<li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">`After camp`</a></li>
+<li class="nav-item"><a class="nav-link" id="after-camp-tab" data-toggle="tab" href="#after-camp" role="tab" aria-controls="after-camp" aria-selected="false">`After camp`</a></li>
 </ul>
 
 <div class="well tab-content" id="myTabContent" style="background-color: white;">
