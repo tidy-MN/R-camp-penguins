@@ -217,23 +217,25 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 
 <div class="tab-pane fade" id="after-camp" role="tabpanel" aria-labelledby="after-camp-tab"> 
 
-> Join us in the Team's [R team](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
+## After camp {-}
+
+> Join us in the Team's [MN R users group](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
 
 
 ### Continue learning
 
-Here's a collection of some of our <span class="teal">**favorite**</span> resources created and shared by the wider R community.
+Here's a collection of some of our <span class="teal">**favorite**</span> resources created by the wider R community.
 
 **Stats**
 
 - <i class="fa fa-video-camera teal"></i> [Regression and Linear Models lab](https://www.youtube.com/watch?v=j5mu5XcJD_w&list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX&index=8) *(20 min)*
-    - [Download the Quarto.qmd](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/page/videos/day6/stat220_regression_prelab.qmd)
-- <i class="fa-solid fa-display teal"></i> [Stats w/ Teacup Giraffes](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html)
+    - Notes - [Download the Quarto.qmd](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/page/videos/day6/stat220_regression_prelab.qmd)
+- <i class="fa-solid fa-display teal"></i> [Statistics with Teacup Giraffes](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html)
 
 **Plots**
 
-- <i class="fa fa-video-camera teal"></i> [Annotate w/ text and colors](https://www.youtube.com/watch?v=TGU-ekc8Tyg) *(33 min)*
-- <i class="fa fa-video-camera teal"></i> [aRt with ggplot](https://www.youtube.com/watch?v=h0i6KAahLY8) *(35 min)*
+- <i class="fa fa-video-camera teal"></i> [Annotate with text and colors](https://www.youtube.com/watch?v=TGU-ekc8Tyg) *(33 min)*
+- <i class="fa fa-video-camera teal"></i> [Make aRt with ggplot](https://www.youtube.com/watch?v=h0i6KAahLY8) *(35 min)*
 - <i class="fa fa-video-camera teal"></i> [Take a sad plot and make it...](https://www.youtube.com/watch?v=JeRRSGWODBQ) *(54 min)*
 
 **Exploratory analysis**
