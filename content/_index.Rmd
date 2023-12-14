@@ -217,7 +217,7 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 
 <div class="tab-pane fade" id="after-camp" role="tabpanel" aria-labelledby="after-camp-tab"> 
 
-## After camp {-}
+<h2 style="margin-top: 14px;">After camp </h2>
 
 > Join us in the Team's [MN R users group](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
 
