@@ -47,7 +47,9 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <li class="nav-item"><a class="nav-link" id="day3-tab" data-toggle="tab" href="#day3" role="tab" aria-controls="day3" aria-selected="false">`Day 3`</a></li>
 <li class="nav-item"><a class="nav-link" id="day4-tab" data-toggle="tab" href="#day4" role="tab" aria-controls="day4" aria-selected="false">`Day 4`</a></li> 
 <li class="nav-item"><a class="nav-link" id="day5-tab" data-toggle="tab" href="#day5" role="tab" aria-controls="day5" aria-selected="false">`Day 5`</a></li> 
-<li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">`Day 6`</a></li></ul>
+<li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">`Day 6`</a></li>
+<li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">`After camp`</a></li>
+</ul>
 
 <div class="well tab-content" id="myTabContent" style="background-color: white;">
 <div class="tab-pane fade active in" id="day1" role="tabpanel" aria-labelledby="day1-tab">
@@ -212,6 +214,53 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 - Download: [my_report.qmd](https://tidy-mn.github.io/R-camp-penguins/data/my_report.qmd)
 
 </div>
+
+<div class="tab-pane fade" id="after-camp" role="tabpanel" aria-labelledby="after-camp-tab"> 
+
+> Join us in the Team's [R team](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
+
+
+### Continue learning
+
+Here's a collection of some of our <span class="teal">**favorite**</span> resources created and shared by the wider R community.
+
+**Stats**
+
+- <i class="fa fa-video-camera teal"></i> [Regression and Linear Models lab](https://www.youtube.com/watch?v=j5mu5XcJD_w&list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX&index=8) *(20 min)*
+    - [Download the Quarto.qmd](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/page/videos/day6/stat220_regression_prelab.qmd)
+- <i class="fa-solid fa-display teal"></i> [Stats w/ Teacup Giraffes](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html)
+
+**Plots**
+
+- <i class="fa fa-video-camera teal"></i> [Annotate w/ text and colors](https://www.youtube.com/watch?v=TGU-ekc8Tyg) *(33 min)*
+- <i class="fa fa-video-camera teal"></i> [aRt with ggplot](https://www.youtube.com/watch?v=h0i6KAahLY8) *(35 min)*
+- <i class="fa fa-video-camera teal"></i> [Take a sad plot and make it...](https://www.youtube.com/watch?v=JeRRSGWODBQ) *(54 min)*
+
+**Exploratory analysis**
+
+- <i class="fa fa-video-camera teal"></i> [Maps: Squirrels in New York](https://www.youtube.com/watch?v=6GV9sAD6Pi0) *(1 hr)*
+- <i class="fa fa-video-camera teal"></i> [Survey results: Thanksgiving dinner](https://www.youtube.com/watch?v=rxJZT0duwfU) *(1 hr)*
+- <i class="fa fa-video-camera teal"></i> [Survey results: Multiple choice and intro to *purrr*](https://www.youtube.com/watch?v=uG3igAGX7UE) *(40 min)*
+- <i class="fa fa-video-camera teal"></i> [Bob Ross paintings](https://www.youtube.com/watch?v=sD993H5FBIY) *(1 hr)*
+
+
+**Tidyverse**
+
+- <i class="fa fa-video-camera teal"></i> [10  tidyverse tricks](https://www.youtube.com/watch?v=NDHSBUN_rVU) *(20 min)*  
+
+
+**Courses**
+
+These Coursera courses are <span class="teal">**FREE**</span> to `audit`, you do not need to give them money.
+
+- <i class="fa-solid fa-display teal"></i> [John Hopkins: Reproducible research in R](https://www.coursera.org/learn/reproducible-research)
+
+
+**For the EPI's in the room**
+
+- <i class="fa-solid fa-book teal"></i> [The Epidemiologist R Handbook](https://www.epirhandbook.com/en/transition-to-r.html)
+
+
 </div>
 
-
+</div>

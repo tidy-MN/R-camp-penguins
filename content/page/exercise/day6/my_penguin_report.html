@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Barbara Monaco">
-<meta name="dcterms.date" content="2023-12-13">
 
 <title>My Penguin Report</title>
 <style>
@@ -59,25 +58,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="my_report_files/libs/clipboard/clipboard.min.js"></script>
-<script src="my_report_files/libs/quarto-html/quarto.js"></script>
-<script src="my_report_files/libs/quarto-html/popper.min.js"></script>
-<script src="my_report_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="my_report_files/libs/quarto-html/anchor.min.js"></script>
-<link href="my_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="my_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="my_report_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="my_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="my_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="my_penguin_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="my_penguin_report_files/libs/quarto-html/quarto.js"></script>
+<script src="my_penguin_report_files/libs/quarto-html/popper.min.js"></script>
+<script src="my_penguin_report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="my_penguin_report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="my_penguin_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="my_penguin_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="my_penguin_report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="my_penguin_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="my_penguin_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body>
+<body class="fullcontent">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="my_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -96,12 +94,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 13, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -111,27 +103,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>This is good place to talk about what you want people to know about the work that you’re doing. What data are you using? What does it mean? What questions are you trying to answer and why?</p>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>What do I need to make it all work?</p>
+<p>This is good place to talk about what you want people to know about the work that you’re doing. What data are you using? What does it mean? What questions are you trying to answer and why should I be <em>glued</em> to the screen while your brilliance unfolds before me?</p>
+<section id="setup-and-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="setup-and-libraries">Setup and libraries</h2>
+<p>What do I need to do to make it work???</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="read-in-data" class="level2">
-<h2 class="anchored" data-anchor-id="read-in-data">Read in data</h2>
-<p>Get the data into R because that’s important.</p>
+<section id="reading-in-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-data">Reading in data</h2>
+<p>How to get the data in because that’s important.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cleaning-data" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-data">Cleaning data</h2>
-<p>All the steps to make the data more usable, because strangely…it usually isn’t.</p>
+<p>How to make the data usable because weirdly…it usually isn’t.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins_raw_clean <span class="ot">&lt;-</span> penguins_raw <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -156,23 +147,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>penguin_island_dist <span class="ot">&lt;-</span> penguins_raw_clean <span class="sc">%&gt;%</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(region, island, species) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'region', 'island'. You can override using
-the `.groups` argument.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguin_island_dist, </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> count, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">preserve =</span> <span class="st">"single"</span>)) <span class="sc">+</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> count, <span class="at">y =</span> count <span class="sc">+</span> <span class="dv">5</span>), </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.9</span>)) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">"qual"</span>, <span class="at">palette =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of penguin species by island"</span>,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Island"</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of penguins observed"</span>) <span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguin_island_dist, </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> count, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">preserve =</span> <span class="st">"single"</span>)) <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> count, <span class="at">y =</span> count <span class="sc">+</span> <span class="dv">5</span>), </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">"qual"</span>, <span class="at">palette =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of penguin species by island"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Island"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of penguins observed"</span>) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="my_report_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="my_penguin_report_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -181,18 +169,16 @@ the `.groups` argument.</code></pre>
 <p>Have any thoughts about what you’d do next if you were the analytic bot on the research vessel looking for cool penguin data? Or what you might do next if you were you working on your own project?</p>
 <section id="lessons-learned" class="level2">
 <h2 class="anchored" data-anchor-id="lessons-learned">Lessons learned</h2>
-<p>Some things I learned:</p>
+<p>An example of things that you might put here:</p>
 <blockquote class="blockquote">
 <p>I learned how to load in libraries, use functions, and make data bend to my every whim (insert evil laugh here). I also learned how to make awesome graphs, maps, and tables - oh my!</p>
 </blockquote>
 </section>
-<section id="what-i-liked-best-about-r-camp" class="level2">
-<h2 class="anchored" data-anchor-id="what-i-liked-best-about-r-camp">What I liked best about R Camp</h2>
+<section id="what-you-liked-best-about-rcamp" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-liked-best-about-rcamp">What you liked best about RCamp</h2>
 <p>Here’s what I liked best and your thing might be different from my thing and that’s cool.</p>
 <blockquote class="blockquote">
 <p>I liked making videos and hanging out with my friends - we don’t always get to work together so it’s extra nice when we do!</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>I also enjoyed making new friends…Hello NEW FRIEND!</p>
 </blockquote>
 </section>
