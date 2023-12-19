@@ -229,7 +229,7 @@ Here's a collection of some of our <span class="teal">**favorite**</span> resour
 **Stats**
 
 - <i class="fa fa-video-camera teal"></i> [Regression and Linear Models lab](https://www.youtube.com/watch?v=j5mu5XcJD_w&list=PLik6fAQnSI93eBVuAONFBCVdOd7VFhKQX&index=8) *(20 min)*
-    - Notes - [Download the Quarto.qmd](https://github.com/tidy-MN/R-camp-penguins/raw/main/content/page/videos/day6/stat220_regression_prelab.qmd)
+    - Notes - [Download the Quarto.qmd](https://tidy-mn.github.io/R-camp-penguins/data/stat220_regression_prelab.qmd)
 - <i class="fa-solid fa-display teal"></i> [Statistics with Teacup Giraffes](https://tinystats.github.io/teacups-giraffes-and-statistics/01_introToR.html)
 
 **Plots**
