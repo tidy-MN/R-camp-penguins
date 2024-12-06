@@ -52,7 +52,7 @@ Instead of using `penguins`, we're going to be using `penguins_raw` for this exe
 library(tidyverse)
 library(palmerpenguins)
 
-penguins_raw <- penguins_raw # this loads the data from the palmerpenguins package into your environment
+penguins_raw <- penguins_raw # this loads data from the palmerpenguins package
 
 glimpse(penguins_raw)
 ```

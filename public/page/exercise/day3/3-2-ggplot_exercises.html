@@ -63,7 +63,7 @@
   "headline": "ggplot: The remix",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1553 ,
+  "wordCount":  1549 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -378,7 +378,7 @@ hr {background:  cornflowerblue;}
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>penguins_raw <span class="ot">&lt;-</span> penguins_raw <span class="co"># this loads the data from the palmerpenguins package into your environment</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>penguins_raw <span class="ot">&lt;-</span> penguins_raw <span class="co"># this loads data from the palmerpenguins package</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
 <pre><code>## Rows: 344
@@ -459,25 +459,25 @@ hr {background:  cornflowerblue;}
 </blockquote>
 <div id="column-charts" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Column charts</h3>
-<ul class="nav nav-pills" id="myTab4567" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab8624" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="geom_col4567-tab" data-toggle="tab" href="#geom_col4567" role="tab" aria-controls="geom_col4567" aria-selected="true">geom_col</a>
+<a class="nav-link" id="geom_col8624-tab" data-toggle="tab" href="#geom_col8624" role="tab" aria-controls="geom_col8624" aria-selected="true">geom_col</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint4567-tab" data-toggle="tab" href="#showhint4567" role="tab" aria-controls="showhint4567" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint8624-tab" data-toggle="tab" href="#showhint8624" role="tab" aria-controls="showhint8624" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode4567-tab" data-toggle="tab" href="#showcode4567" role="tab" aria-controls="showcode4567" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode8624-tab" data-toggle="tab" href="#showcode8624" role="tab" aria-controls="showcode8624" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="geom_col4567" class="tab-pane fade active in" role="tabpanel" aria-labelledby="geom_col4567-tab">
+<div id="geom_col8624" class="tab-pane fade active in" role="tabpanel" aria-labelledby="geom_col8624-tab">
 <h4>
 Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint4567" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4567-tab">
+<div id="showhint8624" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8624-tab">
 <pre class="sourceCode r">
 
 ggplot(data = __________, 
@@ -490,7 +490,7 @@ ggplot(data = __________,
   theme_bw()
 </pre>
 </div>
-<div id="showcode4567" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4567-tab">
+<div id="showcode8624" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8624-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -520,25 +520,25 @@ ggplot(data = penguin_island_dist,
 </ol>
 <div id="bar-labels" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Bar labels</h3>
-<ul class="nav nav-pills" id="myTab4804" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab256" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="barlabels4804-tab" data-toggle="tab" href="#barlabels4804" role="tab" aria-controls="barlabels4804" aria-selected="true">Bar labels</a>
+<a class="nav-link" id="barlabels256-tab" data-toggle="tab" href="#barlabels256" role="tab" aria-controls="barlabels256" aria-selected="true">Bar labels</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint4804-tab" data-toggle="tab" href="#showhint4804" role="tab" aria-controls="showhint4804" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint256-tab" data-toggle="tab" href="#showhint256" role="tab" aria-controls="showhint256" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode4804-tab" data-toggle="tab" href="#showcode4804" role="tab" aria-controls="showcode4804" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode256-tab" data-toggle="tab" href="#showcode256" role="tab" aria-controls="showcode256" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="barlabels4804" class="tab-pane fade active in" role="tabpanel" aria-labelledby="barlabels4804-tab">
+<div id="barlabels256" class="tab-pane fade active in" role="tabpanel" aria-labelledby="barlabels256-tab">
 <h4>
 Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint4804" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4804-tab">
+<div id="showhint256" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint256-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -553,7 +553,7 @@ ggplot(data = penguin_island_dist,
   theme_bw()
 </pre>
 </div>
-<div id="showcode4804" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4804-tab">
+<div id="showcode256" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode256-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 

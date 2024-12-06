@@ -63,7 +63,7 @@
   "headline": "ggplot",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1894 ,
+  "wordCount":  1891 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -381,8 +381,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># install.packages(&#39;palmerpenguins&#39;) </span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># This reads in the data from the package and adds it to our environment</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins&quot;</span>) </span></code></pre></div>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># This loads the penguins data from the palmerpenguins package</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins</span></code></pre></div>
 </div>
 </div>
 <div id="what-does-the-data-look-like" class="section level1">
@@ -435,19 +435,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <p>Back to the drawing board…let’s start with labels! We want to add a title and make the axis labels be capitalized vs lower-case. Also someone complained about the background color and asked us to make it look “cleaner”.</p>
 <div id="cleaning-up" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Cleaning up</h3>
-<ul class="nav nav-pills" id="myTab6877" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab5984" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="addlabelsandtheme6877-tab" data-toggle="tab" href="#addlabelsandtheme6877" role="tab" aria-controls="addlabelsandtheme6877" aria-selected="true">Add labels and theme</a>
+<a class="nav-link" id="addlabelsandtheme5984-tab" data-toggle="tab" href="#addlabelsandtheme5984" role="tab" aria-controls="addlabelsandtheme5984" aria-selected="true">Add labels and theme</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint6877-tab" data-toggle="tab" href="#showhint6877" role="tab" aria-controls="showhint6877" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint5984-tab" data-toggle="tab" href="#showhint5984" role="tab" aria-controls="showhint5984" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode6877-tab" data-toggle="tab" href="#showcode6877" role="tab" aria-controls="showcode6877" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode5984-tab" data-toggle="tab" href="#showcode5984" role="tab" aria-controls="showcode5984" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="addlabelsandtheme6877" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addlabelsandtheme6877-tab">
+<div id="addlabelsandtheme5984" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addlabelsandtheme5984-tab">
 <h4>
 Add a title, x-axis and y-axis labels, and change the theme, below are some possible options for you to choose from:
 </h4>
@@ -460,7 +460,7 @@ Add a title, x-axis and y-axis labels, and change the theme, below are some poss
 </ul>
 <p><br></p>
 </div>
-<div id="showhint6877" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint6877-tab">
+<div id="showhint5984" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5984-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -469,7 +469,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_xxx() #pick one of the themes above! 
 </pre>
 </div>
-<div id="showcode6877" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode6877-tab">
+<div id="showcode5984" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5984-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -488,25 +488,25 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <p>Now we just need to tackle color. Hmmmm…we know it’s a bar chart which means that we need to specify ‘fill’ vs ‘color’, so we can use the function <code>scale_fill_brewer</code> to pick out our favorite <a href="https://colorbrewer2.org/">RColorBrewer palette</a> for this graph. We want a qualitative one and we also want one that is colorblind friendly, so let’s pick palette <code>3</code>, but if you have a different favorite you should use that one!</p>
 <div id="color-time" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Color time</h3>
-<ul class="nav nav-pills" id="myTab8" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab5241" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="addingfillcolors8-tab" data-toggle="tab" href="#addingfillcolors8" role="tab" aria-controls="addingfillcolors8" aria-selected="true">Adding fill colors</a>
+<a class="nav-link" id="addingfillcolors5241-tab" data-toggle="tab" href="#addingfillcolors5241" role="tab" aria-controls="addingfillcolors5241" aria-selected="true">Adding fill colors</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8-tab" data-toggle="tab" href="#showhint8" role="tab" aria-controls="showhint8" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint5241-tab" data-toggle="tab" href="#showhint5241" role="tab" aria-controls="showhint5241" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8-tab" data-toggle="tab" href="#showcode8" role="tab" aria-controls="showcode8" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode5241-tab" data-toggle="tab" href="#showcode5241" role="tab" aria-controls="showcode5241" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="addingfillcolors8" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addingfillcolors8-tab">
+<div id="addingfillcolors5241" class="tab-pane fade active in" role="tabpanel" aria-labelledby="addingfillcolors5241-tab">
 <h4>
 Change the fill colors for the bar-chart using RColorBrewer palettes.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint8" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8-tab">
+<div id="showhint5241" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint5241-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -518,7 +518,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_bw()
 </pre>
 </div>
-<div id="showcode8" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8-tab">
+<div id="showcode5241" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode5241-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
@@ -537,25 +537,25 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
 <p>Annnnd of course one of the researchers had a last minute request. They didn’t like the stacked bar chart and they wanted to know if we could make them side-by-side instead. As an extra challenge see if you can figure out how to make each bar the same width as well!</p>
 <div id="changing-positions" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab8856" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab3280" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side8856-tab" data-toggle="tab" href="#side-by-side8856" role="tab" aria-controls="side-by-side8856" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="side-by-side3280-tab" data-toggle="tab" href="#side-by-side3280" role="tab" aria-controls="side-by-side3280" aria-selected="true">Side-by-side</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint8856-tab" data-toggle="tab" href="#showhint8856" role="tab" aria-controls="showhint8856" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint3280-tab" data-toggle="tab" href="#showhint3280" role="tab" aria-controls="showhint3280" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode8856-tab" data-toggle="tab" href="#showcode8856" role="tab" aria-controls="showcode8856" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode3280-tab" data-toggle="tab" href="#showcode3280" role="tab" aria-controls="showcode3280" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side8856" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side8856-tab">
+<div id="side-by-side3280" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side3280-tab">
 <h4>
 Change the bar-chart from a stacked bar-chart to a side-by-side bar-chart by changing the position argument
 </h4>
 <p><br></p>
 </div>
-<div id="showhint8856" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint8856-tab">
+<div id="showhint3280" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint3280-tab">
 <pre class="sourceCode r">
 # Try typing "position_" and then wait a second, a menu of options should appear
 
@@ -568,7 +568,7 @@ ggplot(data = penguins, aes(x = island, fill = species)) +
   theme_bw()
 </pre>
 </div>
-<div id="showcode8856" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode8856-tab">
+<div id="showcode3280" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode3280-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguins, aes(x = island, fill = species)) +
