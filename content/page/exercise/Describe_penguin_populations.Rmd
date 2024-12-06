@@ -146,7 +146,7 @@ cat(paste0(tab_html, collapse = "\n"))
 
 ## Compare penguin bills
 
-Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific gruops, like year and month and your mood. Again, `group_by` lets this happen as long as your data allow it. 
+Penguin bills are fascinating! We want to know everything about them, and we want even more categorically resolved information this time! Sometimes you want summaries based on very specific groups, such as sample results by day of the week and age group. Again, `group_by` lets this happen as long as your data allow it. 
 
 In this final exercise, let's create a dataset that summarizes the bill lengths and bill depths of the penguin populations by species, sex, and island. Calculate the mean bill lengths and bill depths of each group. 
 

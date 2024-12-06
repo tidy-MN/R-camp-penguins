@@ -325,14 +325,14 @@ content <- c(Exercise = '<b> Assign the penguins a value for the new column `fli
 
 show_hint = 'code_start
 penguins %>% 
-  mutate(flipper_group = case_when(flipper_length_mm  > _______ ~ ________,
+  mutate(flipper_group = case_when(flipper_length_mm > _______ ~ ________,
                                    TRUE ~ _________ ))
   
 code_end',
 
 show_code = 'code_start
 penguins %>% 
-    mutate(flipper_group = case_when(flipper_length_mm  > 210 ~ "big flips",
+    mutate(flipper_group = case_when(flipper_length_mm > 210 ~ "big flips",
                                      TRUE ~ "small flips" ))
   
 code_end')

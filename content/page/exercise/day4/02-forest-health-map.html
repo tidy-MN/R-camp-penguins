@@ -20,7 +20,7 @@ output:
 <link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -118,7 +118,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Read the shapefile</span></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>forest_damage <span class="ot">&lt;-</span> <span class="fu">st_read</span>(temp2)</span></code></pre></div>
 <pre><code>## Reading layer `forest_health_survey_2022&#39; from data source 
-##   `/tmp/RtmpZOYpHo/file12175fcd8b39&#39; using driver `ESRI Shapefile&#39;
+##   `/tmp/RtmpGIdYlq/file6016cd70e27&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 2825 features and 10 fields
 ## Geometry type: POLYGON
 ## Dimension:     XY
@@ -160,21 +160,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 <pre><code>## Warning: attribute variables are assumed to be spatially constant throughout
 ## all geometries</code></pre>
 <p><br></p>
-<p>Now some of our polygons within the counties might look a bit like this:</p>
-<div class="float">
-<img src="https://i.stack.imgur.com/vLlAZ.jpg" style="width:55.0%" alt="Example of split polygons across two counties from GIS stackexchange.com" />
-<div class="figcaption">Example of split polygons across two counties from GIS stackexchange.com</div>
-</div>
+<p>Take a look. The forest polygons that spanned across county borders have been split into two polygons.</p>
+<p>An original forest damage polygon from row 2,011 in the <code>forest_damage</code> data.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(forest_damage[<span class="dv">2011</span>, <span class="dv">1</span>]) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">&quot;hotpink&quot;</span>)</span></code></pre></div>
+<p><img src="/R-camp-penguins/page/exercise/day4/02-forest-health-map_files/figure-html/split_county-1.png" width="672" /></p>
+<p>The shape was split into two polygons along the county border when intersected with the <code>counties</code> data.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> forest_damage_counties[<span class="st">&quot;2011&quot;</span>, <span class="dv">1</span>], <span class="at">fill =</span> <span class="st">&quot;green&quot;</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> forest_damage_counties[<span class="st">&quot;2011.1&quot;</span>, <span class="dv">1</span>], <span class="at">fill =</span> <span class="st">&quot;darkgreen&quot;</span>)</span></code></pre></div>
+<pre><code>## Error in `calc_limits_bbox()`:
+## ! Scale limits cannot be mapped onto spatial coordinates in
+##   `coord_sf()`.
+## ℹ Consider setting `lims_method = &quot;geometry_bbox&quot;` or `default_crs = NULL`.</code></pre>
 <p><br></p>
 <div id="st_area" class="section level3">
 <h3>st_area</h3>
 <p>Next, we can calculate the area for each of the new split up <code>forest_damage</code> polygons.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> forest_damage_counties <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>                          <span class="fu">mutate</span>(<span class="at">damage_area =</span> <span class="fu">st_area</span>(geometry))</span></code></pre></div>
 <p><br></p>
 <p>Since we no longer need each individual polygon geometry, we can set the geometry of the dataset to NULL. This can help save some memory for R when working with large datasets.</p>
 <p><br></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>forest_damage_counties <span class="ot">&lt;-</span> <span class="fu">st_set_geometry</span>(forest_damage_counties, <span class="cn">NULL</span>)</span></code></pre></div>
 <blockquote>
 <p>Check the dataframe to see if the <code>geometry</code> column vanished. I hope so!</p>
 </blockquote>
@@ -215,7 +223,7 @@ forest_damage_total <- forest_damage_counties %>%
 
 forest_damage_total <- forest_damage_counties %>%
   group_by(NAME) %>%
-  summarise(total_damaged_area = sum(damage_area, na.rm = T))
+  summarise(total_damaged_area = sum(damage_area, na.rm = TRUE))
   
 </pre>
 </div>
@@ -224,9 +232,9 @@ forest_damage_total <- forest_damage_counties %>%
 <p><br></p>
 <div id="join-tables" class="section level3">
 <h3>Join tables</h3>
-<p>Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use <code>left_join</code> below to add the forest damage totals to the county polygons. The rows are joined based on where their county names match in their <code>NAME</code> columns. We’ll cover joins in great detail next session, so consider this a preview teaser.</p>
+<p>Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use <code>left_join</code> below to add the forest damage totals to the county polygons. The rows are joined based on where the county names match in both tables in the <code>NAME</code> columns. We’ll cover joins in great detail next session - so consider this a preview teaser.</p>
 <p><br></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>county_totals <span class="ot">&lt;-</span> <span class="fu">left_join</span>(counties, forest_damage_total, <span class="at">by =</span> <span class="st">&quot;NAME&quot;</span>)</span></code></pre></div>
 <p><br></p>
 </div>
 <div id="should-the-missing-values-for-damaged-area-be-zero" class="section level3">
@@ -234,25 +242,22 @@ forest_damage_total <- forest_damage_counties %>%
 <p>Now, we replace all missing values with zeroes. You always want to think a bit before replacing NULLs with zeroes. In this case, we have some information to justify that the missing values are where there was no forest canopy damage and so the forest canopy damage area would be zero (based on the reports used in this dataset).</p>
 <p>Sometimes a NULL means there is no information, which means that you don’t know what the value is and you do not have adequate information for replacements.</p>
 <p><br></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="dv">0</span>))</span></code></pre></div>
-<pre><code>## Error in `stopifnot()`:
-## ℹ In argument: `total_damaged_area = replace_na(total_damaged_area, 0)`.
-## Caused by error in `vec_assign()`:
-## ! Can&#39;t convert `replace` &lt;double&gt; to match type of `data` &lt;units&gt;.</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>county_totals <span class="ot">&lt;-</span> county_totalse <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="dv">0</span>))</span></code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;county_totalse&#39; not found</code></pre>
 <p><br></p>
 <blockquote>
 <p>Oh, right! Our area column has units attached and is not a simple number. We could convert the column to <code>as.numeric</code> or we can replace the NA values with a value that has units, such as <code>0 m^2</code>. Let’s do that with the <code>units</code> package.</p>
 </blockquote>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">library</span>(units)</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">library</span>(units)</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>county_totals <span class="ot">&lt;-</span> county_totals <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>                 <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">replace_na</span>(total_damaged_area, <span class="fu">as_units</span>(<span class="dv">0</span>, <span class="st">&quot;m^2&quot;</span>)))</span></code></pre></div>
 <p><br></p>
 <p>Okay that was fun, but now let’s drop the units entirely. They don’t really play that nice with ggplot and leaflet. They’re always like, just show me the raw numbers!</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Drop the units</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>counties_forest_damage <span class="ot">&lt;-</span> counties_forest_damage <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">as.numeric</span>(total_damaged_area))</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># Drop the units</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>county_totals <span class="ot">&lt;-</span> county_totals <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_damaged_area =</span> <span class="fu">as.numeric</span>(total_damaged_area))</span></code></pre></div>
 <p><br></p>
 <p>Finally we get to make a map. Remember, data prep is more than half the battle!</p>
 </div>
@@ -289,7 +294,7 @@ ggplot(data = ________, aes(fill = total_damaged_area)) +
 <div id="showcode1ab" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode1ab-tab">
 <pre class="sourceCode r">
 
-ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
+ggplot(data = county_totals, aes(fill = total_damaged_area)) +
   geom_sf()+
   labs(title = "Total forest canopy area damage",
        subtitle = "Minnesota counties",

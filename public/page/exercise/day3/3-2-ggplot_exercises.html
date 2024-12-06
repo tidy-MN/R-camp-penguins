@@ -63,7 +63,7 @@
   "headline": "ggplot: The remix",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1556 ,
+  "wordCount":  1549 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -292,7 +292,7 @@
 <link href="/R-camp-penguins/rmarkdown-libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -372,16 +372,15 @@ hr {background:  cornflowerblue;}
 </div>
 <div id="always-more-you-can-do" class="section level1">
 <h1>Always more you can do</h1>
-<p>Because of our excellent work so far both as an analytic bot and as the head baker, we been given a gift that’s the best of both worlds! The <a href="http://www.cookbook-r.com/Graphs/">R Graphics Cookbook: Practical Recipes for Visualing Data</a></p>
+<p>Because of our excellent work so far both as an analytic bot and as the head baker, we’ve been gifted the wonderful <a href="http://www.cookbook-r.com/Graphs/">R Graphics Cookbook: Practical Recipes for Visualing Data</a>.</p>
 <p>Wow, there’s a bunch of cool stuff in here, in fact, there’s a bunch of cool stuff that could make the work that we’ve already done <em>even better</em>.</p>
-<p>Instead of using <code>penguins</code>, we’re going to be using <code>penguins_raw</code> for this exercise and we’re going to be making some graphs on summarized data…but first let’s take a look at the data!</p>
+<p>Instead of using <code>penguins</code>, we’re going to be using <code>penguins_raw</code> for this exercise and we’re going to be making some graphs on summarized data. But first, let’s take a look at that data!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># install.packages(&#39;palmerpenguins&#39;)</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins&quot;</span>) <span class="co">#this will read in the data from the package and load it to to our environment</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins_raw&quot;</span>) <span class="co">#this will read in the data from the package and load it to to our environment</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
 <pre><code>## Rows: 344
 ## Columns: 17
 ## $ studyName             &lt;chr&gt; &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL…
@@ -420,7 +419,7 @@ hr {background:  cornflowerblue;}
 <div id="distribution-of-species-by-island-revisted" class="section level1">
 <h1>Distribution of species by island revisted</h1>
 <p>Well, let’s see what we can do to make this more exciting. Let’s create a summary table in additional to making a new and exciting visual.</p>
-<p>We’ll be using the <code>magritr</code> pipe <code>%&gt;%</code> that we showed last session - it makes our code easier to read and reduces the number of nested parenthesis we have to deal with.</p>
+<p>We’ll be using the <code>tidyverse</code> pipe <code>%&gt;%</code> that we showed last session - it makes our code easier to read and reduces the number of nested parenthesis we have to deal with.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>penguin_island_dist <span class="ot">&lt;-</span> penguins_raw_clean <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="fu">group_by</span>(region, island, species) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
@@ -456,27 +455,27 @@ hr {background:  cornflowerblue;}
 <p>“There are two types of bar charts: geom_bar() and geom_col(). geom_bar() makes the height of the bar proportional to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use geom_col() instead.”</p>
 <p>—<code>help(geom_bar)</code></p>
 </blockquote>
-<div id="changing-positions" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab9641" role="tablist" style="margin-top: 18px;">
+<div id="column-charts" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Column charts</h3>
+<ul class="nav nav-pills" id="myTab2633" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side9641-tab" data-toggle="tab" href="#side-by-side9641" role="tab" aria-controls="side-by-side9641" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="geom_col2633-tab" data-toggle="tab" href="#geom_col2633" role="tab" aria-controls="geom_col2633" aria-selected="true">geom_col</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint9641-tab" data-toggle="tab" href="#showhint9641" role="tab" aria-controls="showhint9641" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint2633-tab" data-toggle="tab" href="#showhint2633" role="tab" aria-controls="showhint2633" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode9641-tab" data-toggle="tab" href="#showcode9641" role="tab" aria-controls="showcode9641" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode2633-tab" data-toggle="tab" href="#showcode2633" role="tab" aria-controls="showcode2633" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side9641" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side9641-tab">
+<div id="geom_col2633" class="tab-pane fade active in" role="tabpanel" aria-labelledby="geom_col2633-tab">
 <h4>
 Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint9641" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint9641-tab">
+<div id="showhint2633" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2633-tab">
 <pre class="sourceCode r">
 
 ggplot(data = __________, 
@@ -489,7 +488,7 @@ ggplot(data = __________,
   theme_bw()
 </pre>
 </div>
-<div id="showcode9641" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode9641-tab">
+<div id="showcode2633" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2633-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -517,27 +516,27 @@ ggplot(data = penguin_island_dist,
 <li>To add labels at specified points use <code>annotate()</code> with <code>annotate(geom = "text", ...)</code> or <code>annotate(geom = "label", ...)</code></li>
 <li><code>geom_text()</code> requires the following aesthetics (i.e. pass these to the <code>aes</code> function if you haven’t yet!): <strong>x</strong>, <strong>y</strong>, and <strong>label</strong> (this is probably the one you’ll need to add)</li>
 </ol>
-<div id="changing-positions-1" class="section level3 unnumbered quiz">
-<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions</h3>
-<ul class="nav nav-pills" id="myTab2892" role="tablist" style="margin-top: 18px;">
+<div id="bar-labels" class="section level3 unnumbered quiz">
+<h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Bar labels</h3>
+<ul class="nav nav-pills" id="myTab6678" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="side-by-side2892-tab" data-toggle="tab" href="#side-by-side2892" role="tab" aria-controls="side-by-side2892" aria-selected="true">Side-by-side</a>
+<a class="nav-link" id="barlabels6678-tab" data-toggle="tab" href="#barlabels6678" role="tab" aria-controls="barlabels6678" aria-selected="true">Bar labels</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint2892-tab" data-toggle="tab" href="#showhint2892" role="tab" aria-controls="showhint2892" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint6678-tab" data-toggle="tab" href="#showhint6678" role="tab" aria-controls="showhint6678" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode2892-tab" data-toggle="tab" href="#showcode2892" role="tab" aria-controls="showcode2892" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode6678-tab" data-toggle="tab" href="#showcode6678" role="tab" aria-controls="showcode6678" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="side-by-side2892" class="tab-pane fade active in" role="tabpanel" aria-labelledby="side-by-side2892-tab">
+<div id="barlabels6678" class="tab-pane fade active in" role="tabpanel" aria-labelledby="barlabels6678-tab">
 <h4>
 Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint2892" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2892-tab">
+<div id="showhint6678" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint6678-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -552,7 +551,7 @@ ggplot(data = penguin_island_dist,
   theme_bw()
 </pre>
 </div>
-<div id="showcode2892" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2892-tab">
+<div id="showcode6678" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode6678-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -579,12 +578,11 @@ ggplot(data = penguin_island_dist,
 </ol>
 <p><br></p>
 </div>
-<div id="pick-your-challenger" class="section level1">
-<h1>Pick your challenger!</h1>
+<div id="pick-your-challenge" class="section level1">
+<h1>Pick your challenge!</h1>
 <p>Now that you have some experience under your belt, it’s important to shake things up and have some <em>fun</em>. Depending on how much time you have left, pick 1 or several of the challenges below and see what you can make!</p>
 <p>The links below will take you to the specific section of the R Graphics Cookbook that will answer the question of how you do the thing.</p>
 <ul>
-<li><a href="http://www.cookbook-r.com/Graphs/Fonts/">Change the font</a></li>
 <li><a href="http://www.cookbook-r.com/Graphs/Output_to_a_file/">Save a graphic as a .png (and don’t cheat using the export feature in RStudio!)</a></li>
 <li><a href="http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/">Put the islands in a different order on the x-axis!</a></li>
 <li><a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">Make the legend labels easier to read (they’re a little long…)</a></li>
@@ -599,6 +597,7 @@ ggplot(data = penguin_island_dist,
 <li><code>install.packages("remotes")</code></li>
 <li><code>remotes::install_github("tidy-MN/mncolors")</code></li>
 </ul></li>
+<li><a href="http://www.cookbook-r.com/Graphs/Fonts/">Change the font</a></li>
 </ul>
 <p><br></p>
 <p><i class="fa fa-cookie-bite"></i>

@@ -42,18 +42,17 @@ Make sure you are still in your project that you created for doing exercises and
 
 # Always more you can do
 
-Because of our excellent work so far both as an analytic bot and as the head baker, we been given a gift that's the best of both worlds! The [R Graphics Cookbook: Practical Recipes for Visualing Data](http://www.cookbook-r.com/Graphs/)
+Because of our excellent work so far both as an analytic bot and as the head baker, we've been gifted the wonderful [R Graphics Cookbook: Practical Recipes for Visualing Data](http://www.cookbook-r.com/Graphs/).
 
 Wow, there's a bunch of cool stuff in here, in fact, there's a bunch of cool stuff that could make the work that we've already done *even better*.
 
-Instead of using `penguins`, we're going to be using `penguins_raw` for this exercise and we're going to be making some graphs on summarized data...but first let's take a look at the data!
+Instead of using `penguins`, we're going to be using `penguins_raw` for this exercise and we're going to be making some graphs on summarized data. But first, let's take a look at that data!
 
 ```{r, message = FALSE, warning= FALSE}
 library(tidyverse)
-# install.packages('palmerpenguins')
 library(palmerpenguins)
 
-data("penguins") #this will read in the data from the package and load it to to our environment
+data("penguins_raw") #this will read in the data from the package and load it to to our environment
 
 glimpse(penguins_raw)
 ```
@@ -74,11 +73,12 @@ names(penguins_raw_clean)
 
 Still long, but so much better!
 
+
 # Distribution of species by island revisted
 
 Well, let's see what we can do to make this more exciting. Let's create a summary table in additional to making a new and exciting visual.
 
-We'll be using the `magritr` pipe `%>%` that we showed last session - it makes our code easier to read and reduces the number of nested parenthesis we have to deal with.
+We'll be using the `tidyverse` pipe `%>%` that we showed last session - it makes our code easier to read and reduces the number of nested parenthesis we have to deal with.
 
 ```{r}
 penguin_island_dist <- penguins_raw_clean %>% 
@@ -124,11 +124,11 @@ Remember that helpful tip from the help of `geom_bar`?
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Column charts {-}
 ```{r exer-tabs1, results='asis', echo=F}
 source("../../insert_tabs.R")
 
-tabs <- c("Side-by-side", "Show hint", "Show code")
+tabs <- c("geom_col", "Show hint", "Show code")
 
 content <- c(Exercise = '<h4> Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.</h4>
 
@@ -179,11 +179,11 @@ Something special about summarized data is that now we can add labels to our col
 
 <div class="quiz">
 
-### <i class="fas fa-cookie-bite" style="color: gray;"></i> Changing positions {-}
+### <i class="fas fa-cookie-bite" style="color: gray;"></i> Bar labels {-}
 ```{r exer-tabs2, results='asis', echo=F}
 source("../../insert_tabs.R")
 
-tabs <- c("Side-by-side", "Show hint", "Show code")
+tabs <- c("Bar labels", "Show hint", "Show code")
 
 content <- c(Exercise = '<h4> Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.</h4>
 
@@ -251,13 +251,12 @@ ggplot(penguins_raw_clean %>%
 ```
 
 
-# Pick your challenger!
+# Pick your challenge!
 
 Now that you have some experience under your belt, it's important to shake things up and have some *fun*. Depending on how much time you have left, pick 1 or several of the challenges below and see what you can make! 
 
 The links below will take you to the specific section of the R Graphics Cookbook that will answer the question of how you do the thing.
 
-- [Change the font](http://www.cookbook-r.com/Graphs/Fonts/)
 - [Save a graphic as a .png (and don't cheat using the export feature in RStudio!)](http://www.cookbook-r.com/Graphs/Output_to_a_file/)
 - [Put the islands in a different order on the x-axis!](http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/)
 - [Make the legend labels easier to read (they're a little long...)](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
@@ -268,6 +267,7 @@ The links below will take you to the specific section of the R Graphics Cookbook
 - [Try to add MN State brand colors using the home-grown package `mncolors`](https://github.com/tidy-MN/mncolors)
   + `install.packages("remotes")`
   + `remotes::install_github("tidy-MN/mncolors")`
+- [Change the font](http://www.cookbook-r.com/Graphs/Fonts/)
 
 <br>
 

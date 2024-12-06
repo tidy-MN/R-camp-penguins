@@ -101,7 +101,7 @@ Have an EXCEL file? The **readxl** package has the function `read_excel()` for r
 
 ```{r, eval=F}
 # Run the install line only one time to get the package
-install.packages(readxl)
+install.packages("readxl")
 
 # Run this line every time you open R to load the package from your library
 library(readxl)

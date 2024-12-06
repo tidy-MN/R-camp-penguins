@@ -63,7 +63,7 @@
   "headline": "Joins: A fishy dinner",
   "description" : "Before you start… Jump back into the project you created for the previous sessions exercises and then create a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1529 ,
+  "wordCount":  1545 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -286,7 +286,7 @@
         
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -365,10 +365,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h3>Load the <code>tidyverse</code> and <code>palmerpenguins</code> packages</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.4
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ## ✔ purrr     1.0.2     
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
@@ -409,13 +409,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## [13] &quot;Body Mass (g)&quot;       &quot;Sex&quot;                 &quot;Delta 15 N (o/oo)&quot;  
 ## [16] &quot;Delta 13 C (o/oo)&quot;   &quot;Comments&quot;</code></pre>
 <p><br></p>
-<p>Fantastic! It looks like the column names all match, but if you <em>reallllly</em> want to be sure you can always use the function <code>intersect</code> to see where the names line up!</p>
+<p>Fantastic! It looks like the spelling of the first four columns used to ID each penguin in <em>penguin_names</em> match the spelling in <em>penguins_raw</em>: <code>"studyName"</code>, <code>"Sample Number"</code>, <code>"Species"</code> and <code>"Sex"</code>. To be really sure we can use the function <code>intersect</code> to see where the names line up!</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">intersect</span>(<span class="fu">names</span>(penguins_raw), <span class="fu">names</span>(penguin_names))</span></code></pre></div>
 <pre><code>## [1] &quot;studyName&quot;     &quot;Sample Number&quot; &quot;Species&quot;       &quot;Sex&quot;</code></pre>
 <p>Now it’s time to join up! Join functions are smart, so if your columns have the same names it will automatically figure out which ones to join on so you don’t have to specify. If they do have different column names,all you have to do is pass the function an argument called <code>by</code> where you give it the names of the columns to join by.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>named_penguins <span class="ot">&lt;-</span> <span class="fu">left_join</span>(penguins_raw, penguin_names)</span></code></pre></div>
 <pre><code>## Joining with `by = join_by(studyName, `Sample Number`, Species, Sex)`</code></pre>
-<p>Annnnd just like that, it figured out what to join! Here’s how it specified the <code>join_by</code> statement: <code>by = join_by(studyName,</code>Sample Number<code>, Species, Sex)</code></p>
+<p>Annnnd just like that, it figured out what to join! Here’s how it specified the <code>join_by</code> statement: <code>by = join_by(studyName, 'Sample Number', Species, Sex)</code></p>
 <p><br></p>
 <p>So we did a left join, meaning that we expect to keep all the records from the <em>first</em> dataframe we pass it and only those in the second that <strong>match</strong>.</p>
 <p>Let’s filter our new dataset to see if we have all the data that we need!</p>

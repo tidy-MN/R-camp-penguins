@@ -145,9 +145,25 @@ forest_damage_counties <- st_intersection(counties, forest_damage)
 
 <br>
 
-Now some of our polygons within the counties might look a bit like this:
+Take a look. The forest polygons that spanned across county borders have been split into two polygons.
 
-![Example of split polygons across two counties from GIS stackexchange.com](https://i.stack.imgur.com/vLlAZ.jpg){width=55%}
+
+An original forest damage polygon from row 2,011 in the `forest_damage` data.
+```{r split_county}
+ggplot(forest_damage[2011, 1]) +
+  geom_sf(fill = "hotpink")
+```
+
+
+The shape was split into two polygons along the county border when intersected with the `counties` data.
+```{r split_county2}
+ggplot() +
+  geom_sf(data = forest_damage_counties["2011", 1], fill = "green") +
+  geom_sf(data = forest_damage_counties["2011.1", 1], fill = "darkgreen")
+```
+
+
+
 
 <br>
 
@@ -202,7 +218,7 @@ show_code = 'code_start
 
 forest_damage_total <- forest_damage_counties %>%
   group_by(NAME) %>%
-  summarise(total_damaged_area = sum(damage_area, na.rm = T))
+  summarise(total_damaged_area = sum(damage_area, na.rm = TRUE))
   
 code_end')
 
@@ -215,19 +231,19 @@ cat(paste0(tab_html, collapse = "\n"))
 ```{r, echo=F}
 forest_damage_total <- forest_damage_counties %>%
   group_by(NAME) %>%
-  summarise(total_damaged_area = sum(damage_area, na.rm = T))
+  summarise(total_damaged_area = sum(damage_area, na.rm = TRUE))
 ```
 
 <br>
 
 ### Join tables
 
-Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use `left_join` below to add the forest damage totals to the county polygons. The rows are joined based on where their county names match in their `NAME` columns. We'll cover joins in great detail next session, so consider this a preview teaser. 
+Now we need to join the summed forest damage data to the county spatial data so that we have the information we need to present the data as a map. We use `left_join` below to add the forest damage totals to the county polygons. The rows are joined based on where the county names match in both tables in the `NAME` columns. We'll cover joins in great detail next session - so consider this a preview teaser. 
 
 <br>
 
-```{r rejoin counties, }
-counties_forest_damage <- left_join(counties, forest_damage_total, by = "NAME")
+```{r rejoin counties}
+county_totals <- left_join(counties, forest_damage_total, by = "NAME")
 ```
 
 <br>
@@ -241,8 +257,8 @@ Sometimes a NULL means there is no information, which means that you don't know 
 <br>
 
 ```{r map counties, error=TRUE}
-counties_forest_damage <- counties_forest_damage %>%
-    mutate(total_damaged_area = replace_na(total_damaged_area, 0))
+county_totals <- county_totalse %>%
+                 mutate(total_damaged_area = replace_na(total_damaged_area, 0))
 ```
 
 <br>
@@ -252,8 +268,8 @@ counties_forest_damage <- counties_forest_damage %>%
 ```{r map counties units}
 library(units)
 
-counties_forest_damage <- counties_forest_damage %>%
-    mutate(total_damaged_area = replace_na(total_damaged_area, as_units(0, "m^2")))
+county_totals <- county_totals %>%
+                 mutate(total_damaged_area = replace_na(total_damaged_area, as_units(0, "m^2")))
 ```
 
 
@@ -263,7 +279,7 @@ Okay that was fun, but now let's drop the units entirely. They don't really play
 
 ```{r,}
 # Drop the units
-counties_forest_damage <- counties_forest_damage %>%
+county_totals <- county_totals %>%
   mutate(total_damaged_area = as.numeric(total_damaged_area))
 ```
 
@@ -296,7 +312,7 @@ ggplot(data = ________, aes(fill = total_damaged_area)) +
 
 show_code = 'code_start
 
-ggplot(data = counties_forest_damage, aes(fill = total_damaged_area)) +
+ggplot(data = county_totals, aes(fill = total_damaged_area)) +
   geom_sf()+
   labs(title = "Total forest canopy area damage",
        subtitle = "Minnesota counties",

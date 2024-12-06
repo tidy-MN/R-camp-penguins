@@ -48,8 +48,10 @@ In the audit we need to:
 
 <br>
 
-Now that we have our marching orders, it's time to read in the data. Time to break out our handy-dandy `read_csv` and... wait a second... this data isn't comma-delimited! What on earth are we going to do now?
+Now that we have our marching orders, it's time to read in the data. Time to break out our handy-dandy `read_csv` and wait a second... this data isn't comma-delimited! What on earth are we going to do now?
 
+
+> `Bakery audit data`: https://tidy-mn.github.io/R-camp-penguins/data/inventory_data_expanded.txt 
 
 Here are a few general steps to follow when you receive a file in an unknown format:
 

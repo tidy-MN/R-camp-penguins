@@ -1,0 +1,481 @@
+{
+  "version": 1,
+  "locale": "C",
+  "platform": "4.4.1",
+  "metadata": {
+    "appmode": "rmd-static",
+    "primary_rmd": "agenda.Rmd",
+    "primary_html": null,
+    "content_category": null,
+    "has_parameters": false
+  },
+  "packages": null,
+  "files": {
+    "agenda.html": {
+      "checksum": "62962b72052f1ad7a13a40679e2a5586"
+    },
+    "agenda.Rmd": {
+      "checksum": "da90877acb3de708d4d185802d6ca103"
+    },
+    "catulations2019.Rmd": {
+      "checksum": "9bb938ff9ed2f4fa1056d1bf3f56f25d"
+    },
+    "challenge_relay_stations.Rmd": {
+      "checksum": "6ea976569aa5cb7715a8909fe227b5f1"
+    },
+    "community.html": {
+      "checksum": "1be5dcc97322613947ff59e7dabba43a"
+    },
+    "community.Rmd": {
+      "checksum": "437e036b904e3848cbed909bb7afd9a3"
+    },
+    "compare_years.html": {
+      "checksum": "d9a0fc42de0b440517c13a6b14b05899"
+    },
+    "compare_years.Rmd": {
+      "checksum": "f6f370ea82693ecdb7556be26a66a3e8"
+    },
+    "css/camp_style.css": {
+      "checksum": "45abc109e739f3aebd223d33b4d8c3e2"
+    },
+    "css/cheat_style.css": {
+      "checksum": "239e61dad9e7d46b5129f97d3535eb5e"
+    },
+    "css/gray_style.css": {
+      "checksum": "b0cc4183c1f05cdb8002225ef06c0c93"
+    },
+    "Day1.html": {
+      "checksum": "5bbd69bcfaadd0e87290657a77b7495c"
+    },
+    "Day1.Rmd": {
+      "checksum": "ddc72ad07e52cd68060fc03239fa5222"
+    },
+    "Day2.html": {
+      "checksum": "7559ba13093d2196b99776c8b446d7cc"
+    },
+    "Day2.Rmd": {
+      "checksum": "6713c29497b05b59e235cec112e56e02"
+    },
+    "Day3-2.html": {
+      "checksum": "5f96cdd54f22441bd83daf79cca89bb8"
+    },
+    "Day3-2.Rmd": {
+      "checksum": "827f941ec9f5b8f02dc0106ec2051c65"
+    },
+    "Day3.html": {
+      "checksum": "adb7ed601a6262508bcc3b7f6debbb5e"
+    },
+    "Day3.Rmd": {
+      "checksum": "3057a3fbd76c948e293e9c44694612e9"
+    },
+    "Day4.html": {
+      "checksum": "9ab2438e27522f171986e1bbafc3a318"
+    },
+    "Day4.Rmd": {
+      "checksum": "71036703fdcdab2a5ab68b3bb5f72c6f"
+    },
+    "Day5.html": {
+      "checksum": "63b9ac5dbcdd1f8d766aa5889af56ca3"
+    },
+    "Day5.Rmd": {
+      "checksum": "a63436b8c1e612e881b586b39a3f8046"
+    },
+    "Day6.Rmd": {
+      "checksum": "8e8f0c38a2494c1f9ba101d069ad65c2"
+    },
+    "exercise/agenda.html": {
+      "checksum": "935a97e09330b4cac62eac584991170d"
+    },
+    "exercise/agenda.Rmd": {
+      "checksum": "4cf46a32fdcbfd67602c83badc534efd"
+    },
+    "exercise/day1/agenda.html": {
+      "checksum": "3d5a55c038eb32055599c013744e17e2"
+    },
+    "exercise/day1/agenda.Rmd": {
+      "checksum": "60adb57e637f4a2cc855b4fabf853db5"
+    },
+    "exercise/day1/inventory_duty_expanded.html": {
+      "checksum": "5a500730dc1af77d32d5de9f8ec069f0"
+    },
+    "exercise/day1/inventory_duty_expanded.Rmd": {
+      "checksum": "a0d55fb44264ced936c20a866ce9d20b"
+    },
+    "exercise/day1/inventory_duty.html": {
+      "checksum": "eeafa149240ed3feab300bf06fdb9130"
+    },
+    "exercise/day1/inventory_duty.Rmd": {
+      "checksum": "f4510c82e7f5709e4c7373f2d3eddafd"
+    },
+    "exercise/day3/3-1-ggplot_exercises.html": {
+      "checksum": "88984e1cca289707da4b9796a9f32d3e"
+    },
+    "exercise/day3/3-1-ggplot_exercises.Rmd": {
+      "checksum": "28a995ec906b36eaf04be61b99c39137"
+    },
+    "exercise/day3/3-2-ggplot_exercises.html": {
+      "checksum": "273c8ea7e114bf9382cb9dac32dd902b"
+    },
+    "exercise/day3/3-2-ggplot_exercises.Rmd": {
+      "checksum": "b23a11370407799dcce0f559984ebca5"
+    },
+    "exercise/day4/01-homeward-bound.html": {
+      "checksum": "88d473b6809557ac1434fea63027c892"
+    },
+    "exercise/day4/01-homeward-bound.Rmd": {
+      "checksum": "023bb95c90f363dd49b07c836fe66701"
+    },
+    "exercise/day4/02-forest-health-map.html": {
+      "checksum": "4017768abc5f5ed89b4016b8777f670d"
+    },
+    "exercise/day4/02-forest-health-map.Rmd": {
+      "checksum": "5c8d031a01e6aa09e29d4ed7c10d8f53"
+    },
+    "exercise/day4/archived-01-homeward-bound_v1.Rmd": {
+      "checksum": "d8c0166f58454723ae67a5b173ce00c9"
+    },
+    "exercise/day5/05-1-left-and-anti-joins.html": {
+      "checksum": "b72cc157da60ecbc5763209fb404598e"
+    },
+    "exercise/day5/05-1-left-and-anti-joins.Rmd": {
+      "checksum": "f7837a0b49b53eece8b2d3ed70b06e37"
+    },
+    "exercise/day5/05-2-date-mischief-and-data-joins.html": {
+      "checksum": "910478e9857ead74b103d4b6ca224c46"
+    },
+    "exercise/day5/05-2-date-mischief-and-data-joins.Rmd": {
+      "checksum": "6a93eaa3d769db42aac9438ed78a30df"
+    },
+    "exercise/day5/penguin_names_diets.R": {
+      "checksum": "5e1ad782234af3f02edaef37b17671b9"
+    },
+    "exercise/day5/penguin_names.csv": {
+      "checksum": "d1d81fb5066ae08ef000ab60c4b0b4f6"
+    },
+    "exercise/day6/my_penguin_report_files/figure-html/unnamed-chunk-5-1.png": {
+      "checksum": "409003d557ae52d0d076c2306045bd4b"
+    },
+    "exercise/day6/my_penguin_report_files/libs/bootstrap/bootstrap-icons.css": {
+      "checksum": "7368407d15110275bb7af49476ae70f2"
+    },
+    "exercise/day6/my_penguin_report_files/libs/bootstrap/bootstrap-icons.woff": {
+      "checksum": "dfd2a6bd06f9dd7437ee67673cd9c447"
+    },
+    "exercise/day6/my_penguin_report_files/libs/bootstrap/bootstrap.min.css": {
+      "checksum": "1b5decc78a8be27abce0b265e51283ff"
+    },
+    "exercise/day6/my_penguin_report_files/libs/bootstrap/bootstrap.min.js": {
+      "checksum": "7ccd9d390d31af98110f74f842ea9b32"
+    },
+    "exercise/day6/my_penguin_report_files/libs/clipboard/clipboard.min.js": {
+      "checksum": "15f52a1ee547f2bdd46e56747332ca2d"
+    },
+    "exercise/day6/my_penguin_report_files/libs/quarto-html/anchor.min.js": {
+      "checksum": "a58f4bdbf86e8ae057af9131b5b1bcfd"
+    },
+    "exercise/day6/my_penguin_report_files/libs/quarto-html/popper.min.js": {
+      "checksum": "ad6c106f3ba17d5a54d8053a4c4899ca"
+    },
+    "exercise/day6/my_penguin_report_files/libs/quarto-html/quarto-syntax-highlighting.css": {
+      "checksum": "49bff82b9355f257417faaaa77dd1607"
+    },
+    "exercise/day6/my_penguin_report_files/libs/quarto-html/quarto.js": {
+      "checksum": "e2f4880ce6c3de9af6a724b53acf8607"
+    },
+    "exercise/day6/my_penguin_report_files/libs/quarto-html/tippy.css": {
+      "checksum": "ebd6f8ce46a677e1a4f5f8a8317109a9"
+    },
+    "exercise/day6/my_penguin_report_files/libs/quarto-html/tippy.umd.min.js": {
+      "checksum": "d828775275749701b48bd9d958814111"
+    },
+    "exercise/day6/my_penguin_report.html": {
+      "checksum": "2286c63e4bd54fbf6b44c1e54bb711d5"
+    },
+    "exercise/day6/my_penguin_report.qmd": {
+      "checksum": "656d48ecf84dbeb04dfbef8b6172b6e2"
+    },
+    "exercise/Describe_penguin_populations.html": {
+      "checksum": "50d040a6258804c2baf5f6d95f09dddb"
+    },
+    "exercise/Describe_penguin_populations.Rmd": {
+      "checksum": "27cc0786d46b719c2974a7c525496590"
+    },
+    "exercise/Find_the_penguin.html": {
+      "checksum": "df3d03b190e301c90d0e49475b3c5ecf"
+    },
+    "exercise/Find_the_penguin.Rmd": {
+      "checksum": "bbfbda1e2790a8195d8144fc1c13318b"
+    },
+    "explore_GIS_maps.html": {
+      "checksum": "4a9eabf185219fcbdea2a8a20fa098d6"
+    },
+    "explore_GIS_maps.Rmd": {
+      "checksum": "302347c5d1940e78756e88bf91a4956d"
+    },
+    "explore_messy_emissions.html": {
+      "checksum": "a7160c24677c159266f76f3a8c5de161"
+    },
+    "explore_messy_emissions.Rmd": {
+      "checksum": "864da680d3ab769b8de59f46a8f79afa"
+    },
+    "explore_wind_rose.html": {
+      "checksum": "93c927cd41ecb99715732b5e20621352"
+    },
+    "explore_wind_rose.Rmd": {
+      "checksum": "c65b7cfdc36a9a87ab8da5386b062cdb"
+    },
+    "get_started.Rmd": {
+      "checksum": "1b61e18e5798b47c9468fc6ef12d2f80"
+    },
+    "Help wanted - Droid application.txt": {
+      "checksum": "ef4e9736f6a70cf9d481dde5b9c09488"
+    },
+    "help.html": {
+      "checksum": "09a97c43b0f6a06c604b97fc5769d4ab"
+    },
+    "help.Rmd": {
+      "checksum": "fcde6e601dda5923e8598427876fa28a"
+    },
+    "insert_tabs.R": {
+      "checksum": "a9e8e2fac189a6bdc6fc23f42c646672"
+    },
+    "install.html": {
+      "checksum": "aa8d60a9f8c1d15dbb14c7d4495f9baf"
+    },
+    "install.Rmd": {
+      "checksum": "85c3e5b3ddfc0f38d138757ea196cab6"
+    },
+    "level1_jakku_explore.html": {
+      "checksum": "2b2c548b9c5b5cd052219e3eadca2020"
+    },
+    "level1_jakku_explore.Rmd": {
+      "checksum": "826ff706ae2362d4c3ec87051e15d097"
+    },
+    "level2_porg_exposure.html": {
+      "checksum": "8c6da3cbbf818883aa2e5fe67b0fe6f9"
+    },
+    "level2_porg_exposure.Rmd": {
+      "checksum": "6704d0273ac349b8751440145dc6cacf"
+    },
+    "level3_example_outline.html": {
+      "checksum": "f2b3a409e230ef20fbdae575e34f47e9"
+    },
+    "level3_example_outline.Rmd": {
+      "checksum": "f4cb2d1606a718da0b216111eabe6e87"
+    },
+    "people.db": {
+      "checksum": "376f6724102805ee63c6e3291a6c1577"
+    },
+    "porg_tabs.txt": {
+      "checksum": "7b953c17a87b0b866f9d9e0bb4ce750d"
+    },
+    "R_camp_primer.html": {
+      "checksum": "819a70610fd912ebd375ad17baf282a9"
+    },
+    "R_camp_primer.Rmd": {
+      "checksum": "669a4ee6d2b93017dbd006944b24a657"
+    },
+    "results/scrap_day2.csv": {
+      "checksum": "90784d0e136f103c5cdffcc7e5b2db6d"
+    },
+    "Tall_StarWars.R": {
+      "checksum": "b4d022247e0d0dd99f17fba9cf8232b8"
+    },
+    "teach.html": {
+      "checksum": "34fc9449e46916e9c377306beb1f2e62"
+    },
+    "teach.Rmd": {
+      "checksum": "407f5a9e4e8c8fc1544a7a08d684fc14"
+    },
+    "timer10_chewie_dance.html": {
+      "checksum": "14a23dddb0a765fd40380ad804b54c98"
+    },
+    "timer10_chewie_dance.Rmd": {
+      "checksum": "c0013ef9c4f35b07a0108f4f42b537a5"
+    },
+    "timer10_ewok_dance.html": {
+      "checksum": "72b26fa21d3967564f362094b0c9fab8"
+    },
+    "timer10_ewok_dance.Rmd": {
+      "checksum": "31ebe5eaf15b72962ade4a2f488b9f6e"
+    },
+    "timer10_waterfall.html": {
+      "checksum": "58a6263d0790f754d0b81d96ef5bc29b"
+    },
+    "timer10_waterfall.Rmd": {
+      "checksum": "1ba61484c6cac91013b6b15d490bc688"
+    },
+    "timer10.html": {
+      "checksum": "345b48bc971f12362394c0f6b8920485"
+    },
+    "timer10.Rmd": {
+      "checksum": "3b2e11e508b261cb62e0e4d5c2b45a7d"
+    },
+    "timer2.html": {
+      "checksum": "0dae378a6b0128b45fdb324cff755c28"
+    },
+    "timer2.Rmd": {
+      "checksum": "d48ac1dbaa5acc91fad0d085f53f00dc"
+    },
+    "timer5_baby_yoda.html": {
+      "checksum": "29a415375e14b4fce22b313f8d9a0c55"
+    },
+    "timer5_baby_yoda.Rmd": {
+      "checksum": "4f5f148d58adf1587680b4a10d947d6a"
+    },
+    "timer5_r2d2.html": {
+      "checksum": "6dc522e4fbf001fddec86b2fae1b7000"
+    },
+    "timer5_r2d2.Rmd": {
+      "checksum": "915811f844ad9e5c0bd0fe5683bb1001"
+    },
+    "timer5_yoda.html": {
+      "checksum": "9cf9d2a29ea26e4029701a60446820c3"
+    },
+    "timer5_yoda.Rmd": {
+      "checksum": "80f848386d54dd39742500fdd84a1dfb"
+    },
+    "timer5.html": {
+      "checksum": "7f563b715bc4c30b0f82f9867efe03c1"
+    },
+    "timer5.Rmd": {
+      "checksum": "20199a31b04518ab029529a27dad98be"
+    },
+    "timers.html": {
+      "checksum": "9d67930d06eaa51e9e0b5bd9be48f92a"
+    },
+    "timers.Rmd": {
+      "checksum": "fe6388522a40ccf8513edff87e8f39f7"
+    },
+    "videos.html": {
+      "checksum": "0e3497db38bc73a1ace36d73fb4f3ab2"
+    },
+    "videos.Rmd": {
+      "checksum": "7359dd75382faddd1f7ec95b88a6b5ab"
+    },
+    "videos/day1/01-1-welcome.html": {
+      "checksum": "3ee671aadd1d52454cfbf0688bd681df"
+    },
+    "videos/day1/01-1-welcome.Rmd": {
+      "checksum": "ade1cd9feba4b93091a1befc19bca30c"
+    },
+    "videos/day1/01-2-R-tour.html": {
+      "checksum": "30aa57c2d4c69b6031d04f85a0da4f1f"
+    },
+    "videos/day1/01-2-R-tour.Rmd": {
+      "checksum": "dec6afc4efad2f9ad52a100f31151c87"
+    },
+    "videos/day1/01-3-R-bakery.html": {
+      "checksum": "c1d15cad9cd8541b83f15418a0475608"
+    },
+    "videos/day1/01-3-R-bakery.Rmd": {
+      "checksum": "6ae4e2912b0702ceb4db373df8553218"
+    },
+    "videos/day1/01-4-tidy-tables.html": {
+      "checksum": "f9256ed9f4783f2a2a105d14c9ff8a6d"
+    },
+    "videos/day1/01-4-tidy-tables.Rmd": {
+      "checksum": "1294140ee9280f47b978d8b1efa540b0"
+    },
+    "videos/day1/01-5-size-up-the-data.html": {
+      "checksum": "1f713b7226c76425084e89576dd9828c"
+    },
+    "videos/day1/01-5-size-up-the-data.Rmd": {
+      "checksum": "8350f3a6305d77645910fb3c0fc5ce9c"
+    },
+    "videos/day2/02-1-data-wrangling.html": {
+      "checksum": "b1857ffdbfdf3ba95c6231d3a4c83f6f"
+    },
+    "videos/day2/02-1-data-wrangling.Rmd": {
+      "checksum": "eef4ce5c4a0917e6a9fcda89c2702760"
+    },
+    "videos/day2/02-2-forks-in-the-road.html": {
+      "checksum": "48b9b5fa7c06c0e665a319a29b0cc5ec"
+    },
+    "videos/day2/02-2-forks-in-the-road.Rmd": {
+      "checksum": "449ac461c1faf7e0453779de60fcc781"
+    },
+    "videos/day2/02-3-simmer-it-down.html": {
+      "checksum": "7c61e3deb383521bdfb46245c6fedce9"
+    },
+    "videos/day2/02-3-simmer-it-down.Rmd": {
+      "checksum": "0bf0f8cb8a494af3ae9263e45f8004b6"
+    },
+    "videos/day3/03-1-ggplot.html": {
+      "checksum": "a25341d7b793b392e9fd056e08e73e68"
+    },
+    "videos/day3/03-1-ggplot.Rmd": {
+      "checksum": "5f9fc5cdfab5b31ddd15cd57c9d5641e"
+    },
+    "videos/day3/03-2-ggplot-facets-colors-labels.html": {
+      "checksum": "0ee9f4384c01930d1ff5502e628595b3"
+    },
+    "videos/day3/03-2-ggplot-facets-colors-labels.Rmd": {
+      "checksum": "ea9647280ec5c8fa28dcd406f5bf36fd"
+    },
+    "videos/day3/plots_for_real_script.md": {
+      "checksum": "3c5f920dc874cdd7d82ad146ba22f8d4"
+    },
+    "videos/day4/04-1-maps-gis-crs.html": {
+      "checksum": "5ad02c4691a655ec488ff8189a469422"
+    },
+    "videos/day4/04-1-maps-gis-crs.Rmd": {
+      "checksum": "db396956d7003eec4727a0c48a94e772"
+    },
+    "videos/day4/04-2-points-lines-polygons.html": {
+      "checksum": "16cfeb4c1605b774b382192215008852"
+    },
+    "videos/day4/04-2-points-lines-polygons.Rmd": {
+      "checksum": "bde29d2702b2025980faf36209e16f33"
+    },
+    "videos/day4/04-3-sf-spatial-analysis-part1.html": {
+      "checksum": "2eda5ba94be475ae991a8f4b4738ea12"
+    },
+    "videos/day4/04-3-sf-spatial-analysis-part1.Rmd": {
+      "checksum": "b1bb4f90f127b48845c8f6b755ef16b7"
+    },
+    "videos/day4/04-4-sf-spatial-analysis-part2.html": {
+      "checksum": "c71b5c8ab6cbf4e00eae6cf078dc7865"
+    },
+    "videos/day4/04-4-sf-spatial-analysis-part2.Rmd": {
+      "checksum": "7b963fc20a8daf843988162b8d5d2d29"
+    },
+    "videos/day5/05-1-smash-table-joins.html": {
+      "checksum": "ab1c1be7cb38146678b4b2ee1560efb0"
+    },
+    "videos/day5/05-1-smash-table-joins.Rmd": {
+      "checksum": "1dcfc6dd2a2e0a2e180212fe52db5e6e"
+    },
+    "videos/day5/05-2-lubridate-date-and-time-travel.html": {
+      "checksum": "1756ca713d8d317d0cadeb1e92bd1d2c"
+    },
+    "videos/day5/05-2-lubridate-date-and-time-travel.Rmd": {
+      "checksum": "896c5d6591adc94ebe7f4d511b7fce27"
+    },
+    "videos/day6/06-1-pivot-wide-long-format.html": {
+      "checksum": "4e62b40d921598d68498d953bfbd9499"
+    },
+    "videos/day6/06-1-pivot-wide-long-format.Rmd": {
+      "checksum": "b10620e3dafe40ea935ea692cdc512b4"
+    },
+    "videos/day6/amelia_stat220_regression_prelab.html": {
+      "checksum": "0460b05f138da66f5bf2bd74fb361b85"
+    },
+    "videos/day6/amelia_stat220_regression_prelab.Rmd": {
+      "checksum": "5b0976bec4e2e7e55b400f6f9d227237"
+    },
+    "videos/day6/stat220_regression_prelab.qmd": {
+      "checksum": "e6afbb4152dc86fe2eba558f7178a610"
+    },
+    "where_am_i.html": {
+      "checksum": "ae6e863591259fefa61f5ae69f0f4a9f"
+    },
+    "where_am_i.Rmd": {
+      "checksum": "0d006338404e29988381a9215f6c948e"
+    },
+    "xaringan-themer.css": {
+      "checksum": "eb51566585117bc5d259034f1667a4e3"
+    }
+  },
+  "users": null
+}

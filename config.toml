@@ -99,6 +99,7 @@ uglyURLs = true
     name = "Day 5"
     url = "page/day5.html"
     weight = 5
+    
 
 [[menu.main]]
     name = "Install R"

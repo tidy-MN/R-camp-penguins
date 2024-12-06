@@ -260,12 +260,12 @@ Why are we getting NAs? Is it because of the missing values? Okay fine, let's on
 cor(penguins[3:6], use = 'complete.obs')
 ```
 
-Excellent! So body mass and flipper length are VERY correlated and flipper length and bill length and depth also seem to be related. Honestly a lot of these seem to related so let's go for the MOST correlated and take a look - and remember to bring in species!
+Excellent! So body mass and flipper length are VERY correlated and flipper length and bill length and depth also seem to be related. Honestly a lot of these seem related, so let's go for the MOST correlated pair. *And remember to include species in the `aes()` to show the correlations for specific species.
 
 ```{r}
 ggplot(data = penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
-             shape = species))+
+                 shape = species))+
   scale_color_brewer(type = 'qual', palette = 3) +
   labs(title = "Relationship of body mass and flipper length by species",
        x = "Body Mass (g)",
@@ -298,7 +298,7 @@ Let's try doing the same exercise, but let's use the `facet_wrap` function.
 ggplot(data = penguins, 
        aes(x = body_mass_g, y = flipper_length_mm)) +
   geom_point(aes(color = species,
-             shape = species))+
+             shape = species)) +
   geom_smooth(method = 'lm', se = FALSE, aes(color = species)) + 
   scale_color_brewer(type = 'qual', palette = 3) +
   labs(title = "Relationship of body mass and flipper length by species",
@@ -316,7 +316,7 @@ Try to think of your own question that you use this data to answer or go back to
 
 The researchers have one more thing they'd like to say...
 
-> "__THANK YOU!__"
+> __THANK YOU!__
 
 <i class="fa fa-cookie-bite"></i> 
 <i class="fa fa-robot"></i> 

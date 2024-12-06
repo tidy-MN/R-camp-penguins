@@ -183,8 +183,7 @@ To use a _package_ you first need to install it -- much like a free App for your
 
 
 ```{r, eval=F}
-new_packages <- c("readr", "readxl", "dplyr", "stringr", "tidyr",
-                  "ggplot2", "lubridate", "janitor", "curl")
+new_packages <- c("tidyverse", "readxl", "janitor", "curl")
 
 install.packages(new_packages)
 ```

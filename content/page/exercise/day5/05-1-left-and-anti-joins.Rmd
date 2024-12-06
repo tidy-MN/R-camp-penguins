@@ -68,7 +68,7 @@ Now it's time to join up! Join functions are smart, so if your columns have the 
 named_penguins <- left_join(penguins_raw, penguin_names)
 ```
 
-Annnnd just like that, it figured out what to join! Here's how it specified the `join_by` statement: `by = join_by(studyName, `Sample Number`, Species, Sex)`
+Annnnd just like that, it figured out what to join! Here's how it specified the `join_by` statement: `by = join_by(studyName, 'Sample Number', Species, Sex)`
 
 
 <br>
