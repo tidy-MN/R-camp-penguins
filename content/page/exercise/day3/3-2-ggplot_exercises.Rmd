@@ -52,7 +52,7 @@ Instead of using `penguins`, we're going to be using `penguins_raw` for this exe
 library(tidyverse)
 library(palmerpenguins)
 
-data("penguins_raw") #this will read in the data from the package and load it to to our environment
+penguins_raw <- penguins_raw # this loads the data from the palmerpenguins package into your environment
 
 glimpse(penguins_raw)
 ```
@@ -61,17 +61,27 @@ If we want to do anything else with this data, it might be a good idea to clean 
 
 Good news! There's a package that's made just for cleaning up things and it's called [`janitor`](https://sfirke.github.io/janitor/reference/janitor-package.html) and it's incredibly useful, just like real-life janitors!
 
-It can clean your names, find duplicates, and even make really nice tables. 
+It can help clean your column names, find duplicate rows, and even make spiffy tables. 
 
-```{r}
-install.packages("janitor") # comment this out if you already installed it <3
-library(janitor) #always good practice to load your libraries at the beginning of your script so go ahead and move this up to the rest of your library calls.
+```{r, eval=FALSE}
+install.packages("janitor") # Comment this line out if you already installed this package 
+
+library(janitor) # It's good practice to load libraries at the top of your script, so go ahead and move this up with the rest of your library calls.
+
+penguins_raw_clean <- clean_names(penguins_raw)
+
+names(penguins_raw_clean)
+```
+
+
+```{r, echo=FALSE}
+library(janitor) # It's good practice to load libraries at the top of your script, so go ahead and move this up with the rest of your library calls.
 
 penguins_raw_clean <- clean_names(penguins_raw)
 names(penguins_raw_clean)
 ```
 
-Still long, but so much better!
+Still long, but the names are so much better!
 
 
 # Distribution of species by island revisted

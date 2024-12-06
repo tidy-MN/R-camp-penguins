@@ -63,7 +63,7 @@
   "headline": "ggplot: The remix",
   "description" : "Before you start… Make sure you are still in your project that you created for doing exercises and then make a new R script.",
   "inLanguage" : "en",
-  "wordCount":  1549 ,
+  "wordCount":  1553 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -378,7 +378,7 @@ hr {background:  cornflowerblue;}
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;penguins_raw&quot;</span>) <span class="co">#this will read in the data from the package and load it to to our environment</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>penguins_raw <span class="ot">&lt;-</span> penguins_raw <span class="co"># this loads the data from the palmerpenguins package into your environment</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
 <pre><code>## Rows: 344
@@ -402,19 +402,21 @@ hr {background:  cornflowerblue;}
 ## $ Comments              &lt;chr&gt; &quot;Not enough blood for isotopes.&quot;, NA, NA, &quot;Adult…</code></pre>
 <p>If we want to do anything else with this data, it might be a good idea to clean the names because some of these look like they would be annoying to type…<code>Delta 15 N (o/oo)</code>? No thank you.</p>
 <p>Good news! There’s a package that’s made just for cleaning up things and it’s called <a href="https://sfirke.github.io/janitor/reference/janitor-package.html"><code>janitor</code></a> and it’s incredibly useful, just like real-life janitors!</p>
-<p>It can clean your names, find duplicates, and even make really nice tables.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;janitor&quot;</span>) <span class="co"># comment this out if you already installed it &lt;3</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co">#always good practice to load your libraries at the beginning of your script so go ahead and move this up to the rest of your library calls.</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>penguins_raw_clean <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguins_raw)</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="fu">names</span>(penguins_raw_clean)</span></code></pre></div>
+<p>It can help clean your column names, find duplicate rows, and even make spiffy tables.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;janitor&quot;</span>) <span class="co"># Comment this line out if you already installed this package </span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co"># It&#39;s good practice to load libraries at the top of your script, so go ahead and move this up with the rest of your library calls.</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>penguins_raw_clean <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(penguins_raw)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="fu">names</span>(penguins_raw_clean)</span></code></pre></div>
 <pre><code>##  [1] &quot;study_name&quot;        &quot;sample_number&quot;     &quot;species&quot;          
 ##  [4] &quot;region&quot;            &quot;island&quot;            &quot;stage&quot;            
 ##  [7] &quot;individual_id&quot;     &quot;clutch_completion&quot; &quot;date_egg&quot;         
 ## [10] &quot;culmen_length_mm&quot;  &quot;culmen_depth_mm&quot;   &quot;flipper_length_mm&quot;
 ## [13] &quot;body_mass_g&quot;       &quot;sex&quot;               &quot;delta_15_n_o_oo&quot;  
 ## [16] &quot;delta_13_c_o_oo&quot;   &quot;comments&quot;</code></pre>
-<p>Still long, but so much better!</p>
+<p>Still long, but the names are so much better!</p>
 </div>
 <div id="distribution-of-species-by-island-revisted" class="section level1">
 <h1>Distribution of species by island revisted</h1>
@@ -449,7 +451,7 @@ hr {background:  cornflowerblue;}
 <div id="graphing-summary-data" class="section level1">
 <h1>Graphing summary data</h1>
 <p>So below is a recreation of our previous chart using the raw data. What would we need to change to make this chart using the summarized data we stored in <code>penguin_island_dist</code>?</p>
-<p><img src="/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/R-camp-penguins/page/exercise/day3/3-2-ggplot_exercises_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Remember that helpful tip from the help of <code>geom_bar</code>?</p>
 <blockquote>
 <p>“There are two types of bar charts: geom_bar() and geom_col(). geom_bar() makes the height of the bar proportional to the number of cases in each group (or if the weight aesthetic is supplied, the sum of the weights). If you want the heights of the bars to represent values in the data, use geom_col() instead.”</p>
@@ -457,25 +459,25 @@ hr {background:  cornflowerblue;}
 </blockquote>
 <div id="column-charts" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Column charts</h3>
-<ul class="nav nav-pills" id="myTab2633" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4567" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="geom_col2633-tab" data-toggle="tab" href="#geom_col2633" role="tab" aria-controls="geom_col2633" aria-selected="true">geom_col</a>
+<a class="nav-link" id="geom_col4567-tab" data-toggle="tab" href="#geom_col4567" role="tab" aria-controls="geom_col4567" aria-selected="true">geom_col</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint2633-tab" data-toggle="tab" href="#showhint2633" role="tab" aria-controls="showhint2633" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4567-tab" data-toggle="tab" href="#showhint4567" role="tab" aria-controls="showhint4567" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode2633-tab" data-toggle="tab" href="#showcode2633" role="tab" aria-controls="showcode2633" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4567-tab" data-toggle="tab" href="#showcode4567" role="tab" aria-controls="showcode4567" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="geom_col2633" class="tab-pane fade active in" role="tabpanel" aria-labelledby="geom_col2633-tab">
+<div id="geom_col4567" class="tab-pane fade active in" role="tabpanel" aria-labelledby="geom_col4567-tab">
 <h4>
 Recreate your previous bar-chart using the summarized data that you stored in penguin_island_dist.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint2633" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint2633-tab">
+<div id="showhint4567" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4567-tab">
 <pre class="sourceCode r">
 
 ggplot(data = __________, 
@@ -488,7 +490,7 @@ ggplot(data = __________,
   theme_bw()
 </pre>
 </div>
-<div id="showcode2633" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode2633-tab">
+<div id="showcode4567" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4567-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -518,25 +520,25 @@ ggplot(data = penguin_island_dist,
 </ol>
 <div id="bar-labels" class="section level3 unnumbered quiz">
 <h3><i class="fas fa-cookie-bite" style="color: gray;"></i> Bar labels</h3>
-<ul class="nav nav-pills" id="myTab6678" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="myTab4804" role="tablist" style="margin-top: 18px;">
 <li class="nav-item active">
-<a class="nav-link" id="barlabels6678-tab" data-toggle="tab" href="#barlabels6678" role="tab" aria-controls="barlabels6678" aria-selected="true">Bar labels</a>
+<a class="nav-link" id="barlabels4804-tab" data-toggle="tab" href="#barlabels4804" role="tab" aria-controls="barlabels4804" aria-selected="true">Bar labels</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showhint6678-tab" data-toggle="tab" href="#showhint6678" role="tab" aria-controls="showhint6678" aria-selected="false">Show hint</a>
+<a class="nav-link" id="showhint4804-tab" data-toggle="tab" href="#showhint4804" role="tab" aria-controls="showhint4804" aria-selected="false">Show hint</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="showcode6678-tab" data-toggle="tab" href="#showcode6678" role="tab" aria-controls="showcode6678" aria-selected="false">Show code</a>
+<a class="nav-link" id="showcode4804-tab" data-toggle="tab" href="#showcode4804" role="tab" aria-controls="showcode4804" aria-selected="false">Show code</a>
 </li>
 </ul>
 <div id="myTabContent" class="well tab-content" style="background-color: white;">
-<div id="barlabels6678" class="tab-pane fade active in" role="tabpanel" aria-labelledby="barlabels6678-tab">
+<div id="barlabels4804" class="tab-pane fade active in" role="tabpanel" aria-labelledby="barlabels4804-tab">
 <h4>
 Add text labels to your columns of the total count of each species per island. You might need to position them higher than the top of the bar and you shrink the width to make them look nice, do not be afraid to experiment.
 </h4>
 <p><br></p>
 </div>
-<div id="showhint6678" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint6678-tab">
+<div id="showhint4804" class="tab-pane fade" role="tabpanel" aria-labelledby="showhint4804-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
@@ -551,7 +553,7 @@ ggplot(data = penguin_island_dist,
   theme_bw()
 </pre>
 </div>
-<div id="showcode6678" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode6678-tab">
+<div id="showcode4804" class="tab-pane fade" role="tabpanel" aria-labelledby="showcode4804-tab">
 <pre class="sourceCode r">
 
 ggplot(data = penguin_island_dist, 
