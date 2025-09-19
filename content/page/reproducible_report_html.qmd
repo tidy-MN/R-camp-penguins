@@ -3,7 +3,16 @@ title:    "Writing reproducible reports in RStudio"
 subtitle: "Rendering your content from markdown to HTML using Quarto"
 author:   "Abby Stamm"
 date:     today
-format:   html
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: css/camp_style.css
+    number_sections: false
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
 ---
 
 ## Introduction
@@ -93,7 +102,7 @@ The table below shows common markdown syntax and corresponding results.
 
 ```{r read_syntax}
 #| echo: FALSE
-d <- readr::read_csv("data/markdown_syntax.csv", show_col_types = FALSE)
+d <- readr::read_csv("../data/markdown_syntax.csv", show_col_types = FALSE)
 knitr::kable(d, caption = "Table of markdown text modifiers")
 ```
 
@@ -144,14 +153,16 @@ Section headers (or headings) range from level 1 to level 6 and are identified i
 
 Links use the syntax `[title](link)`. For example, to link to [CDC](http://cdc.gov), write `[CDC](http://cdc.gov)`. For the link to be valid, the close bracket and open parentheses need to touch, so `[CDC] (http://cdc.gov)` won't work.
 
-To link to an image, use the syntax `![caption](image){alt text}`.
+To link to an image, use the syntax `![caption](image){fig-alt = ""}`. For example, you would use the syntax 
+
+> `![A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto.](../images/allison_horst_quarto_flow.png){fig-alt="A flow chart pointing from multiple computer languages to Quarto to multiple file types" width=50%}` 
+
+to read in this image from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by [Allison Horst](https://twitter.com/allison_horst).
+
+![A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto.](../images/allison_horst_quarto_flow.png){fig-alt="A flow chart pointing from multiple computer languages to Quarto to multiple file types" width=50%}
 
 
-
-<!-- Add link to quarto cartoon to teach how to link images with proper alt text.
-
-
-Showing examples of inline R code only works for me if I break the line immediately after "r". 
+<!-- Showing examples of inline R code only works for me if I break the line immediately after "r". 
 See https://bookdown.org/yihui/rmarkdown-cookbook/verbatim-code-chunks.html for how it should work. -->
 
 Inline notes require unique alphanumeric tags to link the content to the note. To create an inline note, put brackets and carrot around your unique tag in the format `quote[^tag]`. A couple lines later, type your unique tag followed by a colon, then the note, in the format `[^tag]: source`. The tags will be auto-numbered in order. In HTML, hovering over the tag will reveal the note and clicking on the tag will bring you to the note at the bottom of the page. For example:
@@ -603,6 +614,12 @@ In the next code block, you will import your data. Open the file in Excel. The f
 When I create Excel files to read into R, I always make my data sheets computer readable, with no headers or merged cells. 
 If I need to include human readable metadata, I will put it on its own in the first sheet, then add the option `sheet = 2` (or whatever number) when I import my data.
 :::
+
+```{r revised_filename}
+#| echo: false
+# because file path above won't work on the website
+my_file <- "../data/Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx"
+```
 
 
 ```{r run_readxl}
