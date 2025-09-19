@@ -1,0 +1,719 @@
+---
+title:    "Writing reproducible reports in RStudio"
+subtitle: "Rendering your content from markdown to HTML using Quarto"
+author:   "Abby Stamm"
+date:     today
+format:   html
+---
+
+## Introduction
+
+This report will show you basic markdown and Quarto settings to create a reproducible report in HTML. To write reproducible reports, you need two skills. First, you need some basic knowledge about how to format your report content. Second, you need to know how to manipulate and display data within your report. We will cover formatting first, then reading in data.
+
+<!-- note https://quarto-ambition.github.io/website/1-2-documents/1-2-documents.html#/title-slide for quarto syntax -->
+
+To begin, create a new project in RStudio. I called mine "RCamp_reports". Click on "File" > "New file" > "Quarto Document ..." to create a new Quarto document. When the dialog asks what kind of report to create, select HTML for now. 
+
+::: {.callout-note title = "Word and PDF files" collapse = "true"}
+Quarto files can also be converted to:
+
+* Word if you have Microsoft Word installed on your computer
+* portable document format (PDF) if you have a tex compiler like Miktex installed on your computer
+
+These are beyond the scope of this workshop. If you want to try them, select "PDF" or "Word" when creating a new document instead of HTML. All of the formatting syntax below should work for HTML, PDF, and Word, though results may look a bit different among the three formats. I have found Word and PDF trickier to customize than HTML, especially if you are trying to meet specific branding requirements. 
+:::
+
+## Setting up your YAML
+
+The YAML stores the metadata for your document. 
+It includes anything that affects formatting when your document is rendered.
+
+This list is not exhaustive. It includes of items I often use in my own work.
+
+* **Context**: title, subtitle, author, date
+* **Format**: various flavors of HTML, PDF, and Word, and which renderer to use
+* **Inclusions**: table of contents, numbering sections
+* **Reference files**: citation list, custom style sheet or other template file
+* **Formatting**: instructions for how to display charts, tables, paragraphs, and other content
+
+The YAML is always at the beginning of the document. 
+A simple version looks something like this.
+
+```
+---
+title:    "My title"
+subtitle: "My subtitle"
+author:   "Marvellous me"
+date:     "2025-10-16"
+format:   html
+---
+```
+
+##### Your turn
+
+In the Quarto document you created, add a subtitle, author, and date. 
+Then save your file. At any time, you can save your file and click "Render" at the top of the window to convert the file to HTML and view it. Render your document now.
+
+1. Did your file render correctly? 
+1. If not, what went wrong?
+
+
+
+## Crash course in Markdown syntax
+
+Before we write our report, we need to learn how to convey our information. 
+This section will cover common markdown formatting options for content that will be compiled to portable document format (PDF), hypertext markup language (HTML), or Word documents. 
+
+::: {.callout-note title = "Advanced options" collapse = "true"}
+There are many advanced formatting options in Quarto. A few common ones include:
+
+* Use custom style sheets (CSS) to define font and paragraph colors and styles in HTML. 
+* Auto-generate tables of contents and citation lists. 
+* Auto-number sections, footnotes, citations, tables, and figures. 
+* Render one Quarto document within another, for example a multi-chapter book where each chapter is a separate file.
+
+You can learn about these features and more at the links below. They are beyond the scope of this workshop.
+:::
+
+
+These two online sources on Quarto formatting are probably the most up-to-date.
+
+* [Quarto Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+* [Getting Started with Quarto by RStudio: A Beginner's Guide](https://rmarkdown.net/quarto/)
+
+The resources below are for R markdown, the predecessor of Quarto, so some syntax may work differently. I include them because Quarto is new and its documentation is not as robust as for R markdown.
+
+* [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+* [R Markdown at RStudio](https://rmarkdown.rstudio.com/)
+
+
+### Text modifiers
+
+The table below shows common markdown syntax and corresponding results. 
+
+```{r read_syntax}
+#| echo: FALSE
+d <- readr::read_csv("../data/markdown_syntax.csv", show_col_types = FALSE)
+knitr::kable(d, caption = "Table of markdown text modifiers")
+```
+
+
+##### Your turn
+
+Try the following exercises. Use this paragraph, from the beginning of [*Alice's Adventures in Wonderland* by Lewis Carroll](https://www.gutenberg.org/ebooks/11). 
+
+> Alice was beginning to get very tired of sitting by her sister on the
+> bank, and of having nothing to do: once or twice she had peeped into
+> the book her sister was reading, but it had no pictures or
+> conversations in it, “and what is the use of a book,” thought Alice
+> “without pictures or conversations?”
+
+1. **Bold** Alice's name.
+1. *Italicize* the dialogue.
+1. Cross out (strikethrough) "and having nothing to do".
+1. Superscript "book" and subscript "reading".
+1. Make "conversations" appear as verbatim code.
+
+Render your document. 
+
+If you formatted everything correctly, you should get this.
+
+> **Alice** was beginning to get very tired of sitting by her sister on the
+> bank, ~~and of having nothing to do~~: once or twice she had peeped into
+> the ^book^ her sister was ~reading~, but it had no pictures or
+> conversations in it, *“and what is the use of a ^book^,”* thought **Alice**
+> *“without pictures or `conversations`?”*
+
+
+
+
+
+### Headers 
+
+Section headers (or headings) range from level 1 to level 6 and are identified in Quarto by the number of hash symbols at the beginning of the line.
+
+```
+# Header 1 (Heading in Word)
+## Header 2 (Heading 2 in Word)
+...
+###### Header 6 (Heading 6 in Word)
+```
+
+
+### Links
+
+Links use the syntax `[title](link)`. For example, to link to [CDC](http://cdc.gov), write `[CDC](http://cdc.gov)`. For the link to be valid, the close bracket and open parentheses need to touch, so `[CDC] (http://cdc.gov)` won't work.
+
+To link to an image, use the syntax `![caption](image){alt text}`.
+
+
+
+<!-- Add link to quarto cartoon to teach how to link images with proper alt text.
+
+
+Showing examples of inline R code only works for me if I break the line immediately after "r". 
+See https://bookdown.org/yihui/rmarkdown-cookbook/verbatim-code-chunks.html for how it should work. -->
+
+Inline notes require unique alphanumeric tags to link the content to the note. To create an inline note, put brackets and carrot around your unique tag in the format `quote[^tag]`. A couple lines later, type your unique tag followed by a colon, then the note, in the format `[^tag]: source`. The tags will be auto-numbered in order. In HTML, hovering over the tag will reveal the note and clicking on the tag will bring you to the note at the bottom of the page. For example:
+
+
++-----------------------+-----------------------+
+| Syntax                | Result                |
++=======================+=======================+
+| ```                   | Item to note[^abc]    |
+| Item to note[^abc]    |                       |
+|                       | [^abc]: note for item |
+| [^abc]: note for item |                       |
+| ```                   |                       |
++-----------------------+-----------------------+
+
+For citations, Rstudio can reference library files, in which each source has a unique tag, when rendering Quarto. For my dissertation, I used the reference manager Mendeley to export my library to a bibtex file that RStudio could reference. There are other methods of referencing citations, as well. If using an external library file, make sure to include it in your YAML.
+
+
+##### Your turn
+
+
+This paragraph is from the beginning of [*Frankenstein; Or, The Modern Prometheus* by Mary Wollstonecraft Shelley](https://www.gutenberg.org/ebooks/84). 
+
+> From *Frankenstein* by Mary Wollstonecraft Shelley
+> 
+> You will rejoice to hear that no disaster has accompanied the
+> commencement of an enterprise which you have regarded with such evil
+> forebodings. I arrived here yesterday, and my first task is to assure
+> my dear sister of my welfare and increasing confidence in the success
+> of my undertaking.
+
+1. Link the title to the webpage https://www.gutenberg.org/ebooks/84.
+1. Add an inline footnote at the end of the passage. The note should say something like "A passage from the first letter to Mrs Saville."
+
+Render your document. 
+
+
+### Paragraph formatting
+
+To create a new paragraph, leave an empty line between paragraphs. To add a line break within a paragraph, put a backslash at the end of the first line.
+
+
++------------------------+------------------------+
+| Syntax                 | Result                 |
++========================+========================+
+| ```                    | This is paragraph 1    |
+| This is paragraph 1    | without a line break.  |
+| without a line break.  |                        |
+|                        | This is paragraph 2.   |
+| This is paragraph 2.   |                        |
+| ```                    |                        |
++------------------------+------------------------+
+| ```                    | This is paragraph 1 \  |
+| This is paragraph 1 \  | with a line break.     |
+| with a line break.     |                        |
+|                        | This is paragraph 2.   |
+| This is paragraph 2.   |                        |
+| ```                    |                        |
++------------------------+------------------------+
+
+
+
+Below is an example of the syntax for a poem in markdown.
+
+> ```
+> **Spring R**, *a haiku by Abby Stamm*
+> 
+> Spring softly greening \
+> Out my window while indoors \
+> With R I struggle.
+> ```
+
+This is how it renders.
+
+> **Spring R**, *a haiku by Abby Stamm*
+> 
+> Spring softly greening \
+> Out my window while indoors \
+> With R I struggle.
+
+##### Your turn
+
+
+The excerpt below is from Act II, Scene II of [*Romeo and Juliet* by William Shakespeare](https://www.gutenberg.org/ebooks/1513). 
+
+> ```
+> ROMEO.
+> Lady, by yonder blessed moon I vow,
+> That tips with silver all these fruit-tree tops,—
+>
+> JULIET.
+> O swear not by the moon, th’inconstant moon,
+> That monthly changes in her circled orb,
+> Lest that thy love prove likewise variable.
+> ```
+
+1. Add line breaks and paragraph breaks to match the formatting above.
+
+Render your document. 
+
+
+
+
+### Lists
+
+#### Unordered lists
+
+To create unordered lists, you can use the symbols plus (+), minus (-), and asterisk (*). They all produce the same black round bullet. It is possible to customize bullets using CSS, but that is beyond the scope of this workshop.
+
+
++-----------------+-------------------------+-----------------+
+| Syntax          | Symbols                 | Result          | 
++=================+=========================+=================+
+| ```             | plus sign, then space   |                 |
+| + list item     |                         | + list item     |
+| ```             |                         |                 |
++-----------------+-------------------------+-----------------+
+| ```             | minus sign, then space  |                 |
+| - list item     |                         | - list item     |
+| ```             |                         |                 |
++-----------------+-------------------------+-----------------+
+| ```             | asterisk, then space    |                 |
+| * list item     |                         | * list item     |
+| ```             |                         |                 |
++-----------------+-------------------------+-----------------+
+
+There are also some special symbols for lists, such as checkboxes.
+
+
++-----------------+-----------------------+-----------------+
+| Syntax          | Symbols               | Result          | 
++=================+=======================+=================+
+| ```             | minus sign & brackets |                 |
+| - [ ] Unchecked | separated by spaces   | - [ ] Unchecked |
+| ```             |                       |                 |
++-----------------+-----------------------+-----------------+
+| ```             | minus sign then space |                 |
+| - [x] Checked   | then brackets around  | - [x] Checked   |
+| ```             | an x then space       |                 |
++-----------------+-----------------------+-----------------+
+
+##### Your turn
+
+The animated segment "I can remember" (Jim Simon, *Sesame Street* season 4) includes the quote, "a loaf of bread, a container of milk, and a stick of butter".
+
+1. Make a bullet list of these groceries.
+1. Make a second list with checkboxes.
+1. Check off the items you have in your kitchen or pantry. (Vegan and gluten-free options are acceptable, too.)
+
+Render your document. 
+
+
+#### Ordered lists
+
+Ordered list symbols include numbers and letters. 
+
+::: callout-warning
+Most ordered list symbols require two spaces before the item, not one. 
+Two spaces will always work if you want to be consistent.
+:::
+
+Some Markdown compilers will put list items in sequential order as shown below, even if you have not typed them in order. Quarto can reorder numbers and letters, but not roman numerals. Single letters except i or I are assumed to be letters, not roman numerals.
+
++-------------------+-----------------+-------------------+
+| Syntax            | Symbols         | Result            | 
++===================+=================+===================+
+| ```               | number, then    |                   |
+| 1. item a         | period, then    | 1. item a         |
+| 3. item b         | one space       | 3. item b         |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | letter, then    |                   |
+| b.  item a        | period, then    | b.  item a        |
+| a.  item b        | two spaces      | a.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | letter, then    |                   |
+| X.  item a        | period, then    | X.  item a        |
+| X.  item b        | two spaces      | X.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | letter, then    |                   |
+| i.  item a        | period, then    | i.  item a        |
+| i.  item b        | two spaces      | i.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | letters, then   |                   |
+| I.  item a        | period, then    | I.  item a        |
+| I.  item b        | two spaces      | I.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+
+If you want to add a second level to your list, add 4 spaces before each second level item. A shortcut is to highlight that line and press tab twice if you use RStudio's default tab length of two spaces. 
+
+::: callout-tip
+I like to create lists in which all items start with the same starting letter or number as shown below. This makes them easier to reorder and revise later.
+:::
+
+You can mix item types across levels, but not within the same level.
+
++-------------------+-----------------+-------------------+
+| Syntax            | Symbols         | Result            | 
++===================+=================+===================+
+| ```               | 4 spaces before |                   |
+| 1. item a         | each sub-item,  | 1. item a         |
+|     - sub-item a  | all sub-items   |     - sub-item a  |
+|     - sub-item b  | the same list   |     - sub-item b  |
+| 1. item b         | type            | 1. item b         |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | 4 spaces before |                   |
+| I.  item a        | each sub-item,  | I.  item a        |
+|     1. sub-item a | all sub-items   |     1. sub-item a |
+|     1. sub-item b | the same list   |     1. sub-item b |
+| I.  item b        | type            | I.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | 4 spaces before |                   |
+| A.  item a        | each sub-item,  | A.  item a        |
+|     - [ ] check a | all sub-items   |     - [ ] check a |
+|     - [x] check b | the same list   |     - [x] check b |
+| A.  item b        | type            | A.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+
+
+For each subsequent level, follow the same pattern as for the second level. Add four extra spaces at the beginning for each sub-level and keep list types consistent within each level.
+
+If you want to break items in one level across lines in code, just indent the item without a bullet.
+
++-------------------+-----------------+-------------------+
+| Syntax            | Symbols         | Result            | 
++===================+=================+===================+
+| ```               | indent          |                   |
+| 1. item a is too  | subsequent      | 1. item a is too  |
+|    long to fit on | lines of the    |    long to fit on |
+|    one line       | same item       |    one line       |
+| 1. item b         |                 | 1. item b         |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | indent          |                   |
+| I.  item a        | sub-items based | I.  item a        |
+|     1. sub-item a | on their level  |     1. sub-item a |
+|        continues  |                 |        continues  |
+| I.  item b        |                 | I.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+| ```               | indent          |                   |
+| A.  item a        | sub-items based | A.  item a        |
+|     - [ ] check a | on their level  |     - [ ] check a |
+|           runs on |                 |           runs on |
+| A.  item b        |                 | A.  item b        |
+| ```               |                 |                   |
++-------------------+-----------------+-------------------+
+
+##### Your turn
+
+Inspired by the English Christmas song, "The Twelve Days of Christmas" (circa 1780), I invested in an aviary. I now have a peahen named Ava, a couple doves named Betty and Cam, three chickens named Dora, Emmie, and Fran, and a quartet of blackbirds named Grace, Heather, Ida, and Joy.
+
+1. Create a numbered list of the species of birds I have, from least to most.
+1. Under each bird species, add a lettered sub-list with the names of my birds of that species.
+1. As an extra challenge, use Roman numerals for one of the sub-lists.
+
+Render your document. 
+
+
+
+### Callout boxes
+
+There are five types of callout boxes: note, tip, warning, caution, and important. Each box has a different color, symbol, and caption by default. Note that in Word, callout boxes are rendered as tables, not text boxes, so they should be accessible to screen readers.
+
+
++---------------------------------+---------------------------------+
+| Syntax                          | Result                          |
++=================================+=================================+
+| ```                             | ::: callout-important           |
+| ::: callout-important           | This is important.              |
+| This is important.              | :::                             |
+| :::                             |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ::: callout-note                |
+| ::: callout-note                | This is a note.                 |
+| This is a note.                 | :::                             |
+| :::                             |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ::: callout-warning             |
+| ::: callout-warning             | This is a warning.              |
+| This is a warning.              | :::                             |
+| :::                             |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ::: callout-tip                 |
+| ::: callout-tip                 | This is a tip.                  |
+| This is a tip.                  | :::                             |
+| :::                             |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | ::: callout-caution             |
+| ::: callout-caution             | ## My title                     |
+| ## My title                     |                                 |
+|                                 | This caution has a title.       |
+| This caution has a title.       | :::                             |
+| :::                             |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+
+##### Your turn
+
+The quotes below are excerpts from [*Alice's Adventures in Wonderland* by Lewis Carroll](https://www.gutenberg.org/ebooks/11). Put each in the appropriate type of callout box.
+
+1. “Keep your temper,” said the Caterpillar. (important)
+1. “Serpent!” screamed the Pigeon. (warning)
+1. “If everybody minded their own business,” the Duchess said in a hoarse
+growl, “the world would go round a deal faster than it does.” (tip)
+1. Give each of your callout boxes a title.
+
+Render your document. 
+
+
+### Equations
+
+To include a formula, wrap it in dollar signs. If you want the equation to be on its own line, use double dollar signs. In RStudio, when you mouse over an equation with single dollar signs, the pop-up will display how it will render and when you type an equation with double dollar signs, RStudio will show a rendering immediately below the equation.
+
+`$y_1 = ax^2 + bx + c$` renders to $y_1 = ax^2 + bx + c$.
+
+Advanced syntax for equations is outside the scope of this workshop. Read [R Markdown for Scientists, Chapter 11](https://rmd4sci.njtierney.com/math) for an introduction to making complex equations like 
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+To include inline R code, begin the verbatim syntax with "r". 
+
+> For example, "2 + 2 = `` `r
+2+2` ``" renders to "2 + 2 = `r 2+2`".
+
+##### Your turn
+
+1. Write the equation $a^2 + b^2 = c^2$ in a sentence.
+1. Write the same equation centered on its own line.
+1. Write some R code in a sentence, such as "1 + 2 + 3" or 4^2.
+
+Render your document.
+
+
+##### Mixing and matching
+
+Try mixing and matching the coding options above. 
+
+1. Can you put a link, a list, or bold text inside a callout box? 
+1. Can you add a footnote to an item in your list or callout box?
+1. Can you add an equation to your list?
+
+::: callout-note
+# A nonsense example of `overkill`
+
+Visit the [CDC](http://cdc.gov) to learn things ...
+
+* ~~vaccines~~[^cdc]
+* *nutrition*
+* **chronic disease**
+* equations like $ax_1 + bx_2 + c = y$[^nah]
+
+[^cdc]: before it's deleted.
+[^nah]: not this, though.
+:::
+
+
+
+
+
+## Writing a report
+
+Now that you know the basics of markdown and Quarto, let's start a fresh report. Open a new Quarto file that will write to HTML. Add author and date to the YAML.
+
+Include code blocks as part of your report, the way I show below. Also include text outside the code blocks to explain what you are doing.
+
+
+### Set up your workspace
+
+Create a "data" folder in your project.
+
+Download an Excel file from [Minnesota Student Survey Reports](https://public.education.mn.gov/MDEAnalytics/DataTopic.jsp?TOPICID=242). Choose whichever options you want, then under "Download", select "Summary-xls". 
+
+The options I selected for this example report were:
+
+- Level: State
+- Name: Statewide
+- Year: 2022
+- Grade: Grade 5
+- Category: Health
+- Report: ALL
+- Demographics: ALL
+
+Your new file will have a name like "Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx". Move it from your downloads to the data folder in your project. 
+
+To include the data from your file in your report, you will need to create a code block using the following syntax. The code blocks in this workshop are all for R, but code blocks can also be used for other languages, such as python.
+
+```{r}
+#| echo: fenced
+# this is a basic code block
+```
+
+To label your code block to make navigation in RStudio easier, add a unique tag after the r inside `{r}`. Follow the same rules as when naming R objects.
+
+```{r my_unique_tag}
+#| echo: fenced
+# this is a basic code block with a unique tag
+```
+
+
+The file we downloaded is an Excel file, which R cannot read on its own. To import the file we will use the "readxl" package. Check if you have it installed. If you do not, install it using either the install dialog under "Tools" or the `install.packages()` function as shown below. 
+
+```{r install_readxl}
+#| eval: false
+# if readxl is not installed, run this code to install it.
+install.packages("readxl")
+```
+
+Change the value of the filename (`my_file`) to match the name of the file you downloaded. Often in my reports, the first or second code block of the document, above the introduction, will contain any dynamic values, such as filenames, date ranges, and health outcomes of interest.
+
+
+```{r update_filename}
+my_file <- "../data/Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx"
+```
+
+```{r update_filename2}
+#| eval: false
+# keep "data/" to read from the "data" folder when you change my_file
+my_file <- "data/Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx"
+```
+
+### Import your data 
+
+::: {.callout-note title = "Two ways to read functions from libraries" collapse = "false"}
+Often code begins with a library call, such as `library(readxl)`.
+I have several reasons for not using that method. 
+
+1. Some packages, such as "terra", are huge and often I only want one or two fuctions from them. 
+1. Some function names appear in multiple packages. If you don't specify the package, R uses the function from the most recent package loaded.
+1. When building an R package, loading full libraries is discouraged, so for me it's habit not to. 
+1. When loading package sets like *tidyverse*, keeping track of which package a function came from can be confusing, so I prefer to be explicit.
+
+Instead of loading the package first, I call the function by using the syntax `package::function()`. This is the method I will use in this workshop. 
+
+If you prefer to load the full library first, then use only the function name, feel free.
+:::
+
+In the next code block, you will import your data. Open the file in Excel. The first row is a human-readable heading instead of true data. We want to skip that row when we import the data into R, so we will use the option `skip = 1`.
+
+::: {.callout-tip title = "Creating R readable Excel files" collapse = "true"}
+When I create Excel files to read into R, I always make my data sheets computer readable, with no headers or merged cells. 
+If I need to include human readable metadata, I will put it on its own in the first sheet, then add the option `sheet = 2` (or whatever number) when I import my data.
+:::
+
+
+```{r run_readxl}
+my_mss_data <- readxl::read_xlsx(my_file, skip = 1, sheet = 1)
+```
+
+
+### Subset your data
+
+The dataset we imported combines results for all fifth graders who took the MSS, so complex analyses are not possible. Instead, we will focus on displaying simple results.
+
+Subset the dataset to include only questions about safety, specifically feeling safe at school. Below, I use `dplyr`, a package in the `tidyverse` constellation of packages. If you prefer, you can also use base R.
+
+
+```{r subset_data}
+# feel free to combine the filters and run both at once if you want
+safety_qs <- dplyr::filter(my_mss_data, Report == "Perceptions of Safety")
+safe_school <- dplyr::filter(safety_qs, Question == "I feel safe at school.")
+```
+
+We want to display a bar chart of feeling safe at school by gender, but the data are messy. To put the data in a format that's easier to graph, I am using the `tidyr` package, which is part of the `tidyverse` universe, but it is not installed as part of `tidyverse`, and the `janitor` package. 
+
+```{r install_tidyr}
+#| eval: false
+# if tidyr and janitor are not installed, run this code to install them.
+install.packages("janitor")
+install.packages("tidyr")
+```
+
+We will transform the data in four steps, outlined below. If you are fond of tidyverse piping, feel free to use it here. If you are just learning this code, review `safe_school_tidy` after running each function to notice how it has changed. To run only one line, highlight it and click the chevron next to "Run" in the upper right corner of the window. Click "Run Selected Line(s)".
+
+```{r run_tidyr}
+# first, clean variable names to make them easier to work with
+safe_school_tidy <- janitor::clean_names(safe_school)
+# second, isolate only the variables of interest
+safe_school_tidy <- dplyr::select(safe_school_tidy, question, response, 
+                                  female_count, male_count)
+# third, transform the data so gender is one column and count is another
+safe_school_tidy <- tidyr::pivot_longer(safe_school_tidy, c(male_count, female_count),
+                                        names_to = "gender", values_to = "count")
+# fourth, clean up the values in the "gender" column
+safe_school_tidy <- dplyr::mutate(safe_school_tidy, gender = gsub("_count", "", gender))
+```
+
+::: {.callout-tip title = "Code block formatting best practice" collapse = "false"}
+In RStudio, you will see a vertical line at character 80 in your Quarto document, unless you deliberately changed the default. This line is important if you intend to include your code in your document. Code blocks do not wrap lines, so for all of your code to show up, you need to create manual line breaks like I did above. 
+
+If you do not intend to show your code, these line breaks don't matter as much, but it is still a good practice to develop for future projects where you will need to show your code.
+:::
+
+The last data transformation step is to convert all of our variables to numbers so they can be plotted using `barplot()`. In R, factors are numbers with string labels, so we will convert character variables to factors. You may have noticed the count is a character variable that contains a comma after the thousands digit. For R to read it correctly, we will manually remove the comma, then convert the values to numeric. To review variable types before and after running the code below, use `str(safe_school_tidy)`.
+
+```{r convert_variables}
+safe_school_tidy <- dplyr::mutate(safe_school_tidy,
+  gender = factor(gender, levels = c("female", "male")),
+  response = factor(response, levels = c("Strongly disagree", "Disagree", 
+                                         "Agree", "Strongly agree")),
+  count = as.numeric(gsub(",", "", count))
+)
+```
+
+Now that we have prepared the data, let's create a chart. 
+
+```{r chart_basic}
+#| echo: fenced
+# draw the plot
+barplot(count ~ gender + response, data = safe_school_tidy, beside = TRUE, 
+        col = c("#003865", "#78BE21"), main = "Feeling safe at school by gender")
+# add a legend
+legend("topleft", legend = c("female", "male"), fill = c("#003865", "#78BE21"))
+```
+
+Note that we will also want the chart to be accessible, with a title, caption, and alt text. We can customize several other settings for charts, including height and width. Note that rendering to Word may result in the caption being incorrectly assigned to the alt text, so you will want to verify in Word after rendering.
+
+```{r chart_custom}
+#| echo: fenced
+#| fig-width:  6 # Width for figures in inches
+#| fig-height: 3 # Height for figures in inches
+#| fig-align:  "left"
+#| fig-alt:    "Chart of counts of how safe students feel at school by gender"
+#| fig-cap:    "Male and female students feel similarly safe at school."
+
+# redraw the plot
+barplot(count ~ gender + response, data = safe_school_tidy, beside = TRUE, 
+        col = c("#003865", "#78BE21"), main = "Feeling safe at school by gender")
+# add a legend
+legend("topleft", legend = c("female", "male"), fill = c("#003865", "#78BE21"))
+```
+
+To increase accessibility to the data in your chart, providing the data as text is recommended. When compiling to HTML, Quarto can create data tables that can be read properly by screen readers.
+
+```{r table_basic}
+knitr::kable(safe_school_tidy, 
+             caption = "Table of how safe students feel at school by gender")
+```
+
+
+
+
+
+##### Your turn
+
+Select a new question and recreate the chart and table. Suggestions for an extra challenge:
+
+* "I feel safe at home." for all students combined
+* "I feel safe in my neighborhood." for only girls
+* The same chart as in the example, showing percents instead of counts
+
+Make sure your caption and alt text match your data.
+
+

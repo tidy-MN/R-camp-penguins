@@ -38,3 +38,5 @@ project.Rproj
 porgs.pptx
 /.quarto/
 blogdown
+
+**/*.quarto_ipynb
