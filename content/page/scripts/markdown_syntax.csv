@@ -1,0 +1,19 @@
+Syntax,Symbols,Result
+"```
+`Verbatim` code
+```",1 backtick at each end,`Verbatim` code
+"```
+**Bold** font
+```",2 asterisks at each end,**Bold** font
+"```
+*Italic* font
+```",1 asterisk at each end,*Italic* font
+"```
+~~Strikethrough~~
+```",2 tildes at each end,~~Strikethrough~~
+"```
+x^Superscript^
+```",1 carrot at each end,x^Superscript^
+"```
+x~Subscript~
+```",1 tilde at each end,x~Subscript~
