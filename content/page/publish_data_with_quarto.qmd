@@ -66,7 +66,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 # Introduction
 
-The goal of this workshop is to show you how to create a reproducible report using RStudio. To write reproducible reports, you need two skills. First, you need some basic knowledge about how to format your report content. That information is covered in the [crash course](). Second, you need to know how to manipulate and display data within your report. This section covers how to write code blocks and read in data, and some of the tricks to make your report repeatable. 
+The goal of this workshop is to show you how to create a reproducible report using RStudio. To write reproducible reports, you need two skills. First, you need some basic knowledge about how to format your report content. That information is covered in the [crash course](markdown_crash_course.html). Second, you need to know how to manipulate and display data within your report. This section covers how to write code blocks and read in data, and some of the tricks to make your report repeatable. 
 
 
 

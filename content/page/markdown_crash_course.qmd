@@ -154,10 +154,10 @@ d <- readr::read_csv("data/markdown_syntax.csv", show_col_types = FALSE)
 knitr::kable(d, caption = "Table of markdown text modifiers")
 ```
 
-:::::: YourTurn
-::: YourTurn-header
+::: YourTurn
+:::: YourTurn-header
 <i class="fas fa-code" style="color: white;"></i> Your turn: Inline markdown
-:::
+::::
 
 :::: YourTurn-container
 ::: panel-tabset
@@ -193,7 +193,7 @@ Remember:
 -   Use \` for verbatim code
 :::
 ::::
-::::::
+:::
 
 # Headers
 
@@ -771,10 +771,10 @@ Add line break immediately after r to show proper inline R code syntax.
 > For example, "2 + 2 = `` `r
 2+2` ``" renders to "2 + 2 = `r 2+2`".
 
-:::::: YourTurn
-::: YourTurn-header
+::: YourTurn
+:::: YourTurn-header
 <i class="fas fa-code" style="color: white;"></i> Your turn: Equations
-:::
+::::
 
 :::: YourTurn-container
 ::: panel-tabset
@@ -807,7 +807,7 @@ Remember:
     equation` `` for inline calculations
 :::
 ::::
-::::::
+:::
 
 # Mixing and matching syntax
 
