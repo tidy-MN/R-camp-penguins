@@ -150,7 +150,7 @@ The table below shows common markdown syntax and corresponding results. The term
 
 ```{r read_syntax}
 #| echo: FALSE
-d <- readr::read_csv("scripts/markdown_syntax.csv", show_col_types = FALSE)
+d <- readr::read_csv("data/markdown_syntax.csv", show_col_types = FALSE)
 knitr::kable(d, caption = "Table of markdown text modifiers")
 ```
 

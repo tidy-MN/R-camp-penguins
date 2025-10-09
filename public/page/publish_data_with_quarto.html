@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Abby Stamm">
+<meta name="dcterms.date" content="2025-10-08">
+
+<title>Publishing Your Results with Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="publish_data_with_quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="publish_data_with_quarto_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="publish_data_with_quarto_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="publish_data_with_quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="publish_data_with_quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="publish_data_with_quarto_files/libs/quarto-html/anchor.min.js"></script>
+<link href="publish_data_with_quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="publish_data_with_quarto_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="publish_data_with_quarto_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="publish_data_with_quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="publish_data_with_quarto_files/libs/bootstrap/bootstrap-2cd348406a6b76dd4aaff51725babb60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="publish_data_with_quarto_files/libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+
+<link href="publish_data_with_quarto_files/libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+
+<script src="publish_data_with_quarto_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="publish_data_with_quarto_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="css/camp_style.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#set-up-your-document" id="toc-set-up-your-document" class="nav-link" data-scroll-target="#set-up-your-document"><span class="header-section-number">2</span> Set up your document</a>
+  <ul class="collapse">
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml"><span class="header-section-number">2.1</span> YAML</a></li>
+  <li><a href="#workspace" id="toc-workspace" class="nav-link" data-scroll-target="#workspace"><span class="header-section-number">2.2</span> Workspace</a></li>
+  </ul></li>
+  <li><a href="#crash-course-in-code-blocks" id="toc-crash-course-in-code-blocks" class="nav-link" data-scroll-target="#crash-course-in-code-blocks"><span class="header-section-number">3</span> Crash course in code blocks</a></li>
+  <li><a href="#write-your-report" id="toc-write-your-report" class="nav-link" data-scroll-target="#write-your-report"><span class="header-section-number">4</span> Write your report</a>
+  <ul class="collapse">
+  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="header-section-number">4.1</span> Install packages</a></li>
+  <li><a href="#import-your-data" id="toc-import-your-data" class="nav-link" data-scroll-target="#import-your-data"><span class="header-section-number">4.2</span> Import your data</a></li>
+  <li><a href="#prepare-your-data" id="toc-prepare-your-data" class="nav-link" data-scroll-target="#prepare-your-data"><span class="header-section-number">4.3</span> Prepare your data</a></li>
+  <li><a href="#draw-a-chart" id="toc-draw-a-chart" class="nav-link" data-scroll-target="#draw-a-chart"><span class="header-section-number">4.4</span> Draw a chart</a></li>
+  <li><a href="#add-a-table" id="toc-add-a-table" class="nav-link" data-scroll-target="#add-a-table"><span class="header-section-number">4.5</span> Add a table</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Publishing Your Results with Quarto</h1>
+<p class="subtitle lead">Reading in, displaying, and visualizing data in your HTML report</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Abby Stamm </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 8, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="cell-output-display">
+
+</div>
+</div>
+<div class="cell">
+<style type="text/css">
+}.YourTurn {
+  margin:        0em;
+  border:        2px solid #003865;
+  border-left:   5px solid #003865; 
+  border-radius: 10px;
+}.YourTurn-header {
+  margin-left:   0em;
+  margin-top:    1em;
+  margin-bottom: 0em;
+   /* align-items: center; */
+   /* vertical-align: text-bottom; */
+  padding-left:   10px;
+  padding-top:    5px;
+  padding-bottom: 0px;
+  background-color: #0080A6;
+  border: 2px solid #003865;
+  border-left: 10px solid #003865; 
+  border-bottom: 1px solid #003865; 
+  border-top-right-radius: 10px;
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  /* background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-image: url("fa-code-icon.png"); */
+}
+.YourTurn-container {
+  border: 2px solid #003865;
+  border-left: 10px solid #003865; 
+  border-top: 1px solid #003865; 
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}
+</style>
+</div>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>The goal of this workshop is to show you how to create a reproducible report using RStudio. To write reproducible reports, you need two skills. First, you need some basic knowledge about how to format your report content. That information is covered in the <a href="">crash course</a>. Second, you need to know how to manipulate and display data within your report. This section covers how to write code blocks and read in data, and some of the tricks to make your report repeatable.</p>
+</section>
+<section id="set-up-your-document" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Set up your document</h1>
+<p>Now that you know the basics of markdown and Quarto, let’s start a fresh report. You should still have the project open that you created in the crash course. If not, open it.</p>
+<p>Open a new Quarto file that will write to HTML. Create a new Quarto document by clicking on “File” &gt; “New file” &gt; “Quarto Document …”. In the dialog, select HTML, choose the Knitr engine, and uncheck the visual editor.</p>
+<section id="yaml" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="yaml"><span class="header-section-number">2.1</span> YAML</h2>
+<p>The YAML is always at the beginning of your document and stores the document metadata. It includes any information that affects overall formatting when your document is rendered.</p>
+<p>Add author, subtitle, and date to the YAML. Update the metadata to look something like the code below, with your own values between the quotation marks.</p>
+<p>Save your file.</p>
+<blockquote class="blockquote">
+<pre><code>---
+title:    "My title"
+subtitle: "My subtitle"
+author:   "Marvellous me"
+date:     "2025-10-16"
+format:   html
+---</code></pre>
+</blockquote>
+</section>
+<section id="workspace" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="workspace"><span class="header-section-number">2.2</span> Workspace</h2>
+<p>Create a “data” folder in your project.</p>
+<p>Download an Excel file from <a href="https://public.education.mn.gov/MDEAnalytics/DataTopic.jsp?TOPICID=242">Minnesota Student Survey Reports</a>. Choose whichever options you want, then under “Download”, select “Summary-xls”.</p>
+<p>The options I selected for this example report were:</p>
+<ul>
+<li><strong>Level:</strong> State</li>
+<li><strong>Name:</strong> Statewide</li>
+<li><strong>Year:</strong> 2022</li>
+<li><strong>Grade:</strong> Grade 5</li>
+<li><strong>Category:</strong> Health</li>
+<li><strong>Report:</strong> ALL</li>
+<li><strong>Demographics:</strong> ALL</li>
+</ul>
+<p>Your new file will have a name like “Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx”.</p>
+<p>Move the file you just downloaded from your downloads to the data folder in your project.</p>
+</section>
+</section>
+<section id="crash-course-in-code-blocks" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Crash course in code blocks</h1>
+<p>You will include several code blocks and text outside the code blocks as part of your report. The code blocks in this workshop are all for R, but code blocks can also be used for other languages, such as python.</p>
+<p>Most of your R code will run inside code blocks. This includes reading in data, processing data, creating visualizations, and if relevant exporting data. The only inline R code is usually commands to print objects that were created in the code blocks.</p>
+<p>A basic code block looks like this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this is a basic code block</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To label your code block to make navigation in RStudio easier, add a unique tag after the r inside <code>{r}</code>. Follow the same rules as when naming R objects.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r my_unique_tag}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this is a basic code block with a unique tag</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can add many options to your code block. Here is a partial list of <a href="https://quarto.org/docs/computations/execution-options.html">execution options</a>. I commonly use these.</p>
+<ul>
+<li><code>echo</code>: whether to print the code block in the report</li>
+<li><code>eval</code>: whether to run the code in the code block</li>
+<li><code>warning</code> and <code>message</code>: whether to print warnings and messages respectively in the report</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r my_many_options}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: true</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># above are several common code chunk options</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Making your report truly reproducible">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Making your report truly reproducible
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Often in my reports, the first code block of the document, above the introduction, will contain any dynamic values, such as file names, date ranges, and health outcomes of interest. That way, a month or year later, when I rerun the report, all I need to do is change values in that code block and click “Render”.</p>
+<p>When you learn more advanced R code, there are ways to name and read the latest file or derive dates of interest from the current date if you want to simply open the file and click “Render” without modifying anything.</p>
+</div>
+</div>
+</section>
+<section id="write-your-report" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Write your report</h1>
+<section id="install-packages" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">4.1</span> Install packages</h2>
+<p>We downloaded an Excel file, which R cannot read on its own. To import the file, we will use the <code>readxl</code> package. If you do not have it installed, install it using either the install dialog under “Tools” or the <code>install.packages()</code> function as shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if readxl is not installed, run this code to install it.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The data we downloaded are messy. To put the data in a format that’s easier to use, we will use the <code>tidyr</code> package, which is part of the <code>tidyverse</code> universe, but it is not installed as part of <code>tidyverse</code>, and the <code>janitor</code> package. If you do not have them installed, install them using either the install dialog under “Tools” or the <code>install.packages()</code> function as shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this code to install tidyr and janitor if needed</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"janitor"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To create a nice table of our data, we will use the <code>kableExtra</code> package. To learn more about this package, visit the <a href="https://sharlagelfand.github.io/kableExtra-cookbook/">kableExtra Cookbook</a>.If you do not have it installed, install it using either the install dialog under “Tools” or the <code>install.packages()</code> function as shown below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this code to install tidyr and janitor if needed</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"kableExtra"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Two ways to read functions from libraries">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two ways to read functions from libraries
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Often code begins with a library call, such as <code>library(readxl)</code>. Then later the coder calls the function on its own. I have several reasons for not using that method.</p>
+<ol type="1">
+<li>Some packages, such as “terra”, are huge and often I only want one or two functions from them.</li>
+<li>Some function names appear in multiple packages. If you don’t specify the package, R uses the function from the most recent package loaded.</li>
+<li>When loading package sets like <em>tidyverse</em>, keeping track of which package a function came from can be confusing, so I prefer to be explicit.</li>
+<li>When building an R package, loading full libraries is discouraged, so for me it’s habit not to.</li>
+</ol>
+<p>Instead of loading the package first, I call the function by using the syntax <code>package::function()</code>. This is the method I will use in this workshop.</p>
+<p>Use whichever method you find easiest.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="import-your-data" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="import-your-data"><span class="header-section-number">4.2</span> Import your data</h2>
+<p>Change the value of the filename (<code>my_file</code>) to match the name of the file you downloaded.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep "data/" to read from the "data" folder when you change my_file</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>my_file <span class="ot">&lt;-</span> <span class="st">"data/Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Creating R readable Excel files">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating R readable Excel files
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When I create Excel files to read into R, I always make my data sheets computer readable, with no headers or merged cells. If I need to include human readable metadata, such as a data dictionary or contact information, I will put it alone in the first sheet, then put the data on the second sheet and add the option <code>sheet = 2</code> when I import the data.</p>
+</div>
+</div>
+</div>
+<p>In the next code block, you will import your data. Open the file in Excel. The first row is a human-readable heading instead of true data. We want to skip that row when we import the data into R, so we will use the option <code>skip = 1</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_mss_data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(my_file, <span class="at">skip =</span> <span class="dv">1</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="prepare-your-data" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="prepare-your-data"><span class="header-section-number">4.3</span> Prepare your data</h2>
+<p>The dataset we imported combines results for all fifth graders who took the MSS. Here, we will display some results as a bar chart and a table. The point in this exercise is to show you how to add your own R code to a report. To learn how to write more complex code, refer to our other <a href="https://tidy-mn.github.io/R-camp-penguins/index.html">RCamp workshops</a>.</p>
+<p>Subset the dataset to include only questions about safety, specifically feeling safe at school. Below, I use <code>dplyr</code>, a package in the <code>tidyverse</code> constellation of packages. If you prefer, you can also use base R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># feel free to combine the filters and run both at once if you want</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>safety_qs <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(my_mss_data, Report <span class="sc">==</span> <span class="st">"Perceptions of Safety"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>safe_school <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(safety_qs, Question <span class="sc">==</span> <span class="st">"I feel safe at school."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We want to display a bar chart of feeling safe at school by gender, but the data are messy. To put the data in a format that’s easier to graph, I am using the <code>janitor</code> and <code>tidyr</code> packages that we installed earlier.</p>
+<p>We will transform the data in four steps, outlined below. If you are fond of tidyverse piping, feel free to use it here. If you are just learning these functions, review <code>safe_school_tidy</code> after running each function to notice how it has changed. To run only one line, highlight it and click the chevron next to “Run” in the upper right corner of the script window. Click “Run Selected Line(s)”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first, clean variable names to make them easier to work with</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>safe_school_tidy <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(safe_school)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># second, isolate only the variables of interest</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>safe_school_tidy <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">select</span>(safe_school_tidy, question, response, </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                                  female_count, male_count)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># third, transform the data so gender is one column and count is another</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>safe_school_tidy <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(safe_school_tidy, <span class="fu">c</span>(male_count, female_count),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">names_to =</span> <span class="st">"gender"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># fourth, clean up the values in the "gender" column</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>safe_school_tidy <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(safe_school_tidy, <span class="at">gender =</span> <span class="fu">gsub</span>(<span class="st">"_count"</span>, <span class="st">""</span>, gender))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Code block formatting best practice">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code block formatting best practice
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In RStudio, you will see a vertical line at character 80 in your Quarto document, unless you deliberately changed the default. This line is important if you intend to include your code in your document. Code blocks do not consistently wrap lines, so for all of your code to show up without the need for horizontal scrolling, you need to create manual line breaks like I did above.</p>
+<p>If you do not intend to show your code, these line breaks don’t matter as much, but it is still a good practice to develop for future projects where you will need to show your code.</p>
+</div>
+</div>
+</div>
+<p>The last data transformation step is to convert all of our variables to numbers so they can be plotted using <code>barplot()</code>. In R, factors are numbers with string labels, so we will convert character variables to factors.</p>
+<p>You may have noticed the count is a character variable that contains a comma after the thousands digit. For R to read it correctly, we will manually remove the comma, then convert the values to numeric. To review variable types before and after running the code below, use <code>str(safe_school_tidy)</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>safe_school_tidy <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(safe_school_tidy,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">factor</span>(gender, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>)),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">response =</span> <span class="fu">factor</span>(response, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Strongly disagree"</span>, <span class="st">"Disagree"</span>, </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">"Agree"</span>, <span class="st">"Strongly agree"</span>)),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">count =</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">""</span>, count)) <span class="co"># remove comma, make numeric</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="draw-a-chart" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="draw-a-chart"><span class="header-section-number">4.4</span> Draw a chart</h2>
+<p>Now that we have prepared the data, let’s create a chart.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r chart_basic}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># draw the plot with MN state colors</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(count <span class="sc">~</span> gender <span class="sc">+</span> response, <span class="at">data =</span> safe_school_tidy, <span class="at">beside =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"#003865"</span>, <span class="st">"#78BE21"</span>), <span class="at">main =</span> <span class="st">"Feeling safe at school by gender"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add a simple legend</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>), <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"#003865"</span>, <span class="st">"#78BE21"</span>))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="publish_data_with_quarto_files/figure-html/chart_basic-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that we will also want the chart to be accessible, with a title, caption, and alternative (alt) text. We can customize these settings for charts, as well as height and width.</p>
+<div class="cell" data-layout-align="left">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r chart_custom}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width:  6 # Width for figures in inches</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3 # Height for figures in inches</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-align:  "left"</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-alt:    "Chart of counts of how safe students feel at school by gender"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap:    "Male and female students feel similarly safe at school."</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># redraw the plot</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(count <span class="sc">~</span> gender <span class="sc">+</span> response, <span class="at">data =</span> safe_school_tidy, <span class="at">beside =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"#003865"</span>, <span class="st">"#78BE21"</span>), <span class="at">main =</span> <span class="st">"Feeling safe at school by gender"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># add a legend</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"female"</span>, <span class="st">"male"</span>), <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">"#003865"</span>, <span class="st">"#78BE21"</span>))</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="publish_data_with_quarto_files/figure-html/chart_custom-1.png" class="img-fluid figure-img" alt="Chart of counts of how safe students feel at school by gender" width="576"></p>
+<figcaption>Male and female students feel similarly safe at school.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Alt text in Word">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Alt text in Word
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Note that rendering to Word may result in the caption being incorrectly assigned to the alt text, so you will want to verify in Word after rendering.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="add-a-table" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="add-a-table"><span class="header-section-number">4.5</span> Add a table</h2>
+<p>To increase accessibility to the data in your chart, providing the data as text is recommended. When compiling to HTML, Quarto can create data tables that can be read properly by screen readers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the caption option provides a title for your table</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(safe_school_tidy, </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">"Table of how safe students feel at school by gender"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Table of how safe students feel at school by gender</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">question</th>
+<th style="text-align: left;">response</th>
+<th style="text-align: left;">gender</th>
+<th style="text-align: right;">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Strongly agree</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">7428</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Strongly agree</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">6601</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Agree</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">7594</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Agree</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">7865</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Disagree</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1192</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Disagree</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1298</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Strongly disagree</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">338</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I feel safe at school.</td>
+<td style="text-align: left;">Strongly disagree</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">230</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>To create a more customized table, you can use the package <em>kableExtra</em>, which adds customization options for the <code>kable</code> function. If you want to learn more about customizing tables with <code>kable</code> and <em>kableExtra</em>, visit the <a href="https://sharlagelfand.github.io/kableExtra-cookbook/">kableExtra Cookbook</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the caption option provides a title for your table </span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># - note that the caption is wrapped in single quotes to allow us to use double quotes in the caption name</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the col.names option provides custom column names</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># the align option aligns each column in order as left (l), center (c), or right (r)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - "lcc" means first column left, second and third columns center</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># the indexing after the dataset name allows us to drop the first column</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(safe_school_tidy[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">'Table of student responses to the prompt "I feel safe at school." by gender'</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Participant Response"</span>, </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Participant Gender"</span>, <span class="st">"Number of Participants"</span>),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">"lcc"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">collapse_rows</span>(<span class="at">columns =</span> <span class="dv">1</span>, <span class="at">valign =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table of student responses to the prompt "I feel safe at school." by gender</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Participant Response</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Participant Gender</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Number of Participants</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="2" style="text-align: left; vertical-align: top !important;">Strongly agree</td>
+<td style="text-align: center;">male</td>
+<td style="text-align: center;">7428</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">female</td>
+<td style="text-align: center;">6601</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" style="text-align: left; vertical-align: top !important;">Agree</td>
+<td style="text-align: center;">male</td>
+<td style="text-align: center;">7594</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">female</td>
+<td style="text-align: center;">7865</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" style="text-align: left; vertical-align: top !important;">Disagree</td>
+<td style="text-align: center;">male</td>
+<td style="text-align: center;">1192</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">female</td>
+<td style="text-align: center;">1298</td>
+</tr>
+<tr class="odd">
+<td rowspan="2" style="text-align: left; vertical-align: top !important;">Strongly disagree</td>
+<td style="text-align: center;">male</td>
+<td style="text-align: center;">338</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">female</td>
+<td style="text-align: center;">230</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Interactive charts and tables in R">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interactive charts and tables in R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In this workshop, I am providing code to create static charts and tables. This is practical if your goal is to write a report in Word or portable document format (PDF), where images are static.</p>
+<p>There are plenty of R packages to get started creating interactive charts and tables. Here are a few that I use. All of these are beyond the scope of this workshop.</p>
+<ul>
+<li>For interactive charts, check out <a href="https://ardata.fr/ggiraph-book/"><code>ggiraph</code></a> or <a href="https://plotly-r.com/"><code>plotly</code></a>.</li>
+<li>For interactive maps, check out <a href="https://rstudio.github.io/leaflet/"><code>leaflet</code></a>.</li>
+<li>For interactive tables, check out <a href="https://rstudio.github.io/DT/"><code>DT</code></a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="YourTurn">
+<div class="YourTurn-header">
+<p><i class="fas fa-code" style="color: white;"></i> Your turn: Writing a report</p>
+</div>
+<div class="YourTurn-container">
+<p>Select a new question and recreate the chart and table. Suggestions for an extra challenge:</p>
+<ul>
+<li>“I feel safe at home.” for all students combined</li>
+<li>“I feel safe in my neighborhood.” for only girls</li>
+<li>The same chart as in the example, showing percents instead of counts</li>
+</ul>
+<p>Make sure your caption and alt text match your data.</p>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

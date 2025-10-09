@@ -1,0 +1,392 @@
+---
+title:    "Publishing Your Results with Quarto"
+subtitle: "Reading in, displaying, and visualizing data in your HTML report"
+author:   "Abby Stamm"
+date:     today
+engine:   knitr
+format: 
+  html: 
+    highlight: tango
+    css: css/camp_style.css
+    number-sections: true
+    fontsize: 14pt
+    toc: true
+    mainfont: Calibri
+    monofont: Aptos Mono
+---
+
+```{r}
+#| echo: false
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+```{css your_turn_callout}
+#| echo: false
+
+}.YourTurn {
+  margin:        0em;
+  border:        2px solid #003865;
+  border-left:   5px solid #003865; 
+  border-radius: 10px;
+}.YourTurn-header {
+  margin-left:   0em;
+  margin-top:    1em;
+  margin-bottom: 0em;
+   /* align-items: center; */
+   /* vertical-align: text-bottom; */
+  padding-left:   10px;
+  padding-top:    5px;
+  padding-bottom: 0px;
+  background-color: #0080A6;
+  border: 2px solid #003865;
+  border-left: 10px solid #003865; 
+  border-bottom: 1px solid #003865; 
+  border-top-right-radius: 10px;
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+  /* background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-image: url("fa-code-icon.png"); */
+}
+.YourTurn-container {
+  border: 2px solid #003865;
+  border-left: 10px solid #003865; 
+  border-top: 1px solid #003865; 
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  color: black;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+}
+```
+
+# Introduction
+
+The goal of this workshop is to show you how to create a reproducible report using RStudio. To write reproducible reports, you need two skills. First, you need some basic knowledge about how to format your report content. That information is covered in the [crash course](). Second, you need to know how to manipulate and display data within your report. This section covers how to write code blocks and read in data, and some of the tricks to make your report repeatable. 
+
+
+
+# Set up your document
+
+Now that you know the basics of markdown and Quarto, let's start a fresh report. You should still have the project open that you created in the crash course. If not, open it. 
+
+Open a new Quarto file that will write to HTML. Create a new Quarto document by clicking on "File" > "New file" > "Quarto Document ...". In the dialog, select HTML, choose the Knitr engine, and uncheck the visual editor. 
+
+## YAML
+
+The YAML is always at the beginning of your document and stores the document metadata. It includes any information that affects overall formatting when your document is rendered.
+
+Add author, subtitle, and date to the YAML. Update the metadata to look something like the code below, with your own values between the quotation marks.
+
+Save your file. 
+
+> ```
+> ---
+> title:    "My title"
+> subtitle: "My subtitle"
+> author:   "Marvellous me"
+> date:     "2025-10-16"
+> format:   html
+> ---
+> ```
+
+## Workspace
+
+Create a "data" folder in your project.
+
+Download an Excel file from [Minnesota Student Survey Reports](https://public.education.mn.gov/MDEAnalytics/DataTopic.jsp?TOPICID=242). Choose whichever options you want, then under "Download", select "Summary-xls". 
+
+The options I selected for this example report were:
+
+- **Level:** State
+- **Name:** Statewide
+- **Year:** 2022
+- **Grade:** Grade 5
+- **Category:** Health
+- **Report:** ALL
+- **Demographics:** ALL
+
+Your new file will have a name like "Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx". 
+
+Move the file you just downloaded from your downloads to the data folder in your project. 
+
+
+# Crash course in code blocks
+
+You will include several code blocks and text outside the code blocks as part of your report. The code blocks in this workshop are all for R, but code blocks can also be used for other languages, such as python.
+
+Most of your R code will run inside code blocks. This includes reading in data, processing data, creating visualizations, and if relevant exporting data. The only inline R code is usually commands to print objects that were created in the code blocks.
+
+A basic code block looks like this.
+
+```{r}
+#| echo: fenced
+# this is a basic code block
+```
+
+To label your code block to make navigation in RStudio easier, add a unique tag after the r inside `{r}`. Follow the same rules as when naming R objects.
+
+```{r my_unique_tag}
+#| echo: fenced
+# this is a basic code block with a unique tag
+```
+
+You can add many options to your code block. Here is a partial list of [execution options](https://quarto.org/docs/computations/execution-options.html). I commonly use these.
+
+- `echo`: whether to print the code block in the report
+- `eval`: whether to run the code in the code block
+- `warning` and `message`: whether to print warnings and messages respectively in the report
+
+
+```{r my_many_options}
+#| echo: fenced
+#| eval: false
+#| message: true
+#| warning: false
+# above are several common code chunk options
+```
+
+::: {.callout-important title = "Making your report truly reproducible"}
+
+Often in my reports, the first code block of the document, above the introduction, will contain any dynamic values, such as file names, date ranges, and health outcomes of interest. That way, a month or year later, when I rerun the report, all I need to do is change values in that code block and click "Render". 
+
+When you learn more advanced R code, there are ways to name and read the latest file or derive dates of interest from the current date if you want to simply open the file and click "Render" without modifying anything.
+
+:::
+
+
+
+# Write your report
+
+## Install packages
+
+We downloaded an Excel file, which R cannot read on its own. 
+To import the file, we will use the `readxl` package. If you do not have it installed, install it using either the install dialog under "Tools" or the `install.packages()` function as shown below. 
+
+```{r install_readxl}
+#| eval: false
+# if readxl is not installed, run this code to install it.
+install.packages("readxl")
+```
+
+The data we downloaded are messy. To put the data in a format that's easier to use, we will use the `tidyr` package, which is part of the `tidyverse` universe, but it is not installed as part of `tidyverse`, and the `janitor` package. If you do not have them installed, install them using either the install dialog under "Tools" or the `install.packages()` function as shown below.
+
+```{r install_tidyr}
+#| eval: false
+# run this code to install tidyr and janitor if needed
+install.packages("janitor")
+install.packages("tidyr")
+```
+
+To create a nice table of our data, we will use the `kableExtra` package. To learn more about this package, visit the [kableExtra Cookbook](https://sharlagelfand.github.io/kableExtra-cookbook/).If you do not have it installed, install it using either the install dialog under "Tools" or the `install.packages()` function as shown below. 
+
+
+```{r install_kableExtra}
+#| eval: false
+# run this code to install tidyr and janitor if needed
+install.packages("kableExtra")
+```
+
+
+::: {.callout-note title = "Two ways to read functions from libraries" collapse = "false"}
+
+Often code begins with a library call, such as `library(readxl)`.
+Then later the coder calls the function on its own. 
+I have several reasons for not using that method. 
+
+1. Some packages, such as "terra", are huge and often I only want one or two functions from them. 
+1. Some function names appear in multiple packages. If you don't specify the package, R uses the function from the most recent package loaded.
+1. When loading package sets like *tidyverse*, keeping track of which package a function came from can be confusing, so I prefer to be explicit.
+1. When building an R package, loading full libraries is discouraged, so for me it's habit not to. 
+
+Instead of loading the package first, I call the function by using the syntax `package::function()`. This is the method I will use in this workshop. 
+
+Use whichever method you find easiest.
+
+:::
+
+
+## Import your data 
+
+Change the value of the filename (`my_file`) to match the name of the file you downloaded. 
+
+```{r update_filename}
+# keep "data/" to read from the "data" folder when you change my_file
+my_file <- "data/Minnesota_Student_Survey_Summary_Health_0000-00_2022.xlsx"
+```
+
+
+::: {.callout-tip title = "Creating R readable Excel files" collapse = "true"}
+
+When I create Excel files to read into R, I always make my data sheets computer readable, with no headers or merged cells. 
+If I need to include human readable metadata, such as a data dictionary or contact information, I will put it alone in the first sheet, then put the data on the second sheet and add the option `sheet = 2` when I import the data.
+
+:::
+
+
+In the next code block, you will import your data. Open the file in Excel. The first row is a human-readable heading instead of true data. We want to skip that row when we import the data into R, so we will use the option `skip = 1`.
+
+```{r run_readxl}
+my_mss_data <- readxl::read_xlsx(my_file, skip = 1, sheet = 1)
+```
+
+
+## Prepare your data
+
+The dataset we imported combines results for all fifth graders who took the MSS. Here, we will display some results as a bar chart and a table. The point in this exercise is to show you how to add your own R code to a report. To learn how to write more complex code, refer to our other [RCamp workshops](https://tidy-mn.github.io/R-camp-penguins/index.html).
+
+Subset the dataset to include only questions about safety, specifically feeling safe at school. Below, I use `dplyr`, a package in the `tidyverse` constellation of packages. If you prefer, you can also use base R.
+
+
+```{r subset_data}
+# feel free to combine the filters and run both at once if you want
+safety_qs <- dplyr::filter(my_mss_data, Report == "Perceptions of Safety")
+safe_school <- dplyr::filter(safety_qs, Question == "I feel safe at school.")
+```
+
+We want to display a bar chart of feeling safe at school by gender, but the data are messy. To put the data in a format that's easier to graph, I am using the `janitor` and `tidyr` packages that we installed earlier. 
+
+We will transform the data in four steps, outlined below. If you are fond of tidyverse piping, feel free to use it here. If you are just learning these functions, review `safe_school_tidy` after running each function to notice how it has changed. To run only one line, highlight it and click the chevron next to "Run" in the upper right corner of the script window. Click "Run Selected Line(s)".
+
+```{r transform_data}
+# first, clean variable names to make them easier to work with
+safe_school_tidy <- janitor::clean_names(safe_school)
+# second, isolate only the variables of interest
+safe_school_tidy <- dplyr::select(safe_school_tidy, question, response, 
+                                  female_count, male_count)
+# third, transform the data so gender is one column and count is another
+safe_school_tidy <- tidyr::pivot_longer(safe_school_tidy, c(male_count, female_count),
+                                        names_to = "gender", values_to = "count")
+# fourth, clean up the values in the "gender" column
+safe_school_tidy <- dplyr::mutate(safe_school_tidy, gender = gsub("_count", "", gender))
+```
+
+::: {.callout-tip title = "Code block formatting best practice" collapse = "false"}
+
+In RStudio, you will see a vertical line at character 80 in your Quarto document, unless you deliberately changed the default. This line is important if you intend to include your code in your document. Code blocks do not consistently wrap lines, so for all of your code to show up without the need for horizontal scrolling, you need to create manual line breaks like I did above. 
+
+If you do not intend to show your code, these line breaks don't matter as much, but it is still a good practice to develop for future projects where you will need to show your code.
+
+:::
+
+The last data transformation step is to convert all of our variables to numbers so they can be plotted using `barplot()`. In R, factors are numbers with string labels, so we will convert character variables to factors. 
+
+You may have noticed the count is a character variable that contains a comma after the thousands digit. For R to read it correctly, we will manually remove the comma, then convert the values to numeric. To review variable types before and after running the code below, use `str(safe_school_tidy)`.
+
+```{r convert_variables}
+safe_school_tidy <- dplyr::mutate(safe_school_tidy,
+  gender = factor(gender, levels = c("female", "male")),
+  response = factor(response, levels = c("Strongly disagree", "Disagree", 
+                                         "Agree", "Strongly agree")),
+  count = as.numeric(gsub(",", "", count)) # remove comma, make numeric
+)
+```
+
+## Draw a chart
+
+Now that we have prepared the data, let's create a chart. 
+
+```{r chart_basic}
+#| echo: fenced
+# draw the plot with MN state colors
+barplot(count ~ gender + response, data = safe_school_tidy, beside = TRUE, 
+        col = c("#003865", "#78BE21"), main = "Feeling safe at school by gender")
+# add a simple legend
+legend("topleft", legend = c("female", "male"), fill = c("#003865", "#78BE21"))
+```
+
+Note that we will also want the chart to be accessible, with a title, caption, and alternative (alt) text. We can customize these settings for charts, as well as height and width. 
+
+
+
+```{r chart_custom}
+#| echo: fenced
+#| fig-width:  6 # Width for figures in inches
+#| fig-height: 3 # Height for figures in inches
+#| fig-align:  "left"
+#| fig-alt:    "Chart of counts of how safe students feel at school by gender"
+#| fig-cap:    "Male and female students feel similarly safe at school."
+
+# redraw the plot
+barplot(count ~ gender + response, data = safe_school_tidy, beside = TRUE, 
+        col = c("#003865", "#78BE21"), main = "Feeling safe at school by gender")
+# add a legend
+legend("topleft", legend = c("female", "male"), fill = c("#003865", "#78BE21"))
+```
+
+
+::: {.callout-tip title = "Alt text in Word" collapse = "true"}
+
+Note that rendering to Word may result in the caption being incorrectly assigned to the alt text, so you will want to verify in Word after rendering.
+
+:::
+
+
+
+## Add a table
+
+To increase accessibility to the data in your chart, providing the data as text is recommended. When compiling to HTML, Quarto can create data tables that can be read properly by screen readers.
+
+```{r table_basic}
+# the caption option provides a title for your table
+knitr::kable(safe_school_tidy, 
+             caption = "Table of how safe students feel at school by gender") 
+```
+
+To create a more customized table, you can use the package *kableExtra*, which adds customization options for the `kable` function. If you want to learn more about customizing tables with `kable` and *kableExtra*, visit the [kableExtra Cookbook](https://sharlagelfand.github.io/kableExtra-cookbook/). 
+
+```{r table_custom}
+# the caption option provides a title for your table 
+# - note that the caption is wrapped in single quotes to allow us to use double quotes in the caption name
+# the col.names option provides custom column names
+# the align option aligns each column in order as left (l), center (c), or right (r)
+# - "lcc" means first column left, second and third columns center
+# the indexing after the dataset name allows us to drop the first column
+knitr::kable(safe_school_tidy[,2:4], 
+             caption = 'Table of student responses to the prompt "I feel safe at school." by gender',
+             col.names = c("Participant Response", 
+                           "Participant Gender", "Number of Participants"),
+             align = "lcc") |>
+  kableExtra::collapse_rows(columns = 1, valign = "top")
+
+```
+
+::: {.callout-note title = "Interactive charts and tables in R" collapse = "true"}
+
+In this workshop, I am providing code to create static charts and tables. This is practical if your goal is to write a report in Word or portable document format (PDF), where images are static. 
+
+There are plenty of R packages to get started creating interactive charts and tables. Here are a few that I use. All of these are beyond the scope of this workshop.
+
+* For interactive charts, check out [`ggiraph`](https://ardata.fr/ggiraph-book/) or [`plotly`](https://plotly-r.com/). 
+* For interactive maps, check out [`leaflet`](https://rstudio.github.io/leaflet/). 
+* For interactive tables, check out [`DT`](https://rstudio.github.io/DT/). 
+
+:::
+
+
+
+
+:::{.YourTurn}
+::::{.YourTurn-header}
+<i class="fas fa-code" style="color: white;"></i>
+Your turn: Writing a report
+::::
+::::{.YourTurn-container}
+
+
+Select a new question and recreate the chart and table. Suggestions for an extra challenge:
+
+* "I feel safe at home." for all students combined
+* "I feel safe in my neighborhood." for only girls
+* The same chart as in the example, showing percents instead of counts
+
+Make sure your caption and alt text match your data.
+
+::::
+:::
+
+
