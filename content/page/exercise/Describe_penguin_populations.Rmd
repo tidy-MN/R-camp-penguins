@@ -25,9 +25,9 @@ Jump back into the project you created for the previous sessions exercises and t
 
 So remember that big order we had? For those researchers who were doing work in Antarctica studying penguins? Well it turns out their analytics computer broke down and they might not able to complete their work! They have some data and were planning to go out again to gather more information but now they might not be able to!
 
-So we might have told them that we could...well...we might have said that we were an...analytic bot. They were so excited that they hired us on the spot! But now we're in a sticky situation because we really need to prove to them that we have what it takes to do the work.
+So we might have told them that we could...well...we said that we were a great analytic bot. They were so excited they hired us on the spot!
 
-Let's get practicing on using our data tools!
+Time to practice using our data tools!
 
 ## Summarize the data on penguin populations
 
@@ -43,7 +43,7 @@ library(palmerpenguins)
 
 ### Load the `penguins` data
 
-Since the dataset is included in the package itself, we don't need to read in a csv from the web or from our computer folders. Many R packages include datasets so that you can test the functions included in them. [Here](https://vincentarelbundock.github.io/Rdatasets/datasets.html) is a website with packages that include 1000s of datasets! Once you have loaded your R package that contains a dataset, you can pull that dataset into your environment by giving the dataset an object name. If you are ever wondering if a package includes a practice data set, just run this code to get a list of the datasets `data(package='palmerpenguins')`
+Since the dataset is included in the package itself, we don't need to read in a csv from the web or from our computer folders. Many R packages include datasets so that you can test the functions included in them. [Here](https://vincentarelbundock.github.io/Rdatasets/datasets.html) is a website with packages that include 1000s of datasets! Once you have loaded your R package that contains a dataset, you can pull that dataset into your environment by giving the dataset an object name. If you are ever wondering if a package includes a practice data set, just run this code to get a list of the datasets `data(package = 'palmerpenguins')`
 
 ```{r, eval=F}
 penguins <- penguins
@@ -53,7 +53,9 @@ penguins <- penguins
 
 ## Compare flipper lengths
 
-The `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name, i.e. `data_summary <-`, or you can avoid the name and have your summary information printed into the console. Now that we have our penguin data, lets create a dataset that summarizes the flipper lengths of the penguin populations by species. We gotta make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
+The `group_by` and `summarize` functions allow us to compare values by categories. Today, we are very interested in how long the flippers are for each species. Remember, you can create a new summary dataset by assigning the summarized data an object name (i.e. `data_summary <-`) or you can avoid the name and have your summary information printed into the console. 
+
+Now that we have our penguin data, lets create a dataset that summarizes the flipper lengths of the penguin populations by species. We gotta make sure the following calculations are made for each penguin species: minimum, maximum, and mean flipper lengths. 
 
 1. Which penguin species has the shortest flippers?
 1. Is there a flipper length range that includes all three penguin species?
