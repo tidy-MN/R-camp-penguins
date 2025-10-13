@@ -25,7 +25,7 @@ Jump back into the project you created for the previous sessions exercises and t
 
 So remember that big order we had? For those researchers who were doing work in Antarctica studying penguins? Well it turns out their analytics computer broke down and they might not able to complete their work! They have some data and were planning to go out again to gather more information but now they might not be able to!
 
-So we might have told them that we could...well...we said that we were a great analytic bot. They were so excited they hired us on the spot!
+So we might have told them that we could...well...we said that we were a great analytic bot. They were so excited they hired us on the spot.
 
 Time to practice using our data tools!
 
