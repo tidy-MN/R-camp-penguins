@@ -22,7 +22,8 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ```{css your_turn_callout}
 #| echo: false
-
+{
+}
 .YourTurn {
   margin:        0em;
   border:        2px solid #003865;
@@ -31,7 +32,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 }
 .YourTurn-header {
   margin-left:   0em;
-  margin-top:    1em;
+  margin-top:    0em;
   margin-bottom: 0em;
   padding-left:   10px;
   padding-top:    5px;
@@ -208,17 +209,16 @@ Section headers (or headings) range from level 1 to level 6 and are identified i
 > ###### Header 6 (Heading 6 in Word)
 > ```
 
-::::: YourTurn
+::: YourTurn
 ::: YourTurn-header
 <i class="fas fa-code" style="color: white;"></i> Your turn: Headers
 :::
-
 ::: YourTurn-container
 Add a heading (header 1) to your document. As you continue through the material, add sub-headings (header 2) above each exercise. Add any explanatory text you need to help you recall later what you are doing and why.
 
 Render your document.
 :::
-:::::
+:::
 
 # External and internal links
 
@@ -829,3 +829,13 @@ Visit the [CDC](http://cdc.gov) to learn things ...
 :::
 
 [^3]: before it's rewritten.
+
+
+# RCamp links
+
+Continue to [Markdown Crash Course Part 2](publish_data_with_quarto.html).
+
+Return to the [RCamp main page](index.html).
+
+
+

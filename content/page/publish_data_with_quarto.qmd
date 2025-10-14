@@ -22,15 +22,17 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ```{css your_turn_callout}
 #| echo: false
-
-}.YourTurn {
+{
+}
+.YourTurn {
   margin:        0em;
   border:        2px solid #003865;
   border-left:   5px solid #003865; 
   border-radius: 10px;
-}.YourTurn-header {
+}
+.YourTurn-header {
   margin-left:   0em;
-  margin-top:    1em;
+  margin-top:    0em;
   margin-bottom: 0em;
    /* align-items: center; */
    /* vertical-align: text-bottom; */
@@ -150,14 +152,6 @@ You can add many options to your code block. Here is a partial list of [executio
 # above are several common code chunk options
 ```
 
-::: {.callout-important title = "Making your report truly reproducible"}
-
-Often in my reports, the first code block of the document, above the introduction, will contain any dynamic values, such as file names, date ranges, and health outcomes of interest. That way, a month or year later, when I rerun the report, all I need to do is change values in that code block and click "Render". 
-
-When you learn more advanced R code, there are ways to name and read the latest file or derive dates of interest from the current date if you want to simply open the file and click "Render" without modifying anything.
-
-:::
-
 
 
 # Write your report
@@ -267,7 +261,7 @@ safe_school_tidy <- dplyr::mutate(safe_school_tidy, gender = gsub("_count", "", 
 
 ::: {.callout-tip title = "Code block formatting best practice" collapse = "false"}
 
-In RStudio, you will see a vertical line at character 80 in your Quarto document, unless you deliberately changed the default. This line is important if you intend to include your code in your document. Code blocks do not consistently wrap lines, so for all of your code to show up without the need for horizontal scrolling, you need to create manual line breaks like I did above. 
+In RStudio, you will see a vertical line at character 80 in your Quarto document, unless you deliberately changed the default. This line is important if you intend to include your code in your document. Rendered code blocks do not consistently wrap lines, so for all of your code to show up without the need for horizontal scrolling (or having your code abruptly cut off), you need to create manual line breaks like I did above. 
 
 If you do not intend to show your code, these line breaks don't matter as much, but it is still a good practice to develop for future projects where you will need to show your code.
 
@@ -337,14 +331,12 @@ knitr::kable(safe_school_tidy,
              caption = "Table of how safe students feel at school by gender") 
 ```
 
-To create a more customized table, you can use the package *kableExtra*, which adds customization options for the `kable` function. If you want to learn more about customizing tables with `kable` and *kableExtra*, visit the [kableExtra Cookbook](https://sharlagelfand.github.io/kableExtra-cookbook/). 
+To create a more customized table, we will use the package `kableExtra`, which adds many customization options for the `kable()` function. To learn more about `kableExtra`, visit the [kableExtra Cookbook](https://sharlagelfand.github.io/kableExtra-cookbook/). 
+
+We will also specify our column names with the `col.names =` option and column alignments with the `align =` option. The `align =` option aligns each column in order as left (l), center (c), or right (r), so "lcc" means "Left align the first column. Center-align the second and third columns."
 
 ```{r table_custom}
-# the caption option provides a title for your table 
-# - note that the caption is wrapped in single quotes to allow us to use double quotes in the caption name
-# the col.names option provides custom column names
-# the align option aligns each column in order as left (l), center (c), or right (r)
-# - "lcc" means first column left, second and third columns center
+# the caption is wrapped in single quotes so we can use double quotes inside the caption
 # the indexing after the dataset name allows us to drop the first column
 knitr::kable(safe_school_tidy[,2:4], 
              caption = 'Table of student responses to the prompt "I feel safe at school." by gender',
@@ -367,8 +359,59 @@ There are plenty of R packages to get started creating interactive charts and ta
 
 :::
 
+# Making your report reproducible
+
+Often in my reports, the first code block of the document, above the introduction, will contain any dynamic values, such as file names, date ranges, and health outcomes of interest. That way, a month or year later, when I rerun the report, all I need to do is change values in that code block and click "Render". 
+
+::: {.callout-important title = "Making your report truly reproducible"}
+When you learn more advanced R code, there are ways to name and read the latest file or derive dates of interest from the current date if you want to simply open the file and click "Render" without modifying anything.
+:::
+
+For example, I might rewrite the code above like this. Notice that the values you might want to change, such as the category, question, and demographics, are all in one place so they are easy to revise. The static portion below them will not change. It will read in the same object names with updated values.
 
 
+```{r frontload}
+#| eval: false
+
+# changeable values
+report_tag <- "Perceptions of Safety"
+question_tag <- "I feel safe at school."
+genders_set <- c("female", "male") # or , "total"
+measure_type <- "count" # or "pct"
+filter_vars <- paste(genders_set, measure_type, sep = "_")
+
+# static code
+safety_qs <- dplyr::filter(my_mss_data, Report == report_tag)
+safe_school <- dplyr::filter(safety_qs, Question == question_tag)
+safe_school_tidy <- janitor::clean_names(safe_school) |> 
+  dplyr::select(question, response, dplyr::all_of(filter_vars)) |>
+  tidyr::pivot_longer(dplyr::all_of(filter_vars),
+                      names_to = "gender", values_to = "value") |>
+  dplyr::mutate(# create factors
+                gender = gsub(paste0("_", measure_type), "", gender),
+                gender = factor(gender, levels = genders_set),
+                response = factor(response, levels = c("Strongly disagree",
+                                  "Disagree", "Agree", "Strongly agree")),
+                # modify number
+                value = as.numeric(gsub(",", "", value)))
+```
+
+Then I could rerun my chart like this. Notice how the length of the vector of colors changes depending on the number of demographics I include. This way, I can use the same code whether I want to show males and females side by side or all students combined.
+
+```{r chart_general}
+#| eval: false
+my_colors <- c("#003865", "#78BE21", "red")
+my_colors <- my_colors[1:length(genders_set)]
+
+barplot(value ~ gender + response, data = safe_school_tidy, beside = TRUE, 
+        col = my_colors, main = question_tag)
+legend("topleft", legend = genders_set, fill = my_colors)
+```
+
+
+# Practice exercise
+
+Now you can try one of the exercises below.
 
 :::{.YourTurn}
 ::::{.YourTurn-header}
@@ -377,16 +420,49 @@ Your turn: Writing a report
 ::::
 ::::{.YourTurn-container}
 
+Select one of the challenges below. Copy and revise the code in the section above in a new report. Include the following items in your new report.
 
-Select a new question and recreate the chart and table. Suggestions for an extra challenge:
+1. Headers for report parts.
+1. An introduction to your report. 
+1. A link to learn more about your data.
+1. A visible code block.
+1. At least one chart and at least one table.
+1. Captions and alt text that match your chart and table.
+1. At least one example of inline R code.
 
-* "I feel safe at home." for all students combined
-* "I feel safe in my neighborhood." for only girls
-* The same chart as in the example, showing percents instead of counts
+When you're done, render your document.
 
-Make sure your caption and alt text match your data.
 
+::: panel-tabset
+
+## Easy challenge
+
+Select a new MSS question and recreate the chart and table with the same demographics and measure as in the main example. 
+
+## Medium challenge
+
+With the MSS data, try one of the following tasks.
+
+* "I feel safe at home." for all students combined.
+* "I feel safe in my neighborhood." for only girls.
+* The same chart as in the example, showing percents instead of counts.
+
+
+## After the workshop
+
+Write a report with your own data. 
+
+We will not do this in today's session. Try it on your own time and ask in Tidy Tuesday meetings or the "Request for Assistance" channel if you need help.
+
+:::
 ::::
 :::
+
+# RCamp links
+
+Return to [Markdown Crash Course Part 1](markdown_crash_course.html).
+
+Return to the [RCamp main page](index.html).
+
 
 
