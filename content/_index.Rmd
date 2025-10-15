@@ -42,14 +42,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <br>
 
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
-<li class="nav-item active"><a class="nav-link" id="day1-tab" data-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">`Tidy data`</a></li> 
-<li class="nav-item"><a class="nav-link" id="day2-tab" data-toggle="tab" href="#day2" role="tab" aria-controls="day2" aria-selected="false">`Wrangling`</a></li>
+<li class="nav-item active"><a class="nav-link" id="day1-tab" data-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">`Tidy`</a></li> 
+<li class="nav-item"><a class="nav-link" id="day2-tab" data-toggle="tab" href="#day2" role="tab" aria-controls="day2" aria-selected="false">`Wrangle`</a></li>
 <li class="nav-item"><a class="nav-link" id="day3-tab" data-toggle="tab" href="#day3" role="tab" aria-controls="day3" aria-selected="false">`ggplot`</a></li>
 <li class="nav-item"><a class="nav-link" id="day4-tab" data-toggle="tab" href="#day4" role="tab" aria-controls="day4" aria-selected="false">`Maps`</a></li> 
-<li class="nav-item"><a class="nav-link" id="day5-tab" data-toggle="tab" href="#day5" role="tab" aria-controls="day5" aria-selected="false">`Joins+dates`</a></li> 
-<li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">`Pivoting`</a></li>
+<li class="nav-item"><a class="nav-link" id="day5-tab" data-toggle="tab" href="#day5" role="tab" aria-controls="day5" aria-selected="false">`Joins`</a></li> 
+<li class="nav-item"><a class="nav-link" id="day6-tab" data-toggle="tab" href="#day6" role="tab" aria-controls="day6" aria-selected="false">`Pivot`</a></li>
 <li class="nav-item"><a class="nav-link" id="reports-tab" data-toggle="tab" href="#reports" role="tab" aria-controls="day6" aria-selected="false">`Reports`</a></li>
-<li class="nav-item"><a class="nav-link" id="after-camp-tab" data-toggle="tab" href="#after-camp" role="tab" aria-controls="after-camp" aria-selected="false">`After camp`</a></li>
+<li class="nav-item"><a class="nav-link" id="after-camp-tab" data-toggle="tab" href="#after-camp" role="tab" aria-controls="after-camp" aria-selected="false">`+Extra`</a></li>
 </ul>
 
 <div class="well tab-content" id="myTabContent" style="background-color: white;">
@@ -219,6 +219,8 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 
 <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab"> 
 
+<h2 style="margin-top: 14px;">Reports </h2>
+
 ### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">1 - </span> [Markdown crash course](page/markdown_crash_course.html)
 
 ### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">2 - </span> [Quarto documents](page/publish_data_with_quarto.html)
@@ -228,14 +230,14 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 
 <div class="tab-pane fade" id="after-camp" role="tabpanel" aria-labelledby="after-camp-tab"> 
 
-<h2 style="margin-top: 14px;">After camp </h2>
+### Join the community
 
-> Join us in the Team's [MN R users group](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
+> Join us at our weekly Tidy Tuesday meeting on Teams: [MN R users](https://teams.microsoft.com/l/team/19%3a92cfbaafbda9430aa1a480d7994829cd%40thread.skype/conversations?groupId=44cb2676-6137-4f1c-b7d0-9fbd672f9c65&tenantId=eb14b046-24c4-4519-8f26-b89c2159828c)
 
 
 ### Continue learning
 
-Here's a collection of some of our <span class="teal">**favorite**</span> resources created by the wider R community.
+Here's a collection of our <span class="teal">**favorite**</span> resources created by the global R community.
 
 **Stats**
 
