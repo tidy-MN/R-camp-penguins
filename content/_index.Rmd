@@ -40,10 +40,10 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 </div>
 
-<h2> Live courses
-  <span style="background: linear-gradient(90deg, #e63946, #ff9f43); color: #fff; font-size: 0.7em; font-weight: 700; padding: 0.2em 0.6em; border-radius: 1em; margin-left: 0.5em; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); text-transform: uppercase; letter-spacing: 0.5px;">
+<h2 style=" display: inline-flex; align-items: center; line-height: 1.2;">
+<span style="padding: 0 0 0.2em 0;"> Live courses </span><span style="background: linear-gradient(90deg, #e63946, #ff9f43); color: #fff; font-size: 0.5em; font-weight: 700; padding: 0.4em 0.6em; border-radius: 1em; margin-left: 0.4em; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); text-transform: uppercase; letter-spacing: 0.5px;">
     NEW! 
-  </span> 
+</span> 
 </h2>
 
 <ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
