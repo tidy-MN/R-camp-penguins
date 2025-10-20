@@ -41,18 +41,20 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 </div>
 
 <h2 style=" display: inline-flex; align-items: center; line-height: 1.2;">
-<span style="padding: 0 0 0.2em 0;"> Live courses </span><span style="background: linear-gradient(90deg, #e63946, #ff9f43); color: #fff; font-size: 0.5em; font-weight: 700; padding: 0.4em 0.6em; border-radius: 1em; margin-left: 0.4em; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); text-transform: uppercase; letter-spacing: 0.5px;">
+<span style="padding: 0 0 0.2em 0;"> Live courses </span>
+<span style="background: linear-gradient(90deg, #e63946, #ff9f43); color: #fff; font-size: 0.5em; font-weight: 700; padding: 0.4em 0.6em; border-radius: 1em; margin-left: 0.4em; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); text-transform: uppercase; letter-spacing: 0.5px;">
     NEW! 
 </span> 
 </h2>
 
-<ul class="nav nav-pills" id="myTab" role="tablist" style="margin-top: 18px;">
+<ul class="nav nav-pills" id="liveTab" role="tablist" style="margin-top: 18px;">
 <li class="nav-item"><a class="nav-link" id="reports-tab" data-toggle="tab" href="#reports" role="tab" aria-controls="reports" aria-selected="false">`Reports`</a></li>
 <li class="nav-item"><a class="nav-link" id="reports-tab" data-toggle="tab" href="#text" role="tab" aria-controls="text" aria-selected="false">`Text analysis`</a></li>
 <li class="nav-item"><a class="nav-link" id="reports-tab" data-toggle="tab" href="#stats" role="tab" aria-controls="stats" aria-selected="false">`Stats`</a></li>
 <li class="nav-item"><a class="nav-link" id="after-camp-tab" data-toggle="tab" href="#after-camp" role="tab" aria-controls="after-camp" aria-selected="false">`+After camp`</a></li>
 </ul>
 
+<div class="well tab-content" id="liveTabContent" style="background-color: white;">
 <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab"> 
 
 <h2 style="margin-top: 14px;">Reports </h2>
@@ -133,6 +135,8 @@ These Coursera courses are <span class="teal">**FREE**</span> to `audit`, you do
 
 
 </div>
+</div>
+
 
 <h2> Video courses </h2>
 
@@ -309,7 +313,5 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 
 </div>
 
-
-
-
 </div>
+
