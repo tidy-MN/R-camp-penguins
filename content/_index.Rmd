@@ -54,7 +54,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 </ul>
 
 <div class="well tab-content" id="liveTabContent" style="background-color: white;">
-<div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab"> 
+<div class="tab-pane fade active in" id="reports" role="tabpanel" aria-labelledby="reports-tab"> 
 
 <h2 style="margin-top: 14px;">Reports </h2>
 
