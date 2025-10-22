@@ -2,13 +2,12 @@
 
 # load the required packages. Use install.packages() function if they have not been installed yet
 library(tidyverse)
-library(ggplot2)
 
 # set your working directory
-setwd("C:/Work/MDH_R_Course")
+#setwd("C:/Work/MDH_R_Course")
 
 # read in the cancer incidence data
-data <- read.csv("cancer_incidence_data.csv")
+data <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/cancer_incidence_data.csv")
 
 # Breakout Session 1: 
 

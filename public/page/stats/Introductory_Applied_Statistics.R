@@ -2,13 +2,14 @@
 
 # load the required packages. Use install.packages() function if they have not been installed yet
 library(tidyverse)
-library(ggplot2)
 
 # set your working directory
-setwd("C:/Work/MDH_R_Course")
+#setwd("C:/Work/MDH_R_Course")
 
 # read in data on penguins from the Palmer Archipelago
-peng <- read.csv('penguins.csv')
+#peng <- read.csv('penguins.csv')
+
+peng <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/palmerpenguins.csv")
 
 # let's explore the data a bit
 View(peng)
