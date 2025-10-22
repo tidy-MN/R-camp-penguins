@@ -71,7 +71,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">1 - </span> [Text Analysis in R: From Raw to Ready](page/raw_to_ready.html)
 
-
 </div>
 
 
@@ -79,8 +78,15 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <h2 style="margin-top: 14px;">Statistics in R  </h2>
 
-### <i class="fas fa-clipboard"></i> <span style="font-size: 90%">1 - </span> Coming soon...
+### <i class="fas fa-presentation"></i> <span style="font-size: 90%">1 - </span> [Introductory statistics](page/stats/RCamp_Introductory_Applied_Statistics.pdf)
 
+- [Code examples in slides](page/day1.html#welcome) 
+- [Slides with notes](page/stats/RCamp_Introductory_Applied_Statistics_Notes.pdf)
+
+
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise
+
+- [**Cancer incidence**](page/stats/Introductory_Applied_Statistics_Practice.html)
 
 </div>
 
