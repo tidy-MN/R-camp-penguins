@@ -1,0 +1,306 @@
+# Introductory Applied Statistics Session R script
+
+# load the required packages. Use install.packages() function if they have not been installed yet
+library(tidyverse)
+
+# set your working directory
+#setwd("C:/Work/MDH_R_Course")
+
+# read in data on penguins from the Palmer Archipelago
+#peng <- read.csv('penguins.csv')
+
+peng <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/palmerpenguins.csv")
+
+# let's explore the data a bit
+View(peng)
+dim(peng)
+glimpse(peng)
+
+# It is good practice to check for missing values too
+colSums(is.na(peng))
+
+# What species of penguins are we working with?
+table(peng$species)
+
+# Let's compare the difference between Adelie and Gentoo bill lengths. 
+# First, let's look at the mean bill length by species
+peng %>%
+  group_by(species)%>%
+  summarise(mean_bill_length_mm=mean(bill_length_mm))
+
+# let's look at the distribution of Adelie bill lengths. What do you see?
+hist(peng$bill_length_mm[peng$species == 'Adelie']) 
+
+# let's look at the distribution of Gentoo bill lengths. What do you see?
+hist(peng$bill_length_mm[peng$species == 'Gentoo'])
+
+# let's test for normality more formally using the Shapiro-Wilks test. 
+# What are your interpretations? Any thoughts on what could be done with this data?
+shapiro.test(peng$bill_length_mm[peng$species == 'Adelie'])
+shapiro.test(peng$bill_length_mm[peng$species == 'Gentoo'])
+
+# let's run an independent samples 2-tailed t-Test. What is your interpretation?
+t.test(peng$bill_length_mm[peng$species == 'Adelie'],
+       peng$bill_length_mm[peng$species == 'Gentoo'])
+
+# let's run a 1-tailed test specifically whether Adelie bills are longer than Gentoo
+# What is your interpretation?
+t.test(peng$bill_length_mm[peng$species == 'Adelie'],
+       peng$bill_length_mm[peng$species == 'Gentoo'], alternative = "greater")
+
+# Now let's run a one sample t-Test comparing the Adelie bill length distribution
+# to an average of 35.9 from penguins from another island. What is your interpreation?
+t.test(peng$bill_length_mm[peng$species == 'Adelie'], mu = 35.9)
+
+# Let's compare Gentoo penguins in 2021 to the same penguins in 2022.
+# what kind of test might be the most appropriate?
+# *note that we need to have the same number of values in both groups for paired t-tests
+t.test(peng$bill_length_mm[peng$species == 'Gentoo' & peng$year == 2021],
+       peng$bill_length_mm[peng$species == 'Gentoo' & peng$year == 2022][1:129],
+       paired = TRUE)
+
+# let's run an unpaired test as well for the sake of comparison
+t.test(peng$bill_length_mm[peng$species == 'Gentoo' & peng$year == 2021],
+       peng$bill_length_mm[peng$species == 'Gentoo' & peng$year == 2022][1:129],
+       paired = FALSE)
+
+# What kind of difference do you see between the two results? Why do you think it is so?
+
+# If we look back at the histograms and the Shapiro-Wilks test we ran for Adelie and Gentoo
+# bill lengths, we can see that they aren't particularly normally distributed. 
+# Let's try running a Mann-Whitney U-Test instead of the ordinary t-test
+
+# how do these results compare to the independent two tailed t-test?
+wilcox.test(peng$bill_length_mm[peng$species == 'Adelie'],
+            peng$bill_length_mm[peng$species == 'Gentoo'])
+
+# Now let's run the nonparamaetric version of the paired t-test, the
+# Wilcoxon Signed Rank Test. Note that we are using the same function 
+# for the Mann-Whitney U-Test and the Wilcoxon Signed Rank Test, the only difference
+# is including "paired = TRUE" for the Wilcoxon one
+
+# how do these results compare to the paired t-test?
+wilcox.test(peng$bill_length_mm[peng$species == 'Gentoo' & peng$year == 2021],
+       peng$bill_length_mm[peng$species == 'Gentoo' & peng$year == 2022][1:129],
+       paired = TRUE)
+
+# We completely left out the Chinstrap penguins from our analysis! Let's fix
+# that by comparing bill lengths of all three species. In order to compare
+# more than two groups, we can perform ANOVA
+
+# What is your interpretation? What is missing?
+aov(bill_length_mm ~ species, data = peng)
+
+# What if we get a summary of the ANOVA output? What is your interpretation now?
+summary(aov(bill_length_mm ~ species, data = peng))
+
+# What if we want to compare bill lengths by species as well as diet? We can
+# run a two way ANOVA!
+summary(aov(bill_length_mm ~ species*diet, data = peng))
+
+# Building a table of our data might help with interpretation
+peng %>% group_by(species, diet) %>% summarise(
+  bill_length = mean(bill_length_mm)) %>% 
+  pivot_wider(names_from = species, values_from = bill_length)
+
+# The effect of diet on bill length seems to significantly depend on the species. 
+# What do you think are some strengths and limitations of ANOVA?
+
+
+# Now we want to see how the penguin diet might affect their health metrics. First
+# let's make a table and analyze it visually. What are some patterns you see?
+peng_table <- table(peng$diet, peng$health_metrics)
+peng_table
+
+# Run the Chi-Squared test. How do you interpret the results?
+chisq.test(peng_table)
+
+# Now let's see if penguin flipper length relates to their body weight. 
+# First, let's check if the data is normally distributed. What do you think?
+hist(peng$flipper_length_mm)
+hist(peng$body_mass_g)
+
+# It's a good idea to visualize the data first when you can. What do you think?
+plot(peng$flipper_length_mm, peng$body_mass_g)
+
+# Let's run a Pearson correlation first
+cor(peng$flipper_length_mm, peng$body_mass_g, method = "pearson")
+
+# Now let's try the Spearman correlation
+cor(peng$flipper_length_mm, peng$body_mass_g, method = "spearman")
+
+# What is your interpretation?
+
+##################################################################
+
+# We will now move on to Linear Regression. But first, we should explore
+# and visualize the data some more. Statistics should largely be considered
+# only after you have explored and thoroughly understood the data and identified
+# potential trends, outliers, and confounders
+
+
+# Number of penguins by species and sex
+ggplot(data = peng)+
+  geom_bar(mapping = aes(x=sex))+
+  facet_wrap(~species)
+
+# Let's build a table to see what variables might affect bill length
+tab <- peng %>% group_by(species, sex) %>% summarise(
+  mean_bill_length = round(mean(bill_length_mm, na.rm = T),1),
+  mean_mass = round(mean(body_mass_g, na.rm = T),1),
+)
+
+tab2 <- as.data.frame(t(tab))
+tab2
+
+# We can visualize these trends with a bar graph as well
+ggplot(data=tab, aes(x=species, y=mean_bill_length, fill = sex)) +
+  geom_bar(stat="identity", position=position_dodge())
+
+
+# To explore more complex relationships, graphs like these, among many others,
+# can be used. What kinds of trends can you identify here?
+ggplot(data = peng, aes(x=body_mass_g,y=bill_length_mm,color=sex))+
+  geom_point(pch = 1) +
+  geom_smooth(method=lm, se=FALSE) +
+    facet_wrap(~sex)+
+    facet_wrap(~species) 
+
+
+# We are finally ready to run our first linear regression!
+m1 <- lm(bill_length_mm ~ species, data = peng)
+summary(m1)
+
+# histogram of all the residuals
+hist(resid(m1))
+
+# a qqplot can also help to visually assess the normality of the residuals
+qqnorm(resid(m1))
+qqline(resid(m1))
+
+# residuals plotted vs predicted values
+plot(fitted(m1), resid(m1), main = 'Residuals vs. Bill Length', xlab = 'Bill Length')
+abline(0, 0)  
+
+# How do you interpret these results?
+
+
+# Which penguin species would be best to serve as the reference category? Why?
+peng %>% group_by(species) %>%
+  summarise(
+    mean_bill_length = mean(bill_length_mm))
+
+# Let's make Chinstrap the reference category
+peng$species <- relevel(as.factor(peng$species), ref = 'Chinstrap')
+
+
+# Let's run the same linear regression with a different species reference category.
+# How do you interpret the results?
+m2 <- lm(bill_length_mm ~ species, data = peng)
+summary(m2)
+
+
+# 3rd Linear Regression: how does the body mass influence bill length
+m3 <- lm(bill_length_mm ~ body_mass_g, data = peng)
+summary(m3)
+
+# Visualizing the residulas
+hist(resid(m3))
+qqnorm(resid(m3))
+qqline(resid(m3))
+
+# residuals plotted vs predicted values. How do you interpret the results?
+plot(fitted(m3), resid(m3), main = 'Residuals vs. Bill Length', xlab = 'Bill Length')
+abline(0, 0)  
+
+
+# 4 Let's look at bill length, sex, and species
+ggplot(data = peng, aes(x=sex,y=bill_length_mm))+
+  geom_point() +
+  geom_smooth(method=lm, se=FALSE) +
+  facet_wrap(~sex)+
+  facet_wrap(~species) 
+
+# 4th Linear Regression: how does sex and species affect the bill length together?
+m4 <- lm(bill_length_mm ~ sex + species, data = peng)
+summary(m4)
+
+# Visualizing the residuals
+hist(resid(m4))
+qqnorm(resid(m4))
+qqline(resid(m4))
+
+# Residuals plotted vs predicted values. Interpretation?
+plot(fitted(m4), resid(m4), main = 'Residuals vs. Bill Length', xlab = 'Bill Length')
+abline(0, 0) 
+
+
+
+
+# 5th Linear Regression: How does the interaction of sex and species relate to bill length?
+m5 <- lm(bill_length_mm ~ sex*species, data = peng)
+summary(m5)
+
+# Visualize the residuals
+hist(resid(m5))
+qqnorm(resid(m5))
+qqline(resid(m5))
+
+# residuals plotted vs predicted values. Interpretation?
+plot(fitted(m5), resid(m6), main = 'Residuals vs. Bill Length', col = peng$species )
+abline(0, 0) 
+
+
+
+
+
+# 6 Let's look at how body mass and species affect bill length
+ggplot(data = peng, aes(x=body_mass_g,y=bill_length_mm))+
+  geom_point() +
+  geom_smooth(method=lm, se=FALSE) +
+  facet_wrap(~sex)+
+  facet_wrap(~species) 
+
+# 6th Linear Regression: how does body mass and species together affect bill length?
+m6 <- lm(bill_length_mm ~ body_mass_g + species, data = peng)
+summary(m6)
+
+# Visualize the residuals
+hist(resid(m6))
+qqnorm(resid(m6))
+qqline(resid(m6))
+
+# residuals plotted vs predicted values. Interpretation?
+plot(fitted(m6), resid(m6), main = 'Residuals vs. Bill Length', col = peng$species )
+abline(0, 0) 
+
+
+
+# 7 Let's look at beak length, body mass, and species all plotted on the same graph
+ggplot(data = peng, aes(x=body_mass_g,y=bill_length_mm, col = species))+
+  geom_point(pch = 1) +
+  geom_smooth(method=lm, se=T)
+
+
+# 7th Linear Regression: how does the intraction of body mass and species affect bill length?
+m7 <- lm(bill_length_mm ~ body_mass_g*species, data = peng)
+summary(m7)
+
+# Visualize the residulas
+hist(resid(m7))
+qqnorm(resid(m7))
+qqline(resid(m7))
+
+# residuals plotted vs predicted values. Interpretation?
+plot(fitted(m7), resid(m7), main = 'Residuals vs. Bill Length', col = peng$species )
+abline(0, 0) 
+
+
+# Finally, let's look at beak length, body mass, and species all plotted on the same graph
+# separated by sex
+ggplot(data = peng, aes(x=body_mass_g,y=bill_length_mm, col = species))+
+  geom_point(pch = 1) +
+  geom_smooth(method=lm, se=T) +
+  facet_wrap(~sex)
+
+
