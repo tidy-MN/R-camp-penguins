@@ -80,13 +80,13 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ### <i class="fas fa-file-powerpoint"></i> <span style="font-size: 90%">1 - </span> [Introductory statistics](page/stats/RCamp_Introductory_Applied_Statistics.pdf)
 
-- [Code from slides](page/stats/Introductory_Applied_Statistics.html) 
+- [Code from slides](page/stats/introductory_applied_statistics.html) 
 - [Slides with notes](page/stats/RCamp_Introductory_Applied_Statistics_Notes.pdf)
 
 
 ### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
-- [**Cancer incidence**](page/stats/Introductory_Applied_Statistics_Practice.html)
+- [**Cancer incidence**](page/stats/introductory_applied_statistics_practice.html)
 
 </div>
 

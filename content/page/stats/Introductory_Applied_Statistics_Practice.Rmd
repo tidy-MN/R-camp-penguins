@@ -8,7 +8,7 @@ output:
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: true
+    toc: false
     toc_depth: 1
 ---
 
@@ -17,7 +17,7 @@ h1 .header-section-number {background: cornflowerblue;}
 hr {background: cornflowerblue;}
 </style>
 
-# Load required packages 
+## Load required packages {-}
 
 ```{r, eval=F}
 # Use install.packages() if they have not been installed yet

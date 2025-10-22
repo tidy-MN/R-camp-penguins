@@ -10,9 +10,9 @@
   <title>Intro to applied statistics: Practice - Learn R</title>
   <meta property="og:title" content="Intro to applied statistics: Practice" />
   <meta name="twitter:title" content="Intro to applied statistics: Practice" />
-  <meta name="description" content="1 Load required packages 2 Breakout Session 1 3 Breakout Session 2 1 Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
-  <meta property="og:description" content="1 Load required packages 2 Breakout Session 1 3 Breakout Session 2 1 Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
-  <meta name="twitter:description" content="1 Load required packages 2 Breakout Session 1 3 Breakout Session 2 1 Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer …">
+  <meta name="description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
+  <meta property="og:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
+  <meta name="twitter:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Intro to applied statistics: Practice",
-  "description" : "1 Load required packages 2 Breakout Session 1 3 Breakout Session 2 1 Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data \u0026lt;- read_csv(\u0026quot;https:\/\/tidy-mn.",
+  "description" : "Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data \u0026lt;- read_csv(\u0026quot;https:\/\/tidy-mn.",
   "inLanguage" : "en",
-  "wordCount":  178 ,
+  "wordCount":  165 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Intro to applied statistics: Practice" />
-<meta property="og:description" content="1 Load required packages 2 Breakout Session 1 3 Breakout Session 2 1 Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
+<meta property="og:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/stats/introductory_applied_statistics_practice.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Intro to applied statistics: Practice" />
-  <meta name="twitter:description" content="1 Load required packages 2 Breakout Session 1 3 Breakout Session 2 1 Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer …">
+  <meta name="twitter:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online cancer incidence data data &lt;- read_csv(&quot;https://tidy-mn.">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -350,28 +350,21 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </style>
   <link rel="stylesheet" href="../css/camp_style.css" type="text/css" />
 
-<div id="TOC">
-<ul>
-<li><a href="#load-required-packages" id="toc-load-required-packages"><span class="toc-section-number">1</span> Load required packages</a></li>
-<li><a href="#breakout-session-1" id="toc-breakout-session-1"><span class="toc-section-number">2</span> Breakout Session 1</a></li>
-<li><a href="#breakout-session-2" id="toc-breakout-session-2"><span class="toc-section-number">3</span> Breakout Session 2</a></li>
-</ul>
-</div>
 
 <style>
 h1 .header-section-number {background: cornflowerblue;}
 hr {background: cornflowerblue;}
 </style>
-<div id="load-required-packages" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Load required packages</h1>
+<div id="load-required-packages" class="section level2 unnumbered">
+<h2>Load required packages</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Use install.packages() if they have not been installed yet</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># Read online cancer incidence data</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/cancer_incidence_data.csv&quot;</span>)</span></code></pre></div>
 </div>
-<div id="breakout-session-1" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Breakout Session 1</h1>
+<div id="breakout-session-1" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Breakout Session 1</h1>
 <blockquote>
 <p>Explore the cancer incidence dataset and identify some questions you
 could try to answer with the available data. Use some of the statistical tests
@@ -382,8 +375,8 @@ and your findings within the breakout session group. Be ready to share
 some of your findings once we reconvene from the breakout sessions.</p>
 </blockquote>
 </div>
-<div id="breakout-session-2" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Breakout Session 2</h1>
+<div id="breakout-session-2" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Breakout Session 2</h1>
 <blockquote>
 <p>Continue exploring the dataset, this time focusing on linear regression.
 Try building several models with various parameters, and make sure to

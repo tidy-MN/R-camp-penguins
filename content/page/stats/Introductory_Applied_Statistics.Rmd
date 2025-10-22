@@ -4,11 +4,11 @@ output:
   blogdown::html_page: 
     highlight: tango
     css: ../css/camp_style.css
-    number_sections: true
+    number_sections: false
     self_contained: false
     fontsize: 18pt
     monofont: Source Code Pro
-    toc: true
+    toc: false
     toc_depth: 1
 ---
 
@@ -24,7 +24,7 @@ library(tidyverse)
 
 
 # Read online data on penguins from the Palmer Archipelago
-peng <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/palmerpenguins.csv")
+peng <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/stats_penguins.csv")
 
 # let's explore the data a bit
 View(peng)
