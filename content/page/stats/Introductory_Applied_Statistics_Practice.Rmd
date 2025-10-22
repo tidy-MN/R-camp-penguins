@@ -1,0 +1,51 @@
+---
+title: "Intro to applied statistics: Practice"
+output: 
+  blogdown::html_page: 
+    highlight: tango
+    css: ../css/camp_style.css
+    number_sections: true
+    self_contained: false
+    fontsize: 18pt
+    monofont: Source Code Pro
+    toc: true
+    toc_depth: 1
+---
+
+<style>
+h1 .header-section-number {background: cornflowerblue;}
+hr {background: cornflowerblue;}
+</style>
+
+# Load required packages 
+
+```{r, eval=F}
+# Use install.packages() if they have not been installed yet
+library(tidyverse)
+
+# Read online cancer incidence data
+data <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/cancer_incidence_data.csv")
+
+```
+
+
+# Breakout Session 1
+
+> Explore the cancer incidence dataset and identify some questions you
+could try to answer with the available data. Use some of the statistical tests 
+we covered (T-tests, Mann-Whitney U Test, Wilcoxon Signed Rank Test,
+ANOVA, Chi-Squared Test, Correlation) along with any relevant visualizations
+to answer the questions you identified. Discuss the tests you conducted
+and your findings within the breakout session group. Be ready to share
+some of your findings once we reconvene from the breakout sessions.  
+
+
+
+# Breakout Session 2
+
+> Continue exploring the dataset, this time focusing on linear regression.
+Try building several models with various parameters, and make sure to
+interpert the results and coefficients. Discuss the models you selected and
+your findings with the rest of the breakout session group. Be ready to share
+some of your findings once we reconvene from the breakout sessions.
+
