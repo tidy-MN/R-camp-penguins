@@ -78,13 +78,13 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 <h2 style="margin-top: 14px;">Statistics in R  </h2>
 
-### <i class="fas fa-presentation"></i> <span style="font-size: 90%">1 - </span> [Introductory statistics](page/stats/RCamp_Introductory_Applied_Statistics.pdf)
+### <i class="fas fa-file-powerpoint"></i> <span style="font-size: 90%">1 - </span> [Introductory statistics](page/stats/RCamp_Introductory_Applied_Statistics.pdf)
 
 - [Code from slides](page/stats/Introductory_Applied_Statistics.html) 
 - [Slides with notes](page/stats/RCamp_Introductory_Applied_Statistics_Notes.pdf)
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - [**Cancer incidence**](page/stats/Introductory_Applied_Statistics_Practice.html)
 
@@ -186,7 +186,7 @@ These Coursera courses are <span class="teal">**FREE**</span> to `audit`, you do
 - [Notes and code examples](page/day1.html#sizing-up-the-data) 
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day1/01-4-Tables-and-dataframes#1)
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - [AGENDA](page/exercise/day1/agenda.html)
 - [Exercise 1 - Taking inventory](page/exercise/day1/inventory_duty.html)
@@ -216,7 +216,7 @@ These Coursera courses are <span class="teal">**FREE**</span> to `audit`, you do
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day2/02-3-Boil-it-down.html#1)
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - [AGENDA](page/exercise/agenda.html)
 - [Exercise 1 - Describe penguin populations](page/exercise/describe_penguin_populations.html)
@@ -239,7 +239,7 @@ These Coursera courses are <span class="teal">**FREE**</span> to `audit`, you do
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day3/03-2-Facets-labels-colors.html#1)
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - [Exercise 1 - ggplot](page/exercise/day3/3-1-ggplot_exercises.html)
 - [Exercise 2 - ggplot: The remix](page/exercise/day3/3-2-ggplot_exercises.html)
@@ -267,7 +267,7 @@ These Coursera courses are <span class="teal">**FREE**</span> to `audit`, you do
 
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - [Exercise 1 - Homeward bound](page/exercise/day4/01-homeward-bound.html)
 - [Exercise 2 - Healthy forests](page/exercise/day4/02-forest-health-map.html)
@@ -288,7 +288,7 @@ These Coursera courses are <span class="teal">**FREE**</span> to `audit`, you do
 - [Slides](https://tidy-mn.github.io/R-camp-slides/day5/05-2-date-and-time-travel#1)
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - Exercise 1 - [**Joins: A fishy dinner**](page/exercise/day5/05-1-left-and-anti-joins.html)
 - Exercise 2 - [**Date mischief with heat**](page/exercise/day5/05-2-date-mischief-and-data-joins.html)
@@ -312,7 +312,7 @@ Download the [Quarto file](https://tidy-mn.github.io/R-camp-penguins/data/index.
 - [Tutorial: Hello, Quarto!](https://quarto.org/docs/get-started/hello/rstudio.html)
 
 
-### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercise Day
+### <i class="fa fa-birthday-cake" aria-hidden="true"></i> Exercises
 
 - Download: [my_report.qmd](https://tidy-mn.github.io/R-camp-penguins/data/my_report.qmd)
 
