@@ -10,9 +10,9 @@
   <title>Intro to applied statistics: R script - Learn R</title>
   <meta property="og:title" content="Intro to applied statistics: R script" />
   <meta name="twitter:title" content="Intro to applied statistics: R script" />
-  <meta name="description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online data on penguins from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
-  <meta property="og:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online data on penguins from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
-  <meta name="twitter:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online data on penguins from the Palmer Archipelago peng &lt;- …">
+  <meta name="description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online penguin data from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
+  <meta property="og:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online penguin data from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
+  <meta name="twitter:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online penguin data from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
   <meta name="author" content="Pengu"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Pengu"
   },
   "headline": "Intro to applied statistics: R script",
-  "description" : "Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online data on penguins from the Palmer Archipelago peng \u0026lt;- read_csv(\u0026quot;https:\/\/tidy-mn.",
+  "description" : "Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online penguin data from the Palmer Archipelago peng \u0026lt;- read_csv(\u0026quot;https:\/\/tidy-mn.",
   "inLanguage" : "en",
-  "wordCount":  1408 ,
+  "wordCount":  1455 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "https:\/\/tidy-mn.github.io\/R-camp-penguins\/images\/penguins_circle1.png",
@@ -83,13 +83,13 @@
 </script>
 
 <meta property="og:title" content="Intro to applied statistics: R script" />
-<meta property="og:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online data on penguins from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
+<meta property="og:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online penguin data from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
 <meta property="og:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
 <meta property="og:url" content="https://tidy-mn.github.io/R-camp-penguins/page/stats/introductory_applied_statistics.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Learn R" />
   <meta name="twitter:title" content="Intro to applied statistics: R script" />
-  <meta name="twitter:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online data on penguins from the Palmer Archipelago peng &lt;- …">
+  <meta name="twitter:description" content="Load required packages # Use install.packages() if they have not been installed yet library(tidyverse) # Read online penguin data from the Palmer Archipelago peng &lt;- read_csv(&quot;https://tidy-mn.">
   <meta name="twitter:image" content="https://tidy-mn.github.io/R-camp-penguins/images/penguins_circle1.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ui-avatars.com/api/?background=2E2E2E&amp;color=fff&amp;font-size=.7&amp;name=R&amp;size=128&amp;rounded=true' rel='icon' type='image/x-icon'/>
@@ -360,20 +360,19 @@ hr {background: cornflowerblue;}
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Use install.packages() if they have not been installed yet</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co"># Read online data on penguins from the Palmer Archipelago</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>peng <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/stats_penguins.csv&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co"># let&#39;s explore the data a bit</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">View</span>(peng)</span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">dim</span>(peng)</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">glimpse</span>(peng)</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co"># It is good practice to check for missing values too</span></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(peng))</span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="co"># What species of penguins are we working with?</span></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="fu">table</span>(peng<span class="sc">$</span>species)</span></code></pre></div>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="co"># Read online penguin data from the Palmer Archipelago</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>peng <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://tidy-mn.github.io/R-camp-penguins/data/stats_penguins.csv&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># let&#39;s explore the data a bit</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">View</span>(peng)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">dim</span>(peng)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">glimpse</span>(peng)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># It is good practice to check for missing values too</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(peng))</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co"># What species of penguins are we working with?</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="fu">table</span>(peng<span class="sc">$</span>species)</span></code></pre></div>
 <p><br></p>
 <p>Let’s compare the difference between Adelie and Gentoo bill lengths.</p>
 <p>First, let’s look at the mean bill length by species</p>
@@ -385,270 +384,272 @@ hr {background: cornflowerblue;}
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="fu">hist</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>]) </span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co"># let&#39;s look at the distribution of Gentoo bill lengths. What do you see?</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">hist</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co"># let&#39;s test for normality more formally using the Shapiro-Wilks test. </span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co"># What are your interpretations? Any thoughts on what could be done with this data?</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="fu">shapiro.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>])</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">shapiro.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co"># let&#39;s run an independent samples 2-tailed t-Test. What is your interpretation?</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>],</span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co"># let&#39;s run a 1-tailed test specifically whether Adelie bills are longer than Gentoo</span></span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co"># What is your interpretation?</span></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>],</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>], <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="co"># Now let&#39;s run a one sample t-Test comparing the Adelie bill length distribution</span></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="co"># to an average of 35.9 from penguins from another island. What is your interpreation?</span></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>], <span class="at">mu =</span> <span class="fl">35.9</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co"># Let&#39;s compare Gentoo penguins in 2021 to the same penguins in 2022.</span></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co"># what kind of test might be the most appropriate?</span></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co"># *note that we need to have the same number of values in both groups for paired t-tests</span></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2021</span>],</span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2022</span>][<span class="dv">1</span><span class="sc">:</span><span class="dv">129</span>],</span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co"># let&#39;s run an unpaired test as well for the sake of comparison</span></span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2021</span>],</span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2022</span>][<span class="dv">1</span><span class="sc">:</span><span class="dv">129</span>],</span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co"># What kind of difference do you see between the two results? Why do you think it is so?</span></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="co"># If we look back at the histograms and the Shapiro-Wilks test we ran for Adelie and Gentoo</span></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="co"># bill lengths, we can see that they aren&#39;t particularly normally distributed. </span></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co"># Let&#39;s try running a Mann-Whitney U-Test instead of the ordinary t-test</span></span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co"># how do these results compare to the independent two tailed t-test?</span></span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="fu">wilcox.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>],</span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>            peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span></code></pre></div>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">hist</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span></code></pre></div>
 <p><br></p>
-<p>Now let’s run the nonparamaetric version of the paired t-test, the
+<p>Let’s test for normality more formally using the Shapiro-Wilks test.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># What are your interpretations? Any thoughts on what could be done with this data?</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">shapiro.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">shapiro.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># let&#39;s run an independent samples 2-tailed t-Test. What is your interpretation?</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>],</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co"># let&#39;s run a 1-tailed test specifically whether Adelie bills are longer than Gentoo</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co"># What is your interpretation?</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>],</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>], <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co"># Now let&#39;s run a one sample t-Test comparing the Adelie bill length distribution</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co"># to an average of 35.9 from penguins from another island. What is your interpreation?</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>], <span class="at">mu =</span> <span class="fl">35.9</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co"># Let&#39;s compare Gentoo penguins in 2021 to the same penguins in 2022.</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co"># what kind of test might be the most appropriate?</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co"># *note that we need to have the same number of values in both groups for paired t-tests</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2021</span>],</span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2022</span>][<span class="dv">1</span><span class="sc">:</span><span class="dv">129</span>],</span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co"># let&#39;s run an unpaired test as well for the sake of comparison</span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="fu">t.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2021</span>],</span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a>       peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2022</span>][<span class="dv">1</span><span class="sc">:</span><span class="dv">129</span>],</span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co"># What kind of difference do you see between the two results? Why do you think it is so?</span></span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co"># If we look back at the histograms and the Shapiro-Wilks test we ran for Adelie and Gentoo</span></span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co"># bill lengths, we can see that they aren&#39;t particularly normally distributed. </span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co"># Let&#39;s try running a Mann-Whitney U-Test instead of the ordinary t-test</span></span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co"># how do these results compare to the independent two tailed t-test?</span></span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="fu">wilcox.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Adelie&#39;</span>],</span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a>            peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span>])</span></code></pre></div>
+<p><br></p>
+<p>Now let’s run the non-paramaetric version of the paired t-test, the
 Wilcoxon Signed Rank Test. Note that we are using the same function
 for the Mann-Whitney U-Test and the Wilcoxon Signed Rank Test, the only difference
-is including “paired = TRUE” for the Wilcoxon one</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># how do these results compare to the paired t-test?</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">wilcox.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2021</span>],</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>            peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2022</span>][<span class="dv">1</span><span class="sc">:</span><span class="dv">129</span>],</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+is including “paired = TRUE” for the Wilcoxon one.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># how do these results compare to the paired t-test?</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">wilcox.test</span>(peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2021</span>],</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>            peng<span class="sc">$</span>bill_length_mm[peng<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;Gentoo&#39;</span> <span class="sc">&amp;</span> peng<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">2022</span>][<span class="dv">1</span><span class="sc">:</span><span class="dv">129</span>],</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><br></p>
 <p>We completely left out the Chinstrap penguins from our analysis! Let’s fix
 that by comparing bill lengths of all three species. In order to compare
 more than two groups, we can perform ANOVA.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># What is your interpretation? What is missing?</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng)</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># What if we get a summary of the ANOVA output? What is your interpretation now?</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng))</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co"># What if we want to compare bill lengths by species as well as diet? We can</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co"># run a two way ANOVA!</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species<span class="sc">*</span>diet, <span class="at">data =</span> peng))</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co"># Building a table of our data might help with interpretation</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>peng <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species, diet) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>  <span class="at">bill_length =</span> <span class="fu">mean</span>(bill_length_mm)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> species, <span class="at">values_from =</span> bill_length)</span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co"># The effect of diet on bill length seems to significantly depend on the species. </span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co"># What do you think are some strengths and limitations of ANOVA?</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co"># Now we want to see how the penguin diet might affect their health metrics. First</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co"># let&#39;s make a table and analyze it visually. What are some patterns you see?</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>peng_table <span class="ot">&lt;-</span> <span class="fu">table</span>(peng<span class="sc">$</span>diet, peng<span class="sc">$</span>health_metrics)</span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>peng_table</span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co"># Run the Chi-Squared test. How do you interpret the results?</span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="fu">chisq.test</span>(peng_table)</span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co"># Now let&#39;s see if penguin flipper length relates to their body weight. </span></span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co"># First, let&#39;s check if the data is normally distributed. What do you think?</span></span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="fu">hist</span>(peng<span class="sc">$</span>flipper_length_mm)</span>
-<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="fu">hist</span>(peng<span class="sc">$</span>body_mass_g)</span>
-<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a></span>
-<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co"># It&#39;s a good idea to visualize the data first when you can. What do you think?</span></span>
-<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a><span class="fu">plot</span>(peng<span class="sc">$</span>flipper_length_mm, peng<span class="sc">$</span>body_mass_g)</span>
-<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a><span class="co"># Let&#39;s run a Pearson correlation first</span></span>
-<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a><span class="fu">cor</span>(peng<span class="sc">$</span>flipper_length_mm, peng<span class="sc">$</span>body_mass_g, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
-<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a></span>
-<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a><span class="co"># Now let&#39;s try the Spearman correlation</span></span>
-<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a><span class="fu">cor</span>(peng<span class="sc">$</span>flipper_length_mm, peng<span class="sc">$</span>body_mass_g, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span>
-<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a></span>
-<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a><span class="co"># What is your interpretation?</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># What is your interpretation? What is missing?</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># What if we get a summary of the ANOVA output? What is your interpretation now?</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng))</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co"># What if we want to compare bill lengths by species as well as diet? We can</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co"># run a two way ANOVA!</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species<span class="sc">*</span>diet, <span class="at">data =</span> peng))</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co"># Building a table of our data might help with interpretation</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>peng <span class="sc">%&gt;%</span> </span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  <span class="fu">group_by</span>(species, diet) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">bill_length =</span> <span class="fu">mean</span>(bill_length_mm)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> species, <span class="at">values_from =</span> bill_length)</span></code></pre></div>
+<p><br></p>
+<p>The effect of diet on bill length seems to significantly depend on the species.
+What do you think are some strengths and limitations of ANOVA?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Now we want to see how the penguin diet might affect their health metrics. First</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># let&#39;s make a table and analyze it visually. What are some patterns you see?</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>peng_table <span class="ot">&lt;-</span> <span class="fu">table</span>(peng<span class="sc">$</span>diet, peng<span class="sc">$</span>health_metrics)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>peng_table</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co"># Run the Chi-Squared test. How do you interpret the results?</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">chisq.test</span>(peng_table)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co"># Now let&#39;s see if penguin flipper length relates to their body weight. </span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co"># First, let&#39;s check if the data is normally distributed. What do you think?</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="fu">hist</span>(peng<span class="sc">$</span>flipper_length_mm)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="fu">hist</span>(peng<span class="sc">$</span>body_mass_g)</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co"># It&#39;s a good idea to visualize the data first when you can. What do you think?</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="fu">plot</span>(peng<span class="sc">$</span>flipper_length_mm, peng<span class="sc">$</span>body_mass_g)</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co"># Let&#39;s run a Pearson correlation first</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="fu">cor</span>(peng<span class="sc">$</span>flipper_length_mm, peng<span class="sc">$</span>body_mass_g, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="co"># Now let&#39;s try the Spearman correlation</span></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="fu">cor</span>(peng<span class="sc">$</span>flipper_length_mm, peng<span class="sc">$</span>body_mass_g, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a><span class="co"># What is your interpretation?</span></span></code></pre></div>
 <p><br></p>
 <p>We will now move on to Linear Regression. But first, we should explore
 and visualize the data some more. Statistics should largely be considered
 only after you have explored and thoroughly understood the data and identified
 potential trends, outliers, and confounders.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Number of penguins by species and sex</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng)<span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>sex))<span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co"># Let&#39;s build a table to see what variables might affect bill length</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>tab <span class="ot">&lt;-</span> peng <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  <span class="at">mean_bill_length =</span> <span class="fu">round</span>(<span class="fu">mean</span>(bill_length_mm, <span class="at">na.rm =</span> T),<span class="dv">1</span>),</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>  <span class="at">mean_mass =</span> <span class="fu">round</span>(<span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> T),<span class="dv">1</span>),</span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>)</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>tab2 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">t</span>(tab))</span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>tab2</span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co"># We can visualize these trends with a bar graph as well</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>tab, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>mean_bill_length, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">position=</span><span class="fu">position_dodge</span>())</span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co"># To explore more complex relationships, graphs like these, among many others,</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co"># can be used. What kinds of trends can you identify here?</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g,<span class="at">y=</span>bill_length_mm,<span class="at">color=</span>sex))<span class="sc">+</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">pch =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)<span class="sc">+</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species) </span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="co"># We are finally ready to run our first linear regression!</span></span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng)</span>
-<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a><span class="fu">summary</span>(m1)</span>
-<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a></span>
-<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a><span class="co"># histogram of all the residuals</span></span>
-<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m1))</span>
-<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a></span>
-<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a><span class="co"># a qqplot can also help to visually assess the normality of the residuals</span></span>
-<span id="cb5-37"><a href="#cb5-37" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m1))</span>
-<span id="cb5-38"><a href="#cb5-38" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m1))</span>
-<span id="cb5-39"><a href="#cb5-39" tabindex="-1"></a></span>
-<span id="cb5-40"><a href="#cb5-40" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values</span></span>
-<span id="cb5-41"><a href="#cb5-41" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m1), <span class="fu">resid</span>(m1), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">xlab =</span> <span class="st">&#39;Bill Length&#39;</span>)</span>
-<span id="cb5-42"><a href="#cb5-42" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>)  </span>
-<span id="cb5-43"><a href="#cb5-43" tabindex="-1"></a></span>
-<span id="cb5-44"><a href="#cb5-44" tabindex="-1"></a><span class="co"># How do you interpret these results?</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Number of penguins by species and sex</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng)<span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> sex)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co"># Let&#39;s build a table to see what variables might affect bill length</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>tab <span class="ot">&lt;-</span> peng <span class="sc">%&gt;%</span> </span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>    <span class="at">mean_bill_length =</span> <span class="fu">round</span>(<span class="fu">mean</span>(bill_length_mm, <span class="at">na.rm =</span> T), <span class="dv">1</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>    <span class="at">mean_mass =</span> <span class="fu">round</span>(<span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> T), <span class="dv">1</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    )</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>tab2 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">t</span>(tab))</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>tab2</span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co"># We can visualize these trends with a bar graph as well</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>tab, <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean_bill_length, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>())</span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co"># To explore more complex relationships, graphs like these, among many others,</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="co"># can be used. What kinds of trends can you identify here?</span></span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, </span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">color =</span> sex))<span class="sc">+</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">pch =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)<span class="sc">+</span></span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species) </span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a><span class="co"># We are finally ready to run our first linear regression!</span></span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng)</span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a><span class="fu">summary</span>(m1)</span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a><span class="co"># histogram of all the residuals</span></span>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m1))</span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co"># a qqplot can also help to visually assess the normality of the residuals</span></span>
+<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m1))</span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m1))</span>
+<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values</span></span>
+<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m1), <span class="fu">resid</span>(m1), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">xlab =</span> <span class="st">&#39;Bill Length&#39;</span>)</span>
+<span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>)  </span>
+<span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a></span>
+<span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a><span class="co"># How do you interpret these results?</span></span></code></pre></div>
 <p><br></p>
 <p>Which penguin species would be best to serve as the reference category? Why?</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>peng <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>    <span class="at">mean_bill_length =</span> <span class="fu">mean</span>(bill_length_mm))</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co"># Let&#39;s make Chinstrap the reference category</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>peng<span class="sc">$</span>species <span class="ot">&lt;-</span> <span class="fu">relevel</span>(<span class="fu">as.factor</span>(peng<span class="sc">$</span>species), <span class="at">ref =</span> <span class="st">&#39;Chinstrap&#39;</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co"># Let&#39;s run the same linear regression with a different species reference category.</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co"># How do you interpret the results?</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng)</span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="fu">summary</span>(m2)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>peng <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="at">mean_bill_length =</span> <span class="fu">mean</span>(bill_length_mm))</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co"># Let&#39;s make Chinstrap the reference category</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>peng<span class="sc">$</span>species <span class="ot">&lt;-</span> <span class="fu">relevel</span>(<span class="fu">as.factor</span>(peng<span class="sc">$</span>species), <span class="at">ref =</span> <span class="st">&#39;Chinstrap&#39;</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co"># Let&#39;s run the same linear regression with a different species reference category.</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co"># How do you interpret the results?</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> peng)</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="fu">summary</span>(m2)</span></code></pre></div>
 <p><br></p>
 <div id="rd-linear-regression" class="section level2">
 <h2>3rd Linear Regression</h2>
 <p>How does the body mass influence bill length?</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g, <span class="at">data =</span> peng)</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">summary</span>(m3)</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co"># Visualizing the residulas</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m3))</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m3))</span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m3))</span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. How do you interpret the results?</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m3), <span class="fu">resid</span>(m3), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">xlab =</span> <span class="st">&#39;Bill Length&#39;</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g, <span class="at">data =</span> peng)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">summary</span>(m3)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co"># Visualizing the residulas</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m3))</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m3))</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m3))</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. How do you interpret the results?</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m3), <span class="fu">resid</span>(m3), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">xlab =</span> <span class="st">&#39;Bill Length&#39;</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>)  </span></code></pre></div>
 <p><br></p>
 </div>
 <div id="section" class="section level2">
 <h2>4</h2>
 <p>Let’s look at bill length, sex, and species</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x=</span>sex,<span class="at">y=</span>bill_length_mm))<span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)<span class="sc">+</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species) </span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co"># 4th Linear Regression: how does sex and species affect the bill length together?</span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> sex <span class="sc">+</span> species, <span class="at">data =</span> peng)</span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">summary</span>(m4)</span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co"># Visualizing the residuals</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m4))</span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m4))</span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m4))</span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co"># Residuals plotted vs predicted values. Interpretation?</span></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m4), <span class="fu">resid</span>(m4), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">xlab =</span> <span class="st">&#39;Bill Length&#39;</span>)</span>
-<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> bill_length_mm))<span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species) </span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co"># 4th Linear Regression: how does sex and species affect the bill length together?</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> sex <span class="sc">+</span> species, <span class="at">data =</span> peng)</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="fu">summary</span>(m4)</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co"># Visualizing the residuals</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m4))</span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m4))</span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m4))</span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co"># Residuals plotted vs predicted values. Interpretation?</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m4), <span class="fu">resid</span>(m4), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">xlab =</span> <span class="st">&#39;Bill Length&#39;</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
 <p><br></p>
 </div>
 <div id="th-linear-regression" class="section level2">
 <h2>5th Linear Regression</h2>
 <p>How does the interaction of sex and species relate to bill length?</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>m5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> sex<span class="sc">*</span>species, <span class="at">data =</span> peng)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">summary</span>(m5)</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co"># Visualize the residuals</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m5))</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m5))</span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m5))</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. Interpretation?</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m5), <span class="fu">resid</span>(m6), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">col =</span> peng<span class="sc">$</span>species )</span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>m5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> sex<span class="sc">*</span>species, <span class="at">data =</span> peng)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">summary</span>(m5)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co"># Visualize the residuals</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m5))</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m5))</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m5))</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. Interpretation?</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m5), <span class="fu">resid</span>(m5), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">col =</span> peng<span class="sc">$</span>species)</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
 <p><br></p>
 </div>
 <div id="section-1" class="section level2">
 <h2>6</h2>
 <p>Let’s look at how body mass and species affect bill length.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g,<span class="at">y=</span>bill_length_mm))<span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)<span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species) </span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co"># 6th Linear Regression: how does body mass and species together affect bill length?</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>m6 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> species, <span class="at">data =</span> peng)</span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="fu">summary</span>(m6)</span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co"># Visualize the residuals</span></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m6))</span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m6))</span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m6))</span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. Interpretation?</span></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m6), <span class="fu">resid</span>(m6), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">col =</span> peng<span class="sc">$</span>species )</span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm))<span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)<span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species) </span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co"># 6th Linear Regression: how does body mass and species together affect bill length?</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>m6 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g <span class="sc">+</span> species, <span class="at">data =</span> peng)</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="fu">summary</span>(m6)</span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co"># Visualize the residuals</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m6))</span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m6))</span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m6))</span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. Interpretation?</span></span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m6), <span class="fu">resid</span>(m6), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">col =</span> peng<span class="sc">$</span>species )</span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
 <p><br></p>
 </div>
 <div id="section-2" class="section level2">
 <h2>7</h2>
 <p>Let’s look at beak length, body mass, and species all plotted on the same graph.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g,<span class="at">y=</span>bill_length_mm, <span class="at">col =</span> species))<span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">pch =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se=</span>T)</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co"># 7th Linear Regression: how does the intraction of body mass and species affect bill length?</span></span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>m7 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g<span class="sc">*</span>species, <span class="at">data =</span> peng)</span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="fu">summary</span>(m7)</span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="co"># Visualize the residulas</span></span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m7))</span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m7))</span>
-<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m7))</span>
-<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a></span>
-<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. Interpretation?</span></span>
-<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m7), <span class="fu">resid</span>(m7), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">col =</span> peng<span class="sc">$</span>species )</span>
-<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">col =</span> species))<span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">pch =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> T)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co"># 7th Linear Regression: how does the interaction of body mass and species affect bill length?</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>m7 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bill_length_mm <span class="sc">~</span> body_mass_g<span class="sc">*</span>species, <span class="at">data =</span> peng)</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="fu">summary</span>(m7)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co"># Visualize the residuals</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">resid</span>(m7))</span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">resid</span>(m7))</span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">resid</span>(m7))</span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co"># residuals plotted vs predicted values. Interpretation?</span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(m7), <span class="fu">resid</span>(m7), <span class="at">main =</span> <span class="st">&#39;Residuals vs. Bill Length&#39;</span>, <span class="at">col =</span> peng<span class="sc">$</span>species )</span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>, <span class="dv">0</span>) </span></code></pre></div>
 <p><br></p>
-<p>Finally, look at beak length, body mass, and species all plotted on the same graph separated by sex</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g,<span class="at">y =</span> bill_length_mm, <span class="at">col =</span> species))<span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">pch =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> T) <span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)</span></code></pre></div>
+<p>Finally, look at beak length, body mass, and species all plotted on the same graph separated by sex.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> peng, <span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> bill_length_mm, <span class="at">col =</span> species))<span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">pch =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> T) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sex)</span></code></pre></div>
 </div>
 </div>
 

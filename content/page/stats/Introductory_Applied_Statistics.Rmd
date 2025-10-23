@@ -22,8 +22,7 @@ hr {background: cornflowerblue;}
 # Use install.packages() if they have not been installed yet
 library(tidyverse)
 
-
-# Read online data on penguins from the Palmer Archipelago
+# Read online penguin data from the Palmer Archipelago
 peng <- read_csv("https://tidy-mn.github.io/R-camp-penguins/data/stats_penguins.csv")
 
 # let's explore the data a bit
@@ -54,8 +53,12 @@ hist(peng$bill_length_mm[peng$species == 'Adelie'])
 
 # let's look at the distribution of Gentoo bill lengths. What do you see?
 hist(peng$bill_length_mm[peng$species == 'Gentoo'])
+```
 
-# let's test for normality more formally using the Shapiro-Wilks test. 
+<br>
+
+Let's test for normality more formally using the Shapiro-Wilks test. 
+```{r, eval=F}
 # What are your interpretations? Any thoughts on what could be done with this data?
 shapiro.test(peng$bill_length_mm[peng$species == 'Adelie'])
 shapiro.test(peng$bill_length_mm[peng$species == 'Gentoo'])
@@ -98,10 +101,10 @@ wilcox.test(peng$bill_length_mm[peng$species == 'Adelie'],
 
 <br>
 
-Now let's run the nonparamaetric version of the paired t-test, the
+Now let's run the non-paramaetric version of the paired t-test, the
 Wilcoxon Signed Rank Test. Note that we are using the same function 
 for the Mann-Whitney U-Test and the Wilcoxon Signed Rank Test, the only difference 
-is including "paired = TRUE" for the Wilcoxon one
+is including "paired = TRUE" for the Wilcoxon one.
 
 ```{r, eval=F}
 # how do these results compare to the paired t-test?
@@ -129,13 +132,21 @@ summary(aov(bill_length_mm ~ species, data = peng))
 summary(aov(bill_length_mm ~ species*diet, data = peng))
 
 # Building a table of our data might help with interpretation
-peng %>% group_by(species, diet) %>% summarise(
-  bill_length = mean(bill_length_mm)) %>% 
+peng %>% 
+  group_by(species, diet) %>% 
+  summarise(bill_length = mean(bill_length_mm)) %>% 
   pivot_wider(names_from = species, values_from = bill_length)
 
-# The effect of diet on bill length seems to significantly depend on the species. 
-# What do you think are some strengths and limitations of ANOVA?
 
+```
+
+
+<br>
+
+The effect of diet on bill length seems to significantly depend on the species. 
+What do you think are some strengths and limitations of ANOVA?
+
+```{r, eval=F}
 
 # Now we want to see how the penguin diet might affect their health metrics. First
 # let's make a table and analyze it visually. What are some patterns you see?
@@ -173,28 +184,31 @@ potential trends, outliers, and confounders.
 ```{r, eval=F}
 # Number of penguins by species and sex
 ggplot(data = peng)+
-  geom_bar(mapping = aes(x=sex))+
+  geom_bar(mapping = aes(x = sex)) +
   facet_wrap(~species)
 
 # Let's build a table to see what variables might affect bill length
-tab <- peng %>% group_by(species, sex) %>% summarise(
-  mean_bill_length = round(mean(bill_length_mm, na.rm = T),1),
-  mean_mass = round(mean(body_mass_g, na.rm = T),1),
-)
+tab <- peng %>% 
+  group_by(species, sex) %>% 
+  summarise(
+    mean_bill_length = round(mean(bill_length_mm, na.rm = T), 1),
+    mean_mass = round(mean(body_mass_g, na.rm = T), 1)
+    )
 
 tab2 <- as.data.frame(t(tab))
 tab2
 
 # We can visualize these trends with a bar graph as well
-ggplot(data=tab, aes(x=species, y=mean_bill_length, fill = sex)) +
-  geom_bar(stat="identity", position=position_dodge())
+ggplot(data=tab, aes(x = species, y = mean_bill_length, fill = sex)) +
+  geom_bar(stat = "identity", position = position_dodge())
 
 
 # To explore more complex relationships, graphs like these, among many others,
 # can be used. What kinds of trends can you identify here?
-ggplot(data = peng, aes(x=body_mass_g,y=bill_length_mm,color=sex))+
+ggplot(data = peng, 
+       aes(x = body_mass_g, y = bill_length_mm, color = sex))+
   geom_point(pch = 1) +
-  geom_smooth(method=lm, se=FALSE) +
+  geom_smooth(method = lm, se = FALSE) +
   facet_wrap(~sex)+
   facet_wrap(~species) 
 
@@ -262,9 +276,9 @@ abline(0, 0)
 Let's look at bill length, sex, and species
 ```{r, eval=F}
 
-ggplot(data = peng, aes(x=sex,y=bill_length_mm))+
+ggplot(data = peng, aes(x = sex, y = bill_length_mm))+
   geom_point() +
-  geom_smooth(method=lm, se=FALSE) +
+  geom_smooth(method = lm, se = FALSE) +
   facet_wrap(~sex)+
   facet_wrap(~species) 
 
@@ -299,7 +313,7 @@ qqnorm(resid(m5))
 qqline(resid(m5))
 
 # residuals plotted vs predicted values. Interpretation?
-plot(fitted(m5), resid(m6), main = 'Residuals vs. Bill Length', col = peng$species )
+plot(fitted(m5), resid(m5), main = 'Residuals vs. Bill Length', col = peng$species)
 abline(0, 0) 
 ```
 
@@ -310,9 +324,9 @@ abline(0, 0)
 Let's look at how body mass and species affect bill length.
 ```{r, eval=F}
 
-ggplot(data = peng, aes(x=body_mass_g,y=bill_length_mm))+
+ggplot(data = peng, aes(x = body_mass_g, y = bill_length_mm))+
   geom_point() +
-  geom_smooth(method=lm, se=FALSE) +
+  geom_smooth(method = lm, se = FALSE) +
   facet_wrap(~sex)+
   facet_wrap(~species) 
 
@@ -337,16 +351,16 @@ abline(0, 0)
 
 Let's look at beak length, body mass, and species all plotted on the same graph.
 ```{r, eval=F}
-ggplot(data = peng, aes(x=body_mass_g,y=bill_length_mm, col = species))+
+ggplot(data = peng, aes(x = body_mass_g, y = bill_length_mm, col = species))+
   geom_point(pch = 1) +
-  geom_smooth(method=lm, se=T)
+  geom_smooth(method = lm, se = T)
 
 
-# 7th Linear Regression: how does the intraction of body mass and species affect bill length?
+# 7th Linear Regression: how does the interaction of body mass and species affect bill length?
 m7 <- lm(bill_length_mm ~ body_mass_g*species, data = peng)
 summary(m7)
 
-# Visualize the residulas
+# Visualize the residuals
 hist(resid(m7))
 qqnorm(resid(m7))
 qqline(resid(m7))
@@ -358,11 +372,11 @@ abline(0, 0)
 
 <br>
 
-Finally, look at beak length, body mass, and species all plotted on the same graph separated by sex
+Finally, look at beak length, body mass, and species all plotted on the same graph separated by sex.
 
 ```{r, eval=F}
 
-ggplot(data = peng, aes(x = body_mass_g,y = bill_length_mm, col = species))+
+ggplot(data = peng, aes(x = body_mass_g, y = bill_length_mm, col = species))+
   geom_point(pch = 1) +
   geom_smooth(method = lm, se = T) +
   facet_wrap(~sex)
