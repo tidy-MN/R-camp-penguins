@@ -17,6 +17,13 @@ h1 .header-section-number {background: cornflowerblue;}
 hr {background: cornflowerblue;}
 </style>
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, error=F, warning=F, color=NULL, message=FALSE, eval=F)
+
+xaringanExtra::use_clipboard()
+```
+
+
 ## Load required packages {-}
 
 ```{r, eval=F}
